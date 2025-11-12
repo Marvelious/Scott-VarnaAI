@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles */
+@layer base {
+  body {
+    @apply bg-dark-bg text-gray-100 font-sans;
+  }
+}
+
+/* Custom component styles */
+@layer components {
+  .card {
+    @apply bg-card-dark border border-border-dark rounded-lg p-6 shadow-lg;
+  }
+
+  .btn-primary {
+    @apply bg-primary hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors duration-200;
+  }
+
+  .btn-success {
+    @apply bg-success hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-lg transition-colors duration-200;
+  }
+
+  .btn-alert {
+    @apply bg-alert hover:bg-red-600 text-white font-semibold py-2 px-6 rounded-lg transition-colors duration-200;
+  }
+
+  .stat-card {
+    @apply card flex items-center justify-between;
+  }
+
+  .gradient-header {
+    @apply bg-purple-gradient text-white font-bold;
+  }
+
+  .input-field {
+    @apply bg-gray-800 border border-gray-700 text-white rounded-lg px-4 py-2 w-full focus:outline-none focus:border-primary;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors duration-200;
+  }
+
+  .spinner {
+    @apply inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin;
+  }
+}

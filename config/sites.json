@@ -1,0 +1,84 @@
+{
+  "sites": [
+    {
+      "id": 1,
+      "name": "AI Projektmanager",
+      "domain": "ai-projektmanager.de",
+      "url": "https://ai-projektmanager.de",
+      "adminUrl": "https://ai-projektmanager.de/wp-admin/",
+      "language": "de",
+      "market": "Germany",
+      "focus": "AI Project Management",
+      "socialMedia": {
+        "facebook": "https://www.facebook.com/AIProjektmanager/",
+        "instagram": "https://www.instagram.com/aiprojectmanger",
+        "linkedin": "https://www.linkedin.com/company/ai-projektmanager/",
+        "twitter": "https://x.com/AiProjekt"
+      }
+    },
+    {
+      "id": 2,
+      "name": "AI Marketing BG",
+      "domain": "aimarketingbg.com",
+      "url": "https://aimarketingbg.com",
+      "adminUrl": "https://aimarketingbg.com/wp-admin/",
+      "language": "en",
+      "market": "Bulgaria",
+      "focus": "AI Marketing",
+      "socialMedia": {
+        "facebook": "https://www.facebook.com/aimarketingbg/",
+        "instagram": "https://www.instagram.com/aimarketingbg/",
+        "linkedin": "https://www.linkedin.com/company/ai-marketing-bg/",
+        "twitter": "https://x.com/aimarketingbg"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Classic Security",
+      "domain": "classicsecurity.net",
+      "url": "https://classicsecurity.net",
+      "adminUrl": "https://classicsecurity.net/wp-admin/",
+      "language": "en",
+      "market": "Europe",
+      "focus": "IT Security & GDPR",
+      "socialMedia": {
+        "facebook": "https://www.facebook.com/classicsecurityeood/",
+        "instagram": "https://www.instagram.com/classicsecurity2010",
+        "linkedin": "https://www.linkedin.com/company/classic-security-eood/",
+        "twitter": "https://x.com/ClassicSec2010"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Varna Agenten",
+      "domain": "varna-agenten.de",
+      "url": "https://varna-agenten.de",
+      "adminUrl": "https://varna-agenten.de/wp-admin/",
+      "language": "de",
+      "market": "Germany",
+      "focus": "AI Agents",
+      "socialMedia": {
+        "facebook": "https://www.facebook.com/VarnaAgenten/",
+        "instagram": "https://www.instagram.com/varnaagents",
+        "linkedin": "https://www.linkedin.com/company/varna-agenten/",
+        "twitter": "https://x.com/VarnaAgenten"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Varna AI",
+      "domain": "varnaai.com",
+      "url": "https://varnaai.com",
+      "adminUrl": "https://varnaai.com/wp-admin/",
+      "language": "en",
+      "market": "Global",
+      "focus": "AI Services",
+      "socialMedia": {
+        "facebook": "https://www.facebook.com/varnaai/",
+        "instagram": "https://www.instagram.com/varnaaicom",
+        "linkedin": "https://www.linkedin.com/company/varnaai/",
+        "twitter": "https://x.com/Varna_Ai"
+      }
+    }
+  ]
+}
