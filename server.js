@@ -337,7 +337,7 @@ app.post('/api/wordpress/login', (req, res) => {
 
 // Generate blog post (multi-provider support)
 app.post('/api/content/blog', async (req, res) => {
-    const { topic, language, tone, aiModel = 'lm-studio' } = req.body;
+    const { topic, language, tone, aiModel = 'claude' } = req.body;
 
     try {
         const prompt = `You are a professional content writer. Write a comprehensive blog post about: ${topic}
