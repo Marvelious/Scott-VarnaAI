@@ -5,12 +5,126 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const axios = require('axios');
 const { Ollama } = require('ollama');
+const Anthropic = require('@anthropic-ai/sdk');
 
 const app = express();
 const PORT = process.env.PORT || 3333;
 
 // Initialize Ollama (local AI - always available)
 const ollama = new Ollama({ host: 'http://localhost:11434' });
+
+// Initialize Claude (Anthropic API)
+const anthropic = new Anthropic({
+    apiKey: process.env.ANTHROPIC_API_KEY
+});
+
+// Initialize LM Studio client (OpenAI-compatible API)
+const lmStudioClient = axios.create({
+    baseURL: process.env.LM_STUDIO_URL || 'http://localhost:1234/v1',
+    headers: { 'Content-Type': 'application/json' }
+});
+
+// ========================================
+// AI PROVIDER HELPER FUNCTIONS
+// ========================================
+
+/**
+ * Generate content using Claude (Anthropic API)
+ * Highest quality, best for German language, ~$0.01-0.03 per blog post
+ */
+async function generateWithClaude(prompt, maxTokens = 4000, temperature = 0.7) {
+    try {
+        const message = await anthropic.messages.create({
+            model: 'claude-3-sonnet-20240229',  // Claude 3 Sonnet
+            max_tokens: maxTokens,
+            temperature: temperature,
+            messages: [{ role: 'user', content: prompt }]
+        });
+
+        return message.content[0].text;
+    } catch (error) {
+        console.error('Claude API error:', error.message);
+        throw new Error(`Claude generation failed: ${error.message}`);
+    }
+}
+
+/**
+ * Generate content using LM Studio (local, OpenAI-compatible)
+ * 50-70% less RAM than Ollama, fast, free, good quality
+ */
+async function generateWithLMStudio(prompt, maxTokens = 4000, temperature = 0.7) {
+    try {
+        const response = await lmStudioClient.post('/chat/completions', {
+            model: 'local-model',  // LM Studio uses whatever model is loaded
+            messages: [
+                { role: 'system', content: 'You are a professional content writer. Respond only with valid JSON.' },
+                { role: 'user', content: prompt }
+            ],
+            max_tokens: maxTokens,
+            temperature: temperature
+        });
+
+        return response.data.choices[0].message.content;
+    } catch (error) {
+        console.error('LM Studio API error:', error.message);
+        throw new Error(`LM Studio generation failed: ${error.message}`);
+    }
+}
+
+/**
+ * Generate content using Ollama (local)
+ * High RAM usage, slower, but reliable fallback
+ */
+async function generateWithOllama(prompt, maxTokens = 4000, temperature = 0.7) {
+    try {
+        const response = await ollama.generate({
+            model: 'llama3.1:8b',
+            prompt: prompt,
+            stream: false,
+            options: {
+                temperature: temperature,
+                num_predict: maxTokens
+            }
+        });
+
+        return response.response;
+    } catch (error) {
+        console.error('Ollama error:', error.message);
+        throw new Error(`Ollama generation failed: ${error.message}`);
+    }
+}
+
+/**
+ * Clean and parse JSON from LLM response (handles various formats)
+ */
+function cleanAndParseJSON(rawResponse) {
+    let jsonText = rawResponse.trim();
+
+    // CRITICAL: Replace actual newlines with spaces BEFORE any other processing
+    jsonText = jsonText.replace(/\r?\n/g, ' ');
+
+    // Remove markdown code blocks
+    if (jsonText.startsWith('```json')) {
+        jsonText = jsonText.replace(/```json\s*/g, '').replace(/```\s*$/g, '');
+    } else if (jsonText.startsWith('```')) {
+        jsonText = jsonText.replace(/```\s*/g, '').replace(/```\s*$/g, '');
+    }
+
+    // Find JSON object in response
+    const jsonMatch = jsonText.match(/\{[^]*\}/);
+    if (jsonMatch) {
+        jsonText = jsonMatch[0];
+    }
+
+    // Aggressive JSON cleaning
+    jsonText = jsonText
+        .replace(/[\x00-\x1F\x7F-\x9F]/g, '')  // Remove control chars
+        .replace(/\\"/g, '"')  // Handle escaped quotes
+        .replace(/\s+/g, ' ')  // Collapse multiple spaces
+        .trim();
+
+    return JSON.parse(jsonText);
+}
 
 // Middleware
 app.use(cors());
@@ -221,9 +335,9 @@ app.post('/api/wordpress/login', (req, res) => {
 // CONTENT GENERATION API ENDPOINTS
 // ========================================
 
-// Generate blog post
+// Generate blog post (multi-provider support)
 app.post('/api/content/blog', async (req, res) => {
-    const { topic, language, tone } = req.body;
+    const { topic, language, tone, aiModel = 'lm-studio' } = req.body;
 
     try {
         const prompt = `You are a professional content writer. Write a comprehensive blog post about: ${topic}
@@ -235,50 +349,33 @@ Requirements:
 - Include SEO keywords naturally
 - Respond ONLY with valid JSON in this format: {"title": "...", "content": "...", "metaDescription": "..."}`;
 
-        const response = await ollama.generate({
-            model: 'llama3.1:8b',
-            prompt: prompt,
-            stream: false,
-            options: {
-                temperature: 0.7,
-                num_predict: 4000  // Increased for longer content (600-800 words)
-            }
-        });
+        console.log(`🤖 Using AI model: ${aiModel}`);
+        const startTime = Date.now();
 
-        // Extract JSON from response (handle markdown code blocks and clean text)
-        let jsonText = response.response.trim();
-        console.log('RAW Ollama response (first 500 chars):', jsonText.substring(0, 500));
-
-        // CRITICAL FIX: Replace actual newlines with spaces BEFORE any other processing
-        // Ollama responses have literal line breaks that break JSON parsing
-        jsonText = jsonText.replace(/\r?\n/g, ' ');
-
-        // Remove markdown code blocks
-        if (jsonText.startsWith('```json')) {
-            jsonText = jsonText.replace(/```json\s*/g, '').replace(/```\s*$/g, '');
-        } else if (jsonText.startsWith('```')) {
-            jsonText = jsonText.replace(/```\s*/g, '').replace(/```\s*$/g, '');
+        // Route to appropriate AI provider
+        let rawResponse;
+        switch (aiModel) {
+            case 'claude':
+                rawResponse = await generateWithClaude(prompt, 4000, 0.7);
+                break;
+            case 'lm-studio':
+                rawResponse = await generateWithLMStudio(prompt, 4000, 0.7);
+                break;
+            case 'ollama':
+                rawResponse = await generateWithOllama(prompt, 4000, 0.7);
+                break;
+            default:
+                throw new Error(`Unknown AI model: ${aiModel}`);
         }
 
-        // Find JSON object in response (extract {...})
-        const jsonMatch = jsonText.match(/\{[^]*\}/);
-        if (jsonMatch) {
-            jsonText = jsonMatch[0];
-        }
+        const generationTime = ((Date.now() - startTime) / 1000).toFixed(1);
+        console.log(`✅ Generation completed in ${generationTime}s`);
 
-        // Aggressive JSON cleaning for LLM responses
-        jsonText = jsonText
-            // Remove ALL control characters
-            .replace(/[\x00-\x1F\x7F-\x9F]/g, '')
-            // Fix common LLM JSON issues
-            .replace(/\\"/g, '"')  // Handle escaped quotes
-            .replace(/\s+/g, ' ')  // Collapse multiple spaces
-            .trim();
-
-        console.log('CLEANED JSON (first 500 chars):', jsonText.substring(0, 500));
-
-        const result = JSON.parse(jsonText);
+        // Clean and parse JSON response
+        const result = cleanAndParseJSON(rawResponse);
         const wordCount = result.content.split(' ').length;
+
+        console.log(`📝 Generated ${wordCount} words with ${aiModel}`);
 
         res.json({
             success: true,
@@ -289,12 +386,18 @@ Requirements:
                 language,
                 tone,
                 wordCount,
-                seoScore: Math.floor(Math.random() * 20) + 75 // 75-95 range
+                seoScore: Math.floor(Math.random() * 20) + 75, // 75-95 range
+                aiModel,
+                generationTime: `${generationTime}s`
             }
         });
     } catch (error) {
-        console.error('Blog generation error:', error);
-        res.status(500).json({ success: false, message: error.message });
+        console.error(`❌ Blog generation error (${req.body.aiModel || 'lm-studio'}):`, error.message);
+        res.status(500).json({
+            success: false,
+            message: error.message,
+            aiModel: req.body.aiModel || 'lm-studio'
+        });
     }
 });
 
