@@ -1,0 +1,34 @@
+{
+  "sites": [
+    {
+      "name": "AI Projektmanager",
+      "url": "https://ai-projektmanager.de",
+      "username": "claude",
+      "applicationPassword": "Ikgb rFEF 3kW1 aDBO AoFx QDZH"
+    },
+    {
+      "name": "AI Marketing BG",
+      "url": "https://aimarketingbg.com",
+      "username": "claude",
+      "applicationPassword": "HN5f qm13 pigc aor8 V98m Sti8"
+    },
+    {
+      "name": "Classic Security",
+      "url": "https://classicsecurity.net",
+      "username": "claude",
+      "applicationPassword": "Hangout0-Croak6-Hankie4-Spilt5-Enclosure7"
+    },
+    {
+      "name": "Varna Agenten",
+      "url": "https://varna-agenten.de",
+      "username": "claude",
+      "applicationPassword": "Simmering0-Clubhouse6-Guide7-Jinx5-Undying6"
+    },
+    {
+      "name": "Varna AI",
+      "url": "https://varnaai.com",
+      "username": "claude",
+      "applicationPassword": "Attendant4-Legged7-Unclog7-Mayday6-Panhandle9"
+    }
+  ]
+}
