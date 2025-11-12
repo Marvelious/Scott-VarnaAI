@@ -1,0 +1,25 @@
+projects:
+  - slug: example-landing
+    name: Example Landing Site
+    path: ../sites/example-landing   # relative path to project root (optional)
+    domains:
+      - example.com
+    slack_webhook: "https://hooks.slack.com/services/XXX/YYY/ZZZ"  # optional for notifications
+    flags:
+      new_banner: true
+      rollouts:
+        new_pricing: 10   # percent rollout
+    feedback:
+      enabled: true
+      target_channel: "#product-feedback"
+
+  - slug: example-app
+    name: Example SaaS App
+    path: ../apps/example-app
+    domains:
+      - app.example.com
+    flags:
+      beta_feature: false
+    feedback:
+      enabled: true
+

@@ -1,0 +1,12 @@
+name = "ops-hub-worker"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+[vars]
+# These are safe defaults for local dev.
+OPS_ALLOW_ORIGIN = "*"
+
+# [kv_namespaces]
+# binding = "FLAGS"
+# id = "<kv-id>"
+

@@ -1,0 +1,19 @@
+/* ============================================
+   Fix Duplicate H1 - Add to WordPress Customizer
+   VarnaAI.com SEO Fix - 2025-11-05
+   ============================================ */
+
+/* Hide Jetpack Search duplicate H1 from both users AND search engines */
+#jetpack-instant-search__overlay-title {
+  display: none !important;
+}
+
+/* Alternative: Target by class if ID doesn't work */
+.screen-reader-text h1,
+h1.screen-reader-text {
+  display: none !important;
+}
+
+/* ============================================
+   END H1 FIX
+   ============================================ */

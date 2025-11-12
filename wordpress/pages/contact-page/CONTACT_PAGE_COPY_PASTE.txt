@@ -1,0 +1,923 @@
+===========================================
+KONTAKT PAGE - COMPLETE COPY-PASTE VERSION
+===========================================
+
+>>> SEO TITLE (Yoast/Rank Math "SEO Title" field):
+AI Projektmanagement Kontakt: Schnelle Antwort in 24h | Varna AI
+
+>>> META DESCRIPTION (Yoast/Rank Math "Meta Description" field):
+AI Projektmanagement Deutschland Kontakt: Telefon +49 621 156 869 32, E-Mail support@ai-projektmanager.de. Antwort in 24h. Kostenlose Demo vereinbaren!
+
+>>> FOCUS KEYWORD (Yoast/Rank Math "Focus Keyword" field):
+AI Projektmanagement Deutschland
+
+===========================================
+>>> MAIN CONTENT (WordPress Editor - HTML Mode):
+===========================================
+
+<!-- Breadcrumbs -->
+<nav class="pm-breadcrumb" aria-label="Breadcrumb">
+  <ol class="pm-breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li class="pm-breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="https://ai-projektmanager.de/" itemprop="item">
+        <span itemprop="name">Home</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li class="pm-breadcrumb-separator">/</li>
+    <li class="pm-breadcrumb-item pm-breadcrumb-current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <span itemprop="name" aria-current="page">Kontakt</span>
+      <meta itemprop="position" content="2" />
+    </li>
+  </ol>
+</nav>
+
+<!-- Main H1 - KEEP ONLY THIS ONE H1, DELETE ALL OTHER H1 TAGS -->
+<h1>Kontakt – Ihr direkter Draht zu AI Projektmanagement Deutschland</h1>
+
+<!-- Introduction -->
+<div class="contact-intro">
+  <p>Haben Sie Fragen zu <strong>AI Projektmanagement Deutschland</strong> mit Varna AI? Unser Team hilft Ihnen gerne weiter – persönlich, schnell und auf Deutsch. Wählen Sie Ihren bevorzugten Kontaktweg:</p>
+</div>
+
+<!-- Contact Options -->
+<h2>3 Wege, uns zu erreichen</h2>
+
+<div class="contact-methods-grid">
+
+  <!-- Method 1: Phone -->
+  <div class="contact-method">
+    <div class="contact-icon">📞</div>
+    <h3>Telefonischer Direktkontakt</h3>
+    <p><strong><a href="tel:+4962115686932">+49 621 156 869 32</a></strong></p>
+    <p>Mo-Fr: 9:00 - 18:00 Uhr<br>
+    Durchschnittliche Wartezeit: unter 2 Minuten</p>
+    <p class="contact-note">💡 <em>Perfekt für dringende Fragen und Produktdemos</em></p>
+  </div>
+
+  <!-- Method 2: Email -->
+  <div class="contact-method">
+    <div class="contact-icon">✉️</div>
+    <h3>E-Mail Support</h3>
+    <p><strong><a href="mailto:support@ai-projektmanager.de">support@ai-projektmanager.de</a></strong></p>
+    <p>Antwortzeit: innerhalb 24 Stunden<br>
+    Support-Zeiten: Mo-Fr 9:00 - 18:00 Uhr</p>
+    <p class="contact-note">💡 <em>Ideal für detaillierte technische Anfragen</em></p>
+  </div>
+
+  <!-- Method 3: Contact Form -->
+  <div class="contact-method">
+    <div class="contact-icon">📝</div>
+    <h3>Kontaktformular</h3>
+    <p><strong>Direktnachricht an unser Sales-Team</strong></p>
+    <p>Antwortzeit: innerhalb 4 Stunden (Geschäftszeiten)<br>
+    Rückruf auf Wunsch möglich</p>
+    <p class="contact-note">💡 <em>Beste Wahl für Demo-Anfragen und Angebote</em></p>
+  </div>
+
+</div>
+
+<!-- Contact Form Section -->
+<h2>Schreiben Sie uns – Wir melden uns innerhalb 24 Stunden</h2>
+
+<div class="contact-form-wrapper">
+
+  <!-- SINGLE CONTACT FORM - DELETE ALL OTHER DUPLICATE FORMS -->
+  <div class="contact-form-main">
+    <!-- Your WordPress contact form shortcode here, for example: -->
+    <!-- [contact-form-7 id="123" title="Kontaktformular"] -->
+
+    <!-- OR if using custom HTML form: -->
+    <form id="contact-form" class="pm-contact-form" method="post" action="">
+
+      <div class="form-row">
+        <div class="form-group half-width">
+          <label for="contact-name">Ihr Name *</label>
+          <input type="text" id="contact-name" name="contact_name" required placeholder="Max Mustermann" aria-required="true">
+        </div>
+
+        <div class="form-group half-width">
+          <label for="contact-company">Unternehmen</label>
+          <input type="text" id="contact-company" name="contact_company" placeholder="Mustermann GmbH">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group half-width">
+          <label for="contact-email">E-Mail-Adresse *</label>
+          <input type="email" id="contact-email" name="contact_email" required placeholder="max@mustermann.de" aria-required="true">
+        </div>
+
+        <div class="form-group half-width">
+          <label for="contact-phone">Telefon (optional)</label>
+          <input type="tel" id="contact-phone" name="contact_phone" placeholder="+49 123 456789">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="contact-subject">Betreff *</label>
+        <select id="contact-subject" name="contact_subject" required aria-required="true">
+          <option value="">Bitte wählen...</option>
+          <option value="demo">Kostenlose Demo vereinbaren</option>
+          <option value="pricing">Preise und Angebote</option>
+          <option value="technical">Technische Fragen</option>
+          <option value="enterprise">Enterprise-Lösung</option>
+          <option value="migration">Migration von anderem Tool</option>
+          <option value="partnership">Partnerschaftsanfrage</option>
+          <option value="other">Sonstiges</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="contact-message">Ihre Nachricht *</label>
+        <textarea id="contact-message" name="contact_message" rows="6" required placeholder="Beschreiben Sie bitte Ihr Anliegen..." aria-required="true"></textarea>
+      </div>
+
+      <div class="form-group checkbox-group">
+        <label>
+          <input type="checkbox" id="contact-privacy" name="contact_privacy" required aria-required="true">
+          <span>Ich habe die <a href="/datenschutz/" target="_blank">Datenschutzerklärung</a> gelesen und akzeptiere die Verarbeitung meiner Daten. *</span>
+        </label>
+      </div>
+
+      <div class="form-group checkbox-group">
+        <label>
+          <input type="checkbox" id="contact-newsletter" name="contact_newsletter">
+          <span>Ja, ich möchte den monatlichen Newsletter mit Tipps zu AI Projektmanagement erhalten (jederzeit abbestellbar).</span>
+        </label>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">Nachricht senden</button>
+        <span class="form-note">* Pflichtfelder</span>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- Form Benefits Sidebar -->
+  <div class="contact-form-benefits">
+    <h3>Was passiert nach dem Absenden?</h3>
+    <ul>
+      <li>✅ <strong>Sofortige Bestätigung</strong> per E-Mail</li>
+      <li>✅ <strong>Antwort innerhalb 24 Stunden</strong> (meist schneller)</li>
+      <li>✅ <strong>Persönlicher Ansprechpartner</strong> wird zugewiesen</li>
+      <li>✅ <strong>Kostenlose Demo-Terminvereinbarung</strong> möglich</li>
+      <li>✅ <strong>Keine Verkaufsgespräche</strong> – nur echte Hilfe</li>
+    </ul>
+
+    <p class="security-note">🔒 <strong>100% DSGVO-konform:</strong> Ihre Daten werden ausschließlich auf deutschen Servern gespeichert und niemals an Dritte weitergegeben.</p>
+  </div>
+
+</div>
+
+<!-- Office Information -->
+<h2>Unser Hauptsitz in Deutschland</h2>
+
+<div class="office-info-grid">
+
+  <div class="office-address">
+    <h3>Varna AI – Classic Security EOOD</h3>
+    <p>
+      <strong>Geschäftsadresse:</strong><br>
+      Rieslingweg 12<br>
+      68309 Mannheim<br>
+      Deutschland
+    </p>
+
+    <p>
+      <strong>Registrierung:</strong><br>
+      Bulgarien (EU-Mitglied)<br>
+      USt-IdNr.: BG206316092<br>
+      Handelsregisternummer: 206316092
+    </p>
+
+    <p>
+      <strong>Verantwortlich für Inhalte:</strong><br>
+      Nikola Todorov, Geschäftsführer
+    </p>
+  </div>
+
+  <div class="office-hours">
+    <h3>Erreichbarkeit</h3>
+    <table class="hours-table">
+      <tbody>
+      <tr>
+        <td><strong>Telefon-Support:</strong></td>
+        <td>Mo-Fr 9:00-18:00 Uhr</td>
+      </tr>
+      <tr>
+        <td><strong>E-Mail-Support:</strong></td>
+        <td>24/7 (Antwort innerhalb 24h)</td>
+      </tr>
+      <tr>
+        <td><strong>Notfall-Hotline:</strong></td>
+        <td>Enterprise-Kunden: 24/7</td>
+      </tr>
+      <tr>
+        <td><strong>Persönliche Termine:</strong></td>
+        <td>Nach Vereinbarung (vor Ort oder online)</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- Google Maps -->
+<div class="office-map">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2594.6!2d8.4660!3d49.4875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDnCsDI5JzE1LjAiTiA4wrAyNyc1Ny42IkU!5e0!3m2!1sde!2sde!4v1234567890" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Varna AI Standort Mannheim"></iframe>
+</div>
+
+<!-- FAQ Section -->
+<h2>Häufige Fragen zum Kontakt</h2>
+
+<div class="contact-faq">
+
+  <details>
+    <summary>Wie schnell bekomme ich eine Antwort?</summary>
+    <p>Bei Telefon-Anfragen: sofort (Mo-Fr 9-18 Uhr). Bei E-Mail/Formular: innerhalb 24 Stunden, meist deutlich schneller. Enterprise-Kunden haben 24/7-Prioritäts-Support.</p>
+  </details>
+
+  <details>
+    <summary>Kann ich eine kostenlose Demo erhalten?</summary>
+    <p>Ja! Vereinbaren Sie über das Kontaktformular (Betreff: "Kostenlose Demo") einen individuellen Demo-Termin. Unsere Produktexperten zeigen Ihnen live alle Funktionen.</p>
+  </details>
+
+  <details>
+    <summary>Bieten Sie Vor-Ort-Beratung an?</summary>
+    <p>Ja, für Enterprise-Kunden und größere Implementierungsprojekte bieten wir persönliche Beratung in Ihren Räumlichkeiten an (deutschlandweit).</p>
+  </details>
+
+  <details>
+    <summary>In welchen Sprachen bieten Sie Support?</summary>
+    <p>Unser primärer Support ist auf <strong>Deutsch</strong>. Für internationale Kunden bieten wir auch Support auf <strong>Englisch</strong> und <strong>Bulgarisch</strong> an.</p>
+  </details>
+
+  <details>
+    <summary>Was passiert mit meinen Daten aus dem Kontaktformular?</summary>
+    <p>Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet, auf deutschen Servern gespeichert und niemals an Dritte weitergegeben. Detaillierte Infos in unserer <a href="/datenschutz/">Datenschutzerklärung</a>.</p>
+  </details>
+
+</div>
+
+<!-- Alternative Contact Channels -->
+<h2>Weitere Kontaktmöglichkeiten</h2>
+
+<div class="alternative-channels">
+
+  <div class="channel">
+    <h3>💬 Live-Chat (bald verfügbar)</h3>
+    <p>Ab Q2 2025: Echtzeit-Support direkt auf unserer Website. Antwortzeit: unter 5 Minuten während der Geschäftszeiten.</p>
+  </div>
+
+  <div class="channel">
+    <h3>📱 WhatsApp Business (Enterprise)</h3>
+    <p>Für Enterprise-Kunden: Direkter WhatsApp-Kanal für schnelle Anfragen und Updates.</p>
+  </div>
+
+  <div class="channel">
+    <h3>🎓 Wissensdatenbank</h3>
+    <p>Viele Antworten finden Sie sofort in unserer <a href="/hilfe/">Wissensdatenbank</a> – durchsuchbar und mit Video-Tutorials.</p>
+  </div>
+
+  <div class="channel">
+    <h3>👥 Community-Forum (geplant)</h3>
+    <p>Tauschen Sie sich mit anderen Nutzern aus, teilen Sie Best Practices und erhalten Sie Peer-Support.</p>
+  </div>
+
+</div>
+
+===========================================
+>>> CSS (Add to Theme CSS or Customizer):
+===========================================
+
+/* Breadcrumbs */
+.pm-breadcrumb {
+  margin: 1rem 0 2rem;
+  padding: 0.75rem 0;
+  font-size: 0.875rem;
+}
+
+.pm-breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.5rem;
+}
+
+.pm-breadcrumb-item {
+  display: inline-flex;
+}
+
+.pm-breadcrumb-item a {
+  color: #6c757d;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.pm-breadcrumb-item a:hover {
+  color: #00d4ff;
+}
+
+.pm-breadcrumb-current {
+  color: #1e2139;
+  font-weight: 500;
+}
+
+.pm-breadcrumb-separator {
+  color: #adb5bd;
+}
+
+/* Contact Methods Grid */
+.contact-methods-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.contact-method {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contact-method:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.contact-method h3 {
+  margin: 1rem 0;
+  color: #1e2139;
+  font-size: 1.25rem;
+}
+
+.contact-method p {
+  margin: 0.5rem 0;
+}
+
+.contact-method a {
+  color: #00d4ff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-method a:hover {
+  text-decoration: underline;
+}
+
+.contact-note {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+/* Contact Form Wrapper */
+.contact-form-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  margin: 2rem 0;
+}
+
+@media (max-width: 968px) {
+  .contact-form-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-form-main {
+  background: #fff;
+}
+
+.pm-contact-form {
+  background: #fff;
+  padding: 2rem;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group.half-width {
+  margin-bottom: 0;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #1e2139;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #00d4ff;
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.checkbox-group {
+  margin-bottom: 1rem;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: start;
+  gap: 0.5rem;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: auto;
+  margin-top: 0.25rem;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.checkbox-group span {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn-primary {
+  background: #00d4ff;
+  color: #1e2139;
+  padding: 0.875rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background: #00bde6;
+  transform: translateY(-2px);
+  color: #1e2139;
+}
+
+.form-note {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+/* Contact Form Benefits */
+.contact-form-benefits {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  height: fit-content;
+}
+
+.contact-form-benefits h3 {
+  margin-top: 0;
+  color: #1e2139;
+  font-size: 1.25rem;
+}
+
+.contact-form-benefits ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.contact-form-benefits li {
+  margin: 0.75rem 0;
+  padding-left: 0;
+  line-height: 1.6;
+}
+
+.security-note {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #e7f3ff;
+  border-left: 4px solid #00d4ff;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* Office Info Grid */
+.office-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+  .office-info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.office-address,
+.office-hours {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.office-address h3,
+.office-hours h3 {
+  margin-top: 0;
+  color: #1e2139;
+  font-size: 1.25rem;
+}
+
+.office-address p {
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+.hours-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.hours-table tr {
+  border-bottom: 1px solid #e9ecef;
+}
+
+.hours-table tr:last-child {
+  border-bottom: none;
+}
+
+.hours-table td {
+  padding: 0.75rem 0;
+  vertical-align: top;
+}
+
+.hours-table td:first-child {
+  padding-right: 1rem;
+  white-space: nowrap;
+}
+
+/* Office Map */
+.office-map {
+  margin: 2rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.office-map iframe {
+  display: block;
+  width: 100%;
+}
+
+/* FAQ Section */
+.contact-faq {
+  margin: 2rem 0;
+}
+
+.contact-faq details {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  padding: 1rem 1.5rem;
+  transition: background 0.2s;
+}
+
+.contact-faq details:hover {
+  background: #fff;
+}
+
+.contact-faq summary {
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+  color: #1e2139;
+  font-size: 1rem;
+}
+
+.contact-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.contact-faq summary::before {
+  content: "▶";
+  display: inline-block;
+  margin-right: 0.5rem;
+  transition: transform 0.2s;
+  color: #00d4ff;
+}
+
+.contact-faq details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.contact-faq summary:hover {
+  color: #00d4ff;
+}
+
+.contact-faq details[open] summary {
+  margin-bottom: 0.75rem;
+  color: #00d4ff;
+}
+
+.contact-faq details p {
+  margin: 0;
+  padding-top: 0.5rem;
+  line-height: 1.6;
+}
+
+/* Alternative Channels */
+.alternative-channels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.channel {
+  background: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.channel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.channel h3 {
+  margin: 0 0 1rem 0;
+  color: #1e2139;
+  font-size: 1.1rem;
+}
+
+.channel p {
+  margin: 0;
+  line-height: 1.6;
+  color: #6c757d;
+}
+
+.channel a {
+  color: #00d4ff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.channel a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-method {
+    padding: 1.5rem;
+  }
+
+  .contact-icon {
+    font-size: 2.5rem;
+  }
+
+  .pm-contact-form {
+    padding: 1.5rem;
+  }
+
+  .contact-form-benefits {
+    padding: 1.5rem;
+  }
+
+  .office-address,
+  .office-hours {
+    padding: 1.5rem;
+  }
+}
+
+===========================================
+>>> SCHEMA MARKUP (Yoast Schema or Footer):
+===========================================
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "@id": "https://ai-projektmanager.de/kontakt/#webpage",
+      "url": "https://ai-projektmanager.de/kontakt/",
+      "name": "Kontakt - AI Projektmanager Deutschland",
+      "description": "Kontaktieren Sie Varna AI für AI Projektmanagement Deutschland Support",
+      "breadcrumb": {
+        "@id": "https://ai-projektmanager.de/kontakt/#breadcrumb"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://ai-projektmanager.de/#organization",
+      "name": "Varna AI - Classic Security EOOD",
+      "legalName": "Classic Security EOOD",
+      "url": "https://ai-projektmanager.de/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://ai-projektmanager.de/wp-content/uploads/logo.png"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+49-621-156-869-32",
+          "contactType": "customer service",
+          "email": "support@ai-projektmanager.de",
+          "availableLanguage": ["German", "English", "Bulgarian"],
+          "areaServed": "DE",
+          "hoursAvailable": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          }
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+49-621-156-869-32",
+          "contactType": "sales",
+          "email": "sales@ai-projektmanager.de",
+          "availableLanguage": ["German", "English"],
+          "areaServed": "DE"
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+49-621-156-869-32",
+          "contactType": "technical support",
+          "email": "support@ai-projektmanager.de",
+          "availableLanguage": ["German", "English"],
+          "areaServed": "DE",
+          "hoursAvailable": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+          }
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rieslingweg 12",
+        "addressLocality": "Mannheim",
+        "postalCode": "68309",
+        "addressCountry": "DE"
+      },
+      "vatID": "BG206316092",
+      "taxID": "206316092"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wie schnell bekomme ich eine Antwort?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bei Telefon-Anfragen: sofort (Mo-Fr 9-18 Uhr). Bei E-Mail/Formular: innerhalb 24 Stunden, meist deutlich schneller. Enterprise-Kunden haben 24/7-Prioritäts-Support."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich eine kostenlose Demo erhalten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja! Vereinbaren Sie über das Kontaktformular (Betreff: Kostenlose Demo) einen individuellen Demo-Termin. Unsere Produktexperten zeigen Ihnen live alle Funktionen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bieten Sie Vor-Ort-Beratung an?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, für Enterprise-Kunden und größere Implementierungsprojekte bieten wir persönliche Beratung in Ihren Räumlichkeiten an (deutschlandweit)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "In welchen Sprachen bieten Sie Support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Unser primärer Support ist auf Deutsch. Für internationale Kunden bieten wir auch Support auf Englisch und Bulgarisch an."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was passiert mit meinen Daten aus dem Kontaktformular?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet, auf deutschen Servern gespeichert und niemals an Dritte weitergegeben."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://ai-projektmanager.de/kontakt/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://ai-projektmanager.de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Kontakt",
+          "item": "https://ai-projektmanager.de/kontakt/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+===========================================
+>>> CRITICAL INSTRUCTIONS:
+===========================================
+
+1. **DELETE ALL DUPLICATE H1 TAGS** - Keep only the one that says:
+   "Kontakt – Ihr direkter Draht zu AI Projektmanagement Deutschland"
+
+2. **DELETE 4 DUPLICATE CONTACT FORMS** - Keep only ONE contact form
+   (either your existing form shortcode OR the HTML form provided above)
+
+3. Verify after saving:
+   - Only 1 H1 tag exists on the page
+   - Only 1 contact form exists on the page
+   - All phone/email links are clickable
+   - Google Maps loads correctly
+
+4. Add Schema markup to Yoast "Schema" tab or theme footer
+
+5. Test on mobile devices - all elements should be responsive
+
+===========================================
+READY TO COPY-PASTE INTO WORDPRESS
+===========================================

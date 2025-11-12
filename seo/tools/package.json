@@ -1,0 +1,37 @@
+{
+  "name": "seoagent-automation",
+  "version": "1.0.0",
+  "description": "Complete automation for SEO, Lead Generation, and Market Research for WordPress portfolio sites",
+  "main": "seoagent-menu.js",
+  "scripts": {
+    "start": "node seoagent-menu.js",
+    "menu": "node seoagent-menu.js",
+    "docs": "node docs-reader.js",
+    "seo": "node automate-seo-analysis.js",
+    "wordpress": "node wordpress-seo-helper.js",
+    "leads": "node lead-generation-automation.js",
+    "market": "node market-research-automation.js"
+  },
+  "keywords": [
+    "seo",
+    "automation",
+    "lead-generation",
+    "market-research",
+    "wordpress",
+    "german-market",
+    "bulgarian-market"
+  ],
+  "author": "VarnaAI",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "D:\\VarnaAI\\Websites"
+  }
+}

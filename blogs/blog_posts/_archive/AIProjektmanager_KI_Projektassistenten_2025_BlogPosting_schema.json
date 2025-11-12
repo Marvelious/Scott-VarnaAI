@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "5 bewährte Methoden: KI Projektassistenten trainieren 2025",
+  "description": "Erfahren Sie, wie deutsche Unternehmen KI Projektassistenten trainieren und unternehmens-spezifisch anpassen können – DSGVO-konform mit AI Projektmanager.",
+  "image": "https://ai-projektmanager.de/images/blog/ki-projektassistenten-training.jpg",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Projektmanager",
+    "url": "https://ai-projektmanager.de"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Projektmanager / Classic Security EOOD",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ai-projektmanager.de/images/logo.png"
+    }
+  },
+  "datePublished": "2025-11-04",
+  "dateModified": "2025-11-04",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ai-projektmanager.de/blog/ki-projektassistenten-trainieren-unternehmen"
+  },
+  "keywords": "KI Projektassistenten trainieren, unternehmens-spezifische KI, KI Training Deutschland, Custom AI Deutschland, RAG Deutschland, DSGVO KI Training, AI Projektmanager",
+  "articleSection": "KI im Projektmanagement",
+  "wordCount": 5847,
+  "inLanguage": "de-DE"
+}

@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_click",
+      "mcp__chrome-devtools__navigate_page",
+      "mcp__chrome-devtools__performance_start_trace",
+      "mcp__playwright__browser_snapshot",
+      "mcp__chrome-devtools__list_console_messages",
+      "mcp__chrome-devtools__list_network_requests",
+      "mcp__chrome-devtools__evaluate_script",
+      "mcp__chrome-devtools__resize_page",
+      "WebSearch",
+      "WebFetch(domain:varnaai.com)",
+      "mcp__chrome-devtools__get_console_message",
+      "mcp__chrome-devtools__get_network_request",
+      "SlashCommand(/sc:research)",
+      "SlashCommand(/sc:research:*)",
+      "mcp__sequential-thinking__sequentialthinking",
+      "WebFetch(domain:classicsecurity.net)",
+      "WebFetch(domain:ai-projektmanager.de)",
+      "WebFetch(domain:varna-agenten.de)",
+      "WebFetch(domain:aimarketingbg.com)",
+      "mcp__playwright__browser_evaluate",
+      "mcp__playwright__browser_network_requests",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_console_messages",
+      "WebFetch(domain:news.ycombinator.com)",
+      "Bash(cat:*)",
+      "WebFetch(domain:www.hetzner.com)",
+      "WebFetch(domain:www.reddit.com)",
+      "WebFetch(domain:ngrok.com)",
+      "WebFetch(domain:www.statuspage.io)",
+      "WebFetch(domain:www.atlassian.com)",
+      "Bash(curl:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

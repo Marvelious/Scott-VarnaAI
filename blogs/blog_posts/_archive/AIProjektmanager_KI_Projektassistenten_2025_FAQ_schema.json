@@ -1,0 +1,86 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie lange dauert das Training eines KI-Projektassistenten für mein Unternehmen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Trainingszeit hängt von der Datenmenge und Komplexität ab. Für ein mittelständisches Unternehmen mit 50-100 abgeschlossenen Projekten beträgt die reine Trainingszeit 2-3 Wochen. Inklusive Datenaufbereitung und Fine-Tuning sollten Sie 2-3 Monate für die vollständige Implementierung einplanen. Der Assistent wird jedoch kontinuierlich besser, je mehr neue Projekte abgeschlossen werden."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Kosten sind mit dem Training und Betrieb eines KI-Assistenten verbunden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI Projektmanager bietet flexible Preismodelle. Die Einstiegsversion für kleine Teams (bis 10 Nutzer) startet bei 899 Euro monatlich inklusive Training und Support. Enterprise-Lizenzen für größere Organisationen werden individuell kalkuliert. Der ROI ist typischerweise nach 6-8 Monaten erreicht durch Zeitersparnis und verbesserte Projektergebnisse."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie stelle ich sicher, dass der KI-Assistent DSGVO-konform arbeitet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI Projektmanager ist von Grund auf für DSGVO-Konformität entwickelt. Alle Daten werden auf deutschen Servern gehostet und niemals an Dritte weitergegeben. Die Plattform bietet automatisierte Anonymisierung, umfassende Audit-Logs und integrierte DSFA-Templates. Ein Datenschutzbeauftragter sollte dennoch die Implementierung begleiten."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann der KI-Assistent mit unseren bestehenden Projektmanagement-Tools integriert werden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, AI Projektmanager bietet native Integrationen für Microsoft Project, Microsoft Teams, Jira, Confluence, DATEV, SAP, Asana und monday.com. Für andere Tools stehen REST-APIs und Webhooks zur Verfügung. Die Implementierung ist im Onboarding-Prozess enthalten."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was passiert, wenn der KI-Assistent falsche Empfehlungen gibt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der Assistent kennzeichnet Empfehlungen mit Konfidenzniveaus. Bei niedriger Konfidenz fordert er explizit menschliche Prüfung an. Nutzer können falsche Empfehlungen als Feedback markieren. Das System lernt aus Korrekturen und verbessert sich kontinuierlich. Menschliche Projektleiter bleiben in kritischen Entscheidungen eingebunden."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie viele Projektdaten benötige ich minimal für effektives Training?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Mindestanforderung sind 30 abgeschlossene Projekte aus den letzten 2-3 Jahren. Idealerweise sollten diese ähnliche Charakteristika haben. Ab 100 Projekten erreicht die Qualität ein sehr hohes Niveau. Qualität der Daten ist wichtiger als Quantität – gut dokumentierte 50 Projekte sind wertvoller als schlecht dokumentierte 200."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Können auch kleinere Unternehmen ohne große IT-Abteilung KI-Assistenten trainieren?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja! AI Projektmanager ist speziell für den Mittelstand konzipiert und erfordert keine IT-Expertise. Der Onboarding-Prozess wird vom Support-Team begleitet. Das Training läuft weitgehend automatisiert. Viele erfolgreiche Implementierungen finden in Unternehmen mit 50-200 Mitarbeitern statt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie schütze ich meine Wettbewerbsvorteile beim KI-Training mit Projektdaten?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ihre Daten bleiben vollständig in Ihrem Besitz. AI Projektmanager hat keinen Zugriff auf unverschlüsselte Daten. Es findet kein Training über Unternehmensgrenzen statt. Anders als bei ChatGPT werden Ihre Eingaben niemals für andere Modelle verwendet. Ihre Wettbewerbsvorteile bleiben geschützt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist der Unterschied zwischen RAG und Fine-Tuning beim KI-Training?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fine-Tuning bedeutet Neutraining eines Basismodells mit Ihren Daten – teuer und zeitaufwendig. RAG (Retrieval Augmented Generation) ist effizienter: Das Basismodell bleibt unverändert, greift aber bei Anfragen auf Ihre Datenbank zu. RAG ermöglicht einfachere Updates, niedrigere Kosten und bessere Nachvollziehbarkeit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Muss ich meine Mitarbeiter schulen, um den KI-Assistenten effektiv zu nutzen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Grundlegende Schulung ist empfehlenswert. Die meisten Nutzer sind nach 2-3 Stunden Training produktiv. AI Projektmanager bietet kostenlose Online-Schulungen und Zertifizierungsprogramme. Besonders wichtig ist Prompt Engineering. Die Plattform enthält einen interaktiven Prompt-Guide mit Best Practices."
+      }
+    }
+  ]
+}
