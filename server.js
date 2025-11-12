@@ -132,29 +132,89 @@ app.get('/api/wordpress/sites', async (req, res) => {
 });
 
 // WordPress login (opens admin in browser)
-app.post('/api/wordpress/login', (req, res) => {
+// WordPress REST API Authentication
+app.post('/api/wordpress/authenticate', async (req, res) => {
     const { siteId } = req.body;
 
-    const credentials = {
-        1: { url: 'https://ai-projektmanager.de/wp-admin/', user: process.env.WP_AI_PM_USER, pass: process.env.WP_AI_PM_PASS },
-        2: { url: 'https://aimarketingbg.com/wp-admin/', user: process.env.WP_AI_MKT_USER, pass: process.env.WP_AI_MKT_PASS },
-        3: { url: 'https://classicsecurity.net/wp-admin/', user: process.env.WP_CLASSIC_USER, pass: process.env.WP_CLASSIC_PASS },
-        4: { url: 'https://varna-agenten.de/wp-admin/', user: process.env.WP_VARNA_AG_USER, pass: process.env.WP_VARNA_AG_PASS },
-        5: { url: 'https://varnaai.com/wp-admin/', user: process.env.WP_VARNA_AI_USER, pass: process.env.WP_VARNA_AI_PASS }
+    const sites = {
+        1: {
+            domain: 'https://ai-projektmanager.de',
+            user: process.env.WP_AI_PM_USER,
+            pass: process.env.WP_AI_PM_PASS
+        },
+        2: {
+            domain: 'https://aimarketingbg.com',
+            user: process.env.WP_AI_MKT_USER,
+            pass: process.env.WP_AI_MKT_PASS
+        },
+        3: {
+            domain: 'https://classicsecurity.net',
+            user: process.env.WP_CLASSIC_USER,
+            pass: process.env.WP_CLASSIC_PASS
+        },
+        4: {
+            domain: 'https://varna-agenten.de',
+            user: process.env.WP_VARNA_AG_USER,
+            pass: process.env.WP_VARNA_AG_PASS
+        },
+        5: {
+            domain: 'https://varnaai.com',
+            user: process.env.WP_VARNA_AI_USER,
+            pass: process.env.WP_VARNA_AI_PASS
+        }
     };
 
-    const creds = credentials[siteId];
-    if (!creds) {
+    const site = sites[siteId];
+    if (!site) {
         return res.status(404).json({ success: false, message: 'Site not found' });
     }
 
-    res.json({
-        success: true,
-        message: 'Login credentials retrieved',
-        url: creds.url,
-        username: creds.user
-        // Note: Password not sent to frontend for security
-    });
+    try {
+        // Authenticate via WordPress REST API
+        const authToken = Buffer.from(`${site.user}:${site.pass}`).toString('base64');
+
+        // Test authentication by fetching user data
+        const response = await axios.get(`${site.domain}/wp-json/wp/v2/users/me`, {
+            headers: {
+                'Authorization': `Basic ${authToken}`
+            },
+            timeout: 10000
+        });
+
+        // Return auth token and admin URL for frontend
+        res.json({
+            success: true,
+            authToken: authToken,
+            adminUrl: `${site.domain}/wp-admin/`,
+            username: site.user,
+            userId: response.data.id,
+            name: response.data.name
+        });
+    } catch (error) {
+        console.error('WordPress auth error:', error.message);
+        res.status(401).json({
+            success: false,
+            message: 'Authentication failed',
+            error: error.message
+        });
+    }
+});
+
+// Legacy endpoint (kept for backwards compatibility)
+app.post('/api/wordpress/login', (req, res) => {
+    const { siteId } = req.body;
+    const sites = {
+        1: { url: 'https://ai-projektmanager.de/wp-admin/' },
+        2: { url: 'https://aimarketingbg.com/wp-admin/' },
+        3: { url: 'https://classicsecurity.net/wp-admin/' },
+        4: { url: 'https://varna-agenten.de/wp-admin/' },
+        5: { url: 'https://varnaai.com/wp-admin/' }
+    };
+    const site = sites[siteId];
+    if (!site) {
+        return res.status(404).json({ success: false, message: 'Site not found' });
+    }
+    res.json({ success: true, url: site.url });
 });
 
 // ========================================
@@ -181,17 +241,41 @@ Requirements:
             stream: false,
             options: {
                 temperature: 0.7,
-                num_predict: 2000
+                num_predict: 4000  // Increased for longer content (600-800 words)
             }
         });
 
-        // Extract JSON from response (handle markdown code blocks if present)
+        // Extract JSON from response (handle markdown code blocks and clean text)
         let jsonText = response.response.trim();
+        console.log('RAW Ollama response (first 500 chars):', jsonText.substring(0, 500));
+
+        // CRITICAL FIX: Replace actual newlines with spaces BEFORE any other processing
+        // Ollama responses have literal line breaks that break JSON parsing
+        jsonText = jsonText.replace(/\r?\n/g, ' ');
+
+        // Remove markdown code blocks
         if (jsonText.startsWith('```json')) {
-            jsonText = jsonText.replace(/```json\n?/g, '').replace(/```\n?$/g, '');
+            jsonText = jsonText.replace(/```json\s*/g, '').replace(/```\s*$/g, '');
         } else if (jsonText.startsWith('```')) {
-            jsonText = jsonText.replace(/```\n?/g, '').replace(/```\n?$/g, '');
+            jsonText = jsonText.replace(/```\s*/g, '').replace(/```\s*$/g, '');
         }
+
+        // Find JSON object in response (extract {...})
+        const jsonMatch = jsonText.match(/\{[^]*\}/);
+        if (jsonMatch) {
+            jsonText = jsonMatch[0];
+        }
+
+        // Aggressive JSON cleaning for LLM responses
+        jsonText = jsonText
+            // Remove ALL control characters
+            .replace(/[\x00-\x1F\x7F-\x9F]/g, '')
+            // Fix common LLM JSON issues
+            .replace(/\\"/g, '"')  // Handle escaped quotes
+            .replace(/\s+/g, ' ')  // Collapse multiple spaces
+            .trim();
+
+        console.log('CLEANED JSON (first 500 chars):', jsonText.substring(0, 500));
 
         const result = JSON.parse(jsonText);
         const wordCount = result.content.split(' ').length;
