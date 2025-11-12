@@ -1,0 +1,27 @@
+Available Template Categories:
+
+  Content Sections:
+
+  - Hero (64+ variations) - Large header/banner sections
+  - Text (30+ variations) - Content sections
+  - Page Title - Header sections
+  - Accordion (35+ variations) - Collapsible content
+  - Cards (65+ variations) - Card layouts
+  - Call to Action (15+ variations) - CTA buttons/sections
+  - Testimonials (59+ variations) - Customer reviews
+  - Pricing Table (21+ variations) - Pricing sections
+  - Counter/Stats (47+ variations) - Number displays
+  - List (44+ variations) - List layouts
+  - Tabs (14+ variations) - Tabbed content
+
+  Media Sections:
+
+  - Image & Text (108+ variations) - Combined layouts
+  - Gallery (34+ variations) - Image galleries
+  - Video & Text (31+ variations) - Video sections
+  - Logo Farm (33+ variations) - Partner/client logos
+
+  Forms:
+
+  - Contact Form (50+ variations)
+  - Subscription Form

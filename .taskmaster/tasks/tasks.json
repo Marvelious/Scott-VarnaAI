@@ -1,0 +1,117 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Setup dashboard project structure",
+        "description": "Create dashboard folder with index.html, server.js, package.json, and subdirectories for modules, api, and config",
+        "details": "Create D:/VarnaAI/Websites/dashboard/ with proper folder structure for a modern SaaS control panel. Include Tailwind CSS setup and Express.js backend configuration.",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": 2,
+        "title": "Create main dashboard UI layout",
+        "description": "Build index.html with Tailwind CSS classes for modern SaaS dashboard with sidebar, main content area, and status bar",
+        "details": "Use color palette: Primary Blue #0066cc, Purple Gradient #667eea to #764ba2, Dark #2d3748, Success Green #48bb78, Alert Red #ff6b6b. Create responsive grid layout with dark theme.",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": 3,
+        "title": "Build WordPress control panel section",
+        "description": "Create WordPress management section with login buttons for all 5 sites, page tracker, and SEO score monitoring",
+        "details": "Add quick login buttons using stored credentials from CLAUDE.md. Display page creation status (4/35 pages), average SEO score, and site health indicators.",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [
+          1,
+          2
+        ],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": 4,
+        "title": "Implement content generation hub",
+        "description": "Build AI content generator section with blog post, social media, and email campaign creation",
+        "details": "Support DE/EN/BG languages. Include tone selection (professional/casual). Connect to OpenAI or Claude API for generation.",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [
+          1,
+          2
+        ],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": 5,
+        "title": "Create marketing automation panel",
+        "description": "Build marketing section with Mailchimp email lists, Buffer social scheduling, and campaign launcher",
+        "details": "Integrate existing marketing-machine APIs. Show subscriber count, scheduled posts, active campaigns. Add buttons for launching campaigns and scheduling social blasts.",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [
+          1,
+          2
+        ],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": 6,
+        "title": "Setup Express.js backend server",
+        "description": "Create server.js with API endpoints for tool execution, credential management, and external API connections",
+        "details": "Setup Express server with endpoints for WordPress login, content generation, marketing automation, and analytics. Include secure credential storage and session management.",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [
+          1
+        ],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": 7,
+        "title": "Build analytics monitoring dashboard",
+        "description": "Create real-time analytics section with GA4 integration, visitor tracking, and performance metrics",
+        "details": "Display today's visitors, leads, keyword rankings, social engagement, email open rates. Use Chart.js for data visualization. Connect to Google Analytics API.",
+        "testStrategy": "",
+        "status": "in-progress",
+        "dependencies": [
+          1,
+          2,
+          6
+        ],
+        "priority": "medium",
+        "subtasks": []
+      },
+      {
+        "id": 8,
+        "title": "Implement quick actions panel",
+        "description": "Create one-click operations panel for common tasks like batch content generation and bulk posting",
+        "details": "Add buttons for: Generate complaint letter, Create WordPress page, Run SEO audit, Export analytics, Clear cache, Check broken links.",
+        "testStrategy": "",
+        "status": "pending",
+        "dependencies": [
+          1,
+          2
+        ],
+        "priority": "medium",
+        "subtasks": []
+      }
+    ],
+    "metadata": {
+      "created": "2025-11-12T11:09:36.748Z",
+      "description": "Default tasks context",
+      "updated": "2025-11-12T12:59:26.553Z"
+    }
+  }
+}

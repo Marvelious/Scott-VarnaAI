@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "WebSearch",
+      "Bash(for file in \"D:\\VarnaAI\\blogs\\blog_posts\\VarnaAI_Predictive_Resource_Allocation_2025_FIXED.md\" \"D:\\VarnaAI\\blogs\\blog_posts\\AIProjektmanager_KfW_Foerderung_2025.md\" \"D:\\VarnaAI\\blogs\\blog_posts\\VarnaAgenten_Generative_KI_Design_2025.md\" \"D:\\VarnaAI\\blogs\\blog_posts\\AIMarketingBG_AI_Lead_Scoring_2025.md\" \"D:\\VarnaAI\\blogs\\blog_posts\\ClassicSecurity_Zero_Trust_GDPR_2025.md\")",
+      "Bash(done)",
+      "Bash(for file in \"D:\\VarnaAI\\blogs\\blog_posts\"/*.md)",
+      "mcp__sequential-thinking__sequentialthinking",
+      "Bash(.gitignore)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

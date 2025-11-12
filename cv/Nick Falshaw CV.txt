@@ -1,0 +1,522 @@
+PROFESSIONELLES PROFIL
+Zertifizierter Security Architekt mit 17+ Jahren Expertise in Enterprise Network Security, Cloud-Architekturen und KI-gestützter Automation. 
+Nachgewiesene Erfolge: Migration von 280+ Firewalls, Implementierung von VPN-Infrastrukturen für 1000+ User, Reduzierung von Migrationszeiten um 75% durch KI-Automation. 
+Spezialisiert auf Palo Alto, Check Point, Cisco Firepower, Azure Security und AI-driven Security Operations. Track Rekord in der Leitung komplexer Multi-Vendor-Migrationsprojekte für DAX-Konzerne und internationale Enterprises. 
+Sprachen: Englisch (Muttersprache), Deutsch (Fließend)
+PERSÖNLICHE FÄHIGKEITEN
+	Ausgezeichnete Kommunikations-, Verhandlungs- und zwischenmenschliche Fähigkeiten auf allen Ebenen
+	Organisiert und methodisch mit einem Auge für Genauigkeit und Liebe zum Detail
+	Begeistert, fleißig, anpassungsfähig und ausgerüstet mit wichtigen methodischen Kompetenzen
+	Begrüßt neue Herausforderungen und Möglichkeiten zum Erlernen neuer Fähigkeiten und Methoden.
+	Rastlos für die pünktliche und budgetgerechte Lieferung von Projekten.
+	Gespür für Problemlösungen mit der Fähigkeit, komplexe technische Daten zu verarbeiten und zu interpretieren.
+TECHNISCHE FÄHIGKEITEN
+	Planung, Überwachung und Umsetzung mehrerer großer Migrationsprojekte 
+	Fundierte Kenntnisse der IT-Infrastrukturkonzepte und Strukturen sowie ein gutes Verständnis der Projektmanagementmethoden
+	Auswahl und Bereitstellung von Cloud Sicherheitslösungen, Unterstützung sicherer Cloud-Lösungen und Durchführung von Sicherheitsaudits von Cloud-Lösungen
+	Entwicklung und Implementierung neuer Sicherheitsprozesse
+	Ausgeprägtes Verständnis von IT-Infrastrukturkonzepten und Architekturen sowie ein gutes Verständnis von Projektmanagementmethoden und deren Lösungsbereitstellung
+	Übernahme der Verantwortung von Risiken, Annahmen, Probleme und Abhängigkeiten
+	Entwicklung und Implementierung einer robusten und sicheren VPN-basierten RAS-Lösung für über 1000 Benutzer
+	VPN-Site-to-Site-Experte, Upgrade von 280 Check Point Firewalls
+	Entwurf, Projektmanagement und Implementierung mehrerer Migrationen für große Unternehmen
+KI & Security Automation
+•	AI Platform Development: Cursor AI, Claude AI, OpenAI Codex, GitHub Copilot 
+•	Azure AI Services: Machine Learning Studio, Cognitive Services, Automated Threat Detection 
+•	AI Security Applications: Smart Firewall Management, Automated Policy Optimization, Predictive Threat Analysis 
+•	AI-Driven Analytics: Splunk AI/ML Toolkit, SIEM Intelligence, Automated BI Solutions
+Cloud & Network Security
+•	Firewalls: Palo Alto (Panorama, Global Protect, Cortex, Prisma, XSOAR), Cisco Firepower/ASA, Check Point (VSX, Gaia), Fortinet NGFW
+•	Cloud Security: Azure Network Security, AWS Security, Multi-Cloud Security Architectures 
+•	Load Balancing: F5 Networks (LTM, GTM, ASM, WAF, APM)
+•	Routing & Switching: Cisco (OSPF, BGP, VRF, ACI, Nexus), Juniper (Junos OS, SRX, EX)
+Security Operations & Compliance
+•	SIEM Platforms: ArcSight, Splunk, QRadar, LogRhythm, McAfee ESM, Trustwave
+•	Compliance Tools: Skybox, Algosec, Tufin, CyberArk, RSA Archer
+•	Standards: ISO/IEC 27001, PCI-DSS, TOGAF 9
+Kurse und Zertifizierungen
+•	Cloud & AI Security: 
+•	AI-900: Azure AI Fundamentals & AI-102: Designing and Implementing Azure AI Solutions & AZ-500: Microsoft Azure Security Technologies
+•	Enterprise Security & Architecture: 
+•	ISO/IEC 27001 Lead Implementer & TOGAF 9 Certified - Enterprise Architecture Framework
+•	Network Security: 
+•	CCIE Security (Written), CCSP Cisco Certified Security Professional, CCNA, CCNP, CCDP - Cisco Network Professional & Design, 600-199 SCYBER - Securing Cisco Networks with Threat Detection
+•	Firewalls: 
+•	CCSA & CCSE Check Point Security Administration NGX
+•	Palo Alto Networks: Install/Configure/Manage (EDU-201), Extended Features (EDU-205), Debug/Troubleshoot (EDU-311), Panorama Management (EDU-121), Professional Services Topics & TAC Advanced Training for PAN-OS
+•	JNCIA-FWV & JNCIS-FWV: Juniper Networks Certified Associate & Specialist
+•	F5 BIG-IP: Local Traffic Manager (LTM), Firepass v6.x
+•	Additional: ITIL V3 Foundation, C|EH Certified Ethical Hacker
+
+PROJEKTE
+
+Network Security Consultant (Contract)		
+Worldline (Remote)									Nov 2024 – Heute
+	Planung, Ausbau und Betrieb hochverfügbarer Netzwerkinfrastrukturen zur Gewährleistung des unterbrechungsfreien Betriebs von Datacentern im PCI Kredit Karten umfeld & PCI Audit
+	Firewall-Migration von Check Point zu Palo Alto sowie Implementierung und Administration von F5 Loadbalancern zur Optimierung der Netzwerk-Performance und Ausfallsicherheit
+	Administration von Checkpoint, Forcepoint und Cisco Firepower Firewalls sowie Cisco Nexus, Router & Switches, und Cisco ACI
+	Anpassung und Optimierung von Firewall- und Sicherheitssystemen durch maßgeschneidertes Customizing zur Einhaltung höchster Sicherheitsstandards
+	Proaktives Monitoring der Netzwerksicherheit mittels SIEM-Systemen – Splunk zur Erkennung und Minimierung der Auswirkungen von Angriffen 
+	Automatisiertes Change-Management: Design und Deployment eines automatisierten Systems mit JIRA-Integration zur Verwaltung von Firewall-Konfigurationsänderungen und Compliance-Tracking
+Security Consultant (Contract)	
+Fujitsu – Manage now (Remote)								Apr 2024 – Okt 2024
+	Multi-Cloud-Konnektivität: Design und Implementierung von Azure ExpressRoute-Verbindungen mit BGP-Optimierung 
+	VPN-Architektur: Bereitstellung route-basierter und Policy-basierter VPN-Lösungen in Multi-VRF-Umgebungen 
+	Kundenbetreuung: Leitung technischer Kickoffs und PoC-Implementierungen für Unternehmenskunden 
+	Migrationsleitung: Durchführung nahtloser Rechenzentrumsmigrationen ohne Ausfallzeiten 
+	Technologien: Cisco Routing & Switching, CheckPoint Firewalls, Azure Cloud Integration
+Security Consultant (Contract)		
+Mann und Hummel, Ludwigsburg (Remote)							Aug 2023 – Apr 2024
+	Beratung und Review der High Level und Low Level Network Security Architekturen im Umfeld Palo Alto - und Fortinet (NGFW) Firewalls bereitgestellt in Azure
+	Analyse der Firewall-Systemlandschaft und Design & Implementierung und Migration zu Cortex und XSOAR
+	Troubleshooting bei Network Security Service Requests oder Incidents und Implementierung Maßnahmen, Firewall Cleanup der weltweiten Firewall Rule Base, Benutzung von MS Sentinel SIEM zur Auswertung
+	Projektbezogene Beratung der Projektteams bei der sicheren Implementierung von Netzwerkänderungen & Security-Vorgaben und Implementierung der IT Cloud Security Governance Richtlinien
+	Konfiguration und Verwaltung von BGP-Peerings mit externen ISPs und Partnerunternehmen
+Cloud Security Consultant (Contract)								May 2022 – Juli 2023
+Vattenfall, Berlin (Remote)
+	Betrieb und Inzident Management von Tickets, Azure Security, Palo Alto Firewalls, Fortinet Firewalls, F5 Networks und Cisco Routing und Switching - BGP-Konfiguration, -Implementierung und -Troubleshooting.
+	Migration von Palo Alto Firewalls und F5 Load Balancer unter Verwendung des OT-Netzwerktrennungsmodells
+	Verwaltung von Azure-Sicherheitsregeln und F5 LTM, Palo Alto Firewalls & Panorama und Cortex XDR
+	Entwurf eines operativen Übergabeleitfadens und Unterstützung in anderen Bereichen des Netzwerkdesigns
+	Migration von F5 Networks Load Balancer und der Einrichtung der F5 WAF-Funktionalität 
+	Integration vom Cisco ISE mit FS LTM zur Verwaltung des Datenverkehrs zwischen mehreren ISE
+	Implementierung und Wartung von BGP-Routen. Optimierung der Netzwerkleistung durch Analyse von BGP-Routingtabellen und -Metriken einschließlich Policy Based Routing (PBR)
+Security Consultant (Contract)								Nov 2021 – Apr 2022
+Messer, Mühltal (Remote)
+	Upgrade der Palo Alto Netzwerk-Firewall von der Softwareversion 8 auf 10, Betrieb von Fortinet (NGFW) Firewall, Bearbeitung der Tickets
+	Koordination der Migrationen mit verschiedenen Teams und Drittanbietern
+Security Consultant (Contract) 								Jul 2021 - Okt 2021
+Kubus-IT, Bayreuth, (Remote)
+	Checkpoint GAIA und Tufin, tägliche Tickets und die Verbesserung der Firewall Policy 
+	Planung und Koordination des Upgrades einer alten Checkpoint VPN-Firewall, Fw cleanup
+	Installation, Konfiguration, Inbetriebnahme, Administration und Überwachung der IT-Sicherheitsinfrastruktur unter Berücksichtigung aktueller Sicherheitsaspekte.
+Risk and Compliance Security Consultant (Contract) 						Feb 2020 – Jun 2021
+BASF, Ludwigshafen (Remote)
+	Checkpoint GAIA, Tufin und RSA Archer, IT-Sicherheitsrisikomanagement, Firewall cleanup
+	Verbesserung der IPS/IDS Infrastruktur mit der Migration neuer Firewalls
+	Sicherheit und Compliance des Unternehmens Firewall Bestands, Ermittlung der technischen, geschäftlichen Auswirkungen 
+	Identifiziert und bewertete komplexe Geschäfts- und Technologierisiken, Kontrolle zur Risikominderung und die damit verbundenen Möglichkeiten für Kontrollverbesserungen.
+	Schwachstellenbewertung, Prüfung der Sicherheitskonfiguration, Prüfung der Firewall-Regelbasis
+
+
+Senior Security Consultant (Contract) 							Aug 2019 – Feb 2020
+Caterpillar Energy Solutions GmbH, Mannheim (Remote)
+	Industrie 4.0-Sicherheit, Evaluierung und Dokumentation einer VPN Firewall Lösung zur Erlangung der ISO 27001-Konformität
+	Migration des Endian Firewall-Managementservers, der über 900 VPN-Firewalls hostet und die Implementierung einer Hochverfügbarkeitslösung in Microsoft Azure
+	VPN Firewall Entwicklungen für Remote Engine Management, Migrationen, Neuinstallationen und Fehlerbehebung, Aktualisierungen der Information Sicherheitsrichtlinien 
+Senior Security Consultant (Contract)							Sep 2018 – Jul 2019
+Orange Business Services, Eschborn (Remote)
+	Bereinigungsprojekt der Cisco ASA-Firewall, Optimierung der Regelbasis, Entfernung ungenutzter Regeln aus einem weltweiten Firewall-Bestand - Firewall cleanup
+	Upgrade der Cisco ASA-Firewalls auf Cisco Firepower-Firewalls
+	Installation eines ESXi-Servers zur Bereitstellung einer Zscaler VZEN Proxy Lösung.
+	Implementierung einer Zugriffskontrollrichtlinie zur Optimierung der Netzwerkzugriffskontrollen für einen großen angelegten CyberArk Einsatz.
+	Aktualisierungen der Information Sicherheitsrichtlinien Dokumentation für Kunden
+Senior Checkpoint Consultant (Contract)							Mär 2018 – Aug 2018
+Porsche AG, Stuttgart
+	Installation, Konfiguration, Inbetriebnahme, Administration und Überwachung der IT-Sicherheitsinfrastruktur unter Berücksichtigung aktueller Sicherheitsaspekte.
+	Ausarbeitung und Durchführung von Migrationen von Altsystemen auf neue Geräte von Checkpoint- und Cisco ASA-Firewalls und F5 Load Balancer, einschließlich der Erstellung und Aktualisierung von Unternehmensdokumentationen.
+	Durchführung von Konfigurationsarbeiten zur Optimierung und Aufrechterhaltung der Verfügbarkeit der Firewalls
+Security Architekt (Contract) 								Jan 2018 – Mär 2018
+ING DiBa AG, Frankfurt am Main
+	Entwicklung der Dokumentation externer Verbindungen, Mitarbeit an ING DiBa-Sicherheitsrichtlinien, einschließlich Dokumenten zur akzeptablen Nutzung von Diensten, Sicherheitsrollen und Verantwortlichkeiten.
+	Beratung zur Sicherheitsarchitektur, Zusammenarbeit mit Stakeholdern, um Informationen für die Dokumentation zu sammeln.
+Security Project Manager (Short Term Contract)					   	Dez 2017 – Dez 2017
+Klöckner Pentaplast, Montabaur
+	Projektleiter für dringenden Austausch von 20 Palo Alto Firewalls
+	Koordiniert und verwaltet alle Aspekte der Projekte. Beaufsichtigte die Lieferung von Firewalls und koordinierte mit den Mitarbeitern vor Ort die Bereitstellung der Geräte
+	Konfiguration der Palo Alto Firewalls und die Migration der weltweit eingesetzten Firewalls
+Network Security Architekt (Contract) 							Jun 2017 – Nov 2017
+Allianz, Frankfurt am Main
+	Rechenzentrumsunterstützung, Technologien: Check Point VSX, Cisco Nexus, BlueCoat Proxy
+	Eigenständige Projektleitung mittlerer und großer Projekte
+	Koordinierte und verwaltete alle Aspekte der Projekte, untersuchte interne Prozesse und befolgte diese. 
+	Beaufsichtigte die Leitung, Entwicklung und Umsetzung von Allianz Security Projekten
+	Koordination von Drittanbietern und Cloud-Anbietern, Verwaltung von Eskalationen, Verfolgung des Fortschritts und Berichterstattung, Aufrechterhaltung der Kommunikationslinie zur Vermeidung von Missverständnissen und proaktive Lösung von Problemen.
+	Erfassung der Kundenprojektanforderungen, Zusammenarbeit mit Kunden als Projektmanager zur Umsetzung der Anforderungen in Entwürfe
+Senior F5 Consultant (Contract) 								Nov 2016 – Jun 2017
+SAP AG, Walldorf
+	Migration von F5 Networks Loadbalancern auf neue Hardware oder F5-VCMP
+	F5 Audit und Verbesserung, Durchführung einer F5 Landschaftsüberprüfung über mehrere Geschäftsbereiche und erstellte aus den gesammelten Informationen eine Installationscheckliste, Lastverteilungsrichtlinien und eine Betriebsübergabedokumentation.
+	Allgemein F5 Networks Systemkonfiguration, Ersteinrichtung, Software-Upgrades, Fehlerbehebung.
+	Dokumentation und Implementierung von VLANs, Route Domains, Firewall regeln
+Resident Engineer (Contract) 								Jul 2016 – Nov 2016
+Palo Alto Networks Professional Services, Eschborn
+	Resident Engineer für den Kunden Amadeus, Unterstützung bei der Migration von Cisco ASA zu Palo Alto
+	Implementierung von Layer 3 to Layer 7 Migration, Dynamic blocking lists, URL Filtering & Reporting, Panorama Templates stacks, User Based policies, Zone protection profiles and Zone based security polices, Data Filtering and Wildfire implementation.
+	Netzwerk Fehlerbehebung und Betriebsunterstützung, Netzwerk- und Konfigurationsanalyse
+	Fungierte als technischer Kundenkontakt für die Support- und Entwicklungsteams von Palo Alto Networks.
+
+
+Security Architekt (Short term Contract) 							Mär 2016 – Mai 2016
+Merlin Entertainments Group, Chessington
+	Trustwave, UTMs, SIEM, Cisco Firewalls und Switching, CyberArk Enterprise Password Vault
+	PCI-DSS- und ISO 27k-Audit. Zusammenarbeit des Pentests mit Trustwave. Kommunikation mit allen Teams zur Aufrechterhaltung der PCI-Konformität.
+	Projekte: PCI-DSS-SSL-Migration, Ersetzen aller Zertifikate die SSL unterstützen, Trustwave UTM Firewall-Audit für PCI-Audit
+Network & Security Consultant (Contract) 							Jan 2016 – Mär 2016
+Grosvenor Estate, London
+	Palo Alto Network Firewalls, HP-Switches, F5 Load Balancer
+	Firewall Überprüfung und Verbesserung. DDOS-Schutzprofil und SSL-Entschlüsselungsrichtlinie 
+	Evaluierung des Servers und Desktop Endpunktschutzes, Auswahl der Anbieter, Budget, Genehmigungen der Beteiligten, Ressourcenmanagement und technische Überwachung des Projekts
+	Cisco PIX zu ASA-Firewall Upgrade
+	Erstellung eines Managementdokuments für kritische Vorfälle und eines ISO 27k-Audits
+Network & Security Developer (Contract) 						Okt 2015 – Jan 2016
+Financial Ombudsman, London
+	Cisco ASA-Firewalls mit IPS, Check Point Firewalls mit IPS, Threat-Prevention, F5 LTM, Cisco Nexus Routing und Switching, Cisco Identity Services Engine, Qualys
+	Projekte: F5 Software update und F5 GTM-Integration – HLD und LLD, Cisco IPS Migration zu Sourcefire IPS 
+	IPS-Optimierung und Überprüfung, Firewall Überprüfung und Verbesserung.
+Tägliche BAU-Aufgaben und Umsetzung von Änderungen und Support
+Network & Security Architekt (Contract) 						Feb 2015 – Okt 2015
+Cabinet Office, London
+	Palo Alto Network Firewalls, Global Protect mit Client Zertifikaten, Juniper Junos OS SRX Firewalls und EX-Switches mit OSPF-Routing, Cisco Switches, und F5 LTM Load Balancer, die als SAML-Dienstanbieter verwendet werden, und F5 APM LTM remote network Access
+	Rollout des Cabinet Office IT in die Google Cloud. Beratung bei Cloud-Implementierungen 
+	Netzwerk- und Sicherheitsaudit zur Einhaltung des PSN-Code of Connection (Public Services Network) und ISO 27k-Audit der gesamten Netzwerkdienste des Unternehmens sowie Erstellung einer Sicherheitsrichtlinie für Lieferanten, die den gesetzlichen, behördlichen und vertraglichen Anforderungen entspricht
+	Leitender F5-Architekt bei mehreren Service-Migrationsprojekten, einschließlich des Entwurfs und der Implementierung des SSL-VPN-Zugriffs von Drittanbietern über den Loadbalancer, F5 Reverse Proxy,
+	Bereitstellung einer regierungsweiten F5 APM/SAML-Benutzerauthentifizierung für mehrere geschäftskritische Anwendungen, fungierte als 3rd Line Support zur Untersuchung von F5 Networks Problemen
+Palo Alto Security Engineer (Short term Contract)						Dez 2014 – Jan 2015
+Sony, London
+	Reaktion auf den GOP-Sony-Hack, konsultiert zu Sicherheitsproblemen für die Palo Alto-Firewalls.
+	Vulnerability assessment, Security Konfiguration Audit, Firewall rule-base audit
+	Bereitstellung eines Decryption Profilen and Custom URL Kategorien 
+	Konfiguration von Sicherheitsprofilgruppen und Hinzufügen von Applikation awareness zu der Firewall Policy der Palo Alto Networks-Firewalls
+Network and Security Technical Design Architekt (Short term Contract)				Nov 2014 – Dez 2014
+BT, London
+	Erstellung eines neuen Aktiv-Aktiv-Cloud-basierten Rechenzentrums für das Southwest Grid for Learning
+	Low-Level-Designs der folgenden Technologien: Interne Check Point VSX-Firewalls einschließlich IPS, F5 LTM- und GTM-Lastausgleicher, TippingPoint NGFW einschließlich IPS 
+	Erstellung von Netzwerkdiagrammen und Überprüfung von High und Low Level-Designs aus anderen Bereichen
+	Konfiguration von Geräten und Konfiguration von Firewall-Richtlinien und IPS-Regeln
+Network and Security Architekt (Short term Contract)						Okt 2014 – Okt 2014
+City and Guilds, London
+	Migration von einem älteren HP TippingPoint NIPS, das vom HP TippingPoint Sicherheitsmanagementsystem verwaltet wird.
+	Abgeschlossenes High-Level und Low-Level Design, Konfiguration von den Geräten und Erstellung von IPS-Regeln
+	Stakeholder- und Teamübergabe, einschließlich Mentoring des Teams.
+Senior Network Security Consultant (Contract)						Okt 2013 – Aug 2014
+Prudential, London
+	Technologien: IBM Security Network Intrusion Prevention System, McAfee Network Security Platform, Check Point VSX und Palo Alto Network Firewalls, Cisco Nexus Switches, Citrix NetScaler Load Balancer
+	Entwurf, Planung und Budgetierung eines Netzwerkes und Host-Intrusion-Prevention Projekts, einschließlich einer Prüfung der vorhandenen Netzwerk- und HIDS-Lösung.
+	Bereitstellung von Architekturberatung für Stakeholder und unabhängige Verwaltung und Koordination des genehmigten Projekts zur Ausrichtung auf Service- und Abteilungsziele sowie Beratung bei anderen sich überschneidenden Projekten wie den Malware- und DDOS-Projekten.
+	Zusammenarbeit mit Geschäftsbereichen zur Identifizierung von Unternehmensressourcen und Durchführung einer technischen Risikobewertung von Hardware, Software, installierten Systemen und Netzwerken zur Klassifizierung von Daten und Systemen zum Host-Intrusion-Prevention-Schutz.
+	Entwurf und Entwicklung eines POC für die neue IPS-Lösung, die Systemprotokolle an das SIEM sendet
+	Erstellte mehrere Strategiedokumente, um Stakeholdern den Wert und die Vorteile der Intrusion Prevention-Lösung zu vermitteln. Dazu gehörten ein Design Optionspaket – eine Mischung aus verschiedenen Anbietern und Open-Source-NIPS/HIPS, der verschiedenen NIPS und HIPS-Kombinationen und ein High-Level-Design Lösung.
+Principal Security Engineer (Contract)							Sept 2012 – Okt 2013
+Everything Everywhere, Hatfield
+	Technologien: Check Point VSX Provider1, Palo Alto Network und Juniper-Firewalls, F5 BIG-IP LTM
+	Unabhängige Leitung und Koordination mittlerer und großer Projekte, die auf Service- und Abteilungsziele ausgerichtet sind.
+	Fungierte als Design- und Architektenautorität und gab dem Management umfassende Informationen zur IT-Sicherheit.
+	Leitung, Koordination und Verwaltung aller Aspekte der Sicherheitsimplementierung sowie Leitung von Designsitzungen innerhalb der Spezialgebiete. Beaufsichtigte die Richtung, Entwicklung und Implementierung von Sicherheitslösungen und beteiligte sich an der Gestaltung neuer Netzwerksicherheit und -strategien.
+	Erfassung der Kundenprojektanforderungen, Zusammenarbeit mit Kunden und Projektmanagern zur Umsetzung der Anforderungen in Designdokumente.
+	Überprüfung der High-Level-Design-Dokumente für jedes Projekt. Sicherheitsbewertungen durchgeführt und Empfehlungen abgegeben. Gewährleistet, dass IP-Konnektivität, Topologie, Design und Sicherheitseinstellungen mit den Sicherheitsrichtlinien des Kunden übereinstimmen.
+	Design und Implementierung von F5-Loadbalncers
+Firewall Engineer (Contract)								Jul 2012 – Aug 2012
+Deutsche Bank, London
+	Technologien: Check Point Provider1, Blue Coat Proxy und McAfee Web Gateway, F5 BIG-IP (LTM)
+	Entwurf und Integration von Netzwerk- und Sicherheitslösungen auf Projektbasis
+	Implementierung von Firewall Regeln, einschließlich OSPF- und BGP-Routenumverteilung
+	Installation, Konfiguration und Wartung von F5 BIG-IP (LTM)
+	Durchführung täglicher Supportaktivitäten für das Unternehmensnetzwerk und das Rechenzentrumszeichen sowie 
+Network and Security Engineer (Contract)							Juli 2011 – Juni 2012
+Thomson Reuters, London
+	Technologien: Check Point NGX r54 – r70 auf Splat mit VSX, SecureXL, ClusterXL, Provider-1, Juniper und Cisco PIX und ASA-Firewalls und F5 BIG-IP (LTM)
+	Empfohlene und durchgeführte Änderungen an System, Netzwerk und Systeminfrastruktur zur Verbesserung der Effizienz, Zuverlässigkeit und Leistung.
+	F5 BIG-IP Local Traffic Manager (LTM) Projektdesign-Anleitung, Änderungskoordination und Implementierung.
+	Einhaltung eines strikten Änderungsmanagementprozesses, wenn Änderungen an finanziell äußerst kritischen Firewalls vorgenommen werden.
+	Aufbau neuer Firewalls in einer physischen und virtuellen Umgebung, OAT-Tests neu in Betrieb genommener Firewalls, Mitglied des Netzwerk- und Sicherheitsbereitstellungsteams, Entwurf von Projekten in einer großen Unternehmensumgebung
+	Entwicklung und Ausführung von Testplänen zur Überprüfung der technischen Leistung von Infrastruktur und Systemen. Berichten Sie über Ergebnisse und geben Sie Verbesserungsvorschläge.
+Network and Security Consultant (Contract)							Aug 2010 – Mai 2011
+LINDE, Guildford
+	Planung und Koordination der Migration von 150 VPNs von einer Cisco ASA-Firewall zu einer Juniper-Firewall, einschließlich der Erstellung eines VPN-Richtliniendokuments
+	Detaillierter Juniper VPN-Bereitstellungsleitfadens, eines Drittanbieter-VPN-Anfrageformulars und der Sicherstellung, dass ein geeigneter Supportprozess dafür vorhanden ist.
+	Erstellung einer „Future Mode of Operation“ eines Firewall-Betriebs-, Änderungs- und Wartungsleitfadens sowie eines Leitfadens zu Sicherheitsgeräterichtlinien und Benennungsstandards, Aktualisierung aller vorhandenen Dokumentationen
+	Beteiligt an den Architekturdiskussionen und Vereinbarungen zur Gestaltung der neuen Rechenzentrumsumgebung, einschließlich der Genehmigung von High-Level-Designs, der Überprüfung von Firewall-Änderungen und der Genehmigung als CAB-Mitglied
+	Überprüfung der Sicherheitsrichtlinien der Juniper Firewall, um sicherzustellen, dass unsichere oder unnötige Firewall-Regeln entfernt werden und eine allgemeine Richtlinienverbesserung (Bereinigung der Firewall-Regelbasis) erfolgt.
+Security Solution Designer (Contract) 							Mär 2010 – Aug 2010
+BT, London
+	Eine zeitnahe und qualitativ hochwertige Bereitstellung von Plattformen sicherzustellen, die den aktuellen Standards entsprechen, einschließlich der Migration von 280 Check Point Firewalls zu Juniper Firewalls, einem weltweiten Unternehmen mit Websense Blue Coat ProxySG-Integration und eine Tipping Point 10 GB IPS-Lösung für Unternehmen.
+	Verantwortlich für das Design neuer Firewall-Implementierungen für die weltweiten Niederlassungen des Unternehmenskunden, End-to-End-IPSEC- und GRE-VPNs
+	Durchführung von Anbieterbewertungen und technischen Proofs of Concepts, um dem Unternehmenskunden bei der Auswahl geeigneter Lösungen zu helfen, Beschäftigung mit dem technischen Teil der Dokumentation für die „Ausschreibung“ und „Anforderungserklärung“, Erstellung technischer Definitionen auf einer detaillierten Ebene der Architektur und des Designs.
+	Analysierte die Geschäftsbedürfnisse und -anforderungen in Bezug auf technische Lösungen, definierte die technischen Anforderungen, Integrationsprobleme und Abhängigkeiten und identifizierte die Architekturen, die am besten für die Kundenbedürfnisse geeignet sind.
+	Zusammenarbeit mit Produktanbietern, technischen Spezialisten, Kollegen und anderen Informationsquellen, um Produktgruppen zu definieren, die in der Lage sind, die Kundenanforderungen zu erfüllen.
+	Entwickelte detaillierte Implementierungspläne, um Netzwerkwachstum, Sicherheit und Verbesserungen durch Maximierung der Funktionalität von Netzwerks Geräten
+	Erstellung funktionaler Anforderungsbeschreibungen, Durchführung von Machbarkeitsstudien und Zusammenarbeit mit externen Sicherheitsspezialisten
+Security Analyst										Aug 2008 – Feb 2010
+GALA CORAL GROUP, Woking
+	Entwerfen, Implementieren, Pflegen und Unterstützen interner Netzwerke in einer E-Commerce-Umgebung
+	Fehlerbehebung bei Routing- und Firewall-Problemen, gefolgt von technischen Designbesprechungen und Workshops.
+	Überwachung des Upgrades und der Bereitstellung neuer Crossbeam- und Nokia Firewall-Cluster, neuer Toplayer IPS-Cluster, Sourcefire IDS mit RNA und RUA, RSA Secure ID-Clustern, Blue Coat ProxySG- und F5 Firepass-Clustern sowie Migration des unternehmensweiten Firewall-Bestands ab Check Point Crossbeam-Appliances an Juniper 5400 mit Virtual Systems (VSYS) zur Erstellung einer genauen Dokumentation
+	Implementierung mehrerer interner VPNs und VPNs von Drittanbietern auf Check Point-, Juniper- und Cisco ASA-Firewalls
+	Analysieren und Implementieren von Firewall-Änderungen, Entwicklung von Firewall-Richtlinien einschließlich Entfernen nicht verwendeter Objekte und Richtlinien sowie Erstellen von Änderungsdokumentationen einschließlich Dokumentation von Firewall-Regeln.
+	F5 BIG-IP Local Traffic Manager (LTM)- Mentor für andere Teamkollegen.
+	Verwalten und Implementieren von Änderungen innerhalb strenger Zeitpläne und Kontrollen unter ständiger Aufrechterhaltung der Live-Dienste und schnelle Reaktion auf Vorfälle mit hoher Priorität während des Bereitschaftsplans
+	Überwachung aller Sicherheitsgeräte, einschließlich Firewall- und Intrusion-Detection-Systemen
+	Aufrüsten vorhandener Sicherheitssysteme auf die entsprechenden aktuellen Hardware- und Softwareniveaus.
+Network Security Support Engineer								Sep 2007 – Aug 2008
+INTEGRALIS, Theale
+	Bereitstellung von proaktivem 2nd-Level-Support für technische Sicherheitsanwendungen in Englisch und Deutsch
+	Verwalten/Konfigurieren/Fehlerbehebung von Check Point VPN-1 NG(X) Firewalls, Splat, Crossbeam Firewalls, Nokia Firewalls, F5 BIG-IP LTM, F5 BIG-IP GTM, F5 BIG-IP ASM, Firepass, Bluecoat, AAA, Sourcefire IDS /IPS
+	Einhaltung der Eskalations- und Anrufverwaltungsprozesse und -verfahren
+	Teilnahme an Schulungen zu Produkten und Technologien.
+	Analyse des Netzwerkprotokolls, Fehlerbehebung mit Protokolldateien.
+
+INTERESSEN
+
+In meiner Freizeit treibe ich gerne Sport, gehe ins Fitnessstudio und spiele Golf. Außerdem verbringe ich gerne Zeit mit meiner Familie und treffe mich generell mit Freunden.
+PROFESSIONELLES PROFIL
+Zertifizierter Security Architekt mit 17+ Jahren Expertise in Enterprise Network Security, Cloud-Architekturen und KI-gestützter Automation. 
+Nachgewiesene Erfolge: Migration von 280+ Firewalls, Implementierung von VPN-Infrastrukturen für 1000+ User, Reduzierung von Migrationszeiten um 75% durch KI-Automation. 
+Spezialisiert auf Palo Alto, Check Point, Cisco Firepower, Azure Security und AI-driven Security Operations. Track Rekord in der Leitung komplexer Multi-Vendor-Migrationsprojekte für DAX-Konzerne und internationale Enterprises. 
+Sprachen: Englisch (Muttersprache), Deutsch (Fließend)
+PERSÖNLICHE FÄHIGKEITEN
+	Ausgezeichnete Kommunikations-, Verhandlungs- und zwischenmenschliche Fähigkeiten auf allen Ebenen
+	Organisiert und methodisch mit einem Auge für Genauigkeit und Liebe zum Detail
+	Begeistert, fleißig, anpassungsfähig und ausgerüstet mit wichtigen methodischen Kompetenzen
+	Begrüßt neue Herausforderungen und Möglichkeiten zum Erlernen neuer Fähigkeiten und Methoden.
+	Rastlos für die pünktliche und budgetgerechte Lieferung von Projekten.
+	Gespür für Problemlösungen mit der Fähigkeit, komplexe technische Daten zu verarbeiten und zu interpretieren.
+TECHNISCHE FÄHIGKEITEN
+	Planung, Überwachung und Umsetzung mehrerer großer Migrationsprojekte 
+	Fundierte Kenntnisse der IT-Infrastrukturkonzepte und Strukturen sowie ein gutes Verständnis der Projektmanagementmethoden
+	Auswahl und Bereitstellung von Cloud Sicherheitslösungen, Unterstützung sicherer Cloud-Lösungen und Durchführung von Sicherheitsaudits von Cloud-Lösungen
+	Entwicklung und Implementierung neuer Sicherheitsprozesse
+	Ausgeprägtes Verständnis von IT-Infrastrukturkonzepten und Architekturen sowie ein gutes Verständnis von Projektmanagementmethoden und deren Lösungsbereitstellung
+	Übernahme der Verantwortung von Risiken, Annahmen, Probleme und Abhängigkeiten
+	Entwicklung und Implementierung einer robusten und sicheren VPN-basierten RAS-Lösung für über 1000 Benutzer
+	VPN-Site-to-Site-Experte, Upgrade von 280 Check Point Firewalls
+	Entwurf, Projektmanagement und Implementierung mehrerer Migrationen für große Unternehmen
+KI & Security Automation
+•	AI Platform Development: Cursor AI, Claude AI, OpenAI Codex, GitHub Copilot 
+•	Azure AI Services: Machine Learning Studio, Cognitive Services, Automated Threat Detection 
+•	AI Security Applications: Smart Firewall Management, Automated Policy Optimization, Predictive Threat Analysis 
+•	AI-Driven Analytics: Splunk AI/ML Toolkit, SIEM Intelligence, Automated BI Solutions
+Cloud & Network Security
+•	Firewalls: Palo Alto (Panorama, Global Protect, Cortex, Prisma, XSOAR), Cisco Firepower/ASA, Check Point (VSX, Gaia), Fortinet NGFW
+•	Cloud Security: Azure Network Security, AWS Security, Multi-Cloud Security Architectures 
+•	Load Balancing: F5 Networks (LTM, GTM, ASM, WAF, APM)
+•	Routing & Switching: Cisco (OSPF, BGP, VRF, ACI, Nexus), Juniper (Junos OS, SRX, EX)
+Security Operations & Compliance
+•	SIEM Platforms: ArcSight, Splunk, QRadar, LogRhythm, McAfee ESM, Trustwave
+•	Compliance Tools: Skybox, Algosec, Tufin, CyberArk, RSA Archer
+•	Standards: ISO/IEC 27001, PCI-DSS, TOGAF 9
+Kurse und Zertifizierungen
+•	Cloud & AI Security: 
+•	AI-900: Azure AI Fundamentals & AI-102: Designing and Implementing Azure AI Solutions & AZ-500: Microsoft Azure Security Technologies
+•	Enterprise Security & Architecture: 
+•	ISO/IEC 27001 Lead Implementer & TOGAF 9 Certified - Enterprise Architecture Framework
+•	Network Security: 
+•	CCIE Security (Written), CCSP Cisco Certified Security Professional, CCNA, CCNP, CCDP - Cisco Network Professional & Design, 600-199 SCYBER - Securing Cisco Networks with Threat Detection
+•	Firewalls: 
+•	CCSA & CCSE Check Point Security Administration NGX
+•	Palo Alto Networks: Install/Configure/Manage (EDU-201), Extended Features (EDU-205), Debug/Troubleshoot (EDU-311), Panorama Management (EDU-121), Professional Services Topics & TAC Advanced Training for PAN-OS
+•	JNCIA-FWV & JNCIS-FWV: Juniper Networks Certified Associate & Specialist
+•	F5 BIG-IP: Local Traffic Manager (LTM), Firepass v6.x
+•	Additional: ITIL V3 Foundation, C|EH Certified Ethical Hacker
+
+PROJEKTE
+
+Network Security Consultant (Contract)		
+Worldline (Remote)									Nov 2024 – Heute
+	Planung, Ausbau und Betrieb hochverfügbarer Netzwerkinfrastrukturen zur Gewährleistung des unterbrechungsfreien Betriebs von Datacentern im PCI Kredit Karten umfeld & PCI Audit
+	Firewall-Migration von Check Point zu Palo Alto sowie Implementierung und Administration von F5 Loadbalancern zur Optimierung der Netzwerk-Performance und Ausfallsicherheit
+	Administration von Checkpoint, Forcepoint und Cisco Firepower Firewalls sowie Cisco Nexus, Router & Switches, und Cisco ACI
+	Anpassung und Optimierung von Firewall- und Sicherheitssystemen durch maßgeschneidertes Customizing zur Einhaltung höchster Sicherheitsstandards
+	Proaktives Monitoring der Netzwerksicherheit mittels SIEM-Systemen – Splunk zur Erkennung und Minimierung der Auswirkungen von Angriffen 
+	Automatisiertes Change-Management: Design und Deployment eines automatisierten Systems mit JIRA-Integration zur Verwaltung von Firewall-Konfigurationsänderungen und Compliance-Tracking
+Security Consultant (Contract)	
+Fujitsu – Manage now (Remote)								Apr 2024 – Okt 2024
+	Multi-Cloud-Konnektivität: Design und Implementierung von Azure ExpressRoute-Verbindungen mit BGP-Optimierung 
+	VPN-Architektur: Bereitstellung route-basierter und Policy-basierter VPN-Lösungen in Multi-VRF-Umgebungen 
+	Kundenbetreuung: Leitung technischer Kickoffs und PoC-Implementierungen für Unternehmenskunden 
+	Migrationsleitung: Durchführung nahtloser Rechenzentrumsmigrationen ohne Ausfallzeiten 
+	Technologien: Cisco Routing & Switching, CheckPoint Firewalls, Azure Cloud Integration
+Security Consultant (Contract)		
+Mann und Hummel, Ludwigsburg (Remote)							Aug 2023 – Apr 2024
+	Beratung und Review der High Level und Low Level Network Security Architekturen im Umfeld Palo Alto - und Fortinet (NGFW) Firewalls bereitgestellt in Azure
+	Analyse der Firewall-Systemlandschaft und Design & Implementierung und Migration zu Cortex und XSOAR
+	Troubleshooting bei Network Security Service Requests oder Incidents und Implementierung Maßnahmen, Firewall Cleanup der weltweiten Firewall Rule Base, Benutzung von MS Sentinel SIEM zur Auswertung
+	Projektbezogene Beratung der Projektteams bei der sicheren Implementierung von Netzwerkänderungen & Security-Vorgaben und Implementierung der IT Cloud Security Governance Richtlinien
+	Konfiguration und Verwaltung von BGP-Peerings mit externen ISPs und Partnerunternehmen
+Cloud Security Consultant (Contract)								May 2022 – Juli 2023
+Vattenfall, Berlin (Remote)
+	Betrieb und Inzident Management von Tickets, Azure Security, Palo Alto Firewalls, Fortinet Firewalls, F5 Networks und Cisco Routing und Switching - BGP-Konfiguration, -Implementierung und -Troubleshooting.
+	Migration von Palo Alto Firewalls und F5 Load Balancer unter Verwendung des OT-Netzwerktrennungsmodells
+	Verwaltung von Azure-Sicherheitsregeln und F5 LTM, Palo Alto Firewalls & Panorama und Cortex XDR
+	Entwurf eines operativen Übergabeleitfadens und Unterstützung in anderen Bereichen des Netzwerkdesigns
+	Migration von F5 Networks Load Balancer und der Einrichtung der F5 WAF-Funktionalität 
+	Integration vom Cisco ISE mit FS LTM zur Verwaltung des Datenverkehrs zwischen mehreren ISE
+	Implementierung und Wartung von BGP-Routen. Optimierung der Netzwerkleistung durch Analyse von BGP-Routingtabellen und -Metriken einschließlich Policy Based Routing (PBR)
+Security Consultant (Contract)								Nov 2021 – Apr 2022
+Messer, Mühltal (Remote)
+	Upgrade der Palo Alto Netzwerk-Firewall von der Softwareversion 8 auf 10, Betrieb von Fortinet (NGFW) Firewall, Bearbeitung der Tickets
+	Koordination der Migrationen mit verschiedenen Teams und Drittanbietern
+Security Consultant (Contract) 								Jul 2021 - Okt 2021
+Kubus-IT, Bayreuth, (Remote)
+	Checkpoint GAIA und Tufin, tägliche Tickets und die Verbesserung der Firewall Policy 
+	Planung und Koordination des Upgrades einer alten Checkpoint VPN-Firewall, Fw cleanup
+	Installation, Konfiguration, Inbetriebnahme, Administration und Überwachung der IT-Sicherheitsinfrastruktur unter Berücksichtigung aktueller Sicherheitsaspekte.
+Risk and Compliance Security Consultant (Contract) 						Feb 2020 – Jun 2021
+BASF, Ludwigshafen (Remote)
+	Checkpoint GAIA, Tufin und RSA Archer, IT-Sicherheitsrisikomanagement, Firewall cleanup
+	Verbesserung der IPS/IDS Infrastruktur mit der Migration neuer Firewalls
+	Sicherheit und Compliance des Unternehmens Firewall Bestands, Ermittlung der technischen, geschäftlichen Auswirkungen 
+	Identifiziert und bewertete komplexe Geschäfts- und Technologierisiken, Kontrolle zur Risikominderung und die damit verbundenen Möglichkeiten für Kontrollverbesserungen.
+	Schwachstellenbewertung, Prüfung der Sicherheitskonfiguration, Prüfung der Firewall-Regelbasis
+
+
+Senior Security Consultant (Contract) 							Aug 2019 – Feb 2020
+Caterpillar Energy Solutions GmbH, Mannheim (Remote)
+	Industrie 4.0-Sicherheit, Evaluierung und Dokumentation einer VPN Firewall Lösung zur Erlangung der ISO 27001-Konformität
+	Migration des Endian Firewall-Managementservers, der über 900 VPN-Firewalls hostet und die Implementierung einer Hochverfügbarkeitslösung in Microsoft Azure
+	VPN Firewall Entwicklungen für Remote Engine Management, Migrationen, Neuinstallationen und Fehlerbehebung, Aktualisierungen der Information Sicherheitsrichtlinien 
+Senior Security Consultant (Contract)							Sep 2018 – Jul 2019
+Orange Business Services, Eschborn (Remote)
+	Bereinigungsprojekt der Cisco ASA-Firewall, Optimierung der Regelbasis, Entfernung ungenutzter Regeln aus einem weltweiten Firewall-Bestand - Firewall cleanup
+	Upgrade der Cisco ASA-Firewalls auf Cisco Firepower-Firewalls
+	Installation eines ESXi-Servers zur Bereitstellung einer Zscaler VZEN Proxy Lösung.
+	Implementierung einer Zugriffskontrollrichtlinie zur Optimierung der Netzwerkzugriffskontrollen für einen großen angelegten CyberArk Einsatz.
+	Aktualisierungen der Information Sicherheitsrichtlinien Dokumentation für Kunden
+Senior Checkpoint Consultant (Contract)							Mär 2018 – Aug 2018
+Porsche AG, Stuttgart
+	Installation, Konfiguration, Inbetriebnahme, Administration und Überwachung der IT-Sicherheitsinfrastruktur unter Berücksichtigung aktueller Sicherheitsaspekte.
+	Ausarbeitung und Durchführung von Migrationen von Altsystemen auf neue Geräte von Checkpoint- und Cisco ASA-Firewalls und F5 Load Balancer, einschließlich der Erstellung und Aktualisierung von Unternehmensdokumentationen.
+	Durchführung von Konfigurationsarbeiten zur Optimierung und Aufrechterhaltung der Verfügbarkeit der Firewalls
+Security Architekt (Contract) 								Jan 2018 – Mär 2018
+ING DiBa AG, Frankfurt am Main
+	Entwicklung der Dokumentation externer Verbindungen, Mitarbeit an ING DiBa-Sicherheitsrichtlinien, einschließlich Dokumenten zur akzeptablen Nutzung von Diensten, Sicherheitsrollen und Verantwortlichkeiten.
+	Beratung zur Sicherheitsarchitektur, Zusammenarbeit mit Stakeholdern, um Informationen für die Dokumentation zu sammeln.
+Security Project Manager (Short Term Contract)					   	Dez 2017 – Dez 2017
+Klöckner Pentaplast, Montabaur
+	Projektleiter für dringenden Austausch von 20 Palo Alto Firewalls
+	Koordiniert und verwaltet alle Aspekte der Projekte. Beaufsichtigte die Lieferung von Firewalls und koordinierte mit den Mitarbeitern vor Ort die Bereitstellung der Geräte
+	Konfiguration der Palo Alto Firewalls und die Migration der weltweit eingesetzten Firewalls
+Network Security Architekt (Contract) 							Jun 2017 – Nov 2017
+Allianz, Frankfurt am Main
+	Rechenzentrumsunterstützung, Technologien: Check Point VSX, Cisco Nexus, BlueCoat Proxy
+	Eigenständige Projektleitung mittlerer und großer Projekte
+	Koordinierte und verwaltete alle Aspekte der Projekte, untersuchte interne Prozesse und befolgte diese. 
+	Beaufsichtigte die Leitung, Entwicklung und Umsetzung von Allianz Security Projekten
+	Koordination von Drittanbietern und Cloud-Anbietern, Verwaltung von Eskalationen, Verfolgung des Fortschritts und Berichterstattung, Aufrechterhaltung der Kommunikationslinie zur Vermeidung von Missverständnissen und proaktive Lösung von Problemen.
+	Erfassung der Kundenprojektanforderungen, Zusammenarbeit mit Kunden als Projektmanager zur Umsetzung der Anforderungen in Entwürfe
+Senior F5 Consultant (Contract) 								Nov 2016 – Jun 2017
+SAP AG, Walldorf
+	Migration von F5 Networks Loadbalancern auf neue Hardware oder F5-VCMP
+	F5 Audit und Verbesserung, Durchführung einer F5 Landschaftsüberprüfung über mehrere Geschäftsbereiche und erstellte aus den gesammelten Informationen eine Installationscheckliste, Lastverteilungsrichtlinien und eine Betriebsübergabedokumentation.
+	Allgemein F5 Networks Systemkonfiguration, Ersteinrichtung, Software-Upgrades, Fehlerbehebung.
+	Dokumentation und Implementierung von VLANs, Route Domains, Firewall regeln
+Resident Engineer (Contract) 								Jul 2016 – Nov 2016
+Palo Alto Networks Professional Services, Eschborn
+	Resident Engineer für den Kunden Amadeus, Unterstützung bei der Migration von Cisco ASA zu Palo Alto
+	Implementierung von Layer 3 to Layer 7 Migration, Dynamic blocking lists, URL Filtering & Reporting, Panorama Templates stacks, User Based policies, Zone protection profiles and Zone based security polices, Data Filtering and Wildfire implementation.
+	Netzwerk Fehlerbehebung und Betriebsunterstützung, Netzwerk- und Konfigurationsanalyse
+	Fungierte als technischer Kundenkontakt für die Support- und Entwicklungsteams von Palo Alto Networks.
+
+
+Security Architekt (Short term Contract) 							Mär 2016 – Mai 2016
+Merlin Entertainments Group, Chessington
+	Trustwave, UTMs, SIEM, Cisco Firewalls und Switching, CyberArk Enterprise Password Vault
+	PCI-DSS- und ISO 27k-Audit. Zusammenarbeit des Pentests mit Trustwave. Kommunikation mit allen Teams zur Aufrechterhaltung der PCI-Konformität.
+	Projekte: PCI-DSS-SSL-Migration, Ersetzen aller Zertifikate die SSL unterstützen, Trustwave UTM Firewall-Audit für PCI-Audit
+Network & Security Consultant (Contract) 							Jan 2016 – Mär 2016
+Grosvenor Estate, London
+	Palo Alto Network Firewalls, HP-Switches, F5 Load Balancer
+	Firewall Überprüfung und Verbesserung. DDOS-Schutzprofil und SSL-Entschlüsselungsrichtlinie 
+	Evaluierung des Servers und Desktop Endpunktschutzes, Auswahl der Anbieter, Budget, Genehmigungen der Beteiligten, Ressourcenmanagement und technische Überwachung des Projekts
+	Cisco PIX zu ASA-Firewall Upgrade
+	Erstellung eines Managementdokuments für kritische Vorfälle und eines ISO 27k-Audits
+Network & Security Developer (Contract) 						Okt 2015 – Jan 2016
+Financial Ombudsman, London
+	Cisco ASA-Firewalls mit IPS, Check Point Firewalls mit IPS, Threat-Prevention, F5 LTM, Cisco Nexus Routing und Switching, Cisco Identity Services Engine, Qualys
+	Projekte: F5 Software update und F5 GTM-Integration – HLD und LLD, Cisco IPS Migration zu Sourcefire IPS 
+	IPS-Optimierung und Überprüfung, Firewall Überprüfung und Verbesserung.
+Tägliche BAU-Aufgaben und Umsetzung von Änderungen und Support
+Network & Security Architekt (Contract) 						Feb 2015 – Okt 2015
+Cabinet Office, London
+	Palo Alto Network Firewalls, Global Protect mit Client Zertifikaten, Juniper Junos OS SRX Firewalls und EX-Switches mit OSPF-Routing, Cisco Switches, und F5 LTM Load Balancer, die als SAML-Dienstanbieter verwendet werden, und F5 APM LTM remote network Access
+	Rollout des Cabinet Office IT in die Google Cloud. Beratung bei Cloud-Implementierungen 
+	Netzwerk- und Sicherheitsaudit zur Einhaltung des PSN-Code of Connection (Public Services Network) und ISO 27k-Audit der gesamten Netzwerkdienste des Unternehmens sowie Erstellung einer Sicherheitsrichtlinie für Lieferanten, die den gesetzlichen, behördlichen und vertraglichen Anforderungen entspricht
+	Leitender F5-Architekt bei mehreren Service-Migrationsprojekten, einschließlich des Entwurfs und der Implementierung des SSL-VPN-Zugriffs von Drittanbietern über den Loadbalancer, F5 Reverse Proxy,
+	Bereitstellung einer regierungsweiten F5 APM/SAML-Benutzerauthentifizierung für mehrere geschäftskritische Anwendungen, fungierte als 3rd Line Support zur Untersuchung von F5 Networks Problemen
+Palo Alto Security Engineer (Short term Contract)						Dez 2014 – Jan 2015
+Sony, London
+	Reaktion auf den GOP-Sony-Hack, konsultiert zu Sicherheitsproblemen für die Palo Alto-Firewalls.
+	Vulnerability assessment, Security Konfiguration Audit, Firewall rule-base audit
+	Bereitstellung eines Decryption Profilen and Custom URL Kategorien 
+	Konfiguration von Sicherheitsprofilgruppen und Hinzufügen von Applikation awareness zu der Firewall Policy der Palo Alto Networks-Firewalls
+Network and Security Technical Design Architekt (Short term Contract)				Nov 2014 – Dez 2014
+BT, London
+	Erstellung eines neuen Aktiv-Aktiv-Cloud-basierten Rechenzentrums für das Southwest Grid for Learning
+	Low-Level-Designs der folgenden Technologien: Interne Check Point VSX-Firewalls einschließlich IPS, F5 LTM- und GTM-Lastausgleicher, TippingPoint NGFW einschließlich IPS 
+	Erstellung von Netzwerkdiagrammen und Überprüfung von High und Low Level-Designs aus anderen Bereichen
+	Konfiguration von Geräten und Konfiguration von Firewall-Richtlinien und IPS-Regeln
+Network and Security Architekt (Short term Contract)						Okt 2014 – Okt 2014
+City and Guilds, London
+	Migration von einem älteren HP TippingPoint NIPS, das vom HP TippingPoint Sicherheitsmanagementsystem verwaltet wird.
+	Abgeschlossenes High-Level und Low-Level Design, Konfiguration von den Geräten und Erstellung von IPS-Regeln
+	Stakeholder- und Teamübergabe, einschließlich Mentoring des Teams.
+Senior Network Security Consultant (Contract)						Okt 2013 – Aug 2014
+Prudential, London
+	Technologien: IBM Security Network Intrusion Prevention System, McAfee Network Security Platform, Check Point VSX und Palo Alto Network Firewalls, Cisco Nexus Switches, Citrix NetScaler Load Balancer
+	Entwurf, Planung und Budgetierung eines Netzwerkes und Host-Intrusion-Prevention Projekts, einschließlich einer Prüfung der vorhandenen Netzwerk- und HIDS-Lösung.
+	Bereitstellung von Architekturberatung für Stakeholder und unabhängige Verwaltung und Koordination des genehmigten Projekts zur Ausrichtung auf Service- und Abteilungsziele sowie Beratung bei anderen sich überschneidenden Projekten wie den Malware- und DDOS-Projekten.
+	Zusammenarbeit mit Geschäftsbereichen zur Identifizierung von Unternehmensressourcen und Durchführung einer technischen Risikobewertung von Hardware, Software, installierten Systemen und Netzwerken zur Klassifizierung von Daten und Systemen zum Host-Intrusion-Prevention-Schutz.
+	Entwurf und Entwicklung eines POC für die neue IPS-Lösung, die Systemprotokolle an das SIEM sendet
+	Erstellte mehrere Strategiedokumente, um Stakeholdern den Wert und die Vorteile der Intrusion Prevention-Lösung zu vermitteln. Dazu gehörten ein Design Optionspaket – eine Mischung aus verschiedenen Anbietern und Open-Source-NIPS/HIPS, der verschiedenen NIPS und HIPS-Kombinationen und ein High-Level-Design Lösung.
+Principal Security Engineer (Contract)							Sept 2012 – Okt 2013
+Everything Everywhere, Hatfield
+	Technologien: Check Point VSX Provider1, Palo Alto Network und Juniper-Firewalls, F5 BIG-IP LTM
+	Unabhängige Leitung und Koordination mittlerer und großer Projekte, die auf Service- und Abteilungsziele ausgerichtet sind.
+	Fungierte als Design- und Architektenautorität und gab dem Management umfassende Informationen zur IT-Sicherheit.
+	Leitung, Koordination und Verwaltung aller Aspekte der Sicherheitsimplementierung sowie Leitung von Designsitzungen innerhalb der Spezialgebiete. Beaufsichtigte die Richtung, Entwicklung und Implementierung von Sicherheitslösungen und beteiligte sich an der Gestaltung neuer Netzwerksicherheit und -strategien.
+	Erfassung der Kundenprojektanforderungen, Zusammenarbeit mit Kunden und Projektmanagern zur Umsetzung der Anforderungen in Designdokumente.
+	Überprüfung der High-Level-Design-Dokumente für jedes Projekt. Sicherheitsbewertungen durchgeführt und Empfehlungen abgegeben. Gewährleistet, dass IP-Konnektivität, Topologie, Design und Sicherheitseinstellungen mit den Sicherheitsrichtlinien des Kunden übereinstimmen.
+	Design und Implementierung von F5-Loadbalncers
+Firewall Engineer (Contract)								Jul 2012 – Aug 2012
+Deutsche Bank, London
+	Technologien: Check Point Provider1, Blue Coat Proxy und McAfee Web Gateway, F5 BIG-IP (LTM)
+	Entwurf und Integration von Netzwerk- und Sicherheitslösungen auf Projektbasis
+	Implementierung von Firewall Regeln, einschließlich OSPF- und BGP-Routenumverteilung
+	Installation, Konfiguration und Wartung von F5 BIG-IP (LTM)
+	Durchführung täglicher Supportaktivitäten für das Unternehmensnetzwerk und das Rechenzentrumszeichen sowie 
+Network and Security Engineer (Contract)							Juli 2011 – Juni 2012
+Thomson Reuters, London
+	Technologien: Check Point NGX r54 – r70 auf Splat mit VSX, SecureXL, ClusterXL, Provider-1, Juniper und Cisco PIX und ASA-Firewalls und F5 BIG-IP (LTM)
+	Empfohlene und durchgeführte Änderungen an System, Netzwerk und Systeminfrastruktur zur Verbesserung der Effizienz, Zuverlässigkeit und Leistung.
+	F5 BIG-IP Local Traffic Manager (LTM) Projektdesign-Anleitung, Änderungskoordination und Implementierung.
+	Einhaltung eines strikten Änderungsmanagementprozesses, wenn Änderungen an finanziell äußerst kritischen Firewalls vorgenommen werden.
+	Aufbau neuer Firewalls in einer physischen und virtuellen Umgebung, OAT-Tests neu in Betrieb genommener Firewalls, Mitglied des Netzwerk- und Sicherheitsbereitstellungsteams, Entwurf von Projekten in einer großen Unternehmensumgebung
+	Entwicklung und Ausführung von Testplänen zur Überprüfung der technischen Leistung von Infrastruktur und Systemen. Berichten Sie über Ergebnisse und geben Sie Verbesserungsvorschläge.
+Network and Security Consultant (Contract)							Aug 2010 – Mai 2011
+LINDE, Guildford
+	Planung und Koordination der Migration von 150 VPNs von einer Cisco ASA-Firewall zu einer Juniper-Firewall, einschließlich der Erstellung eines VPN-Richtliniendokuments
+	Detaillierter Juniper VPN-Bereitstellungsleitfadens, eines Drittanbieter-VPN-Anfrageformulars und der Sicherstellung, dass ein geeigneter Supportprozess dafür vorhanden ist.
+	Erstellung einer „Future Mode of Operation“ eines Firewall-Betriebs-, Änderungs- und Wartungsleitfadens sowie eines Leitfadens zu Sicherheitsgeräterichtlinien und Benennungsstandards, Aktualisierung aller vorhandenen Dokumentationen
+	Beteiligt an den Architekturdiskussionen und Vereinbarungen zur Gestaltung der neuen Rechenzentrumsumgebung, einschließlich der Genehmigung von High-Level-Designs, der Überprüfung von Firewall-Änderungen und der Genehmigung als CAB-Mitglied
+	Überprüfung der Sicherheitsrichtlinien der Juniper Firewall, um sicherzustellen, dass unsichere oder unnötige Firewall-Regeln entfernt werden und eine allgemeine Richtlinienverbesserung (Bereinigung der Firewall-Regelbasis) erfolgt.
+Security Solution Designer (Contract) 							Mär 2010 – Aug 2010
+BT, London
+	Eine zeitnahe und qualitativ hochwertige Bereitstellung von Plattformen sicherzustellen, die den aktuellen Standards entsprechen, einschließlich der Migration von 280 Check Point Firewalls zu Juniper Firewalls, einem weltweiten Unternehmen mit Websense Blue Coat ProxySG-Integration und eine Tipping Point 10 GB IPS-Lösung für Unternehmen.
+	Verantwortlich für das Design neuer Firewall-Implementierungen für die weltweiten Niederlassungen des Unternehmenskunden, End-to-End-IPSEC- und GRE-VPNs
+	Durchführung von Anbieterbewertungen und technischen Proofs of Concepts, um dem Unternehmenskunden bei der Auswahl geeigneter Lösungen zu helfen, Beschäftigung mit dem technischen Teil der Dokumentation für die „Ausschreibung“ und „Anforderungserklärung“, Erstellung technischer Definitionen auf einer detaillierten Ebene der Architektur und des Designs.
+	Analysierte die Geschäftsbedürfnisse und -anforderungen in Bezug auf technische Lösungen, definierte die technischen Anforderungen, Integrationsprobleme und Abhängigkeiten und identifizierte die Architekturen, die am besten für die Kundenbedürfnisse geeignet sind.
+	Zusammenarbeit mit Produktanbietern, technischen Spezialisten, Kollegen und anderen Informationsquellen, um Produktgruppen zu definieren, die in der Lage sind, die Kundenanforderungen zu erfüllen.
+	Entwickelte detaillierte Implementierungspläne, um Netzwerkwachstum, Sicherheit und Verbesserungen durch Maximierung der Funktionalität von Netzwerks Geräten
+	Erstellung funktionaler Anforderungsbeschreibungen, Durchführung von Machbarkeitsstudien und Zusammenarbeit mit externen Sicherheitsspezialisten
+Security Analyst										Aug 2008 – Feb 2010
+GALA CORAL GROUP, Woking
+	Entwerfen, Implementieren, Pflegen und Unterstützen interner Netzwerke in einer E-Commerce-Umgebung
+	Fehlerbehebung bei Routing- und Firewall-Problemen, gefolgt von technischen Designbesprechungen und Workshops.
+	Überwachung des Upgrades und der Bereitstellung neuer Crossbeam- und Nokia Firewall-Cluster, neuer Toplayer IPS-Cluster, Sourcefire IDS mit RNA und RUA, RSA Secure ID-Clustern, Blue Coat ProxySG- und F5 Firepass-Clustern sowie Migration des unternehmensweiten Firewall-Bestands ab Check Point Crossbeam-Appliances an Juniper 5400 mit Virtual Systems (VSYS) zur Erstellung einer genauen Dokumentation
+	Implementierung mehrerer interner VPNs und VPNs von Drittanbietern auf Check Point-, Juniper- und Cisco ASA-Firewalls
+	Analysieren und Implementieren von Firewall-Änderungen, Entwicklung von Firewall-Richtlinien einschließlich Entfernen nicht verwendeter Objekte und Richtlinien sowie Erstellen von Änderungsdokumentationen einschließlich Dokumentation von Firewall-Regeln.
+	F5 BIG-IP Local Traffic Manager (LTM)- Mentor für andere Teamkollegen.
+	Verwalten und Implementieren von Änderungen innerhalb strenger Zeitpläne und Kontrollen unter ständiger Aufrechterhaltung der Live-Dienste und schnelle Reaktion auf Vorfälle mit hoher Priorität während des Bereitschaftsplans
+	Überwachung aller Sicherheitsgeräte, einschließlich Firewall- und Intrusion-Detection-Systemen
+	Aufrüsten vorhandener Sicherheitssysteme auf die entsprechenden aktuellen Hardware- und Softwareniveaus.
+Network Security Support Engineer								Sep 2007 – Aug 2008
+INTEGRALIS, Theale
+	Bereitstellung von proaktivem 2nd-Level-Support für technische Sicherheitsanwendungen in Englisch und Deutsch
+	Verwalten/Konfigurieren/Fehlerbehebung von Check Point VPN-1 NG(X) Firewalls, Splat, Crossbeam Firewalls, Nokia Firewalls, F5 BIG-IP LTM, F5 BIG-IP GTM, F5 BIG-IP ASM, Firepass, Bluecoat, AAA, Sourcefire IDS /IPS
+	Einhaltung der Eskalations- und Anrufverwaltungsprozesse und -verfahren
+	Teilnahme an Schulungen zu Produkten und Technologien.
+	Analyse des Netzwerkprotokolls, Fehlerbehebung mit Protokolldateien.
+
+INTERESSEN
+
+In meiner Freizeit treibe ich gerne Sport, gehe ins Fitnessstudio und spiele Golf. Außerdem verbringe ich gerne Zeit mit meiner Familie und treffe mich generell mit Freunden.

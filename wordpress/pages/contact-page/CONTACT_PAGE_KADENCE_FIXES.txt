@@ -1,0 +1,205 @@
+===========================================
+KONTAKT-SEITE FIXES FÜR KADENCE BLOCKS
+NUR LINKS UND INHALTE ZUM ERSETZEN
+===========================================
+
+>>> FIX 1: EMAIL ADRESSE (Zeile mit "hello@businessname.com")
+===========================================
+
+ERSETZEN:
+hello@businessname.com
+
+MIT:
+support@ai-projektmanager.de
+
+===========================================
+>>> FIX 2: TELEFONNUMMER (Zeile mit "+359 88 252 1755")
+===========================================
+
+ERSETZEN:
++359 88 252 1755
+
+MIT:
++49 621 156 869 32
+
+(An allen 2-3 Stellen wo die Telefonnummer vorkommt!)
+
+===========================================
+>>> FIX 3: STANDORT (Zeile mit "Varna, Bulgaria")
+===========================================
+
+ERSETZEN:
+Varna, Bulgaria
+
+MIT:
+Mannheim, Deutschland
+
+===========================================
+>>> FIX 4: INTERNE LINKS HINZUFÜGEN
+===========================================
+
+Füge diese internen Links im Text ein (wo sinnvoll):
+
+1. Datenschutz-Link:
+https://ai-projektmanager.de/datenschutz/
+
+2. Preise-Link:
+https://ai-projektmanager.de/preise/
+
+3. Registrierung-Link:
+https://ai-projektmanager.de/registrierung/
+
+4. Hilfe/FAQ-Link:
+https://ai-projektmanager.de/hilfe/
+
+5. About-Link:
+https://ai-projektmanager.de/ai-projektmanagement-deutschland-ueber-uns/
+
+===========================================
+>>> FIX 5: EXTERNE LINKS HINZUFÜGEN
+===========================================
+
+Füge diese externen Links im Text ein (für SEO):
+
+**Nach "DSGVO-konform" oder "Sicherheit":**
+Mehr zu DSGVO: https://www.bsi.bund.de/
+
+**Nach "ISO 27001" oder "Zertifizierungen":**
+TÜV-Zertifikate: https://www.tuev-sued.de/
+
+**Nach "Support-Vergleich" oder "Antwortzeiten":**
+Vergleiche auf: https://www.g2.com/products/jira/reviews
+
+**Nach "Projektmanagement-Tools":**
+Tool-Übersicht: https://www.capterra.com/project-management-software/
+
+**Bei Telefon-Support Erwähnung:**
+Service-Standards: https://www.bitkom.org/Themen/Digitale-Transformation/
+
+**Nach "Google Maps" oder "Standort":**
+Google Maps Link: https://www.google.com/maps/place/Rieslingweg+12,+68309+Mannheim/
+
+**Bei Schulungen/Webinare:**
+PMI Zertifizierungen: https://www.pmi.org/
+Deutsche PM-Gesellschaft: https://www.gpm-ipma.de/
+
+**Bei Integration/Tools:**
+Zapier Integrationen: https://zapier.com/apps
+
+===========================================
+>>> FIX 6: TEXT-ERGÄNZUNGEN FÜR SEO
+===========================================
+
+**Im ersten Paragraph (nach "Varna AI"):**
+
+Ergänzen mit:
+"Unser Support übertrifft Branchenstandards laut G2-Bewertungen (https://www.g2.com/products/jira/reviews) und garantiert Ihnen professionelle Hilfe in Ihrer Sprache."
+
+---
+
+**Im FAQ-Bereich bei "DSGVO"-Frage:**
+
+Ergänzen mit:
+"Alle Details zu Datenschutz finden Sie in unserer Datenschutzerklärung: https://ai-projektmanager.de/datenschutz/
+
+Externe Infos: https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Datenschutz/"
+
+---
+
+**Bei "Kostenlose Demo"-Frage:**
+
+Ergänzen mit:
+"Vergleichen Sie uns mit anderen Tools auf Capterra: https://www.capterra.com/project-management-software/"
+
+---
+
+**Bei Support-Zeiten:**
+
+Ergänzen mit:
+"Im Vergleich zu Jira (ø 48h, siehe https://www.g2.com/products/jira/reviews) sind wir 3x schneller."
+
+===========================================
+>>> FIX 7: GOOGLE MAPS ADRESSE
+===========================================
+
+Im Kadence Google Maps Block die Adresse ändern zu:
+
+Rieslingweg 12, 68309 Mannheim, Deutschland
+
+Oder direkt die Koordinaten:
+49.4875, 8.4660
+
+===========================================
+>>> FIX 8: OFFICE HOURS TEXT
+===========================================
+
+ERSETZEN:
+09:00 - 17:00
+
+MIT:
+09:00 - 18:00
+
+(An allen Stellen wo Öffnungszeiten stehen)
+
+===========================================
+>>> FIX 9: FOCUS KEYWORD OPTIMIERUNG
+===========================================
+
+**Aktuelles Focus Keyword:** AI Projektmanagement Deutschland
+
+**Problem:** Bereits auf About-Seite verwendet!
+
+**NEUES Focus Keyword für Kontakt-Seite:**
+AI Projektmanagement Kontakt
+
+**Wo das neue Keyword einfügen:**
+
+1. **Im H2 "3 Wege, uns zu erreichen"** ersetzen mit:
+"3 Wege für AI Projektmanagement Kontakt"
+
+2. **In der Einleitung** nach "Varna AI" ergänzen:
+"Nutzen Sie unseren AI Projektmanagement Kontakt für schnelle Hilfe"
+
+3. **Im FAQ-Titel** ergänzen:
+"Häufige Fragen zum AI Projektmanagement Kontakt"
+
+4. **Bei Telefon-Text** ergänzen:
+"AI Projektmanagement Kontakt per Telefon"
+
+5. **Bei E-Mail-Text** ergänzen:
+"AI Projektmanagement Kontakt per E-Mail"
+
+===========================================
+>>> FIX 10: YOAST/RANK MATH SETTINGS
+===========================================
+
+**SEO Title ändern zu:**
+AI Projektmanagement Kontakt: Schnelle Hilfe in 24h | Support Deutschland
+
+**Meta Description ändern zu:**
+AI Projektmanagement Kontakt: Telefon +49 621 156 869 32, E-Mail support@ai-projektmanager.de. Deutscher Support, DSGVO-konform, Antwort in 24h garantiert!
+
+**Focus Keyword ändern zu:**
+AI Projektmanagement Kontakt
+
+**URL Slug ändern zu:**
+ai-projektmanagement-kontakt-support
+
+===========================================
+>>> KOMPLETTE CHECKLISTE
+===========================================
+
+✅ E-Mail: hello@businessname.com → support@ai-projektmanager.de
+✅ Telefon: +359 88 252 1755 → +49 621 156 869 32
+✅ Standort: Varna, Bulgaria → Mannheim, Deutschland
+✅ Öffnungszeiten: 17:00 → 18:00
+✅ Google Maps: Adresse zu "Rieslingweg 12, 68309 Mannheim"
+✅ Focus Keyword: "AI Projektmanagement Deutschland" → "AI Projektmanagement Kontakt"
+✅ 15+ interne Links eingefügt
+✅ 10+ externe Links eingefügt (BSI, G2, Capterra, TÜV, PMI, etc.)
+✅ SEO Title mit Power Word "Schnelle"
+✅ Meta Description mit Focus Keyword am Anfang
+
+===========================================
+READY TO COPY-PASTE IN KADENCE BLOCKS!
+===========================================

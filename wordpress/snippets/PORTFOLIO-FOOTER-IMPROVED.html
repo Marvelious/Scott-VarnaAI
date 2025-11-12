@@ -1,0 +1,341 @@
+<!-- IMPROVED PORTFOLIO FOOTER - KADENCE COMPATIBLE -->
+<!-- Replace the existing portfolio footer HTML with this version -->
+
+<div class="varna-portfolio-section">
+  <div class="varna-portfolio-inner">
+
+    <!-- Heading -->
+    <div class="varna-portfolio-header">
+      <h3>Our Portfolio Network</h3>
+      <p>European AI & IT Security Solutions Since 2010</p>
+    </div>
+
+    <!-- Grid of Portfolio Sites -->
+    <div class="varna-portfolio-grid">
+
+      <!-- Classic Security -->
+      <div class="varna-portfolio-card">
+        <div class="varna-card-icon">🛡️</div>
+        <h4>Classic Security</h4>
+        <p>IT Security Consulting (2010-2025)</p>
+        <a href="https://classicsecurity.net/" target="_blank" rel="noopener" class="varna-card-link">
+          Visit Site →
+        </a>
+      </div>
+
+      <!-- Varna AI -->
+      <div class="varna-portfolio-card varna-card-current">
+        <div class="varna-card-icon">🤖</div>
+        <h4>Varna AI</h4>
+        <p>GDPR-Compliant AI for European SMEs</p>
+        <a href="https://varnaai.com/" class="varna-card-link">
+          You're Here
+        </a>
+      </div>
+
+      <!-- AI Projektmanager -->
+      <div class="varna-portfolio-card">
+        <div class="varna-card-icon">📊</div>
+        <h4>AI Projektmanager</h4>
+        <p>KI-gestützte Projektplanung für deutsche Unternehmen</p>
+        <a href="https://ai-projektmanager.de/" target="_blank" rel="noopener" class="varna-card-link">
+          Visit Site →
+        </a>
+      </div>
+
+      <!-- Varna Agenten -->
+      <div class="varna-portfolio-card">
+        <div class="varna-card-icon">⚡</div>
+        <h4>Varna Agenten</h4>
+        <p>Intelligente KI-Agenten für Geschäftsprozesse</p>
+        <a href="https://varna-agenten.de/" target="_blank" rel="noopener" class="varna-card-link">
+          Visit Site →
+        </a>
+      </div>
+
+      <!-- AI Marketing BG -->
+      <div class="varna-portfolio-card">
+        <div class="varna-card-icon">📈</div>
+        <h4>AI Marketing BG</h4>
+        <p>AI-Powered Marketing Solutions for Bulgaria</p>
+        <a href="https://aimarketingbg.com/" target="_blank" rel="noopener" class="varna-card-link">
+          Visit Site →
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Bottom Note -->
+    <div class="varna-portfolio-footer-note">
+      <p>🇪🇺 Trusted by 5,000+ European SMEs • GDPR-Compliant • EU-Hosted</p>
+    </div>
+
+  </div>
+</div>
+
+<style>
+/* IMPROVED PORTFOLIO FOOTER CSS */
+
+.varna-portfolio-section {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  padding: 80px 20px 60px;
+  margin-top: 60px;
+  border-top: 4px solid #00d4ff;
+}
+
+.varna-portfolio-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header */
+.varna-portfolio-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.varna-portfolio-header h3 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 15px 0;
+  letter-spacing: -0.5px;
+}
+
+.varna-portfolio-header p {
+  font-size: 18px;
+  color: #a8b2d1;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Grid Layout */
+.varna-portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-bottom: 50px;
+}
+
+/* Portfolio Cards */
+.varna-portfolio-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 30px 25px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.varna-portfolio-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #00d4ff, #0099ff);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.varna-portfolio-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #00d4ff;
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 212, 255, 0.25);
+}
+
+.varna-portfolio-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Current Site Highlight */
+.varna-card-current {
+  background: rgba(0, 212, 255, 0.12);
+  border-color: #00d4ff;
+}
+
+.varna-card-current::before {
+  transform: scaleX(1);
+}
+
+/* Icon */
+.varna-card-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  line-height: 1;
+  filter: grayscale(0.2);
+}
+
+.varna-portfolio-card:hover .varna-card-icon {
+  transform: scale(1.15) rotate(5deg);
+  transition: transform 0.4s ease;
+}
+
+/* Card Title */
+.varna-portfolio-card h4 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+  line-height: 1.3;
+}
+
+/* Card Description */
+.varna-portfolio-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #a8b2d1;
+  margin: 0 0 20px 0;
+  min-height: 44px;
+}
+
+/* Card Link */
+.varna-card-link {
+  display: inline-block;
+  padding: 10px 24px;
+  background: rgba(0, 212, 255, 0.15);
+  color: #00d4ff !important;
+  text-decoration: none !important;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.varna-card-link:hover {
+  background: #00d4ff;
+  color: #1a1a2e !important;
+  transform: translateX(4px);
+  border-color: #00d4ff;
+}
+
+.varna-card-current .varna-card-link {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff !important;
+  cursor: default;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.varna-card-current .varna-card-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff !important;
+  transform: none;
+}
+
+/* Footer Note */
+.varna-portfolio-footer-note {
+  text-align: center;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.varna-portfolio-footer-note p {
+  font-size: 15px;
+  color: #8892b0;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* RESPONSIVE - MOBILE */
+@media (max-width: 768px) {
+  .varna-portfolio-section {
+    padding: 60px 15px 40px;
+  }
+
+  .varna-portfolio-header h3 {
+    font-size: 28px;
+  }
+
+  .varna-portfolio-header p {
+    font-size: 16px;
+  }
+
+  .varna-portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .varna-portfolio-card {
+    padding: 25px 20px;
+  }
+
+  .varna-card-icon {
+    font-size: 40px;
+  }
+
+  .varna-portfolio-card h4 {
+    font-size: 20px;
+  }
+
+  .varna-portfolio-card p {
+    font-size: 13px;
+    min-height: auto;
+  }
+}
+
+/* RESPONSIVE - TABLET */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .varna-portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* HIGH CONTRAST MODE */
+@media (prefers-contrast: high) {
+  .varna-portfolio-card {
+    border-width: 3px;
+  }
+
+  .varna-card-link {
+    border-width: 2px;
+  }
+}
+
+/* DARK MODE COMPATIBILITY */
+@media (prefers-color-scheme: dark) {
+  .varna-portfolio-section {
+    background: linear-gradient(135deg, #0d0d15 0%, #12121f 100%);
+  }
+}
+
+/* PRINT STYLES */
+@media print {
+  .varna-portfolio-section {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #000000;
+  }
+
+  .varna-portfolio-card {
+    border: 1px solid #000000;
+    break-inside: avoid;
+  }
+}
+</style>
+
+<!-- IMPLEMENTATION STEPS:
+1. Go to WordPress Dashboard
+2. Find the existing portfolio footer HTML block
+3. DELETE the old HTML completely
+4. Paste this new HTML
+5. The CSS is embedded in the <style> tag
+6. Save and publish
+7. Clear WP Rocket cache
+8. Clear Cloudflare cache
+9. Test in browser
+
+KEY IMPROVEMENTS:
+✅ Card-based design with hover effects
+✅ Visual icons for each brand
+✅ Proper grid layout (works on all screen sizes)
+✅ "You're Here" indicator for current site
+✅ Smooth animations and transitions
+✅ Matches your site's blue color scheme
+✅ Fully responsive (mobile/tablet/desktop)
+✅ Corrected Classic Security date (2010-2025)
+-->

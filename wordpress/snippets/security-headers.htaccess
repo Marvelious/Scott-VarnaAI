@@ -1,0 +1,31 @@
+# ABOUTME: Security headers configuration for VarnaAI.com
+# ABOUTME: Implements HSTS, CSP, X-Frame-Options, and other security headers per SEO strategy
+
+<IfModule mod_headers.c>
+  # HSTS - Force HTTPS for 2 years, include subdomains, allow preload
+  Header set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload" env=HTTPS
+
+  # Prevent MIME type sniffing
+  Header set X-Content-Type-Options "nosniff"
+
+  # Prevent clickjacking - allow same origin framing only
+  Header set X-Frame-Options "SAMEORIGIN"
+
+  # Control referrer information sent to other sites
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Disable dangerous browser features
+  Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+
+  # Content Security Policy - Allow own domain + common CDNs
+  # Note: Adjust if you use specific external scripts/styles
+  Header always set Content-Security-Policy "default-src 'self' https: data:; img-src 'self' https: data: blob:; style-src 'self' https: 'unsafe-inline'; script-src 'self' https: 'unsafe-inline' 'unsafe-eval'; font-src 'self' https: data:; connect-src 'self' https:; frame-ancestors 'self'; upgrade-insecure-requests"
+</IfModule>
+
+# Additional security measures
+<IfModule mod_rewrite.c>
+  # Prevent access to sensitive files
+  RewriteEngine On
+  RewriteRule ^\.env - [F,L]
+  RewriteRule ^wp-config\.php - [F,L]
+</IfModule>

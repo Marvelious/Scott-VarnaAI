@@ -1,0 +1,122 @@
+PROJECT REQUIREMENTS DOCUMENT
+VarnaAI Websites Control Dashboard MVP
+Date: November 2024
+
+1. PROJECT OVERVIEW
+Create a modern SaaS-style control dashboard for managing 5 WordPress portfolio sites and all marketing/content generation tools. Single-page application with Tailwind CSS for controlling existing tools and generating new content.
+
+2. CORE OBJECTIVES
+- Centralized control panel for all 5 WordPress sites
+- Execute SEO and marketing automation tools
+- Generate content with AI integrations
+- Monitor analytics and performance
+- Modern SaaS dashboard design with Tailwind CSS
+
+3. KEY FEATURES
+
+3.1 WordPress Management
+- Quick login buttons for all 5 sites
+- Page creation status tracker
+- SEO score monitoring
+- Content health dashboard
+
+3.2 Content Generation Hub
+- AI-powered blog post generator
+- Social media post creator
+- Email campaign writer
+- Multi-language support (DE/EN/BG)
+
+3.3 Marketing Automation
+- Email list management via Mailchimp
+- Social media scheduling via Buffer
+- Campaign launcher
+- Lead tracking dashboard
+
+3.4 SEO & Analytics
+- Google Analytics 4 integration
+- Real-time visitor tracking
+- Keyword ranking monitor
+- Backlink tracker
+
+3.5 Quick Actions Panel
+- One-click operations
+- Batch content generation
+- Bulk social media posting
+- Automated reports
+
+4. TECHNICAL REQUIREMENTS
+
+4.1 Frontend
+- HTML5 semantic structure
+- Tailwind CSS for styling
+- Alpine.js for interactivity
+- Chart.js for data visualization
+- Responsive design
+
+4.2 Backend
+- Node.js/Express server
+- API endpoints for tool execution
+- Session management
+- Secure credential storage
+
+4.3 Integrations
+- WordPress MCP for site control
+- Marketing Machine APIs
+- Mailchimp API
+- Buffer API
+- Google Analytics API
+- OpenAI/Claude for content
+
+5. DESIGN SPECIFICATIONS
+
+5.1 Color Palette
+- Primary Blue: #0066cc
+- Purple Gradient: #667eea to #764ba2
+- Dark Background: #2d3748
+- Success Green: #48bb78
+- Alert Red: #ff6b6b
+- Modern SaaS aesthetic
+
+5.2 Layout
+- Dark theme with high contrast
+- Card-based component system
+- Sidebar navigation
+- Main content area
+- Status bar footer
+
+6. USER WORKFLOW
+1. Open dashboard in browser
+2. View status of all sites
+3. Select action from panels
+4. Execute tools with buttons
+5. Monitor results in real-time
+
+7. DELIVERABLES
+- index.html with full dashboard UI
+- dashboard.css with Tailwind classes
+- dashboard.js with client logic
+- server.js with Express backend
+- config files for API keys
+- README with setup instructions
+
+8. SUCCESS METRICS
+- All 5 sites accessible from dashboard
+- Marketing tools executable via buttons
+- Content generation working
+- Analytics displaying correctly
+- 2-second load time
+
+9. MVP SCOPE
+Focus on core functionality:
+- WordPress control panel
+- Content generator
+- Marketing automation
+- Basic analytics
+Defer: Advanced SEO tools, competitor tracking, video generation
+
+10. TIMELINE
+- Planning: 1 hour
+- UI Development: 3 hours
+- Backend Integration: 2 hours
+- Testing: 1 hour
+Total: 7 hours for MVP
