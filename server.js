@@ -35,7 +35,7 @@ const lmStudioClient = axios.create({
 async function generateWithClaude(prompt, maxTokens = 4000, temperature = 0.7) {
     try {
         const message = await anthropic.messages.create({
-            model: 'claude-3-sonnet-20240229',  // Claude 3 Sonnet
+            model: 'claude-3-haiku-20240307',  // Claude 3 Haiku (more widely available, cheaper)
             max_tokens: maxTokens,
             temperature: temperature,
             messages: [{ role: 'user', content: prompt }]
