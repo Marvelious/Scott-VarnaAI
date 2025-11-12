@@ -4,15 +4,13 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
 const axios = require('axios');
-const OpenAI = require('openai');
+const { Ollama } = require('ollama');
 
 const app = express();
 const PORT = process.env.PORT || 3333;
 
-// Initialize OpenAI (will fallback to mock if no API key)
-const openai = process.env.OPENAI_API_KEY ? new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY
-}) : null;
+// Initialize Ollama (local AI - always available)
+const ollama = new Ollama({ host: 'http://localhost:11434' });
 
 // Middleware
 app.use(cors());
@@ -168,38 +166,34 @@ app.post('/api/content/blog', async (req, res) => {
     const { topic, language, tone } = req.body;
 
     try {
-        if (!openai) {
-            // Fallback to mock data if no API key
-            return res.json({
-                success: true,
-                content: {
-                    title: `${topic} - AI Generated`,
-                    content: `This is a placeholder blog post about ${topic} in ${language} language with ${tone} tone. Add OPENAI_API_KEY to .env for real content generation.`,
-                    language,
-                    tone,
-                    wordCount: 650,
-                    seoScore: 85
-                }
-            });
-        }
+        const prompt = `You are a professional content writer. Write a comprehensive blog post about: ${topic}
 
-        const completion = await openai.chat.completions.create({
-            model: "gpt-4",
-            messages: [
-                {
-                    role: "system",
-                    content: `You are a professional content writer creating blog posts in ${language} language with a ${tone} tone. Generate SEO-optimized content with proper structure (title, introduction, body, conclusion).`
-                },
-                {
-                    role: "user",
-                    content: `Write a comprehensive blog post about: ${topic}\n\nRequirements:\n- Language: ${language}\n- Tone: ${tone}\n- Length: 600-800 words\n- Include SEO keywords naturally\n- Format: JSON with fields: title, content, metaDescription`
-                }
-            ],
-            temperature: 0.7,
-            max_tokens: 1500
+Requirements:
+- Language: ${language}
+- Tone: ${tone}
+- Length: 600-800 words
+- Include SEO keywords naturally
+- Respond ONLY with valid JSON in this format: {"title": "...", "content": "...", "metaDescription": "..."}`;
+
+        const response = await ollama.generate({
+            model: 'llama3.1:8b',
+            prompt: prompt,
+            stream: false,
+            options: {
+                temperature: 0.7,
+                num_predict: 2000
+            }
         });
 
-        const result = JSON.parse(completion.choices[0].message.content);
+        // Extract JSON from response (handle markdown code blocks if present)
+        let jsonText = response.response.trim();
+        if (jsonText.startsWith('```json')) {
+            jsonText = jsonText.replace(/```json\n?/g, '').replace(/```\n?$/g, '');
+        } else if (jsonText.startsWith('```')) {
+            jsonText = jsonText.replace(/```\n?/g, '').replace(/```\n?$/g, '');
+        }
+
+        const result = JSON.parse(jsonText);
         const wordCount = result.content.split(' ').length;
 
         res.json({
@@ -225,17 +219,6 @@ app.post('/api/content/social', async (req, res) => {
     const { topic, platforms, language } = req.body;
 
     try {
-        if (!openai) {
-            // Fallback to mock data
-            const posts = platforms.map(platform => ({
-                platform,
-                content: `AI-generated ${platform} post about ${topic} (${language}). Add OPENAI_API_KEY to .env for real content.`,
-                hashtags: ['#AI', '#Marketing', '#VarnaAI'],
-                charCount: 180
-            }));
-            return res.json({ success: true, posts });
-        }
-
         const posts = await Promise.all(platforms.map(async (platform) => {
             const charLimits = {
                 twitter: 280,
@@ -244,23 +227,34 @@ app.post('/api/content/social', async (req, res) => {
                 instagram: 2200
             };
 
-            const completion = await openai.chat.completions.create({
-                model: "gpt-4",
-                messages: [
-                    {
-                        role: "system",
-                        content: `You are a social media expert creating engaging posts for ${platform} in ${language} language. Include relevant hashtags and emojis.`
-                    },
-                    {
-                        role: "user",
-                        content: `Create a ${platform} post about: ${topic}\n\nRequirements:\n- Character limit: ${charLimits[platform] || 280}\n- Language: ${language}\n- Include 3-5 relevant hashtags\n- Format: JSON with fields: content, hashtags (array)`
-                    }
-                ],
-                temperature: 0.8,
-                max_tokens: 300
+            const prompt = `You are a social media expert. Create an engaging ${platform} post about: ${topic}
+
+Requirements:
+- Language: ${language}
+- Character limit: ${charLimits[platform] || 280}
+- Include 3-5 relevant hashtags
+- Include appropriate emojis
+- Respond ONLY with valid JSON in this format: {"content": "...", "hashtags": ["#tag1", "#tag2", "#tag3"]}`;
+
+            const response = await ollama.generate({
+                model: 'llama3.1:8b',
+                prompt: prompt,
+                stream: false,
+                options: {
+                    temperature: 0.8,
+                    num_predict: 500
+                }
             });
 
-            const result = JSON.parse(completion.choices[0].message.content);
+            // Extract JSON from response
+            let jsonText = response.response.trim();
+            if (jsonText.startsWith('```json')) {
+                jsonText = jsonText.replace(/```json\n?/g, '').replace(/```\n?$/g, '');
+            } else if (jsonText.startsWith('```')) {
+                jsonText = jsonText.replace(/```\n?/g, '').replace(/```\n?$/g, '');
+            }
+
+            const result = JSON.parse(jsonText);
             return {
                 platform,
                 content: result.content,
@@ -281,36 +275,38 @@ app.post('/api/content/email', async (req, res) => {
     const { subject, purpose, language } = req.body;
 
     try {
-        if (!openai) {
-            // Fallback to mock data
-            return res.json({
-                success: true,
-                email: {
-                    subject: `${subject} - ${language}`,
-                    body: `AI-generated email campaign for ${purpose}. Add OPENAI_API_KEY to .env for real content.`,
-                    preheader: 'Preview text here',
-                    language
-                }
-            });
-        }
+        const prompt = `You are a professional email marketing copywriter. Create an email campaign:
 
-        const completion = await openai.chat.completions.create({
-            model: "gpt-4",
-            messages: [
-                {
-                    role: "system",
-                    content: `You are a professional email marketing copywriter creating campaigns in ${language} language. Write persuasive, conversion-focused email content.`
-                },
-                {
-                    role: "user",
-                    content: `Create an email campaign:\n\nSubject line idea: ${subject}\nPurpose: ${purpose}\nLanguage: ${language}\n\nRequirements:\n- Compelling subject line (40-60 chars)\n- Engaging preheader text (80-100 chars)\n- Email body with clear CTA\n- Professional tone\n- Format: JSON with fields: subject, preheader, body`
-                }
-            ],
-            temperature: 0.7,
-            max_tokens: 800
+Subject line idea: ${subject}
+Purpose: ${purpose}
+Language: ${language}
+
+Requirements:
+- Compelling subject line (40-60 characters)
+- Engaging preheader text (80-100 characters)
+- Email body with clear CTA
+- Professional tone
+- Respond ONLY with valid JSON in this format: {"subject": "...", "preheader": "...", "body": "..."}`;
+
+        const response = await ollama.generate({
+            model: 'llama3.1:8b',
+            prompt: prompt,
+            stream: false,
+            options: {
+                temperature: 0.7,
+                num_predict: 1000
+            }
         });
 
-        const result = JSON.parse(completion.choices[0].message.content);
+        // Extract JSON from response
+        let jsonText = response.response.trim();
+        if (jsonText.startsWith('```json')) {
+            jsonText = jsonText.replace(/```json\n?/g, '').replace(/```\n?$/g, '');
+        } else if (jsonText.startsWith('```')) {
+            jsonText = jsonText.replace(/```\n?/g, '').replace(/```\n?$/g, '');
+        }
+
+        const result = JSON.parse(jsonText);
 
         res.json({
             success: true,
