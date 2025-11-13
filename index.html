@@ -79,6 +79,43 @@
                         </svg>
                         <span>Content Gen</span>
                     </a>
+
+                    <a href="#marketing" @click="activeTab = 'marketing'"
+                       :class="activeTab === 'marketing' ? 'bg-primary' : 'hover:bg-gray-700'"
+                       class="flex items-center px-4 py-3 rounded-lg transition-colors">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
+                        </svg>
+                        <span>Marketing</span>
+                    </a>
+
+                    <a href="#analytics" @click="activeTab = 'analytics'"
+                       :class="activeTab === 'analytics' ? 'bg-primary' : 'hover:bg-gray-700'"
+                       class="flex items-center px-4 py-3 rounded-lg transition-colors">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                        <span>Analytics</span>
+                    </a>
+
+                    <a href="#actions" @click="activeTab = 'actions'"
+                       :class="activeTab === 'actions' ? 'bg-primary' : 'hover:bg-gray-700'"
+                       class="flex items-center px-4 py-3 rounded-lg transition-colors">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                        <span>Quick Actions</span>
+                    </a>
+
+                    <a href="#settings" @click="activeTab = 'settings'"
+                       :class="activeTab === 'settings' ? 'bg-primary' : 'hover:bg-gray-700'"
+                       class="flex items-center px-4 py-3 rounded-lg transition-colors">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <span>AI Settings</span>
+                    </a>
                 </nav>
 
                 <!-- User Section -->
@@ -712,6 +749,202 @@
                                     class="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors">
                                 Export as File
                             </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marketing Tab -->
+                <div x-show="activeTab === 'marketing'" x-cloak>
+                    <div class="card mb-6">
+                        <h3 class="text-2xl font-bold mb-4">Marketing Dashboard</h3>
+                        <p class="text-text-secondary mb-6">Manage marketing campaigns, track performance, and analyze results across all sites.</p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                            <div class="stat-card">
+                                <div class="flex-1">
+                                    <p class="stat-label">Active Campaigns</p>
+                                    <p class="stat-value">12</p>
+                                    <p class="stat-subtitle text-primary">3 new this week</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="flex-1">
+                                    <p class="stat-label">Total Reach</p>
+                                    <p class="stat-value">28.5K</p>
+                                    <p class="stat-subtitle text-success">+18% vs last month</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="flex-1">
+                                    <p class="stat-label">Conversion Rate</p>
+                                    <p class="stat-value">4.2%</p>
+                                    <p class="stat-subtitle text-gold">Industry average: 3.1%</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="text-sm text-text-muted text-center py-8">Marketing analytics and campaign management tools coming soon.</p>
+                    </div>
+                </div>
+
+                <!-- Analytics Tab -->
+                <div x-show="activeTab === 'analytics'" x-cloak>
+                    <div class="card mb-6">
+                        <h3 class="text-2xl font-bold mb-4">Analytics Dashboard</h3>
+                        <p class="text-text-secondary mb-6">Track website traffic, user behavior, and conversion metrics across your portfolio.</p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+                            <div class="stat-card">
+                                <div class="flex-1">
+                                    <p class="stat-label">Total Visitors</p>
+                                    <p class="stat-value">45.2K</p>
+                                    <p class="stat-subtitle text-success">+22% this month</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="flex-1">
+                                    <p class="stat-label">Page Views</p>
+                                    <p class="stat-value">128K</p>
+                                    <p class="stat-subtitle text-primary">2.8 pages/visit</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="flex-1">
+                                    <p class="stat-label">Bounce Rate</p>
+                                    <p class="stat-value">38%</p>
+                                    <p class="stat-subtitle text-success">-5% improvement</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="flex-1">
+                                    <p class="stat-label">Avg. Session</p>
+                                    <p class="stat-value">3:42</p>
+                                    <p class="stat-subtitle text-gold">+28s vs last month</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="text-sm text-text-muted text-center py-8">Advanced analytics and reporting tools coming soon.</p>
+                    </div>
+                </div>
+
+                <!-- Quick Actions Tab -->
+                <div x-show="activeTab === 'actions'" x-cloak>
+                    <div class="card mb-6">
+                        <h3 class="text-2xl font-bold mb-4">Quick Actions Center</h3>
+                        <p class="text-text-secondary mb-6">Frequently used actions and shortcuts for faster workflow management.</p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div class="card clickable hover:border-primary transition-all">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 rounded-full bg-primary bg-opacity-10 flex items-center justify-center mr-4">
+                                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <h4 class="text-lg font-semibold">Run SEO Audit</h4>
+                                </div>
+                                <p class="text-sm text-text-secondary">Comprehensive site analysis</p>
+                            </div>
+
+                            <div class="card clickable hover:border-gold transition-all">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 rounded-full bg-gold bg-opacity-10 flex items-center justify-center mr-4">
+                                        <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                                        </svg>
+                                    </div>
+                                    <h4 class="text-lg font-semibold">Add New Content</h4>
+                                </div>
+                                <p class="text-sm text-text-secondary">Generate blog posts and pages</p>
+                            </div>
+
+                            <div class="card clickable hover:border-success transition-all">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 rounded-full bg-success bg-opacity-10 flex items-center justify-center mr-4">
+                                        <svg class="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+                                        </svg>
+                                    </div>
+                                    <h4 class="text-lg font-semibold">AI Assistant</h4>
+                                </div>
+                                <p class="text-sm text-text-secondary">Get AI-powered insights</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Settings Tab -->
+                <div x-show="activeTab === 'settings'" x-cloak>
+                    <div class="card mb-6">
+                        <h3 class="text-2xl font-bold mb-4">AI Settings & Configuration</h3>
+                        <p class="text-text-secondary mb-6">Configure AI assistants, models, and automation preferences.</p>
+
+                        <div class="space-y-6">
+                            <div class="card bg-card-dark">
+                                <h4 class="text-lg font-semibold mb-4">AI Model Selection</h4>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Content Generation Model</label>
+                                        <select class="w-full bg-gray-700 border border-border-dark rounded-lg px-4 py-2 focus:outline-none focus:border-primary">
+                                            <option>GPT-4 (Recommended)</option>
+                                            <option>GPT-3.5 Turbo</option>
+                                            <option>Claude 2</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Analysis Model</label>
+                                        <select class="w-full bg-gray-700 border border-border-dark rounded-lg px-4 py-2 focus:outline-none focus:border-primary">
+                                            <option>Claude 2 (Recommended)</option>
+                                            <option>GPT-4</option>
+                                            <option>GPT-3.5 Turbo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card bg-card-dark">
+                                <h4 class="text-lg font-semibold mb-4">Automation Preferences</h4>
+                                <div class="space-y-4">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <p class="font-medium">Auto-publish Content</p>
+                                            <p class="text-sm text-text-secondary">Automatically publish generated content</p>
+                                        </div>
+                                        <label class="relative inline-flex items-center cursor-pointer">
+                                            <input type="checkbox" class="sr-only peer">
+                                            <div class="w-11 h-6 bg-gray-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary peer-focus:ring-opacity-30 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                        </label>
+                                    </div>
+
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <p class="font-medium">AI Suggestions</p>
+                                            <p class="text-sm text-text-secondary">Show AI improvement suggestions</p>
+                                        </div>
+                                        <label class="relative inline-flex items-center cursor-pointer">
+                                            <input type="checkbox" checked class="sr-only peer">
+                                            <div class="w-11 h-6 bg-gray-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary peer-focus:ring-opacity-30 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                        </label>
+                                    </div>
+
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <p class="font-medium">SEO Optimization</p>
+                                            <p class="text-sm text-text-secondary">Auto-optimize content for SEO</p>
+                                        </div>
+                                        <label class="relative inline-flex items-center cursor-pointer">
+                                            <input type="checkbox" checked class="sr-only peer">
+                                            <div class="w-11 h-6 bg-gray-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary peer-focus:ring-opacity-30 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-end space-x-4">
+                                <button class="btn-secondary">Reset to Defaults</button>
+                                <button class="btn-primary">Save Settings</button>
+                            </div>
                         </div>
                     </div>
                 </div>
