@@ -875,75 +875,230 @@
                 </div>
 
                 <!-- AI Settings Tab -->
-                <div x-show="activeTab === 'settings'" x-cloak>
-                    <div class="card mb-6">
-                        <h3 class="text-2xl font-bold mb-4">AI Settings & Configuration</h3>
-                        <p class="text-text-secondary mb-6">Configure AI assistants, models, and automation preferences.</p>
+                <div x-show="activeTab === 'settings'" x-cloak x-init="loadAIStatus()">
+                    <!-- Provider Status Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                        <!-- Ollama Card -->
+                        <div class="card">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-lg font-semibold">Ollama (Local)</h3>
+                                <div class="flex items-center">
+                                    <div :class="ai.providers.ollama?.status === 'online' ? 'bg-success' : 'bg-alert'" class="w-3 h-3 rounded-full mr-2"></div>
+                                    <span class="text-xs font-semibold" x-text="ai.providers.ollama?.status || 'checking...'"></span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-text-secondary mb-4" x-text="ai.providers.ollama?.model || 'llama3.1:8b'"></p>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-text-muted">Response Time:</span>
+                                    <span class="font-medium" x-text="(ai.providers.ollama?.responseTime || 0) + 'ms'"></span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-text-muted">Cost:</span>
+                                    <span class="font-medium text-success">FREE</span>
+                                </div>
+                            </div>
+                        </div>
 
-                        <div class="space-y-6">
-                            <div class="card bg-card-dark">
-                                <h4 class="text-lg font-semibold mb-4">AI Model Selection</h4>
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <div>
-                                        <label class="block text-sm font-medium mb-2">Content Generation Model</label>
-                                        <select class="w-full bg-gray-700 border border-border-dark rounded-lg px-4 py-2 focus:outline-none focus:border-primary">
-                                            <option>GPT-4 (Recommended)</option>
-                                            <option>GPT-3.5 Turbo</option>
-                                            <option>Claude 2</option>
-                                        </select>
+                        <!-- Claude Card -->
+                        <div class="card">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-lg font-semibold">Claude (API)</h3>
+                                <div class="flex items-center">
+                                    <div :class="ai.providers.claude?.status === 'online' ? 'bg-success' : 'bg-alert'" class="w-3 h-3 rounded-full mr-2"></div>
+                                    <span class="text-xs font-semibold" x-text="ai.providers.claude?.status || 'checking...'"></span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-text-secondary mb-4" x-text="ai.providers.claude?.model || 'claude-3-haiku-20240307'"></p>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-text-muted">Response Time:</span>
+                                    <span class="font-medium" x-text="(ai.providers.claude?.responseTime || 0) + 'ms'"></span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-text-muted">Cost:</span>
+                                    <span class="font-medium text-gold">$0.025/req</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- LM Studio Card -->
+                        <div class="card">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-lg font-semibold">LM Studio (Local)</h3>
+                                <div class="flex items-center">
+                                    <div :class="ai.providers.lmStudio?.status === 'online' ? 'bg-success' : 'bg-alert'" class="w-3 h-3 rounded-full mr-2"></div>
+                                    <span class="text-xs font-semibold" x-text="ai.providers.lmStudio?.status || 'checking...'"></span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-text-secondary mb-4" x-text="ai.providers.lmStudio?.model || 'mistralai/mistral-7b-instruct-v0.3'"></p>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-text-muted">Response Time:</span>
+                                    <span class="font-medium" x-text="(ai.providers.lmStudio?.responseTime || 0) + 'ms'"></span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-text-muted">Cost:</span>
+                                    <span class="font-medium text-success">FREE</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Model Configuration -->
+                    <div class="card mb-8">
+                        <h3 class="text-xl font-bold mb-6">Model Configuration</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Ollama Model</label>
+                                <select x-model="ai.config.modelSelection.ollama" class="w-full bg-gray-700 border border-border-dark rounded-lg px-4 py-2">
+                                    <template x-for="model in ai.models.ollama" :key="model">
+                                        <option :value="model" x-text="model"></option>
+                                    </template>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Claude Model</label>
+                                <select x-model="ai.config.modelSelection.claude" class="w-full bg-gray-700 border border-border-dark rounded-lg px-4 py-2">
+                                    <template x-for="model in ai.models.claude" :key="model">
+                                        <option :value="model" x-text="model"></option>
+                                    </template>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">LM Studio Model</label>
+                                <select x-model="ai.config.modelSelection.lmStudio" class="w-full bg-gray-700 border border-border-dark rounded-lg px-4 py-2">
+                                    <template x-for="model in ai.models.lmStudio" :key="model">
+                                        <option :value="model" x-text="model"></option>
+                                    </template>
+                                </select>
+                            </div>
+                        </div>
+
+                        <h4 class="text-lg font-semibold mb-4">Default Provider Selection</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Blog Posts</label>
+                                <select x-model="ai.config.defaultProviders.blog" class="w-full bg-gray-700 border border-border-dark rounded-lg px-4 py-2">
+                                    <option value="claude">Claude (Best Quality)</option>
+                                    <option value="lm-studio">LM Studio (Fast, Free)</option>
+                                    <option value="ollama">Ollama (Fallback)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Social Media</label>
+                                <select x-model="ai.config.defaultProviders.social" class="w-full bg-gray-700 border border-border-dark rounded-lg px-4 py-2">
+                                    <option value="claude">Claude</option>
+                                    <option value="lm-studio">LM Studio</option>
+                                    <option value="ollama">Ollama</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Email Campaigns</label>
+                                <select x-model="ai.config.defaultProviders.email" class="w-full bg-gray-700 border border-border-dark rounded-lg px-4 py-2">
+                                    <option value="claude">Claude</option>
+                                    <option value="lm-studio">LM Studio</option>
+                                    <option value="ollama">Ollama</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button @click="saveAIConfig()" class="btn-primary">Save Configuration</button>
+                    </div>
+
+                    <!-- Cost Tracking -->
+                    <div class="card mb-8">
+                        <h3 class="text-xl font-bold mb-6">Cost Tracking</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+                            <div class="stat-card">
+                                <div class="stat-label">Today</div>
+                                <div class="stat-value text-3xl" x-text="'$' + (ai.costs?.today?.total || 0)"></div>
+                                <div class="stat-subtitle" x-text="'Claude: $' + (ai.costs?.today?.claude || 0)"></div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-label">This Week</div>
+                                <div class="stat-value text-3xl" x-text="'$' + (ai.costs?.thisWeek?.total || 0)"></div>
+                                <div class="stat-subtitle" x-text="'Claude: $' + (ai.costs?.thisWeek?.claude || 0)"></div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-label">This Month</div>
+                                <div class="stat-value text-3xl" x-text="'$' + (ai.costs?.thisMonth?.total || 0)"></div>
+                                <div class="stat-subtitle" x-text="'Claude: $' + (ai.costs?.thisMonth?.claude || 0)"></div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-label">Monthly Projection</div>
+                                <div class="stat-value text-3xl text-gold" x-text="'$' + (ai.costs?.projection?.monthly || 0)"></div>
+                                <div class="stat-subtitle">Estimated</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Performance Metrics -->
+                    <div class="card">
+                        <h3 class="text-xl font-bold mb-6">Performance Metrics</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div>
+                                <h4 class="font-semibold mb-4">Ollama</h4>
+                                <div class="space-y-3 text-sm">
+                                    <div class="flex justify-between">
+                                        <span class="text-text-muted">Requests:</span>
+                                        <span class="font-medium" x-text="ai.usage?.ollama?.requests || 0"></span>
                                     </div>
-                                    <div>
-                                        <label class="block text-sm font-medium mb-2">Analysis Model</label>
-                                        <select class="w-full bg-gray-700 border border-border-dark rounded-lg px-4 py-2 focus:outline-none focus:border-primary">
-                                            <option>Claude 2 (Recommended)</option>
-                                            <option>GPT-4</option>
-                                            <option>GPT-3.5 Turbo</option>
-                                        </select>
+                                    <div class="flex justify-between">
+                                        <span class="text-text-muted">Avg Response:</span>
+                                        <span class="font-medium" x-text="(ai.usage?.ollama?.avgResponseTime || 0) + 'ms'"></span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-text-muted">Success Rate:</span>
+                                        <span class="font-medium" x-text="(ai.usage?.ollama?.successRate || 0) + '%'"></span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-text-muted">Uptime:</span>
+                                        <span class="font-medium" x-text="(ai.usage?.ollama?.uptime || 0) + '%'"></span>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="card bg-card-dark">
-                                <h4 class="text-lg font-semibold mb-4">Automation Preferences</h4>
-                                <div class="space-y-4">
-                                    <div class="flex items-center justify-between">
-                                        <div>
-                                            <p class="font-medium">Auto-publish Content</p>
-                                            <p class="text-sm text-text-secondary">Automatically publish generated content</p>
-                                        </div>
-                                        <label class="relative inline-flex items-center cursor-pointer">
-                                            <input type="checkbox" class="sr-only peer">
-                                            <div class="w-11 h-6 bg-gray-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary peer-focus:ring-opacity-30 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
-                                        </label>
+                            <div>
+                                <h4 class="font-semibold mb-4">Claude</h4>
+                                <div class="space-y-3 text-sm">
+                                    <div class="flex justify-between">
+                                        <span class="text-text-muted">Requests:</span>
+                                        <span class="font-medium" x-text="ai.usage?.claude?.requests || 0"></span>
                                     </div>
-
-                                    <div class="flex items-center justify-between">
-                                        <div>
-                                            <p class="font-medium">AI Suggestions</p>
-                                            <p class="text-sm text-text-secondary">Show AI improvement suggestions</p>
-                                        </div>
-                                        <label class="relative inline-flex items-center cursor-pointer">
-                                            <input type="checkbox" checked class="sr-only peer">
-                                            <div class="w-11 h-6 bg-gray-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary peer-focus:ring-opacity-30 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
-                                        </label>
+                                    <div class="flex justify-between">
+                                        <span class="text-text-muted">Avg Response:</span>
+                                        <span class="font-medium" x-text="(ai.usage?.claude?.avgResponseTime || 0) + 'ms'"></span>
                                     </div>
-
-                                    <div class="flex items-center justify-between">
-                                        <div>
-                                            <p class="font-medium">SEO Optimization</p>
-                                            <p class="text-sm text-text-secondary">Auto-optimize content for SEO</p>
-                                        </div>
-                                        <label class="relative inline-flex items-center cursor-pointer">
-                                            <input type="checkbox" checked class="sr-only peer">
-                                            <div class="w-11 h-6 bg-gray-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary peer-focus:ring-opacity-30 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
-                                        </label>
+                                    <div class="flex justify-between">
+                                        <span class="text-text-muted">Success Rate:</span>
+                                        <span class="font-medium" x-text="(ai.usage?.claude?.successRate || 0) + '%'"></span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-text-muted">Uptime:</span>
+                                        <span class="font-medium" x-text="(ai.usage?.claude?.uptime || 0) + '%'"></span>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="flex justify-end space-x-4">
-                                <button class="btn-secondary">Reset to Defaults</button>
-                                <button class="btn-primary">Save Settings</button>
+                            <div>
+                                <h4 class="font-semibold mb-4">LM Studio</h4>
+                                <div class="space-y-3 text-sm">
+                                    <div class="flex justify-between">
+                                        <span class="text-text-muted">Requests:</span>
+                                        <span class="font-medium" x-text="ai.usage?.lmStudio?.requests || 0"></span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-text-muted">Avg Response:</span>
+                                        <span class="font-medium" x-text="(ai.usage?.lmStudio?.avgResponseTime || 0) + 'ms'"></span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-text-muted">Success Rate:</span>
+                                        <span class="font-medium" x-text="(ai.usage?.lmStudio?.successRate || 0) + '%'"></span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-text-muted">Uptime:</span>
+                                        <span class="font-medium" x-text="(ai.usage?.lmStudio?.uptime || 0) + '%'"></span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1221,9 +1376,107 @@
                     const subtitles = {
                         'dashboard': 'Monitor all your sites and content',
                         'wordpress': 'Manage 5 WordPress portfolio sites',
-                        'content': 'AI-powered content creation (DE/EN/BG)'
+                        'content': 'AI-powered content creation (DE/EN/BG)',
+                        'settings': 'AI Settings & Configuration'
                     };
                     return subtitles[this.activeTab] || '';
+                },
+
+                // AI Settings Data
+                ai: {
+                    providers: {},
+                    models: {
+                        ollama: [],
+                        claude: [],
+                        lmStudio: []
+                    },
+                    config: {
+                        modelSelection: {
+                            ollama: 'llama3.1:8b',
+                            claude: 'claude-3-haiku-20240307',
+                            lmStudio: 'mistralai/mistral-7b-instruct-v0.3'
+                        },
+                        defaultProviders: {
+                            blog: 'claude',
+                            social: 'claude',
+                            email: 'claude'
+                        },
+                        fallbackProvider: 'ollama'
+                    },
+                    usage: {},
+                    costs: {}
+                },
+
+                // AI Settings Methods
+                async loadAIStatus() {
+                    try {
+                        // Load all AI status, models, usage, costs, and config in parallel
+                        const [statusRes, modelsRes, usageRes, costsRes, configRes] = await Promise.all([
+                            fetch('/api/ai/status'),
+                            fetch('/api/ai/models'),
+                            fetch('/api/ai/usage'),
+                            fetch('/api/ai/cost'),
+                            fetch('/api/ai/config')
+                        ]);
+
+                        const [statusData, modelsData, usageData, costsData, configData] = await Promise.all([
+                            statusRes.json(),
+                            modelsRes.json(),
+                            usageRes.json(),
+                            costsRes.json(),
+                            configRes.json()
+                        ]);
+
+                        if (statusData.success) {
+                            this.ai.providers = statusData.providers;
+                        }
+
+                        if (modelsData.success) {
+                            this.ai.models = modelsData.models;
+                        }
+
+                        if (usageData.success) {
+                            this.ai.usage = usageData.usage;
+                        }
+
+                        if (costsData.success) {
+                            this.ai.costs = costsData.costs;
+                        }
+
+                        if (configData.success) {
+                            this.ai.config = configData.config;
+                        }
+
+                        console.log('AI Settings loaded successfully');
+                    } catch (error) {
+                        console.error('Failed to load AI settings:', error);
+                        this.showMessage('error', 'Failed to load AI settings');
+                    }
+                },
+
+                async saveAIConfig() {
+                    try {
+                        const response = await fetch('/api/ai/config', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(this.ai.config)
+                        });
+
+                        const data = await response.json();
+
+                        if (data.success) {
+                            this.showMessage('success', 'AI configuration saved successfully!');
+                            // Reload status to reflect new configuration
+                            await this.loadAIStatus();
+                        } else {
+                            this.showMessage('error', 'Failed to save AI configuration');
+                        }
+                    } catch (error) {
+                        console.error('Failed to save AI config:', error);
+                        this.showMessage('error', 'Failed to save AI configuration');
+                    }
                 }
             }
         }
