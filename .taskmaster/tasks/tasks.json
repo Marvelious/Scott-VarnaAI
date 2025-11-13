@@ -106,12 +106,124 @@
         ],
         "priority": "medium",
         "subtasks": []
+      },
+      {
+        "id": 9,
+        "title": "Create Comprehensive AI Settings Page",
+        "description": "Develop a complete AI settings page with provider status monitoring, model configuration, API key management, cost tracking dashboard, and performance metrics with real-time indicators.",
+        "details": "Implement the AI Settings page with the following components:\n\n1. Provider Status Monitoring:\n   - Create status cards for Ollama, Claude, and LM Studio\n   - Implement real-time status indicators (green/yellow/red)\n   - Set up auto-refresh functionality every 30 seconds\n\n2. Model Configuration:\n   - Create dropdown selectors for available models per provider\n   - Save configuration preferences to localStorage\n   - Display model capabilities and limitations\n\n3. API Key Management:\n   - Build secure input fields with masked display\n   - Implement validation for API key format\n   - Add save/update functionality\n\n4. Cost Tracking Dashboard:\n   - Create usage charts per provider\n   - Implement historical cost tracking\n   - Add filtering by date range\n\n5. Performance Metrics:\n   - Display response times\n   - Show token usage statistics\n   - Track success/failure rates\n\nBackend Requirements:\n- Create 5 API endpoints:\n  - `/api/ai/status`: Returns current status of all AI providers\n  - `/api/ai/models`: Lists available models per provider\n  - `/api/ai/config`: Handles saving/retrieving configuration\n  - `/api/ai/usage`: Provides usage statistics\n  - `/api/ai/cost`: Returns cost data per provider\n\nFrontend Implementation:\n- Use AlpineJS for reactive components\n- Maintain blue & gold theme consistency with existing UI\n- Implement responsive layout for all screen sizes\n- Create 3 provider status cards with toggle switches\n- Build model selection panel with provider-specific options\n- Design API key management panel with secure input handling\n- Develop cost tracking charts with Chart.js\n- Create performance metrics display with auto-updating data",
+        "testStrategy": "1. API Endpoint Testing:\n   - Use Postman or similar tool to verify all 5 endpoints return correct data\n   - Test error handling with invalid requests\n   - Verify authentication requirements\n\n2. UI Component Testing:\n   - Verify all UI elements render correctly across browsers (Chrome, Firefox, Safari)\n   - Test responsive layout on desktop, tablet, and mobile viewports\n   - Confirm theme consistency with existing dashboard\n\n3. Functionality Testing:\n   - Verify real-time status indicators update correctly\n   - Test auto-refresh functionality works every 30 seconds\n   - Confirm API key masking functions properly\n   - Validate model selection dropdowns populate with correct options\n   - Test localStorage persistence by refreshing page and changing browsers\n   - Verify cost tracking charts display accurate data\n\n4. Integration Testing:\n   - Test end-to-end workflow from configuration to usage tracking\n   - Verify changes in provider status reflect correctly in UI\n   - Confirm cost data updates based on usage\n\n5. Performance Testing:\n   - Measure page load time with all components\n   - Test auto-refresh impact on performance\n   - Verify chart rendering performance with large datasets",
+        "status": "pending",
+        "dependencies": [
+          1,
+          2,
+          6
+        ],
+        "priority": "medium",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create Provider Status Monitoring Component",
+            "description": "Develop status cards for Ollama, Claude, and LM Studio with real-time indicators and auto-refresh functionality.",
+            "dependencies": [],
+            "details": "Create three status cards with provider logos, current status indicators (green/yellow/red), and toggle switches for enabling/disabling each provider. Implement auto-refresh functionality that checks status every 30 seconds using the /api/ai/status endpoint. Use AlpineJS for reactive updates and maintain blue & gold theme consistency.",
+            "status": "pending",
+            "testStrategy": "Test status indicator changes based on API responses. Verify auto-refresh functionality works correctly. Ensure toggle switches properly enable/disable providers. Test responsive layout on multiple screen sizes."
+          },
+          {
+            "id": 2,
+            "title": "Implement Model Configuration Interface",
+            "description": "Create dropdown selectors for available models per provider with configuration storage and capability display.",
+            "dependencies": [
+              1
+            ],
+            "details": "Build model selection panel with dropdown menus for each provider showing available models. Fetch model data from /api/ai/models endpoint. Implement localStorage saving of selected models. Display model capabilities and limitations in an expandable info panel. Ensure UI is responsive and maintains theme consistency.",
+            "status": "pending",
+            "testStrategy": "Verify model dropdowns populate correctly from API. Test localStorage saving and retrieval of preferences. Ensure model capability information displays correctly. Test responsive behavior on different devices."
+          },
+          {
+            "id": 3,
+            "title": "Develop API Key Management System",
+            "description": "Build secure input fields for API keys with masked display, validation, and save functionality.",
+            "dependencies": [
+              1
+            ],
+            "details": "Create secure input fields for each provider's API key with masked display (show/hide toggle). Implement client-side validation for API key format. Add save/update functionality that communicates with the /api/ai/config endpoint. Include visual feedback for successful saves and validation errors. Ensure proper security handling of sensitive data.",
+            "status": "pending",
+            "testStrategy": "Test API key validation with valid and invalid formats. Verify masking functionality works correctly. Test save/update operations with the backend. Ensure proper error handling and user feedback."
+          },
+          {
+            "id": 4,
+            "title": "Create Cost Tracking Dashboard",
+            "description": "Implement usage charts and historical cost tracking with date range filtering for each provider.",
+            "dependencies": [
+              1,
+              3
+            ],
+            "details": "Develop cost tracking charts using Chart.js to visualize usage data per provider. Implement historical cost tracking with data from /api/ai/cost endpoint. Add date range filtering functionality (daily, weekly, monthly views). Create summary cards showing total costs and usage trends. Ensure responsive design for all chart components.",
+            "status": "pending",
+            "testStrategy": "Verify charts render correctly with different data sets. Test date range filtering functionality. Ensure calculations for cost summaries are accurate. Test responsive behavior of charts on different screen sizes."
+          },
+          {
+            "id": 5,
+            "title": "Build Performance Metrics Display",
+            "description": "Create interface for displaying response times, token usage statistics, and success/failure rates.",
+            "dependencies": [
+              1,
+              2
+            ],
+            "details": "Implement performance metrics section with gauges and charts showing response times, token usage statistics, and success/failure rates. Fetch data from /api/ai/usage endpoint. Create auto-updating displays that refresh with new data. Include comparative metrics between providers. Design responsive layout that works on all screen sizes.",
+            "status": "pending",
+            "testStrategy": "Test metrics display with various data scenarios. Verify auto-updating functionality works correctly. Ensure calculations and data representations are accurate. Test responsive layout on multiple devices."
+          },
+          {
+            "id": 6,
+            "title": "Develop Backend API Endpoints",
+            "description": "Create the five required API endpoints for AI provider status, models, configuration, usage, and cost data.",
+            "dependencies": [],
+            "details": "Implement five RESTful API endpoints: /api/ai/status for provider status, /api/ai/models for available models, /api/ai/config for configuration management, /api/ai/usage for usage statistics, and /api/ai/cost for cost data. Include proper error handling, authentication checks, and data validation. Document API responses for frontend integration.",
+            "status": "pending",
+            "testStrategy": "Test each endpoint with valid and invalid requests. Verify correct data formatting and error responses. Test authentication requirements. Benchmark endpoint performance under load."
+          },
+          {
+            "id": 7,
+            "title": "Implement Responsive Layout and UI Components",
+            "description": "Create responsive layout for the AI settings page with consistent styling across all components.",
+            "dependencies": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "details": "Implement responsive grid layout for the AI settings page using Tailwind CSS. Ensure blue & gold theme consistency with existing UI. Create navigation tabs for different sections (Status, Models, Keys, Costs, Performance). Design mobile-friendly interface with appropriate breakpoints. Implement loading states and error handling for all UI components.",
+            "status": "pending",
+            "testStrategy": "Test responsive behavior across multiple devices and screen sizes. Verify theme consistency with existing UI. Test navigation between different sections. Ensure loading states and error handling work correctly."
+          },
+          {
+            "id": 8,
+            "title": "Integrate and Test Complete AI Settings Page",
+            "description": "Connect all components together and perform comprehensive testing of the entire AI settings page.",
+            "dependencies": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "details": "Integrate all components (status monitoring, model configuration, API key management, cost tracking, performance metrics) into a cohesive AI settings page. Connect frontend components to backend API endpoints. Perform end-to-end testing of all functionality. Fix any integration issues. Optimize performance and ensure smooth user experience across all features.",
+            "status": "pending",
+            "testStrategy": "Conduct end-to-end testing of complete workflow. Test all components working together. Verify data consistency across different sections. Perform cross-browser testing. Test performance under various network conditions."
+          }
+        ]
       }
     ],
     "metadata": {
       "created": "2025-11-12T11:09:36.748Z",
       "description": "Default tasks context",
-      "updated": "2025-11-12T12:59:26.553Z"
+      "updated": "2025-11-13T11:13:40.510Z"
     }
   }
 }

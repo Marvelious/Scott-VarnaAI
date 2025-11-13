@@ -1,122 +1,222 @@
-PROJECT REQUIREMENTS DOCUMENT
-VarnaAI Websites Control Dashboard MVP
-Date: November 2024
+# Product Requirements Document: AI Settings Page Enhancement
 
-1. PROJECT OVERVIEW
-Create a modern SaaS-style control dashboard for managing 5 WordPress portfolio sites and all marketing/content generation tools. Single-page application with Tailwind CSS for controlling existing tools and generating new content.
+## Project Overview
+Update the AI Settings page in the VarnaAI Control Dashboard to provide comprehensive configuration and management for all three AI providers (Ollama, Claude, LM Studio) with real-time status monitoring, model selection, and cost tracking.
 
-2. CORE OBJECTIVES
-- Centralized control panel for all 5 WordPress sites
-- Execute SEO and marketing automation tools
-- Generate content with AI integrations
-- Monitor analytics and performance
-- Modern SaaS dashboard design with Tailwind CSS
+## Background
+The current AI Settings tab exists but needs enhancement to provide:
+- Real-time AI provider status (online/offline)
+- Model selection and configuration
+- API key management (masked display)
+- Cost tracking and usage statistics
+- Provider performance metrics
+- Easy switching between providers
 
-3. KEY FEATURES
+## User Stories
 
-3.1 WordPress Management
-- Quick login buttons for all 5 sites
-- Page creation status tracker
-- SEO score monitoring
-- Content health dashboard
+### 1. AI Provider Status Monitoring
+**As a** dashboard user
+**I want to** see the real-time status of all AI providers
+**So that** I know which providers are available for content generation
 
-3.2 Content Generation Hub
-- AI-powered blog post generator
-- Social media post creator
-- Email campaign writer
-- Multi-language support (DE/EN/BG)
+**Acceptance Criteria:**
+- Display online/offline status for Ollama, Claude, and LM Studio
+- Show green indicator for online, red for offline, yellow for degraded
+- Auto-refresh status every 30 seconds
+- Display last successful ping timestamp
 
-3.3 Marketing Automation
-- Email list management via Mailchimp
-- Social media scheduling via Buffer
-- Campaign launcher
-- Lead tracking dashboard
+### 2. Model Configuration
+**As a** dashboard user
+**I want to** select and configure AI models for each provider
+**So that** I can optimize quality vs. cost for different content types
 
-3.4 SEO & Analytics
-- Google Analytics 4 integration
-- Real-time visitor tracking
-- Keyword ranking monitor
-- Backlink tracker
+**Acceptance Criteria:**
+- Dropdown model selection for each provider
+- Ollama: llama3.1:8b, mistral:7b, codellama:7b
+- Claude: claude-3-haiku-20240307, claude-3-sonnet-20240229
+- LM Studio: mistralai/mistral-7b-instruct-v0.3, other local models
+- Save model preferences to browser localStorage
+- Display model details (size, speed, quality rating)
 
-3.5 Quick Actions Panel
-- One-click operations
-- Batch content generation
-- Bulk social media posting
-- Automated reports
+### 3. API Key Management
+**As a** dashboard user
+**I want to** view and update API keys securely
+**So that** I can manage authentication without exposing sensitive data
 
-4. TECHNICAL REQUIREMENTS
+**Acceptance Criteria:**
+- Display masked API keys (sk-ant-***...last4chars)
+- "Show/Hide" toggle button for each key
+- "Update Key" button to change API keys
+- Never log or transmit keys in plain text
+- Validate API key format before saving
 
-4.1 Frontend
-- HTML5 semantic structure
+### 4. Cost Tracking Dashboard
+**As a** dashboard user
+**I want to** track AI usage costs across all providers
+**So that** I can monitor spending and optimize budget
+
+**Acceptance Criteria:**
+- Display total cost per provider (today, this week, this month)
+- Show request count and average cost per request
+- Cost breakdown by content type (blog, social, email)
+- Estimated monthly cost projection based on usage trends
+- Cost comparison chart (Claude vs Ollama vs LM Studio)
+
+### 5. Provider Performance Metrics
+**As a** dashboard user
+**I want to** see performance metrics for each AI provider
+**So that** I can choose the best provider for each task
+
+**Acceptance Criteria:**
+- Average response time (milliseconds)
+- Success rate percentage
+- Content quality rating (user feedback score)
+- Uptime percentage (last 7 days)
+- Performance comparison chart
+
+### 6. Default Provider Selection
+**As a** dashboard user
+**I want to** set default AI providers for different content types
+**So that** content generation uses my preferred providers automatically
+
+**Acceptance Criteria:**
+- Default provider for blog posts
+- Default provider for social media
+- Default provider for email campaigns
+- Fallback provider if default is offline
+- Save preferences to browser localStorage
+
+## Technical Requirements
+
+### API Endpoints Needed
+```javascript
+GET  /api/ai/status              // Check status of all providers
+GET  /api/ai/models              // List available models per provider
+POST /api/ai/config              // Update AI configuration
+GET  /api/ai/usage               // Get usage statistics
+GET  /api/ai/cost                // Get cost breakdown
+```
+
+### Server.js Modifications
+1. Add health check functions for each AI provider
+2. Track request counts and response times
+3. Calculate costs based on provider pricing
+4. Store usage data (in-memory or Redis for persistence)
+5. Implement model switching logic
+
+### Frontend Components
+1. **Provider Status Cards** (3 cards for Ollama, Claude, LM Studio)
+   - Status indicator (green/red/yellow dot)
+   - Provider name and logo
+   - Current model selected
+   - Last ping timestamp
+   - Quick actions (Test Connection, View Logs)
+
+2. **Model Selection Panel**
+   - Dropdown for each provider
+   - Model details (description, size, speed rating)
+   - "Set as Default" checkbox
+   - Save/Cancel buttons
+
+3. **API Key Management Panel**
+   - Masked key display (sk-ant-***...xyz)
+   - Show/Hide toggle
+   - Update Key button with modal
+   - Key validation status
+
+4. **Cost Tracking Dashboard**
+   - Total cost cards (today, week, month)
+   - Request count chart (line chart)
+   - Cost breakdown pie chart (by provider)
+   - Monthly projection estimate
+
+5. **Performance Metrics Panel**
+   - Response time chart (bar chart)
+   - Success rate percentage
+   - Uptime status (7-day trend)
+   - Quality rating (star rating)
+
+### Design System (Blue & Gold Theme)
+```css
+colors: {
+  'primary': '#2563eb',        // Royal blue
+  'gold': '#f59e0b',           // Gold accent
+  'success': '#10b981',        // Green (online)
+  'alert': '#ef4444',          // Red (offline)
+  'warning': '#f59e0b',        // Yellow (degraded)
+  'dark-bg': '#0a0e1a',        // Deep navy
+  'card-dark': '#1e293b',      // Slate
+}
+```
+
+### Data Persistence
+- **Browser localStorage**: Model preferences, default providers, UI settings
+- **Server-side (in-memory)**: Usage statistics, cost tracking (reset on restart)
+- **Future enhancement**: Redis for persistent usage data across restarts
+
+## Success Metrics
+1. **Provider Status Visibility**: Users can instantly see which AI providers are online
+2. **Configuration Ease**: Users can switch models in < 30 seconds
+3. **Cost Transparency**: Users can view accurate cost breakdown per provider
+4. **Performance Insights**: Users can identify fastest/most reliable provider
+5. **Default Automation**: 80%+ of content generation uses default providers without manual selection
+
+## Implementation Phases
+
+### Phase 1: Provider Status Monitoring (MVP)
+- Add health check endpoints
+- Display status cards for all 3 providers
+- Auto-refresh status every 30 seconds
+- Show last successful ping
+
+### Phase 2: Model Configuration
+- Add model selection dropdowns
+- Implement model switching logic in server.js
+- Save preferences to localStorage
+- Display model details
+
+### Phase 3: API Key Management
+- Add masked key display
+- Implement show/hide toggle
+- Add update key modal
+- Validate key format
+
+### Phase 4: Cost Tracking
+- Track request counts per provider
+- Calculate costs based on pricing
+- Display cost breakdown charts
+- Add monthly projection
+
+### Phase 5: Performance Metrics
+- Track response times
+- Calculate success rates
+- Display uptime percentages
+- Add performance comparison chart
+
+## Out of Scope (Future Enhancements)
+- Custom model training
+- AI prompt template management
+- A/B testing for content quality
+- Provider auto-failover
+- Advanced analytics (sentiment analysis, engagement prediction)
+
+## Dependencies
+- Express.js server with AI provider clients initialized
+- AlpineJS for reactive UI
+- Chart.js or similar for data visualization
 - Tailwind CSS for styling
-- Alpine.js for interactivity
-- Chart.js for data visualization
-- Responsive design
 
-4.2 Backend
-- Node.js/Express server
-- API endpoints for tool execution
-- Session management
-- Secure credential storage
+## Timeline Estimate
+- Phase 1 (Status Monitoring): 2-3 hours
+- Phase 2 (Model Configuration): 2-3 hours
+- Phase 3 (API Key Management): 1-2 hours
+- Phase 4 (Cost Tracking): 3-4 hours
+- Phase 5 (Performance Metrics): 2-3 hours
 
-4.3 Integrations
-- WordPress MCP for site control
-- Marketing Machine APIs
-- Mailchimp API
-- Buffer API
-- Google Analytics API
-- OpenAI/Claude for content
+**Total Estimated Time**: 10-15 hours of development
 
-5. DESIGN SPECIFICATIONS
-
-5.1 Color Palette
-- Primary Blue: #0066cc
-- Purple Gradient: #667eea to #764ba2
-- Dark Background: #2d3748
-- Success Green: #48bb78
-- Alert Red: #ff6b6b
-- Modern SaaS aesthetic
-
-5.2 Layout
-- Dark theme with high contrast
-- Card-based component system
-- Sidebar navigation
-- Main content area
-- Status bar footer
-
-6. USER WORKFLOW
-1. Open dashboard in browser
-2. View status of all sites
-3. Select action from panels
-4. Execute tools with buttons
-5. Monitor results in real-time
-
-7. DELIVERABLES
-- index.html with full dashboard UI
-- dashboard.css with Tailwind classes
-- dashboard.js with client logic
-- server.js with Express backend
-- config files for API keys
-- README with setup instructions
-
-8. SUCCESS METRICS
-- All 5 sites accessible from dashboard
-- Marketing tools executable via buttons
-- Content generation working
-- Analytics displaying correctly
-- 2-second load time
-
-9. MVP SCOPE
-Focus on core functionality:
-- WordPress control panel
-- Content generator
-- Marketing automation
-- Basic analytics
-Defer: Advanced SEO tools, competitor tracking, video generation
-
-10. TIMELINE
-- Planning: 1 hour
-- UI Development: 3 hours
-- Backend Integration: 2 hours
-- Testing: 1 hour
-Total: 7 hours for MVP
+## Notes
+- Prioritize Phase 1 (Status Monitoring) as foundation
+- Phases 2-3 can be developed in parallel
+- Phases 4-5 require data collection from server.js modifications
+- All phases should maintain blue & gold color theme consistency
