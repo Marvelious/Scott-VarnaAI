@@ -387,21 +387,46 @@ The structured approach above ensures comprehensive coverage and naturally produ
 
         // Route to appropriate AI provider
         let rawResponse;
-        switch (aiModel) {
-            case 'claude':
-                rawResponse = await generateWithClaude(prompt, 4000, 0.7);
-                break;
-            case 'lm-studio':
-                rawResponse = await generateWithLMStudio(prompt, 4000, 0.7);
-                break;
-            case 'ollama':
-                rawResponse = await generateWithOllama(prompt, 4000, 0.7);
-                break;
-            default:
-                throw new Error(`Unknown AI model: ${aiModel}`);
+        try {
+            switch (aiModel) {
+                case 'claude':
+                    rawResponse = await generateWithClaude(prompt, 4000, 0.7);
+                    usageStats.claude.successes++;
+                    break;
+                case 'lm-studio':
+                    rawResponse = await generateWithLMStudio(prompt, 4000, 0.7);
+                    usageStats.lmStudio.successes++;
+                    break;
+                case 'ollama':
+                    rawResponse = await generateWithOllama(prompt, 4000, 0.7);
+                    usageStats.ollama.successes++;
+                    break;
+                default:
+                    throw new Error(`Unknown AI model: ${aiModel}`);
+            }
+        } catch (error) {
+            // Track failure
+            if (aiModel === 'claude') usageStats.claude.failures++;
+            else if (aiModel === 'lm-studio') usageStats.lmStudio.failures++;
+            else if (aiModel === 'ollama') usageStats.ollama.failures++;
+            throw error;
         }
 
         const generationTime = ((Date.now() - startTime) / 1000).toFixed(1);
+        const responseTimeMs = Date.now() - startTime;
+
+        // Track usage stats
+        if (aiModel === 'claude') {
+            usageStats.claude.requests++;
+            usageStats.claude.totalResponseTime += responseTimeMs;
+        } else if (aiModel === 'lm-studio') {
+            usageStats.lmStudio.requests++;
+            usageStats.lmStudio.totalResponseTime += responseTimeMs;
+        } else if (aiModel === 'ollama') {
+            usageStats.ollama.requests++;
+            usageStats.ollama.totalResponseTime += responseTimeMs;
+        }
+
         console.log(`✅ Generation completed in ${generationTime}s`);
 
         // Clean and parse JSON response
@@ -543,6 +568,277 @@ Requirements:
         });
     } catch (error) {
         console.error('Email generation error:', error);
+        res.status(500).json({ success: false, message: error.message });
+    }
+});
+
+// ========================================
+// AI SETTINGS API ENDPOINTS
+// ========================================
+
+// In-memory storage for AI settings (can be replaced with Redis/DB later)
+let aiConfig = {
+    defaultProviders: { blog: 'claude', social: 'claude', email: 'claude' },
+    modelSelection: {
+        ollama: 'llama3.1:8b',
+        claude: 'claude-3-haiku-20240307',
+        lmStudio: 'mistralai/mistral-7b-instruct-v0.3'
+    },
+    fallbackProvider: 'ollama'
+};
+
+// Usage tracking (in-memory)
+const usageStats = {
+    ollama: { requests: 0, totalResponseTime: 0, successes: 0, failures: 0, lastPing: null },
+    claude: { requests: 0, totalResponseTime: 0, successes: 0, failures: 0, lastPing: null },
+    lmStudio: { requests: 0, totalResponseTime: 0, successes: 0, failures: 0, lastPing: null }
+};
+
+/**
+ * Check Ollama status and response time
+ */
+async function checkOllamaStatus() {
+    try {
+        const startTime = Date.now();
+        await ollama.generate({
+            model: 'llama3.1:8b',
+            prompt: 'test',
+            stream: false,
+            options: { num_predict: 1 }
+        });
+        const responseTime = Date.now() - startTime;
+        usageStats.ollama.lastPing = Date.now();
+        return { status: 'online', responseTime, lastPing: Date.now() };
+    } catch (error) {
+        console.error('Ollama health check failed:', error.message);
+        return { status: 'offline', responseTime: 0, lastPing: Date.now(), error: error.message };
+    }
+}
+
+/**
+ * Check Claude API status and response time
+ */
+async function checkClaudeStatus() {
+    try {
+        const startTime = Date.now();
+        await anthropic.messages.create({
+            model: 'claude-3-haiku-20240307',
+            max_tokens: 1,
+            messages: [{ role: 'user', content: 'test' }]
+        });
+        const responseTime = Date.now() - startTime;
+        usageStats.claude.lastPing = Date.now();
+        return { status: 'online', responseTime, lastPing: Date.now() };
+    } catch (error) {
+        console.error('Claude health check failed:', error.message);
+        return { status: 'offline', responseTime: 0, lastPing: Date.now(), error: error.message };
+    }
+}
+
+/**
+ * Check LM Studio status and response time
+ */
+async function checkLMStudioStatus() {
+    try {
+        const startTime = Date.now();
+        await lmStudioClient.post('/chat/completions', {
+            model: 'mistralai/mistral-7b-instruct-v0.3',
+            messages: [{ role: 'user', content: 'test' }],
+            max_tokens: 1
+        });
+        const responseTime = Date.now() - startTime;
+        usageStats.lmStudio.lastPing = Date.now();
+        return { status: 'online', responseTime, lastPing: Date.now() };
+    } catch (error) {
+        console.error('LM Studio health check failed:', error.message);
+        return { status: 'offline', responseTime: 0, lastPing: Date.now(), error: error.message };
+    }
+}
+
+/**
+ * GET /api/ai/status - Check status of all AI providers
+ */
+app.get('/api/ai/status', async (req, res) => {
+    try {
+        const [ollamaStatus, claudeStatus, lmStudioStatus] = await Promise.all([
+            checkOllamaStatus(),
+            checkClaudeStatus(),
+            checkLMStudioStatus()
+        ]);
+
+        res.json({
+            success: true,
+            providers: {
+                ollama: {
+                    ...ollamaStatus,
+                    model: aiConfig.modelSelection.ollama
+                },
+                claude: {
+                    ...claudeStatus,
+                    model: aiConfig.modelSelection.claude
+                },
+                lmStudio: {
+                    ...lmStudioStatus,
+                    model: aiConfig.modelSelection.lmStudio
+                }
+            }
+        });
+    } catch (error) {
+        console.error('AI status check error:', error);
+        res.status(500).json({ success: false, message: error.message });
+    }
+});
+
+/**
+ * GET /api/ai/models - List available models per provider
+ */
+app.get('/api/ai/models', async (req, res) => {
+    try {
+        // Ollama models (query dynamically)
+        let ollamaModels = ['llama3.1:8b', 'mistral:7b', 'codellama:7b'];
+        try {
+            const ollamaList = await ollama.list();
+            if (ollamaList && ollamaList.models) {
+                ollamaModels = ollamaList.models.map(m => m.name);
+            }
+        } catch (err) {
+            console.warn('Could not fetch Ollama models dynamically, using defaults');
+        }
+
+        res.json({
+            success: true,
+            models: {
+                ollama: ollamaModels,
+                claude: ['claude-3-haiku-20240307', 'claude-3-sonnet-20240229'],
+                lmStudio: ['mistralai/mistral-7b-instruct-v0.3']
+            }
+        });
+    } catch (error) {
+        console.error('Models list error:', error);
+        res.status(500).json({ success: false, message: error.message });
+    }
+});
+
+/**
+ * POST /api/ai/config - Save/retrieve AI configuration
+ */
+app.post('/api/ai/config', (req, res) => {
+    try {
+        const { defaultProviders, modelSelection, fallbackProvider } = req.body;
+
+        if (defaultProviders) aiConfig.defaultProviders = defaultProviders;
+        if (modelSelection) aiConfig.modelSelection = modelSelection;
+        if (fallbackProvider) aiConfig.fallbackProvider = fallbackProvider;
+
+        res.json({
+            success: true,
+            config: aiConfig
+        });
+    } catch (error) {
+        console.error('AI config save error:', error);
+        res.status(500).json({ success: false, message: error.message });
+    }
+});
+
+/**
+ * GET /api/ai/config - Retrieve current AI configuration
+ */
+app.get('/api/ai/config', (req, res) => {
+    res.json({
+        success: true,
+        config: aiConfig
+    });
+});
+
+/**
+ * GET /api/ai/usage - Usage statistics and performance metrics
+ */
+app.get('/api/ai/usage', (req, res) => {
+    try {
+        const stats = {};
+
+        for (const [provider, data] of Object.entries(usageStats)) {
+            const avgResponseTime = data.requests > 0
+                ? Math.round(data.totalResponseTime / data.requests)
+                : 0;
+            const successRate = data.requests > 0
+                ? ((data.successes / data.requests) * 100).toFixed(1)
+                : 0;
+            const uptime = data.failures === 0 && data.successes > 0
+                ? 100
+                : data.requests > 0
+                    ? ((data.successes / data.requests) * 100).toFixed(1)
+                    : 0;
+
+            stats[provider] = {
+                requests: data.requests,
+                avgResponseTime,
+                successRate: parseFloat(successRate),
+                uptime: parseFloat(uptime),
+                lastPing: data.lastPing
+            };
+        }
+
+        res.json({
+            success: true,
+            usage: stats
+        });
+    } catch (error) {
+        console.error('Usage stats error:', error);
+        res.status(500).json({ success: false, message: error.message });
+    }
+});
+
+/**
+ * GET /api/ai/cost - Cost breakdown per provider
+ */
+app.get('/api/ai/cost', (req, res) => {
+    try {
+        // Pricing: Ollama=FREE, Claude=$0.025/request, LM Studio=FREE
+        const claudeCostPerRequest = 0.025;
+
+        const claudeRequests = usageStats.claude.requests;
+        const claudeCost = claudeRequests * claudeCostPerRequest;
+
+        // Mock daily/weekly/monthly breakdown (would need timestamp tracking in production)
+        const today = claudeCost;
+        const thisWeek = claudeCost * 3; // Estimate
+        const thisMonth = claudeCost * 12; // Estimate
+        const projection = thisMonth * 1.2; // 20% growth estimate
+
+        res.json({
+            success: true,
+            costs: {
+                today: {
+                    ollama: 0,
+                    claude: parseFloat(today.toFixed(2)),
+                    lmStudio: 0,
+                    total: parseFloat(today.toFixed(2))
+                },
+                thisWeek: {
+                    ollama: 0,
+                    claude: parseFloat(thisWeek.toFixed(2)),
+                    lmStudio: 0,
+                    total: parseFloat(thisWeek.toFixed(2))
+                },
+                thisMonth: {
+                    ollama: 0,
+                    claude: parseFloat(thisMonth.toFixed(2)),
+                    lmStudio: 0,
+                    total: parseFloat(thisMonth.toFixed(2))
+                },
+                projection: {
+                    monthly: parseFloat(projection.toFixed(2))
+                }
+            },
+            pricing: {
+                ollama: { perRequest: 0, description: 'Free (local)' },
+                claude: { perRequest: claudeCostPerRequest, description: '$0.025 per request' },
+                lmStudio: { perRequest: 0, description: 'Free (local)' }
+            }
+        });
+    } catch (error) {
+        console.error('Cost calculation error:', error);
         res.status(500).json({ success: false, message: error.message });
     }
 });
