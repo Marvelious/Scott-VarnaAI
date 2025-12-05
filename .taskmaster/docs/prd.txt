@@ -1,222 +1,131 @@
-# Product Requirements Document: AI Settings Page Enhancement
+# Product Requirements Document: VarnaAI Portfolio Apps - Hetzner CX32 Deployment
 
-## Project Overview
-Update the AI Settings page in the VarnaAI Control Dashboard to provide comprehensive configuration and management for all three AI providers (Ollama, Claude, LM Studio) with real-time status monitoring, model selection, and cost tracking.
+## Executive Summary
+Deploy 5 portfolio applications as static demo sites on Hetzner Cloud CX32 VPS to showcase capabilities without requiring backend infrastructure, authentication, or signups.
 
-## Background
-The current AI Settings tab exists but needs enhancement to provide:
-- Real-time AI provider status (online/offline)
-- Model selection and configuration
-- API key management (masked display)
-- Cost tracking and usage statistics
-- Provider performance metrics
-- Easy switching between providers
+## Business Context
+VarnaAI needs professional demo sites for client acquisition. Current portfolio includes 5 applications that need to be accessible online as demonstrations of technical capability. User requirement: "no Ollama, no connection, no sign up - just demo pages."
 
-## User Stories
+## Target Infrastructure
+- Hetzner Cloud CX32 VPS (€13.08/month)
+- Specifications: 4 vCPU AMD, 8GB RAM, 160GB SSD
+- Location: Falkenstein, Germany (GDPR compliant)
+- DNS Management: All-Inkl PrivatPlus
 
-### 1. AI Provider Status Monitoring
-**As a** dashboard user
-**I want to** see the real-time status of all AI providers
-**So that** I know which providers are available for content generation
+## Applications to Deploy
 
-**Acceptance Criteria:**
-- Display online/offline status for Ollama, Claude, and LM Studio
-- Show green indicator for online, red for offline, yellow for degraded
-- Auto-refresh status every 30 seconds
-- Display last successful ping timestamp
+### 1. FwChange - Enterprise Firewall Change Management
+- Location: D:\VarnaAI\fwchange\landing\
+- Status: Landing page ready
+- Domain: fwchange.varnaai.com
+- Technology: Static HTML/CSS/JS
+- Features: Multi-vendor firewall support showcase, ITSM integration demos
 
-### 2. Model Configuration
-**As a** dashboard user
-**I want to** select and configure AI models for each provider
-**So that** I can optimize quality vs. cost for different content types
+### 2. RetirementAI - AI-Powered Retirement Planning
+- Location: D:\VarnaAI\pension\landing-page\
+- Status: Landing page ready
+- Domain: retirementai.varnaai.com
+- Technology: Static HTML with PHP waitlist form
+- Features: Trading212 API integration, Monte Carlo simulations, Studio LM
 
-**Acceptance Criteria:**
-- Dropdown model selection for each provider
-- Ollama: llama3.1:8b, mistral:7b, codellama:7b
-- Claude: claude-3-haiku-20240307, claude-3-sonnet-20240229
-- LM Studio: mistralai/mistral-7b-instruct-v0.3, other local models
-- Save model preferences to browser localStorage
-- Display model details (size, speed, quality rating)
+### 3. SEO Agent - SEO Automation Platform
+- Location: D:\VarnaAI\seoagent
+- Status: Needs assessment
+- Domain: seoagent.varnaai.com
+- Technology: React/Express (needs static conversion)
+- Features: SEO audits, AI assistants, real-time updates
 
-### 3. API Key Management
-**As a** dashboard user
-**I want to** view and update API keys securely
-**So that** I can manage authentication without exposing sensitive data
+### 4. C3 Compliance - German Compliance Automation
+- Location: D:\VarnaAI\dashboard\
+- Status: React frontend can be built static
+- Domain: c3.varnaai.com
+- Technology: React + TypeScript
+- Features: DSGVO compliance, 60-second scans, German document generation
 
-**Acceptance Criteria:**
-- Display masked API keys (sk-ant-***...last4chars)
-- "Show/Hide" toggle button for each key
-- "Update Key" button to change API keys
-- Never log or transmit keys in plain text
-- Validate API key format before saving
-
-### 4. Cost Tracking Dashboard
-**As a** dashboard user
-**I want to** track AI usage costs across all providers
-**So that** I can monitor spending and optimize budget
-
-**Acceptance Criteria:**
-- Display total cost per provider (today, this week, this month)
-- Show request count and average cost per request
-- Cost breakdown by content type (blog, social, email)
-- Estimated monthly cost projection based on usage trends
-- Cost comparison chart (Claude vs Ollama vs LM Studio)
-
-### 5. Provider Performance Metrics
-**As a** dashboard user
-**I want to** see performance metrics for each AI provider
-**So that** I can choose the best provider for each task
-
-**Acceptance Criteria:**
-- Average response time (milliseconds)
-- Success rate percentage
-- Content quality rating (user feedback score)
-- Uptime percentage (last 7 days)
-- Performance comparison chart
-
-### 6. Default Provider Selection
-**As a** dashboard user
-**I want to** set default AI providers for different content types
-**So that** content generation uses my preferred providers automatically
-
-**Acceptance Criteria:**
-- Default provider for blog posts
-- Default provider for social media
-- Default provider for email campaigns
-- Fallback provider if default is offline
-- Save preferences to browser localStorage
+### 5. VarnaAI Intelligence - Multi-Agent AI Platform
+- Location: D:\VarnaAI\varnaai\
+- Status: Needs landing page creation
+- Domain: intelligence.varnaai.com
+- Technology: Complex monorepo (needs static representation)
+- Features: Agent orchestration, workflow builder, marketplace
 
 ## Technical Requirements
 
-### API Endpoints Needed
-```javascript
-GET  /api/ai/status              // Check status of all providers
-GET  /api/ai/models              // List available models per provider
-POST /api/ai/config              // Update AI configuration
-GET  /api/ai/usage               // Get usage statistics
-GET  /api/ai/cost                // Get cost breakdown
-```
+### Infrastructure Setup
+- Docker and Docker Compose installation
+- Traefik reverse proxy for SSL/TLS termination
+- Nginx Alpine containers for static hosting
+- Let's Encrypt SSL certificates (automatic via Traefik)
 
-### Server.js Modifications
-1. Add health check functions for each AI provider
-2. Track request counts and response times
-3. Calculate costs based on provider pricing
-4. Store usage data (in-memory or Redis for persistence)
-5. Implement model switching logic
+### Resource Allocation
+- Total RAM budget: 8GB (CX32 specification)
+- Per-app allocation: 64-128MB (static sites)
+- Traefik overhead: 150MB
+- System overhead: 1GB
+- Available headroom: >6GB for future expansion
 
-### Frontend Components
-1. **Provider Status Cards** (3 cards for Ollama, Claude, LM Studio)
-   - Status indicator (green/red/yellow dot)
-   - Provider name and logo
-   - Current model selected
-   - Last ping timestamp
-   - Quick actions (Test Connection, View Logs)
+### DNS Configuration
+- Configure A records in All-Inkl DNS management
+- Subdomains pointing to Hetzner VPS IP
+- SSL certificates via Traefik/Let's Encrypt
 
-2. **Model Selection Panel**
-   - Dropdown for each provider
-   - Model details (description, size, speed rating)
-   - "Set as Default" checkbox
-   - Save/Cancel buttons
+## Deployment Phases
 
-3. **API Key Management Panel**
-   - Masked key display (sk-ant-***...xyz)
-   - Show/Hide toggle
-   - Update Key button with modal
-   - Key validation status
+### Phase 1: Infrastructure Preparation
+- Order and configure Hetzner CX32 VPS
+- Install Docker, Docker Compose, UFW firewall
+- Deploy Traefik reverse proxy
+- Test basic connectivity
 
-4. **Cost Tracking Dashboard**
-   - Total cost cards (today, week, month)
-   - Request count chart (line chart)
-   - Cost breakdown pie chart (by provider)
-   - Monthly projection estimate
+### Phase 2: Ready Apps Deployment
+- Deploy FwChange (landing page exists)
+- Deploy RetirementAI (landing page exists)
+- Configure DNS for both apps
+- Verify SSL certificates
 
-5. **Performance Metrics Panel**
-   - Response time chart (bar chart)
-   - Success rate percentage
-   - Uptime status (7-day trend)
-   - Quality rating (star rating)
+### Phase 3: Build Required Assets
+- Build C3 Compliance React frontend to static
+- Create VarnaAI Intelligence landing page
+- Assess SEO Agent for static conversion
 
-### Design System (Blue & Gold Theme)
-```css
-colors: {
-  'primary': '#2563eb',        // Royal blue
-  'gold': '#f59e0b',           // Gold accent
-  'success': '#10b981',        // Green (online)
-  'alert': '#ef4444',          // Red (offline)
-  'warning': '#f59e0b',        // Yellow (degraded)
-  'dark-bg': '#0a0e1a',        // Deep navy
-  'card-dark': '#1e293b',      // Slate
-}
-```
+### Phase 4: Complete Deployment
+- Deploy remaining 3 apps
+- Configure all DNS entries
+- Performance testing
+- Update portfolio links on varnaai.com
 
-### Data Persistence
-- **Browser localStorage**: Model preferences, default providers, UI settings
-- **Server-side (in-memory)**: Usage statistics, cost tracking (reset on restart)
-- **Future enhancement**: Redis for persistent usage data across restarts
+## Success Criteria
+- All 5 apps accessible via HTTPS with valid SSL
+- Page load time < 2 seconds
+- Lighthouse score > 90/100
+- Mobile responsive on all sites
+- Zero backend dependencies (pure static)
+- Monthly cost under €25
 
-## Success Metrics
-1. **Provider Status Visibility**: Users can instantly see which AI providers are online
-2. **Configuration Ease**: Users can switch models in < 30 seconds
-3. **Cost Transparency**: Users can view accurate cost breakdown per provider
-4. **Performance Insights**: Users can identify fastest/most reliable provider
-5. **Default Automation**: 80%+ of content generation uses default providers without manual selection
+## Constraints
+- No databases required (static only)
+- No authentication systems
+- No signup functionality
+- No Ollama or AI processing on server
+- Minimal resource usage (optimize for cost)
 
-## Implementation Phases
+## Risk Mitigation
+- Create local backups before deployment
+- Test locally with Docker before VPS deployment
+- Implement monitoring (UptimeRobot free tier)
+- Document rollback procedures
+- Keep deployment scripts for reproducibility
 
-### Phase 1: Provider Status Monitoring (MVP)
-- Add health check endpoints
-- Display status cards for all 3 providers
-- Auto-refresh status every 30 seconds
-- Show last successful ping
+## Timeline
+- Day 1: Infrastructure setup
+- Day 2-3: Deploy ready apps (FwChange, RetirementAI)
+- Day 4-5: Create missing assets
+- Day 6: Deploy remaining apps
+- Day 7: Testing and optimization
 
-### Phase 2: Model Configuration
-- Add model selection dropdowns
-- Implement model switching logic in server.js
-- Save preferences to localStorage
-- Display model details
-
-### Phase 3: API Key Management
-- Add masked key display
-- Implement show/hide toggle
-- Add update key modal
-- Validate key format
-
-### Phase 4: Cost Tracking
-- Track request counts per provider
-- Calculate costs based on pricing
-- Display cost breakdown charts
-- Add monthly projection
-
-### Phase 5: Performance Metrics
-- Track response times
-- Calculate success rates
-- Display uptime percentages
-- Add performance comparison chart
-
-## Out of Scope (Future Enhancements)
-- Custom model training
-- AI prompt template management
-- A/B testing for content quality
-- Provider auto-failover
-- Advanced analytics (sentiment analysis, engagement prediction)
-
-## Dependencies
-- Express.js server with AI provider clients initialized
-- AlpineJS for reactive UI
-- Chart.js or similar for data visualization
-- Tailwind CSS for styling
-
-## Timeline Estimate
-- Phase 1 (Status Monitoring): 2-3 hours
-- Phase 2 (Model Configuration): 2-3 hours
-- Phase 3 (API Key Management): 1-2 hours
-- Phase 4 (Cost Tracking): 3-4 hours
-- Phase 5 (Performance Metrics): 2-3 hours
-
-**Total Estimated Time**: 10-15 hours of development
-
-## Notes
-- Prioritize Phase 1 (Status Monitoring) as foundation
-- Phases 2-3 can be developed in parallel
-- Phases 4-5 require data collection from server.js modifications
-- All phases should maintain blue & gold color theme consistency
+## Maintenance Plan
+- Weekly backups to local storage
+- Monthly security updates
+- SSL certificate auto-renewal via Traefik
+- Quarterly content updates
+- Annual infrastructure review

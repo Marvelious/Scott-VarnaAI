@@ -39,7 +39,7 @@ Then I'll execute following the exact workflow.
 ## File Structure
 
 - **START_HERE.md** ← You are here (the "go" command)
-- **URLS.md** ← Real internal pages for 5 websites
+- **URLS.md** ← Real internal pages for 4 websites
 - **SAAS_APPS.md** ← Portfolio apps to promote in posts
 - **INSTRUCTIONS.md** ← SEO rules and WordPress formatting
 - **LESSONS_LEARNED.md** ← Error archive (56K tokens saved)

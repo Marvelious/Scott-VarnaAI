@@ -1,6 +1,6 @@
 # VarnaAI SaaS Portfolio
 
-**Context**: The 5 WordPress sites are MARKETING sites. These are the actual SaaS APPLICATIONS we promote in blog posts.
+**Context**: The 4 WordPress sites are MARKETING sites. These are the actual SaaS APPLICATIONS we promote in blog posts.
 
 ---
 
@@ -73,11 +73,6 @@
 1. Webscrap (PRIMARY)
 2. SEOAgent
 3. AI Project Manager
-
-**classicsecurity.net** (Security):
-1. FWChange (PRIMARY - 17 years matches)
-2. C3 Compliance (when ready)
-3. RetirementAI
 
 ---
 

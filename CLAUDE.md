@@ -13,7 +13,7 @@ D:\VarnaAI\Websites\
 ├── README.md                          # Project overview
 ├── CLAUDE.md                          # AI instructions (this file)
 ├── SCHEMA_ORG_TEMPLATES.md            # Schema markup reference
-├── COMPANY_INFO.md                    # Company details for all 5 sites
+├── COMPANY_INFO.md                    # Company details for all 4 sites
 │
 ├── seo/                               # SEO Strategy & Tools
 │   ├── SEO_Portfolio_Strategy_2025.md # Master SEO strategy document
@@ -128,12 +128,11 @@ Use these REAL project experiences as inspiration for anonymous case studies:
 **USAGE RULE**: Extract authentic details (numbers, technologies, challenges) from CV BUT anonymize company names and personal info.
 
 ## Project Overview
-Managing content creation for 5 WordPress sites in Big Dick's portfolio:
+Managing content creation for 4 WordPress sites in Big Dick's portfolio:
 1. **ai-projektmanager.de** - AI project management (German)
 2. **aimarketingbg.com** - AI marketing (English/Bulgarian)
-3. **classicsecurity.net** - Security services (English)
-4. **varna-agenten.de** - AI agents (German)
-5. **varnaai.com** - AI services (English)
+3. **varna-agenten.de** - AI agents (German)
+4. **varnaai.com** - AI services (English)
 
 ## WordPress Access Credentials
 
@@ -141,7 +140,6 @@ Managing content creation for 5 WordPress sites in Big Dick's portfolio:
 |------|-----|----------|----------|
 | AI Projektmanager | https://ai-projektmanager.de/wp-admin/ | claude | KHBFm8LL6tRqFwhZS8O(RtNx |
 | AI Marketing BG | https://aimarketingbg.com/wp-admin/ | claude | QJ50uT$ZFdY%vldvV@)!dV6c |
-| Classic Security | https://classicsecurity.net/wp-admin/ | claude | 7E0Gd@NWLG*rAPjue9SghN2r |
 | Varna Agenten | https://varna-agenten.de/wp-admin/ | claude | 6S&15%(V8zCWL2W@1AiEsTzi |
 | Varna AI | https://varnaai.com/wp-admin/ | claude | f87lajs70)fiLXZl5j@1ycZA |
 
@@ -149,7 +147,6 @@ Managing content creation for 5 WordPress sites in Big Dick's portfolio:
 
 | Brand | Facebook | Instagram | LinkedIn | X/Twitter |
 |-------|----------|-----------|----------|-----------|
-| **Classic Security** | [classicsecurityeood](https://www.facebook.com/classicsecurityeood/) | [classicsecurity2010](https://www.instagram.com/classicsecurity2010) | [classic-security-eood](https://www.linkedin.com/company/classic-security-eood/) | [ClassicSec2010](https://x.com/ClassicSec2010) |
 | **Varna AI** | [varnaai](https://www.facebook.com/varnaai/) | [varnaaicom](https://www.instagram.com/varnaaicom) | [varnaai](https://www.linkedin.com/company/varnaai/) | [Varna_Ai](https://x.com/Varna_Ai) |
 | **AI Projektmanager** | [AIProjektmanager](https://www.facebook.com/AIProjektmanager/) | [aiprojectmanger](https://www.instagram.com/aiprojectmanger) | [ai-projektmanager](https://www.linkedin.com/company/ai-projektmanager/) | [AiProjekt](https://x.com/AiProjekt) |
 | **Varna Agenten** | [VarnaAgenten](https://www.facebook.com/VarnaAgenten/) | [varnaagents](https://www.instagram.com/varnaagents) | [varna-agenten](https://www.linkedin.com/company/varna-agenten/) | [VarnaAgenten](https://x.com/VarnaAgenten) |
@@ -157,12 +154,6 @@ Managing content creation for 5 WordPress sites in Big Dick's portfolio:
 
 **Full URLs for Google Business Profile Setup:**
 ```
-Classic Security:
-- Facebook: https://www.facebook.com/classicsecurityeood/
-- Instagram: https://www.instagram.com/classicsecurity2010
-- LinkedIn: https://www.linkedin.com/company/classic-security-eood/
-- X/Twitter: https://x.com/ClassicSec2010
-
 Varna AI:
 - Facebook: https://www.facebook.com/varnaai/
 - Instagram: https://www.instagram.com/varnaaicom
@@ -512,7 +503,7 @@ Focus Keyword: IT-Sicherheit Projektmanagement
 
 ## Standard Portfolio Page Types
 
-All 5 portfolio sites have these standard page types:
+All 4 portfolio sites have these standard page types:
 - **Home** - Homepage/landing page
 - **About** - Company/service information
 - **Kontakt** - Contact page
@@ -521,15 +512,21 @@ All 5 portfolio sites have these standard page types:
 - **Gallery** - Visual showcase
 - **Team** - Team members
 
-## Remaining Pages to Create (AI Projektmanager.de)
+## ✅ AI Projektmanager.de - COMPLETE
 
-1. ✅ **/anwendungsfaelle/it-sicherheit** - IT Security (COMPLETED - 605 words, 86/100)
+**Status**: All 7 pages completed and exported (XML backup created 2025-11-13)
+**Backup**: `done/aiprojektmanagersicheregdpr-konformeprojektmanagementsaas.WordPress.2025-11-13.xml`
+
+### Completed Pages
+1. ✅ **/anwendungsfaelle/it-sicherheit** - IT Security (605 words, 86/100 SEO)
 2. ✅ **/anwendungsfaelle/compliance** - Compliance Management (COMPLETED)
 3. ✅ **/anwendungsfaelle/enterprise** - Enterprise Deployment (COMPLETED)
-4. ✅ **/fallstudien** - **Portfolio/Case Studies** (COMPLETED - 629 words, 88/100)
-5. ⏳ **/integrationen** - **Services/Integrations** (Technical service page)
-6. ⏳ **/eu-ai-act** - **Services/Compliance** (Legal compliance service)
-7. ⏳ **/dsgvo-konform** - **Services/Compliance** (Legal compliance service)
+4. ✅ **/fallstudien** - Portfolio/Case Studies (629 words, 88/100 SEO)
+5. ✅ **/integrationen** - Services/Integrations (COMPLETED)
+6. ✅ **/eu-ai-act** - Services/Compliance (COMPLETED)
+7. ✅ **/dsgvo-konform** - Services/Compliance (COMPLETED)
+
+**Site Ready**: ai-projektmanager.de now has complete content for all use case and service pages
 
 ## Common SEO Issues and Fixes
 
@@ -688,49 +685,79 @@ browser_file_upload({ paths: [] })
 
 ## VarnaAI App Portfolio (varnaai.com)
 
-Complete list of developer portfolio apps with status tracking:
+**📊 Portfolio Status Summary:**
+- ✅ **VPS ONLINE** - Hetzner VPS @ 78.47.125.174 (updated 2025-12-04)
+- 📝 **All portfolio pages complete**
+- 💡 **Current state**:
+  - RetirementAI running as standalone Next.js (port 3000)
+  - FwChange running in Docker (4 containers)
+  - C3 Compliance running in Docker (4 containers)
+  - nginx reverse proxy with Let's Encrypt SSL + rate limiting
+  - fail2ban active with 4 jails (sshd, nginx-botsearch, nginx-http-auth, nginx-badbots)
+  - Uptime Kuma monitoring installed (needs DNS: status.varnaai.com)
+  - Ollama with 2 models (mistral, local-model)
+
+**🌐 Live Demos:**
+- RetirementAI: https://demo-retirement.varnaai.com/ ✅ **LIVE**
+- FwChange: https://demo-fwchange.varnaai.com/ ✅ **LIVE**
+- C3 Compliance: https://c3.varnaai.com/ ✅ **LIVE**
+- Uptime Kuma: https://status.varnaai.com/ ⏳ **PENDING DNS**
+- SEO Agent: https://demo-seoagent.varnaai.com/ 🔌 **OFFLINE** (not deployed)
+- VarnaAI Agents: https://demo-agents.varnaai.com/ 🔌 **OFFLINE** (not deployed)
+
+**🔒 Security Features (2025-12-04):**
+- UFW firewall (deny all, allow 22/80/443)
+- fail2ban: 4 jails, 75+ IPs banned for SSH, 58+ for bad bots
+- Rate limiting: API (10r/s), login (1r/s), general (30r/s)
+- All containers bound to 127.0.0.1 (not exposed)
+- SSL certificates valid until Feb 2026
+
+---
 
 ### Apps with README Documentation
 
-1. **RetirementAI** (D:\VarnaAI\pension)
-   - **Portfolio Page**: ⏳ IN PROGRESS (Post ID: 317163)
-   - **Status**: Content updated (604 words), **Rank Math SEO optimization PENDING**
-   - **SEO Issues**: Focus keyword not set, keyword density 0%, missing external/internal links
+1. **RetirementAI** (D:\VarnaAI\pension) ✅ **LIVE**
+   - **Portfolio Page**: ✅ COMPLETE (Post ID: 317163)
+   - **Live Demo**: https://demo-retirement.varnaai.com/ ✅ **WORKING**
+   - **Deployed**: Hetzner VPS @ 78.47.125.174 (Port 3000, PM2)
+   - **Status**: Running as standalone Next.js with nginx reverse proxy
+   - **SEO Score**: 89/100 (Title sentiment + power words fixed)
    - **Tech Stack**: Next.js 14, PostgreSQL 15+, Redis 7+, OpenAI GPT-4, Studio LM
    - **Key Features**: Trading212 API, AI advisor, pgvector search, WCAG 2.1 AA, BullMQ job queue
 
-2. **FwChange** (D:\VarnaAI\fwchange)
-   - **Portfolio Page**: ❌ NOT STARTED
+2. **FwChange** (D:\VarnaAI\fwchange) ✅ **LIVE**
+   - **Portfolio Page**: ✅ COMPLETE (Post ID: 317353)
+   - **Live Demo**: https://demo-fwchange.varnaai.com/ ✅ **WORKING**
+   - **Deployed**: Hetzner VPS @ 78.47.125.174 (Docker: 4 containers)
+   - **Status**: Running with rate limiting enabled
+   - **SEO Score**: 90/100
    - **Tech Stack**: React 18 + TypeScript, FastAPI (Python 3.11+), PostgreSQL 15+, Redis 7
    - **Key Features**: Multi-vendor firewalls (Palo Alto, Check Point, Cisco, Fortinet), ITSM integration (Jira, ServiceNow), ISO 27001/PCI-DSS/SOX compliance
-   - **Unique Selling Point**: Built by ISO/IEC 27001 Lead Implementer and CCIE Security professional
 
-3. **SEO Agent** (D:\VarnaAI\seoagent)
-   - **Portfolio Page**: ❌ NOT STARTED
+3. **SEO Agent** (D:\VarnaAI\seoagent) 🔌 **NOT DEPLOYED**
+   - **Portfolio Page**: ✅ COMPLETE
+   - **Live Demo**: Not deployed (SSL cert exists from previous deployment)
+   - **Status**: Available for deployment if needed
    - **Tech Stack**: Vite, React 19, Express, PostgreSQL, Redis, BullMQ
    - **Key Features**: SEO audits, AI assistants (OpenAI, Anthropic, Ollama, LM Studio), JWT auth, Socket.IO real-time updates
 
-4. **Compliance Command Center (C3)** (D:\VarnaAI\dashboard)
-   - **Portfolio Page**: ❌ NOT STARTED
-   - **Tech Stack**: React 18 + TypeScript, Node.js, PostgreSQL, Playwright
+4. **Compliance Command Center (C3)** (D:\VarnaAI\dashboard) ✅ **LIVE**
+   - **Portfolio Page**: ✅ COMPLETE
+   - **Live Demo**: https://c3.varnaai.com/ ✅ **WORKING**
+   - **Deployed**: Hetzner VPS @ 78.47.125.174 (Docker: 4 containers)
+   - **Status**: Running with rate limiting enabled
+   - **Tech Stack**: React 18 + TypeScript, Node.js, PostgreSQL (pgvector), Playwright
    - **Key Features**: German compliance automation (DSGVO, KI-Verordnung, NIS2, GoBD, BSI C5), 60-second scans, German document generation
    - **Target Market**: German SMEs (10-500 employees)
 
-5. **VarnaAI Intelligence System** (D:\VarnaAI\Webscrap)
-   - **Portfolio Page**: ❌ NOT STARTED
-   - **Tech Stack**: Next.js 14, FastAPI, PostgreSQL, Redis, Llama 3.1 (8B/70B)
-   - **Key Features**: 6 autonomous agents, multi-language support (Bulgarian/English/German/Russian), email management, collaboration rooms
-   - **Target Market**: Bulgarian SME market with €96K pipeline
+5. **VarnaAI Multi-Agent Platform** (D:\VarnaAI\varnaai) 🔌 **NOT DEPLOYED**
+   - **Portfolio Page**: Landing page showcase was deployed
+   - **Live Demo**: Not deployed (SSL cert exists from previous deployment)
+   - **Status**: Available for deployment if needed
+   - **Tech Stack**: Next.js 14, NestJS, PostgreSQL, Redis, MongoDB, Neo4j, Qdrant, Kafka
+   - **Key Features**: 6 autonomous agents, 4-language support (Bulgarian/English/German/Russian), Llama 3.1 (8B/70B), RAG search, DATEV integration
+   - **Target Market**: Bulgarian SME market (€96K pipeline)
 
-### Apps Without README Documentation
-
-6. **agenticcoder** (D:\VarnaAI\agenticcoder)
-   - **Portfolio Page**: ❌ NOT STARTED
-   - **Documentation**: ⚠️ Missing README.md
-
-7. **projectmanager** (D:\VarnaAI\projectmanager)
-   - **Portfolio Page**: ❌ NOT STARTED
-   - **Documentation**: ⚠️ Missing README.md
 
 ## RetirementAI Portfolio Page - Work Status
 
@@ -777,3 +804,62 @@ If uncertain about:
 - SEO metadata → Ask "Can you provide the Rank Math details?"
 - Page structure → Ask "Should I add more content sections?"
 - **Focus Keyword** → Ask "What should the Focus Keyword be for this page?"
+
+---
+
+## 📝 Blog Generation Workflow
+
+**Location**: `D:\VarnaAI\Websites\blogs\`
+**Last Updated**: 2025-12-02
+
+### Quick Start
+Say **"go"** → I'll ask **"What task?"** → Tell me the website → I execute the 3-phase workflow.
+
+### Key Files
+| File | Purpose |
+|------|---------|
+| `START_HERE.md` | Quick start guide ("go" command) |
+| `URLS.md` | **54 real internal URLs** for 4 websites (scanned 2025-12-02) |
+| `SAAS_APPS.md` | Portfolio apps to promote in posts |
+| `INSTRUCTIONS.md` | SEO rules, WordPress formatting |
+| `LESSONS_LEARNED.md` | Error archive (56K tokens saved) |
+| `TOPIC_DIVERSITY_MATRIX.md` | 80+ unique topics across 4 sites |
+| `GAP_ANALYSIS_2025.md` | Content gaps and priorities |
+
+### Blog Posts Archive
+**Consolidated Location**: `blogs/blog_posts/2025-12-02/`
+- `ai-projektmanager/` - 9 posts
+- `aimarketingbg/` - 7 posts
+- `varna-agenten/` - 1 post
+- `varnaai/` - 7 posts
+- **Total**: 24 existing blog posts
+
+### The 3-Phase Workflow
+1. **Validation** (2 min) - Check URLS.md, verify topic diversity, plan 7+3 links
+2. **Writing** (20 min) - WordPress blocks, embed links IN content, track focus keyword
+3. **Verification** (3 min) - Count keywords, verify all 10 links embedded, check format
+
+### Critical SEO Rules
+- ✅ **7 internal links** from URLS.md (real pages only)
+- ✅ **3 external DoFollow links** to authorities (BSI, Gartner, etc.)
+- ✅ **External links**: `rel="noopener"` ONLY (NO nofollow on citations!)
+- ✅ **WordPress blocks** with spacers before every H2
+- ✅ **Focus keyword**: 18-22 occurrences in 2000-word post (1% density)
+- ✅ **Paragraphs**: Maximum 3 sentences each
+
+### Portfolio Sites (4 Websites)
+| Site | Language | Focus |
+|------|----------|-------|
+| ai-projektmanager.de | German | AI project management, compliance |
+| varnaai.com | English | Enterprise AI, security |
+| aimarketingbg.com | English | AI marketing, lead generation |
+| varna-agenten.de | German | Creative AI, design automation |
+
+### Image Rule
+**One featured image per blog post** - Big Dick handles all images
+
+---
+
+## Task Master AI Instructions
+**Import Task Master's development workflow commands and guidelines, treat as if import is in the main CLAUDE.md file.**
+@./.taskmaster/CLAUDE.md

@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0d0b1a;
+    color: #f3f4f6;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  /* Cyberpunk button styles */
+  .btn-primary {
+    background: linear-gradient(to right, #7c3aed, #8b5cf6);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s;
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+    transform: scale(1.05);
+  }
+
+  .btn-primary:active {
+    transform: scale(0.95);
+  }
+
+  .btn-secondary {
+    background-color: #1e1749;
+    border: 1px solid #2d2476;
+    color: #f3f4f6;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s;
+  }
+
+  .btn-secondary:hover {
+    background-color: #16123a;
+    border-color: #7c3aed;
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+  }
+
+  /* Card styles */
+  .card {
+    background-color: #1e1749;
+    border: 1px solid #2d2476;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: all 0.3s;
+  }
+
+  .card:hover {
+    border-color: rgba(124, 58, 237, 0.5);
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.2);
+  }
+
+  /* Input styles */
+  .input-field {
+    width: 100%;
+    background-color: #16123a;
+    border: 1px solid #2d2476;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    color: #f3f4f6;
+    transition: all 0.3s;
+  }
+
+  .input-field::placeholder {
+    color: #6b7280;
+  }
+
+  .input-field:focus {
+    outline: none;
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+  }
+
+  /* Select styles */
+  .select-field {
+    width: 100%;
+    background-color: #16123a;
+    border: 1px solid #2d2476;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    color: #f3f4f6;
+    transition: all 0.3s;
+  }
+
+  .select-field:focus {
+    outline: none;
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+  }
+
+  /* Textarea styles */
+  .textarea-field {
+    width: 100%;
+    background-color: #16123a;
+    border: 1px solid #2d2476;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    color: #f3f4f6;
+    resize: none;
+    transition: all 0.3s;
+  }
+
+  .textarea-field::placeholder {
+    color: #6b7280;
+  }
+
+  .textarea-field:focus {
+    outline: none;
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+  }
+
+  /* Step indicator styles */
+  .step-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    border: 2px solid;
+    transition: all 0.3s;
+  }
+
+  .step-active {
+    background-color: #7c3aed;
+    border-color: #7c3aed;
+    color: white;
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+  }
+
+  .step-completed {
+    background-color: #00ff88;
+    border-color: #00ff88;
+    color: #0d0b1a;
+  }
+
+  .step-pending {
+    background-color: #16123a;
+    border-color: #2d2476;
+    color: #6b7280;
+  }
+
+  /* Progress bar */
+  .progress-bar {
+    height: 0.5rem;
+    background-color: #16123a;
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(to right, #7c3aed, #a855f7);
+    transition: all 0.5s ease-out;
+  }
+}
+
+/* Liquid ether background effect */
+@keyframes liquid-ether {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.liquid-bg::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(124, 58, 237, 0.1) 0%,
+    transparent 70%
+  );
+  animation: liquid-ether 30s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}

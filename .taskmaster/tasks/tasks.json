@@ -2,7 +2,7 @@
   "master": {
     "tasks": [
       {
-        "id": 1,
+        "id": "1",
         "title": "Setup dashboard project structure",
         "description": "Create dashboard folder with index.html, server.js, package.json, and subdirectories for modules, api, and config",
         "details": "Create D:/VarnaAI/Websites/dashboard/ with proper folder structure for a modern SaaS control panel. Include Tailwind CSS setup and Express.js backend configuration.",
@@ -13,7 +13,7 @@
         "subtasks": []
       },
       {
-        "id": 2,
+        "id": "2",
         "title": "Create main dashboard UI layout",
         "description": "Build index.html with Tailwind CSS classes for modern SaaS dashboard with sidebar, main content area, and status bar",
         "details": "Use color palette: Primary Blue #0066cc, Purple Gradient #667eea to #764ba2, Dark #2d3748, Success Green #48bb78, Alert Red #ff6b6b. Create responsive grid layout with dark theme.",
@@ -24,171 +24,248 @@
         "subtasks": []
       },
       {
-        "id": 3,
+        "id": "3",
         "title": "Build WordPress control panel section",
         "description": "Create WordPress management section with login buttons for all 5 sites, page tracker, and SEO score monitoring",
         "details": "Add quick login buttons using stored credentials from CLAUDE.md. Display page creation status (4/35 pages), average SEO score, and site health indicators.",
         "testStrategy": "",
         "status": "done",
         "dependencies": [
-          1,
-          2
+          "1",
+          "2"
         ],
         "priority": "high",
         "subtasks": []
       },
       {
-        "id": 4,
+        "id": "4",
         "title": "Implement content generation hub",
         "description": "Build AI content generator section with blog post, social media, and email campaign creation",
         "details": "Support DE/EN/BG languages. Include tone selection (professional/casual). Connect to OpenAI or Claude API for generation.",
         "testStrategy": "",
         "status": "done",
         "dependencies": [
-          1,
-          2
+          "1",
+          "2"
         ],
         "priority": "high",
         "subtasks": []
       },
       {
-        "id": 5,
+        "id": "5",
         "title": "Create marketing automation panel",
         "description": "Build marketing section with Mailchimp email lists, Buffer social scheduling, and campaign launcher",
         "details": "Integrate existing marketing-machine APIs. Show subscriber count, scheduled posts, active campaigns. Add buttons for launching campaigns and scheduling social blasts.",
         "testStrategy": "",
         "status": "done",
         "dependencies": [
-          1,
-          2
+          "1",
+          "2"
         ],
         "priority": "high",
         "subtasks": []
       },
       {
-        "id": 6,
+        "id": "6",
         "title": "Setup Express.js backend server",
         "description": "Create server.js with API endpoints for tool execution, credential management, and external API connections",
         "details": "Setup Express server with endpoints for WordPress login, content generation, marketing automation, and analytics. Include secure credential storage and session management.",
         "testStrategy": "",
         "status": "done",
         "dependencies": [
-          1
+          "1"
         ],
         "priority": "high",
         "subtasks": []
       },
       {
-        "id": 7,
+        "id": "7",
         "title": "Build analytics monitoring dashboard",
         "description": "Create real-time analytics section with GA4 integration, visitor tracking, and performance metrics",
         "details": "Display today's visitors, leads, keyword rankings, social engagement, email open rates. Use Chart.js for data visualization. Connect to Google Analytics API.",
         "testStrategy": "",
-        "status": "in-progress",
+        "status": "done",
         "dependencies": [
-          1,
-          2,
-          6
+          "1",
+          "2",
+          "6"
         ],
         "priority": "medium",
-        "subtasks": []
+        "subtasks": [],
+        "updatedAt": "2025-11-24T04:53:59.799Z"
       },
       {
-        "id": 8,
+        "id": "8",
         "title": "Implement quick actions panel",
         "description": "Create one-click operations panel for common tasks like batch content generation and bulk posting",
         "details": "Add buttons for: Generate complaint letter, Create WordPress page, Run SEO audit, Export analytics, Clear cache, Check broken links.",
         "testStrategy": "",
-        "status": "pending",
+        "status": "done",
         "dependencies": [
-          1,
-          2
+          "1",
+          "2"
         ],
         "priority": "medium",
-        "subtasks": []
+        "subtasks": [],
+        "updatedAt": "2025-11-24T06:52:54.851Z"
       },
       {
-        "id": 9,
-        "title": "Create Comprehensive AI Settings Page",
-        "description": "Develop a complete AI settings page with provider status monitoring, model configuration, API key management, cost tracking dashboard, and performance metrics with real-time indicators.",
-        "details": "Implement the AI Settings page with the following components:\n\n1. Provider Status Monitoring:\n   - Create status cards for Ollama, Claude, and LM Studio\n   - Implement real-time status indicators (green/yellow/red)\n   - Set up auto-refresh functionality every 30 seconds\n\n2. Model Configuration:\n   - Create dropdown selectors for available models per provider\n   - Save configuration preferences to localStorage\n   - Display model capabilities and limitations\n\n3. API Key Management:\n   - Build secure input fields with masked display\n   - Implement validation for API key format\n   - Add save/update functionality\n\n4. Cost Tracking Dashboard:\n   - Create usage charts per provider\n   - Implement historical cost tracking\n   - Add filtering by date range\n\n5. Performance Metrics:\n   - Display response times\n   - Show token usage statistics\n   - Track success/failure rates\n\nBackend Requirements:\n- Create 5 API endpoints:\n  - `/api/ai/status`: Returns current status of all AI providers\n  - `/api/ai/models`: Lists available models per provider\n  - `/api/ai/config`: Handles saving/retrieving configuration\n  - `/api/ai/usage`: Provides usage statistics\n  - `/api/ai/cost`: Returns cost data per provider\n\nFrontend Implementation:\n- Use AlpineJS for reactive components\n- Maintain blue & gold theme consistency with existing UI\n- Implement responsive layout for all screen sizes\n- Create 3 provider status cards with toggle switches\n- Build model selection panel with provider-specific options\n- Design API key management panel with secure input handling\n- Develop cost tracking charts with Chart.js\n- Create performance metrics display with auto-updating data",
-        "testStrategy": "1. API Endpoint Testing:\n   - Use Postman or similar tool to verify all 5 endpoints return correct data\n   - Test error handling with invalid requests\n   - Verify authentication requirements\n\n2. UI Component Testing:\n   - Verify all UI elements render correctly across browsers (Chrome, Firefox, Safari)\n   - Test responsive layout on desktop, tablet, and mobile viewports\n   - Confirm theme consistency with existing dashboard\n\n3. Functionality Testing:\n   - Verify real-time status indicators update correctly\n   - Test auto-refresh functionality works every 30 seconds\n   - Confirm API key masking functions properly\n   - Validate model selection dropdowns populate with correct options\n   - Test localStorage persistence by refreshing page and changing browsers\n   - Verify cost tracking charts display accurate data\n\n4. Integration Testing:\n   - Test end-to-end workflow from configuration to usage tracking\n   - Verify changes in provider status reflect correctly in UI\n   - Confirm cost data updates based on usage\n\n5. Performance Testing:\n   - Measure page load time with all components\n   - Test auto-refresh impact on performance\n   - Verify chart rendering performance with large datasets",
-        "status": "pending",
-        "dependencies": [
-          1,
-          2,
-          6
-        ],
-        "priority": "medium",
+        "id": "9",
+        "title": "Hetzner VPS Infrastructure Preparation",
+        "description": "Set up Hetzner CX32 VPS with Docker, Docker Compose, and firewall configuration",
+        "details": "1. Order Hetzner CX32 VPS in Falkenstein datacenter\n2. Install Ubuntu 22.04 LTS\n3. Configure UFW firewall\n4. Install Docker and Docker Compose\n5. Set up system updates and security hardening\n6. Create deploy user with sudo access\nPseudo-code:\n```bash\n# System preparation\napt update && apt upgrade -y\nufw default deny incoming\nufw allow ssh\nufw allow http\nufw allow https\nufw enable\n\n# Docker installation\ncurl -fsSL https://get.docker.com -o get-docker.sh\nsh get-docker.sh\nusermod -aG docker deploy_user\n```",
+        "testStrategy": "1. Verify Docker installation with 'docker run hello-world'\n2. Check UFW status and allowed ports\n3. Confirm system updates are applied\n4. Test sudo access for deploy user\n5. Verify internet connectivity",
+        "priority": "high",
+        "dependencies": [],
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
-            "title": "Create Provider Status Monitoring Component",
-            "description": "Develop status cards for Ollama, Claude, and LM Studio with real-time indicators and auto-refresh functionality.",
+            "title": "Order and Initialize Hetzner CX32 VPS",
+            "description": "Procure Hetzner CX32 VPS in Falkenstein datacenter and complete initial Ubuntu 22.04 LTS installation",
             "dependencies": [],
-            "details": "Create three status cards with provider logos, current status indicators (green/yellow/red), and toggle switches for enabling/disabling each provider. Implement auto-refresh functionality that checks status every 30 seconds using the /api/ai/status endpoint. Use AlpineJS for reactive updates and maintain blue & gold theme consistency.",
-            "status": "done",
-            "testStrategy": "Test status indicator changes based on API responses. Verify auto-refresh functionality works correctly. Ensure toggle switches properly enable/disable providers. Test responsive layout on multiple screen sizes."
+            "details": "1. Navigate to Hetzner Cloud Console\n2. Create new CX32 VPS in Falkenstein datacenter\n3. Select Ubuntu 22.04 LTS as base image\n4. Generate and securely store SSH key\n5. Note down initial root credentials\n6. Perform first login and verify system accessibility",
+            "status": "pending",
+            "testStrategy": "1. Confirm successful VPS creation\n2. SSH into server with generated key\n3. Verify Ubuntu 22.04 LTS is correctly installed",
+            "parentId": "undefined"
           },
           {
             "id": 2,
-            "title": "Implement Model Configuration Interface",
-            "description": "Create dropdown selectors for available models per provider with configuration storage and capability display.",
+            "title": "Docker and Docker Compose Installation",
+            "description": "Install Docker Engine and Docker Compose on Ubuntu VPS",
             "dependencies": [
               1
             ],
-            "details": "Build model selection panel with dropdown menus for each provider showing available models. Fetch model data from /api/ai/models endpoint. Implement localStorage saving of selected models. Display model capabilities and limitations in an expandable info panel. Ensure UI is responsive and maintains theme consistency.",
-            "status": "done",
-            "testStrategy": "Verify model dropdowns populate correctly from API. Test localStorage saving and retrieval of preferences. Ensure model capability information displays correctly. Test responsive behavior on different devices."
+            "details": "1. Update system packages: apt update && apt upgrade -y\n2. Install prerequisites: apt-install ca-certificates curl gnupg lsb-release\n3. Add Docker's official GPG key\n4. Set up Docker repository\n5. Install Docker Engine\n6. Install Docker Compose plugin\n7. Verify installations with version checks",
+            "status": "pending",
+            "testStrategy": "1. Run 'docker version' to confirm installation\n2. Run 'docker compose version'\n3. Execute 'docker run hello-world' to test Docker functionality",
+            "parentId": "undefined"
           },
           {
             "id": 3,
-            "title": "Develop API Key Management System",
-            "description": "Build secure input fields for API keys with masked display, validation, and save functionality.",
+            "title": "Configure UFW Firewall",
+            "description": "Set up Uncomplicated Firewall (UFW) with secure default configuration",
             "dependencies": [
               1
             ],
-            "details": "Create secure input fields for each provider's API key with masked display (show/hide toggle). Implement client-side validation for API key format. Add save/update functionality that communicates with the /api/ai/config endpoint. Include visual feedback for successful saves and validation errors. Ensure proper security handling of sensitive data.",
+            "details": "1. Install UFW: apt install ufw\n2. Set default policies: \n   - Deny all incoming traffic\n   - Allow all outgoing traffic\n3. Enable specific port access:\n   - Allow SSH (port 22)\n   - Allow HTTP (port 80)\n   - Allow HTTPS (port 443)\n4. Enable UFW\n5. Verify firewall rules",
             "status": "pending",
-            "testStrategy": "Test API key validation with valid and invalid formats. Verify masking functionality works correctly. Test save/update operations with the backend. Ensure proper error handling and user feedback."
+            "testStrategy": "1. Check UFW status: ufw status verbose\n2. Verify allowed ports match configuration\n3. Test SSH connectivity\n4. Confirm no unexpected ports are open",
+            "parentId": "undefined"
           },
           {
             "id": 4,
-            "title": "Create Cost Tracking Dashboard",
-            "description": "Implement usage charts and historical cost tracking with date range filtering for each provider.",
+            "title": "Create Deploy User with SSH Key",
+            "description": "Create non-root deploy user with sudo access and SSH key authentication",
             "dependencies": [
-              1,
-              3
+              1
             ],
-            "details": "Develop cost tracking charts using Chart.js to visualize usage data per provider. Implement historical cost tracking with data from /api/ai/cost endpoint. Add date range filtering functionality (daily, weekly, monthly views). Create summary cards showing total costs and usage trends. Ensure responsive design for all chart components.",
-            "status": "done",
-            "testStrategy": "Verify charts render correctly with different data sets. Test date range filtering functionality. Ensure calculations for cost summaries are accurate. Test responsive behavior of charts on different screen sizes."
+            "details": "1. Create new user 'deploy_user'\n2. Add user to sudo group\n3. Configure SSH key authentication\n4. Disable root SSH login\n5. Configure SSH daemon settings\n6. Set secure permissions on .ssh directory\n7. Test user sudo and SSH access",
+            "status": "pending",
+            "testStrategy": "1. Attempt login as deploy_user via SSH key\n2. Test sudo access without password\n3. Verify root login is disabled\n4. Confirm no password-based authentication",
+            "parentId": "undefined"
           },
           {
             "id": 5,
-            "title": "Build Performance Metrics Display",
-            "description": "Create interface for displaying response times, token usage statistics, and success/failure rates.",
+            "title": "System Hardening and Updates",
+            "description": "Apply system updates, configure automatic security updates, and implement basic system hardening",
+            "dependencies": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "details": "1. Enable automatic security updates\n2. Install and configure fail2ban\n3. Remove unnecessary packages\n4. Disable unused services\n5. Configure system log rotation\n6. Set up automatic system updates via unattended-upgrades\n7. Verify and log update process",
+            "status": "pending",
+            "testStrategy": "1. Check unattended-upgrades configuration\n2. Verify fail2ban is active and configured\n3. Run system security audit with lynis\n4. Confirm no critical security vulnerabilities",
+            "parentId": "undefined"
+          }
+        ],
+        "complexity": 7,
+        "recommendedSubtasks": 5,
+        "expansionPrompt": "Break down Hetzner VPS setup into granular steps focusing on security, Docker installation, and system configuration",
+        "updatedAt": "2025-11-24T01:49:06.659Z"
+      },
+      {
+        "id": "10",
+        "title": "Traefik Reverse Proxy Configuration",
+        "description": "Deploy Traefik as reverse proxy with Let's Encrypt SSL certificate management",
+        "details": "1. Create docker-compose.yml for Traefik\n2. Configure dynamic configuration for SSL\n3. Set up Let's Encrypt DNS challenge via All-Inkl API\n4. Create Traefik configuration files\nPseudo-code:\n```yaml\nservices:\n  traefik:\n    image: traefik:v2.10\n    ports:\n      - 80:80\n      - 443:443\n    volumes:\n      - /var/run/docker.sock:/var/run/docker.sock\n      - ./traefik.yml:/etc/traefik/traefik.yml\n    environment:\n      - ALLINKL_API_KEY=${ALLINKL_API_KEY}\n```",
+        "testStrategy": "1. Verify Traefik container starts successfully\n2. Test HTTP to HTTPS redirect\n3. Confirm Let's Encrypt certificate generation\n4. Check SSL certificate validity via SSL checker",
+        "priority": "high",
+        "dependencies": [
+          "9"
+        ],
+        "status": "cancelled",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Traefik Docker Compose Setup with Let's Encrypt Configuration",
+            "description": "Create a comprehensive Docker Compose configuration for Traefik with Let's Encrypt SSL certificate management using All-Inkl DNS challenge",
+            "dependencies": [],
+            "details": "1. Create docker-compose.yml defining Traefik service\n2. Configure Let's Encrypt provider with All-Inkl DNS challenge\n3. Set up environment variables for All-Inkl API credentials\n4. Define volume mounts for configuration and Docker socket\n5. Configure Traefik image with latest v2.10 version",
+            "status": "pending",
+            "testStrategy": "1. Verify docker-compose file syntax\n2. Check Traefik container starts successfully\n3. Validate Let's Encrypt configuration",
+            "parentId": "undefined"
+          },
+          {
+            "id": 2,
+            "title": "Docker Network Configuration for Container Communication",
+            "description": "Create and configure Docker networks to enable secure communication between Traefik and backend services",
+            "dependencies": [
+              1
+            ],
+            "details": "1. Create primary overlay network for Traefik\n2. Create separate networks for different service groups\n3. Configure network isolation and security\n4. Set up network aliases for service discovery\n5. Implement network-level security restrictions",
+            "status": "pending",
+            "testStrategy": "1. Verify network creation\n2. Test inter-container communication\n3. Check network isolation rules",
+            "parentId": "undefined"
+          },
+          {
+            "id": 3,
+            "title": "SSL Certificate Configuration and Testing",
+            "description": "Implement Let's Encrypt SSL certificate generation and validation for all portfolio domains",
             "dependencies": [
               1,
               2
             ],
-            "details": "Implement performance metrics section with gauges and charts showing response times, token usage statistics, and success/failure rates. Fetch data from /api/ai/usage endpoint. Create auto-updating displays that refresh with new data. Include comparative metrics between providers. Design responsive layout that works on all screen sizes.",
-            "status": "done",
-            "testStrategy": "Test metrics display with various data scenarios. Verify auto-updating functionality works correctly. Ensure calculations and data representations are accurate. Test responsive layout on multiple devices."
+            "details": "1. Configure DNS challenge with All-Inkl API credentials\n2. Set up wildcard certificate for *.varnaai.com\n3. Configure certificate renewal mechanism\n4. Implement certificate validation checks\n5. Set up monitoring for certificate expiration",
+            "status": "pending",
+            "testStrategy": "1. Verify SSL certificate generation\n2. Test certificate validity with SSL checkers\n3. Confirm automatic renewal works\n4. Check HTTPS functionality across domains",
+            "parentId": "undefined"
+          },
+          {
+            "id": 4,
+            "title": "HTTP to HTTPS Redirect Configuration",
+            "description": "Implement global HTTP to HTTPS redirect for all portfolio domains",
+            "dependencies": [
+              1,
+              2,
+              3
+            ],
+            "details": "1. Create global middleware for HTTP to HTTPS redirect\n2. Configure redirect rules for all domains\n3. Implement permanent (308) redirect\n4. Ensure redirect works for root and all subdomains\n5. Add HSTS (HTTP Strict Transport Security) headers",
+            "status": "pending",
+            "testStrategy": "1. Test HTTP to HTTPS redirect for each domain\n2. Verify HSTS header implementation\n3. Check redirect works for all URL variations",
+            "parentId": "undefined"
+          },
+          {
+            "id": 5,
+            "title": "Traefik Dashboard Configuration and Security",
+            "description": "Set up Traefik dashboard with secure access and authentication",
+            "dependencies": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "details": "1. Enable Traefik dashboard\n2. Implement basic auth or OAuth for dashboard access\n3. Configure IP restrictions for dashboard\n4. Set up secure credentials for dashboard login\n5. Implement audit logging for dashboard access",
+            "status": "pending",
+            "testStrategy": "1. Verify dashboard authentication\n2. Test IP restrictions\n3. Check login audit logs\n4. Confirm dashboard is only accessible from approved IPs",
+            "parentId": "undefined"
           },
           {
             "id": 6,
-            "title": "Develop Backend API Endpoints",
-            "description": "Create the five required API endpoints for AI provider status, models, configuration, usage, and cost data.",
-            "dependencies": [],
-            "details": "Implement five RESTful API endpoints: /api/ai/status for provider status, /api/ai/models for available models, /api/ai/config for configuration management, /api/ai/usage for usage statistics, and /api/ai/cost for cost data. Include proper error handling, authentication checks, and data validation. Document API responses for frontend integration.",
-            "status": "done",
-            "testStrategy": "Test each endpoint with valid and invalid requests. Verify correct data formatting and error responses. Test authentication requirements. Benchmark endpoint performance under load."
-          },
-          {
-            "id": 7,
-            "title": "Implement Responsive Layout and UI Components",
-            "description": "Create responsive layout for the AI settings page with consistent styling across all components.",
+            "title": "Advanced Routing Rules and Middleware Configuration",
+            "description": "Develop comprehensive routing rules and middleware for multiple domains and services",
             "dependencies": [
               1,
               2,
@@ -196,34 +273,813 @@
               4,
               5
             ],
-            "details": "Implement responsive grid layout for the AI settings page using Tailwind CSS. Ensure blue & gold theme consistency with existing UI. Create navigation tabs for different sections (Status, Models, Keys, Costs, Performance). Design mobile-friendly interface with appropriate breakpoints. Implement loading states and error handling for all UI components.",
+            "details": "1. Create routing rules for each portfolio domain\n2. Implement service-specific middleware\n3. Configure path-based routing\n4. Set up rate limiting and basic protection\n5. Implement headers and security middleware\n6. Configure error handling and custom error pages",
+            "status": "pending",
+            "testStrategy": "1. Verify routing for each domain\n2. Test middleware functionality\n3. Check rate limiting works correctly\n4. Validate error handling mechanisms\n5. Confirm security headers are applied",
+            "parentId": "undefined"
+          }
+        ],
+        "complexity": 8,
+        "recommendedSubtasks": 6,
+        "expansionPrompt": "Develop a comprehensive Traefik configuration plan with detailed SSL, routing, and Let's Encrypt integration steps",
+        "updatedAt": "2025-11-24T01:51:54.170Z"
+      },
+      {
+        "id": "11",
+        "title": "FwChange Static Site Deployment",
+        "description": "Deploy FwChange landing page as static site with Docker",
+        "details": "1. Create Dockerfile for Nginx Alpine\n2. Copy FwChange landing page files\n3. Configure Traefik labels for routing\n4. Set up domain fwchange.varnaai.com\nPseudo-code:\n```dockerfile\nFROM nginx:alpine\nCOPY landing/ /usr/share/nginx/html\n```\n```yaml\n# Docker Compose Service\nfwchange:\n  labels:\n    - traefik.http.routers.fwchange.rule=Host(`fwchange.varnaai.com`)\n    - traefik.enable=true\n```",
+        "testStrategy": "1. Verify site accessible via HTTPS\n2. Check Lighthouse performance score\n3. Test mobile responsiveness\n4. Validate all links and resources load correctly",
+        "priority": "medium",
+        "dependencies": [
+          "9",
+          "10"
+        ],
+        "status": "cancelled",
+        "subtasks": [],
+        "complexity": 4,
+        "recommendedSubtasks": 3,
+        "expansionPrompt": "Develop Docker deployment strategy for static site with Traefik routing configuration",
+        "updatedAt": "2025-11-24T04:57:50.826Z"
+      },
+      {
+        "id": "12",
+        "title": "RetirementAI Static Site Deployment",
+        "description": "Deploy RetirementAI landing page with PHP waitlist form",
+        "details": "1. Create Dockerfile with PHP-FPM and Nginx\n2. Configure PHP waitlist form handling\n3. Set up Traefik routing for retirementai.varnaai.com\nPseudo-code:\n```dockerfile\nFROM php:8.2-fpm-alpine\nCOPY landing-page/ /var/www/html\n# Add PHP waitlist processing script\n```\n```php\n<?php\n// Simple waitlist submission handler\nif ($_SERVER['REQUEST_METHOD'] === 'POST') {\n  $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);\n  // Log or process email\n}\n```",
+        "testStrategy": "1. Verify site loads via HTTPS\n2. Test waitlist form submission\n3. Check email validation\n4. Confirm mobile responsiveness",
+        "priority": "medium",
+        "dependencies": [
+          "9",
+          "10"
+        ],
+        "status": "cancelled",
+        "subtasks": [],
+        "complexity": 5,
+        "recommendedSubtasks": 4,
+        "expansionPrompt": "Design PHP-based waitlist form with secure email processing and Docker deployment",
+        "updatedAt": "2025-11-24T04:58:02.017Z"
+      },
+      {
+        "id": "13",
+        "title": "C3 Compliance React Static Build",
+        "description": "Convert React TypeScript frontend to static site",
+        "details": "1. Use create-react-app build for static export\n2. Configure Docker for static hosting\n3. Set up Traefik routing for c3.varnaai.com\nPseudo-code:\n```bash\n# Build static files\nnpm run build\n\n# Dockerfile for static hosting\nFROM nginx:alpine\nCOPY build/ /usr/share/nginx/html\n```\n```yaml\n# Traefik configuration\nc3:\n  labels:\n    - traefik.http.routers.c3.rule=Host(`c3.varnaai.com`)\n```",
+        "testStrategy": "1. Verify static build completes\n2. Check site loads without errors\n3. Test Lighthouse performance\n4. Validate responsive design",
+        "priority": "medium",
+        "dependencies": [
+          "9",
+          "10"
+        ],
+        "status": "done",
+        "subtasks": [],
+        "complexity": 5,
+        "recommendedSubtasks": 3,
+        "expansionPrompt": "Break down this task with a focus on c3 compliance react static build.",
+        "updatedAt": "2025-11-24T07:08:05.396Z"
+      },
+      {
+        "id": "14",
+        "title": "SEO Agent Static Conversion",
+        "description": "Convert React/Express application to static demonstration",
+        "details": "1. Extract key marketing pages\n2. Create static HTML/CSS representation\n3. Design Docker setup for static hosting\n4. Configure Traefik for seoagent.varnaai.com\nPseudo-code:\n```dockerfile\nFROM nginx:alpine\nCOPY static-pages/ /usr/share/nginx/html\n```\n```yaml\nseoagent:\n  labels:\n    - traefik.http.routers.seoagent.rule=Host(`seoagent.varnaai.com`)\n```",
+        "testStrategy": "1. Verify static pages render correctly\n2. Check all marketing information displayed\n3. Test mobile compatibility\n4. Validate links and resources",
+        "priority": "low",
+        "dependencies": [
+          "9",
+          "10"
+        ],
+        "status": "cancelled",
+        "subtasks": [],
+        "complexity": 5,
+        "recommendedSubtasks": 3,
+        "expansionPrompt": "Break down this task with a focus on seo agent static conversion.",
+        "updatedAt": "2025-11-24T04:58:12.927Z"
+      },
+      {
+        "id": "15",
+        "title": "VarnaAI Intelligence Landing Page",
+        "description": "Create a new landing page for multi-agent AI platform",
+        "details": "1. Design single-page marketing site\n2. Highlight key platform features\n3. Create Docker container for hosting\n4. Set up Traefik routing\nPseudo-code:\n```html\n<!DOCTYPE html>\n<html>\n  <head>\n    <title>VarnaAI Intelligence Platform</title>\n  </head>\n  <body>\n    <section id=\"hero\">\n      <h1>Multi-Agent AI Workflow Automation</h1>\n      <p>Orchestrate complex workflows with intelligent agents</p>\n    </section>\n  </body>\n</html>\n```",
+        "testStrategy": "1. Verify page loads via HTTPS\n2. Check feature descriptions\n3. Test mobile responsiveness\n4. Validate Lighthouse performance score",
+        "priority": "medium",
+        "dependencies": [
+          "9",
+          "10"
+        ],
+        "status": "cancelled",
+        "subtasks": [],
+        "complexity": 5,
+        "recommendedSubtasks": 3,
+        "expansionPrompt": "Break down this task with a focus on varnaai intelligence landing page.",
+        "updatedAt": "2025-11-24T04:58:22.738Z"
+      },
+      {
+        "id": "16",
+        "title": "All-Inkl DNS Configuration",
+        "description": "Configure DNS records for all portfolio domains",
+        "status": "done",
+        "priority": "high",
+        "dependencies": [
+          "9",
+          "13"
+        ],
+        "details": "Configure DNS records for all 5 portfolio subdomains on All-Inkl platform to point to Hetzner VPS IP (78.47.125.174).\n\nDomains to configure:\n1. fwchange.varnaai.com - A record to Hetzner VPS IP\n2. retirementai.varnaai.com - A record to Hetzner VPS IP\n3. c3.varnaai.com - A record to Hetzner VPS IP\n4. seoagent.varnaai.com - A record to Hetzner VPS IP\n5. intelligence.varnaai.com - A record to Hetzner VPS IP\n\nSteps:\n1. Log into All-Inkl DNS management portal\n2. Navigate to varnaai.com domain DNS settings\n3. Create A records for each subdomain pointing to 78.47.125.174\n4. Verify DNS propagation using nslookup or dig commands\n5. Wait for TTL expiration and global DNS propagation\n6. Confirm SSL certificate generation for each subdomain\n\nDependencies satisfied:\n- Task 9 (Hetzner VPS) completed: VPS infrastructure ready at 78.47.125.174\n- Task 13 (C3 Static Build) must be completed before DNS activation\n\nDNS Record Template:\n```\nfwchange.varnaai.com    A   78.47.125.174\nretirementai.varnaai.com A 78.47.125.174\nc3.varnaai.com          A   78.47.125.174\nseoagent.varnaai.com    A   78.47.125.174\nintelligence.varnaai.com A 78.47.125.174\n```",
+        "testStrategy": "1. Verify each DNS record using nslookup:\n   - nslookup fwchange.varnaai.com\n   - nslookup retirementai.varnaai.com\n   - nslookup c3.varnaai.com\n   - nslookup seoagent.varnaai.com\n   - nslookup intelligence.varnaai.com\n\n2. Test each domain resolves to correct IP (78.47.125.174)\n\n3. Verify DNS propagation across multiple nameservers using online DNS checker tools\n\n4. Confirm SSL certificate generation for each subdomain (Let's Encrypt via Caddy/nginx)\n\n5. Test domain accessibility via browser (https://subdomain.varnaai.com)\n\n6. Check domain propagation time and global DNS distribution\n\n7. Verify no DNS conflicts or overlapping records",
+        "subtasks": [],
+        "complexity": 6,
+        "recommendedSubtasks": 4,
+        "expansionPrompt": "Create a systematic approach to DNS record management across multiple subdomains with verification steps",
+        "updatedAt": "2025-11-24T07:15:10.476Z"
+      },
+      {
+        "id": "17",
+        "title": "Performance Optimization",
+        "description": "Optimize static sites for maximum performance",
+        "status": "done",
+        "dependencies": [
+          "13",
+          "16"
+        ],
+        "priority": "medium",
+        "details": "Optimize C3 Static Build (task 13) and DNS Configuration (task 16) for maximum performance.\n\n1. Implement image optimization\n2. Minimize CSS and JavaScript\n3. Add browser caching headers\n4. Implement lazy loading\n5. Configure Gzip compression on Nginx\n\nNginx performance configuration:\n```nginx\ngzip on;\ngzip_types text/plain text/css application/javascript;\ngzip_vary on;\nexpires 30d;\ncache_control \"public, immutable\";\n```\n\nTarget metrics:\n- Lighthouse performance score > 90\n- First Contentful Paint < 1.5s\n- Cumulative Layout Shift < 0.1\n- Mobile performance score > 85",
+        "testStrategy": "1. Run Lighthouse performance tests for c3.varnaai.com\n2. Verify Lighthouse score > 90 (performance category)\n3. Test Core Web Vitals: LCP, FID, CLS\n4. Check page load times with browser DevTools\n5. Validate mobile performance metrics using Chrome DevTools\n6. Test caching headers with curl: curl -I https://c3.varnaai.com\n7. Verify gzip compression is active\n8. Monitor performance across all static sites",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Optimize C3 React static build output",
+            "description": "Minimize bundle size and optimize CSS/JS from npm run build output for c3.varnaai.com",
+            "dependencies": [],
+            "details": "1. Review build output in dist/ or build/ directory\n2. Analyze bundle size with webpack-bundle-analyzer\n3. Remove unused CSS from Tailwind build\n4. Minify JavaScript files\n5. Generate source maps for debugging\n6. Verify build size < 500KB gzipped",
             "status": "done",
-            "testStrategy": "Test responsive behavior across multiple devices and screen sizes. Verify theme consistency with existing UI. Test navigation between different sections. Ensure loading states and error handling work correctly."
+            "testStrategy": "Run npm run build and verify output size. Check dist/index.html loads without errors. Measure gzipped bundle size.",
+            "updatedAt": "2025-11-24T07:40:28.162Z",
+            "parentId": "undefined"
           },
           {
-            "id": 8,
-            "title": "Integrate and Test Complete AI Settings Page",
-            "description": "Connect all components together and perform comprehensive testing of the entire AI settings page.",
+            "id": 2,
+            "title": "Configure Nginx caching and compression headers",
+            "description": "Set up Nginx configuration with gzip compression, browser caching, and cache control headers",
+            "dependencies": [],
+            "details": "1. Create/update Nginx configuration with gzip settings\n2. Set cache-control headers for static assets (expires 30d)\n3. Enable gzip_vary for proper caching\n4. Configure compression levels (gzip_comp_level 6)\n5. Add security headers (X-Content-Type-Options, X-Frame-Options)\n6. Test compression with curl -H 'Accept-Encoding: gzip'",
+            "status": "done",
+            "testStrategy": "Verify gzip compression with: curl -I -H 'Accept-Encoding: gzip' https://c3.varnaai.com. Check response headers include Content-Encoding: gzip. Validate cache headers present.",
+            "parentId": "undefined",
+            "updatedAt": "2025-11-24T07:40:31.299Z"
+          },
+          {
+            "id": 3,
+            "title": "Implement image optimization and lazy loading",
+            "description": "Optimize images in C3 static build and implement lazy loading for responsive images",
+            "dependencies": [
+              1
+            ],
+            "details": "1. Analyze images in C3 build output\n2. Convert images to WebP format where supported\n3. Generate responsive image srcsets\n4. Implement lazy loading with loading='lazy' attribute\n5. Use picture elements for fallbacks\n6. Optimize image dimensions for mobile/desktop\n7. Consider next-gen formats (AVIF if supported)",
+            "status": "done",
+            "testStrategy": "Use Chrome DevTools Lighthouse to check image optimization opportunities. Verify WebP images load correctly. Test lazy loading with Network tab throttling. Check Core Web Vitals (LCP affected by images).",
+            "parentId": "undefined",
+            "updatedAt": "2025-11-24T07:40:34.522Z"
+          },
+          {
+            "id": 4,
+            "title": "Run Lighthouse performance audit and achieve >90 score",
+            "description": "Execute comprehensive Lighthouse audit on c3.varnaai.com and address performance issues",
+            "dependencies": [
+              2,
+              3
+            ],
+            "details": "1. Run Lighthouse audit on https://c3.varnaai.com using Chrome DevTools\n2. Check all metrics: Performance, Accessibility, Best Practices, SEO\n3. Target Performance score > 90\n4. Review FCP < 1.5s, LCP < 2.5s, CLS < 0.1\n5. Address any remaining warnings\n6. Test on mobile device (3G throttling)\n7. Document baseline metrics before/after optimization",
+            "status": "done",
+            "testStrategy": "Run Lighthouse audit 3 times and average results. Verify mobile performance score > 85. Check desktop performance > 90. Validate all Core Web Vitals in green zone. Screenshot final scores.",
+            "parentId": "undefined",
+            "updatedAt": "2025-11-24T07:40:37.730Z"
+          }
+        ],
+        "complexity": 6,
+        "recommendedSubtasks": 4,
+        "expansionPrompt": "Develop comprehensive performance optimization strategy covering caching, compression, and resource minimization",
+        "updatedAt": "2025-11-24T07:40:37.730Z"
+      },
+      {
+        "id": "18",
+        "title": "Monitoring and Backup Setup",
+        "description": "Configure monitoring and backup solutions for VarnaAI portfolio applications",
+        "status": "done",
+        "dependencies": [
+          "13",
+          "16",
+          "17"
+        ],
+        "priority": "low",
+        "details": "Set up comprehensive monitoring and backup infrastructure for VarnaAI portfolio applications deployed on Hetzner VPS (78.47.125.174).\n\n1. UptimeRobot Monitoring Setup:\n   - Configure free tier monitoring for all 5 portfolio apps:\n     * fwchange.varnaai.com\n     * retirementai.varnaai.com\n     * c3.varnaai.com\n     * seoagent.varnaai.com\n     * intelligence.varnaai.com\n   - Set up alerts for downtime detection\n   - Configure notification channels\n\n2. Docker Volume Backup Strategy:\n   - Identify critical Docker volumes on VPS\n   - Create automated rsync backup script\n   - Schedule daily backups\n   - Verify backup storage location and retention\n\n3. Backup Script Implementation:\n   ```bash\n   #!/bin/bash\n   # Portfolio apps backup script\n   BACKUP_DIR=\"/backups/docker-volumes\"\n   TIMESTAMP=$(date +%Y%m%d_%H%M%S)\n   \n   # Backup Docker volumes\n   rsync -av --delete /var/lib/docker/volumes/ $BACKUP_DIR/volumes_$TIMESTAMP/\n   \n   # Backup application data directories\n   rsync -av /home/apps/ $BACKUP_DIR/apps_$TIMESTAMP/\n   \n   # Log backup status\n   echo \"Backup completed: $TIMESTAMP\" >> $BACKUP_DIR/backup.log\n   ```\n\n4. Restoration Testing:\n   - Document restoration procedures\n   - Test restore from backup\n   - Verify data integrity after restore\n\nDependencies: Task 13 (C3 Static Build completion), Task 16 (DNS configuration), Task 17 (Performance optimization)",
+        "testStrategy": "1. Uptime Monitoring Verification:\n   - Confirm UptimeRobot dashboard shows all 5 apps with green status\n   - Verify alert notifications are received on configured channels\n   - Test alert triggering by temporarily stopping an app\n\n2. Backup Script Testing:\n   - Execute backup script and verify completion\n   - Confirm backup directory structure and file sizes\n   - Check backup logs for errors or warnings\n\n3. Restoration Testing:\n   - Create test environment with sample data\n   - Perform full volume restoration from backup\n   - Verify all application data restored correctly\n   - Validate app functionality post-restore\n\n4. Monitoring Dashboard Verification:\n   - Review UptimeRobot dashboard for uptime statistics\n   - Confirm historical data collection and reporting\n   - Validate performance metrics tracking",
+        "subtasks": [],
+        "complexity": 5,
+        "recommendedSubtasks": 3,
+        "expansionPrompt": "Break down this task with a focus on monitoring and backup setup.",
+        "updatedAt": "2025-11-24T07:54:58.188Z"
+      },
+      {
+        "id": "19",
+        "title": "Security Hardening",
+        "description": "Implement additional security measures",
+        "details": "Implement multi-layered security hardening for VarnaAI infrastructure deployed on Hetzner VPS (78.47.125.174). This task depends on completed infrastructure setup tasks:\n- Task 13: C3 Static Build (completed)\n- Task 16: DNS Configuration (completed)\n- Task 17: Performance Optimization (completed)\n- Task 18: Monitoring & Backup (completed)\n\nSecurity measures to implement:\n1. SSH Configuration Hardening - Disable root login, enforce key-based authentication only, implement key rotation\n2. UFW Firewall Optimization - Configure default deny policy, allow only SSH (port 22), HTTP (80), HTTPS (443)\n3. Fail2ban Brute Force Protection - Install and configure for SSH, HTTP services with email notifications\n4. Automatic Security Updates - Set up unattended-upgrades for automatic patching\n5. Comprehensive Security Audit - Run Lynis, OpenVAS scans and document findings\n\nPseudo-code for fail2ban configuration:\n```bash\n# /etc/fail2ban/jail.d/sshd.conf\n[sshd]\nenabled = true\nport = ssh\nfilter = sshd\nlogpath = /var/log/auth.log\nmaxretry = 3\nfindtime = 600\nbantime = 3600\n```",
+        "testStrategy": "1. Use ssh-audit to verify SSH hardening\n2. Use nmap to confirm only necessary ports are open (22, 80, 443)\n3. Simulate failed SSH attempts and verify fail2ban blocking\n4. Check /var/log/unattended-upgrades/unattended-upgrades.log for automatic updates\n5. Run Lynis and OpenVAS scans, compare against CIS benchmarks\n6. Verify all critical and high-risk vulnerabilities are documented",
+        "priority": "high",
+        "dependencies": [
+          "13",
+          "16",
+          "17",
+          "18"
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "SSH Configuration Hardening",
+            "description": "Implement strict SSH security measures to prevent unauthorized access",
+            "dependencies": [],
+            "details": "Modify /etc/ssh/sshd_config on Hetzner VPS to disable root login, enforce key-based authentication only, and set strict access controls. Implement key rotation policy and disable password authentication completely. Ensure SSH daemon is set to listen only on port 22 with appropriate connection limits.",
+            "status": "done",
+            "testStrategy": "Verify SSH configuration using ssh-audit, attempt various login methods (password, root, key) to confirm only key-based auth works for non-root users",
+            "parentId": "undefined",
+            "updatedAt": "2025-11-24T08:13:19.417Z"
+          },
+          {
+            "id": 2,
+            "title": "UFW Firewall Optimization",
+            "description": "Configure and verify Uncomplicated Firewall (UFW) rules for enhanced network security",
+            "dependencies": [
+              1
+            ],
+            "details": "Set up UFW on VPS with default deny incoming policy, allow only necessary ports: SSH (22), HTTP (80), HTTPS (443). Create specific rules for web services used by RetirementAI (port 3000), FwChange (5173, 8000), SEO Agent (4001), and Agents platform (6000). Enable UFW logging for suspicious activities and implement connection tracking.",
+            "status": "done",
+            "testStrategy": "Use nmap from external host to verify only ports 22, 80, 443, 3000, 5173, 8000, 4001, 6000 are accessible. Test blocked ports return appropriate timeouts. Verify UFW logs show attempted connections.",
+            "parentId": "undefined",
+            "updatedAt": "2025-11-24T08:13:22.486Z"
+          },
+          {
+            "id": 3,
+            "title": "Fail2ban Brute Force Protection",
+            "description": "Install and configure Fail2ban to prevent brute force attacks",
+            "dependencies": [
+              2
+            ],
+            "details": "Install Fail2ban package, create custom jail configurations for SSH (port 22) and HTTP services (ports 80, 443, 3000, 5173, 8000, 4001, 6000). Set ban time to 3600 seconds, max retry to 3 attempts within 600 seconds. Configure email notifications to alert admin of repeated attack attempts. Create monitoring script to log all bans.",
+            "status": "done",
+            "testStrategy": "Simulate multiple failed SSH login attempts from test client, verify IP is banned after 3 failures. Confirm fail2ban rules are active with 'fail2ban-client status sshd'. Test HTTP brute force protection on web service ports.",
+            "parentId": "undefined",
+            "updatedAt": "2025-11-24T08:13:25.590Z"
+          },
+          {
+            "id": 4,
+            "title": "Automatic Security Updates Setup",
+            "description": "Configure automatic security updates to keep the system patched",
+            "dependencies": [
+              3
+            ],
+            "details": "Install and configure unattended-upgrades package on VPS. Enable automatic installation of security-only updates. Configure email notifications for update failures and create weekly update report script. Set update schedule for off-peak hours (e.g., 2 AM UTC). Verify system dependencies are not broken after updates.",
+            "status": "done",
+            "testStrategy": "Check /var/log/unattended-upgrades/ directory for recent update logs. Verify apt-get security updates are applied automatically. Create test package upgrade and confirm unattended-upgrades handles it correctly.",
+            "parentId": "undefined",
+            "updatedAt": "2025-11-24T08:13:28.631Z"
+          },
+          {
+            "id": 5,
+            "title": "Comprehensive Security Audit",
+            "description": "Perform thorough security vulnerability scanning and document findings",
+            "dependencies": [
+              4
+            ],
+            "details": "Run comprehensive security scans using Lynis (system audit), OpenVAS (vulnerability assessment), and optional ClamAV (malware scanning) on VPS. Generate detailed security report comparing findings against CIS Linux Benchmarks. Identify and prioritize all vulnerabilities by severity (critical, high, medium, low). Create remediation plan with timeline for addressing each issue. Document all findings in security audit report.",
+            "status": "done",
+            "testStrategy": "Compare Lynis and OpenVAS scan results against CIS benchmarks. Verify all critical and high-risk vulnerabilities are documented. Cross-reference findings with VPS provider's security recommendations. Ensure no active malware detected by ClamAV.",
+            "parentId": "undefined",
+            "updatedAt": "2025-11-24T08:13:31.813Z"
+          }
+        ],
+        "complexity": 8,
+        "recommendedSubtasks": 5,
+        "expansionPrompt": "Create a multi-layered security hardening approach covering SSH, firewall, updates, and intrusion prevention",
+        "updatedAt": "2025-11-24T08:13:31.813Z"
+      },
+      {
+        "id": "20",
+        "title": "Final Deployment Verification",
+        "description": "Comprehensive final testing of all portfolio sites",
+        "details": "Verify all 5 portfolio sites are fully functional after completion of prerequisites (C3 Static Build, DNS, Performance, Monitoring/Backup, Security Hardening).\n\n1. Manual testing of each site\n2. Run comprehensive Lighthouse tests\n3. Verify cross-browser compatibility\n4. Document any remaining issues\n5. Validate all dependencies are complete\n\nPseudo-code:\n```bash\n# Lighthouse CLI testing for all portfolio sites\nnpx lighthouse https://fwchange.varnaai.com --view\nnpx lighthouse https://retirementai.varnaai.com --view\nnpx lighthouse https://varnaai.com --view\nnpx lighthouse https://ai-projektmanager.de --view\nnpx lighthouse https://classicsecurity.net --view\nnpx lighthouse https://varna-agenten.de --view\n```",
+        "testStrategy": "1. Verify all completed prerequisites are active (DNS, Performance, Monitoring, Security)\n2. Test each portfolio site manually for functionality\n3. Run Lighthouse on all domains (target performance score >90)\n4. Check cross-browser compatibility (Chrome, Firefox, Safari, Edge)\n5. Validate SEO and accessibility scores\n6. Generate comprehensive final verification report",
+        "priority": "high",
+        "dependencies": [
+          "13",
+          "16",
+          "17",
+          "18",
+          "19"
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "SSL/HTTPS Certificate Verification",
+            "description": "Comprehensive SSL and HTTPS validation for all 5 portfolio domain sites",
+            "dependencies": [],
+            "details": "1. Use SSL verification tools (ssllabs, openssl) to check certificate validity for all 5 sites\n2. Verify HTTPS configuration for fwchange.varnaai.com, retirementai.varnaai.com, varnaai.com, ai-projektmanager.de, classicsecurity.net, varna-agenten.de\n3. Check certificate expiration dates and renewal status\n4. Validate SSL chain and root certificate\n5. Verify Let's Encrypt certificates are properly configured (if applicable from Task 19)\n6. Document any SSL/security configuration issues",
+            "status": "pending",
+            "testStrategy": "Use SSLLabs API (https://api.ssllabs.com) to generate detailed SSL/TLS report for each domain. Target SSL rating: A or A+",
+            "parentId": "undefined"
+          },
+          {
+            "id": 2,
+            "title": "Lighthouse Performance Testing",
+            "description": "Conduct comprehensive Lighthouse performance tests for all portfolio sites",
+            "dependencies": [],
+            "details": "1. Run Lighthouse CLI tests for each portfolio site: fwchange.varnaai.com, retirementai.varnaai.com, varnaai.com, ai-projektmanager.de, classicsecurity.net, varna-agenten.de\n2. Target performance score >90 for desktop and mobile\n3. Analyze and document performance metrics (FCP, LCP, CLS, TTFB)\n4. Identify and log performance optimization opportunities\n5. Generate detailed Lighthouse report for each domain\n6. Verify improvements from Task 17 (Performance) are reflected in scores",
+            "status": "pending",
+            "testStrategy": "Run: npx lighthouse https://domain.varnaai.com --view --output-path=./reports/lighthouse-domain.html --chrome-flags='--headless --no-sandbox' for each domain",
+            "parentId": "undefined"
+          },
+          {
+            "id": 3,
+            "title": "Mobile Responsiveness Verification",
+            "description": "Test mobile responsiveness across multiple devices and screen sizes",
+            "dependencies": [],
+            "details": "1. Test all 5 sites on multiple device emulators (iPhone SE/12/Pro, Android devices, tablets)\n2. Use Chrome DevTools device emulation and Playwright for automated testing\n3. Verify layout, readability, and functionality on different screen sizes (320px, 480px, 768px, 1024px)\n4. Check touch interactions and mobile-specific features\n5. Verify navigation menus, forms, and CTAs are mobile-optimized\n6. Document any responsive design issues or inconsistencies",
+            "status": "pending",
+            "testStrategy": "Use Chrome DevTools device emulation, Playwright automated testing for multiple viewports, and physical device testing where available",
+            "parentId": "undefined"
+          },
+          {
+            "id": 4,
+            "title": "Page Load Time Measurement",
+            "description": "Measure and optimize page load times for all portfolio sites",
+            "dependencies": [],
+            "details": "1. Use Chrome DevTools Network tab to measure initial load times for each site\n2. Target maximum page load time of 2 seconds (TTFB <600ms)\n3. Analyze Time to First Byte (TTFB) and First Contentful Paint (FCP) metrics\n4. Verify caching headers and compression are configured (from Task 17)\n5. Identify and log any remaining performance bottlenecks\n6. Generate comprehensive load time report for each domain\n7. Validate improvements from monitoring setup (Task 18)",
+            "status": "pending",
+            "testStrategy": "Performance measurement using Chrome DevTools, WebPageTest.org, and Lighthouse. Compare against baseline metrics from Task 17",
+            "parentId": "undefined"
+          },
+          {
+            "id": 5,
+            "title": "Cross-Browser Compatibility Testing",
+            "description": "Verify site functionality and appearance across multiple browsers",
+            "dependencies": [],
+            "details": "1. Test all 5 sites on latest versions of Chrome, Firefox, Safari, and Edge\n2. Verify consistent rendering and functionality across browsers\n3. Check JavaScript and CSS compatibility\n4. Test responsive design and media queries across different browsers\n5. Verify form functionality and submission across all browsers\n6. Test external link handling and tracking (from varnaai.com portfolio)\n7. Create detailed cross-browser compatibility report",
+            "status": "pending",
+            "testStrategy": "Manual testing on Chrome, Firefox, Safari, and Edge. Use BrowserStack for comprehensive cross-browser validation. Automate with Playwright for consistency testing",
+            "parentId": "undefined"
+          },
+          {
+            "id": 6,
+            "title": "Verify All Deployment Prerequisites Complete",
+            "description": "Confirm all required prerequisite tasks are fully completed before final verification",
+            "dependencies": [],
+            "details": "1. Verify Task 13 (C3 Static Build) is complete and C3 app is deployed\n2. Confirm Task 16 (DNS) changes are propagated and all domains resolve correctly\n3. Validate Task 17 (Performance) optimizations are active and measurable\n4. Check Task 18 (Monitoring/Backup) systems are operational and collecting data\n5. Confirm Task 19 (Security Hardening) changes are in place and effective\n6. Document completion status of all prerequisites",
+            "status": "pending",
+            "testStrategy": "Review each prerequisite task completion status and run quick verification tests: nslookup, curl -I for headers, monitoring dashboard checks, security scan",
+            "parentId": "undefined"
+          }
+        ],
+        "complexity": 7,
+        "recommendedSubtasks": 5,
+        "expansionPrompt": "Develop a comprehensive testing and verification strategy covering performance, compatibility, and functionality",
+        "updatedAt": "2025-11-24T08:38:31.257Z"
+      },
+      {
+        "id": "21",
+        "title": "Portfolio Links Update",
+        "description": "Update varnaai.com with new portfolio site links",
+        "details": "1. Update links on varnaai.com\n2. Verify all portfolio links work\n3. Test link tracking\n4. Ensure mobile responsiveness\nPseudo-code:\n```html\n<!-- Sample link update -->\n<a href=\"https://fwchange.varnaai.com\" target=\"_blank\" rel=\"noopener\">FwChange Demo</a>\n```",
+        "testStrategy": "1. Verify link URLs are correct\n2. Test link tracking\n3. Check mobile display\n4. Confirm external links open correctly",
+        "priority": "low",
+        "dependencies": [
+          "20"
+        ],
+        "status": "done",
+        "subtasks": [],
+        "complexity": 5,
+        "recommendedSubtasks": 3,
+        "expansionPrompt": "Break down this task with a focus on portfolio links update.",
+        "updatedAt": "2025-12-01T12:00:00.000Z"
+      },
+      {
+        "id": "22",
+        "title": "Cross-Portfolio Footer Linking - Add VarnaAI Network Footer Links",
+        "description": "COMPLETED: All 5 WordPress sites already have 'Our Portfolio Network' footer sections with cross-links to 4 sister sites (VarnaAI, AI Projektmanager, Varna Agenten, AI Marketing BG). Verified 2025-12-01.",
+        "details": "1. Analyze current footer structure across all 5 WordPress sites (ai-projektmanager.de, aimarketingbg.com, classicsecurity.net, varna-agenten.de, varnaai.com) to identify footer templates and widget areas.\n\n2. Create standardized footer link pattern:\n   - Add 'Part of VarnaAI Network' section with 4-5 links to sister sites\n   - Use consistent styling across all sites (Kadence-compatible markup)\n   - Include relevant internal links from each site to its sister properties\n   - Example structure: \"Explore our network: [Classic Security] [Varna Agents] [AI Marketing] [AI Projektmanager] [Varna AI]\"\n\n3. Use Morphllm MCP for pattern-based bulk operations:\n   - Define footer link template pattern once\n   - Apply pattern to all 5 site footer templates/widgets\n   - Ensure proper link URLs (https://[domain]) and rel attributes (noopener)\n\n4. Implementation considerations:\n   - Maintain existing footer structure and design\n   - Ensure footer links are visible on all pages (homepage, services, portfolio, etc.)\n   - Add appropriate CSS styling for network footer section\n   - Test that links don't interfere with existing CTAs or widgets\n   - Verify responsive design on mobile devices\n\n5. Files to modify:\n   - WordPress footer template/widget on each site\n   - Kadence footer block settings (if using Kadence blocks)\n   - Custom footer CSS if needed\n\n6. Cross-linking strategy:\n   - Each site links to all other 4 sister sites\n   - Use descriptive anchor text (site name, not generic 'link')\n   - Add tracking for network cross-link clicks (optional: UTM parameters)\n\n7. Verify footer consistency:\n   - Same footer appears on all pages of each site\n   - Links are styled consistently\n   - No broken links or 404 errors\n   - Footer maintains proper spacing and doesn't overlap content",
+        "testStrategy": "1. Verify footer visibility: Load homepage and 3-5 internal pages on each of the 5 sites and confirm footer is visible on all pages.\n\n2. Test cross-links functionality:\n   - Click each sister site link from all 5 sites\n   - Verify all links point to correct URLs\n   - Confirm external links open in new tab (target=\"_blank\")\n   - Check that links use rel=\"noopener noreferrer\"\n\n3. Visual verification:\n   - Take screenshots of footer on desktop and mobile for all 5 sites\n   - Confirm consistent styling and layout across sites\n   - Verify footer doesn't break page layout or overlap content\n   - Check text readability and contrast\n\n4. Responsive design testing:\n   - Test footer on mobile (< 768px width)\n   - Test on tablet (768px - 1024px)\n   - Test on desktop (> 1024px)\n   - Verify footer links stack properly on small screens\n\n5. Performance testing:\n   - Run Lighthouse on each site to ensure footer markup doesn't impact performance\n   - Verify no CSS/JavaScript conflicts\n   - Check that new links don't significantly increase page load time\n\n6. SEO validation:\n   - Verify footer links have proper anchor text (not generic)\n   - Check that links are indexable by search engines\n   - Confirm footer links don't create nofollow/noindex issues\n   - Validate HTML markup in footer section\n\n7. Cross-browser testing:\n   - Test footer rendering in Chrome, Firefox, Safari, Edge\n   - Verify links work on all browsers\n   - Check for CSS compatibility issues\n\n8. Final checklist:\n   - All 5 sites have footer links implemented\n   - All 20 cross-site links (4 links per site × 5 sites) are functional\n   - Footer appears consistently on all page types\n   - No console errors or warnings related to footer\n   - Footer links indexed in Google Search Console",
+        "status": "done",
+        "dependencies": [
+          "3",
+          "21"
+        ],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": "23",
+        "title": "Phase 1: Schema Markup Rollout - Implement JSON-LD Structured Data",
+        "description": "COMPLETED: All 5 sites already have comprehensive JSON-LD structured data. Verified 2025-12-01: varnaai.com (Place, ProfessionalService, Organization, WebSite, WebPage, ImageObject), ai-projektmanager.de (Place, ProfessionalService, Organization, WebSite, WebPage, ImageObject, SoftwareApplication), varna-agenten.de (Place, ProfessionalService, Organization, WebSite, WebPage, ImageObject, Person, Article), aimarketingbg.com (Place, ProfessionalService, Organization, WebSite, WebPage, ImageObject, Person, Article), classicsecurity.net (Place, ProfessionalService, Organization, WebSite, WebPage, LocalBusiness, BreadcrumbList with OfferCatalog).",
+        "details": "1. Analyze current WordPress site structure across all 5 domains to identify schema implementation points (homepages, service pages, contact pages)\n\n2. Create JSON-LD schema templates:\n   - LocalBusiness schema for classicsecurity.net (includes physical address, phone, business hours, geo coordinates)\n   - Organization schema for ai-projektmanager.de, varna-agenten.de, varnaai.com, aimarketingbg.com (includes name, description, logo, contact, social profiles)\n   - Reference templates from .taskmaster docs and SCHEMA_ORG_TEMPLATES.md\n\n3. Use Morphllm MCP for bulk schema implementation:\n   - Create JSON-LD schema files as reusable templates\n   - Apply LocalBusiness template to classicsecurity.net homepage footer/header\n   - Apply Organization schema template to all 4 online-only sites\n   - Ensure schema includes current company info from COMPANY_INFO.md\n\n4. Schema field mappings:\n   - LocalBusiness: name, address (street, city, postal code, country), telephone, email, url, logo, sameAs (social profiles)\n   - Organization: name, description, logo, url, contactPoint (email, phone), sameAs (social profiles), foundingDate, areaServed\n\n5. Implementation via WordPress:\n   - Add schema via Rank Math SEO plugin settings OR\n   - Insert directly in theme header via custom hook\n   - Ensure no duplicate schema markup\n\n6. Verify integration with existing Rank Math SEO configurations on all sites\n\n7. Document schema implementation details for future maintenance",
+        "testStrategy": "1. Use Google Rich Results Test (https://search.google.com/test/rich-results) on all 5 homepages:\n   - Verify LocalBusiness schema validates on classicsecurity.net\n   - Verify Organization schema validates on ai-projektmanager.de, varna-agenten.de, varnaai.com, aimarketingbg.com\n   - Confirm no errors or warnings in validation results\n\n2. Validate JSON-LD syntax:\n   - Use https://jsonld.com/validator/ to verify each schema\n   - Ensure all required fields are present\n   - Check for proper formatting and nested structure\n\n3. Test schema visibility:\n   - Inspect page source on each homepage\n   - Confirm schema markup is present in <head> or <body>\n   - Verify schema contains accurate company information\n\n4. Cross-browser verification:\n   - Test schema validity in Chrome, Firefox, Safari\n   - Confirm schema structured data is preserved across browsers\n\n5. Search Console testing:\n   - Monitor Google Search Console for rich results eligibility\n   - Verify no structured data errors reported\n\n6. Performance check:\n   - Run Lighthouse audit to ensure schema doesn't impact page load\n   - Confirm no JavaScript errors introduced",
+        "status": "done",
+        "dependencies": [
+          "22",
+          "21",
+          "20"
+        ],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": "24",
+        "title": "Phase 1: NAP Data Standardization - Create master business data files",
+        "description": "Create standardized Name, Address, Phone (NAP) master data files (data.json) for all 5 sites with consistent formatting, prepare multiple business descriptions per site (50, 100, 250 words), and prepare logos in PNG, JPG, and SVG formats for directory submissions.",
+        "details": "Create comprehensive NAP standardization package for VarnaAI portfolio (ai-projektmanager.de, aimarketingbg.com, classicsecurity.net, varna-agenten.de, varnaai.com).\n\n1. Create data.json files:\n   - Location: Create /seo/nap-data/ directory with individual data.json per site\n   - Structure: {\n       \"business\": {\n         \"legalName\": \"exact legal name\",\n         \"displayName\": \"marketing name\",\n         \"phone\": \"+49 format for German sites, international format for others\",\n         \"address\": {\n           \"street\": \"street address\",\n           \"city\": \"city\",\n           \"state\": \"state/region\",\n           \"postalCode\": \"postal code\",\n           \"country\": \"country code (DE for German sites)\"\n         },\n         \"website\": \"https://domain.com\",\n         \"email\": \"contact@domain.com\"\n       }\n     }\n   - Validate: All sites use consistent formatting (phone with country code, postal code format matches country)\n   - Reference existing data from CLAUDE.md credentials section and COMPANY_INFO.md\n\n2. Prepare business descriptions:\n   - Create descriptions/[site-name]/ folders with three versions per site:\n     * short-description.txt (50 words): Elevator pitch for directory listings\n     * medium-description.txt (100 words): SEO-optimized for Google Business Profile\n     * long-description.txt (250 words): Comprehensive service overview for business directories\n   - Content should match existing site messaging from wordpress/ and COMPANY_INFO.md\n   - German sites (.de): Write in German with proper grammar and technical terminology\n   - English sites: Write in English with US/UK conventions based on target market\n   - Include key services, compliance focus (DSGVO, ISO 27001), and target audience\n   - Incorporate focus keywords from SEO_Portfolio_Strategy_2025.md\n\n3. Prepare logo assets:\n   - Directory: /assets/logos/[site-name]/\n   - Formats per site:\n     * PNG: 500x500px, 1000x1000px (transparent background preferred)\n     * JPG: 500x500px, 1000x1000px (white background)\n     * SVG: Scalable vector format (if available from design)\n   - Use Morphllm MCP to normalize existing logos if available in /assets/images/\n   - Verify logo readability at small sizes (favicon, directory listings)\n   - Document source/version in logos/README.md\n\n4. Quality checks:\n   - Validate data.json syntax (parseable by JSON.parse)\n   - Verify phone numbers are in consistent international format\n   - Check postal codes match country conventions (5 digits for Germany, variable for others)\n   - Ensure descriptions have consistent tone/voice within each site\n   - Verify logo formats are web-optimized (file size <500KB for PNG/JPG, <100KB for SVG)\n\n5. Integration:\n   - Reference files in dashboard for Google Business Profile sync automation\n   - Create CSV export of NAP data for bulk directory submissions\n   - Document standardization in /seo/nap-data/README.md with submission workflow",
+        "testStrategy": "1. Verify data.json files:\n   - Parse each data.json with JSON validator (no syntax errors)\n   - Confirm all 5 sites have data files with required fields (legalName, phone, address, website, email)\n   - Validate phone numbers match international format (+49 for Germany, etc.)\n   - Check postal codes match country conventions (DE: 5 digits, US: 5-digit or ZIP+4)\n   - Verify website URLs are HTTPS and match site domains\n\n2. Validate business descriptions:\n   - Count word count for each description (50 ±5 words, 100 ±10 words, 250 ±20 words)\n   - Verify German sites are in German with proper umlauts (ä, ö, ü)\n   - Check English sites for consistent tone and professional language\n   - Confirm descriptions include target keywords from SEO strategy\n   - Ensure no duplicate sentences between versions\n   - Verify no promotional language ('best', 'leading', 'revolutionary') without evidence\n\n3. Validate logo assets:\n   - Verify PNG files are 500x500px and 1000x1000px (check dimensions with image tool)\n   - Verify JPG files are 500x500px and 1000x1000px with white background\n   - Confirm SVG files render correctly and are valid XML\n   - Check file sizes are optimized (<500KB PNG/JPG, <100KB SVG)\n   - Test logo readability at 32x32px (favicon size)\n   - Verify transparent backgrounds for PNG (use alpha channel check)\n\n4. Integration testing:\n   - Create CSV export from data.json files\n   - Verify CSV has columns: Business Name, Phone, Address, City, State, Postal Code, Country, Website, Email\n   - Test CSV opens correctly in Excel/Google Sheets\n   - Confirm data.json files are readable by Node.js JSON.parse()\n   - Create sample integration script that loads all data.json files and exports CSV\n\n5. Documentation verification:\n   - Confirm /seo/nap-data/README.md exists with standardization rules\n   - Document any exceptions or variations between sites\n   - Create submission checklist for each directory type (Google Business, Yelp, local directories)\n   - Verify all files are organized in consistent directory structure",
+        "status": "done",
+        "dependencies": [],
+        "priority": "high",
+        "subtasks": [],
+        "updatedAt": "2025-11-21T23:16:30.150Z"
+      },
+      {
+        "id": "25",
+        "title": "Phase 2: Google Business Profile Setup - Create and optimize GBP for all 5 brands",
+        "description": "Create and optimize Google Business Profiles for Classic Security, VarnaAI, AI Projektmanager, Varna Agenten, and AI Marketing BG with complete category configuration, keyword-optimized descriptions, and service areas.",
+        "details": "Implement comprehensive Google Business Profile (GBP) setup for all 5 VarnaAI portfolio brands using Playwright MCP for browser automation.\n\n1. Prerequisites from Task 24 (NAP Data Standardization):\n   - Retrieve standardized Name, Address, Phone data from /seo/nap-data/data.json files\n   - Use consistent business names, addresses, and phone numbers across all platforms\n   - Reference logos in PNG/JPG/SVG formats prepared in Task 24\n\n2. Google Business Profile Creation:\n   - For each of the 5 sites (ai-projektmanager.de, aimarketingbg.com, classicsecurity.net, varna-agenten.de, varnaai.com):\n     a. Access Google Business Profile (https://business.google.com/)\n     b. Create new business profile or claim existing listing\n     c. Verify business ownership via postcard or phone verification\n\n3. Profile Configuration for Each Brand:\n   a. Primary Category Selection:\n      - Classic Security: \"Security Systems Service\"\n      - VarnaAI: \"Software Company\"\n      - AI Projektmanager: \"Business Consultant\"\n      - Varna Agenten: \"Advertising Agency\"\n      - AI Marketing BG: \"Marketing Consultant\"\n   \n   b. Additional 9 Categories (example for Classic Security):\n      - IT Support and Services\n      - Computer Security Service\n      - Cybersecurity Consultant\n      - Business Information and Technology Services\n      - Computer Network Design and Systems\n      - Information Technology Training\n      - Data Recovery Service\n      - Disaster Recovery Planning\n      - Computer Repair and Maintenance\n   \n   c. Business Description (1750 characters with keyword optimization):\n      - Incorporate primary keywords naturally (e.g., \"IT security\", \"DSGVO compliance\", \"firewall management\")\n      - Include service areas and capabilities\n      - Add unique value propositions\n      - Maintain professional tone while optimizing for search visibility\n      - Example structure: \"[Company Name] ist Ihr [primary service] Partner für [key benefit]. Mit [X Jahre] Erfahrung in [industry], bieten wir [services]. Unsere Spezialisten sind zertifiziert in [certifications]. Wir betreuen Unternehmen in [regions] mit Fokus auf [compliance standards].\"\n   \n   d. Service Areas Configuration:\n      - Define geographic coverage (regions/cities served)\n      - Classic Security/AI Projektmanager/Varna Agenten: Germany-focused (add Bundesländer)\n      - AI Marketing BG: Bulgaria-focused (add major cities)\n      - VarnaAI: Europe-wide coverage\n      - varnaai.com: International/Global\n   \n   e. Attribute Configuration:\n      - Add business attributes (e.g., \"On-site services\", \"Online consultations\", \"Has parking\")\n      - Set business hours (recommend business days, 09:00-17:00 for B2B)\n      - Upload business logo (PNG format, 400x400px minimum)\n      - Add cover photos showing team/office/services\n\n4. Weekly Content Posting Schedule:\n   - Set up automated posting calendar in GBP\n   - Post cadence: 1-2 posts per week per brand\n   - Content types:\n     * Tips/advice related to services (e.g., \"5 DSGVO Compliance Tips for German SMEs\")\n     * New service announcements\n     * Industry news and insights\n     * Customer success stories (anonymized per CLAUDE.md privacy rules)\n     * Certification/award updates\n   - Use Playwright to automate posting workflow (click post button, select date/time, add content)\n\n5. Playwright MCP Automation Script:\n   - Create browser automation to:\n     a. Log into Google Business Profile for each brand\n     b. Navigate to profile settings\n     c. Fill in business information from NAP data files\n     d. Configure categories via dropdown selections\n     e. Paste description text with keyword density verification\n     f. Set service areas by searching and selecting regions\n     g. Upload images (logos and cover photos)\n     h. Schedule initial posts for the upcoming week\n   - Handle form submission and verification steps\n   - Capture screenshots of completed profiles for verification\n   - Wait for page load states and element visibility before interactions\n\n6. Verification and Optimization:\n   - Verify all 1750 characters are visible in description field\n   - Confirm all 10 categories (1 primary + 9 additional) are saved\n   - Check that service areas match expected geographic coverage\n   - Validate keyword density in descriptions (target 1-2% for primary keyword)\n   - Verify business hours are set correctly\n   - Confirm images uploaded successfully\n   - Test that weekly posting schedule is configured\n\n7. Integration with Dashboard:\n   - Store GBP profile URLs for each brand\n   - Log completion status in Task Master\n   - Document any verification codes or pending confirmations needed\n   - Prepare follow-up actions (e.g., review insights after 2 weeks of activity)",
+        "testStrategy": "1. Google Business Profile Access Verification:\n   - For each of the 5 brands, navigate to Google Business Profile dashboard\n   - Confirm profile is accessible and shows \"Verified\" status\n   - Check that business name, address, and phone match NAP data from Task 24\n\n2. Category Configuration Testing:\n   - Click on \"Business Information\" section for each profile\n   - Verify primary category is correctly set (e.g., Security Systems Service for Classic Security)\n   - Confirm all 9 additional categories are visible and saved\n   - Total: 10 categories per profile × 5 brands = 50 category validations\n\n3. Description and Keyword Content Testing:\n   - Expand business description for each profile\n   - Count characters (verify 1700-1750 character range)\n   - Verify primary keywords appear naturally at least once in opening sentences\n   - Confirm no keyword stuffing or unnatural phrasing\n   - Check special characters and formatting (German umlauts, etc.) display correctly\n\n4. Service Area Validation:\n   - For each profile, navigate to \"Service areas\" section\n   - Verify geographic regions are correctly configured:\n     * Classic Security: German Bundesländer listed\n     * VarnaAI: European countries listed\n     * AI Marketing BG: Bulgarian cities listed\n   - Test that map shows coverage area correctly\n   - Confirm addresses and service radius are reasonable for business type\n\n5. Image Upload Verification:\n   - Confirm business logo displays correctly (400x400px minimum)\n   - Verify cover photos are visible and properly sized\n   - Check that images are in approved format (PNG, JPG)\n   - Confirm no broken image links\n\n6. Weekly Posting Schedule Testing:\n   - Navigate to \"Posts\" section for each profile\n   - Verify initial posts are scheduled for upcoming 7 days\n   - Confirm post titles contain relevant keywords\n   - Check that posting times are distributed (not all at same time)\n   - Verify posts are in appropriate language (German for .de sites, English/Bulgarian for international)\n\n7. Playwright Automation Validation:\n   - Capture screenshots of each completed profile showing:\n     * Business information panel with all fields populated\n     * Categories section showing 10 categories\n     * Service area map with correct regions\n     * Posted content in timeline\n   - Run automation script end-to-end for all 5 brands\n   - Verify no errors or failed element clicks in automation logs\n   - Confirm all form submissions completed without timeout errors\n\n8. Search Visibility Testing:\n   - Google search \"[Brand Name] Google\" for each of the 5 companies\n   - Verify GBP profile appears in Knowledge Panel on right side\n   - Check that business information matches GBP (name, address, phone, rating if available)\n   - Test from different geographic locations using VPN/search settings\n\n9. Cross-Site Consistency Check:\n   - Compare NAP data across all 5 profiles\n   - Verify no inconsistencies in business names or contact information\n   - Confirm URL structure matches website URLs from CLAUDE.md\n   - Validate phone numbers match stored credentials\n\n10. Acceptance Criteria:\n    - ✅ All 5 GBP profiles are live and publicly visible\n    - ✅ Each profile has 10 categories (1 primary + 9 additional)\n    - ✅ Description content is 1700-1750 characters with optimized keywords\n    - ✅ Service areas configured for geographic coverage\n    - ✅ Logo and cover photos uploaded for all 5 brands\n    - ✅ Weekly posting schedule configured with 4 weeks of content queued\n    - ✅ Business hours set correctly for each location\n    - ✅ All profiles pass Google verification (if required)\n    - ✅ Automation script completes without errors\n    - ✅ Screenshots document completion of all 5 profiles",
+        "status": "done",
+        "dependencies": [
+          "24"
+        ],
+        "priority": "high",
+        "subtasks": [],
+        "updatedAt": "2025-11-21T23:20:54.797Z"
+      },
+      {
+        "id": "26",
+        "title": "Phase 2: Internal Linking Optimization - Hub-and-Spoke Model Implementation",
+        "description": "Implement strategic internal linking across all 5 portfolio sites using a hub-and-spoke model with 5-10 links per 2000 words, ensuring 3-click maximum depth and varied contextual anchor text for improved navigation and SEO.",
+        "details": "1. Analyze current site structure across all 5 domains (ai-projektmanager.de, aimarketingbg.com, classicsecurity.net, varna-agenten.de, varnaai.com) to identify hub pages (homepages, service index pages) and spoke pages (individual service/use case pages).\n\n2. Map internal link opportunities:\n   - Identify hub pages that should receive links from 3-5 spoke pages minimum\n   - Map spoke-to-spoke contextual linking opportunities within topic clusters\n   - Ensure every page is reachable within maximum 3 clicks from homepage\n   - Document current link depth analysis per site\n\n3. Create internal linking patterns using Morphllm MCP:\n   - Pattern 1: Hub linking (footer/navigation patterns that repeat across similar pages)\n   - Pattern 2: Related content links (contextual within body paragraphs)\n   - Pattern 3: Cross-site portfolio links (connecting sister sites via VarnaAI Network footer)\n\n4. Implement contextual linking in body content using native Claude:\n   - Review each page's focus keyword and related topics\n   - Identify 2-3 natural linking opportunities per 600-word page\n   - Use varied anchor text: focus keywords, long-tail keywords, branded terms, generic descriptors\n   - Maintain 1-2% keyword density with varied anchor text distribution\n   - Example: 'DSGVO-konform Projektmanagement' page links to 'Compliance Management', 'Enterprise Deployment', and 'IT-Sicherheit' pages\n\n5. Link distribution targets:\n   - Pages 400-600 words: 2-3 internal links minimum\n   - Pages 600-800 words: 3-5 internal links\n   - Pages 800-1000 words: 5-7 internal links\n   - Pages 1000+ words: 7-10 internal links\n\n6. Anchor text variation strategy:\n   - 30% exact match or close variant (e.g., 'IT-Sicherheit Projektmanagement' for IT-Sicherheit page)\n   - 30% partial matches or long-tail variations (e.g., 'Security project management solutions')\n   - 20% branded/generic terms (e.g., 'learn more', 'AI Projektmanager platform')\n   - 20% navigation terms (e.g., 'see related services', 'explore enterprise options')\n\n7. Verification checklist per site:\n   - All pages linked from at least 1 other page\n   - No page deeper than 3 clicks from homepage\n   - Link distribution within specified targets\n   - Anchor text natural and contextual (not over-optimized)\n   - External footer links to sister sites functional\n   - Rank Math SEO scores reflect improved internal linking (80+/100)\n\n8. Technical implementation:\n   - Use Morphllm for bulk footer/navigation link patterns across similar page templates\n   - Use Native Claude for contextual body paragraph linking requiring semantic understanding\n   - Preserve existing design and layout (no modification to Kadence blocks)\n   - Update pages via WordPress editor, saving frequently to prevent data loss",
+        "testStrategy": "1. Site Structure Verification (per site):\n   - Map site hierarchy by visiting /sitemap.xml or WordPress admin → Pages\n   - Create visual diagram showing hub pages (homepage, services index) and spoke pages\n   - Document current link depth of each page\n\n2. 3-Click Rule Validation:\n   - From each site's homepage, follow longest path to deepest page\n   - Verify maximum click depth is 3 or less\n   - Use browser dev tools to trace navigation paths\n   - Test both main navigation and internal content links\n\n3. Link Distribution Audit:\n   - Count internal links on 5-10 sample pages per site\n   - Verify link counts match word count targets (2-3 for 400-600 words, etc.)\n   - Document page word count and link count in spreadsheet\n   - Flag pages with insufficient/excessive links\n\n4. Anchor Text Analysis:\n   - Extract all internal link anchor text using regex or Grep\n   - Categorize by type: exact match, partial match, branded, generic\n   - Verify distribution matches 30/30/20/20 targets (±10%)\n   - Check for over-optimization or keyword stuffing\n\n5. Contextual Link Quality:\n   - Read 3-5 contextual links per page and verify semantic relevance\n   - Confirm links flow naturally within paragraph content\n   - Verify linked page addresses mentioned topic/keyword\n   - Take screenshots of 3-5 well-implemented contextual links as evidence\n\n6. Functionality Testing:\n   - Click all internal links on 10 sample pages\n   - Verify each link navigates to correct destination page\n   - Test on desktop, tablet, and mobile viewports\n   - Confirm no broken links (404 errors)\n\n7. Footer Cross-Links Verification:\n   - Verify 'Part of VarnaAI Network' footer appears on all 5 sites\n   - Click all 5 sister site links from each site\n   - Confirm links point to correct external domains\n   - Test on 3-5 different pages per site\n\n8. Rank Math SEO Score Verification:\n   - Check Rank Math SEO panel on updated pages\n   - Verify internal link recommendations satisfied (80+/100 score)\n   - Document SEO score improvements for 10 sample pages\n   - Compare scores before/after linking optimization\n\n9. Crawl Simulation:\n   - Use free SEO tools (Screaming Frog, Ahrefs free tier, or Rank Math) to crawl each site\n   - Verify no orphaned pages (unreachable from navigation)\n   - Confirm internal link topology matches hub-and-spoke model\n   - Generate site structure report showing link connections\n\n10. Final Sign-Off:\n   - Document all 5 sites pass 3-click rule test\n   - Confirm link distribution within targets for 100% of pages\n   - Verify anchor text variety audit passes\n   - Collect before/after Rank Math scores\n   - Verify footer cross-links functional across all 5 domains",
+        "status": "pending",
+        "dependencies": [
+          "22",
+          "23",
+          "24",
+          "25"
+        ],
+        "priority": "medium",
+        "subtasks": []
+      },
+      {
+        "id": "27",
+        "title": "Phase 2: WordPress SEO Configuration - Rank Math Setup Across All 5 Sites",
+        "description": "Configure Rank Math SEO plugin across all 5 WordPress sites with focus keywords, meta titles/descriptions, Open Graph settings, and XML sitemaps. Achieve minimum SEO score of 70/100 on all pages using Playwright MCP for automated WordPress admin interaction.",
+        "details": "1. Prerequisites and Site Access:\n   - Access WordPress admin panels using credentials from CLAUDE.md (ai-projektmanager.de, aimarketingbg.com, classicsecurity.net, varna-agenten.de, varnaai.com)\n   - Verify Rank Math plugin is installed and activated on all 5 sites\n   - Verify all pages from Phase 1 content creation (Tasks 22-26) are published\n\n2. Rank Math Global Configuration (per site):\n   - Navigate to Rank Math Settings → General Settings\n   - Set site tagline/description for home page\n   - Configure XML sitemap settings: Enable sitemaps, set update frequency to weekly\n   - Configure Open Graph: Enable for all post types, set default image\n   - Set up Knowledge Graph: Organization type, logo URL, social profiles\n   - Configure breadcrumbs for site navigation\n   - Enable automatic rich snippets (FAQ, Howto, Article)\n\n3. Focus Keyword and Meta Configuration (per page):\n   - For each published page from Tasks 22-26, open Rank Math panel in editor\n   - Set focus keyword: Use primary keyword from content plan (examples: \"IT-Sicherheit Projektmanagement\", \"DSGVO-konform\", \"AI Marketing\", \"Zero-Click Search\")\n   - Auto-generate or customize SEO Title (60 chars max): Include focus keyword + power word + number if available\n   - Auto-generate or customize meta description (160 chars max): Include focus keyword, benefit statement, CTA\n   - Set URL slug (if not already set): Lowercase, kebab-case, include keyword when possible\n   - Verify Open Graph title and description are set\n   - Set featured image for Open Graph display\n\n4. Content Optimization Review:\n   - For each page, check Rank Math score in editor:\n     * Word count: Verify 600+ words (from content in Tasks 22-26)\n     * Keyword density: Target 1% (focus keyword appears 7-8 times in 600-word content)\n     * Keyword placement: Verify focus keyword at start of second paragraph\n     * Headings: Confirm focus keyword in at least one H2/H3 heading\n     * Links: Verify 1-2 external DoFollow links + 2-3 internal links\n   - Apply Rank Math suggestions to reach 70+/100 score\n   - Common fixes: Expand content if <600 words, add missing internal links, verify keyword distribution\n\n5. XML Sitemap and Robots Configuration:\n   - Rank Math Settings → Sitemaps: Enable, set update frequency\n   - Verify /sitemap.xml is accessible and valid (use online XML validator)\n   - Verify robots.txt is configured correctly: Disallow none, Allow all\n   - Submit sitemaps to Google Search Console (via task verification step)\n\n6. Open Graph and Social Configuration:\n   - Rank Math Settings → Open Graph: Verify all fields are populated\n   - Test Open Graph preview (use Facebook Sharing Debugger tool)\n   - Verify Twitter Card settings (if applicable)\n   - Check featured images display correctly in social previews\n\n7. Local SEO Settings (for German sites: ai-projektmanager.de, varna-agenten.de):\n   - Set up local business schema if applicable\n   - Configure service area (Germany, EU, etc.)\n   - Link to Google Business Profile (if created in Task 25)\n\n8. Multi-Language Configuration (if applicable):\n   - For aimarketingbg.com: Configure language settings in Rank Math\n   - Set hreflang tags for language variants (English/Bulgarian)\n   - Verify language switcher is SEO-optimized\n\n9. Final Verification:\n   - Run Rank Math SEO audit for entire site: Rank Math → Tools → Site Audit\n   - Review audit report and fix critical issues\n   - Verify no redirect chains or broken links detected\n   - Check for duplicate content issues",
+        "testStrategy": "1. Site Access Verification:\n   - Successfully log into WordPress admin for all 5 sites using stored credentials\n   - Confirm Rank Math plugin is active (visible in Rank Math menu)\n   - Verify all pages from Tasks 22-26 are in Published status\n\n2. Global Configuration Testing:\n   - Navigate to Rank Math Settings on each site\n   - Verify XML sitemap is generated and accessible at /sitemap.xml (HTTP 200 response)\n   - Test sitemap validity using XML validator (no syntax errors)\n   - Confirm Open Graph settings are populated in page source code (inspect og:title, og:description, og:image meta tags)\n   - Verify Knowledge Graph configuration is present\n\n3. Per-Page SEO Score Verification:\n   - For each published page, open in WordPress editor\n   - Check Rank Math panel shows SEO score ≥ 70/100\n   - Document final score for all pages in test report\n   - Target: 100% of pages ≥ 70/100 score\n   - Take Playwright screenshots of Rank Math panel for each page showing score\n\n4. Content Validation:\n   - Verify word count ≥ 600 words for each page (Rank Math shows word count)\n   - Confirm focus keyword appears 7-8 times (approximately 1% density)\n   - Check keyword appears in first 100 words of content\n   - Verify at least one H2/H3 heading contains focus keyword\n\n5. Link Validation:\n   - Extract all links from each page\n   - Verify 1-2 external DoFollow links (BSI, BfDI, official sources for German sites)\n   - Verify 2-3 internal links to other portfolio pages\n   - Test all links are valid (no 404 errors)\n   - Use browser DevTools to confirm link rel=\"dofollow\" (no nofollow)\n\n6. Meta Data Testing:\n   - For each page, view page source (Ctrl+U) and search for meta tags\n   - Verify meta description is present and 150-160 characters\n   - Verify og:title, og:description, og:image are present\n   - Verify title tag is 50-60 characters and includes focus keyword\n\n7. Social Media Preview Testing:\n   - Use Facebook Sharing Debugger (https://developers.facebook.com/tools/debug/sharing/) for each page URL\n   - Verify Open Graph preview displays correctly:\n     * Image displays without errors\n     * Title matches SEO title\n     * Description matches meta description\n   - Use Twitter Card Validator for twitter:card tags (if applicable)\n\n8. Sitemap and Search Engine Submission:\n   - Visit /sitemap.xml on each site (verify HTTP 200, valid XML)\n   - Count entries: Verify sitemap includes all published pages\n   - Submit sitemaps to Google Search Console (if GBP setup from Task 25 provides GSC access)\n   - Verify robots.txt allows crawling: /robots.txt shows \"Allow: /\"\n\n9. SEO Audit Report:\n   - Run Rank Math Site Audit (Rank Math → Tools → Site Audit)\n   - Verify \"Issues\" count is minimal (0-5 critical issues acceptable)\n   - Check no duplicate content detected\n   - Verify no broken internal links\n   - Confirm all redirects are correct (no chains)\n\n10. Final Score Reporting:\n   - Create summary table showing per-page SEO scores\n   - Format: Site | Page | URL | Focus Keyword | SEO Score | Status\n   - Example: ai-projektmanager.de | IT-Sicherheit | /anwendungsfaelle/it-sicherheit | IT-Sicherheit Projektmanagement | 86/100 | ✅ PASS\n   - Success criteria: All pages show ≥ 70/100, all meta data configured, all links verified",
+        "status": "pending",
+        "dependencies": [
+          "22",
+          "23",
+          "24",
+          "25",
+          "26"
+        ],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": "28",
+        "title": "Phase 3: German/DACH Directory Submissions - Automated Form Filing and Verification",
+        "description": "Submit ai-projektmanager.de and varna-agenten.de to 8 Tier 1 German directories (Google Business Profile, Das Örtliche, Gelbe Seiten, 11880.com, GoYellow, YellowMap, Yelp Germany, Hotfrog Germany) using Playwright MCP for automated form submission with manual approval verification.",
+        "details": "Implement automated directory submission workflow for ai-projektmanager.de and varna-agenten.de across 8 German/DACH directories using Playwright MCP browser automation.\n\n1. Prerequisites and Data Preparation:\n   - Retrieve standardized NAP data from Task 24 outputs (/seo/nap-data/data.json files)\n   - Prepare business descriptions (50, 100, 250 word variants from Task 24)\n   - Retrieve logos in PNG/JPG/SVG formats from Task 24 assets\n   - Document directory-specific requirements (category codes, service area formats, verification methods)\n\n2. Directory-Specific Submission Automation:\n   - Google Business Profile: Navigate to GBP dashboard (should already exist from Task 25), verify and enhance listing\n   - Das Örtliche (Germany): Automate business registration form with NAP data, category selection (\"IT-Sicherheit\", \"Projektmanagement\")\n   - Gelbe Seiten (Germany): Submit business entry with premium listing options, service area configuration\n   - 11880.com (Germany): Automate registration with category mapping, contact form setup\n   - GoYellow (Germany): Submit business profile with service descriptions, opening hours\n   - YellowMap (Germany): Register business with map location, category tags\n   - Yelp Germany: Submit business profile (may require additional verification beyond submission)\n   - Hotfrog Germany: Register business entry with detailed business description\n\n3. Playwright MCP Implementation:\n   - Create browser automation scripts for each directory's submission workflow\n   - Handle dynamic form validation (required fields, format requirements, captchas)\n   - Implement screenshot capture at submission confirmation pages\n   - Store submission confirmation URLs and reference numbers\n   - Handle account creation flows where required (email verification)\n   - Log all submissions with timestamp, directory name, confirmation status\n\n4. Manual Verification Workflow:\n   - After automated submission, generate verification checklist per directory\n   - Document which listings require email/SMS verification from business owners\n   - Note any listings requiring additional admin approval steps\n   - Track pending approval status for each directory\n   - Create follow-up schedule for approvals (typically 3-7 days)\n\n5. Documentation and Tracking:\n   - Create submission report documenting all 8 directories, submission dates, reference numbers\n   - Maintain status tracker: Pending, Submitted, Email Verification Sent, Approved, Live\n   - Document any directory-specific requirements discovered during submission\n   - Store directory login credentials securely (for future updates)\n\n6. Technical Considerations:\n   - Some directories may implement bot detection - use realistic delays between interactions\n   - Handle cookie/session management for multi-page forms\n   - Implement error handling and retry logic for network timeouts\n   - Capture and log any error messages for troubleshooting\n   - Respect directory robots.txt and terms of service\n   - Consider rate limiting to avoid IP blocking\n\n7. File Organization:\n   - Create /seo/directory-submissions/ with subdirectories per directory\n   - Store submission scripts in /seo/directory-submissions/scripts/\n   - Log submission results to /seo/directory-submissions/results.json\n   - Document verification steps in /seo/directory-submissions/verification-checklist.md",
+        "testStrategy": "1. Submission Verification (per directory, per site):\n   - For each of 8 directories × 2 sites = 16 submission tests:\n   - Verify automated form completion: all NAP fields populated correctly\n   - Confirm submission page reached and confirmation message displayed\n   - Capture screenshot of confirmation page showing reference number/submission ID\n   - Verify confirmation email received (if email verification required)\n\n2. Listing Visibility Verification (after approval, 7-10 days post-submission):\n   - Search each directory directly by business name to confirm listing appears\n   - Verify NAP data matches standardized data from Task 24 (no typos or inconsistencies)\n   - Confirm correct categories selected (\"IT-Sicherheit\", \"Projektmanagement\", etc.)\n   - Verify service descriptions display correctly with proper formatting\n   - Check that logo displays (where applicable per directory)\n   - Validate all links (website URL, email, phone) are clickable and functional\n\n3. Approval Status Tracking:\n   - For each directory, confirm approval status in directory admin (if accessible)\n   - Track email verification completion (mark as \"Verified\" once confirmed)\n   - Document any directories requiring additional admin approval\n   - Create final status report: 8+ directory listings live per site (16+ total)\n\n4. Acceptance Criteria:\n   - ai-projektmanager.de: 8+ directory listings live with verified NAP data\n   - varna-agenten.de: 8+ directory listings live with verified NAP data\n   - Total: 16+ directory listings across both sites\n   - All listings publicly searchable by business name\n   - All NAP data matches standardized format from Task 24\n   - All submission confirmations and approval documentation archived\n\n5. Cross-Directory Consistency Check:\n   - Compare NAP data across all 8 directories to ensure consistency\n   - Verify no conflicting information (duplicate listings, outdated phone numbers)\n   - Document any discrepancies found and correction steps taken\n\n6. Search Engine Visibility:\n   - After 14+ days from approval, verify directories appear in Google Search results\n   - Check Google Search Console for directory listings in indexation reports\n   - Confirm directory backlinks appear in Ahrefs or similar SEO tool",
+        "status": "pending",
+        "dependencies": [
+          "24",
+          "25",
+          "27"
+        ],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": "29",
+        "title": "Phase 3: International Directory Submissions - Automated Multi-Site Submission",
+        "description": "Submit varnaai.com, aimarketingbg.com, and classicsecurity.net to 500+ international business directories using automated submission tools (GetMoreBacklinks.org or ListingBott) with manual verification, targeting 100+ directory listings per site.",
+        "details": "Implement automated international directory submission workflow for 3 portfolio sites (varnaai.com, aimarketingbg.com, classicsecurity.net) using directory automation platforms.\n\n1. Prerequisites and Preparation:\n   - Retrieve standardized NAP data from Task 24 outputs (/seo/nap-data/data.json files for all 5 sites, filter for the 3 international sites)\n   - Prepare business descriptions (50, 100, 250 word variants from Task 24)\n   - Retrieve logos in PNG/JPG/SVG formats from Task 24 assets\n   - Document directory-specific requirements (categories, services, keywords)\n   - Compile Google Business Profile URLs from Task 25 for cross-referencing\n\n2. Directory Automation Tool Setup:\n   - Choose automation platform: GetMoreBacklinks.org (360+ directories, verified submissions) OR ListingBott (500+ directories, API-driven)\n   - Create accounts on selected platform(s)\n   - Configure API keys or authentication credentials\n   - Upload NAP data templates and business descriptions\n   - Configure logo upload batches\n\n3. Batch Submission Configuration:\n   - For each of 3 international sites:\n     - Create submission profile with standardized NAP data\n     - Select target directory categories (Business Services, IT Services, Security, AI/Technology)\n     - Set keyword targeting (site-specific keywords from SEO audit)\n     - Configure description variants (50-word for directories with limits, 100-250 word for premium listings)\n     - Queue 150-200 directories per site (aiming for 100+ confirmed listings)\n\n4. Automated Submission Execution:\n   - Launch batch submissions across selected directories\n   - Monitor submission progress via tool dashboard\n   - Log submission confirmations and any rejections\n   - Track response codes and error messages\n   - Document submission timeline (expect 2-4 weeks for full completion)\n\n5. Manual Verification Process:\n   - For each submitted directory:\n     - Verify NAP data accuracy (name, address, phone match Task 24 standards)\n     - Confirm business information matches Google Business Profile from Task 25\n     - Check logo display and quality\n     - Verify category assignments are appropriate\n     - Test clickthrough to website\n     - Capture verification screenshots\n   - Create verification checklist: minimum 100 unique directories per site\n   - Document any correction requests or resubmissions needed\n\n6. Tracking and Documentation:\n   - Create /seo/directory-submissions/ directory for tracking\n   - Log all submissions: directory name, URL, submission date, status, NAP accuracy, verification date\n   - Generate per-site submission report showing:\n     - Total directories submitted to\n     - Confirmed active listings\n     - Pending verification\n     - Rejected (with reasons)\n     - Response metrics\n   - Track backlink generation from directory listings using Ahrefs/Semrush",
+        "testStrategy": "1. Automation Tool Configuration Verification:\n   - Confirm account setup on chosen platform (GetMoreBacklinks.org or ListingBott)\n   - Verify API key authentication working\n   - Test file upload functionality with sample NAP data and logo\n   - Confirm directory category taxonomy is accessible\n\n2. Batch Submission Testing:\n   - For each of 3 sites, verify:\n     - NAP data correctly populated in submission profiles\n     - Business descriptions match Task 24 variants\n     - Logo files upload without errors\n     - Keyword targeting is relevant to site vertical (varnaai.com = AI services, aimarketingbg.com = marketing AI, classicsecurity.net = security)\n     - Directory count shows 150+ queued submissions per site\n\n3. Manual Verification Spot-Check (minimum 30 directories per site):\n   - Random sample of 10+ directories per site after 2-week submission window\n   - For each verified directory:\n     - Navigate to directory listing URL\n     - Confirm business name matches NAP data from Task 24\n     - Verify address and phone number accuracy\n     - Check logo displays correctly\n     - Confirm category assignments are appropriate\n     - Test website clickthrough works\n     - Capture screenshot showing listing details\n   - Document any missing or incorrect information\n\n4. Submission Report Validation:\n   - Verify tracking file contains all submission attempts\n   - Confirm minimum 100 confirmed listings per site\n   - Check accuracy of status classifications (confirmed, pending, rejected)\n   - Validate that rejection reasons are documented\n   - Ensure submission timeline is captured\n\n5. Quality Metrics:\n   - Count total unique directories per site\n   - Verify NAP consistency across all verified listings\n   - Check for citation patterns across directories\n   - Estimate potential backlink volume from submissions\n   - Compare submission success rates across the 3 sites",
+        "status": "pending",
+        "dependencies": [
+          "24",
+          "25"
+        ],
+        "priority": "medium",
+        "subtasks": []
+      },
+      {
+        "id": "30",
+        "title": "Phase 3: Social Media Automation Setup - Buffer Configuration and RSS Integration",
+        "description": "Configure Buffer social media scheduling tool (6/month plan) for all 5 portfolio sites, connect 20 social profiles (Facebook, Instagram, LinkedIn, X/Twitter), integrate RSS feeds for automatic blog post sharing, and set up engagement tracking across the VarnaAI Network.",
+        "details": "1. Buffer Account Setup and Configuration:\n   - Create or access existing Buffer account\n   - Upgrade to Buffer's 6/month plan tier\n   - Configure team access for multi-site management\n   - Set up Buffer analytics and engagement tracking\n\n2. Social Profile Connection (20 total profiles - 4 per site):\n   For each of 5 portfolio sites (ai-projektmanager.de, aimarketingbg.com, classicsecurity.net, varna-agenten.de, varnaai.com):\n   - Connect Facebook business page\n   - Connect Instagram business account\n   - Connect LinkedIn company page\n   - Connect X/Twitter account\n   - Verify posting permissions for each profile\n   - Test single post to each profile\n   - Authenticate with Buffer API tokens\n\n3. RSS Feed Integration:\n   - Identify WordPress RSS feeds for each site (typically /feed/ or /blog/feed/)\n   - Configure RSS feed URLs in Buffer:\n     * ai-projektmanager.de: https://ai-projektmanager.de/feed/\n     * aimarketingbg.com: https://aimarketingbg.com/feed/\n     * classicsecurity.net: https://classicsecurity.net/feed/\n     * varna-agenten.de: https://varna-agenten.de/feed/\n     * varnaai.com: https://varnaai.com/feed/\n   - Set up automatic feed parsing and post detection\n   - Configure Buffer to auto-queue new blog posts\n   - Set posting schedule (optimal times per platform)\n\n4. Reshare Schedule (3 reshares over 30 days):\n   - Plan reshare calendar for evergreen content\n   - Configure Buffer to auto-select and re-share top-performing posts\n   - Set reshare intervals (e.g., week 2, week 3, week 4 of month)\n   - Apply reshare schedule to all 5 sites\n   - Test reshare functionality with pilot post\n\n5. Engagement Tracking Setup:\n   - Enable Buffer analytics dashboard\n   - Configure engagement metrics tracking (likes, comments, shares, clicks)\n   - Set up daily/weekly engagement reports\n   - Create performance baseline for each platform\n   - Link Buffer analytics to varnaai.com dashboard (if applicable)\n   - Export engagement data for monthly reporting\n\n6. Documentation and Access:\n   - Document Buffer account credentials (securely stored)\n   - Create social media posting guidelines\n   - Document optimal posting times per platform\n   - Create Buffer post template library for each brand voice\n   - Document RSS feed URLs and schedule",
+        "testStrategy": "1. Profile Connection Verification:\n   - Successfully authenticate all 20 social profiles (4 × 5 sites) in Buffer\n   - Test posting a single piece of content to each profile\n   - Verify posts appear within 15 minutes on each platform\n   - Confirm engagement metrics display correctly in Buffer dashboard\n   - Check profile list shows all 20 accounts with green 'connected' status\n\n2. RSS Feed Integration Testing:\n   - Create test blog post on one WordPress site\n   - Verify Buffer detects new post within 2 hours\n   - Confirm auto-queued post appears in Buffer queue\n   - Test RSS feed parsing for all 5 sites\n   - Verify old posts are not re-queued (only new content)\n   - Check feed reliability by monitoring for 48 hours\n\n3. Reshare Schedule Verification:\n   - Verify reshare schedule appears in Buffer calendar\n   - Confirm reshares are queued at specified intervals\n   - Test manual reshare functionality\n   - Verify reshares post to correct profiles\n   - Check reshare timing aligns with 30-day calendar\n\n4. Engagement Tracking Validation:\n   - Access Buffer analytics dashboard\n   - Verify engagement metrics display for all platforms\n   - Confirm daily/weekly reports are generated\n   - Test engagement data export functionality\n   - Validate engagement tracking for posted content\n   - Monitor engagement metrics for 7 days to ensure accuracy\n\n5. Cross-Site Social Network Visibility:\n   - Verify all 5 sites have active social sharing enabled\n   - Test that blog posts are properly promoted across VarnaAI Network\n   - Confirm cross-promotion reaches all 20 social profiles\n   - Check engagement patterns across sister site profiles",
+        "status": "pending",
+        "dependencies": [
+          "22",
+          "27"
+        ],
+        "priority": "medium",
+        "subtasks": []
+      },
+      {
+        "id": "31",
+        "title": "Phase 4: Backlink Monitoring Setup - Configure Google Search Console and Weekly Reporting",
+        "description": "Configure Google Search Console (GSC) for all 5 portfolio sites, set up weekly automated backlink monitoring, and create reports tracking organic traffic growth, keyword ranking improvements, and backlink quality scores using GSC API integration.",
+        "details": "1. Google Search Console Configuration (per site):\n   - Log into GSC for each of 5 sites: ai-projektmanager.de, aimarketingbg.com, classicsecurity.net, varna-agenten.de, varnaai.com\n   - Verify site ownership (DNS record or HTML file method)\n   - Configure property settings: preferred domain, crawl rate, sitemaps\n   - Enable backlinks report under Links → External Links\n   - Set up coverage monitoring under Coverage tab\n   - Enable Core Web Vitals monitoring\n\n2. Google Search Console API Setup:\n   - Create Google Cloud project for GSC API access\n   - Enable Google Search Console API and Webmasters API\n   - Generate service account credentials (JSON key file)\n   - Store credentials securely in environment variables\n   - Install Google API client library (google-auth, google-api-python-client)\n   - Set up authentication with stored service account credentials\n\n3. Backlink Monitoring Implementation:\n   - Query GSC API for new backlinks: GET /sites/{siteUrl}/searchanalytics/query\n   - Filter for new referring domains acquired in past week\n   - Calculate domain authority metrics (using Ahrefs/Moz data if integrated, or GSC metrics)\n   - Track backlink quality scores: domain authority, relevance, spam score\n   - Monitor directory approval rates from Task 28 submissions (Tier 1 German directories)\n   - Create backlink quality classification: premium (DA>50), good (DA 30-50), standard (DA<30)\n\n4. Organic Metrics Tracking:\n   - Query GSC API for organic search performance: impressions, clicks, CTR, average position\n   - Track keyword ranking data: top 20 keywords by impressions, position changes week-over-week\n   - Monitor organic traffic changes from Google Analytics 4 API\n   - Calculate metrics: % growth in organic sessions, new keyword rankings, position improvements\n   - Track traffic by device type and country/language (German sites vs international)\n\n5. Weekly Automated Report Generation:\n   - Create Python/Node.js script using GSC API for data collection\n   - Schedule via cron job (weekly Sunday 6 AM) or serverless function (AWS Lambda, Google Cloud Functions)\n   - Report template includes:\n     * Executive summary: organic traffic change %, new backlinks count, DA improvement\n     * Backlinks section: new domains acquired, quality distribution, directory approvals\n     * Keyword rankings: top movers (up/down), new rankings, position changes\n     * Traffic metrics: sessions change, CTR change, average position change\n     * Directory approval status: submission status per Tier 1 directory from Task 28\n   - Export as PDF or HTML with charts (Chart.js or Plotly)\n   - Deliver via email to stakeholder email list\n   - Store reports in /seo/backlink-monitoring/reports/ directory\n\n6. Integration with Existing Infrastructure:\n   - Store GSC credentials in Docker secrets or .env file (not in version control)\n   - Deploy as scheduled task in Docker container or serverless function\n   - Use existing database (if available) to store backlink history for trend analysis\n   - Set up alerts for significant changes: >20% traffic drop, negative keyword ranking trends\n   - Create dashboard view for weekly metrics (optional: integrate with Task 7 analytics dashboard)\n\n7. Multi-Site Configuration:\n   - Create config file with site URLs and corresponding property IDs\n   - Generate separate reports for each site\n   - Optional: Create consolidated report across all 5 sites for portfolio overview\n   - German sites (ai-projektmanager.de, varna-agenten.de) may have separate GA4 properties for German traffic",
+        "testStrategy": "1. GSC Configuration Testing:\n   - Successfully authenticate to GSC for all 5 sites using stored credentials\n   - Verify property ownership shows as \"Verified\" status in GSC\n   - Confirm sitemaps are indexed and showing in GSC Coverage report\n   - Check backlinks report displays recent backlinks for each site\n\n2. API Integration Testing:\n   - Execute test query against GSC API using service account credentials\n   - Verify API returns valid data: site impressions, clicks, average position\n   - Test backlinks query: confirm new domains appear in results\n   - Validate error handling for API rate limits and network failures\n\n3. Weekly Report Generation Testing:\n   - Run report generation script manually and verify execution succeeds\n   - Check report output file is created with valid HTML/PDF format\n   - Validate report contains all required sections: backlinks, traffic, keywords, directory approvals\n   - Verify report email delivery (send test email to admin account)\n   - Confirm report data accuracy: matches GSC dashboard figures within 5% tolerance\n\n4. Backlink Monitoring Validation:\n   - Cross-check new backlinks from report against actual GSC dashboard for accuracy\n   - Verify domain authority calculations are reasonable (compare against known DA values)\n   - Test directory approval rate tracking: confirm Task 28 directory submissions are tracked\n   - Validate quality score assignments: spot-check a few backlinks for appropriate tier classification\n\n5. Automated Scheduling Test:\n   - Set up test schedule for 24 hours from current time\n   - Confirm script executes at scheduled time\n   - Verify report is generated without manual intervention\n   - Check logs show successful execution\n\n6. Multi-Site Report Testing:\n   - Generate reports for all 5 sites and verify each has correct data\n   - Confirm consolidated portfolio report (if implemented) aggregates correctly\n   - Test that German sites (de domain) show appropriate German language tracking\n   - Validate email distribution goes to all intended recipients\n\n7. Historical Data Tracking:\n   - Verify week-over-week metrics show as change percentages (%Δ)\n   - Confirm keyword ranking improvements are accurately calculated\n   - Test trend analysis: verify data from previous weeks is stored and retrieved correctly\n   - Validate alert triggers: simulate conditions that should trigger alerts and verify notification",
+        "status": "pending",
+        "dependencies": [
+          "27",
+          "28",
+          "30"
+        ],
+        "priority": "medium",
+        "subtasks": []
+      },
+      {
+        "id": "32",
+        "title": "Phase 4: Backlink Quality Audit - Analyze and Clean Toxic Backlinks",
+        "description": "Conduct comprehensive backlink quality audit across all 5 portfolio sites using Ahrefs/SEMrush, identify and remove toxic backlinks, verify NAP consistency in automated listings, and maintain healthy anchor text distribution while respecting velocity limits of 20-30 new backlinks per week.",
+        "details": "1. Backlink Analysis Setup:\n   - Access Ahrefs or SEMrush account and pull complete backlink profiles for all 5 sites (ai-projektmanager.de, aimarketingbg.com, classicsecurity.net, varna-agenten.de, varnaai.com)\n   - Export backlink reports including: referring domain authority, anchor text, spam score, link type (DoFollow/NoFollow), and link source category\n   - Establish baseline metrics: total backlinks, referring domains, toxic link ratio\n\n2. Toxic Backlink Identification:\n   - Flag backlinks with Domain Authority < 20 OR Spam Score > 40 as potential toxicity candidates\n   - Identify common toxic sources: auto-generated directories, link farms, PBN networks, unrelated niche directories\n   - Review automated directory listings (from Task 29, 28) for quality: verify NAP consistency, check for duplicate entries, audit listing quality scores\n   - Cross-reference GSC disavow list from Task 31 for previously identified toxic domains\n\n3. NAP Consistency Verification for Automated Listings:\n   - For each automated directory submission from Tasks 28 and 29, verify:\n     - Business name matches standardized NAP data from Task 24\n     - Address displays correctly (no truncation, correct format per country)\n     - Phone number formats correctly per regional standards\n     - Create audit spreadsheet: Directory Name | Site | NAP Match | Quality Score\n   - Flag inconsistencies for manual correction\n\n4. Anchor Text Distribution Analysis:\n   - Audit current anchor text distribution across all backlinks:\n     - Brand anchors (site name, branded keywords): target 40%\n     - Naked URLs: target 20%\n     - Generic anchors (click here, learn more): target 20%\n     - Keyword-rich anchors: target 20%\n   - Identify over-optimized anchor profiles (excessive keyword-rich anchors suggesting unnatural link patterns)\n   - Document anchor text distribution per site\n\n5. Backlink Removal and Disavowal:\n   - For toxic backlinks: attempt removal through webmaster contact (3-day window per domain)\n   - Document removal requests with dates and responses\n   - Compile disavow file for Google Search Console (format: domain:// or specific URL per Google spec)\n   - Submit disavow files through GSC (Task 31) for all 5 sites\n\n6. Velocity Limit Enforcement:\n   - Track new backlinks added per week from Tasks 28, 29, 30 submissions\n   - Ensure growth rate: 20-30 new backlinks maximum per week per site\n   - Calculate: (Total backlinks this week - Total backlinks last week) ≤ 30\n   - Document velocity metrics in weekly monitoring report (prerequisite for Task 31 reporting)\n\n7. Quality Score Documentation:\n   - Create per-site backlink profile report including:\n     - Total backlinks and referring domains (post-cleanup)\n     - Average referring domain authority\n     - Toxic backlink count (removed + disavowed)\n     - Anchor text distribution percentages\n     - Weekly velocity (new backlinks added)\n     - NAP consistency score for automated listings",
+        "testStrategy": "1. Backlink Profile Verification:\n   - Export baseline backlink reports from Ahrefs/SEMrush for all 5 sites\n   - Verify reports include minimum 10+ backlinks per site (confirm data completeness)\n   - Confirm spam score calculations are visible for each backlink\n\n2. Toxic Backlink Removal Testing:\n   - Document at least 3 removal requests sent to toxic domain webmasters\n   - Verify removal attempts logged with domain name, contact email, removal request date\n   - Re-check Ahrefs/SEMrush after 7 days to confirm removals processed\n   - Confirm disavow file uploaded to GSC for each site showing proper format: domain:// or specific URLs\n\n3. NAP Consistency Verification:\n   - Audit spreadsheet completed for all automated directory submissions from Tasks 28, 29\n   - Minimum 80% of automated listings should show NAP match (name, address, phone match exactly)\n   - Flag any sites with < 80% consistency for manual correction\n   - Verify no duplicate listings exist for same site in same directory\n\n4. Anchor Text Distribution Validation:\n   - Current anchor text distribution report generated showing percentages by category\n   - Verify: Brand anchors 38-42%, Naked URLs 18-22%, Generic 18-22%, Keyword 18-22% (±2% tolerance)\n   - Document over-optimized profiles if any site exceeds keyword anchor ratio of 25%\n   - Anchor text report shows individual anchor variations for top 20 backlinks\n\n5. Velocity Limit Compliance:\n   - Weekly tracking sheet created with columns: Week | Site | New Backlinks | Velocity Status\n   - Verify each site shows ≤ 30 new backlinks per week\n   - Confirm velocity calculated by comparing week-over-week backlink count from Ahrefs/SEMrush\n   - All 5 sites within velocity limits for current and previous 4 weeks\n\n6. Final Quality Report:\n   - Comprehensive backlink audit report generated including:\n     - Per-site backlink profiles (total count, referring domains, authority distribution)\n     - Toxic backlinks removed (count, domains)\n     - NAP consistency score for automated listings (%) \n     - Anchor text distribution percentages (all 4 categories)\n     - Weekly velocity metrics (backlinks added per week, all within 20-30 limit)\n     - GSC disavow file status (uploaded confirmation)\n   - Report shows no toxic backlinks remaining (spam score < 40, DA > 20)\n   - All automated directory NAP data matches standardized data from Task 24",
+        "status": "pending",
+        "dependencies": [
+          "24",
+          "25",
+          "27",
+          "28",
+          "29",
+          "30",
+          "31"
+        ],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": "33",
+        "title": "Phase 4: Google Posts Weekly Schedule - Create weekly Google Business Profile posts for all 5 brands",
+        "description": "Automate weekly Google Business Profile post creation for all 5 brands with diverse post types (Updates, Offers, Events, Products), including CTA buttons with UTM parameters, keyword optimization, and image integration. Minimum 4 posts per month per brand.",
+        "details": "Implement comprehensive weekly Google Business Profile (GBP) posting automation for all 5 VarnaAI portfolio brands (Classic Security, VarnaAI, AI Projektmanager, Varna Agenten, AI Marketing BG) using Playwright MCP for browser automation.\n\n1. Prerequisites from Task 25 (GBP Setup):\n   - Retrieve verified GBP credentials and business profiles for all 5 brands\n   - Access GBP dashboards via Playwright MCP automated login\n   - Confirm verified status before posting\n\n2. Post Content Generation Strategy:\n   - Create 4 post type templates: Updates, Offers, Events, Products\n   - Extract SEO keywords from site-specific content (/seo/site-audits/*.md)\n   - Generate post descriptions (50-150 characters optimal)\n   - Include natural keyword placement in descriptions\n   - Create post-specific CTA buttons with UTM parameters\n   - UTM structure: utm_source=gbp&utm_medium=post&utm_campaign=weekly_[brand]&utm_content=[post_type]\n\n3. Image Management:\n   - Use existing brand images from /assets/images/\n   - Fallback to generated images using brand colors\n   - Ensure images meet GBP requirements (minimum 800x600px, JPG/PNG)\n   - Add text overlays with brand-specific messaging\n\n4. Weekly Posting Automation:\n   - Create schedule: Monday, Wednesday, Thursday, Saturday (4 posts/week)\n   - Rotate post types: Update → Offer → Event → Product → repeat\n   - Time posts for peak engagement (9 AM, 1 PM, 5 PM, 8 PM local time)\n   - Randomize scheduling within ±30 minute windows to appear organic\n\n5. Post Type Implementation:\n   - Updates: Company news, feature announcements, blog post links\n   - Offers: Time-limited promotions, seasonal discounts, bundle deals\n   - Events: Webinars, workshops, product launches, training sessions\n   - Products: Service highlights, case studies, success metrics\n\n6. Playwright MCP Integration:\n   - Authenticate GBP for each brand using stored credentials from CLAUDE.md\n   - Navigate to Posts section of GBP dashboard\n   - Fill post title, description, CTA button text, and URL\n   - Upload image and set alt text with keywords\n   - Schedule or publish post\n   - Verify posting success and capture confirmation\n\n7. Database/Tracking:\n   - Log each posted item with timestamp, brand, post_type, keywords, url\n   - Track monthly post count per brand (target: 4+ minimum)\n   - Monitor engagement metrics via GBP dashboard\n   - Store post templates in /seo/tools/gbp-templates/ for reuse\n\n8. Error Handling:\n   - Retry failed posts up to 3 times\n   - Log failed posting attempts with error details\n   - Send notification if monthly minimum (4 posts) not reached\n   - Handle rate limiting gracefully with exponential backoff",
+        "testStrategy": "1. Playwright MCP Automation Verification:\n   - Test GBP login for each of 5 brands successfully authenticates\n   - Verify Playwright can navigate to Posts section and identify post creation button\n   - Confirm page load times under 5 seconds\n\n2. Post Content Quality:\n   - Verify all 4 post types (Updates, Offers, Events, Products) render correctly\n   - Check descriptions are 50-150 characters and include focus keyword naturally\n   - Validate CTA button text matches post type (Learn More, Claim Offer, Register, Shop Now)\n   - Confirm UTM parameters are correctly appended to URLs\n\n3. Image Processing:\n   - Verify images upload successfully to GBP (800x600px minimum)\n   - Check alt text includes brand name and keyword\n   - Confirm image displays correctly in post preview\n\n4. Weekly Schedule Execution:\n   - Run dry-run for 2 weeks and verify 8 posts (4/week) are queued correctly\n   - Check scheduling times distribute across Mon/Wed/Thu/Sat\n   - Verify time randomization (±30 minute windows) works\n   - Confirm timezone handling for all brand locations\n\n5. Post Tracking & Metrics:\n   - Verify database logs each post with brand, type, timestamp, keywords, url\n   - Check monthly counter reaches 4+ posts per brand minimum\n   - Confirm engagement metrics (views, clicks, actions) are captured\n   - Validate reporting dashboard shows post history\n\n6. Error Handling:\n   - Simulate failed post and verify retry mechanism (3 attempts)\n   - Check error logs capture failure details\n   - Verify notifications sent when monthly minimum not achieved\n   - Test rate limit handling with rapid posting\n\n7. Brand-Specific Validation:\n   - Classic Security: Verify security/compliance keywords in posts\n   - VarnaAI: Confirm AI/intelligence themed content\n   - AI Projektmanager: Check project management terminology\n   - Varna Agenten: Verify agent/automation messaging\n   - AI Marketing BG: Confirm marketing/growth focus\n\n8. GBP Dashboard Confirmation:\n   - Manually verify 1 posted item appears in actual GBP dashboard for each brand\n   - Check post visibility and engagement metrics in GBP admin\n   - Confirm no duplicate or malformed posts",
+        "status": "pending",
+        "dependencies": [
+          "24",
+          "25"
+        ],
+        "priority": "low",
+        "subtasks": []
+      },
+      {
+        "id": "34",
+        "title": "Phase 4: Google Posts Weekly Schedule - Implement automated GBP post creation system",
+        "description": "Build automated weekly Google Business Profile posting system for all 5 brands with post type variety (Updates, Offers, Events, Products), CTA buttons with UTM parameters, keyword optimization, and image integration using Playwright MCP. Target: minimum 4 posts per month per brand.",
+        "details": "Implement comprehensive automated Google Business Profile (GBP) posting system for all 5 VarnaAI portfolio brands (Classic Security, VarnaAI, AI Projektmanager, Varna Agenten, AI Marketing BG) using Playwright MCP for browser automation.\n\n1. Prerequisites from Task 25 (GBP Setup):\n   - Retrieve verified GBP credentials and authenticated session tokens from secure credential storage\n   - Access GBP dashboards for all 5 brands via Playwright MCP automated login\n   - Confirm verified status and posting permissions before creating content\n\n2. Post Content Generation Strategy:\n   - Create content templates for 4 post types:\n     * Updates: News, feature announcements, service changes (50-100 words)\n     * Offers: Limited-time promotions, discounts, bundles (60-80 words)\n     * Events: Webinars, training sessions, consultations (70-90 words)\n     * Products: Service highlights, case studies, achievements (80-100 words)\n   - Implement keyword rotation system using focus keywords from /seo/nap-data/ per brand\n   - Generate unique variations to prevent duplicate posting across weeks\n\n3. CTA Button Implementation:\n   - Generate UTM parameters: utm_source=gbp, utm_medium=post, utm_campaign=[brand]_[month], utm_content=[post_type]\n   - CTA button configurations per post type:\n     * Updates: \"Learn More\" → website homepage or relevant landing page\n     * Offers: \"Claim Offer\" → promotional landing page with tracking\n     * Events: \"Register Now\" → event sign-up page\n     * Products: \"View Case Study\" or \"Get Demo\" → product/service page\n   - Store URL mappings in config file for centralized management\n\n4. Image Integration:\n   - Retrieve prepared images from /assets/images/ (prepared in Task 24)\n   - Images should be 1200x628px (GBP optimal size) for visual consistency\n   - Use Playwright to upload images to GBP post creation form\n   - Implement fallback to brand logo if specific post image unavailable\n\n5. Playwright MCP Automation Workflow:\n   - Create reusable Playwright script for GBP post creation:\n     * Navigate to GBP dashboard: https://business.google.com/\n     * Login with credentials from secure storage\n     * Select business profile from dropdown\n     * Click \"Posts\" section\n     * Click \"Create post\" button\n     * Select post type from dropdown (Update/Offer/Event/Product)\n     * Fill title field with generated content\n     * Paste description text with keyword optimization\n     * Upload image via file input\n     * Add CTA button with UTM-encoded URL\n     * Click \"Schedule\" or \"Post Now\"\n     * Confirm post creation and capture post ID\n   - Implement error handling for rate limiting, session timeouts, network failures\n   - Add retry logic with exponential backoff\n\n6. Scheduling System:\n   - Create weekly schedule JSON: /seo/gbp-schedule/schedule.json\n   - Structure: {\"brands\": [{\"name\": \"...\", \"posts\": [{\"type\": \"update\", \"day\": \"Monday\", \"time\": \"09:00\"}]}]}\n   - Post distribution: 1 Update (Monday), 1 Offer (Wednesday), 1 Event/Product (Friday)\n   - Timezone consideration: Post at 9:00 AM local time for each brand's primary market\n   - Implement cron job or scheduler (BullMQ recommended based on existing stack) to trigger posting\n\n7. Content Generation Engine:\n   - Create Python/Node.js script to generate monthly content:\n     * Input: Brand keywords from NAP data, seasonal themes, promotional calendar\n     * Output: 4 JSON objects per brand containing title, description, post_type, cta_url\n     * Store generated content in /seo/gbp-content/[brand]/posts-[month].json\n     * Implement AI content generation (Claude API or Ollama) if available, with manual review\n\n8. Monitoring and Analytics:\n   - Capture post IDs after creation for tracking\n   - Store post metadata: created_timestamp, brand, type, cta_url, engagement_metrics\n   - Implement weekly report generation showing:\n     * Posts created per brand (target: ≥4/month)\n     * CTA click-through rates via UTM parameter tracking\n     * Engagement metrics (impressions, clicks, actions) from GBP dashboard\n   - Generate monthly performance report at /seo/gbp-analytics/monthly-report-[month].json\n\n9. File Structure:\n   - /seo/gbp-schedule/schedule.json → Weekly posting schedule\n   - /seo/gbp-content/[brand]/posts-[month].json → Generated post content\n   - /seo/gbp-credentials/credentials.json → Encrypted GBP login credentials (read from secure storage)\n   - /seo/gbp-analytics/monthly-report-[month].json → Performance metrics\n   - scripts/gbp-poster.js → Playwright automation script\n   - scripts/gbp-content-generator.js → Content generation engine",
+        "testStrategy": "1. Playwright MCP Automation Verification:\n   - Test GBP login for each of 5 brands successfully authenticates and loads dashboard\n   - Verify Playwright can navigate to Posts section and identify post creation button\n   - Confirm page load times under 5 seconds for each brand profile\n   - Test image upload functionality with sample 1200x628px images\n   - Verify CTA button form accepts UTM-encoded URLs without truncation\n\n2. Post Content Quality:\n   - Verify all 4 post types (Update, Offer, Event, Product) generate with appropriate word counts\n   - Confirm focus keywords appear naturally in post descriptions (density check)\n   - Validate CTA buttons contain correct UTM parameters for tracking\n   - Check that images upload and display correctly in post preview\n   - Verify no duplicate content across weekly posts (randomization working)\n\n3. Scheduling and Automation:\n   - Confirm schedule.json parses correctly and contains all 5 brands\n   - Test that scheduler triggers post creation on correct days/times\n   - Verify retry logic handles network failures and session timeouts\n   - Validate posts are created at correct local time for each brand's market\n   - Confirm minimum 4 posts per brand per month requirement met\n\n4. Content Generation:\n   - Verify generated content files contain all required fields (title, description, type, cta_url)\n   - Check that keyword variations prevent duplicate messaging\n   - Validate CTA URLs match brand's website structure and landing pages\n   - Confirm content generator runs without errors for all 5 brands\n\n5. Post Creation End-to-End:\n   - Manually verify at least 1 post per brand successfully created in GBP dashboard\n   - Check posted content appears in GBP feed within 5 minutes\n   - Verify post metadata matches generated content (title, description, image, CTA)\n   - Test CTA button functionality by clicking and confirming UTM parameters in Google Analytics\n   - Confirm post ID captured and stored for analytics tracking\n\n6. Analytics and Reporting:\n   - Verify monthly report file generates with correct timestamp\n   - Check report contains metrics for all 5 brands and post types\n   - Validate UTM parameter tracking shows in Google Analytics\n   - Confirm CTA click-through rates visible in GBP dashboard analytics\n   - Test report accuracy against manual GBP dashboard count verification\n\n7. Error Handling:\n   - Test behavior when GBP login fails (credentials invalid)\n   - Verify graceful handling of network timeouts during post creation\n   - Confirm retry logic doesn't create duplicate posts on re-attempt\n   - Test rate limiting detection and backoff implementation\n   - Validate error logs capture sufficient detail for debugging\n\n8. Compliance Check:\n   - Verify all posts follow GBP content guidelines (no prohibited content)\n   - Confirm images don't contain copyright violations\n   - Check CTA buttons don't link to malicious or broken URLs\n   - Validate no personal information exposed in post content or metadata",
+        "status": "pending",
+        "dependencies": [
+          "24",
+          "25"
+        ],
+        "priority": "low",
+        "subtasks": []
+      },
+      {
+        "id": "35",
+        "title": "C3 Compliance Platform - Fix 26 TypeScript compilation errors blocking production build",
+        "description": "Resolve 26 TypeScript compilation errors in the C3 Compliance Dashboard codebase that are preventing production builds and blocking deployment to Hetzner VPS. Identify root causes (type mismatches, missing types, incorrect imports) and fix all errors to achieve clean compilation.",
+        "details": "1. Codebase Analysis Phase:\n   - Run `npm run build` or `tsc --noEmit` in D:\\VarnaAI\\dashboard directory to capture full error list with line numbers and error codes\n   - Categorize errors by type: missing type definitions, incorrect type assignments, unresolved imports, missing interface implementations, incompatible function signatures\n   - Document each error with: file path, line number, error message, current implementation, and required fix\n\n2. Error Resolution Strategy:\n   - Missing type definitions: Check for @types packages in package.json, install missing @types/* packages (e.g., @types/node, @types/react, @types/express)\n   - Type mismatches: Review function signatures, interface definitions, and type annotations; align actual types with declared types\n   - Unresolved imports: Verify file paths, check for circular dependencies, ensure correct export syntax in imported modules\n   - Generic type parameters: Fix incomplete generic type declarations (e.g., React.FC<Props> should specify Props interface)\n   - API response types: Ensure Playwright, PostgreSQL, and HTTP client response types are properly defined\n   - Environment variables: Add type declarations for process.env variables using ambient declarations or .d.ts files\n\n3. Implementation Steps:\n   - Fix highest-impact errors first (import/export issues, missing dependencies) to unblock other errors\n   - Add TypeScript strict mode fixes incrementally (null checks, undefined handling)\n   - Update tsconfig.json if necessary to enable strictNullChecks, strict, or other compiler flags\n   - Add .d.ts declaration files for untyped dependencies if needed\n   - Run `npm run build` after each major fix category to verify progress\n\n4. Key Files to Check:\n   - tsconfig.json: Verify compiler options, include/exclude patterns, type roots\n   - package.json: Check for missing @types packages and correct versions\n   - src/index.ts, src/main.ts: Entry points that may cascade errors\n   - API integration files: Playwright MCP, PostgreSQL client, HTTP handlers\n   - React component files: Check PropTypes, generic types, event handler signatures",
+        "testStrategy": "1. Compilation Verification:\n   - Run `npm run build` from D:\\VarnaAI\\dashboard and confirm zero TypeScript errors in output\n   - Run `tsc --noEmit` to verify type checking passes without emitting files\n   - Confirm build output files are generated in dist/ or build/ directory\n   - Run `npm run type-check` (if available in package.json scripts) and verify passes\n\n2. Type Safety Verification:\n   - Enable TypeScript strict mode in tsconfig.json and verify no new errors appear\n   - Check that all function parameters have explicit type annotations\n   - Verify all API response handlers have proper type definitions\n   - Confirm environment variable types are declared (create .d.ts if needed)\n\n3. Dependency Verification:\n   - Run `npm list` and verify all @types packages are installed and correct versions\n   - Check for circular dependencies using `npm ls --depth=0`\n   - Verify all imports resolve correctly with `npm run lint` (if available)\n\n4. Production Build Test:\n   - Run full production build: `npm run build:prod` or equivalent\n   - Verify build completes without errors or warnings\n   - Check that bundled output can be deployed to Docker/Hetzner without runtime type errors\n   - Confirm no TypeScript errors appear in deployment logs",
+        "status": "done",
+        "dependencies": [
+          "9",
+          "10",
+          "13"
+        ],
+        "priority": "high",
+        "subtasks": [],
+        "updatedAt": "2025-11-24T07:16:50.894Z"
+      },
+      {
+        "id": "36",
+        "title": "C3 - Fix SSL certificate vulnerability (CRITICAL) - Remove self-signed certificate and implement Let's Encrypt",
+        "description": "Remove self-signed SSL certificate from C3 dashboard and implement Let's Encrypt with automatic renewal to eliminate security vulnerability and improve trust.",
+        "details": "1. Assess current SSL configuration on C3 dashboard (D:\\VarnaAI\\dashboard) - identify self-signed certificate details, expiration date, and current implementation method.\n\n2. Set up Let's Encrypt certificate:\n   - Install certbot on Hetzner VPS (78.47.125.174)\n   - Choose appropriate Let's Encrypt plugin (nginx or standalone depending on C3 reverse proxy configuration)\n   - Generate Let's Encrypt certificate for C3 subdomain (likely demo-c3.varnaai.com or similar)\n   - Verify domain ownership during certificate generation\n\n3. Configure automatic renewal:\n   - Set up certbot auto-renewal via cron job (certbot renew --quiet runs twice daily)\n   - Test renewal process: `certbot renew --dry-run`\n   - Verify renewal logs in /var/log/letsencrypt/\n\n4. Update reverse proxy/web server configuration:\n   - Modify nginx or proxy configuration to use new Let's Encrypt certificate paths\n   - Update certificate paths in Docker compose (D:\\VarnaAI\\operations\\compose/) if containerized\n   - Remove self-signed certificate from configuration completely\n   - Add HTTP to HTTPS redirect (redirect port 80 → 443)\n\n5. Update application code if necessary:\n   - Check C3 source code (D:\\VarnaAI\\dashboard) for any hardcoded certificate references\n   - Update any certificate pinning or validation logic if present\n   - Verify Playwright MCP tests point to HTTPS URL\n\n6. Configure certificate renewal notifications:\n   - Set up email alerts for certificate renewal failures\n   - Add monitoring for certificate expiration (30, 14, 7 days before expiration)\n\n7. Document changes:\n   - Record Let's Encrypt certificate details in operations documentation\n   - Update deployment guide with certificate renewal process\n   - Add certificate monitoring to runbook",
+        "testStrategy": "1. SSL Certificate Verification:\n   - Access C3 dashboard via HTTPS and click certificate icon in browser\n   - Verify certificate issuer is 'Let's Encrypt Authority X3' (or current LE issuer)\n   - Confirm certificate is valid (not self-signed, not expired)\n   - Check certificate common name matches C3 domain\n   - Verify certificate chain is complete (no chain errors)\n\n2. Browser Security Tests:\n   - Load C3 in Chrome/Firefox/Safari - verify no SSL warnings or errors\n   - Run https://www.ssllabs.com/ssltest/ on C3 domain - target grade A or A+\n   - Verify no mixed content warnings (all resources load over HTTPS)\n   - Test on multiple browsers for consistency\n\n3. Automatic Renewal Testing:\n   - Run `certbot renew --dry-run` and verify success (no errors)\n   - Check /var/log/letsencrypt/letsencrypt.log for successful renewal simulation\n   - Verify cron job is scheduled: `sudo crontab -l | grep certbot`\n   - Wait 24 hours and verify no renewal failure emails sent\n\n4. HTTP Redirect Testing:\n   - Access C3 via HTTP (port 80) - verify automatic redirect to HTTPS\n   - Confirm redirect status code is 301 (permanent) or 302 (temporary)\n   - Test that all resources load correctly after redirect\n\n5. Downtime Verification:\n   - Monitor C3 availability during certificate installation - should be <5 seconds\n   - Verify application continues functioning normally post-update\n   - Check application logs (Docker logs if containerized) for SSL-related errors\n\n6. Security Scan:\n   - Run vulnerability scan on updated C3 instance using tools like Nessus or OpenVAS\n   - Verify no SSL/TLS vulnerabilities remain\n   - Confirm no self-signed certificate references in security reports",
+        "status": "pending",
+        "dependencies": [
+          "19"
+        ],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": "37",
+        "title": "C3 - Fix authentication system - Repair JWT implementation, restore user sessions, fix middleware security",
+        "description": "Repair the C3 authentication system by fixing JWT token generation/validation, restoring user session persistence, and implementing proper security middleware to prevent unauthorized access and session hijacking vulnerabilities.",
+        "details": "1. JWT Implementation Analysis Phase:\n   - Examine D:\\VarnaAI\\dashboard source code for JWT token generation and validation logic\n   - Identify current JWT library (likely jsonwebtoken or similar) and token payload structure\n   - Check token expiration settings, refresh token implementation, and secret key management\n   - Review token storage mechanism (localStorage, sessionStorage, httpOnly cookies)\n   - Identify any issues: expired tokens not being refreshed, invalid signature validation, missing token rotation\n\n2. Session Persistence Restoration:\n   - Implement proper session storage mechanism (Redis recommended for distributed sessions on Hetzner VPS)\n   - Create session middleware to validate JWT tokens against server-side session store\n   - Implement token refresh endpoint that validates old token and issues new token with extended expiration\n   - Add session timeout logic (recommend 15-30 minute idle timeout, 7-day absolute timeout)\n   - Ensure session data includes user ID, roles, permissions for authorization checks\n\n3. Security Middleware Implementation:\n   - Create authentication middleware to verify JWT on protected routes\n   - Implement CORS security headers and CSRF protection\n   - Add rate limiting on login/token refresh endpoints (prevent brute force attacks)\n   - Implement proper error handling that doesn't leak information about token validity\n   - Add token blacklisting mechanism for logout functionality\n   - Ensure sensitive endpoints require re-authentication for critical operations (password change, admin actions)\n   - Configure secure cookie flags: httpOnly, Secure, SameSite=Strict\n\n4. Implementation Details:\n   - Use asymmetric key pair (RS256 algorithm) for token signing if distributed across multiple servers\n   - Implement JWT claims: iss (issuer), sub (subject/user ID), aud (audience), exp (expiration), iat (issued at), nbf (not before)\n   - Store JWT secret securely in environment variables, never in source code\n   - Implement proper password hashing (bcrypt with salt rounds 10+) if fixing credential storage\n   - Add audit logging for authentication events (successful login, failed attempts, token refresh)\n\n5. Testing Against Common JWT Vulnerabilities:\n   - Verify tokens cannot be used after logout\n   - Confirm expired tokens are rejected\n   - Validate tokens signed with different secrets are rejected\n   - Test that modifying token payload invalidates token\n   - Confirm missing or malformed tokens are handled securely\n   - Verify CORS headers prevent unauthorized domain access",
+        "testStrategy": "1. JWT Token Validation Testing:\n   - Generate valid JWT token and verify it grants access to protected endpoints\n   - Attempt access with expired token and confirm 401/403 response\n   - Modify token payload and verify signature validation rejects it\n   - Test token refresh endpoint: submit valid but expired token and confirm new token issued\n   - Verify new token has updated expiration time\n\n2. Session Persistence Testing:\n   - Log in user and verify session created in Redis/session store\n   - Close browser, reopen same domain, verify user remains logged in within timeout window\n   - Wait for session timeout period and verify user must re-authenticate\n   - Test multiple concurrent sessions for same user and verify all sessions properly managed\n   - Verify logout clears session from store and invalidates token\n\n3. Security Middleware Testing:\n   - Attempt to access protected endpoints without token - confirm rejection\n   - Attempt to access with malformed token - confirm rejection\n   - Test rate limiting on login endpoint by making 20+ login attempts rapidly - confirm blocking after threshold\n   - Verify CORS headers prevent requests from unauthorized origins\n   - Test CSRF protection by attempting cross-site requests\n   - Verify httpOnly flag prevents JavaScript access to authentication cookies\n   - Confirm sensitive operations (password change, admin functions) require re-authentication\n\n4. Integration Testing:\n   - Perform full login/logout/login cycle and verify session continuity\n   - Test across multiple browser tabs - verify session shared correctly\n   - Test on different devices/browsers and verify proper session isolation\n   - Verify audit logs record all authentication events with timestamps and IP addresses\n   - Deploy to Hetzner VPS test environment and verify authentication works across HTTPS connection\n\n5. Security Vulnerability Scan:\n   - Run OWASP ZAP or Burp Suite security scanner against authentication endpoints\n   - Check for token leakage in logs or error messages\n   - Verify no tokens hardcoded in frontend source or configuration files\n   - Confirm no session fixation vulnerabilities exist",
+        "status": "pending",
+        "dependencies": [
+          "35",
+          "36",
+          "19"
+        ],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": "38",
+        "title": "RetirementAI - Implement German Pension Calculator (Deutsche Rentenversicherung) with Multi-Currency Support",
+        "description": "Build German pension calculation engine with Deutsche Rentenversicherung integration, multi-currency support (EUR, GBP, CHF), and cross-border tax optimization for EU/UK/Swiss users.",
+        "details": "1. Analyze RetirementAI codebase structure (D:\\VarnaAI\\pension) to understand existing portfolio calculation logic and API integration patterns.\n\n2. Implement German Pension Calculator module:\n   - Create Deutsche Rentenversicherung (DRV) API client for statutory pension contributions and projections\n   - Implement Rentenbescheid (pension statement) XML/PDF parsing for existing pension data import\n   - Build earnings history validation against DRV contribution records\n   - Calculate Rentenpunkte (pension points) based on German social insurance rules\n   - Implement pension adjustment factors for Eastern/Western Germany historical differences\n   - Support Altersrente (old-age), Erwerbsminderungsrente (disability), and Hinterbliebenenrente (survivor) pension types\n\n3. Multi-Currency Implementation:\n   - Extend existing Trading212 API client to support GBP and CHF alongside EUR\n   - Implement real-time FX conversion using ECB (European Central Bank) API for stable rates\n   - Store conversion rates in PostgreSQL with daily refresh via BullMQ job queue\n   - Create currency-aware portfolio calculations with monthly/quarterly rebalancing options\n   - Support pension withdrawal in alternate currencies for cross-border retirees\n\n4. Cross-Border Tax Optimization Engine:\n   - Implement German-UK tax treaty rules (DBA) for split residence scenarios\n   - Add Swiss tax calculation for EU residents with Swiss assets/income\n   - Build progressive tax calculator accounting for Progressionsvorbehalt (progression reservation)\n   - Integrate Kirchensteuer (church tax) optional deduction logic\n   - Support Rentenbesteuerung transition rules (taxation of pension income 2005-2040)\n   - Create tax-efficient withdrawal strategies comparing Germany/UK/Switzerland tax treatment\n\n5. Integration Points:\n   - Connect to existing Redis cache layer for FX rates and tax tables\n   - Extend PostgreSQL schema with DRV integration tables (pension_history, contribution_records, tax_scenarios)\n   - Add BullMQ job for weekly DRV data sync and nightly tax/FX updates\n   - Implement Studio LM local AI for pension scenario explanations in German/English\n   - Add Playwright MCP support for automated Rentenbescheid OCR/parsing if manual upload needed\n\n6. Frontend Components (Next.js 14):\n   - Add DRV pension import wizard with Rentenbescheid upload/parsing\n   - Create multi-currency portfolio view with real-time FX conversion\n   - Build tax scenario comparison tool (Germany vs UK vs Switzerland)\n   - Add cross-border optimization recommendations with tax savings estimates\n   - Implement pension adequacy ratios (DRV vs target income replacement)\n\n7. Security & Compliance:\n   - Encrypt sensitive DRV contribution records end-to-end\n   - Implement BfDI (Federal Data Protection Officer) DSGVO compliance for pension data\n   - Add audit logging for all tax optimization scenarios\n   - Support data deletion/retention per German pension data protection rules",
+        "testStrategy": "1. Unit Tests for Pension Calculation Logic:\n   - Test Rentenpunkte calculation against DRV example cases (Musterfälle)\n   - Verify pension age adjustments (Regelaltersgrenze increases by birth year)\n   - Validate Rentenminderung (reduction) for early withdrawal scenarios\n   - Test Erwerbsminderungsrente qualification logic\n   - Verify Eastern/Western adjustment factors are applied correctly\n\n2. Integration Tests for DRV API:\n   - Test authenticated API connection to Deutsche Rentenversicherung sandbox/test environment\n   - Verify Rentenbescheid XML parsing with sample documents from all DRV regional offices\n   - Test contribution record import and reconciliation\n   - Validate error handling for incomplete/missing contribution histories\n   - Test data freshness (weekly sync completes successfully)\n\n3. Multi-Currency Functionality:\n   - Verify FX conversion accuracy against ECB official rates (daily reconciliation)\n   - Test portfolio calculations in EUR, GBP, CHF with identical underlying assets\n   - Validate cross-currency withdrawal scenarios (e.g., GBP account, CHF payout, EUR home currency)\n   - Test currency rebalancing algorithms with 10+ asset allocation scenarios\n   - Verify Redis cache hit rate > 95% for FX rates across high-volume test loads\n\n4. Tax Optimization Engine:\n   - Test Germany-UK tax treaty calculations against published BMF (Bundesfinanzministerium) examples\n   - Validate Swiss tax calculation using official Canton-specific tax tables\n   - Test Progressionsvorbehalt application for split-residence scenarios (e.g., Jan-Jun Germany, Jul-Dec UK)\n   - Verify Kirchensteuer optional deduction logic (religious affiliation not stored, only calculated)\n   - Test Rentenbesteuerung transition year calculations (2005-2040 phase-in)\n   - Compare generated tax optimizations against real tax advisor recommendations for 5+ complex scenarios\n\n5. Cross-Border Scenarios:\n   - Test UK expat with German DRV pension + UK personal savings account + Swiss real estate income\n   - Test German resident with UK company pension + Swiss employment income + German real estate\n   - Verify correct withholding tax treatment for each scenario\n   - Test pension benefit declarations (Rentenbescheinigung) for UK/Swiss tax authorities\n\n6. Data Security & DSGVO:\n   - Verify DRV contribution records encrypted in transit (TLS 1.3) and at rest (AES-256)\n   - Test data deletion requests (DSGVO Article 17) remove all pension records within 30 days\n   - Validate audit log captures all tax scenario calculations with user/timestamp\n   - Confirm PII redaction in any error logs or support dumps\n\n7. Performance Testing:\n   - Verify pension calculation < 500ms for complex 40-year contribution history\n   - Test FX conversion caching: cache miss → API call < 200ms, cache hit < 10ms\n   - Load test: 100 concurrent users running tax optimization scenarios\n   - Verify database query performance (indexes) for pension history lookups\n\n8. Browser/E2E Testing (Playwright MCP):\n   - Test DRV Rentenbescheid file upload parsing end-to-end\n   - Verify multi-currency portfolio view renders correctly on mobile/tablet/desktop\n   - Test tax scenario comparison tool with 3+ scenarios simultaneously\n   - Validate form validation for pension contribution inputs (date ranges, amounts)\n   - Test cross-border tax report PDF generation\n\n9. Regression Testing:\n   - Verify existing Trading212 portfolio calculations unaffected by multi-currency implementation\n   - Confirm AI advisor recommendations (Studio LM) still function with new tax scenarios\n   - Validate pension income projections still integrate with expense planning module\n\n10. Documentation & Validation:\n   - Cross-reference all calculations with published DRV Rentenversicherungsbericht (annual reports)\n   - Validate Swiss tax treatment against official SRK (Schweizerische Rentenversicherung) guidelines\n   - Confirm UK tax treaty calculations match HMRC (Her Majesty's Revenue & Customs) published guidance\n   - Document all assumptions and edge cases in implementation notes",
+        "status": "done",
+        "dependencies": [
+          "1",
+          "2"
+        ],
+        "priority": "high",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Analyze RetirementAI codebase and DRV integration requirements",
+            "description": "Examine existing RetirementAI structure, portfolio calculation patterns, and API integration approaches. Research Deutsche Rentenversicherung API documentation and Rentenbescheid XML/PDF formats for integration planning.",
+            "dependencies": [],
+            "details": "Review D:\\VarnaAI\\pension directory structure, study existing Trading212 API client implementation patterns, document DRV API endpoints and authentication requirements, identify PostgreSQL schema extension points for pension_history and contribution_records tables, create integration architecture document.\n<info added on 2025-11-24T05:33:42.328Z>\nCodebase analysis complete. RetirementAI architecture confirmed: Next.js 14 App Router with TypeScript, PostgreSQL 15+, Redis 7+, BullMQ background jobs. Multi-currency support already implemented (EUR/GBP/CHF in src/lib/config/currencies.ts with ECB integration). Existing pension system architecture includes pensions table with 35+ fields and PensionService with CRUD operations at src/lib/services/pensionService.ts. Calculator pattern established in src/lib/calculators/ (healthcare.ts and socialSecurity.ts as 17KB reference implementations). Critical finding: EUROPEAN_FEATURE_ROADMAP.md confirms German DRV is Phase 2.1 with Q2-Q3 timeline and 3-4 week implementation estimate. DRV formula documented: Monthly Pension = Entgeltpunkte × Zugangsfaktor × Rentenartfaktor × Aktueller Rentenwert. Implementation approach confirmed: (1) Create src/lib/calculators/pensions/germany.ts following existing calculator pattern, (2) Add historical wage index data (Durchschnittsentgelt 2010-2024) and current pension values (Aktueller Rentenwert), (3) Create /api/pensions/calculate/germany endpoint, (4) Build GermanPensionCalculator.tsx React component, (5) Extend database schema with pension_type = 'drv_government' and germany-specific fields (entgeltpunkte, zugangsfaktor, rentenartfaktor), (6) Follow Trading212 API integration pattern (API → PostgreSQL → Redis cache → Frontend). Tax calculator infrastructure exists at src/lib/tax/ for German tax extensions (Kirchensteuer, Solidaritätszuschlag). No blockers identified: all infrastructure production-ready, DSGVO compliant, A+ security grade, WCAG 2.1 AA accessible. DRV integration ready to proceed with Phase 2.1 implementation.\n</info added on 2025-11-24T05:33:42.328Z>",
+            "status": "done",
+            "testStrategy": "Documentation review, API endpoint verification, schema design validation against existing patterns",
+            "updatedAt": "2025-11-24T05:34:05.115Z",
+            "parentId": "undefined"
+          },
+          {
+            "id": 2,
+            "title": "Implement German Pension Calculator module with DRV integration",
+            "description": "Build Deutsche Rentenversicherung API client, implement Rentenbescheid parsing, create Rentenpunkte calculation engine, and support all three pension types (Altersrente, Erwerbsminderungsrente, Hinterbliebenenrente) with regional adjustment factors.",
+            "dependencies": [
+              1
+            ],
+            "details": "Create DRV API client with OAuth2 authentication, implement XML/PDF parser for Rentenbescheid documents, build Rentenpunkte calculator following German social insurance rules, add regional adjustment factors for East/West Germany, implement pension type calculation logic, store parsed data in PostgreSQL pension_history tables, add comprehensive error handling for invalid contribution records.",
+            "status": "done",
+            "testStrategy": "Unit tests for Rentenpunkte calculations against DRV Musterfälle, validation tests for pension age adjustments by birth year, integration tests for Rentenbescheid parsing with sample documents, regression tests for regional adjustment factors",
+            "parentId": "undefined",
+            "updatedAt": "2025-11-24T06:32:34.902Z"
+          },
+          {
+            "id": 3,
+            "title": "Extend multi-currency support with FX conversion and currency-aware calculations",
+            "description": "Extend Trading212 API client for GBP/CHF support, implement ECB API integration for real-time FX rates, create PostgreSQL tables for rate storage, and build currency-aware portfolio calculation engine with rebalancing options.",
+            "dependencies": [
+              1
+            ],
+            "details": "Modify Trading212 client to handle multiple currency pairs, implement ECB API consumption with daily BullMQ scheduled job, create fx_rates table in PostgreSQL with timestamp/currency pair/rate columns, build currency conversion utility with Redis caching layer, implement monthly/quarterly rebalancing logic, create currency-aware withdrawal calculation supporting EUR/GBP/CHF pension distributions.",
+            "status": "done",
+            "testStrategy": "Unit tests for FX conversion calculations against ECB published rates, integration tests for BullMQ job execution and rate updates, currency conversion edge cases (rounding, precision), rebalancing algorithm validation with sample portfolios",
+            "parentId": "undefined",
+            "updatedAt": "2025-11-24T06:32:37.853Z"
+          },
+          {
+            "id": 4,
+            "title": "Build cross-border tax optimization engine for Germany/UK/Switzerland",
+            "description": "Implement German-UK tax treaty rules, Swiss tax calculations, progressive tax calculator with Progressionsvorbehalt, Kirchensteuer logic, and Rentenbesteuerung transition rules to provide tax-efficient withdrawal strategies.",
             "dependencies": [
               1,
+              2
+            ],
+            "details": "Create tax_scenarios table in PostgreSQL for storing calculation results, implement DBA (German-UK tax treaty) split residence rules, build Swiss income/asset tax calculator, create progressive tax calculator accounting for progression reservation, add optional Kirchensteuer deduction logic, implement Rentenbesteuerung transition rules (2005-2040 taxation schedule), build comparison engine for Germany vs UK vs Switzerland tax treatment, integrate with Studio LM for German/English scenario explanations.",
+            "status": "done",
+            "testStrategy": "Unit tests for progressive tax calculations with various income levels, validation tests for DBA treaty rules against published OECD guidelines, Swiss tax calculation verification against cantonal tax rates, Rentenbesteuerung schedule validation, edge cases for pension income combinations",
+            "parentId": "undefined",
+            "updatedAt": "2025-11-24T06:32:40.742Z"
+          },
+          {
+            "id": 5,
+            "title": "Implement frontend components and complete system integration with security/compliance",
+            "description": "Create Next.js 14 components for DRV import wizard, multi-currency portfolio view, tax scenario tool, and add DSGVO compliance, encryption for sensitive data, audit logging, and Playwright MCP support for automated document processing.",
+            "dependencies": [
               2,
               3,
-              4,
-              5,
-              6,
-              7
+              4
             ],
-            "details": "Integrate all components (status monitoring, model configuration, API key management, cost tracking, performance metrics) into a cohesive AI settings page. Connect frontend components to backend API endpoints. Perform end-to-end testing of all functionality. Fix any integration issues. Optimize performance and ensure smooth user experience across all features.",
+            "details": "Build Rentenbescheid upload wizard component with drag-drop, implement multi-currency portfolio display with real-time FX conversion, create tax scenario comparison UI showing Germany/UK/Switzerland options, add pension adequacy ratio calculations and visualizations, implement end-to-end encryption for DRV contribution records, add BfDI DSGVO compliance audit logging, create data deletion/retention workflows per German pension law, integrate Playwright MCP for automated document OCR/parsing, add Studio LM integration for German/English pension explanations, implement Redis caching for tax tables and FX rates.",
             "status": "done",
-            "testStrategy": "Conduct end-to-end testing of complete workflow. Test all components working together. Verify data consistency across different sections. Perform cross-browser testing. Test performance under various network conditions."
+            "testStrategy": "Component rendering tests with sample pension data, Rentenbescheid parsing integration tests with real PDF samples, multi-currency calculation accuracy tests, tax scenario comparison validation against known cases, DSGVO compliance audit trail verification, encryption/decryption functional tests, accessibility testing for UI components, cross-browser testing with mobile responsiveness",
+            "parentId": "undefined",
+            "updatedAt": "2025-11-24T06:32:43.599Z"
           }
-        ]
+        ],
+        "updatedAt": "2025-11-24T06:32:43.599Z"
+      },
+      {
+        "id": "39",
+        "title": "SEO Agent - AI Content Generation from Audits with WordPress Auto-Publish and Backlink Analysis",
+        "description": "Implement AI-powered content generation from SEO audits with automated WordPress publishing across 5 portfolio sites and integrate competitor backlink analysis capabilities into the SEO Agent application.",
+        "details": "1. Analyze existing SEO Agent codebase (D:\\VarnaAI\\seoagent) to understand current architecture, AI provider integrations (OpenAI, Anthropic, Ollama, LM Studio), and database schema.\n\n2. Implement AI Content Generation Engine:\n   - Create content generation prompts based on SEO audit findings (keywords, gaps, competitor analysis)\n   - Support multiple content types: blog posts (800-1200 words), landing pages (600-800 words), social media content (50-280 chars), email campaigns (3-5 sections)\n   - Generate SEO-optimized content with: focus keyword placement (paragraph 2/3 start, H2 heading, 5-7 mentions), external authority links (BSI, BfDI, EU resources for German sites), internal linking suggestions\n   - Implement content quality scoring (readability, keyword density, link optimization)\n   - Support multi-language generation (English, German, Bulgarian)\n\n3. WordPress Auto-Publish Integration:\n   - Create WordPress REST API client for all 5 sites (ai-projektmanager.de, aimarketingbg.com, classicsecurity.net, varna-agenten.de, varnaai.com)\n   - Use stored WordPress credentials from CLAUDE.md (sites, usernames, passwords)\n   - Implement page creation workflow: Create draft → Set SEO metadata (title, description, focus keyword) → Publish as draft → Return edit URL for Kadence block design addition\n   - Add image placeholder integration with alt text generation\n   - Implement scheduling for content publication (immediate, scheduled, draft-only modes)\n   - Add content approval workflow: AI-generated → User review → Publish/Edit\n\n4. Competitor Backlink Analysis:\n   - Integrate Ahrefs/SEMrush API or web scraping for competitor analysis\n   - Analyze competitor backlink profiles for: referring domains, anchor text patterns, link types (DoFollow/NoFollow), authority scores\n   - Identify backlink opportunities: low-competition keywords, high-authority sources, industry-relevant linking sites\n   - Generate backlink strategy recommendations with: top 10 most achievable backlink sources, anchor text suggestions (brand, keyword variation, natural), outreach email templates\n   - Track backlink velocity limits (20-30 new per week per site)\n   - Create competitor comparison reports (backlink count, referring domains, authority distribution)\n\n5. Integration with Existing Features:\n   - Connect to SEO audit results to generate targeted content addressing identified gaps\n   - Link content generation to internal link optimization (suggest 2-3 internal links per page)\n   - Integrate with existing AI assistants (reuse provider configurations)\n   - Add to quick actions panel for one-click bulk generation\n\n6. Database Schema Updates:\n   - Add tables for: generated_content (id, site_id, content_type, title, body, seo_metadata, status, generated_at), backlink_analysis (id, site_id, competitor_url, referring_domain, anchor_text, authority, link_type, opportunity_score), backlink_outreach (id, site_id, target_domain, outreach_template, status, sent_date)\n   - Track content generation history and performance metrics\n\n7. Frontend UI Components:\n   - Content generation interface: Select audit → Choose content type → Set parameters (tone, length, keywords) → Generate → Preview → Publish\n   - Backlink analysis dashboard: Competitor analysis, opportunity scoring, velocity tracking, outreach templates\n   - Content management: View generated content, edit before publishing, schedule publication, track performance\n\n8. Error Handling & Safety:\n   - Implement WordPress API error handling and retry logic\n   - Add content quality validation before auto-publish (minimum word count, keyword density checks, link requirements)\n   - Create audit logs for all generated content and WordPress changes\n   - Implement rollback capability for published content if issues detected",
+        "testStrategy": "1. SEO Agent Application Tests:\n   - Verify content generation works with all 4 AI providers (OpenAI, Anthropic, Ollama, LM Studio)\n   - Test content quality metrics: keyword density 1-2%, external links present, internal link suggestions generated\n   - Test multi-language content generation (German, English, Bulgarian)\n\n2. WordPress Integration Tests:\n   - Test WordPress login with all 5 site credentials (ai-projektmanager.de, aimarketingbg.com, classicsecurity.net, varna-agenten.de, varnaai.com)\n   - Create test pages on WordPress sandbox/staging (NOT production) and verify:\n     * Page created in drafts with correct title and content\n     * SEO metadata (focus keyword, description) set correctly in Rank Math\n     * Edit URL returned for design block addition\n     * Images/placeholders included with alt text\n   - Test content approval workflow: Generate → Review → Publish\n   - Verify page persistence (check pages appear in WordPress admin)\n\n3. Backlink Analysis Tests:\n   - Pull competitor backlink data and verify data quality (minimum 10+ backlinks found)\n   - Test anchor text analysis and variation detection\n   - Verify opportunity scoring algorithm produces actionable results\n   - Test outreach template generation (email tone, call-to-action)\n   - Validate backlink velocity tracking (20-30 per week limits)\n\n4. Integration Tests:\n   - Generate content from actual SEO audit → Publish to WordPress → Verify in live site\n   - Test internal link suggestions point to valid pages\n   - Verify bulk generation for multiple pages\n   - Test quick actions panel: One-click batch content generation\n\n5. Database Tests:\n   - Verify generated_content table stores all metadata correctly\n   - Verify backlink_analysis records link characteristics accurately\n   - Test queries for: content history, backlink opportunities, velocity tracking\n\n6. Performance Tests:\n   - Measure content generation latency (<30 seconds per page)\n   - Verify WordPress API calls complete within <5 seconds\n   - Test bulk operations don't timeout (10+ pages)\n\n7. User Acceptance Tests:\n   - Generate 5 sample pages across different sites\n   - Have Big Dick review generated content quality and SEO optimization\n   - Verify published pages achieve 70-80+/100 Rank Math score immediately\n   - Test backlink analysis produces actionable recommendations",
+        "status": "pending",
+        "dependencies": [
+          "3",
+          "4",
+          "8",
+          "22",
+          "23",
+          "26",
+          "32"
+        ],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": "40",
+        "title": "FwChange - Implement ServiceNow CMDB Integration with MFA and AI Policy Conflict Prediction",
+        "description": "Integrate ServiceNow CMDB with FwChange backend, implement multi-factor authentication for enterprise access, and develop AI-powered firewall policy conflict prediction engine for enterprise firewall management.",
+        "details": "1. Analyze existing FwChange backend architecture (D:\\VarnaAI\\fwchange) to understand current ITSM integrations (Jira, ServiceNow) and multi-vendor firewall support (Palo Alto, Check Point, Cisco, Fortinet).\n\n2. Implement ServiceNow CMDB Integration:\n   - Create ServiceNow API client wrapper using existing OAuth2 authentication patterns\n   - Map firewall device inventory to CMDB Configuration Items (CIs) with automatic bidirectional sync\n   - Implement webhook handlers for CMDB change events to trigger FwChange policy reviews\n   - Store CMDB sync state in PostgreSQL with timestamp and change tracking\n   - Create data transformation layer to normalize multi-vendor firewall configs into CMDB-compatible format\n   - Example: Palo Alto security objects → ServiceNow firewall rule CIs\n\n3. Implement Multi-Factor Authentication (MFA):\n   - Add TOTP (Time-based One-Time Password) support using speakeasy or similar library\n   - Implement SMS-based OTP as secondary factor using Twilio or AWS SNS\n   - Create MFA enrollment workflow in user settings with backup codes\n   - Update JWT token generation to include MFA verification claim\n   - Implement MFA challenge middleware for enterprise user sessions\n   - Store MFA secrets encrypted in PostgreSQL with secure key rotation\n\n4. Develop AI Policy Conflict Prediction Engine:\n   - Analyze existing firewall policy data structure across multi-vendor platforms\n   - Create conflict detection rules based on: overlapping source/destination CIDR blocks, conflicting allow/deny rules, undefined application protocols, missing logging clauses\n   - Implement ML model using historical policy data (leverage existing Ollama/LM Studio setup from RetirementAI) for predictive conflict identification\n   - Create scoring system: critical conflicts (blocks legitimate traffic), medium conflicts (inconsistent security posture), low conflicts (style/documentation issues)\n   - Build recommendation engine to suggest rule consolidation, reordering, or remediation steps\n   - Integrate with ServiceNow to create change tickets automatically for detected conflicts\n\n5. API Endpoints:\n   - POST /api/cmdb/sync - Trigger manual CMDB synchronization\n   - GET /api/cmdb/devices - List synchronized CMDB devices\n   - POST /api/mfa/setup - Enroll new MFA device\n   - POST /api/mfa/verify - Verify MFA token during login\n   - POST /api/policies/analyze-conflicts - Run conflict prediction on firewall policies\n   - GET /api/policies/conflicts - Retrieve detected conflicts with risk scoring\n   - POST /api/policies/create-remediation-ticket - Auto-create ServiceNow change tickets\n\n6. Database Schema Updates:\n   - Add mfa_secrets table with encrypted TOTP secrets and backup codes\n   - Add cmdb_sync_log table for tracking CMDB synchronization history\n   - Add policy_conflicts table with conflict type, severity, affected rules, and remediation suggestions\n   - Add audit_trail entries for all MFA and CMDB operations\n\n7. Security Considerations:\n   - Encrypt MFA secrets using AES-256 with key rotation\n   - Implement rate limiting on MFA verification endpoints (max 5 attempts per 15 minutes)\n   - Ensure ServiceNow API credentials stored in secure vault (AWS Secrets Manager or HashiCorp Vault)\n   - Log all CMDB access and policy conflict analysis for compliance audit trails\n   - Implement IP whitelisting for ServiceNow API calls from FwChange backend",
+        "testStrategy": "1. ServiceNow CMDB Integration Tests:\n   - Unit tests: Verify CMDB API client correctly maps firewall devices to CIs\n   - Integration test: Sync 50+ firewall devices from Palo Alto, Check Point, Cisco, Fortinet instances to ServiceNow test instance\n   - Verify bidirectional sync: Update CI in CMDB, confirm change reflected in FwChange within 5 seconds\n   - Test webhook handlers: Trigger CMDB change event, confirm FwChange receives and processes notification\n   - Validate data transformation: Compare original firewall config vs CMDB CI representation for accuracy\n\n2. MFA Implementation Tests:\n   - Unit tests: TOTP generation, verification, time window tolerance (±30 seconds)\n   - Integration test: Complete MFA enrollment flow with TOTP secret generation\n   - Test SMS OTP delivery and verification with mock Twilio API\n   - Verify JWT tokens include MFA claim when user authenticates\n   - Test backup codes: Use 10+ backup codes, verify one-time usage enforcement\n   - Security test: Attempt brute force on MFA endpoints, verify rate limiting blocks after 5 failed attempts\n   - Test MFA session expiration and re-authentication requirements\n\n3. AI Policy Conflict Prediction Tests:\n   - Create test dataset: 200+ firewall rules with known conflicts (overlapping CIDRs, conflicting allow/deny, missing logging)\n   - Unit tests: Verify each conflict detection rule identifies expected issues\n   - Test conflict scoring: High-severity conflicts (blocks legitimate traffic) score > 80, medium > 40, low > 0\n   - Integration test: Run conflict analysis on representative Palo Alto, Check Point, Cisco, Fortinet rulesets\n   - Verify ML model predictions: Compare AI-predicted conflicts vs manual expert review (target > 85% accuracy)\n   - Test recommendation generation: Verify suggested rule changes resolve conflicts without breaking security policy\n   - Test ServiceNow ticket creation: Generate 5+ conflict-based tickets, verify they appear in ServiceNow with correct priority/description\n\n4. End-to-End Enterprise Workflow Test:\n   - Create test user account with MFA enabled\n   - Authenticate with password + TOTP token\n   - Trigger CMDB sync for test firewall devices\n   - Run policy conflict analysis\n   - Verify conflict results and auto-generated ServiceNow tickets\n   - Confirm audit trail logs all operations with user, timestamp, and MFA status\n\n5. Performance Benchmarks:\n   - CMDB sync: < 2 minutes for 100+ devices\n   - Conflict analysis: < 30 seconds for 1000-rule policies\n   - MFA verification: < 500ms per attempt\n   - API response times: < 1 second for all new endpoints\n\n6. Security Audit:\n   - Verify MFA secrets never logged in plaintext\n   - Confirm ServiceNow API credentials not exposed in error messages or logs\n   - Test that CMDB sync respects ServiceNow role-based access controls\n   - Validate rate limiting on MFA endpoints prevents brute force",
+        "status": "pending",
+        "dependencies": [
+          "3",
+          "4",
+          "8",
+          "19"
+        ],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": "41",
+        "title": "SEO Keyword Sales Optimization - ai-projektmanager.de",
+        "description": "Transform ai-projektmanager.de keywords from traffic-focused to sales-conversion-focused. Change informational keywords to transactional keywords with buyer intent.",
+        "details": "Priority 1 site - highest revenue potential in German B2B market with NIS2 urgency.\n\nKeyword Changes:\n- 'KI-gestütztes Projektmanagement' → 'KI Projektmanagement Software kaufen'\n- 'DSGVO konform' → 'DSGVO Projektmanagement kostenlos testen'\n- 'Enterprise' → 'Enterprise KI Projektmanagement Demo'\n- 'Preise' → 'KI Projektmanagement Preise Vergleich'\n- Remove focus keywords from legal pages (Impressum, Datenschutz, AGB)\n\nContent Updates:\n- Rewrite H1/H2 headings with transactional keywords\n- Add CTAs: 'Demo anfragen', 'Kostenlos testen', 'Angebot anfragen'\n- Update meta descriptions with urgency (NIS2 deadline October 2024)\n- Create internal link clusters to pricing/demo pages\n\nNew Pages to Create (Phase 3):\n- /kostenlose-demo\n- /preise-vergleich\n- /roi-rechner\n\nSuccess Metrics:\n- Conversion rate: 2% → 5% target\n- Demo requests: 3x increase within 90 days\n- Maintain SEO scores above 75/100 after changes",
+        "testStrategy": "1. Verify each keyword change maintains 75+/100 Rank Math score\n2. Test all CTAs link to correct pages\n3. Verify internal links work correctly\n4. Check meta descriptions contain urgency keywords\n5. Monitor Search Console for ranking changes within 30 days\n6. Track conversion rate before/after changes",
+        "status": "pending",
+        "dependencies": [],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": "42",
+        "title": "SEO Keyword Sales Optimization - varnaai.com",
+        "description": "Transform varnaai.com keywords from portfolio showcase to demo-conversion focus. Add transactional keywords to drive demo requests and trials.",
+        "details": "Priority 2 site - portfolio showcase with demo conversion path.\n\nKeyword Changes:\n- 'AI Automation' → 'AI Automation Platform Demo'\n- 'Enterprise AI' → 'Enterprise AI Solutions Pricing'\n- Portfolio pages: '[App Name]' → '[App Name] Free Trial'\n- Remove focus keywords from legal pages\n\nContent Updates:\n- Add demo request CTAs to all portfolio pages\n- Update service descriptions with pricing context\n- Create comparison pages vs competitors\n- Add customer testimonials with conversion focus\n\nNew Pages to Create (Phase 3):\n- /demo\n- /pricing\n- /free-trial\n- /case-studies-roi\n\nSuccess Metrics:\n- Demo request increase: 3x within 90 days\n- Portfolio page engagement: +40%\n- Bounce rate decrease: -20%",
+        "testStrategy": "1. Verify keyword changes maintain 75+/100 SEO scores\n2. Test demo request forms work on all portfolio pages\n3. Verify free trial CTAs link correctly\n4. Monitor conversion funnel from portfolio → demo request\n5. Track Search Console impressions for new transactional keywords",
+        "status": "pending",
+        "dependencies": [],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": "43",
+        "title": "SEO Keyword Sales Optimization - varna-agenten.de",
+        "description": "Transform varna-agenten.de keywords from informational to transactional for creative agency AI tools market.",
+        "details": "Priority 3 site - creative agency AI tools market.\n\nKeyword Changes:\n- 'KI Agenten' → 'KI Agenten für Agenturen kaufen'\n- 'Automatisierung' → 'KI Automatisierung Demo anfragen'\n- Add urgency: '2025 KI Tools Kreativagenturen'\n- Service pages: Add 'Angebot' and 'Preis' variants\n\nContent Updates:\n- Focus on creative agency pain points\n- Add case studies with ROI metrics\n- Create tool comparison pages\n- Add urgency messaging (AI adoption deadlines)\n\nNew Pages to Create (Phase 3):\n- /demo-anfragen\n- /preise-kreativagenturen\n- /ki-tools-vergleich\n\nSuccess Metrics:\n- Creative agency lead increase: 2x within 90 days\n- Tool page engagement: +50%\n- Contact form submissions: 3x increase",
+        "testStrategy": "1. Verify keyword changes work for German creative agency searches\n2. Test all demo request forms\n3. Verify case studies display correctly\n4. Monitor Search Console for creative agency related keywords\n5. Track lead quality from organic traffic",
+        "status": "pending",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": []
+      },
+      {
+        "id": "44",
+        "title": "SEO Keyword Sales Optimization - aimarketingbg.com",
+        "description": "Transform aimarketingbg.com keywords from generic to quote-request focused for Bulgarian/English AI marketing services market.",
+        "details": "Priority 4 site - Bulgarian/English market expansion.\n\nCurrent Keywords (13 pages):\n- 'digital marketing Bulgaria' (94/100) - Homepage\n- 'AI Marketing BG' (90/100) - About\n- 'AI Marketing Case Studies' (87/100)\n- 'secure AI services' (87/100)\n- 'AI Marketing Insights' (85/100) - Blog\n- Legal pages consuming 40%+ SEO effort with ZERO sales potential\n\nKeyword Changes:\n- 'digital marketing Bulgaria' → 'AI Marketing Services Bulgaria Quote'\n- 'secure AI services' → 'GDPR AI Marketing Demo'\n- 'AI Marketing Insights' → 'AI Marketing ROI Calculator'\n- Remove focus keywords from Cookie Policy, Disclaimer, Impressum, Privacy, Terms\n\nContent Updates:\n- Add quote request forms to service pages\n- Create ROI calculator page\n- Add Bulgarian language landing pages\n- Focus on GDPR-compliant AI messaging\n\nNew Pages to Create (Phase 3):\n- /get-quote\n- /roi-calculator\n- /gdpr-ai-marketing\n\nSuccess Metrics:\n- Quote requests: 5x increase within 90 days\n- Bulgarian market leads: new baseline + 50%\n- Legal page SEO effort: reduced to 0%",
+        "testStrategy": "1. Verify keyword changes for Bulgarian market searches\n2. Test quote request forms in English and Bulgarian\n3. Verify ROI calculator functionality\n4. Monitor Search Console for Bulgarian keyword impressions\n5. Track quote-to-customer conversion rate",
+        "status": "pending",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": []
+      },
+      {
+        "id": "45",
+        "title": "SEO Keyword Sales Optimization - classicsecurity.net [OUT OF SCOPE]",
+        "description": "CANCELLED: classicsecurity.net marked out of scope by user. Skip keyword optimization for this site.",
+        "details": "Status: OUT OF SCOPE - User confirmed this site is not part of current SEO optimization project.\n\nOriginal plan was:\n- Priority 5 site - security services lead generation\n- Audit current keywords\n- Transform to transactional keywords\n\nExpected Keyword Changes:\n- Service pages → 'Security Services Quote'\n- Technical pages → 'Firewall Migration Demo'\n- Consultation pages → 'Security Assessment Free'\n\nContent Updates:\n- Add security assessment request forms\n- Create firewall migration calculator\n- Add compliance checklist downloads (lead magnets)\n- Focus on enterprise security messaging\n\nNew Pages to Create (Phase 3):\n- /free-security-assessment\n- /firewall-migration-quote\n- /compliance-checklist-download\n\nSuccess Metrics:\n- Security assessment requests: 3x increase\n- Firewall migration leads: new baseline + 100%\n- Lead magnet downloads: 50+ per month",
+        "testStrategy": "N/A - Task cancelled, site out of scope",
+        "status": "cancelled",
+        "dependencies": [],
+        "priority": "low",
+        "subtasks": []
       }
     ],
     "metadata": {
-      "created": "2025-11-12T11:09:36.748Z",
-      "description": "Default tasks context",
-      "updated": "2025-11-13T11:33:18.016Z"
+      "version": "1.0.0",
+      "lastModified": "2025-12-02T03:15:00.000Z",
+      "taskCount": 45,
+      "completedCount": 19,
+      "tags": [
+        "master"
+      ]
     }
   }
 }

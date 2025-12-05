@@ -1,0 +1,101 @@
+{
+  "brand": "Varna AI",
+  "legalName": "Classic Security EOOD",
+  "domain": "varnaai.com",
+  "vatNumber": "BG206316092",
+  "established": "2024",
+
+  "nap": {
+    "name": "Varna AI",
+    "address": {
+      "street": "ul. Sabi Velkov 56",
+      "city": "Varna",
+      "postalCode": "9022",
+      "country": "Bulgaria",
+      "countryCode": "BG",
+      "formatted": "ul. Sabi Velkov 56, 9022 Varna, Bulgaria"
+    },
+    "phone": "+359 88 252 1755",
+    "phoneFormatted": "+359-88-252-1755",
+    "email": "contact@varnaai.com"
+  },
+
+  "businessHours": {
+    "standard": "Mon-Fri 09:00-17:00 CET",
+    "support": "24/7 available"
+  },
+
+  "categories": {
+    "primary": "Software Development",
+    "secondary": [
+      "AI Services",
+      "Cloud Computing",
+      "SaaS Provider",
+      "AI Automation",
+      "Project Management Software",
+      "Business Process Automation",
+      "AI Consulting",
+      "GDPR-Compliant AI"
+    ]
+  },
+
+  "serviceArea": ["Europe", "Germany", "Austria", "Switzerland", "Bulgaria"],
+
+  "keywords": [
+    "AI Development",
+    "GDPR-compliant AI",
+    "EU AI Act",
+    "Secure Cloud Solutions",
+    "AI Automation",
+    "Project Management AI",
+    "European AI Services"
+  ],
+
+  "descriptions": {
+    "short50": "GDPR-Compliant AI Solutions for European SMEs. EU-hosted, secure AI automation.",
+    "medium100": "Varna AI delivers secure AI automation and project management SaaS for European SMEs. Built GDPR-compliant from the ground up with EU-hosted infrastructure. Part of the Classic Security EOOD portfolio since 2024.",
+    "long250": "Varna AI provides GDPR-compliant AI solutions designed specifically for European SMEs navigating complex regulatory requirements. Our platform combines intelligent automation with built-in compliance for GDPR, NIS2, and EU AI Act. All data is hosted within EU borders, ensuring full data sovereignty. We serve clients in Bulgaria with affordable AI automation and German companies requiring strict DSGVO compliance. Our solutions include AI-powered project management, document automation, and business process optimization. Part of the Classic Security EOOD portfolio, leveraging 17+ years of security expertise to deliver AI that respects your data."
+  },
+
+  "socialMedia": {
+    "facebook": "https://www.facebook.com/varnaai/",
+    "instagram": "https://www.instagram.com/varnaaicom",
+    "linkedin": "https://www.linkedin.com/company/varnaai/",
+    "twitter": "https://x.com/Varna_Ai"
+  },
+
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Varna AI",
+    "url": "https://varnaai.com",
+    "logo": "https://varnaai.com/wp-content/uploads/2025/11/cropped-varna-ai-logo.png",
+    "description": "GDPR-Compliant AI Solutions for European SMEs",
+    "foundingDate": "2024",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Classic Security EOOD",
+      "vatID": "BG206316092"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ul. Sabi Velkov 56",
+      "addressLocality": "Varna",
+      "postalCode": "9022",
+      "addressCountry": "BG"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+359-88-252-1755",
+      "contactType": "customer service",
+      "email": "contact@varnaai.com",
+      "availableLanguage": ["Bulgarian", "German", "English"]
+    },
+    "sameAs": [
+      "https://www.facebook.com/varnaai/",
+      "https://www.instagram.com/varnaaicom",
+      "https://www.linkedin.com/company/varnaai/",
+      "https://x.com/Varna_Ai"
+    ]
+  }
+}

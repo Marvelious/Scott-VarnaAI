@@ -1,0 +1,101 @@
+{
+  "brand": "AI Projektmanager",
+  "legalName": "Classic Security EOOD",
+  "domain": "ai-projektmanager.de",
+  "vatNumber": "BG206316092",
+  "established": "2024",
+  "language": "German",
+
+  "nap": {
+    "name": "AI Projektmanager",
+    "address": {
+      "street": "ul. Sabi Velkov 56",
+      "city": "Varna",
+      "postalCode": "9022",
+      "country": "Bulgarien",
+      "countryCode": "BG",
+      "formatted": "ul. Sabi Velkov 56, 9022 Varna, Bulgarien"
+    },
+    "phone": "+359 88 252 1755",
+    "phoneFormatted": "+359-88-252-1755",
+    "email": "kontakt@ai-projektmanager.de"
+  },
+
+  "businessHours": {
+    "standard": "Mo-Fr 09:00-17:00 MEZ",
+    "support": "24/7 Support verfügbar"
+  },
+
+  "categories": {
+    "primary": "Projektmanagement-Software",
+    "secondary": [
+      "KI-Geschäftslösungen",
+      "DSGVO-konformes Projektmanagement",
+      "Compliance-Software",
+      "Enterprise-Software",
+      "Workflow-Automatisierung",
+      "Aufgabenmanagement",
+      "Team-Kollaboration"
+    ]
+  },
+
+  "serviceArea": ["Deutschland", "Österreich", "Schweiz"],
+
+  "keywords": [
+    "KI-Projektmanagement",
+    "DSGVO-konform",
+    "NIS2",
+    "BSI IT-Grundschutz",
+    "Enterprise AI",
+    "Projektplanung",
+    "Compliance-Projektmanagement"
+  ],
+
+  "descriptions": {
+    "short50": "KI-gestütztes Projektmanagement. DSGVO-konform. BSI IT-Grundschutz zertifiziert.",
+    "medium100": "AI Projektmanager bietet KI-gestützte Projektplanung für deutsche Unternehmen. Vollständig DSGVO-konform mit BSI IT-Grundschutz Zertifizierung. Automatische Compliance-Prüfung und detaillierte Audit-Trails für NIS2-Anforderungen.",
+    "long250": "AI Projektmanager ist die einzige Projektmanagement-Lösung, die speziell für den deutschen Regulierungsrahmen entwickelt wurde. Unsere KI-gestützte Plattform kombiniert intelligente Automatisierung mit integrierter Compliance für DSGVO, BSI IT-Grundschutz und NIS2-Richtlinie. Jeder Workflow enthält automatische Compliance-Prüfungen und vollständige Audit-Trails. Die Lösung wurde von ISO 27001 Lead Implementern mit über 17 Jahren Erfahrung in regulierten Branchen wie Automotive, Banking und Manufacturing entwickelt. Gehostet in der EU, unterstützt durch Classic Security EOOD mit Sitz in Bulgarien. Ideal für deutsche Unternehmen, die Effizienz ohne Kompromisse bei der Datensicherheit suchen."
+  },
+
+  "socialMedia": {
+    "facebook": "https://www.facebook.com/AIProjektmanager/",
+    "instagram": "https://www.instagram.com/aiprojectmanger",
+    "linkedin": "https://www.linkedin.com/company/ai-projektmanager/",
+    "twitter": "https://x.com/AiProjekt"
+  },
+
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AI Projektmanager",
+    "url": "https://ai-projektmanager.de",
+    "logo": "https://ai-projektmanager.de/wp-content/uploads/logo.png",
+    "description": "KI-gestütztes Projektmanagement für deutsche Unternehmen - DSGVO-konform",
+    "foundingDate": "2024",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Classic Security EOOD",
+      "vatID": "BG206316092"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ul. Sabi Velkov 56",
+      "addressLocality": "Varna",
+      "postalCode": "9022",
+      "addressCountry": "BG"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+359-88-252-1755",
+      "contactType": "Kundenservice",
+      "email": "kontakt@ai-projektmanager.de",
+      "availableLanguage": ["German", "English"]
+    },
+    "sameAs": [
+      "https://www.facebook.com/AIProjektmanager/",
+      "https://www.instagram.com/aiprojectmanger",
+      "https://www.linkedin.com/company/ai-projektmanager/",
+      "https://x.com/AiProjekt"
+    ]
+  }
+}

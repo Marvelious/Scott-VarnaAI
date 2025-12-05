@@ -1,110 +1,125 @@
-# Internal URLs for 5 Websites
+# Internal URLs for 4 Websites
 
-**CRITICAL**: These are REAL pages. Use ONLY these URLs. Never guess URLs like /demo, /signup, /features.
+**CRITICAL**: These are REAL pages from sitemap scans (2025-12-02). Use ONLY these URLs. Never guess URLs like /demo, /signup, /features.
 
 ---
 
 ## 1. AI Projektmanager (ai-projektmanager.de) - German
 
-**Existing Pages**:
+**All Pages (14 total)**:
 - `/` - Home
-- `/blog` - Blog listing
-- `/kontakt` - Contact
-- `/funktionen` - Features
-- `/preise` - Pricing
-- `/ueber-uns` - About
+- `/ki-projektmanagement-funktionen/` - KI Funktionen
+- `/it-sicherheit-projektmanagement/` - IT-Sicherheit
+- `/fallstudien/` - Fallstudien/Case Studies
+- `/eu-ai-act-projektmanagement/` - EU AI Act
+- `/enterprise-projektmanagement/` - Enterprise
+- `/compliance-management/` - Compliance
+- `/ai-projektmanager-dsgvo-konform/` - DSGVO-Konform
+- `/ai-projektmanagement-preise/` - Preise/Pricing
+- `/ai-projektmanagement-deutschland-ueber-uns/` - Über Uns
+- `/ai-projektmanagement-kontakt-deutschland/` - Kontakt
+- `/impressum/` - Impressum
+- `/datenschutzerklaerung-ai-projektmanager/` - Datenschutz
+- `/agb-ai-projektmanager/` - AGB
 
-**Common Link Destinations**:
-- `/funktionen` - KI Projektmanagement Funktionen
-- `/preise` - Pricing
-- `/kontakt` - Contact (use for CTAs)
-- `/blog` - Blog
-- `/ueber-uns` - About
+**Best Link Destinations for Blogs**:
+- `/ki-projektmanagement-funktionen/` - Features (primary)
+- `/it-sicherheit-projektmanagement/` - Security topics
+- `/compliance-management/` - Compliance topics
+- `/eu-ai-act-projektmanagement/` - EU AI Act topics
+- `/ai-projektmanager-dsgvo-konform/` - DSGVO topics
+- `/fallstudien/` - Case studies
+- `/ai-projektmanagement-preise/` - Pricing CTAs
+- `/ai-projektmanagement-kontakt-deutschland/` - Contact CTAs
 
 ---
 
 ## 2. Varna AI (varnaai.com) - English
 
-**Existing Pages**:
+**All Pages (12 total)**:
 - `/` - Home
-- `/about` - About Varna AI
-- `/blog` - Blog listing
-- `/contact` - Contact
-- `/our-mission` - Mission
-- `/pricing` - Pricing
-- `/privacy-policy` - Privacy
-- `/reviews` - Reviews
-- `/services` - Services
-- `/terms-and-conditions` - Terms
-- `/ai-cookie-policy` - Cookie Policy
+- `/secure-ai-services-gdpr/` - Secure AI Services
+- `/ai-seo-analytics-platform/` - SEO Analytics Platform
+- `/retirementai-portfolio/` - RetirementAI Portfolio
+- `/enterprise-cybersecurity-solutions/` - Enterprise Cybersecurity
+- `/our-mission-secure-ai-solutions/` - Our Mission
+- `/about-secure-ai-project-management/` - About
+- `/secure-ai-saas-pricing/` - Pricing
+- `/secure-ai-contact/` - Contact
+- `/varna-ai-reviews/` - Reviews
+- `/ai-privacy-policy/` - Privacy Policy
+- `/top-5-tips-for-successful-enterprise-security-projects/` - Blog Post
 
-**Common Link Destinations**:
-- `/services` - Secure AI Services
-- `/pricing` - Pricing
-- `/contact` - Contact (use for CTAs)
-- `/about` - About page
-- `/our-mission` - Mission
-- `/reviews` - Customer reviews
+**Best Link Destinations for Blogs**:
+- `/secure-ai-services-gdpr/` - Services (primary)
+- `/ai-seo-analytics-platform/` - SEO Agent product
+- `/retirementai-portfolio/` - RetirementAI product
+- `/enterprise-cybersecurity-solutions/` - Enterprise solutions
+- `/our-mission-secure-ai-solutions/` - Mission/values
+- `/about-secure-ai-project-management/` - About page
+- `/secure-ai-saas-pricing/` - Pricing CTAs
+- `/secure-ai-contact/` - Contact CTAs
+- `/varna-ai-reviews/` - Social proof
 
 ---
 
-## 3. AI Marketing BG (aimarketingbg.com) - English
+## 3. AI Marketing BG (aimarketingbg.com) - English/Bulgarian
 
-**Existing Pages**:
+**All Pages (12 total)**:
 - `/` - Home
-- `/about` - About Us
-- `/blog` - Blog listing
-- `/contact` - Contact
-- `/services` - Services
+- `/secure-ai-services/` - AI Services
+- `/ki-schulung-unternehmen/` - KI Training (German)
+- `/complete-digital-infrastructure/` - Digital Infrastructure
+- `/ai-marketing-case-studies/` - Case Studies
+- `/about-ai-marketing-bg/` - About
+- `/contact-ai-marketing-bg/` - Contact
+- `/privacy-policy-ai-marketing-bg/` - Privacy Policy
+- `/terms-and-conditions/` - Terms
+- `/impressum/` - Impressum
+- `/disclaimer/` - Disclaimer
+- `/cookie-policy/` - Cookie Policy
 
-**Common Link Destinations**:
-- `/services` - Services
-- `/contact` - Contact (use for CTAs)
-- `/about` - About Us
-- `/blog` - Blog
+**Best Link Destinations for Blogs**:
+- `/secure-ai-services/` - Services (primary)
+- `/complete-digital-infrastructure/` - Infrastructure topics
+- `/ki-schulung-unternehmen/` - Training/education
+- `/ai-marketing-case-studies/` - Case studies
+- `/about-ai-marketing-bg/` - About page
+- `/contact-ai-marketing-bg/` - Contact CTAs
 
 ---
 
 ## 4. Varna Agenten (varna-agenten.de) - German
 
-**Existing Pages**:
+**All Pages (16 total)**:
 - `/` - Home
-- `/blog` - Blog listing
-- `/kontakt` - Contact
-- `/funktionen` - Features
-- `/portfolio` - Portfolio
-- `/preise` - Pricing
-- `/privacy-policy` - Privacy
-- `/services` - Services
-- `/team` - Team
+- `/ki-projektmanagement-funktionen/` - KI Funktionen
+- `/it-sicherheit-projektmanagement/` - IT-Sicherheit
+- `/fallstudien/` - Fallstudien
+- `/eu-ai-act-projektmanagement/` - EU AI Act
+- `/compliance-management/` - Compliance
+- `/ai-projektmanager-dsgvo-konform/` - DSGVO-Konform
+- `/ai-projektmanagement-preise/` - Preise
+- `/ai-projektmanagement-deutschland-ueber-uns/` - Über Uns
+- `/portfolio-ai-projektmanagement/` - Portfolio
+- `/varna-agenten-team/` - Team
+- `/kontakt-varna-agenten/` - Kontakt
+- `/impressum/` - Impressum
+- `/datenschutzerklaerung-ai-projektmanager/` - Datenschutz
+- `/cookie-policy-eu/` - Cookie Policy
+- `/agb-ai-projektmanager/` - AGB
 
-**Common Link Destinations**:
-- `/funktionen` - Features
-- `/portfolio` - Portfolio/Case Studies
-- `/team` - Team
-- `/kontakt` - Contact (use for CTAs)
-- `/preise` - Pricing
-- `/services` - Services
-
----
-
-## 5. Classic Security (classicsecurity.net) - English
-
-**Existing Pages**:
-- `/` - Home
-- `/about` - About Classic Security
-- `/blog` - Blog listing
-- `/contact` - Contact
-- `/services` - Services
-- `/privacy-policy` - Privacy
-
-**Common Link Destinations**:
-- `/services` - Enterprise Services
-- `/contact` - Contact (use for CTAs)
-- `/about` - About page
-- `/blog` - Blog
-
-**Note**: Some pages (pricing, reviews) not fully set up yet.
+**Best Link Destinations for Blogs**:
+- `/ki-projektmanagement-funktionen/` - Features (primary)
+- `/it-sicherheit-projektmanagement/` - Security topics
+- `/compliance-management/` - Compliance topics
+- `/eu-ai-act-projektmanagement/` - EU AI Act topics
+- `/ai-projektmanager-dsgvo-konform/` - DSGVO topics
+- `/fallstudien/` - Case studies
+- `/portfolio-ai-projektmanagement/` - Portfolio
+- `/varna-agenten-team/` - Team page
+- `/ai-projektmanagement-preise/` - Pricing CTAs
+- `/kontakt-varna-agenten/` - Contact CTAs
 
 ---
 
@@ -112,7 +127,7 @@
 
 **Internal Links** (7 per post):
 ```html
-<a href="/services" target="_blank">our AI services</a>
+<a href="/secure-ai-services-gdpr/" target="_blank">our AI services</a>
 ```
 
 **External Authority Links** (3 per post - DOFOLLOW):
@@ -127,7 +142,29 @@
 ## Common CTA URLs
 
 When blog needs a "call to action" link, use:
-- German sites: `/kontakt`
-- English sites: `/contact`
+- **ai-projektmanager.de**: `/ai-projektmanagement-kontakt-deutschland/`
+- **varnaai.com**: `/secure-ai-contact/`
+- **aimarketingbg.com**: `/contact-ai-marketing-bg/`
+- **varna-agenten.de**: `/kontakt-varna-agenten/`
 
 NEVER use: `/demo`, `/signup`, `/features` (don't exist!)
+
+---
+
+## Cross-Linking Strategy
+
+For internal blog linking, prioritize these topic matches:
+
+| Blog Topic | ai-projektmanager.de | varnaai.com | aimarketingbg.com | varna-agenten.de |
+|------------|---------------------|-------------|-------------------|------------------|
+| Security | `/it-sicherheit-projektmanagement/` | `/enterprise-cybersecurity-solutions/` | `/secure-ai-services/` | `/it-sicherheit-projektmanagement/` |
+| Compliance | `/compliance-management/` | `/secure-ai-services-gdpr/` | `/secure-ai-services/` | `/compliance-management/` |
+| DSGVO/GDPR | `/ai-projektmanager-dsgvo-konform/` | `/secure-ai-services-gdpr/` | `/privacy-policy-ai-marketing-bg/` | `/ai-projektmanager-dsgvo-konform/` |
+| EU AI Act | `/eu-ai-act-projektmanagement/` | `/our-mission-secure-ai-solutions/` | `/secure-ai-services/` | `/eu-ai-act-projektmanagement/` |
+| Case Studies | `/fallstudien/` | `/varna-ai-reviews/` | `/ai-marketing-case-studies/` | `/fallstudien/` |
+| Enterprise | `/enterprise-projektmanagement/` | `/enterprise-cybersecurity-solutions/` | `/complete-digital-infrastructure/` | `/ki-projektmanagement-funktionen/` |
+
+---
+
+**Last Updated**: 2025-12-02 (sitemap scan)
+**Total Pages**: 54 across 4 websites

@@ -1,6 +1,6 @@
 # VarnaAI Websites - Complete Portfolio Management System
 
-**Complete automation and management system for 5 WordPress portfolio sites**
+**Complete automation and management system for 4 WordPress portfolio sites**
 
 ---
 
@@ -62,13 +62,12 @@ D:\VarnaAI\Websites/
 
 ---
 
-## 🌐 WordPress Portfolio Sites (5 Total)
+## 🌐 WordPress Portfolio Sites (4 Total)
 
 | Site | URL | Language | Focus |
 |------|-----|----------|-------|
 | AI Projektmanager | https://ai-projektmanager.de | German | AI Project Management |
 | AI Marketing BG | https://aimarketingbg.com | English/Bulgarian | AI Marketing |
-| Classic Security | https://classicsecurity.net | English | Security Services |
 | Varna Agenten | https://varna-agenten.de | German | AI Agents |
 | Varna AI | https://varnaai.com | English | AI Services |
 
@@ -98,42 +97,11 @@ node automate-seo-analysis.js keywords "IT Services" de
 node wordpress-seo-helper.js analyze <url> <focusKeyword>
 ```
 
-#### 2. Lead Generation (Webscrap Integration)
-- Find German SME leads from Firmenwissen, WLW, Handelsregister
-- Find Bulgarian SME leads from business directories
-- Get sales pipeline summary
-- Enrich lead data with social profiles and technologies
+#### 2. Lead Generation ~~(Webscrap Integration)~~ [DEPRECATED]
+**Status**: Feature removed - Webscrap backend decommissioned
 
-**Usage**:
-```bash
-cd SeoAgent
-node lead-generation-automation.js german "IT Services" "Bayern" 20
-node lead-generation-automation.js bulgarian "IT Services" "Varna" 15
-node lead-generation-automation.js pipeline
-```
-
-**Prerequisites**: Webscrap backend must be running
-```bash
-cd D:\VarnaAI\Webscrap
-python main.py
-```
-
-#### 3. Market Research (Webscrap Integration)
-- Analyze German markets (industry trends, competitors, economic indicators)
-- Analyze Bulgarian markets (regional intelligence)
-- Compare Germany vs Bulgaria markets
-- Get trending topics for content creation
-- Generate comprehensive market reports with SEO keywords
-
-**Usage**:
-```bash
-cd SeoAgent
-node market-research-automation.js german "IT Services" "Bayern"
-node market-research-automation.js bulgarian "IT Services" "Varna"
-node market-research-automation.js compare "IT Services"
-node market-research-automation.js trending germany "IT Services"
-node market-research-automation.js report germany "Enterprise Software" "Bayern"
-```
+#### 3. Market Research ~~(Webscrap Integration)~~ [DEPRECATED]
+**Status**: Feature removed - Webscrap backend decommissioned
 
 ---
 
@@ -321,12 +289,6 @@ npm install axios chalk inquirer ora dotenv
 ```bash
 cd D:\VarnaAI\seoagent\backend
 npm run dev
-```
-
-### Webscrap Not Running
-```bash
-cd D:\VarnaAI\Webscrap
-python main.py
 ```
 
 ### Missing Dependencies

@@ -1,0 +1,101 @@
+{
+  "brand": "Varna Agenten",
+  "legalName": "Classic Security EOOD",
+  "domain": "varna-agenten.de",
+  "vatNumber": "BG206316092",
+  "established": "2024",
+  "language": "German",
+
+  "nap": {
+    "name": "Varna Agenten",
+    "address": {
+      "street": "ul. Sabi Velkov 56",
+      "city": "Varna",
+      "postalCode": "9022",
+      "country": "Bulgarien",
+      "countryCode": "BG",
+      "formatted": "ul. Sabi Velkov 56, 9022 Varna, Bulgarien"
+    },
+    "phone": "+359 88 252 1755",
+    "phoneFormatted": "+359-88-252-1755",
+    "email": "kontakt@varna-agenten.de"
+  },
+
+  "businessHours": {
+    "standard": "Mo-Fr 09:00-17:00 MEZ",
+    "support": "24/7 Support verfügbar"
+  },
+
+  "categories": {
+    "primary": "KI-Agenten Plattform",
+    "secondary": [
+      "KI-Automatisierung",
+      "Intelligente Agenten",
+      "Workflow-Automatisierung",
+      "Digitale Assistenten",
+      "Prozessautomatisierung",
+      "KI-gestützte Lösungen",
+      "Enterprise AI"
+    ]
+  },
+
+  "serviceArea": ["Deutschland", "Österreich", "Schweiz"],
+
+  "keywords": [
+    "KI-Agenten",
+    "Intelligente Automatisierung",
+    "DSGVO-konform",
+    "Workflow-Automatisierung",
+    "Digitale Assistenten",
+    "Enterprise AI",
+    "Prozessoptimierung"
+  ],
+
+  "descriptions": {
+    "short50": "KI-Agenten für deutsche Unternehmen. DSGVO-konform. Workflow-Automatisierung.",
+    "medium100": "Varna Agenten bietet intelligente KI-Agenten für deutsche Unternehmen. Unsere Plattform automatisiert komplexe Workflows, unterstützt Teams mit digitalen Assistenten und erfüllt alle DSGVO-Anforderungen. EU-gehostete Infrastruktur für maximale Datensicherheit.",
+    "long250": "Varna Agenten ist die führende Plattform für KI-gestützte Automatisierung im deutschsprachigen Raum. Unsere intelligenten Agenten übernehmen repetitive Aufgaben, optimieren Geschäftsprozesse und unterstützen Teams bei komplexen Entscheidungen. Die Plattform wurde speziell für den deutschen Regulierungsrahmen entwickelt – vollständig DSGVO-konform mit EU-gehosteter Infrastruktur. Von der automatischen Dokumentenverarbeitung über intelligente Kundenbetreuung bis hin zur Workflow-Orchestrierung: Unsere KI-Agenten lernen kontinuierlich und passen sich an Ihre Geschäftsanforderungen an. Entwickelt von Classic Security EOOD mit 17+ Jahren Erfahrung in IT-Sicherheit und Compliance. Ideal für deutsche KMUs, die Effizienz steigern möchten, ohne Kompromisse bei Datenschutz und Sicherheit einzugehen."
+  },
+
+  "socialMedia": {
+    "facebook": "https://www.facebook.com/VarnaAgenten/",
+    "instagram": "https://www.instagram.com/varnaagents",
+    "linkedin": "https://www.linkedin.com/company/varna-agenten/",
+    "twitter": "https://x.com/VarnaAgenten"
+  },
+
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Varna Agenten",
+    "url": "https://varna-agenten.de",
+    "logo": "https://varna-agenten.de/wp-content/uploads/logo.png",
+    "description": "KI-Agenten Plattform für deutsche Unternehmen - DSGVO-konform",
+    "foundingDate": "2024",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Classic Security EOOD",
+      "vatID": "BG206316092"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ul. Sabi Velkov 56",
+      "addressLocality": "Varna",
+      "postalCode": "9022",
+      "addressCountry": "BG"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+359-88-252-1755",
+      "contactType": "Kundenservice",
+      "email": "kontakt@varna-agenten.de",
+      "availableLanguage": ["German", "English"]
+    },
+    "sameAs": [
+      "https://www.facebook.com/VarnaAgenten/",
+      "https://www.instagram.com/varnaagents",
+      "https://www.linkedin.com/company/varna-agenten/",
+      "https://x.com/VarnaAgenten"
+    ]
+  }
+}

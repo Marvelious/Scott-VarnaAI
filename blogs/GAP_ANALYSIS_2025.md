@@ -20,11 +20,11 @@
 - ✅ Programmatic advertising basics
 
 ### Security/Compliance Covered:
-- ✅ ISO 27001 Implementation (Classic Security)
-- ✅ NIS2 Compliance (Classic Security)
-- ✅ SOC 2 Type II (Classic Security)
-- ✅ Zero-Trust + GDPR (Classic Security)
-- ✅ Cyber Resilience Act (Classic Security)
+- ✅ ISO 27001 Implementation (Varna AI)
+- ✅ NIS2 Compliance (AI Projektmanager)
+- ✅ SOC 2 Type II (Varna AI)
+- ✅ Zero-Trust + GDPR (Varna AI)
+- ✅ Cyber Resilience Act (AI Projektmanager)
 
 ### German Compliance Covered:
 - ✅ DSGVO Folgenabschätzung (AI Projektmanager)
@@ -138,7 +138,7 @@
 
 **Which Websites**:
 - **AI Marketing BG** (PRIMARY)
-- **Classic Security** - Expertise/authority angle
+- **Varna AI** - Expertise/authority angle
 - **Varna Agenten** - Creative expertise angle
 
 ---
@@ -237,7 +237,7 @@
    - Impact: Medium-High (technical modernization)
 
 5. **E-E-A-T Deep Dives** (3 posts)
-   - Target: AI Marketing BG, Classic Security
+   - Target: AI Marketing BG, Varna AI
    - Timeline: Q2 2025
    - Impact: Medium (ongoing SEO requirement)
 

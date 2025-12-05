@@ -1,7 +1,7 @@
 # TOPIC DIVERSITY MATRIX
 ## Varna AI Ecosystem - 100+ Unique Blog Topics (2025)
 
-**Purpose**: Avoid topic repetition across all 5 websites. Each topic targets different keywords, angles, and audiences.
+**Purpose**: Avoid topic repetition across all 4 websites. Each topic targets different keywords, angles, and audiences.
 
 ---
 
@@ -141,58 +141,21 @@
 
 ---
 
-## 🛡️ CLASSIC SECURITY (classicsecurity.net) - 20 Unique Topics
-
-### Category: Threat Intelligence
-1. **Zero-Day Vulnerability Management** - Protecting against unknown threats
-2. **Threat Hunting with AI** - Proactive security operations
-3. **Ransomware Defense Strategies** - Multi-layered protection approaches
-4. **Supply Chain Security** - Protecting third-party integrations
-
-### Category: Compliance Frameworks
-5. **ISO 27001 Implementation** - Information security management systems
-6. **SOC 2 Type II Certification** - Trust service criteria for SaaS
-7. **NIS2 Compliance Guide** - Network and information systems directive
-8. **Cyber Resilience Act** - EU hardware and software security requirements
-
-### Category: Network Security
-9. **Firewall Management Best Practices** - Palo Alto and Check Point strategies
-10. **Zero-Trust Network Architecture** - Never trust, always verify
-11. **SD-WAN Security** - Protecting distributed networks
-12. **Cloud Security Posture Management** - Multi-cloud protection
-
-### Category: Incident Response
-13. **Security Incident Playbooks** - Structured response procedures
-14. **Digital Forensics Guide** - Investigating security breaches
-15. **Disaster Recovery Planning** - Business continuity after attacks
-16. **Breach Notification Requirements** - GDPR 72-hour rule explained
-
-### Category: Identity & Access
-17. **Multi-Factor Authentication (MFA)** - Protecting user accounts
-18. **Privileged Access Management** - Securing admin credentials
-19. **Single Sign-On (SSO) Security** - Enterprise authentication
-20. **Identity Governance** - Managing user lifecycles
-
----
-
 ## 🔄 CROSS-WEBSITE SYNERGY TOPICS
 
 ### Topics that link multiple sites together:
 
-**21. "From Security to Automation"** (Classic Security → Varna AI)
-- How cybersecurity enables safe AI adoption
-
-**22. "DSGVO-konforme Marketing Automation"** (AI Marketing BG → Varna Agenten)
+**21. "DSGVO-konforme Marketing Automation"** (AI Marketing BG → Varna Agenten)
 - Connecting marketing automation with creative workflows
 
-**23. "Enterprise AI Security Architecture"** (Classic Security → Varna AI)
+**22. "Enterprise AI Security Architecture"** (Varna AI → AI Projektmanager)
 - Building secure foundations for AI platforms
 
-**24. "Kreative KI mit Compliance"** (Varna Agenten → AI Projektmanager)
+**23. "Kreative KI mit Compliance"** (Varna Agenten → AI Projektmanager)
 - Balancing creativity with German regulations
 
-**25. "Marketing ROI through Secure Automation"** (AI Marketing BG → Classic Security)
-- How security investments enable marketing growth
+**24. "Marketing ROI through AI Automation"** (AI Marketing BG → Varna AI)
+- How AI investments enable marketing growth
 
 ---
 
@@ -204,7 +167,6 @@
 - AI Projektmanager: KI Grundlagen
 - Varna Agenten: Generative KI
 - AI Marketing BG: Automation basics
-- Classic Security: Threat landscape
 
 ### Month 2: Compliance & Regulations
 - All sites focus on compliance, GDPR, EU regulations
@@ -274,7 +236,7 @@ Before creating any blog post, verify:
 ---
 
 **LAST UPDATED**: November 4, 2025
-**TOPICS AVAILABLE**: 100+
-**WEBSITES COVERED**: 5
+**TOPICS AVAILABLE**: 80+
+**WEBSITES COVERED**: 4
 **LANGUAGES**: English, German
 **STATUS**: Ready for use

@@ -33,26 +33,9 @@ IT Security • GDPR Compliance • Data Protection • Secure AI Development
 
 ---
 
-## 🌐 Portfolio Network (5 Brands)
+## 🌐 Portfolio Network (4 Brands)
 
-### 1. Classic Security (classicsecurity.net)
-**Established:** 2010
-**Focus:** IT Security Consulting, GDPR Compliance, Data Protection
-**Markets:** European SMEs (Germany, Bulgaria, EU)
-
-**Contact:**
-📧 contact@varnaai.com
-📞 +359 88 252 1755
-
-**Social Media:**
-- Facebook: https://www.facebook.com/classicsecurityeood/
-- Instagram: https://www.instagram.com/classicsecurity2010
-- LinkedIn: https://www.linkedin.com/company/classic-security-eood/
-- X/Twitter: https://x.com/ClassicSec2010
-
----
-
-### 2. Varna AI (varnaai.com)
+### 1. Varna AI (varnaai.com)
 **Focus:** GDPR-Compliant AI Solutions for European SMEs
 **Markets:** Bulgaria (affordable automation) & Germany (compliance-driven AI)
 **Services:** AI Automation, Project Management SaaS, Secure AI Development
@@ -69,7 +52,7 @@ IT Security • GDPR Compliance • Data Protection • Secure AI Development
 
 ---
 
-### 3. AI Projektmanager (ai-projektmanager.de)
+### 2. AI Projektmanager (ai-projektmanager.de)
 **Focus:** KI-gestützte Projektplanung für deutsche Unternehmen
 **Market:** Germany (GDPR-compliant project management)
 **Language:** German
@@ -86,7 +69,7 @@ IT Security • GDPR Compliance • Data Protection • Secure AI Development
 
 ---
 
-### 4. Varna Agenten (varna-agenten.de)
+### 3. Varna Agenten (varna-agenten.de)
 **Focus:** Intelligente KI-Agenten für Geschäftsprozesse
 **Product:** VarnaAI Websites - Complete Portfolio Management System
 **Markets:** Germany + Bulgaria (web agencies & freelancers)
@@ -104,7 +87,7 @@ IT Security • GDPR Compliance • Data Protection • Secure AI Development
 
 ---
 
-### 5. AI Marketing BG (aimarketingbg.com)
+### 4. AI Marketing BG (aimarketingbg.com)
 **Focus:** AI-driven digital marketing, lead generation, SEO automation
 **Markets:** Bulgaria & EU SMEs
 **Services:** SEO, Ad Campaigns, Social Media, Marketing Automation
@@ -123,17 +106,6 @@ IT Security • GDPR Compliance • Data Protection • Secure AI Development
 
 ## 📍 Google Business Profiles
 
-### Classic Security EOOD
-**Status:** To be claimed/verified
-**Primary Location:** ul. Sabi Velkov 56, 9022 Varna, Bulgaria
-**Phone:** +359 88 252 1755
-**Email:** contact@varnaai.com
-**Website:** https://classicsecurity.net
-**Category:** IT Security Service, GDPR Compliance Consultant
-**Hours:** Mon-Fri 09:00-17:00 CET/CEST (24/7 support available)
-**Service Area:** Bulgaria, Germany, Austria, Switzerland, EU
-**Keywords:** IT Security, GDPR Compliance, ISO 27001, Firewall Migration, Data Protection
-
 ### Varna AI
 **Status:** To be claimed/verified
 **Primary Location:** ul. Sabi Velkov 56, 9022 Varna, Bulgaria
@@ -149,7 +121,7 @@ IT Security • GDPR Compliance • Data Protection • Secure AI Development
 **Status:** To be claimed/verified
 **Primary Location:** ul. Sabi Velkov 56, 9022 Varna, Bulgaria
 **Phone:** +359 88 252 1755
-**Email:** contact@varnaai.com
+**Email:** kontakt@ai-projektmanager.de
 **Website:** https://ai-projektmanager.de
 **Category:** Project Management Software, AI Business Solutions
 **Hours:** Mon-Fri 09:00-17:00 CET/CEST (24/7 support available)
@@ -161,7 +133,7 @@ IT Security • GDPR Compliance • Data Protection • Secure AI Development
 **Status:** To be claimed/verified
 **Primary Location:** ul. Sabi Velkov 56, 9022 Varna, Bulgaria
 **Phone:** +359 88 252 1755
-**Email:** contact@varnaai.com
+**Email:** kontakt@varna-agenten.de
 **Website:** https://varna-agenten.de
 **Category:** Web Development, WordPress Agency, AI Automation
 **Hours:** Mon-Fri 09:00-17:00 CET/CEST (24/7 support available)
@@ -184,7 +156,7 @@ IT Security • GDPR Compliance • Data Protection • Secure AI Development
 
 ### Google Business Profile Optimization Strategy
 **Priority Actions:**
-1. **Claim/Verify All Profiles** - Complete verification process for all 5 brands
+1. **Claim/Verify All Profiles** - Complete verification process for all 4 brands
 2. **NAP Consistency** - Ensure Name, Address, Phone match across all citations
 3. **Category Selection** - Choose primary + secondary categories for each brand
 4. **Photo Uploads** - Office, team, certifications, client success imagery
@@ -208,8 +180,8 @@ IT Security • GDPR Compliance • Data Protection • Secure AI Development
 
 | Division | Responsibility | Lead Brand |
 |----------|---------------|------------|
-| **Security & Compliance** | IT Security, GDPR, ISO 27001, DPO Services | Classic Security |
-| **AI Development** | AI project management & automation tools | Varna AI |
+| **Security & Compliance** | IT Security, GDPR, ISO 27001, DPO Services | Varna AI |
+| **AI Development** | AI project management & automation tools | AI Projektmanager |
 | **Marketing & Growth** | SEO, content strategy, paid campaigns | AI Marketing BG |
 | **Web Infrastructure** | WordPress hosting, automation, portfolio tools | Varna Agenten |
 
@@ -356,7 +328,7 @@ IT Security • GDPR Compliance • Data Protection • Secure AI Development
 | **2010-2018** | Built reputation as ISO 27001 Lead Implementer & CCIE Security |
 | **2019-2023** | Expanded into GDPR compliance and data protection services |
 | **2024** | Launched Varna AI portfolio (AI automation for SMEs) |
-| **2025** | Multi-brand expansion: 5 specialized brands serving EU market |
+| **2025** | Multi-brand expansion: 4 specialized brands serving EU market |
 
 ---
 
@@ -579,7 +551,6 @@ IT Security • GDPR Compliance • Data Protection • Secure AI Development
 
 | Brand | Facebook | Instagram | LinkedIn | X/Twitter |
 |-------|----------|-----------|----------|-----------|
-| **Classic Security** | [classicsecurityeood](https://www.facebook.com/classicsecurityeood/) | [classicsecurity2010](https://www.instagram.com/classicsecurity2010) | [classic-security-eood](https://www.linkedin.com/company/classic-security-eood/) | [ClassicSec2010](https://x.com/ClassicSec2010) |
 | **Varna AI** | [varnaai](https://www.facebook.com/varnaai/) | [varnaaicom](https://www.instagram.com/varnaaicom) | [varnaai](https://www.linkedin.com/company/varnaai/) | [Varna_Ai](https://x.com/Varna_Ai) |
 | **AI Projektmanager** | [AIProjektmanager](https://www.facebook.com/AIProjektmanager/) | [aiprojectmanger](https://www.instagram.com/aiprojectmanger) | [ai-projektmanager](https://www.linkedin.com/company/ai-projektmanager/) | [AiProjekt](https://x.com/AiProjekt) |
 | **Varna Agenten** | [VarnaAgenten](https://www.facebook.com/VarnaAgenten/) | [varnaagents](https://www.instagram.com/varnaagents) | [varna-agenten](https://www.linkedin.com/company/varna-agenten/) | [VarnaAgenten](https://x.com/VarnaAgenten) |
@@ -615,8 +586,7 @@ IT Security • GDPR Compliance • Data Protection • Secure AI Development
     "Varna AI",
     "AI Projektmanager",
     "Varna Agenten",
-    "AI Marketing BG",
-    "Classic Security"
+    "AI Marketing BG"
   ],
   "url": "https://varnaai.com",
   "logo": "https://varnaai.com/wp-content/uploads/2025/11/cropped-varna-ai-logo.png",
@@ -641,9 +611,7 @@ IT Security • GDPR Compliance • Data Protection • Secure AI Development
     "https://www.facebook.com/varnaai/",
     "https://www.instagram.com/varnaaicom",
     "https://www.linkedin.com/company/varnaai/",
-    "https://x.com/Varna_Ai",
-    "https://www.facebook.com/classicsecurityeood/",
-    "https://www.linkedin.com/company/classic-security-eood/"
+    "https://x.com/Varna_Ai"
   ],
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -667,41 +635,7 @@ IT Security • GDPR Compliance • Data Protection • Secure AI Development
 
 ---
 
-### 1. Classic Security (classicsecurity.net)
-
-**Position:** *The Original - European IT Security Authority Since 2010*
-
-**Value Proposition:**
-Enterprise-grade IT security consulting with proven track record across Automotive, Banking, Manufacturing, E-Government, and Telecommunications sectors. Specialized in complex firewall migrations, ISO 27001 implementations, and multi-vendor security architectures.
-
-**Target Audience:**
-- Large enterprises (500+ employees)
-- German Mittelstand requiring TISAX/ISO compliance
-- Financial institutions needing BaFin compliance
-- Manufacturing companies requiring zero-downtime migrations
-
-**Differentiators:**
-- ✅ **280+ Firewall Migrations** - More than any competitor in region
-- ✅ **Enterprise Client Portfolio** - Porsche, Deutsche Bank, BASF, Caterpillar
-- ✅ **Multi-Vendor Mastery** - Palo Alto, Check Point, Cisco, Fortinet certified
-- ✅ **Zero-Downtime Expertise** - Critical infrastructure migrations without interruption
-- ✅ **ISO 27001 Lead Implementer** - Not just consulting, actual certification authority
-
-**Brand Tagline:** *"Enterprise Security, European Trust"*
-
-**Messaging Framework:**
-- **Primary Message:** "When Fortune 500 companies need IT security done right, they choose Classic Security"
-- **Supporting Claims:** 17 years experience, 6 industry verticals, multi-country deployments
-- **Proof Points:** Named client references (with permission), compliance certifications, zero-incident record
-
-**Competitive Positioning:**
-- **vs. Global Consulting Firms:** More specialized, faster response, cost-competitive
-- **vs. Local IT Providers:** Enterprise experience, compliance expertise, proven at scale
-- **vs. Product Vendors:** Vendor-neutral, best-of-breed approach, client-first recommendations
-
----
-
-### 2. Varna AI (varnaai.com)
+### 1. Varna AI (varnaai.com)
 
 **Position:** *GDPR-Compliant AI Innovation for European SMEs*
 
@@ -740,7 +674,7 @@ Secure AI automation and project management SaaS that doesn't compromise on data
 
 ---
 
-### 3. AI Projektmanager (ai-projektmanager.de)
+### 2. AI Projektmanager (ai-projektmanager.de)
 
 **Position:** *Deutsche Compliance-Sicherheit trifft KI-Effizienz*
 (German Compliance Security meets AI Efficiency)
@@ -782,7 +716,7 @@ AI-powered project management platform designed exclusively for German regulator
 
 ---
 
-### 4. Varna Agenten (varna-agenten.de)
+### 3. Varna Agenten (varna-agenten.de)
 
 **Position:** *Intelligente Automation für digitale Agenturen*
 (Intelligent Automation for Digital Agencies)
@@ -824,7 +758,7 @@ Complete portfolio management system for web agencies managing multiple WordPres
 
 ---
 
-### 5. AI Marketing BG (aimarketingbg.com)
+### 4. AI Marketing BG (aimarketingbg.com)
 
 **Position:** *Affordable AI Marketing for Balkan Growth*
 

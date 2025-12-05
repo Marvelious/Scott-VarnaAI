@@ -1,0 +1,102 @@
+{
+  "brand": "AI Marketing BG",
+  "legalName": "Classic Security EOOD",
+  "domain": "aimarketingbg.com",
+  "vatNumber": "BG206316092",
+  "established": "2024",
+  "language": "English",
+
+  "nap": {
+    "name": "AI Marketing BG",
+    "address": {
+      "street": "ul. Sabi Velkov 56",
+      "city": "Varna",
+      "postalCode": "9022",
+      "country": "Bulgaria",
+      "countryCode": "BG",
+      "formatted": "ul. Sabi Velkov 56, 9022 Varna, Bulgaria"
+    },
+    "phone": "+359 88 252 1755",
+    "phoneFormatted": "+359-88-252-1755",
+    "email": "contact@varnaai.com"
+  },
+
+  "businessHours": {
+    "standard": "Mon-Fri 09:00-17:00 EET",
+    "support": "24/7 available"
+  },
+
+  "categories": {
+    "primary": "AI Marketing Agency",
+    "secondary": [
+      "Digital Marketing",
+      "SEO Services",
+      "Content Marketing",
+      "AI-Powered Marketing",
+      "Social Media Marketing",
+      "PPC Advertising",
+      "Marketing Automation",
+      "GDPR-Compliant Marketing"
+    ]
+  },
+
+  "serviceArea": ["Bulgaria", "European Union", "Germany", "Austria", "Switzerland"],
+
+  "keywords": [
+    "AI Marketing",
+    "Digital Marketing Bulgaria",
+    "SEO Services",
+    "GDPR Marketing",
+    "Content Strategy",
+    "Marketing Automation",
+    "European AI Marketing"
+  ],
+
+  "descriptions": {
+    "short50": "AI-powered marketing for European SMEs. GDPR-compliant. Results-driven campaigns.",
+    "medium100": "AI Marketing BG delivers intelligent marketing solutions for European businesses. We combine AI automation with proven marketing strategies to drive growth. Fully GDPR-compliant campaigns with transparent reporting and measurable ROI. Part of the Classic Security EOOD portfolio.",
+    "long250": "AI Marketing BG is the bridge between cutting-edge AI technology and effective marketing for European SMEs. Our agency leverages artificial intelligence to optimize campaigns, analyze market trends, and deliver personalized customer experiences at scale. Unlike traditional agencies, we understand both the technical and regulatory landscape of European business. Every campaign is designed with GDPR compliance built-in, ensuring your marketing never compromises customer trust. From SEO and content strategy to paid advertising and marketing automation, our AI-enhanced approach delivers measurable results. Based in Varna, Bulgaria, we serve clients across the EU with competitive pricing and enterprise-grade quality. Whether you're targeting the Bulgarian market or expanding across Europe, AI Marketing BG provides the strategic intelligence and execution power to grow your business."
+  },
+
+  "socialMedia": {
+    "facebook": "https://www.facebook.com/aimarketingbg/",
+    "instagram": "https://www.instagram.com/aimarketingbg/",
+    "linkedin": "https://www.linkedin.com/company/ai-marketing-bg/",
+    "twitter": "https://x.com/aimarketingbg"
+  },
+
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AI Marketing BG",
+    "url": "https://aimarketingbg.com",
+    "logo": "https://aimarketingbg.com/wp-content/uploads/logo.png",
+    "description": "AI-Powered Marketing Solutions for European SMEs",
+    "foundingDate": "2024",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Classic Security EOOD",
+      "vatID": "BG206316092"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ul. Sabi Velkov 56",
+      "addressLocality": "Varna",
+      "postalCode": "9022",
+      "addressCountry": "BG"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+359-88-252-1755",
+      "contactType": "customer service",
+      "email": "contact@varnaai.com",
+      "availableLanguage": ["Bulgarian", "English", "German"]
+    },
+    "sameAs": [
+      "https://www.facebook.com/aimarketingbg/",
+      "https://www.instagram.com/aimarketingbg/",
+      "https://www.linkedin.com/company/ai-marketing-bg/",
+      "https://x.com/aimarketingbg"
+    ]
+  }
+}
