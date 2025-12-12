@@ -26,4 +26,14 @@ node_modules/
 
 # Task files
 # tasks.json
-# tasks/ 
+# tasks/
+
+# Sensitive credentials
+wordpress/credentials.md
+vps/**/.env
+
+# Playwright screenshots (generated)
+.playwright-mcp/*.png
+
+# Claude work products (optional - can share)
+# claudedocs/
