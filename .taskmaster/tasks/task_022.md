@@ -18,7 +18,7 @@
    - Add 'Part of VarnaAI Network' section with 4-5 links to sister sites
    - Use consistent styling across all sites (Kadence-compatible markup)
    - Include relevant internal links from each site to its sister properties
-   - Example structure: "Explore our network: [Classic Security] [Varna Agents] [AI Marketing] [AI Projektmanager] [Varna AI]"
+   - Example structure: "Explore our network: [VarnaAI] [Varna Agents] [AI Marketing] [AI Projektmanager] [Varna AI]"
 
 3. Use Morphllm MCP for pattern-based bulk operations:
    - Define footer link template pattern once

@@ -4,13 +4,15 @@
 
 **Status:** pending
 
-**Dependencies:** 49, 50, 51
+**Dependencies:** 46 ⧖, 49, 50, 51
 
 **Priority:** high
 
 **Description:** Execute cold outreach campaign to 100 Bulgarian SMEs over 2 weeks using phone calls, emails, and LinkedIn. Track responses and schedule free compliance assessments. Daily target: 5 calls, 10 emails, 5 LinkedIn messages.
 
 **Details:**
+
+**CRITICAL DEPENDENCY**: Task 46 (BD Rep) MUST be complete before executing Bulgarian cold calls.
 
 **Campaign Structure per ACTION_PLAN_DECEMBER_2025.md:**
 

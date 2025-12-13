@@ -12,7 +12,7 @@
 
 **Details:**
 
-Implement comprehensive weekly Google Business Profile (GBP) posting automation for all 5 VarnaAI portfolio brands (Classic Security, VarnaAI, AI Projektmanager, Varna Agenten, AI Marketing BG) using Playwright MCP for browser automation.
+Implement comprehensive weekly Google Business Profile (GBP) posting automation for all 5 VarnaAI portfolio brands (VarnaAI, VarnaAI, AI Projektmanager, Varna Agenten, AI Marketing BG) using Playwright MCP for browser automation.
 
 1. Prerequisites from Task 25 (GBP Setup):
    - Retrieve verified GBP credentials and business profiles for all 5 brands

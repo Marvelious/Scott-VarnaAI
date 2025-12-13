@@ -8,7 +8,7 @@
 
 **Priority:** high
 
-**Description:** Create and optimize Google Business Profiles for Classic Security, VarnaAI, AI Projektmanager, Varna Agenten, and AI Marketing BG with complete category configuration, keyword-optimized descriptions, and service areas.
+**Description:** Create and optimize Google Business Profiles for VarnaAI, VarnaAI, AI Projektmanager, Varna Agenten, and AI Marketing BG with complete category configuration, keyword-optimized descriptions, and service areas.
 
 **Details:**
 
@@ -27,13 +27,13 @@ Implement comprehensive Google Business Profile (GBP) setup for all 5 VarnaAI po
 
 3. Profile Configuration for Each Brand:
    a. Primary Category Selection:
-      - Classic Security: "Security Systems Service"
+      - VarnaAI: "Security Systems Service"
       - VarnaAI: "Software Company"
       - AI Projektmanager: "Business Consultant"
       - Varna Agenten: "Advertising Agency"
       - AI Marketing BG: "Marketing Consultant"
    
-   b. Additional 9 Categories (example for Classic Security):
+   b. Additional 9 Categories (example for VarnaAI):
       - IT Support and Services
       - Computer Security Service
       - Cybersecurity Consultant
@@ -53,7 +53,7 @@ Implement comprehensive Google Business Profile (GBP) setup for all 5 VarnaAI po
    
    d. Service Areas Configuration:
       - Define geographic coverage (regions/cities served)
-      - Classic Security/AI Projektmanager/Varna Agenten: Germany-focused (add Bundesländer)
+      - VarnaAI/AI Projektmanager/Varna Agenten: Germany-focused (add Bundesländer)
       - AI Marketing BG: Bulgaria-focused (add major cities)
       - VarnaAI: Europe-wide coverage
       - varnaai.com: International/Global

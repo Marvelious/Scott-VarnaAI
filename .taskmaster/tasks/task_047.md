@@ -1,6 +1,6 @@
 # Task ID: 47
 
-**Title:** VCCI Membership Registration - Classic Security EOOD
+**Title:** VCCI Membership Registration - VarnaAI
 
 **Status:** pending
 
@@ -8,11 +8,11 @@
 
 **Priority:** high
 
-**Description:** Register Classic Security EOOD with Varna Chamber of Commerce and Industry (VCCI) to establish legitimacy for Bulgarian market entry, gain access to business networking events, and build relationships with local enterprises. Cost: €200-500.
+**Description:** Register VarnaAI with Varna Chamber of Commerce and Industry (VCCI) to establish legitimacy for Bulgarian market entry, gain access to business networking events, and build relationships with local enterprises. Cost: €200-500.
 
 **Details:**
 
-Execute VCCI membership registration for Classic Security EOOD to establish formal business presence in Bulgarian market. This operational task supports Bulgaria market expansion strategy outlined in docs/strategy/C3/ACTION_PLAN_DECEMBER_2025.md.
+Execute VCCI membership registration for VarnaAI to establish formal business presence in Bulgarian market. This operational task supports Bulgaria market expansion strategy outlined in docs/strategy/C3/ACTION_PLAN_DECEMBER_2025.md.
 
 **Registration Process:**
 1. Prepare required documentation:

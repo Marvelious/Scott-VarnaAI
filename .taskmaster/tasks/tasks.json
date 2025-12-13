@@ -2,7 +2,7 @@
   "master": {
     "tasks": [
       {
-        "id": 1,
+        "id": "1",
         "title": "Setup dashboard project structure",
         "description": "Create dashboard folder with index.html, server.js, package.json, and subdirectories for modules, api, and config",
         "details": "Create D:/VarnaAI/Websites/dashboard/ with proper folder structure for a modern SaaS control panel. Include Tailwind CSS setup and Express.js backend configuration.",
@@ -13,7 +13,7 @@
         "subtasks": []
       },
       {
-        "id": 2,
+        "id": "2",
         "title": "Create main dashboard UI layout",
         "description": "Build index.html with Tailwind CSS classes for modern SaaS dashboard with sidebar, main content area, and status bar",
         "details": "Use color palette: Primary Blue #0066cc, Purple Gradient #667eea to #764ba2, Dark #2d3748, Success Green #48bb78, Alert Red #ff6b6b. Create responsive grid layout with dark theme.",
@@ -24,7 +24,7 @@
         "subtasks": []
       },
       {
-        "id": 3,
+        "id": "3",
         "title": "Build WordPress control panel section",
         "description": "Create WordPress management section with login buttons for all 5 sites, page tracker, and SEO score monitoring",
         "details": "Add quick login buttons using stored credentials from CLAUDE.md. Display page creation status (4/35 pages), average SEO score, and site health indicators.",
@@ -38,7 +38,7 @@
         "subtasks": []
       },
       {
-        "id": 4,
+        "id": "4",
         "title": "Implement content generation hub",
         "description": "Build AI content generator section with blog post, social media, and email campaign creation",
         "details": "Support DE/EN/BG languages. Include tone selection (professional/casual). Connect to OpenAI or Claude API for generation.",
@@ -52,7 +52,7 @@
         "subtasks": []
       },
       {
-        "id": 5,
+        "id": "5",
         "title": "Create marketing automation panel",
         "description": "Build marketing section with Mailchimp email lists, Buffer social scheduling, and campaign launcher",
         "details": "Integrate existing marketing-machine APIs. Show subscriber count, scheduled posts, active campaigns. Add buttons for launching campaigns and scheduling social blasts.",
@@ -66,7 +66,7 @@
         "subtasks": []
       },
       {
-        "id": 6,
+        "id": "6",
         "title": "Setup Express.js backend server",
         "description": "Create server.js with API endpoints for tool execution, credential management, and external API connections",
         "details": "Setup Express server with endpoints for WordPress login, content generation, marketing automation, and analytics. Include secure credential storage and session management.",
@@ -79,7 +79,7 @@
         "subtasks": []
       },
       {
-        "id": 7,
+        "id": "7",
         "title": "Build analytics monitoring dashboard",
         "description": "Create real-time analytics section with GA4 integration, visitor tracking, and performance metrics",
         "details": "Display today's visitors, leads, keyword rankings, social engagement, email open rates. Use Chart.js for data visualization. Connect to Google Analytics API.",
@@ -95,7 +95,7 @@
         "updatedAt": "2025-11-24T04:53:59.799Z"
       },
       {
-        "id": 8,
+        "id": "8",
         "title": "Implement quick actions panel",
         "description": "Create one-click operations panel for common tasks like batch content generation and bulk posting",
         "details": "Add buttons for: Generate complaint letter, Create WordPress page, Run SEO audit, Export analytics, Clear cache, Check broken links.",
@@ -110,7 +110,7 @@
         "updatedAt": "2025-11-24T06:52:54.851Z"
       },
       {
-        "id": 9,
+        "id": "9",
         "title": "Hetzner VPS Infrastructure Preparation",
         "description": "Set up Hetzner CX32 VPS with Docker, Docker Compose, and firewall configuration",
         "details": "1. Order Hetzner CX32 VPS in Falkenstein datacenter\n2. Install Ubuntu 22.04 LTS\n3. Configure UFW firewall\n4. Install Docker and Docker Compose\n5. Set up system updates and security hardening\n6. Create deploy user with sudo access\nPseudo-code:\n```bash\n# System preparation\napt update && apt upgrade -y\nufw default deny incoming\nufw allow ssh\nufw allow http\nufw allow https\nufw enable\n\n# Docker installation\ncurl -fsSL https://get.docker.com -o get-docker.sh\nsh get-docker.sh\nusermod -aG docker deploy_user\n```",
@@ -187,7 +187,7 @@
         "updatedAt": "2025-11-24T01:49:06.659Z"
       },
       {
-        "id": 10,
+        "id": "10",
         "title": "Traefik Reverse Proxy Configuration",
         "description": "Deploy Traefik as reverse proxy with Let's Encrypt SSL certificate management",
         "details": "1. Create docker-compose.yml for Traefik\n2. Configure dynamic configuration for SSL\n3. Set up Let's Encrypt DNS challenge via All-Inkl API\n4. Create Traefik configuration files\nPseudo-code:\n```yaml\nservices:\n  traefik:\n    image: traefik:v2.10\n    ports:\n      - 80:80\n      - 443:443\n    volumes:\n      - /var/run/docker.sock:/var/run/docker.sock\n      - ./traefik.yml:/etc/traefik/traefik.yml\n    environment:\n      - ALLINKL_API_KEY=${ALLINKL_API_KEY}\n```",
@@ -285,7 +285,7 @@
         "updatedAt": "2025-11-24T01:51:54.170Z"
       },
       {
-        "id": 11,
+        "id": "11",
         "title": "FwChange Static Site Deployment",
         "description": "Deploy FwChange landing page as static site with Docker",
         "details": "1. Create Dockerfile for Nginx Alpine\n2. Copy FwChange landing page files\n3. Configure Traefik labels for routing\n4. Set up domain fwchange.varnaai.com\nPseudo-code:\n```dockerfile\nFROM nginx:alpine\nCOPY landing/ /usr/share/nginx/html\n```\n```yaml\n# Docker Compose Service\nfwchange:\n  labels:\n    - traefik.http.routers.fwchange.rule=Host(`fwchange.varnaai.com`)\n    - traefik.enable=true\n```",
@@ -303,7 +303,7 @@
         "updatedAt": "2025-11-24T04:57:50.826Z"
       },
       {
-        "id": 12,
+        "id": "12",
         "title": "RetirementAI Static Site Deployment",
         "description": "Deploy RetirementAI landing page with PHP waitlist form",
         "details": "1. Create Dockerfile with PHP-FPM and Nginx\n2. Configure PHP waitlist form handling\n3. Set up Traefik routing for retirementai.varnaai.com\nPseudo-code:\n```dockerfile\nFROM php:8.2-fpm-alpine\nCOPY landing-page/ /var/www/html\n# Add PHP waitlist processing script\n```\n```php\n<?php\n// Simple waitlist submission handler\nif ($_SERVER['REQUEST_METHOD'] === 'POST') {\n  $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);\n  // Log or process email\n}\n```",
@@ -321,7 +321,7 @@
         "updatedAt": "2025-11-24T04:58:02.017Z"
       },
       {
-        "id": 13,
+        "id": "13",
         "title": "C3 Compliance React Static Build",
         "description": "Convert React TypeScript frontend to static site",
         "details": "1. Use create-react-app build for static export\n2. Configure Docker for static hosting\n3. Set up Traefik routing for c3.varnaai.com\nPseudo-code:\n```bash\n# Build static files\nnpm run build\n\n# Dockerfile for static hosting\nFROM nginx:alpine\nCOPY build/ /usr/share/nginx/html\n```\n```yaml\n# Traefik configuration\nc3:\n  labels:\n    - traefik.http.routers.c3.rule=Host(`c3.varnaai.com`)\n```",
@@ -339,7 +339,7 @@
         "updatedAt": "2025-11-24T07:08:05.396Z"
       },
       {
-        "id": 14,
+        "id": "14",
         "title": "SEO Agent Static Conversion",
         "description": "Convert React/Express application to static demonstration",
         "details": "1. Extract key marketing pages\n2. Create static HTML/CSS representation\n3. Design Docker setup for static hosting\n4. Configure Traefik for seoagent.varnaai.com\nPseudo-code:\n```dockerfile\nFROM nginx:alpine\nCOPY static-pages/ /usr/share/nginx/html\n```\n```yaml\nseoagent:\n  labels:\n    - traefik.http.routers.seoagent.rule=Host(`seoagent.varnaai.com`)\n```",
@@ -357,7 +357,7 @@
         "updatedAt": "2025-11-24T04:58:12.927Z"
       },
       {
-        "id": 15,
+        "id": "15",
         "title": "VarnaAI Intelligence Landing Page",
         "description": "Create a new landing page for multi-agent AI platform",
         "details": "1. Design single-page marketing site\n2. Highlight key platform features\n3. Create Docker container for hosting\n4. Set up Traefik routing\nPseudo-code:\n```html\n<!DOCTYPE html>\n<html>\n  <head>\n    <title>VarnaAI Intelligence Platform</title>\n  </head>\n  <body>\n    <section id=\"hero\">\n      <h1>Multi-Agent AI Workflow Automation</h1>\n      <p>Orchestrate complex workflows with intelligent agents</p>\n    </section>\n  </body>\n</html>\n```",
@@ -375,7 +375,7 @@
         "updatedAt": "2025-11-24T04:58:22.738Z"
       },
       {
-        "id": 16,
+        "id": "16",
         "title": "All-Inkl DNS Configuration",
         "description": "Configure DNS records for all portfolio domains",
         "status": "done",
@@ -393,7 +393,7 @@
         "updatedAt": "2025-11-24T07:15:10.476Z"
       },
       {
-        "id": 17,
+        "id": "17",
         "title": "Performance Optimization",
         "description": "Optimize static sites for maximum performance",
         "status": "done",
@@ -461,7 +461,7 @@
         "updatedAt": "2025-11-24T07:40:37.730Z"
       },
       {
-        "id": 18,
+        "id": "18",
         "title": "Monitoring and Backup Setup",
         "description": "Configure monitoring and backup solutions for VarnaAI portfolio applications",
         "status": "done",
@@ -480,7 +480,7 @@
         "updatedAt": "2025-11-24T07:54:58.188Z"
       },
       {
-        "id": 19,
+        "id": "19",
         "title": "Security Hardening",
         "description": "Implement additional security measures",
         "details": "Implement multi-layered security hardening for VarnaAI infrastructure deployed on Hetzner VPS (78.47.125.174). This task depends on completed infrastructure setup tasks:\n- Task 13: C3 Static Build (completed)\n- Task 16: DNS Configuration (completed)\n- Task 17: Performance Optimization (completed)\n- Task 18: Monitoring & Backup (completed)\n\nSecurity measures to implement:\n1. SSH Configuration Hardening - Disable root login, enforce key-based authentication only, implement key rotation\n2. UFW Firewall Optimization - Configure default deny policy, allow only SSH (port 22), HTTP (80), HTTPS (443)\n3. Fail2ban Brute Force Protection - Install and configure for SSH, HTTP services with email notifications\n4. Automatic Security Updates - Set up unattended-upgrades for automatic patching\n5. Comprehensive Security Audit - Run Lynis, OpenVAS scans and document findings\n\nPseudo-code for fail2ban configuration:\n```bash\n# /etc/fail2ban/jail.d/sshd.conf\n[sshd]\nenabled = true\nport = ssh\nfilter = sshd\nlogpath = /var/log/auth.log\nmaxretry = 3\nfindtime = 600\nbantime = 3600\n```",
@@ -564,7 +564,7 @@
         "updatedAt": "2025-11-24T08:13:31.813Z"
       },
       {
-        "id": 20,
+        "id": "20",
         "title": "Final Deployment Verification",
         "description": "Comprehensive final testing of all portfolio sites",
         "details": "Verify all 5 portfolio sites are fully functional after completion of prerequisites (C3 Static Build, DNS, Performance, Monitoring/Backup, Security Hardening).\n\n1. Manual testing of each site\n2. Run comprehensive Lighthouse tests\n3. Verify cross-browser compatibility\n4. Document any remaining issues\n5. Validate all dependencies are complete\n\nPseudo-code:\n```bash\n# Lighthouse CLI testing for all portfolio sites\nnpx lighthouse https://fwchange.varnaai.com --view\nnpx lighthouse https://retirementai.varnaai.com --view\nnpx lighthouse https://varnaai.com --view\nnpx lighthouse https://ai-projektmanager.de --view\nnpx lighthouse https://classicsecurity.net --view\nnpx lighthouse https://varna-agenten.de --view\n```",
@@ -646,7 +646,7 @@
         "updatedAt": "2025-11-24T08:38:31.257Z"
       },
       {
-        "id": 21,
+        "id": "21",
         "title": "Portfolio Links Update",
         "description": "Update varnaai.com with new portfolio site links",
         "details": "1. Update links on varnaai.com\n2. Verify all portfolio links work\n3. Test link tracking\n4. Ensure mobile responsiveness\nPseudo-code:\n```html\n<!-- Sample link update -->\n<a href=\"https://fwchange.varnaai.com\" target=\"_blank\" rel=\"noopener\">FwChange Demo</a>\n```",
@@ -663,10 +663,10 @@
         "updatedAt": "2025-12-01T12:00:00.000Z"
       },
       {
-        "id": 22,
+        "id": "22",
         "title": "Cross-Portfolio Footer Linking - Add VarnaAI Network Footer Links",
         "description": "COMPLETED: All 5 WordPress sites already have 'Our Portfolio Network' footer sections with cross-links to 4 sister sites (VarnaAI, AI Projektmanager, Varna Agenten, AI Marketing BG). Verified 2025-12-01.",
-        "details": "1. Analyze current footer structure across all 5 WordPress sites (ai-projektmanager.de, aimarketingbg.com, classicsecurity.net, varna-agenten.de, varnaai.com) to identify footer templates and widget areas.\n\n2. Create standardized footer link pattern:\n   - Add 'Part of VarnaAI Network' section with 4-5 links to sister sites\n   - Use consistent styling across all sites (Kadence-compatible markup)\n   - Include relevant internal links from each site to its sister properties\n   - Example structure: \"Explore our network: [Classic Security] [Varna Agents] [AI Marketing] [AI Projektmanager] [Varna AI]\"\n\n3. Use Morphllm MCP for pattern-based bulk operations:\n   - Define footer link template pattern once\n   - Apply pattern to all 5 site footer templates/widgets\n   - Ensure proper link URLs (https://[domain]) and rel attributes (noopener)\n\n4. Implementation considerations:\n   - Maintain existing footer structure and design\n   - Ensure footer links are visible on all pages (homepage, services, portfolio, etc.)\n   - Add appropriate CSS styling for network footer section\n   - Test that links don't interfere with existing CTAs or widgets\n   - Verify responsive design on mobile devices\n\n5. Files to modify:\n   - WordPress footer template/widget on each site\n   - Kadence footer block settings (if using Kadence blocks)\n   - Custom footer CSS if needed\n\n6. Cross-linking strategy:\n   - Each site links to all other 4 sister sites\n   - Use descriptive anchor text (site name, not generic 'link')\n   - Add tracking for network cross-link clicks (optional: UTM parameters)\n\n7. Verify footer consistency:\n   - Same footer appears on all pages of each site\n   - Links are styled consistently\n   - No broken links or 404 errors\n   - Footer maintains proper spacing and doesn't overlap content",
+        "details": "1. Analyze current footer structure across all 5 WordPress sites (ai-projektmanager.de, aimarketingbg.com, classicsecurity.net, varna-agenten.de, varnaai.com) to identify footer templates and widget areas.\n\n2. Create standardized footer link pattern:\n   - Add 'Part of VarnaAI Network' section with 4-5 links to sister sites\n   - Use consistent styling across all sites (Kadence-compatible markup)\n   - Include relevant internal links from each site to its sister properties\n   - Example structure: \"Explore our network: [VarnaAI] [Varna Agents] [AI Marketing] [AI Projektmanager] [Varna AI]\"\n\n3. Use Morphllm MCP for pattern-based bulk operations:\n   - Define footer link template pattern once\n   - Apply pattern to all 5 site footer templates/widgets\n   - Ensure proper link URLs (https://[domain]) and rel attributes (noopener)\n\n4. Implementation considerations:\n   - Maintain existing footer structure and design\n   - Ensure footer links are visible on all pages (homepage, services, portfolio, etc.)\n   - Add appropriate CSS styling for network footer section\n   - Test that links don't interfere with existing CTAs or widgets\n   - Verify responsive design on mobile devices\n\n5. Files to modify:\n   - WordPress footer template/widget on each site\n   - Kadence footer block settings (if using Kadence blocks)\n   - Custom footer CSS if needed\n\n6. Cross-linking strategy:\n   - Each site links to all other 4 sister sites\n   - Use descriptive anchor text (site name, not generic 'link')\n   - Add tracking for network cross-link clicks (optional: UTM parameters)\n\n7. Verify footer consistency:\n   - Same footer appears on all pages of each site\n   - Links are styled consistently\n   - No broken links or 404 errors\n   - Footer maintains proper spacing and doesn't overlap content",
         "testStrategy": "1. Verify footer visibility: Load homepage and 3-5 internal pages on each of the 5 sites and confirm footer is visible on all pages.\n\n2. Test cross-links functionality:\n   - Click each sister site link from all 5 sites\n   - Verify all links point to correct URLs\n   - Confirm external links open in new tab (target=\"_blank\")\n   - Check that links use rel=\"noopener noreferrer\"\n\n3. Visual verification:\n   - Take screenshots of footer on desktop and mobile for all 5 sites\n   - Confirm consistent styling and layout across sites\n   - Verify footer doesn't break page layout or overlap content\n   - Check text readability and contrast\n\n4. Responsive design testing:\n   - Test footer on mobile (< 768px width)\n   - Test on tablet (768px - 1024px)\n   - Test on desktop (> 1024px)\n   - Verify footer links stack properly on small screens\n\n5. Performance testing:\n   - Run Lighthouse on each site to ensure footer markup doesn't impact performance\n   - Verify no CSS/JavaScript conflicts\n   - Check that new links don't significantly increase page load time\n\n6. SEO validation:\n   - Verify footer links have proper anchor text (not generic)\n   - Check that links are indexable by search engines\n   - Confirm footer links don't create nofollow/noindex issues\n   - Validate HTML markup in footer section\n\n7. Cross-browser testing:\n   - Test footer rendering in Chrome, Firefox, Safari, Edge\n   - Verify links work on all browsers\n   - Check for CSS compatibility issues\n\n8. Final checklist:\n   - All 5 sites have footer links implemented\n   - All 20 cross-site links (4 links per site × 5 sites) are functional\n   - Footer appears consistently on all page types\n   - No console errors or warnings related to footer\n   - Footer links indexed in Google Search Console",
         "status": "done",
         "dependencies": [
@@ -677,7 +677,7 @@
         "subtasks": []
       },
       {
-        "id": 23,
+        "id": "23",
         "title": "Phase 1: Schema Markup Rollout - Implement JSON-LD Structured Data",
         "description": "COMPLETED: All 5 sites already have comprehensive JSON-LD structured data. Verified 2025-12-01: varnaai.com (Place, ProfessionalService, Organization, WebSite, WebPage, ImageObject), ai-projektmanager.de (Place, ProfessionalService, Organization, WebSite, WebPage, ImageObject, SoftwareApplication), varna-agenten.de (Place, ProfessionalService, Organization, WebSite, WebPage, ImageObject, Person, Article), aimarketingbg.com (Place, ProfessionalService, Organization, WebSite, WebPage, ImageObject, Person, Article), classicsecurity.net (Place, ProfessionalService, Organization, WebSite, WebPage, LocalBusiness, BreadcrumbList with OfferCatalog).",
         "details": "1. Analyze current WordPress site structure across all 5 domains to identify schema implementation points (homepages, service pages, contact pages)\n\n2. Create JSON-LD schema templates:\n   - LocalBusiness schema for classicsecurity.net (includes physical address, phone, business hours, geo coordinates)\n   - Organization schema for ai-projektmanager.de, varna-agenten.de, varnaai.com, aimarketingbg.com (includes name, description, logo, contact, social profiles)\n   - Reference templates from .taskmaster docs and SCHEMA_ORG_TEMPLATES.md\n\n3. Use Morphllm MCP for bulk schema implementation:\n   - Create JSON-LD schema files as reusable templates\n   - Apply LocalBusiness template to classicsecurity.net homepage footer/header\n   - Apply Organization schema template to all 4 online-only sites\n   - Ensure schema includes current company info from COMPANY_INFO.md\n\n4. Schema field mappings:\n   - LocalBusiness: name, address (street, city, postal code, country), telephone, email, url, logo, sameAs (social profiles)\n   - Organization: name, description, logo, url, contactPoint (email, phone), sameAs (social profiles), foundingDate, areaServed\n\n5. Implementation via WordPress:\n   - Add schema via Rank Math SEO plugin settings OR\n   - Insert directly in theme header via custom hook\n   - Ensure no duplicate schema markup\n\n6. Verify integration with existing Rank Math SEO configurations on all sites\n\n7. Document schema implementation details for future maintenance",
@@ -692,7 +692,7 @@
         "subtasks": []
       },
       {
-        "id": 24,
+        "id": "24",
         "title": "Phase 1: NAP Data Standardization - Create master business data files",
         "description": "Create standardized Name, Address, Phone (NAP) master data files (data.json) for all 5 sites with consistent formatting, prepare multiple business descriptions per site (50, 100, 250 words), and prepare logos in PNG, JPG, and SVG formats for directory submissions.",
         "details": "Create comprehensive NAP standardization package for VarnaAI portfolio (ai-projektmanager.de, aimarketingbg.com, classicsecurity.net, varna-agenten.de, varnaai.com).\n\n1. Create data.json files:\n   - Location: Create /seo/nap-data/ directory with individual data.json per site\n   - Structure: {\n       \"business\": {\n         \"legalName\": \"exact legal name\",\n         \"displayName\": \"marketing name\",\n         \"phone\": \"+49 format for German sites, international format for others\",\n         \"address\": {\n           \"street\": \"street address\",\n           \"city\": \"city\",\n           \"state\": \"state/region\",\n           \"postalCode\": \"postal code\",\n           \"country\": \"country code (DE for German sites)\"\n         },\n         \"website\": \"https://domain.com\",\n         \"email\": \"contact@domain.com\"\n       }\n     }\n   - Validate: All sites use consistent formatting (phone with country code, postal code format matches country)\n   - Reference existing data from CLAUDE.md credentials section and COMPANY_INFO.md\n\n2. Prepare business descriptions:\n   - Create descriptions/[site-name]/ folders with three versions per site:\n     * short-description.txt (50 words): Elevator pitch for directory listings\n     * medium-description.txt (100 words): SEO-optimized for Google Business Profile\n     * long-description.txt (250 words): Comprehensive service overview for business directories\n   - Content should match existing site messaging from wordpress/ and COMPANY_INFO.md\n   - German sites (.de): Write in German with proper grammar and technical terminology\n   - English sites: Write in English with US/UK conventions based on target market\n   - Include key services, compliance focus (DSGVO, ISO 27001), and target audience\n   - Incorporate focus keywords from SEO_Portfolio_Strategy_2025.md\n\n3. Prepare logo assets:\n   - Directory: /assets/logos/[site-name]/\n   - Formats per site:\n     * PNG: 500x500px, 1000x1000px (transparent background preferred)\n     * JPG: 500x500px, 1000x1000px (white background)\n     * SVG: Scalable vector format (if available from design)\n   - Use Morphllm MCP to normalize existing logos if available in /assets/images/\n   - Verify logo readability at small sizes (favicon, directory listings)\n   - Document source/version in logos/README.md\n\n4. Quality checks:\n   - Validate data.json syntax (parseable by JSON.parse)\n   - Verify phone numbers are in consistent international format\n   - Check postal codes match country conventions (5 digits for Germany, variable for others)\n   - Ensure descriptions have consistent tone/voice within each site\n   - Verify logo formats are web-optimized (file size <500KB for PNG/JPG, <100KB for SVG)\n\n5. Integration:\n   - Reference files in dashboard for Google Business Profile sync automation\n   - Create CSV export of NAP data for bulk directory submissions\n   - Document standardization in /seo/nap-data/README.md with submission workflow",
@@ -704,10 +704,10 @@
         "updatedAt": "2025-11-21T23:16:30.150Z"
       },
       {
-        "id": 25,
+        "id": "25",
         "title": "Phase 2: Google Business Profile Setup - Create and optimize GBP for all 5 brands",
-        "description": "Create and optimize Google Business Profiles for Classic Security, VarnaAI, AI Projektmanager, Varna Agenten, and AI Marketing BG with complete category configuration, keyword-optimized descriptions, and service areas.",
-        "details": "Implement comprehensive Google Business Profile (GBP) setup for all 5 VarnaAI portfolio brands using Playwright MCP for browser automation.\n\n1. Prerequisites from Task 24 (NAP Data Standardization):\n   - Retrieve standardized Name, Address, Phone data from /seo/nap-data/data.json files\n   - Use consistent business names, addresses, and phone numbers across all platforms\n   - Reference logos in PNG/JPG/SVG formats prepared in Task 24\n\n2. Google Business Profile Creation:\n   - For each of the 5 sites (ai-projektmanager.de, aimarketingbg.com, classicsecurity.net, varna-agenten.de, varnaai.com):\n     a. Access Google Business Profile (https://business.google.com/)\n     b. Create new business profile or claim existing listing\n     c. Verify business ownership via postcard or phone verification\n\n3. Profile Configuration for Each Brand:\n   a. Primary Category Selection:\n      - Classic Security: \"Security Systems Service\"\n      - VarnaAI: \"Software Company\"\n      - AI Projektmanager: \"Business Consultant\"\n      - Varna Agenten: \"Advertising Agency\"\n      - AI Marketing BG: \"Marketing Consultant\"\n   \n   b. Additional 9 Categories (example for Classic Security):\n      - IT Support and Services\n      - Computer Security Service\n      - Cybersecurity Consultant\n      - Business Information and Technology Services\n      - Computer Network Design and Systems\n      - Information Technology Training\n      - Data Recovery Service\n      - Disaster Recovery Planning\n      - Computer Repair and Maintenance\n   \n   c. Business Description (1750 characters with keyword optimization):\n      - Incorporate primary keywords naturally (e.g., \"IT security\", \"DSGVO compliance\", \"firewall management\")\n      - Include service areas and capabilities\n      - Add unique value propositions\n      - Maintain professional tone while optimizing for search visibility\n      - Example structure: \"[Company Name] ist Ihr [primary service] Partner für [key benefit]. Mit [X Jahre] Erfahrung in [industry], bieten wir [services]. Unsere Spezialisten sind zertifiziert in [certifications]. Wir betreuen Unternehmen in [regions] mit Fokus auf [compliance standards].\"\n   \n   d. Service Areas Configuration:\n      - Define geographic coverage (regions/cities served)\n      - Classic Security/AI Projektmanager/Varna Agenten: Germany-focused (add Bundesländer)\n      - AI Marketing BG: Bulgaria-focused (add major cities)\n      - VarnaAI: Europe-wide coverage\n      - varnaai.com: International/Global\n   \n   e. Attribute Configuration:\n      - Add business attributes (e.g., \"On-site services\", \"Online consultations\", \"Has parking\")\n      - Set business hours (recommend business days, 09:00-17:00 for B2B)\n      - Upload business logo (PNG format, 400x400px minimum)\n      - Add cover photos showing team/office/services\n\n4. Weekly Content Posting Schedule:\n   - Set up automated posting calendar in GBP\n   - Post cadence: 1-2 posts per week per brand\n   - Content types:\n     * Tips/advice related to services (e.g., \"5 DSGVO Compliance Tips for German SMEs\")\n     * New service announcements\n     * Industry news and insights\n     * Customer success stories (anonymized per CLAUDE.md privacy rules)\n     * Certification/award updates\n   - Use Playwright to automate posting workflow (click post button, select date/time, add content)\n\n5. Playwright MCP Automation Script:\n   - Create browser automation to:\n     a. Log into Google Business Profile for each brand\n     b. Navigate to profile settings\n     c. Fill in business information from NAP data files\n     d. Configure categories via dropdown selections\n     e. Paste description text with keyword density verification\n     f. Set service areas by searching and selecting regions\n     g. Upload images (logos and cover photos)\n     h. Schedule initial posts for the upcoming week\n   - Handle form submission and verification steps\n   - Capture screenshots of completed profiles for verification\n   - Wait for page load states and element visibility before interactions\n\n6. Verification and Optimization:\n   - Verify all 1750 characters are visible in description field\n   - Confirm all 10 categories (1 primary + 9 additional) are saved\n   - Check that service areas match expected geographic coverage\n   - Validate keyword density in descriptions (target 1-2% for primary keyword)\n   - Verify business hours are set correctly\n   - Confirm images uploaded successfully\n   - Test that weekly posting schedule is configured\n\n7. Integration with Dashboard:\n   - Store GBP profile URLs for each brand\n   - Log completion status in Task Master\n   - Document any verification codes or pending confirmations needed\n   - Prepare follow-up actions (e.g., review insights after 2 weeks of activity)",
+        "description": "Create and optimize Google Business Profiles for VarnaAI, VarnaAI, AI Projektmanager, Varna Agenten, and AI Marketing BG with complete category configuration, keyword-optimized descriptions, and service areas.",
+        "details": "Implement comprehensive Google Business Profile (GBP) setup for all 5 VarnaAI portfolio brands using Playwright MCP for browser automation.\n\n1. Prerequisites from Task 24 (NAP Data Standardization):\n   - Retrieve standardized Name, Address, Phone data from /seo/nap-data/data.json files\n   - Use consistent business names, addresses, and phone numbers across all platforms\n   - Reference logos in PNG/JPG/SVG formats prepared in Task 24\n\n2. Google Business Profile Creation:\n   - For each of the 5 sites (ai-projektmanager.de, aimarketingbg.com, classicsecurity.net, varna-agenten.de, varnaai.com):\n     a. Access Google Business Profile (https://business.google.com/)\n     b. Create new business profile or claim existing listing\n     c. Verify business ownership via postcard or phone verification\n\n3. Profile Configuration for Each Brand:\n   a. Primary Category Selection:\n      - VarnaAI: \"Security Systems Service\"\n      - VarnaAI: \"Software Company\"\n      - AI Projektmanager: \"Business Consultant\"\n      - Varna Agenten: \"Advertising Agency\"\n      - AI Marketing BG: \"Marketing Consultant\"\n   \n   b. Additional 9 Categories (example for VarnaAI):\n      - IT Support and Services\n      - Computer Security Service\n      - Cybersecurity Consultant\n      - Business Information and Technology Services\n      - Computer Network Design and Systems\n      - Information Technology Training\n      - Data Recovery Service\n      - Disaster Recovery Planning\n      - Computer Repair and Maintenance\n   \n   c. Business Description (1750 characters with keyword optimization):\n      - Incorporate primary keywords naturally (e.g., \"IT security\", \"DSGVO compliance\", \"firewall management\")\n      - Include service areas and capabilities\n      - Add unique value propositions\n      - Maintain professional tone while optimizing for search visibility\n      - Example structure: \"[Company Name] ist Ihr [primary service] Partner für [key benefit]. Mit [X Jahre] Erfahrung in [industry], bieten wir [services]. Unsere Spezialisten sind zertifiziert in [certifications]. Wir betreuen Unternehmen in [regions] mit Fokus auf [compliance standards].\"\n   \n   d. Service Areas Configuration:\n      - Define geographic coverage (regions/cities served)\n      - VarnaAI/AI Projektmanager/Varna Agenten: Germany-focused (add Bundesländer)\n      - AI Marketing BG: Bulgaria-focused (add major cities)\n      - VarnaAI: Europe-wide coverage\n      - varnaai.com: International/Global\n   \n   e. Attribute Configuration:\n      - Add business attributes (e.g., \"On-site services\", \"Online consultations\", \"Has parking\")\n      - Set business hours (recommend business days, 09:00-17:00 for B2B)\n      - Upload business logo (PNG format, 400x400px minimum)\n      - Add cover photos showing team/office/services\n\n4. Weekly Content Posting Schedule:\n   - Set up automated posting calendar in GBP\n   - Post cadence: 1-2 posts per week per brand\n   - Content types:\n     * Tips/advice related to services (e.g., \"5 DSGVO Compliance Tips for German SMEs\")\n     * New service announcements\n     * Industry news and insights\n     * Customer success stories (anonymized per CLAUDE.md privacy rules)\n     * Certification/award updates\n   - Use Playwright to automate posting workflow (click post button, select date/time, add content)\n\n5. Playwright MCP Automation Script:\n   - Create browser automation to:\n     a. Log into Google Business Profile for each brand\n     b. Navigate to profile settings\n     c. Fill in business information from NAP data files\n     d. Configure categories via dropdown selections\n     e. Paste description text with keyword density verification\n     f. Set service areas by searching and selecting regions\n     g. Upload images (logos and cover photos)\n     h. Schedule initial posts for the upcoming week\n   - Handle form submission and verification steps\n   - Capture screenshots of completed profiles for verification\n   - Wait for page load states and element visibility before interactions\n\n6. Verification and Optimization:\n   - Verify all 1750 characters are visible in description field\n   - Confirm all 10 categories (1 primary + 9 additional) are saved\n   - Check that service areas match expected geographic coverage\n   - Validate keyword density in descriptions (target 1-2% for primary keyword)\n   - Verify business hours are set correctly\n   - Confirm images uploaded successfully\n   - Test that weekly posting schedule is configured\n\n7. Integration with Dashboard:\n   - Store GBP profile URLs for each brand\n   - Log completion status in Task Master\n   - Document any verification codes or pending confirmations needed\n   - Prepare follow-up actions (e.g., review insights after 2 weeks of activity)",
         "testStrategy": "1. Google Business Profile Access Verification:\n   - For each of the 5 brands, navigate to Google Business Profile dashboard\n   - Confirm profile is accessible and shows \"Verified\" status\n   - Check that business name, address, and phone match NAP data from Task 24\n\n2. Category Configuration Testing:\n   - Click on \"Business Information\" section for each profile\n   - Verify primary category is correctly set (e.g., Security Systems Service for Classic Security)\n   - Confirm all 9 additional categories are visible and saved\n   - Total: 10 categories per profile × 5 brands = 50 category validations\n\n3. Description and Keyword Content Testing:\n   - Expand business description for each profile\n   - Count characters (verify 1700-1750 character range)\n   - Verify primary keywords appear naturally at least once in opening sentences\n   - Confirm no keyword stuffing or unnatural phrasing\n   - Check special characters and formatting (German umlauts, etc.) display correctly\n\n4. Service Area Validation:\n   - For each profile, navigate to \"Service areas\" section\n   - Verify geographic regions are correctly configured:\n     * Classic Security: German Bundesländer listed\n     * VarnaAI: European countries listed\n     * AI Marketing BG: Bulgarian cities listed\n   - Test that map shows coverage area correctly\n   - Confirm addresses and service radius are reasonable for business type\n\n5. Image Upload Verification:\n   - Confirm business logo displays correctly (400x400px minimum)\n   - Verify cover photos are visible and properly sized\n   - Check that images are in approved format (PNG, JPG)\n   - Confirm no broken image links\n\n6. Weekly Posting Schedule Testing:\n   - Navigate to \"Posts\" section for each profile\n   - Verify initial posts are scheduled for upcoming 7 days\n   - Confirm post titles contain relevant keywords\n   - Check that posting times are distributed (not all at same time)\n   - Verify posts are in appropriate language (German for .de sites, English/Bulgarian for international)\n\n7. Playwright Automation Validation:\n   - Capture screenshots of each completed profile showing:\n     * Business information panel with all fields populated\n     * Categories section showing 10 categories\n     * Service area map with correct regions\n     * Posted content in timeline\n   - Run automation script end-to-end for all 5 brands\n   - Verify no errors or failed element clicks in automation logs\n   - Confirm all form submissions completed without timeout errors\n\n8. Search Visibility Testing:\n   - Google search \"[Brand Name] Google\" for each of the 5 companies\n   - Verify GBP profile appears in Knowledge Panel on right side\n   - Check that business information matches GBP (name, address, phone, rating if available)\n   - Test from different geographic locations using VPN/search settings\n\n9. Cross-Site Consistency Check:\n   - Compare NAP data across all 5 profiles\n   - Verify no inconsistencies in business names or contact information\n   - Confirm URL structure matches website URLs from CLAUDE.md\n   - Validate phone numbers match stored credentials\n\n10. Acceptance Criteria:\n    - ✅ All 5 GBP profiles are live and publicly visible\n    - ✅ Each profile has 10 categories (1 primary + 9 additional)\n    - ✅ Description content is 1700-1750 characters with optimized keywords\n    - ✅ Service areas configured for geographic coverage\n    - ✅ Logo and cover photos uploaded for all 5 brands\n    - ✅ Weekly posting schedule configured with 4 weeks of content queued\n    - ✅ Business hours set correctly for each location\n    - ✅ All profiles pass Google verification (if required)\n    - ✅ Automation script completes without errors\n    - ✅ Screenshots document completion of all 5 profiles",
         "status": "done",
         "dependencies": [
@@ -718,7 +718,7 @@
         "updatedAt": "2025-11-21T23:20:54.797Z"
       },
       {
-        "id": 26,
+        "id": "26",
         "title": "Phase 2: Internal Linking Optimization - Hub-and-Spoke Model Implementation",
         "description": "Implement strategic internal linking across all 5 portfolio sites using a hub-and-spoke model with 5-10 links per 2000 words, ensuring 3-click maximum depth and varied contextual anchor text for improved navigation and SEO.",
         "details": "1. Analyze current site structure across all 5 domains (ai-projektmanager.de, aimarketingbg.com, classicsecurity.net, varna-agenten.de, varnaai.com) to identify hub pages (homepages, service index pages) and spoke pages (individual service/use case pages).\n\n2. Map internal link opportunities:\n   - Identify hub pages that should receive links from 3-5 spoke pages minimum\n   - Map spoke-to-spoke contextual linking opportunities within topic clusters\n   - Ensure every page is reachable within maximum 3 clicks from homepage\n   - Document current link depth analysis per site\n\n3. Create internal linking patterns using Morphllm MCP:\n   - Pattern 1: Hub linking (footer/navigation patterns that repeat across similar pages)\n   - Pattern 2: Related content links (contextual within body paragraphs)\n   - Pattern 3: Cross-site portfolio links (connecting sister sites via VarnaAI Network footer)\n\n4. Implement contextual linking in body content using native Claude:\n   - Review each page's focus keyword and related topics\n   - Identify 2-3 natural linking opportunities per 600-word page\n   - Use varied anchor text: focus keywords, long-tail keywords, branded terms, generic descriptors\n   - Maintain 1-2% keyword density with varied anchor text distribution\n   - Example: 'DSGVO-konform Projektmanagement' page links to 'Compliance Management', 'Enterprise Deployment', and 'IT-Sicherheit' pages\n\n5. Link distribution targets:\n   - Pages 400-600 words: 2-3 internal links minimum\n   - Pages 600-800 words: 3-5 internal links\n   - Pages 800-1000 words: 5-7 internal links\n   - Pages 1000+ words: 7-10 internal links\n\n6. Anchor text variation strategy:\n   - 30% exact match or close variant (e.g., 'IT-Sicherheit Projektmanagement' for IT-Sicherheit page)\n   - 30% partial matches or long-tail variations (e.g., 'Security project management solutions')\n   - 20% branded/generic terms (e.g., 'learn more', 'AI Projektmanager platform')\n   - 20% navigation terms (e.g., 'see related services', 'explore enterprise options')\n\n7. Verification checklist per site:\n   - All pages linked from at least 1 other page\n   - No page deeper than 3 clicks from homepage\n   - Link distribution within specified targets\n   - Anchor text natural and contextual (not over-optimized)\n   - External footer links to sister sites functional\n   - Rank Math SEO scores reflect improved internal linking (80+/100)\n\n8. Technical implementation:\n   - Use Morphllm for bulk footer/navigation link patterns across similar page templates\n   - Use Native Claude for contextual body paragraph linking requiring semantic understanding\n   - Preserve existing design and layout (no modification to Kadence blocks)\n   - Update pages via WordPress editor, saving frequently to prevent data loss",
@@ -734,7 +734,7 @@
         "subtasks": []
       },
       {
-        "id": 27,
+        "id": "27",
         "title": "Phase 2: WordPress SEO Configuration - Rank Math Setup Across All 5 Sites",
         "description": "Configure Rank Math SEO plugin across all 5 WordPress sites with focus keywords, meta titles/descriptions, Open Graph settings, and XML sitemaps. Achieve minimum SEO score of 70/100 on all pages using Playwright MCP for automated WordPress admin interaction.",
         "details": "1. Prerequisites and Site Access:\n   - Access WordPress admin panels using credentials from CLAUDE.md (ai-projektmanager.de, aimarketingbg.com, classicsecurity.net, varna-agenten.de, varnaai.com)\n   - Verify Rank Math plugin is installed and activated on all 5 sites\n   - Verify all pages from Phase 1 content creation (Tasks 22-26) are published\n\n2. Rank Math Global Configuration (per site):\n   - Navigate to Rank Math Settings → General Settings\n   - Set site tagline/description for home page\n   - Configure XML sitemap settings: Enable sitemaps, set update frequency to weekly\n   - Configure Open Graph: Enable for all post types, set default image\n   - Set up Knowledge Graph: Organization type, logo URL, social profiles\n   - Configure breadcrumbs for site navigation\n   - Enable automatic rich snippets (FAQ, Howto, Article)\n\n3. Focus Keyword and Meta Configuration (per page):\n   - For each published page from Tasks 22-26, open Rank Math panel in editor\n   - Set focus keyword: Use primary keyword from content plan (examples: \"IT-Sicherheit Projektmanagement\", \"DSGVO-konform\", \"AI Marketing\", \"Zero-Click Search\")\n   - Auto-generate or customize SEO Title (60 chars max): Include focus keyword + power word + number if available\n   - Auto-generate or customize meta description (160 chars max): Include focus keyword, benefit statement, CTA\n   - Set URL slug (if not already set): Lowercase, kebab-case, include keyword when possible\n   - Verify Open Graph title and description are set\n   - Set featured image for Open Graph display\n\n4. Content Optimization Review:\n   - For each page, check Rank Math score in editor:\n     * Word count: Verify 600+ words (from content in Tasks 22-26)\n     * Keyword density: Target 1% (focus keyword appears 7-8 times in 600-word content)\n     * Keyword placement: Verify focus keyword at start of second paragraph\n     * Headings: Confirm focus keyword in at least one H2/H3 heading\n     * Links: Verify 1-2 external DoFollow links + 2-3 internal links\n   - Apply Rank Math suggestions to reach 70+/100 score\n   - Common fixes: Expand content if <600 words, add missing internal links, verify keyword distribution\n\n5. XML Sitemap and Robots Configuration:\n   - Rank Math Settings → Sitemaps: Enable, set update frequency\n   - Verify /sitemap.xml is accessible and valid (use online XML validator)\n   - Verify robots.txt is configured correctly: Disallow none, Allow all\n   - Submit sitemaps to Google Search Console (via task verification step)\n\n6. Open Graph and Social Configuration:\n   - Rank Math Settings → Open Graph: Verify all fields are populated\n   - Test Open Graph preview (use Facebook Sharing Debugger tool)\n   - Verify Twitter Card settings (if applicable)\n   - Check featured images display correctly in social previews\n\n7. Local SEO Settings (for German sites: ai-projektmanager.de, varna-agenten.de):\n   - Set up local business schema if applicable\n   - Configure service area (Germany, EU, etc.)\n   - Link to Google Business Profile (if created in Task 25)\n\n8. Multi-Language Configuration (if applicable):\n   - For aimarketingbg.com: Configure language settings in Rank Math\n   - Set hreflang tags for language variants (English/Bulgarian)\n   - Verify language switcher is SEO-optimized\n\n9. Final Verification:\n   - Run Rank Math SEO audit for entire site: Rank Math → Tools → Site Audit\n   - Review audit report and fix critical issues\n   - Verify no redirect chains or broken links detected\n   - Check for duplicate content issues",
@@ -751,7 +751,7 @@
         "subtasks": []
       },
       {
-        "id": 28,
+        "id": "28",
         "title": "Phase 3: German/DACH Directory Submissions - Automated Form Filing and Verification",
         "description": "Submit ai-projektmanager.de and varna-agenten.de to 8 Tier 1 German directories (Google Business Profile, Das Örtliche, Gelbe Seiten, 11880.com, GoYellow, YellowMap, Yelp Germany, Hotfrog Germany) using Playwright MCP for automated form submission with manual approval verification.",
         "details": "Implement automated directory submission workflow for ai-projektmanager.de and varna-agenten.de across 8 German/DACH directories using Playwright MCP browser automation.\n\n1. Prerequisites and Data Preparation:\n   - Retrieve standardized NAP data from Task 24 outputs (/seo/nap-data/data.json files)\n   - Prepare business descriptions (50, 100, 250 word variants from Task 24)\n   - Retrieve logos in PNG/JPG/SVG formats from Task 24 assets\n   - Document directory-specific requirements (category codes, service area formats, verification methods)\n\n2. Directory-Specific Submission Automation:\n   - Google Business Profile: Navigate to GBP dashboard (should already exist from Task 25), verify and enhance listing\n   - Das Örtliche (Germany): Automate business registration form with NAP data, category selection (\"IT-Sicherheit\", \"Projektmanagement\")\n   - Gelbe Seiten (Germany): Submit business entry with premium listing options, service area configuration\n   - 11880.com (Germany): Automate registration with category mapping, contact form setup\n   - GoYellow (Germany): Submit business profile with service descriptions, opening hours\n   - YellowMap (Germany): Register business with map location, category tags\n   - Yelp Germany: Submit business profile (may require additional verification beyond submission)\n   - Hotfrog Germany: Register business entry with detailed business description\n\n3. Playwright MCP Implementation:\n   - Create browser automation scripts for each directory's submission workflow\n   - Handle dynamic form validation (required fields, format requirements, captchas)\n   - Implement screenshot capture at submission confirmation pages\n   - Store submission confirmation URLs and reference numbers\n   - Handle account creation flows where required (email verification)\n   - Log all submissions with timestamp, directory name, confirmation status\n\n4. Manual Verification Workflow:\n   - After automated submission, generate verification checklist per directory\n   - Document which listings require email/SMS verification from business owners\n   - Note any listings requiring additional admin approval steps\n   - Track pending approval status for each directory\n   - Create follow-up schedule for approvals (typically 3-7 days)\n\n5. Documentation and Tracking:\n   - Create submission report documenting all 8 directories, submission dates, reference numbers\n   - Maintain status tracker: Pending, Submitted, Email Verification Sent, Approved, Live\n   - Document any directory-specific requirements discovered during submission\n   - Store directory login credentials securely (for future updates)\n\n6. Technical Considerations:\n   - Some directories may implement bot detection - use realistic delays between interactions\n   - Handle cookie/session management for multi-page forms\n   - Implement error handling and retry logic for network timeouts\n   - Capture and log any error messages for troubleshooting\n   - Respect directory robots.txt and terms of service\n   - Consider rate limiting to avoid IP blocking\n\n7. File Organization:\n   - Create /seo/directory-submissions/ with subdirectories per directory\n   - Store submission scripts in /seo/directory-submissions/scripts/\n   - Log submission results to /seo/directory-submissions/results.json\n   - Document verification steps in /seo/directory-submissions/verification-checklist.md",
@@ -766,7 +766,7 @@
         "subtasks": []
       },
       {
-        "id": 29,
+        "id": "29",
         "title": "Phase 3: International Directory Submissions - Automated Multi-Site Submission",
         "description": "Submit varnaai.com, aimarketingbg.com, and classicsecurity.net to 500+ international business directories using automated submission tools (GetMoreBacklinks.org or ListingBott) with manual verification, targeting 100+ directory listings per site.",
         "details": "Implement automated international directory submission workflow for 3 portfolio sites (varnaai.com, aimarketingbg.com, classicsecurity.net) using directory automation platforms.\n\n1. Prerequisites and Preparation:\n   - Retrieve standardized NAP data from Task 24 outputs (/seo/nap-data/data.json files for all 5 sites, filter for the 3 international sites)\n   - Prepare business descriptions (50, 100, 250 word variants from Task 24)\n   - Retrieve logos in PNG/JPG/SVG formats from Task 24 assets\n   - Document directory-specific requirements (categories, services, keywords)\n   - Compile Google Business Profile URLs from Task 25 for cross-referencing\n\n2. Directory Automation Tool Setup:\n   - Choose automation platform: GetMoreBacklinks.org (360+ directories, verified submissions) OR ListingBott (500+ directories, API-driven)\n   - Create accounts on selected platform(s)\n   - Configure API keys or authentication credentials\n   - Upload NAP data templates and business descriptions\n   - Configure logo upload batches\n\n3. Batch Submission Configuration:\n   - For each of 3 international sites:\n     - Create submission profile with standardized NAP data\n     - Select target directory categories (Business Services, IT Services, Security, AI/Technology)\n     - Set keyword targeting (site-specific keywords from SEO audit)\n     - Configure description variants (50-word for directories with limits, 100-250 word for premium listings)\n     - Queue 150-200 directories per site (aiming for 100+ confirmed listings)\n\n4. Automated Submission Execution:\n   - Launch batch submissions across selected directories\n   - Monitor submission progress via tool dashboard\n   - Log submission confirmations and any rejections\n   - Track response codes and error messages\n   - Document submission timeline (expect 2-4 weeks for full completion)\n\n5. Manual Verification Process:\n   - For each submitted directory:\n     - Verify NAP data accuracy (name, address, phone match Task 24 standards)\n     - Confirm business information matches Google Business Profile from Task 25\n     - Check logo display and quality\n     - Verify category assignments are appropriate\n     - Test clickthrough to website\n     - Capture verification screenshots\n   - Create verification checklist: minimum 100 unique directories per site\n   - Document any correction requests or resubmissions needed\n\n6. Tracking and Documentation:\n   - Create /seo/directory-submissions/ directory for tracking\n   - Log all submissions: directory name, URL, submission date, status, NAP accuracy, verification date\n   - Generate per-site submission report showing:\n     - Total directories submitted to\n     - Confirmed active listings\n     - Pending verification\n     - Rejected (with reasons)\n     - Response metrics\n   - Track backlink generation from directory listings using Ahrefs/Semrush",
@@ -780,7 +780,7 @@
         "subtasks": []
       },
       {
-        "id": 30,
+        "id": "30",
         "title": "Phase 3: Social Media Automation Setup - Buffer Configuration and RSS Integration",
         "description": "Configure Buffer social media scheduling tool (6/month plan) for all 5 portfolio sites, connect 20 social profiles (Facebook, Instagram, LinkedIn, X/Twitter), integrate RSS feeds for automatic blog post sharing, and set up engagement tracking across the VarnaAI Network.",
         "details": "1. Buffer Account Setup and Configuration:\n   - Create or access existing Buffer account\n   - Upgrade to Buffer's 6/month plan tier\n   - Configure team access for multi-site management\n   - Set up Buffer analytics and engagement tracking\n\n2. Social Profile Connection (20 total profiles - 4 per site):\n   For each of 5 portfolio sites (ai-projektmanager.de, aimarketingbg.com, classicsecurity.net, varna-agenten.de, varnaai.com):\n   - Connect Facebook business page\n   - Connect Instagram business account\n   - Connect LinkedIn company page\n   - Connect X/Twitter account\n   - Verify posting permissions for each profile\n   - Test single post to each profile\n   - Authenticate with Buffer API tokens\n\n3. RSS Feed Integration:\n   - Identify WordPress RSS feeds for each site (typically /feed/ or /blog/feed/)\n   - Configure RSS feed URLs in Buffer:\n     * ai-projektmanager.de: https://ai-projektmanager.de/feed/\n     * aimarketingbg.com: https://aimarketingbg.com/feed/\n     * classicsecurity.net: https://classicsecurity.net/feed/\n     * varna-agenten.de: https://varna-agenten.de/feed/\n     * varnaai.com: https://varnaai.com/feed/\n   - Set up automatic feed parsing and post detection\n   - Configure Buffer to auto-queue new blog posts\n   - Set posting schedule (optimal times per platform)\n\n4. Reshare Schedule (3 reshares over 30 days):\n   - Plan reshare calendar for evergreen content\n   - Configure Buffer to auto-select and re-share top-performing posts\n   - Set reshare intervals (e.g., week 2, week 3, week 4 of month)\n   - Apply reshare schedule to all 5 sites\n   - Test reshare functionality with pilot post\n\n5. Engagement Tracking Setup:\n   - Enable Buffer analytics dashboard\n   - Configure engagement metrics tracking (likes, comments, shares, clicks)\n   - Set up daily/weekly engagement reports\n   - Create performance baseline for each platform\n   - Link Buffer analytics to varnaai.com dashboard (if applicable)\n   - Export engagement data for monthly reporting\n\n6. Documentation and Access:\n   - Document Buffer account credentials (securely stored)\n   - Create social media posting guidelines\n   - Document optimal posting times per platform\n   - Create Buffer post template library for each brand voice\n   - Document RSS feed URLs and schedule",
@@ -794,7 +794,7 @@
         "subtasks": []
       },
       {
-        "id": 31,
+        "id": "31",
         "title": "Phase 4: Backlink Monitoring Setup - Configure Google Search Console and Weekly Reporting",
         "description": "Configure Google Search Console (GSC) for all 5 portfolio sites, set up weekly automated backlink monitoring, and create reports tracking organic traffic growth, keyword ranking improvements, and backlink quality scores using GSC API integration.",
         "details": "1. Google Search Console Configuration (per site):\n   - Log into GSC for each of 5 sites: ai-projektmanager.de, aimarketingbg.com, classicsecurity.net, varna-agenten.de, varnaai.com\n   - Verify site ownership (DNS record or HTML file method)\n   - Configure property settings: preferred domain, crawl rate, sitemaps\n   - Enable backlinks report under Links → External Links\n   - Set up coverage monitoring under Coverage tab\n   - Enable Core Web Vitals monitoring\n\n2. Google Search Console API Setup:\n   - Create Google Cloud project for GSC API access\n   - Enable Google Search Console API and Webmasters API\n   - Generate service account credentials (JSON key file)\n   - Store credentials securely in environment variables\n   - Install Google API client library (google-auth, google-api-python-client)\n   - Set up authentication with stored service account credentials\n\n3. Backlink Monitoring Implementation:\n   - Query GSC API for new backlinks: GET /sites/{siteUrl}/searchanalytics/query\n   - Filter for new referring domains acquired in past week\n   - Calculate domain authority metrics (using Ahrefs/Moz data if integrated, or GSC metrics)\n   - Track backlink quality scores: domain authority, relevance, spam score\n   - Monitor directory approval rates from Task 28 submissions (Tier 1 German directories)\n   - Create backlink quality classification: premium (DA>50), good (DA 30-50), standard (DA<30)\n\n4. Organic Metrics Tracking:\n   - Query GSC API for organic search performance: impressions, clicks, CTR, average position\n   - Track keyword ranking data: top 20 keywords by impressions, position changes week-over-week\n   - Monitor organic traffic changes from Google Analytics 4 API\n   - Calculate metrics: % growth in organic sessions, new keyword rankings, position improvements\n   - Track traffic by device type and country/language (German sites vs international)\n\n5. Weekly Automated Report Generation:\n   - Create Python/Node.js script using GSC API for data collection\n   - Schedule via cron job (weekly Sunday 6 AM) or serverless function (AWS Lambda, Google Cloud Functions)\n   - Report template includes:\n     * Executive summary: organic traffic change %, new backlinks count, DA improvement\n     * Backlinks section: new domains acquired, quality distribution, directory approvals\n     * Keyword rankings: top movers (up/down), new rankings, position changes\n     * Traffic metrics: sessions change, CTR change, average position change\n     * Directory approval status: submission status per Tier 1 directory from Task 28\n   - Export as PDF or HTML with charts (Chart.js or Plotly)\n   - Deliver via email to stakeholder email list\n   - Store reports in /seo/backlink-monitoring/reports/ directory\n\n6. Integration with Existing Infrastructure:\n   - Store GSC credentials in Docker secrets or .env file (not in version control)\n   - Deploy as scheduled task in Docker container or serverless function\n   - Use existing database (if available) to store backlink history for trend analysis\n   - Set up alerts for significant changes: >20% traffic drop, negative keyword ranking trends\n   - Create dashboard view for weekly metrics (optional: integrate with Task 7 analytics dashboard)\n\n7. Multi-Site Configuration:\n   - Create config file with site URLs and corresponding property IDs\n   - Generate separate reports for each site\n   - Optional: Create consolidated report across all 5 sites for portfolio overview\n   - German sites (ai-projektmanager.de, varna-agenten.de) may have separate GA4 properties for German traffic",
@@ -809,7 +809,7 @@
         "subtasks": []
       },
       {
-        "id": 32,
+        "id": "32",
         "title": "Phase 4: Backlink Quality Audit - Analyze and Clean Toxic Backlinks",
         "description": "Conduct comprehensive backlink quality audit across all 5 portfolio sites using Ahrefs/SEMrush, identify and remove toxic backlinks, verify NAP consistency in automated listings, and maintain healthy anchor text distribution while respecting velocity limits of 20-30 new backlinks per week.",
         "details": "1. Backlink Analysis Setup:\n   - Access Ahrefs or SEMrush account and pull complete backlink profiles for all 5 sites (ai-projektmanager.de, aimarketingbg.com, classicsecurity.net, varna-agenten.de, varnaai.com)\n   - Export backlink reports including: referring domain authority, anchor text, spam score, link type (DoFollow/NoFollow), and link source category\n   - Establish baseline metrics: total backlinks, referring domains, toxic link ratio\n\n2. Toxic Backlink Identification:\n   - Flag backlinks with Domain Authority < 20 OR Spam Score > 40 as potential toxicity candidates\n   - Identify common toxic sources: auto-generated directories, link farms, PBN networks, unrelated niche directories\n   - Review automated directory listings (from Task 29, 28) for quality: verify NAP consistency, check for duplicate entries, audit listing quality scores\n   - Cross-reference GSC disavow list from Task 31 for previously identified toxic domains\n\n3. NAP Consistency Verification for Automated Listings:\n   - For each automated directory submission from Tasks 28 and 29, verify:\n     - Business name matches standardized NAP data from Task 24\n     - Address displays correctly (no truncation, correct format per country)\n     - Phone number formats correctly per regional standards\n     - Create audit spreadsheet: Directory Name | Site | NAP Match | Quality Score\n   - Flag inconsistencies for manual correction\n\n4. Anchor Text Distribution Analysis:\n   - Audit current anchor text distribution across all backlinks:\n     - Brand anchors (site name, branded keywords): target 40%\n     - Naked URLs: target 20%\n     - Generic anchors (click here, learn more): target 20%\n     - Keyword-rich anchors: target 20%\n   - Identify over-optimized anchor profiles (excessive keyword-rich anchors suggesting unnatural link patterns)\n   - Document anchor text distribution per site\n\n5. Backlink Removal and Disavowal:\n   - For toxic backlinks: attempt removal through webmaster contact (3-day window per domain)\n   - Document removal requests with dates and responses\n   - Compile disavow file for Google Search Console (format: domain:// or specific URL per Google spec)\n   - Submit disavow files through GSC (Task 31) for all 5 sites\n\n6. Velocity Limit Enforcement:\n   - Track new backlinks added per week from Tasks 28, 29, 30 submissions\n   - Ensure growth rate: 20-30 new backlinks maximum per week per site\n   - Calculate: (Total backlinks this week - Total backlinks last week) ≤ 30\n   - Document velocity metrics in weekly monitoring report (prerequisite for Task 31 reporting)\n\n7. Quality Score Documentation:\n   - Create per-site backlink profile report including:\n     - Total backlinks and referring domains (post-cleanup)\n     - Average referring domain authority\n     - Toxic backlink count (removed + disavowed)\n     - Anchor text distribution percentages\n     - Weekly velocity (new backlinks added)\n     - NAP consistency score for automated listings",
@@ -828,10 +828,10 @@
         "subtasks": []
       },
       {
-        "id": 33,
+        "id": "33",
         "title": "Phase 4: Google Posts Weekly Schedule - Create weekly Google Business Profile posts for all 5 brands",
         "description": "Automate weekly Google Business Profile post creation for all 5 brands with diverse post types (Updates, Offers, Events, Products), including CTA buttons with UTM parameters, keyword optimization, and image integration. Minimum 4 posts per month per brand.",
-        "details": "Implement comprehensive weekly Google Business Profile (GBP) posting automation for all 5 VarnaAI portfolio brands (Classic Security, VarnaAI, AI Projektmanager, Varna Agenten, AI Marketing BG) using Playwright MCP for browser automation.\n\n1. Prerequisites from Task 25 (GBP Setup):\n   - Retrieve verified GBP credentials and business profiles for all 5 brands\n   - Access GBP dashboards via Playwright MCP automated login\n   - Confirm verified status before posting\n\n2. Post Content Generation Strategy:\n   - Create 4 post type templates: Updates, Offers, Events, Products\n   - Extract SEO keywords from site-specific content (/seo/site-audits/*.md)\n   - Generate post descriptions (50-150 characters optimal)\n   - Include natural keyword placement in descriptions\n   - Create post-specific CTA buttons with UTM parameters\n   - UTM structure: utm_source=gbp&utm_medium=post&utm_campaign=weekly_[brand]&utm_content=[post_type]\n\n3. Image Management:\n   - Use existing brand images from /assets/images/\n   - Fallback to generated images using brand colors\n   - Ensure images meet GBP requirements (minimum 800x600px, JPG/PNG)\n   - Add text overlays with brand-specific messaging\n\n4. Weekly Posting Automation:\n   - Create schedule: Monday, Wednesday, Thursday, Saturday (4 posts/week)\n   - Rotate post types: Update → Offer → Event → Product → repeat\n   - Time posts for peak engagement (9 AM, 1 PM, 5 PM, 8 PM local time)\n   - Randomize scheduling within ±30 minute windows to appear organic\n\n5. Post Type Implementation:\n   - Updates: Company news, feature announcements, blog post links\n   - Offers: Time-limited promotions, seasonal discounts, bundle deals\n   - Events: Webinars, workshops, product launches, training sessions\n   - Products: Service highlights, case studies, success metrics\n\n6. Playwright MCP Integration:\n   - Authenticate GBP for each brand using stored credentials from CLAUDE.md\n   - Navigate to Posts section of GBP dashboard\n   - Fill post title, description, CTA button text, and URL\n   - Upload image and set alt text with keywords\n   - Schedule or publish post\n   - Verify posting success and capture confirmation\n\n7. Database/Tracking:\n   - Log each posted item with timestamp, brand, post_type, keywords, url\n   - Track monthly post count per brand (target: 4+ minimum)\n   - Monitor engagement metrics via GBP dashboard\n   - Store post templates in /seo/tools/gbp-templates/ for reuse\n\n8. Error Handling:\n   - Retry failed posts up to 3 times\n   - Log failed posting attempts with error details\n   - Send notification if monthly minimum (4 posts) not reached\n   - Handle rate limiting gracefully with exponential backoff",
+        "details": "Implement comprehensive weekly Google Business Profile (GBP) posting automation for all 5 VarnaAI portfolio brands (VarnaAI, VarnaAI, AI Projektmanager, Varna Agenten, AI Marketing BG) using Playwright MCP for browser automation.\n\n1. Prerequisites from Task 25 (GBP Setup):\n   - Retrieve verified GBP credentials and business profiles for all 5 brands\n   - Access GBP dashboards via Playwright MCP automated login\n   - Confirm verified status before posting\n\n2. Post Content Generation Strategy:\n   - Create 4 post type templates: Updates, Offers, Events, Products\n   - Extract SEO keywords from site-specific content (/seo/site-audits/*.md)\n   - Generate post descriptions (50-150 characters optimal)\n   - Include natural keyword placement in descriptions\n   - Create post-specific CTA buttons with UTM parameters\n   - UTM structure: utm_source=gbp&utm_medium=post&utm_campaign=weekly_[brand]&utm_content=[post_type]\n\n3. Image Management:\n   - Use existing brand images from /assets/images/\n   - Fallback to generated images using brand colors\n   - Ensure images meet GBP requirements (minimum 800x600px, JPG/PNG)\n   - Add text overlays with brand-specific messaging\n\n4. Weekly Posting Automation:\n   - Create schedule: Monday, Wednesday, Thursday, Saturday (4 posts/week)\n   - Rotate post types: Update → Offer → Event → Product → repeat\n   - Time posts for peak engagement (9 AM, 1 PM, 5 PM, 8 PM local time)\n   - Randomize scheduling within ±30 minute windows to appear organic\n\n5. Post Type Implementation:\n   - Updates: Company news, feature announcements, blog post links\n   - Offers: Time-limited promotions, seasonal discounts, bundle deals\n   - Events: Webinars, workshops, product launches, training sessions\n   - Products: Service highlights, case studies, success metrics\n\n6. Playwright MCP Integration:\n   - Authenticate GBP for each brand using stored credentials from CLAUDE.md\n   - Navigate to Posts section of GBP dashboard\n   - Fill post title, description, CTA button text, and URL\n   - Upload image and set alt text with keywords\n   - Schedule or publish post\n   - Verify posting success and capture confirmation\n\n7. Database/Tracking:\n   - Log each posted item with timestamp, brand, post_type, keywords, url\n   - Track monthly post count per brand (target: 4+ minimum)\n   - Monitor engagement metrics via GBP dashboard\n   - Store post templates in /seo/tools/gbp-templates/ for reuse\n\n8. Error Handling:\n   - Retry failed posts up to 3 times\n   - Log failed posting attempts with error details\n   - Send notification if monthly minimum (4 posts) not reached\n   - Handle rate limiting gracefully with exponential backoff",
         "testStrategy": "1. Playwright MCP Automation Verification:\n   - Test GBP login for each of 5 brands successfully authenticates\n   - Verify Playwright can navigate to Posts section and identify post creation button\n   - Confirm page load times under 5 seconds\n\n2. Post Content Quality:\n   - Verify all 4 post types (Updates, Offers, Events, Products) render correctly\n   - Check descriptions are 50-150 characters and include focus keyword naturally\n   - Validate CTA button text matches post type (Learn More, Claim Offer, Register, Shop Now)\n   - Confirm UTM parameters are correctly appended to URLs\n\n3. Image Processing:\n   - Verify images upload successfully to GBP (800x600px minimum)\n   - Check alt text includes brand name and keyword\n   - Confirm image displays correctly in post preview\n\n4. Weekly Schedule Execution:\n   - Run dry-run for 2 weeks and verify 8 posts (4/week) are queued correctly\n   - Check scheduling times distribute across Mon/Wed/Thu/Sat\n   - Verify time randomization (±30 minute windows) works\n   - Confirm timezone handling for all brand locations\n\n5. Post Tracking & Metrics:\n   - Verify database logs each post with brand, type, timestamp, keywords, url\n   - Check monthly counter reaches 4+ posts per brand minimum\n   - Confirm engagement metrics (views, clicks, actions) are captured\n   - Validate reporting dashboard shows post history\n\n6. Error Handling:\n   - Simulate failed post and verify retry mechanism (3 attempts)\n   - Check error logs capture failure details\n   - Verify notifications sent when monthly minimum not achieved\n   - Test rate limit handling with rapid posting\n\n7. Brand-Specific Validation:\n   - Classic Security: Verify security/compliance keywords in posts\n   - VarnaAI: Confirm AI/intelligence themed content\n   - AI Projektmanager: Check project management terminology\n   - Varna Agenten: Verify agent/automation messaging\n   - AI Marketing BG: Confirm marketing/growth focus\n\n8. GBP Dashboard Confirmation:\n   - Manually verify 1 posted item appears in actual GBP dashboard for each brand\n   - Check post visibility and engagement metrics in GBP admin\n   - Confirm no duplicate or malformed posts",
         "status": "pending",
         "dependencies": [
@@ -842,10 +842,10 @@
         "subtasks": []
       },
       {
-        "id": 34,
+        "id": "34",
         "title": "Phase 4: Google Posts Weekly Schedule - Implement automated GBP post creation system",
         "description": "Build automated weekly Google Business Profile posting system for all 5 brands with post type variety (Updates, Offers, Events, Products), CTA buttons with UTM parameters, keyword optimization, and image integration using Playwright MCP. Target: minimum 4 posts per month per brand.",
-        "details": "Implement comprehensive automated Google Business Profile (GBP) posting system for all 5 VarnaAI portfolio brands (Classic Security, VarnaAI, AI Projektmanager, Varna Agenten, AI Marketing BG) using Playwright MCP for browser automation.\n\n1. Prerequisites from Task 25 (GBP Setup):\n   - Retrieve verified GBP credentials and authenticated session tokens from secure credential storage\n   - Access GBP dashboards for all 5 brands via Playwright MCP automated login\n   - Confirm verified status and posting permissions before creating content\n\n2. Post Content Generation Strategy:\n   - Create content templates for 4 post types:\n     * Updates: News, feature announcements, service changes (50-100 words)\n     * Offers: Limited-time promotions, discounts, bundles (60-80 words)\n     * Events: Webinars, training sessions, consultations (70-90 words)\n     * Products: Service highlights, case studies, achievements (80-100 words)\n   - Implement keyword rotation system using focus keywords from /seo/nap-data/ per brand\n   - Generate unique variations to prevent duplicate posting across weeks\n\n3. CTA Button Implementation:\n   - Generate UTM parameters: utm_source=gbp, utm_medium=post, utm_campaign=[brand]_[month], utm_content=[post_type]\n   - CTA button configurations per post type:\n     * Updates: \"Learn More\" → website homepage or relevant landing page\n     * Offers: \"Claim Offer\" → promotional landing page with tracking\n     * Events: \"Register Now\" → event sign-up page\n     * Products: \"View Case Study\" or \"Get Demo\" → product/service page\n   - Store URL mappings in config file for centralized management\n\n4. Image Integration:\n   - Retrieve prepared images from /assets/images/ (prepared in Task 24)\n   - Images should be 1200x628px (GBP optimal size) for visual consistency\n   - Use Playwright to upload images to GBP post creation form\n   - Implement fallback to brand logo if specific post image unavailable\n\n5. Playwright MCP Automation Workflow:\n   - Create reusable Playwright script for GBP post creation:\n     * Navigate to GBP dashboard: https://business.google.com/\n     * Login with credentials from secure storage\n     * Select business profile from dropdown\n     * Click \"Posts\" section\n     * Click \"Create post\" button\n     * Select post type from dropdown (Update/Offer/Event/Product)\n     * Fill title field with generated content\n     * Paste description text with keyword optimization\n     * Upload image via file input\n     * Add CTA button with UTM-encoded URL\n     * Click \"Schedule\" or \"Post Now\"\n     * Confirm post creation and capture post ID\n   - Implement error handling for rate limiting, session timeouts, network failures\n   - Add retry logic with exponential backoff\n\n6. Scheduling System:\n   - Create weekly schedule JSON: /seo/gbp-schedule/schedule.json\n   - Structure: {\"brands\": [{\"name\": \"...\", \"posts\": [{\"type\": \"update\", \"day\": \"Monday\", \"time\": \"09:00\"}]}]}\n   - Post distribution: 1 Update (Monday), 1 Offer (Wednesday), 1 Event/Product (Friday)\n   - Timezone consideration: Post at 9:00 AM local time for each brand's primary market\n   - Implement cron job or scheduler (BullMQ recommended based on existing stack) to trigger posting\n\n7. Content Generation Engine:\n   - Create Python/Node.js script to generate monthly content:\n     * Input: Brand keywords from NAP data, seasonal themes, promotional calendar\n     * Output: 4 JSON objects per brand containing title, description, post_type, cta_url\n     * Store generated content in /seo/gbp-content/[brand]/posts-[month].json\n     * Implement AI content generation (Claude API or Ollama) if available, with manual review\n\n8. Monitoring and Analytics:\n   - Capture post IDs after creation for tracking\n   - Store post metadata: created_timestamp, brand, type, cta_url, engagement_metrics\n   - Implement weekly report generation showing:\n     * Posts created per brand (target: ≥4/month)\n     * CTA click-through rates via UTM parameter tracking\n     * Engagement metrics (impressions, clicks, actions) from GBP dashboard\n   - Generate monthly performance report at /seo/gbp-analytics/monthly-report-[month].json\n\n9. File Structure:\n   - /seo/gbp-schedule/schedule.json → Weekly posting schedule\n   - /seo/gbp-content/[brand]/posts-[month].json → Generated post content\n   - /seo/gbp-credentials/credentials.json → Encrypted GBP login credentials (read from secure storage)\n   - /seo/gbp-analytics/monthly-report-[month].json → Performance metrics\n   - scripts/gbp-poster.js → Playwright automation script\n   - scripts/gbp-content-generator.js → Content generation engine",
+        "details": "Implement comprehensive automated Google Business Profile (GBP) posting system for all 5 VarnaAI portfolio brands (VarnaAI, VarnaAI, AI Projektmanager, Varna Agenten, AI Marketing BG) using Playwright MCP for browser automation.\n\n1. Prerequisites from Task 25 (GBP Setup):\n   - Retrieve verified GBP credentials and authenticated session tokens from secure credential storage\n   - Access GBP dashboards for all 5 brands via Playwright MCP automated login\n   - Confirm verified status and posting permissions before creating content\n\n2. Post Content Generation Strategy:\n   - Create content templates for 4 post types:\n     * Updates: News, feature announcements, service changes (50-100 words)\n     * Offers: Limited-time promotions, discounts, bundles (60-80 words)\n     * Events: Webinars, training sessions, consultations (70-90 words)\n     * Products: Service highlights, case studies, achievements (80-100 words)\n   - Implement keyword rotation system using focus keywords from /seo/nap-data/ per brand\n   - Generate unique variations to prevent duplicate posting across weeks\n\n3. CTA Button Implementation:\n   - Generate UTM parameters: utm_source=gbp, utm_medium=post, utm_campaign=[brand]_[month], utm_content=[post_type]\n   - CTA button configurations per post type:\n     * Updates: \"Learn More\" → website homepage or relevant landing page\n     * Offers: \"Claim Offer\" → promotional landing page with tracking\n     * Events: \"Register Now\" → event sign-up page\n     * Products: \"View Case Study\" or \"Get Demo\" → product/service page\n   - Store URL mappings in config file for centralized management\n\n4. Image Integration:\n   - Retrieve prepared images from /assets/images/ (prepared in Task 24)\n   - Images should be 1200x628px (GBP optimal size) for visual consistency\n   - Use Playwright to upload images to GBP post creation form\n   - Implement fallback to brand logo if specific post image unavailable\n\n5. Playwright MCP Automation Workflow:\n   - Create reusable Playwright script for GBP post creation:\n     * Navigate to GBP dashboard: https://business.google.com/\n     * Login with credentials from secure storage\n     * Select business profile from dropdown\n     * Click \"Posts\" section\n     * Click \"Create post\" button\n     * Select post type from dropdown (Update/Offer/Event/Product)\n     * Fill title field with generated content\n     * Paste description text with keyword optimization\n     * Upload image via file input\n     * Add CTA button with UTM-encoded URL\n     * Click \"Schedule\" or \"Post Now\"\n     * Confirm post creation and capture post ID\n   - Implement error handling for rate limiting, session timeouts, network failures\n   - Add retry logic with exponential backoff\n\n6. Scheduling System:\n   - Create weekly schedule JSON: /seo/gbp-schedule/schedule.json\n   - Structure: {\"brands\": [{\"name\": \"...\", \"posts\": [{\"type\": \"update\", \"day\": \"Monday\", \"time\": \"09:00\"}]}]}\n   - Post distribution: 1 Update (Monday), 1 Offer (Wednesday), 1 Event/Product (Friday)\n   - Timezone consideration: Post at 9:00 AM local time for each brand's primary market\n   - Implement cron job or scheduler (BullMQ recommended based on existing stack) to trigger posting\n\n7. Content Generation Engine:\n   - Create Python/Node.js script to generate monthly content:\n     * Input: Brand keywords from NAP data, seasonal themes, promotional calendar\n     * Output: 4 JSON objects per brand containing title, description, post_type, cta_url\n     * Store generated content in /seo/gbp-content/[brand]/posts-[month].json\n     * Implement AI content generation (Claude API or Ollama) if available, with manual review\n\n8. Monitoring and Analytics:\n   - Capture post IDs after creation for tracking\n   - Store post metadata: created_timestamp, brand, type, cta_url, engagement_metrics\n   - Implement weekly report generation showing:\n     * Posts created per brand (target: ≥4/month)\n     * CTA click-through rates via UTM parameter tracking\n     * Engagement metrics (impressions, clicks, actions) from GBP dashboard\n   - Generate monthly performance report at /seo/gbp-analytics/monthly-report-[month].json\n\n9. File Structure:\n   - /seo/gbp-schedule/schedule.json → Weekly posting schedule\n   - /seo/gbp-content/[brand]/posts-[month].json → Generated post content\n   - /seo/gbp-credentials/credentials.json → Encrypted GBP login credentials (read from secure storage)\n   - /seo/gbp-analytics/monthly-report-[month].json → Performance metrics\n   - scripts/gbp-poster.js → Playwright automation script\n   - scripts/gbp-content-generator.js → Content generation engine",
         "testStrategy": "1. Playwright MCP Automation Verification:\n   - Test GBP login for each of 5 brands successfully authenticates and loads dashboard\n   - Verify Playwright can navigate to Posts section and identify post creation button\n   - Confirm page load times under 5 seconds for each brand profile\n   - Test image upload functionality with sample 1200x628px images\n   - Verify CTA button form accepts UTM-encoded URLs without truncation\n\n2. Post Content Quality:\n   - Verify all 4 post types (Update, Offer, Event, Product) generate with appropriate word counts\n   - Confirm focus keywords appear naturally in post descriptions (density check)\n   - Validate CTA buttons contain correct UTM parameters for tracking\n   - Check that images upload and display correctly in post preview\n   - Verify no duplicate content across weekly posts (randomization working)\n\n3. Scheduling and Automation:\n   - Confirm schedule.json parses correctly and contains all 5 brands\n   - Test that scheduler triggers post creation on correct days/times\n   - Verify retry logic handles network failures and session timeouts\n   - Validate posts are created at correct local time for each brand's market\n   - Confirm minimum 4 posts per brand per month requirement met\n\n4. Content Generation:\n   - Verify generated content files contain all required fields (title, description, type, cta_url)\n   - Check that keyword variations prevent duplicate messaging\n   - Validate CTA URLs match brand's website structure and landing pages\n   - Confirm content generator runs without errors for all 5 brands\n\n5. Post Creation End-to-End:\n   - Manually verify at least 1 post per brand successfully created in GBP dashboard\n   - Check posted content appears in GBP feed within 5 minutes\n   - Verify post metadata matches generated content (title, description, image, CTA)\n   - Test CTA button functionality by clicking and confirming UTM parameters in Google Analytics\n   - Confirm post ID captured and stored for analytics tracking\n\n6. Analytics and Reporting:\n   - Verify monthly report file generates with correct timestamp\n   - Check report contains metrics for all 5 brands and post types\n   - Validate UTM parameter tracking shows in Google Analytics\n   - Confirm CTA click-through rates visible in GBP dashboard analytics\n   - Test report accuracy against manual GBP dashboard count verification\n\n7. Error Handling:\n   - Test behavior when GBP login fails (credentials invalid)\n   - Verify graceful handling of network timeouts during post creation\n   - Confirm retry logic doesn't create duplicate posts on re-attempt\n   - Test rate limiting detection and backoff implementation\n   - Validate error logs capture sufficient detail for debugging\n\n8. Compliance Check:\n   - Verify all posts follow GBP content guidelines (no prohibited content)\n   - Confirm images don't contain copyright violations\n   - Check CTA buttons don't link to malicious or broken URLs\n   - Validate no personal information exposed in post content or metadata",
         "status": "pending",
         "dependencies": [
@@ -856,7 +856,7 @@
         "subtasks": []
       },
       {
-        "id": 35,
+        "id": "35",
         "title": "C3 Compliance Platform - Fix 26 TypeScript compilation errors blocking production build",
         "description": "Resolve 26 TypeScript compilation errors in the C3 Compliance Dashboard codebase that are preventing production builds and blocking deployment to Hetzner VPS. Identify root causes (type mismatches, missing types, incorrect imports) and fix all errors to achieve clean compilation.",
         "details": "1. Codebase Analysis Phase:\n   - Run `npm run build` or `tsc --noEmit` in D:\\VarnaAI\\dashboard directory to capture full error list with line numbers and error codes\n   - Categorize errors by type: missing type definitions, incorrect type assignments, unresolved imports, missing interface implementations, incompatible function signatures\n   - Document each error with: file path, line number, error message, current implementation, and required fix\n\n2. Error Resolution Strategy:\n   - Missing type definitions: Check for @types packages in package.json, install missing @types/* packages (e.g., @types/node, @types/react, @types/express)\n   - Type mismatches: Review function signatures, interface definitions, and type annotations; align actual types with declared types\n   - Unresolved imports: Verify file paths, check for circular dependencies, ensure correct export syntax in imported modules\n   - Generic type parameters: Fix incomplete generic type declarations (e.g., React.FC<Props> should specify Props interface)\n   - API response types: Ensure Playwright, PostgreSQL, and HTTP client response types are properly defined\n   - Environment variables: Add type declarations for process.env variables using ambient declarations or .d.ts files\n\n3. Implementation Steps:\n   - Fix highest-impact errors first (import/export issues, missing dependencies) to unblock other errors\n   - Add TypeScript strict mode fixes incrementally (null checks, undefined handling)\n   - Update tsconfig.json if necessary to enable strictNullChecks, strict, or other compiler flags\n   - Add .d.ts declaration files for untyped dependencies if needed\n   - Run `npm run build` after each major fix category to verify progress\n\n4. Key Files to Check:\n   - tsconfig.json: Verify compiler options, include/exclude patterns, type roots\n   - package.json: Check for missing @types packages and correct versions\n   - src/index.ts, src/main.ts: Entry points that may cascade errors\n   - API integration files: Playwright MCP, PostgreSQL client, HTTP handlers\n   - React component files: Check PropTypes, generic types, event handler signatures",
@@ -872,7 +872,7 @@
         "updatedAt": "2025-11-24T07:16:50.894Z"
       },
       {
-        "id": 36,
+        "id": "36",
         "title": "C3 - Fix SSL certificate vulnerability (CRITICAL) - Remove self-signed certificate and implement Let's Encrypt",
         "description": "Remove self-signed SSL certificate from C3 dashboard and implement Let's Encrypt with automatic renewal to eliminate security vulnerability and improve trust.",
         "details": "1. Assess current SSL configuration on C3 dashboard (D:\\VarnaAI\\dashboard) - identify self-signed certificate details, expiration date, and current implementation method.\n\n2. Set up Let's Encrypt certificate:\n   - Install certbot on Hetzner VPS (78.47.125.174)\n   - Choose appropriate Let's Encrypt plugin (nginx or standalone depending on C3 reverse proxy configuration)\n   - Generate Let's Encrypt certificate for C3 subdomain (likely demo-c3.varnaai.com or similar)\n   - Verify domain ownership during certificate generation\n\n3. Configure automatic renewal:\n   - Set up certbot auto-renewal via cron job (certbot renew --quiet runs twice daily)\n   - Test renewal process: `certbot renew --dry-run`\n   - Verify renewal logs in /var/log/letsencrypt/\n\n4. Update reverse proxy/web server configuration:\n   - Modify nginx or proxy configuration to use new Let's Encrypt certificate paths\n   - Update certificate paths in Docker compose (D:\\VarnaAI\\operations\\compose/) if containerized\n   - Remove self-signed certificate from configuration completely\n   - Add HTTP to HTTPS redirect (redirect port 80 → 443)\n\n5. Update application code if necessary:\n   - Check C3 source code (D:\\VarnaAI\\dashboard) for any hardcoded certificate references\n   - Update any certificate pinning or validation logic if present\n   - Verify Playwright MCP tests point to HTTPS URL\n\n6. Configure certificate renewal notifications:\n   - Set up email alerts for certificate renewal failures\n   - Add monitoring for certificate expiration (30, 14, 7 days before expiration)\n\n7. Document changes:\n   - Record Let's Encrypt certificate details in operations documentation\n   - Update deployment guide with certificate renewal process\n   - Add certificate monitoring to runbook",
@@ -885,12 +885,12 @@
         "subtasks": []
       },
       {
-        "id": 37,
+        "id": "37",
         "title": "C3 - Fix authentication system - Repair JWT implementation, restore user sessions, fix middleware security",
         "description": "Repair the C3 authentication system by fixing JWT token generation/validation, restoring user session persistence, and implementing proper security middleware to prevent unauthorized access and session hijacking vulnerabilities.",
         "details": "1. JWT Implementation Analysis Phase:\n   - Examine D:\\VarnaAI\\dashboard source code for JWT token generation and validation logic\n   - Identify current JWT library (likely jsonwebtoken or similar) and token payload structure\n   - Check token expiration settings, refresh token implementation, and secret key management\n   - Review token storage mechanism (localStorage, sessionStorage, httpOnly cookies)\n   - Identify any issues: expired tokens not being refreshed, invalid signature validation, missing token rotation\n\n2. Session Persistence Restoration:\n   - Implement proper session storage mechanism (Redis recommended for distributed sessions on Hetzner VPS)\n   - Create session middleware to validate JWT tokens against server-side session store\n   - Implement token refresh endpoint that validates old token and issues new token with extended expiration\n   - Add session timeout logic (recommend 15-30 minute idle timeout, 7-day absolute timeout)\n   - Ensure session data includes user ID, roles, permissions for authorization checks\n\n3. Security Middleware Implementation:\n   - Create authentication middleware to verify JWT on protected routes\n   - Implement CORS security headers and CSRF protection\n   - Add rate limiting on login/token refresh endpoints (prevent brute force attacks)\n   - Implement proper error handling that doesn't leak information about token validity\n   - Add token blacklisting mechanism for logout functionality\n   - Ensure sensitive endpoints require re-authentication for critical operations (password change, admin actions)\n   - Configure secure cookie flags: httpOnly, Secure, SameSite=Strict\n\n4. Implementation Details:\n   - Use asymmetric key pair (RS256 algorithm) for token signing if distributed across multiple servers\n   - Implement JWT claims: iss (issuer), sub (subject/user ID), aud (audience), exp (expiration), iat (issued at), nbf (not before)\n   - Store JWT secret securely in environment variables, never in source code\n   - Implement proper password hashing (bcrypt with salt rounds 10+) if fixing credential storage\n   - Add audit logging for authentication events (successful login, failed attempts, token refresh)\n\n5. Testing Against Common JWT Vulnerabilities:\n   - Verify tokens cannot be used after logout\n   - Confirm expired tokens are rejected\n   - Validate tokens signed with different secrets are rejected\n   - Test that modifying token payload invalidates token\n   - Confirm missing or malformed tokens are handled securely\n   - Verify CORS headers prevent unauthorized domain access",
         "testStrategy": "1. JWT Token Validation Testing:\n   - Generate valid JWT token and verify it grants access to protected endpoints\n   - Attempt access with expired token and confirm 401/403 response\n   - Modify token payload and verify signature validation rejects it\n   - Test token refresh endpoint: submit valid but expired token and confirm new token issued\n   - Verify new token has updated expiration time\n\n2. Session Persistence Testing:\n   - Log in user and verify session created in Redis/session store\n   - Close browser, reopen same domain, verify user remains logged in within timeout window\n   - Wait for session timeout period and verify user must re-authenticate\n   - Test multiple concurrent sessions for same user and verify all sessions properly managed\n   - Verify logout clears session from store and invalidates token\n\n3. Security Middleware Testing:\n   - Attempt to access protected endpoints without token - confirm rejection\n   - Attempt to access with malformed token - confirm rejection\n   - Test rate limiting on login endpoint by making 20+ login attempts rapidly - confirm blocking after threshold\n   - Verify CORS headers prevent requests from unauthorized origins\n   - Test CSRF protection by attempting cross-site requests\n   - Verify httpOnly flag prevents JavaScript access to authentication cookies\n   - Confirm sensitive operations (password change, admin functions) require re-authentication\n\n4. Integration Testing:\n   - Perform full login/logout/login cycle and verify session continuity\n   - Test across multiple browser tabs - verify session shared correctly\n   - Test on different devices/browsers and verify proper session isolation\n   - Verify audit logs record all authentication events with timestamps and IP addresses\n   - Deploy to Hetzner VPS test environment and verify authentication works across HTTPS connection\n\n5. Security Vulnerability Scan:\n   - Run OWASP ZAP or Burp Suite security scanner against authentication endpoints\n   - Check for token leakage in logs or error messages\n   - Verify no tokens hardcoded in frontend source or configuration files\n   - Confirm no session fixation vulnerabilities exist",
-        "status": "in-progress",
+        "status": "done",
         "dependencies": [
           "35",
           "36",
@@ -898,10 +898,10 @@
         ],
         "priority": "high",
         "subtasks": [],
-        "updatedAt": "2025-12-12T03:16:45.046Z"
+        "updatedAt": "2025-12-13T01:27:20.040Z"
       },
       {
-        "id": 38,
+        "id": "38",
         "title": "RetirementAI - Implement German Pension Calculator (Deutsche Rentenversicherung) with Multi-Currency Support",
         "description": "Build German pension calculation engine with Deutsche Rentenversicherung integration, multi-currency support (EUR, GBP, CHF), and cross-border tax optimization for EU/UK/Swiss users.",
         "details": "1. Analyze RetirementAI codebase structure (D:\\VarnaAI\\pension) to understand existing portfolio calculation logic and API integration patterns.\n\n2. Implement German Pension Calculator module:\n   - Create Deutsche Rentenversicherung (DRV) API client for statutory pension contributions and projections\n   - Implement Rentenbescheid (pension statement) XML/PDF parsing for existing pension data import\n   - Build earnings history validation against DRV contribution records\n   - Calculate Rentenpunkte (pension points) based on German social insurance rules\n   - Implement pension adjustment factors for Eastern/Western Germany historical differences\n   - Support Altersrente (old-age), Erwerbsminderungsrente (disability), and Hinterbliebenenrente (survivor) pension types\n\n3. Multi-Currency Implementation:\n   - Extend existing Trading212 API client to support GBP and CHF alongside EUR\n   - Implement real-time FX conversion using ECB (European Central Bank) API for stable rates\n   - Store conversion rates in PostgreSQL with daily refresh via BullMQ job queue\n   - Create currency-aware portfolio calculations with monthly/quarterly rebalancing options\n   - Support pension withdrawal in alternate currencies for cross-border retirees\n\n4. Cross-Border Tax Optimization Engine:\n   - Implement German-UK tax treaty rules (DBA) for split residence scenarios\n   - Add Swiss tax calculation for EU residents with Swiss assets/income\n   - Build progressive tax calculator accounting for Progressionsvorbehalt (progression reservation)\n   - Integrate Kirchensteuer (church tax) optional deduction logic\n   - Support Rentenbesteuerung transition rules (taxation of pension income 2005-2040)\n   - Create tax-efficient withdrawal strategies comparing Germany/UK/Switzerland tax treatment\n\n5. Integration Points:\n   - Connect to existing Redis cache layer for FX rates and tax tables\n   - Extend PostgreSQL schema with DRV integration tables (pension_history, contribution_records, tax_scenarios)\n   - Add BullMQ job for weekly DRV data sync and nightly tax/FX updates\n   - Implement Studio LM local AI for pension scenario explanations in German/English\n   - Add Playwright MCP support for automated Rentenbescheid OCR/parsing if manual upload needed\n\n6. Frontend Components (Next.js 14):\n   - Add DRV pension import wizard with Rentenbescheid upload/parsing\n   - Create multi-currency portfolio view with real-time FX conversion\n   - Build tax scenario comparison tool (Germany vs UK vs Switzerland)\n   - Add cross-border optimization recommendations with tax savings estimates\n   - Implement pension adequacy ratios (DRV vs target income replacement)\n\n7. Security & Compliance:\n   - Encrypt sensitive DRV contribution records end-to-end\n   - Implement BfDI (Federal Data Protection Officer) DSGVO compliance for pension data\n   - Add audit logging for all tax optimization scenarios\n   - Support data deletion/retention per German pension data protection rules",
@@ -983,7 +983,7 @@
         "updatedAt": "2025-11-24T06:32:43.599Z"
       },
       {
-        "id": 39,
+        "id": "39",
         "title": "SEO Agent - AI Content Generation from Audits with WordPress Auto-Publish and Backlink Analysis",
         "description": "Implement AI-powered content generation from SEO audits with automated WordPress publishing across 5 portfolio sites and integrate competitor backlink analysis capabilities into the SEO Agent application.",
         "details": "1. Analyze existing SEO Agent codebase (D:\\VarnaAI\\seoagent) to understand current architecture, AI provider integrations (OpenAI, Anthropic, Ollama, LM Studio), and database schema.\n\n2. Implement AI Content Generation Engine:\n   - Create content generation prompts based on SEO audit findings (keywords, gaps, competitor analysis)\n   - Support multiple content types: blog posts (800-1200 words), landing pages (600-800 words), social media content (50-280 chars), email campaigns (3-5 sections)\n   - Generate SEO-optimized content with: focus keyword placement (paragraph 2/3 start, H2 heading, 5-7 mentions), external authority links (BSI, BfDI, EU resources for German sites), internal linking suggestions\n   - Implement content quality scoring (readability, keyword density, link optimization)\n   - Support multi-language generation (English, German, Bulgarian)\n\n3. WordPress Auto-Publish Integration:\n   - Create WordPress REST API client for all 5 sites (ai-projektmanager.de, aimarketingbg.com, classicsecurity.net, varna-agenten.de, varnaai.com)\n   - Use stored WordPress credentials from CLAUDE.md (sites, usernames, passwords)\n   - Implement page creation workflow: Create draft → Set SEO metadata (title, description, focus keyword) → Publish as draft → Return edit URL for Kadence block design addition\n   - Add image placeholder integration with alt text generation\n   - Implement scheduling for content publication (immediate, scheduled, draft-only modes)\n   - Add content approval workflow: AI-generated → User review → Publish/Edit\n\n4. Competitor Backlink Analysis:\n   - Integrate Ahrefs/SEMrush API or web scraping for competitor analysis\n   - Analyze competitor backlink profiles for: referring domains, anchor text patterns, link types (DoFollow/NoFollow), authority scores\n   - Identify backlink opportunities: low-competition keywords, high-authority sources, industry-relevant linking sites\n   - Generate backlink strategy recommendations with: top 10 most achievable backlink sources, anchor text suggestions (brand, keyword variation, natural), outreach email templates\n   - Track backlink velocity limits (20-30 new per week per site)\n   - Create competitor comparison reports (backlink count, referring domains, authority distribution)\n\n5. Integration with Existing Features:\n   - Connect to SEO audit results to generate targeted content addressing identified gaps\n   - Link content generation to internal link optimization (suggest 2-3 internal links per page)\n   - Integrate with existing AI assistants (reuse provider configurations)\n   - Add to quick actions panel for one-click bulk generation\n\n6. Database Schema Updates:\n   - Add tables for: generated_content (id, site_id, content_type, title, body, seo_metadata, status, generated_at), backlink_analysis (id, site_id, competitor_url, referring_domain, anchor_text, authority, link_type, opportunity_score), backlink_outreach (id, site_id, target_domain, outreach_template, status, sent_date)\n   - Track content generation history and performance metrics\n\n7. Frontend UI Components:\n   - Content generation interface: Select audit → Choose content type → Set parameters (tone, length, keywords) → Generate → Preview → Publish\n   - Backlink analysis dashboard: Competitor analysis, opportunity scoring, velocity tracking, outreach templates\n   - Content management: View generated content, edit before publishing, schedule publication, track performance\n\n8. Error Handling & Safety:\n   - Implement WordPress API error handling and retry logic\n   - Add content quality validation before auto-publish (minimum word count, keyword density checks, link requirements)\n   - Create audit logs for all generated content and WordPress changes\n   - Implement rollback capability for published content if issues detected",
@@ -1002,7 +1002,7 @@
         "subtasks": []
       },
       {
-        "id": 40,
+        "id": "40",
         "title": "FwChange - Implement ServiceNow CMDB Integration with MFA and AI Policy Conflict Prediction",
         "description": "Integrate ServiceNow CMDB with FwChange backend, implement multi-factor authentication for enterprise access, and develop AI-powered firewall policy conflict prediction engine for enterprise firewall management.",
         "details": "1. Analyze existing FwChange backend architecture (D:\\VarnaAI\\fwchange) to understand current ITSM integrations (Jira, ServiceNow) and multi-vendor firewall support (Palo Alto, Check Point, Cisco, Fortinet).\n\n2. Implement ServiceNow CMDB Integration:\n   - Create ServiceNow API client wrapper using existing OAuth2 authentication patterns\n   - Map firewall device inventory to CMDB Configuration Items (CIs) with automatic bidirectional sync\n   - Implement webhook handlers for CMDB change events to trigger FwChange policy reviews\n   - Store CMDB sync state in PostgreSQL with timestamp and change tracking\n   - Create data transformation layer to normalize multi-vendor firewall configs into CMDB-compatible format\n   - Example: Palo Alto security objects → ServiceNow firewall rule CIs\n\n3. Implement Multi-Factor Authentication (MFA):\n   - Add TOTP (Time-based One-Time Password) support using speakeasy or similar library\n   - Implement SMS-based OTP as secondary factor using Twilio or AWS SNS\n   - Create MFA enrollment workflow in user settings with backup codes\n   - Update JWT token generation to include MFA verification claim\n   - Implement MFA challenge middleware for enterprise user sessions\n   - Store MFA secrets encrypted in PostgreSQL with secure key rotation\n\n4. Develop AI Policy Conflict Prediction Engine:\n   - Analyze existing firewall policy data structure across multi-vendor platforms\n   - Create conflict detection rules based on: overlapping source/destination CIDR blocks, conflicting allow/deny rules, undefined application protocols, missing logging clauses\n   - Implement ML model using historical policy data (leverage existing Ollama/LM Studio setup from RetirementAI) for predictive conflict identification\n   - Create scoring system: critical conflicts (blocks legitimate traffic), medium conflicts (inconsistent security posture), low conflicts (style/documentation issues)\n   - Build recommendation engine to suggest rule consolidation, reordering, or remediation steps\n   - Integrate with ServiceNow to create change tickets automatically for detected conflicts\n\n5. API Endpoints:\n   - POST /api/cmdb/sync - Trigger manual CMDB synchronization\n   - GET /api/cmdb/devices - List synchronized CMDB devices\n   - POST /api/mfa/setup - Enroll new MFA device\n   - POST /api/mfa/verify - Verify MFA token during login\n   - POST /api/policies/analyze-conflicts - Run conflict prediction on firewall policies\n   - GET /api/policies/conflicts - Retrieve detected conflicts with risk scoring\n   - POST /api/policies/create-remediation-ticket - Auto-create ServiceNow change tickets\n\n6. Database Schema Updates:\n   - Add mfa_secrets table with encrypted TOTP secrets and backup codes\n   - Add cmdb_sync_log table for tracking CMDB synchronization history\n   - Add policy_conflicts table with conflict type, severity, affected rules, and remediation suggestions\n   - Add audit_trail entries for all MFA and CMDB operations\n\n7. Security Considerations:\n   - Encrypt MFA secrets using AES-256 with key rotation\n   - Implement rate limiting on MFA verification endpoints (max 5 attempts per 15 minutes)\n   - Ensure ServiceNow API credentials stored in secure vault (AWS Secrets Manager or HashiCorp Vault)\n   - Log all CMDB access and policy conflict analysis for compliance audit trails\n   - Implement IP whitelisting for ServiceNow API calls from FwChange backend",
@@ -1018,7 +1018,7 @@
         "subtasks": []
       },
       {
-        "id": 41,
+        "id": "41",
         "title": "SEO Keyword Sales Optimization - ai-projektmanager.de",
         "description": "Transform ai-projektmanager.de keywords from traffic-focused to sales-conversion-focused. Change informational keywords to transactional keywords with buyer intent.",
         "details": "Priority 1 site - highest revenue potential in German B2B market with NIS2 urgency.\n\nKeyword Changes:\n- 'KI-gestütztes Projektmanagement' → 'KI Projektmanagement Software kaufen'\n- 'DSGVO konform' → 'DSGVO Projektmanagement kostenlos testen'\n- 'Enterprise' → 'Enterprise KI Projektmanagement Demo'\n- 'Preise' → 'KI Projektmanagement Preise Vergleich'\n- Remove focus keywords from legal pages (Impressum, Datenschutz, AGB)\n\nContent Updates:\n- Rewrite H1/H2 headings with transactional keywords\n- Add CTAs: 'Demo anfragen', 'Kostenlos testen', 'Angebot anfragen'\n- Update meta descriptions with urgency (NIS2 deadline October 2024)\n- Create internal link clusters to pricing/demo pages\n\nNew Pages to Create (Phase 3):\n- /kostenlose-demo\n- /preise-vergleich\n- /roi-rechner\n\nSuccess Metrics:\n- Conversion rate: 2% → 5% target\n- Demo requests: 3x increase within 90 days\n- Maintain SEO scores above 75/100 after changes",
@@ -1029,7 +1029,7 @@
         "subtasks": []
       },
       {
-        "id": 42,
+        "id": "42",
         "title": "SEO Keyword Sales Optimization - varnaai.com",
         "description": "Transform varnaai.com keywords from portfolio showcase to demo-conversion focus. Add transactional keywords to drive demo requests and trials.",
         "details": "Priority 2 site - portfolio showcase with demo conversion path.\n\nKeyword Changes:\n- 'AI Automation' → 'AI Automation Platform Demo'\n- 'Enterprise AI' → 'Enterprise AI Solutions Pricing'\n- Portfolio pages: '[App Name]' → '[App Name] Free Trial'\n- Remove focus keywords from legal pages\n\nContent Updates:\n- Add demo request CTAs to all portfolio pages\n- Update service descriptions with pricing context\n- Create comparison pages vs competitors\n- Add customer testimonials with conversion focus\n\nNew Pages to Create (Phase 3):\n- /demo\n- /pricing\n- /free-trial\n- /case-studies-roi\n\nSuccess Metrics:\n- Demo request increase: 3x within 90 days\n- Portfolio page engagement: +40%\n- Bounce rate decrease: -20%",
@@ -1040,7 +1040,7 @@
         "subtasks": []
       },
       {
-        "id": 43,
+        "id": "43",
         "title": "SEO Keyword Sales Optimization - varna-agenten.de",
         "description": "Transform varna-agenten.de keywords from informational to transactional for creative agency AI tools market.",
         "details": "Priority 3 site - creative agency AI tools market.\n\nKeyword Changes:\n- 'KI Agenten' → 'KI Agenten für Agenturen kaufen'\n- 'Automatisierung' → 'KI Automatisierung Demo anfragen'\n- Add urgency: '2025 KI Tools Kreativagenturen'\n- Service pages: Add 'Angebot' and 'Preis' variants\n\nContent Updates:\n- Focus on creative agency pain points\n- Add case studies with ROI metrics\n- Create tool comparison pages\n- Add urgency messaging (AI adoption deadlines)\n\nNew Pages to Create (Phase 3):\n- /demo-anfragen\n- /preise-kreativagenturen\n- /ki-tools-vergleich\n\nSuccess Metrics:\n- Creative agency lead increase: 2x within 90 days\n- Tool page engagement: +50%\n- Contact form submissions: 3x increase",
@@ -1051,7 +1051,7 @@
         "subtasks": []
       },
       {
-        "id": 44,
+        "id": "44",
         "title": "SEO Keyword Sales Optimization - aimarketingbg.com",
         "description": "Transform aimarketingbg.com keywords from generic to quote-request focused for Bulgarian/English AI marketing services market.",
         "details": "Priority 4 site - Bulgarian/English market expansion.\n\nCurrent Keywords (13 pages):\n- 'digital marketing Bulgaria' (94/100) - Homepage\n- 'AI Marketing BG' (90/100) - About\n- 'AI Marketing Case Studies' (87/100)\n- 'secure AI services' (87/100)\n- 'AI Marketing Insights' (85/100) - Blog\n- Legal pages consuming 40%+ SEO effort with ZERO sales potential\n\nKeyword Changes:\n- 'digital marketing Bulgaria' → 'AI Marketing Services Bulgaria Quote'\n- 'secure AI services' → 'GDPR AI Marketing Demo'\n- 'AI Marketing Insights' → 'AI Marketing ROI Calculator'\n- Remove focus keywords from Cookie Policy, Disclaimer, Impressum, Privacy, Terms\n\nContent Updates:\n- Add quote request forms to service pages\n- Create ROI calculator page\n- Add Bulgarian language landing pages\n- Focus on GDPR-compliant AI messaging\n\nNew Pages to Create (Phase 3):\n- /get-quote\n- /roi-calculator\n- /gdpr-ai-marketing\n\nSuccess Metrics:\n- Quote requests: 5x increase within 90 days\n- Bulgarian market leads: new baseline + 50%\n- Legal page SEO effort: reduced to 0%",
@@ -1062,7 +1062,7 @@
         "subtasks": []
       },
       {
-        "id": 45,
+        "id": "45",
         "title": "SEO Keyword Sales Optimization - classicsecurity.net [OUT OF SCOPE]",
         "description": "CANCELLED: classicsecurity.net marked out of scope by user. Skip keyword optimization for this site.",
         "details": "Status: OUT OF SCOPE - User confirmed this site is not part of current SEO optimization project.\n\nOriginal plan was:\n- Priority 5 site - security services lead generation\n- Audit current keywords\n- Transform to transactional keywords\n\nExpected Keyword Changes:\n- Service pages → 'Security Services Quote'\n- Technical pages → 'Firewall Migration Demo'\n- Consultation pages → 'Security Assessment Free'\n\nContent Updates:\n- Add security assessment request forms\n- Create firewall migration calculator\n- Add compliance checklist downloads (lead magnets)\n- Focus on enterprise security messaging\n\nNew Pages to Create (Phase 3):\n- /free-security-assessment\n- /firewall-migration-quote\n- /compliance-checklist-download\n\nSuccess Metrics:\n- Security assessment requests: 3x increase\n- Firewall migration leads: new baseline + 100%\n- Lead magnet downloads: 50+ per month",
@@ -1073,7 +1073,7 @@
         "subtasks": []
       },
       {
-        "id": 46,
+        "id": "46",
         "title": "Hire Bulgarian Business Development Representative for AI Marketing BG",
         "description": "Recruit and onboard a part-time Bulgarian BD representative (20 hrs/week, €800-1200/mo + 10-15% commission) to lead market entry and sales activities in Bulgaria. This hire is critical for unblocking all Bulgaria market expansion initiatives.",
         "details": "This is a non-technical but critical operational task blocking Bulgaria market activities. Big Dick cannot execute Bulgaria sales alone without Bulgarian language/cultural expertise.\n\n**Recruitment Phase (Week 1-2):**\n1. Job posting creation:\n   - Post on jobs.bg (primary Bulgarian job board)\n   - Post on LinkedIn with Bulgarian language option\n   - Post in 3-5 Facebook groups for Bulgarian professionals (tourism/hospitality/business communities)\n   - Position: \"Part-time Business Development Representative - AI Marketing Services\"\n   - Requirements: Fluent Bulgarian, tourism/hospitality background preferred, sales experience, strong network in Bulgarian SME market\n\n2. Target candidate profile:\n   - 5-10 qualified candidates with tourism/hospitality background (comfort with relationship-based selling)\n   - Preference for candidates with existing SME networks in Varna region\n   - Sales/commission-based compensation model experience\n   - Understanding of Bulgarian business culture and decision-making processes\n\n3. Interview process:\n   - Conduct 5-10 initial interviews screening for language, cultural fit, sales aptitude\n   - Second round interviews with Big Dick (via video call with translator if needed)\n   - Reference checks focusing on relationship-building and sales capability\n   - Trial project: Have finalist create list of 10-15 potential customer leads\n\n**Onboarding Phase (Week 2-3):**\n1. Contract preparation:\n   - Structure: 20 hours/week minimum, €800-1200/month base + 10-15% commission on closed deals\n   - Payment: Monthly via bank transfer (ensure Bulgaria-compatible payment setup)\n   - Commission structure: Clear definition of what qualifies for commission (demo completed, contract signed, etc.)\n   - Confidentiality and non-compete clauses (Bulgaria labor law compliant)\n\n2. Sales materials preparation:\n   - Create Bulgarian-language sales deck for AI Marketing BG services\n   - Prepare customer success stories/case studies (anonymized, compliance-safe)\n   - Create pricing sheets and proposal templates in Bulgarian\n   - Develop email sequences for prospecting and follow-up\n   - Create product demo walkthrough guide\n\n3. Training and onboarding:\n   - Weekly sync calls (schedule timezone-friendly times)\n   - Product training on AI Marketing BG capabilities and pricing\n   - Market education: Bulgarian SME landscape, competitive landscape, NIS2/GDPR compliance drivers\n   - Sales process training: Lead qualification, demo scheduling, closing process\n   - CRM/tracking setup (e.g., HubSpot or Pipedrive for pipeline management)\n\n**Operational Setup:**\n1. Communication infrastructure:\n   - Establish preferred communication channels (Slack, WhatsApp, or Bulgarian-standard tools)\n   - Create weekly reporting cadence (leads generated, demos scheduled, deals closed)\n   - Set up shared calendar for availability/scheduling\n\n2. Success metrics definition:\n   - Leads generated per week (target: 15-20)\n   - Demo requests scheduled per week (target: 5-7)\n   - Conversion rate targets (target: 10-15% of demos → trials)\n   - Revenue attribution (for commission calculation)\n\n3. Market feedback collection:\n   - Debrief sessions to understand Bulgarian market objections and needs\n   - Gather intelligence on competitor positioning in Bulgaria\n   - Document customer feedback for product development priorities",
@@ -1087,85 +1087,478 @@
         "updatedAt": "2025-12-12T01:15:44.597Z"
       },
       {
-        "id": 47,
-        "title": "VCCI Membership Registration - Classic Security EOOD",
-        "description": "Register Classic Security EOOD with Varna Chamber of Commerce and Industry (VCCI) to establish legitimacy for Bulgarian market entry, gain access to business networking events, and build relationships with local enterprises. Cost: €200-500.",
-        "details": "Execute VCCI membership registration for Classic Security EOOD to establish formal business presence in Bulgarian market. This operational task supports Bulgaria market expansion strategy outlined in docs/strategy/C3/ACTION_PLAN_DECEMBER_2025.md.\n\n**Registration Process:**\n1. Prepare required documentation:\n   - Company registration certificate (BULSTAT number: 206365963)\n   - Company founder/director identification\n   - Proof of address (office location in Varna)\n   - Tax registration confirmation (if applicable)\n   - Business activity description (IT security, compliance services)\n\n2. Contact VCCI (Varna Chamber of Commerce and Industry):\n   - Website: https://varna-chamber.bg/ (or local equivalent)\n   - Phone: Research current contact number\n   - Email: info@varna-chamber.bg (or current email)\n   - Request membership application form\n\n3. Complete membership application:\n   - Fill out official VCCI membership form\n   - Specify business activity categories (IT Security, Compliance Services, Business Consulting)\n   - List company representatives/contacts\n   - Agree to chamber terms and conditions\n\n4. Submit payment (€200-500 estimated):\n   - Clarify payment method (bank transfer, card, in-person)\n   - Obtain invoice/receipt\n   - Document payment for expense tracking\n\n5. Follow-up and confirmation:\n   - Receive membership certificate/confirmation\n   - Get membership number and official documentation\n   - Request business directory listing\n   - Ask about upcoming networking events and business forums\n\n**Documentation to retain:**\n- Membership certificate scan\n- Membership number and ID\n- Chamber contact list and event calendar\n- Invoice/receipt for expense tracking\n\n**Expected outcomes:**\n- Formal VCCI member status\n- Access to chamber events, forums, and networking activities\n- Business credibility signal for Bulgarian B2B outreach\n- Direct contacts with other chamber members for partnerships",
+        "id": "47",
+        "title": "VCCI Membership Registration - VarnaAI",
+        "description": "Register VarnaAI with Varna Chamber of Commerce and Industry (VCCI) to establish legitimacy for Bulgarian market entry, gain access to business networking events, and build relationships with local enterprises. Cost: €200-500.",
+        "details": "Execute VCCI membership registration for VarnaAI to establish formal business presence in Bulgarian market. This operational task supports Bulgaria market expansion strategy outlined in docs/strategy/C3/ACTION_PLAN_DECEMBER_2025.md.\n\n**Registration Process:**\n1. Prepare required documentation:\n   - Company registration certificate (BULSTAT number: 206365963)\n   - Company founder/director identification\n   - Proof of address (office location in Varna)\n   - Tax registration confirmation (if applicable)\n   - Business activity description (IT security, compliance services)\n\n2. Contact VCCI (Varna Chamber of Commerce and Industry):\n   - Website: https://varna-chamber.bg/ (or local equivalent)\n   - Phone: Research current contact number\n   - Email: info@varna-chamber.bg (or current email)\n   - Request membership application form\n\n3. Complete membership application:\n   - Fill out official VCCI membership form\n   - Specify business activity categories (IT Security, Compliance Services, Business Consulting)\n   - List company representatives/contacts\n   - Agree to chamber terms and conditions\n\n4. Submit payment (€200-500 estimated):\n   - Clarify payment method (bank transfer, card, in-person)\n   - Obtain invoice/receipt\n   - Document payment for expense tracking\n\n5. Follow-up and confirmation:\n   - Receive membership certificate/confirmation\n   - Get membership number and official documentation\n   - Request business directory listing\n   - Ask about upcoming networking events and business forums\n\n**Documentation to retain:**\n- Membership certificate scan\n- Membership number and ID\n- Chamber contact list and event calendar\n- Invoice/receipt for expense tracking\n\n**Expected outcomes:**\n- Formal VCCI member status\n- Access to chamber events, forums, and networking activities\n- Business credibility signal for Bulgarian B2B outreach\n- Direct contacts with other chamber members for partnerships",
         "testStrategy": "1. **Registration Verification:**\n   - Confirm Classic Security EOOD appears in VCCI member directory\n   - Verify membership number is issued and documented\n   - Check chamber website displays company listing\n   - Obtain confirmation letter or certificate from VCCI\n\n2. **Documentation Completeness:**\n   - All required documents submitted to VCCI\n   - Payment processed and receipt obtained\n   - Membership certificate received and scanned\n   - Contact information updated in chamber database\n\n3. **Access and Networking Benefits:**\n   - Receive event calendar from VCCI (minimum 4+ events in next quarter)\n   - Confirm access to member directory and networking portal\n   - Document contact information for key chamber contacts\n   - Verify eligibility to participate in chamber business forums\n\n4. **Integration with Bulgaria Strategy:**\n   - Update docs/strategy/C3/ACTION_PLAN_DECEMBER_2025.md with completion date\n   - Add VCCI membership to company credibility documents\n   - Schedule attendance at 1-2 VCCI networking events (Q1 2026)\n   - Use membership in outreach materials for C3 Bulgaria launch",
         "status": "pending",
         "dependencies": [
-          46
+          "46"
         ],
         "priority": "high",
         "subtasks": []
       },
       {
-        "id": 48,
+        "id": "48",
         "title": "C3 Bulgarian Language Toggle - Deploy bg.json and Implement Language Switcher",
         "description": "Deploy the existing bg.json Bulgarian translation file to the C3 Compliance React app and implement a language switcher UI component with EN/DE/BG flags in the header. Deploy via Docker to Hetzner VPS.",
         "details": "**Context:** C3 app at D:\\VarnaAI\\dashboard. Live at https://c3.varnaai.com/. Tech: React 18 + TypeScript. Per CLAUDE.md: bg.json created locally but NOT deployed yet.\n\n**Phase 1: Translation File Setup**\n1. Locate existing bg.json in D:\\VarnaAI\\dashboard (likely src/locales/)\n2. Verify coverage against en.json/de.json for all UI strings\n3. Structure: src/locales/{en,de,bg}.json + src/i18n/i18n.ts\n\n**Phase 2: React-i18next Configuration**\n1. Install react-i18next and i18next if not present\n2. Create i18n config with browser detection + localStorage persistence\n3. Wrap App with I18nextProvider\n\n**Phase 3: Language Switcher Component**\n```typescript\n// src/components/LanguageSwitcher.tsx\nconst languages = [\n  { code: 'en', label: 'English', flag: '🇬🇧' },\n  { code: 'de', label: 'Deutsch', flag: '🇩🇪' },\n  { code: 'bg', label: 'Български', flag: '🇧🇬' }\n];\n```\n- Dropdown in header, persist to localStorage\n- Keyboard accessible with ARIA labels\n\n**Phase 4: UI Integration**\n- Replace hardcoded strings with t() calls\n- Add switcher to Header component (top-right)\n- Tailwind CSS styling to match C3 design\n\n**Phase 5: Docker Deployment**\n```bash\ncd D:\\VarnaAI\\dashboard\nnpm run build\ndocker-compose up -d --build c3\n```\nVerify at https://c3.varnaai.com/?lang=bg\n\n**Phase 6: Bulgarian Market Readiness**\n- BGN currency display (лв) for pricing\n- NIS2 Bulgarian terminology (Директива за киберсигурност)\n- Sample Bulgarian compliance report for demos",
         "testStrategy": "1. **Translation Coverage**: bg.json has 100% key parity with en.json/de.json\n2. **Switcher UI**: Flags display, clicking changes language, persists on refresh\n3. **Deployment**: https://c3.varnaai.com/ loads, switcher visible, no console errors\n4. **Bulgarian Flow**: Complete scan → results → pricing journey in Bulgarian\n5. **Pricing**: BGN currency (лв) shows when BG selected\n6. **Mobile**: Responsive dropdown works on mobile viewport",
         "status": "pending",
-        "dependencies": [13, 35],
+        "dependencies": [
+          "13",
+          "35"
+        ],
         "priority": "high",
         "subtasks": []
       },
       {
-        "id": 49,
+        "id": "49",
         "title": "Bulgaria Target List Building - 100 Varna SMEs for C3 Outreach",
         "description": "Build a spreadsheet of 100 Bulgarian SMEs (50-250 employees) in NIS2-affected sectors in the Varna region for C3 Compliance cold outreach campaign. Include company name, industry, employee count, decision maker, phone, email, LinkedIn.",
         "details": "**Data Collection Strategy per ACTION_PLAN_DECEMBER_2025.md:**\n\n**Priority Sectors (NIS2 affected):**\n| Sector | Why Target | Source |\n|--------|------------|--------|\n| IT/Software companies | Tech-savvy early adopters | jobs.bg, LinkedIn |\n| Manufacturing (50-200 emp) | Supply chain compliance pressure | VCCI directory |\n| Logistics/Transport | NIS2 transport sector | VCCI directory |\n| Healthcare/Clinics | GDPR + NIS2 healthcare | Znamelekar.bg |\n| Financial services | Heavy regulation | BNB registry |\n\n**Data Fields to Collect:**\n- Company name (Bulgarian + English if available)\n- Industry/Sector\n- Employee count (LinkedIn or Registro.bg)\n- Decision maker name + title (Owner, CEO, IT Director)\n- Phone number\n- Email\n- LinkedIn profile URL\n- VCCI member (Y/N)\n- Notes\n\n**Research Tools:**\n1. Registro.bg - Official Bulgarian company registry\n2. LinkedIn Sales Navigator (free trial)\n3. Google Maps - Local Varna businesses\n4. VCCI member directory (after Task 47 completed)\n5. jobs.bg - IT companies with job postings\n\n**Spreadsheet Structure:**\nCreate: D:\\VarnaAI\\Websites\\research\\bulgaria-target-list-100.xlsx\n- Tab 1: IT/Software (20 companies)\n- Tab 2: Manufacturing (25 companies)\n- Tab 3: Logistics (20 companies)\n- Tab 4: Healthcare (15 companies)\n- Tab 5: Financial (10 companies)\n- Tab 6: Other/Mixed (10 companies)\n\n**Quality Criteria:**\n- Minimum 50 employees (or clear NIS2 sector)\n- Varna region or Sofia (if Varna insufficient)\n- Valid phone number and/or email\n- Identified decision maker name",
         "testStrategy": "1. **Quantity**: Spreadsheet contains exactly 100 companies\n2. **Data Completeness**: 80%+ have phone OR email, 70%+ have decision maker name\n3. **Sector Distribution**: All 5 priority sectors represented\n4. **Geographic Focus**: 70%+ in Varna region\n5. **File Location**: Saved at D:\\VarnaAI\\Websites\\research\\bulgaria-target-list-100.xlsx\n6. **Deduplication**: No duplicate company entries",
         "status": "pending",
-        "dependencies": [47],
+        "dependencies": [
+          "47"
+        ],
         "priority": "high",
         "subtasks": []
       },
       {
-        "id": 50,
+        "id": "50",
         "title": "Bulgarian Sales Materials - One-Pager, Email Templates, Phone Scripts",
         "description": "Create Bulgarian-language sales collateral for C3 Compliance outreach: PDF one-pager, cold email template, follow-up email template, and phone script. All materials emphasize NIS2 urgency and free compliance assessment offer.",
         "details": "**Materials to Create per ACTION_PLAN_DECEMBER_2025.md:**\n\n**1. One-Pager PDF (Bulgarian)**\nFile: D:\\VarnaAI\\Websites\\assets\\c3-onepager-bg.pdf\n\nContent structure:\n```\nHeadline: NIS2 идва. Готови ли сте?\n         (NIS2 is coming. Are you ready?)\n\nProblem: До юни 2026, българските компании в критични сектори\n         трябва да са съвместими с NIS2. Глобите са до €10M.\n\nSolution: C3 сканира вашата компания за 60 секунди и показва\n          точно какво трябва да направите.\n\nOffer: БЕЗПЛАТНА оценка за съответствие\n       (Free compliance assessment)\n\nCTA: Обадете се: [phone] или [email]\n```\n\n**2. Cold Email Template**\nFile: D:\\VarnaAI\\Websites\\assets\\c3-cold-email-bg.txt\n\n```\nSubject: NIS2 съответствие - безплатна проверка за [Company Name]\n\nЗдравейте [Name],\n\nОт юни 2026 българските компании в [sector] трябва да отговарят\nна европейската директива NIS2. Несъответствието носи глоби до €10 милиона.\n\nПредлагам БЕЗПЛАТНА 30-минутна оценка на съответствието за [Company Name]:\n- Сканиране на текущото състояние\n- Списък с конкретни стъпки за съответствие\n- Оценка на необходимия бюджет и време\n\nИнтересувате ли се от кратка среща следващата седмица?\n\nС уважение,\n[Your name]\nC3 Compliance | Варна\n[phone]\n```\n\n**3. Follow-Up Email Template**\nFile: D:\\VarnaAI\\Websites\\assets\\c3-followup-email-bg.txt\n\n**4. Phone Script**\nFile: D:\\VarnaAI\\Websites\\assets\\c3-phone-script-bg.txt\n\n```\n\"Здравейте, [Name] ли е? Обаждам се от C3 Compliance във Варна.\nСвързвам се с компании в [sector] относно новата директива NIS2.\nПредлагаме безплатна оценка дали вашата компания е засегната.\nИмате ли 2 минути да обясня?\"\n```\n\n**Design Requirements:**\n- Professional but not corporate (SME-friendly tone)\n- Include C3 logo and varnaai.com branding\n- Bulgarian flag emoji or icon for language clarity\n- Mobile-friendly PDF (single page, readable on phone)",
         "testStrategy": "1. **File Creation**: All 4 files exist at specified paths\n2. **Bulgarian Language**: Native speaker review (or Big Dick approval) confirms natural Bulgarian\n3. **NIS2 Terminology**: Correct Bulgarian terms for compliance concepts\n4. **Contact Info**: Phone and email placeholders clearly marked for customization\n5. **PDF Quality**: One-pager renders correctly, single page, readable on mobile\n6. **Tone**: Professional but approachable SME-friendly language",
         "status": "pending",
-        "dependencies": [48],
+        "dependencies": [
+          "48"
+        ],
         "priority": "high",
         "subtasks": []
       },
       {
-        "id": 51,
+        "id": "51",
         "title": "C3 Free Compliance Assessment Offer - Landing Page and Process Setup",
         "description": "Set up the free 30-minute compliance assessment offer for Bulgarian market: create dedicated landing page section, define delivery process, and prepare demo flow for C3 scans with Bulgarian SMEs.",
         "details": "**Offer Definition per ACTION_PLAN_DECEMBER_2025.md:**\n\nWhat You Deliver (30-min meeting):\n1. Run C3 60-second scan on their domain\n2. Explain what NIS2 means for them specifically\n3. Show gap analysis (what's missing)\n4. Give them a 1-page summary (free, no obligation)\n\n**Conversion Funnel:**\n- Free assessment → Paid full audit (€500-1,000 / 980 лв)\n- Full audit → Monthly managed service (€100-200/mo / 290 лв/месец)\n\n**Setup Tasks:**\n\n1. **Landing Page Section**\n- Add Bulgarian free assessment CTA to c3.varnaai.com\n- Form fields: Company name, Industry, Email, Phone\n- Auto-response email in Bulgarian confirming receipt\n\n2. **Demo Flow Documentation**\nCreate: D:\\VarnaAI\\Websites\\docs\\c3-demo-flow-bg.md\n- Step-by-step demo script in Bulgarian\n- Expected questions and answers\n- Objection handling (too expensive, not urgent, etc.)\n- Upsell transition to paid audit\n\n3. **1-Page Summary Template**\nCreate Bulgarian template for post-meeting deliverable:\n- Company name and scan date\n- NIS2 applicability (Yes/No with explanation)\n- Current compliance score (from C3 scan)\n- Top 3 gaps identified\n- Recommended next steps\n- Pricing for full audit and managed service\n\n4. **Calendar Integration**\n- Set up Calendly or similar for Bulgarian SME bookings\n- 30-minute slots, business hours (9:00-18:00 Bulgarian time)\n- Automated confirmation email in Bulgarian\n\n**Pricing Display (Bulgarian):**\n| Service | Price |\n|---------|-------|\n| Безплатна оценка | Безплатно |\n| Пълен одит | 980 лв (~€500) |\n| Месечна услуга | 290 лв/месец (~€150/mo) |",
         "testStrategy": "1. **Landing Page**: Bulgarian CTA visible on c3.varnaai.com, form submits successfully\n2. **Auto-Response**: Test form submission receives Bulgarian confirmation email\n3. **Demo Flow**: Document exists and covers full 30-min meeting structure\n4. **Summary Template**: Template can generate branded 1-page PDF in Bulgarian\n5. **Calendar**: Booking link works, sends Bulgarian confirmation\n6. **Pricing**: BGN prices display correctly (980 лв, 290 лв/месец)",
         "status": "pending",
-        "dependencies": [48, 50],
+        "dependencies": [
+          "48",
+          "50"
+        ],
         "priority": "high",
         "subtasks": []
       },
       {
-        "id": 52,
+        "id": "52",
         "title": "Bulgaria Cold Outreach Campaign Launch - 100 SMEs in 2 Weeks",
         "description": "Execute cold outreach campaign to 100 Bulgarian SMEs over 2 weeks using phone calls, emails, and LinkedIn. Track responses and schedule free compliance assessments. Daily target: 5 calls, 10 emails, 5 LinkedIn messages.",
-        "details": "**Campaign Structure per ACTION_PLAN_DECEMBER_2025.md:**\n\nTarget: 100 companies from Task 49 list over 2 weeks\n\n| Channel | Volume | Expected Response |\n|---------|--------|-------------------|\n| Phone calls | 50 | 15-20 conversations |\n| Emails | 100 | 5-10 responses |\n| LinkedIn | 50 | 3-5 responses |\n\n**Daily Execution (10 working days):**\n- 5 phone calls per day\n- 10 emails per day\n- 5 LinkedIn messages per day\n\n**Tracking Spreadsheet:**\nCreate: D:\\VarnaAI\\Websites\\research\\bulgaria-outreach-tracker.xlsx\n\nColumns:\n- Company name\n- Contact name\n- Date contacted\n- Method (phone/email/LinkedIn)\n- Response (Y/N)\n- Outcome (meeting scheduled / not interested / follow up / no answer)\n- Follow-up date\n- Notes\n\n**Outreach Sequence:**\nDay 1: Email introduction\nDay 3: LinkedIn connection request\nDay 5: Phone call attempt #1\nDay 8: Follow-up email if no response\nDay 10: Phone call attempt #2\nDay 14: Final follow-up or close\n\n**Scripts to Use:**\n- Phone: From Task 50 (c3-phone-script-bg.txt)\n- Email: From Task 50 (c3-cold-email-bg.txt + followup)\n- LinkedIn: Adapted version of email intro\n\n**Success Metrics:**\n- 20+ conversations had\n- 5-10 free assessments scheduled\n- 1-3 paid pilots signed (stretch goal)\n\n**Bulgarian Business Hours:**\n- Call between 9:00-18:00 Bulgarian time\n- Avoid Friday afternoon (low engagement)\n- Best times: Tuesday-Thursday 10:00-12:00, 14:00-16:00",
+        "details": "**CRITICAL DEPENDENCY**: Task 46 (BD Rep) MUST be complete before executing Bulgarian cold calls.\n\n**Campaign Structure per ACTION_PLAN_DECEMBER_2025.md:**\n\nTarget: 100 companies from Task 49 list over 2 weeks\n\n| Channel | Volume | Expected Response |\n|---------|--------|-------------------|\n| Phone calls | 50 | 15-20 conversations |\n| Emails | 100 | 5-10 responses |\n| LinkedIn | 50 | 3-5 responses |\n\n**Daily Execution (10 working days):**\n- 5 phone calls per day\n- 10 emails per day\n- 5 LinkedIn messages per day\n\n**Tracking Spreadsheet:**\nCreate: D:\\VarnaAI\\Websites\\research\\bulgaria-outreach-tracker.xlsx\n\nColumns:\n- Company name\n- Contact name\n- Date contacted\n- Method (phone/email/LinkedIn)\n- Response (Y/N)\n- Outcome (meeting scheduled / not interested / follow up / no answer)\n- Follow-up date\n- Notes\n\n**Outreach Sequence:**\nDay 1: Email introduction\nDay 3: LinkedIn connection request\nDay 5: Phone call attempt #1\nDay 8: Follow-up email if no response\nDay 10: Phone call attempt #2\nDay 14: Final follow-up or close\n\n**Scripts to Use:**\n- Phone: From Task 50 (c3-phone-script-bg.txt)\n- Email: From Task 50 (c3-cold-email-bg.txt + followup)\n- LinkedIn: Adapted version of email intro\n\n**Success Metrics:**\n- 20+ conversations had\n- 5-10 free assessments scheduled\n- 1-3 paid pilots signed (stretch goal)\n\n**Bulgarian Business Hours:**\n- Call between 9:00-18:00 Bulgarian time\n- Avoid Friday afternoon (low engagement)\n- Best times: Tuesday-Thursday 10:00-12:00, 14:00-16:00",
         "testStrategy": "1. **Tracker Setup**: Spreadsheet created with all required columns\n2. **Volume Tracking**: Daily outreach logged (date, method, company, outcome)\n3. **Response Rate**: Track % response by channel (phone vs email vs LinkedIn)\n4. **Meeting Scheduling**: Document each free assessment meeting booked\n5. **Campaign Completion**: 100 companies contacted within 2-week period\n6. **Outcome Summary**: Final report with response rates, meetings scheduled, lessons learned",
         "status": "pending",
-        "dependencies": [49, 50, 51],
+        "dependencies": [
+          "46",
+          "49",
+          "50",
+          "51"
+        ],
         "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": "53",
+        "title": "Translate C3 Compliance Platform INFO Page to Bulgarian via WPML",
+        "description": "Complete the WPML translation for the C3 Compliance Platform informational/marketing page on varnaai.com WordPress. This is the WordPress landing page about C3, not the React app itself.",
+        "details": "**Clarification:** This task is for the WordPress INFO page about C3 on varnaai.com, NOT the C3 React app (which has separate Task 48 for i18n).\n\n**Current Status:** WPML translation started, partially complete\n**Page:** varnaai.com WordPress page describing C3 features/benefits\n**If page doesn't exist:** Create it first, then translate\n\n**Process:**\n1. Verify page exists in WordPress Pages list\n2. If missing, create English version first with C3 marketing content\n3. Complete WPML Bulgarian translation\n4. Review for NIS2 terminology (Директива за киберсигурност)\n5. Add BGN pricing (980 лв, 290 лв/месец)\n6. Publish Bulgarian version",
+        "testStrategy": "1. Bulgarian page loads at varnaai.com/bg/c3-compliance-platform/\n2. All text displays in Bulgarian (no English remnants)\n3. CTA buttons functional\n4. SEO meta tags in Bulgarian\n5. Mobile responsive",
+        "status": "done",
+        "dependencies": [],
+        "priority": "high",
+        "subtasks": [],
+        "updatedAt": "2025-12-12T09:15:24.445Z"
+      },
+      {
+        "id": "54",
+        "title": "Translate varnaai.com Homepage to Bulgarian via WPML",
+        "description": "Full WPML translation of the main homepage (GDPR-Compliant AI for SMEs) to Bulgarian for C3 Bulgaria market launch. Include all meta tags and SEO elements.",
+        "details": "**Page:** varnaai.com homepage\n**Target:** Bulgarian (bg)\n\n**Content to Translate:**\n- Hero section headline and subheadline\n- Service descriptions\n- Feature blocks\n- Trust signals and certifications\n- CTA buttons\n- Footer content\n\n**SEO Elements:**\n- Meta title (Bulgarian)\n- Meta description (Bulgarian)\n- OG tags for social sharing\n\n**Bulgarian Market Positioning:**\n- Emphasize EU compliance (DSGVO → GDPR in Bulgarian context)\n- Local business focus (Bulgarian SMEs)\n- BGN pricing where applicable",
+        "testStrategy": "1. Bulgarian homepage loads at varnaai.com/bg/\n2. All sections translated\n3. SEO meta tags in Bulgarian\n4. Social sharing preview shows Bulgarian text\n5. No broken layouts",
+        "status": "pending",
+        "dependencies": [
+          "53"
+        ],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": "55",
+        "title": "Translate varnaai.com Pricing Page to Bulgarian via WPML",
+        "description": "WPML translation of pricing page with BGN currency display and Bulgarian market positioning. Critical for C3 Bulgaria sales conversions.",
+        "details": "**Page:** varnaai.com/pricing/\n**Target:** Bulgarian (bg)\n\n**Key Translation Elements:**\n- Plan names and descriptions\n- Feature lists per tier\n- BGN pricing (convert EUR to лв)\n- CTA buttons\n- FAQ section if present\n\n**Bulgarian Pricing Display:**\n| English | Bulgarian |\n|---------|----------|\n| €500 | 980 лв |\n| €150/month | 290 лв/месец |\n| Free | Безплатно |\n\n**Localization:**\n- Currency symbol: лв (not EUR)\n- Per month: /месец\n- VAT: с ДДС / без ДДС",
+        "testStrategy": "1. Bulgarian pricing page loads\n2. Prices display in BGN (лв)\n3. All tiers and features translated\n4. CTA buttons work\n5. No EUR symbols visible",
+        "status": "pending",
+        "dependencies": [
+          "53"
+        ],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": "56",
+        "title": "Translate varnaai.com Contact Page to Bulgarian via WPML",
+        "description": "WPML translation of contact page for Bulgarian market. Include contact form labels, address formatting, and business hours in Bulgarian format.",
+        "details": "**Page:** varnaai.com/contact/\n**Target:** Bulgarian (bg)\n\n**Elements to Translate:**\n- Page headline and intro text\n- Form field labels (Име, Имейл, Съобщение, etc.)\n- Submit button text\n- Success/error messages\n- Office address formatting\n- Business hours display\n\n**Bulgarian Form Labels:**\n| English | Bulgarian |\n|---------|----------|\n| Name | Име |\n| Email | Имейл |\n| Phone | Телефон |\n| Message | Съобщение |\n| Send | Изпрати |\n| Company | Фирма |",
+        "testStrategy": "1. Bulgarian contact page loads\n2. Form labels in Bulgarian\n3. Form submission works\n4. Success message in Bulgarian\n5. Address displays correctly",
+        "status": "pending",
+        "dependencies": [
+          "53"
+        ],
+        "priority": "medium",
+        "subtasks": []
+      },
+      {
+        "id": "57",
+        "title": "Translate varnaai.com About Page to Bulgarian via WPML",
+        "description": "WPML translation of About/Company page to Bulgarian. Important for establishing trust with Bulgarian SME prospects.",
+        "details": "**Page:** varnaai.com/about/ (or similar)\n**Target:** Bulgarian (bg)\n\n**Content Sections:**\n- Company story and mission\n- Team introduction (if present)\n- Values and approach\n- Certifications and partnerships\n- Location/presence information\n\n**Bulgarian Business Tone:**\n- Professional but approachable\n- Emphasize local presence in Varna\n- Reference Bulgarian market understanding\n- Include VarnaAI as local entity",
+        "testStrategy": "1. Bulgarian about page loads\n2. All sections translated\n3. Professional tone maintained\n4. Local Varna reference included\n5. No English text remaining",
+        "status": "pending",
+        "dependencies": [
+          "53"
+        ],
+        "priority": "medium",
+        "subtasks": []
+      },
+      {
+        "id": "58",
+        "title": "Translate varnaai.com Privacy Policy to Bulgarian via WPML",
+        "description": "WPML translation of AI Privacy Policy page to Bulgarian. Legal compliance requirement for Bulgarian market operations.",
+        "details": "**Page:** varnaai.com/ai-privacy-policy/\n**Target:** Bulgarian (bg)\n\n**Legal Translation Requirements:**\n- GDPR terminology in Bulgarian context\n- Data controller information\n- Cookie policy\n- User rights section\n- Contact information for data requests\n\n**Bulgarian Legal Terms:**\n| English | Bulgarian |\n|---------|----------|\n| Privacy Policy | Политика за поверителност |\n| Data Controller | Администратор на данни |\n| Personal Data | Лични данни |\n| Cookie | Бисквитка |\n| Consent | Съгласие |",
+        "testStrategy": "1. Bulgarian privacy policy loads\n2. All legal terms correctly translated\n3. Contact information accurate\n4. GDPR compliance terminology correct\n5. Page accessible from footer",
+        "status": "pending",
+        "dependencies": [
+          "53"
+        ],
+        "priority": "medium",
+        "subtasks": []
+      },
+      {
+        "id": "59",
+        "title": "Translate varnaai.com RetirementAI Portfolio Page to Bulgarian",
+        "description": "WPML translation of RetirementAI portfolio/product page to Bulgarian. Showcases AI capabilities for Bulgarian market.",
+        "details": "**DEFERRED per expert audit:** Portfolio page translations are low priority for Bulgaria launch. Focus on core pages (Homepage, Pricing, Contact, C3) first.\n\n**Page:** varnaai.com RetirementAI portfolio page\n**Target:** Bulgarian (bg)\n\n**Technical Content:**\n- Product features and capabilities\n- Tech stack descriptions\n- Use cases and benefits\n- Demo/CTA links\n\n**Translation Approach:**\n- Keep technical terms (AI, API) as-is\n- Translate benefit statements\n- Localize examples where applicable",
+        "testStrategy": "1. Bulgarian portfolio page loads\n2. Features correctly described\n3. CTAs functional\n4. Technical terms appropriate\n5. Screenshots/images display",
+        "status": "deferred",
+        "dependencies": [
+          "54"
+        ],
+        "priority": "low",
+        "subtasks": []
+      },
+      {
+        "id": "60",
+        "title": "Translate varnaai.com SEO Agent Portfolio Page to Bulgarian",
+        "description": "WPML translation of SEO Agent portfolio page to Bulgarian. Marketing asset for AI capabilities showcase.",
+        "details": "**DEFERRED per expert audit:** Portfolio page translations are low priority for Bulgaria launch. Focus on core pages (Homepage, Pricing, Contact, C3) first.\n\n**Page:** varnaai.com SEO Agent portfolio page\n**Target:** Bulgarian (bg)\n\n**Content Focus:**\n- SEO automation features\n- AI-powered analysis capabilities\n- Integration options\n- Results and metrics",
+        "testStrategy": "1. Bulgarian page loads correctly\n2. SEO terminology translated appropriately\n3. Feature descriptions clear\n4. CTAs work",
+        "status": "deferred",
+        "dependencies": [
+          "54"
+        ],
+        "priority": "low",
+        "subtasks": []
+      },
+      {
+        "id": "61",
+        "title": "Translate varnaai.com VarnaAI Agents Portfolio Page to Bulgarian",
+        "description": "WPML translation of VarnaAI Agents/Multi-Agent Platform portfolio page to Bulgarian.",
+        "details": "**DEFERRED per expert audit:** Portfolio page translations are low priority for Bulgaria launch. Focus on core pages (Homepage, Pricing, Contact, C3) first.\n\n**Page:** varnaai.com VarnaAI Agents portfolio page\n**Target:** Bulgarian (bg)\n\n**Content:**\n- Multi-agent architecture explanation\n- 6 autonomous agents description\n- Bulgarian market focus already built-in\n- DATEV integration mention",
+        "testStrategy": "1. Page loads in Bulgarian\n2. Agent descriptions translated\n3. Technical accuracy maintained\n4. Local market references preserved",
+        "status": "deferred",
+        "dependencies": [
+          "54"
+        ],
+        "priority": "low",
+        "subtasks": []
+      },
+      {
+        "id": "62",
+        "title": "Bulgarian WPML Language Switcher Configuration",
+        "description": "Configure WPML language switcher on varnaai.com to display EN/BG flags in header/footer. Ensure smooth language switching experience for visitors.",
+        "details": "**Configuration Tasks:**\n1. Enable language switcher in WPML settings\n2. Choose flag + language name display style\n3. Position in header (top-right recommended)\n4. Add to footer menu\n5. Configure URL structure (varnaai.com/bg/ prefix)\n\n**Switcher Options:**\n- Dropdown with flags\n- Horizontal flag bar\n- Text links with language names\n\n**SEO Configuration:**\n- hreflang tags automatic\n- Canonical URLs per language\n- Sitemap per language",
+        "testStrategy": "1. Switcher visible on all pages\n2. Clicking BG flag switches to Bulgarian\n3. URL changes to /bg/ prefix\n4. Browser back button works correctly\n5. SEO hreflang tags present",
+        "status": "pending",
+        "dependencies": [
+          "53",
+          "54"
+        ],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": "63",
+        "title": "Bulgarian SEO Meta Tags and Sitemap Generation",
+        "description": "Generate Bulgarian SEO meta tags for all translated pages and create Bulgarian sitemap for Google Search Console submission.",
+        "details": "**SEO Tasks:**\n1. Verify all BG pages have unique meta titles\n2. Write Bulgarian meta descriptions (150-160 chars)\n3. Generate Bulgarian sitemap via WPML\n4. Submit to Google Search Console\n5. Configure hreflang tags\n\n**Focus Keywords (Bulgarian):**\n- C3 Compliance: \"NIS2 съответствие България\"\n- Homepage: \"AI услуги за бизнеса\"\n- Pricing: \"цени AI автоматизация\"\n\n**Google Search Console:**\n- Add Bulgarian property if needed\n- Submit sitemap-bg.xml\n- Monitor indexing",
+        "testStrategy": "1. All BG pages have unique meta titles\n2. Meta descriptions 150-160 chars\n3. Sitemap submitted to GSC\n4. hreflang tags validate\n5. BG pages appear in Google",
+        "status": "pending",
+        "dependencies": [
+          "54",
+          "55",
+          "56",
+          "57",
+          "58"
+        ],
+        "priority": "medium",
+        "subtasks": []
+      },
+      {
+        "id": "64",
+        "title": "Cross-Site Bulgarian Content Promotion",
+        "description": "Add Bulgarian market CTAs and links from ai-projektmanager.de and varna-agenten.de to varnaai.com Bulgarian pages for cross-promotion.",
+        "details": "**Cross-Promotion Strategy:**\n\n**ai-projektmanager.de:**\n- Add \"Auch auf Bulgarisch verfügbar\" notice\n- Link to varnaai.com/bg/ for Bulgarian visitors\n\n**varna-agenten.de:**\n- Add \"Налично и на български\" section\n- Link to C3 Bulgarian page for compliance\n\n**varnaai.com:**\n- Ensure German pages link to .de sites\n- Bulgarian pages link to local services\n\n**Implementation:**\n- Footer links\n- Language-specific CTAs\n- Geo-targeted suggestions",
+        "testStrategy": "1. Cross-site links functional\n2. Language-appropriate CTAs\n3. No broken links\n4. Tracking parameters added",
+        "status": "pending",
+        "dependencies": [
+          "62"
+        ],
+        "priority": "low",
+        "subtasks": []
+      },
+      {
+        "id": "65",
+        "title": "Bulgarian Social Media Profile Optimization",
+        "description": "Update all VarnaAI social media profiles with Bulgarian language options and Bulgaria market messaging. Focus on LinkedIn and Facebook for B2B reach.",
+        "details": "**Profiles to Update:**\n- LinkedIn: varnaai company page\n- Facebook: varnaai page\n- Instagram: varnaaicom\n- X/Twitter: Varna_Ai\n\n**Updates Per Platform:**\n\n**LinkedIn:**\n- Add Bulgarian company description\n- Update location to show Varna, Bulgaria\n- Post C3 Bulgaria launch announcement\n- Connect with Bulgarian business groups\n\n**Facebook:**\n- Bulgarian 'About' section\n- Bulgaria market services highlight\n- NIS2 awareness posts in Bulgarian\n\n**Content Calendar:**\n- 2 Bulgarian posts per week\n- NIS2 deadline reminders\n- C3 free assessment promotions",
+        "testStrategy": "1. All profiles have Bulgarian content\n2. Location shows Varna, Bulgaria\n3. Bulgarian posts scheduled\n4. Engagement tracking set up",
+        "status": "pending",
+        "dependencies": [
+          "53"
+        ],
+        "priority": "medium",
+        "subtasks": []
+      },
+      {
+        "id": "66",
+        "title": "Uptime Kuma DNS Configuration - status.varnaai.com",
+        "description": "Configure DNS A record for status.varnaai.com pointing to Hetzner VPS (78.47.125.174). Uptime Kuma already installed, needs public access.",
+        "details": "**NOTE:** Infrastructure task, not Bulgaria-specific. Deprioritized for Bulgaria launch.\n\n**Current Status:** Uptime Kuma installed on VPS, needs DNS\n**VPS IP:** 78.47.125.174\n**Target Domain:** status.varnaai.com\n\n**DNS Configuration:**\n1. Login to domain registrar (Cloudflare or other)\n2. Add A record: status.varnaai.com → 78.47.125.174\n3. Wait for DNS propagation (5-30 minutes)\n4. Verify nginx config handles subdomain\n5. SSL certificate via Let's Encrypt\n\n**nginx Config Needed:**\n```nginx\nserver {\n    server_name status.varnaai.com;\n    location / {\n        proxy_pass http://127.0.0.1:3001;\n    }\n}\n```\n\n**Post-Setup:**\n- Create status page for all demos\n- Monitor: c3.varnaai.com, demo-retirement.varnaai.com, demo-fwchange.varnaai.com\n- Set up alerts for downtime",
+        "testStrategy": "1. DNS resolves status.varnaai.com to VPS IP\n2. HTTPS works with valid certificate\n3. Uptime Kuma dashboard accessible\n4. Demo sites being monitored\n5. Alerts configured and tested",
+        "status": "pending",
+        "dependencies": [],
+        "priority": "low",
+        "subtasks": []
+      },
+      {
+        "id": "67",
+        "title": "VPS Security Hardening Review - Q1 2026",
+        "description": "Quarterly security review of Hetzner VPS. Verify fail2ban effectiveness, update firewall rules, rotate credentials, and audit container security.",
+        "details": "**NOTE:** Infrastructure task, not Bulgaria-specific. Deprioritized for Bulgaria launch.\n\n**Current Security (per CLAUDE.md):**\n- UFW firewall (deny all, allow 22/80/443)\n- fail2ban: 4 jails, 75+ IPs banned SSH, 58+ bad bots\n- Rate limiting: API 10r/s, login 1r/s, general 30r/s\n- All containers bound to 127.0.0.1\n- SSL certs valid until Feb 2026\n\n**Review Tasks:**\n1. Check fail2ban logs for new patterns\n2. Update banned IP lists\n3. Review nginx rate limiting effectiveness\n4. Audit Docker container security\n5. Check for OS security updates\n6. Rotate any aging credentials\n7. Verify backup procedures\n\n**Documentation:**\n- Update VPS_AUDIT_REPORT with findings\n- Document any configuration changes\n- Schedule next quarterly review",
+        "testStrategy": "1. Security audit report generated\n2. All services running post-review\n3. No unauthorized access detected\n4. Credentials rotated where needed\n5. Documentation updated",
+        "status": "pending",
+        "dependencies": [],
+        "priority": "low",
+        "subtasks": []
+      },
+      {
+        "id": "68",
+        "title": "ai-projektmanager.de Blog Content Calendar Q1 2026",
+        "description": "Create 12-week blog content calendar for ai-projektmanager.de focusing on German compliance topics (NIS2, DSGVO, BSI IT-Grundschutz). Plan 2 posts per week.",
+        "details": "**NOTE:** Infrastructure task, not Bulgaria-specific. Deprioritized for Bulgaria launch.\n\n**Content Strategy:**\n- 2 posts per week = 24 posts Q1 2026\n- Focus: German compliance market\n- Keywords: NIS2 Deutschland, DSGVO Projektmanagement, BSI IT-Grundschutz\n\n**Topic Categories:**\n1. NIS2 implementation guides (6 posts)\n2. DSGVO best practices (6 posts)\n3. AI in compliance automation (6 posts)\n4. Industry case studies (4 posts)\n5. Tool comparisons (2 posts)\n\n**Calendar Structure:**\nCreate: D:\\VarnaAI\\Websites\\blogs\\content-calendar-aiprojektmanager-q1-2026.md\n\n**Per Post Requirements:**\n- 2000+ words\n- Focus keyword with 1% density\n- 7 internal links (URLS.md)\n- 3 external authority links\n- Schema markup ready",
+        "testStrategy": "1. Calendar document created\n2. 24 topics defined with dates\n3. Focus keywords assigned\n4. No duplicate topics\n5. Seasonal relevance considered",
+        "status": "pending",
+        "dependencies": [],
+        "priority": "low",
+        "subtasks": []
+      },
+      {
+        "id": "69",
+        "title": "Validate Company Legal Status [CANCELLED - Using VarnaAI]",
+        "description": "CANCELLED: Company validation complete. Using VarnaAI branding for Bulgarian market.",
+        "details": "**CRITICAL FOR BULGARIA LAUNCH:** Bulgarian SMEs require trust in local entity.\n\n**Verification Steps:**\n1. Check Registro.bg for Classic Security EOOD status (BULSTAT 206365963)\n2. Verify company is active and in good standing\n3. Confirm registered address in Varna\n4. Check tax registration status\n\n**Marketing Updates:**\n1. Update varnaai.com footer with Bulgarian company info\n2. Add BULSTAT number to all Bulgarian marketing materials\n3. Update contact page with Bulgarian business address\n4. Add to sales materials (Task 50)\n\n**If Issues Found:**\n- Contact Bulgarian accountant/lawyer for remediation\n- DO NOT proceed with Bulgaria outreach until resolved",
+        "testStrategy": "1. Company appears in Registro.bg as active\n2. BULSTAT matches marketing materials\n3. Address verified\n4. Tax status confirmed",
+        "status": "cancelled",
+        "dependencies": [],
+        "priority": "critical",
+        "subtasks": [],
+        "updatedAt": "2025-12-12T08:22:54.866Z"
+      },
+      {
+        "id": "70",
+        "title": "VCCI Event Attendance Plan Q1 2026",
+        "description": "Create calendar of VCCI networking events for Jan-Mar 2026. Plan attendance for 6+ events. Prepare business cards, elevator pitch, and lead capture process.",
+        "details": "**Per Expert Audit:** Bulgarian B2B requires face-to-face trust building. VCCI events are primary networking channel.\n\n**Preparation:**\n1. Get VCCI event calendar after membership confirmed (Task 47)\n2. Identify 8-10 relevant events (business forums, networking breakfasts, industry meetups)\n3. Select 6+ to attend based on SME/IT/compliance focus\n4. Prepare Bulgarian business cards for VarnaAI / Varna AI\n5. Create 30-second elevator pitch in Bulgarian\n\n**Event Execution:**\n- Arrive early, stay late\n- Collect 5-10 business cards per event\n- Follow up within 48 hours\n- Track in CRM or spreadsheet\n\n**Lead Capture:**\n- Simple form or note template\n- Company name, contact, industry, interest level\n- Follow-up action and date\n\n**Budget:** €50-100/month for coffee meetings post-events",
+        "testStrategy": "1. Calendar created with 6+ events selected\n2. Business cards ordered\n3. Elevator pitch documented\n4. Lead capture template ready\n5. First event attended",
+        "status": "pending",
+        "dependencies": [
+          "47"
+        ],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": "71",
+        "title": "Pilot Program Contract & Terms (Bulgarian)",
+        "description": "Define €300 pilot program: 3-month commitment, success criteria, auto-conversion to €150/month retainer. Create Bulgarian contract template.",
+        "details": "**Per Expert Audit:** Need defined pilot program for Bulgarian market.\n\n**Pilot Terms:**\n- Duration: 3 months\n- Price: €300 total (980 лв) OR €100/month (290 лв/месец)\n- Includes: Initial audit + 3 monthly check-ins + compliance documentation\n- Auto-converts to €150/month managed service after pilot\n- Guarantee: \"If we don't find 3+ compliance gaps, pilot is free\"\n\n**Contract Template (Bulgarian):**\nCreate: D:\\VarnaAI\\Websites\\assets\\c3-pilot-contract-bg.docx\n\nSections:\n1. Parties (VarnaAI + Client)\n2. Scope of services\n3. Duration and payment terms\n4. Deliverables\n5. Confidentiality\n6. Auto-renewal terms\n7. Termination conditions\n\n**Legal Review:** Have Bulgarian lawyer review before first use",
+        "testStrategy": "1. Contract template created in Bulgarian\n2. All terms documented\n3. Pricing in BGN\n4. Legal review completed (or noted as pending)\n5. Ready to present to first pilot prospect",
+        "status": "pending",
+        "dependencies": [],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": "72",
+        "title": "Service Delivery Playbook - Managed Compliance (Not Just Software)",
+        "description": "Create service delivery process for managed compliance. Bulgarians want 'done for you' service, not just SaaS subscription.",
+        "details": "**CRITICAL INSIGHT from Expert Audit:**\n> \"Bulgarian SMEs want someone to DO IT for them - service model, not software\"\n\n**Service Delivery Process:**\n\n**Phase 1: Initial Assessment (Week 1)**\n- Run C3 60-second scan\n- Review results with client (30-min call)\n- Document current compliance state\n- Deliver 1-page gap summary\n\n**Phase 2: Remediation Plan (Week 2)**\n- Create prioritized action list\n- Assign tasks (client vs us)\n- Set timeline for each item\n- Deliver remediation roadmap document\n\n**Phase 3: Monthly Management (Ongoing)**\n- Monthly check-in call (30 min)\n- Run updated C3 scan\n- Track remediation progress\n- Update documentation\n- Proactive alert on new requirements\n\n**Deliverables Per Client:**\n- Initial gap assessment PDF\n- Remediation roadmap document\n- Monthly status report\n- Compliance documentation folder\n- Audit-ready package (annually)\n\n**Create:** D:\\VarnaAI\\Websites\\docs\\c3-service-playbook.md",
+        "testStrategy": "1. Playbook document created\n2. All phases documented\n3. Deliverable templates created\n4. Pricing per phase defined\n5. Can explain process to prospect in 2 minutes",
+        "status": "done",
+        "dependencies": [],
+        "priority": "high",
+        "subtasks": [],
+        "updatedAt": "2025-12-12T08:26:54.128Z"
+      },
+      {
+        "id": "73",
+        "title": "Accounting Firm Partnership Research - Alternative GTM",
+        "description": "Research 10-15 Varna accounting firms as potential white-label partners. Accountants are the REAL competitors - consider partnering instead of competing.",
+        "details": "**Per Expert Audit:**\n> \"Real competitors: Accountants (70%), Law firms (20%), DIY (10%)\"\n> \"Consider white-label partnership with accounting firms\"\n\n**Research Phase:**\n1. Identify 15-20 accounting firms in Varna region\n2. Focus on: Medium-size firms (5-20 staff), serving SME clients, offering advisory services\n3. Research: Services offered, client size, compliance offerings\n\n**Data to Collect:**\n- Firm name\n- Address\n- Phone/email\n- Website\n- Services (tax, audit, consulting)\n- Client focus (SME, enterprise)\n- Already offering GDPR/compliance? (Y/N)\n- Partnership potential (High/Medium/Low)\n\n**Partnership Model (if pursued):**\n- White-label C3 as accountant's compliance tool\n- Wholesale pricing: €30/client (accountant charges €50+)\n- Accountant handles relationship, we handle tech\n- Revenue share: 60% accountant, 40% us\n\n**Output:** D:\\VarnaAI\\Websites\\research\\varna-accounting-firms.xlsx",
+        "testStrategy": "1. 15+ firms researched\n2. 5+ identified as high partnership potential\n3. Contact info documented\n4. Partnership pitch deck ready (if pursuing)\n5. Decision made: direct sales vs partnership focus",
+        "status": "pending",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": []
+      },
+      {
+        "id": "74",
+        "title": "Bulgarian Payment Method Setup",
+        "description": "Configure payment processing for Bulgarian market. Bulgarians prefer bank transfers, not cards. Set up BGN invoicing.",
+        "details": "**Per Expert Audit:**\n> \"Bulgarian companies prefer bank transfer, not card\"\n\n**Payment Setup:**\n1. Verify VarnaAI can receive BGN payments\n2. Set up bank transfer payment option\n3. Configure Stripe/PayPal for BGN (backup)\n4. Create Bulgarian invoice template\n\n**Invoice Template (Bulgarian):**\nCreate: D:\\VarnaAI\\Websites\\assets\\invoice-template-bg.docx\n\nRequired fields:\n- VarnaAI header\n- BULSTAT: 206365963\n- Bulgarian VAT number (if registered)\n- Client details\n- Service description (in Bulgarian)\n- Amount in BGN (лв)\n- VAT line (20% Bulgarian VAT)\n- Bank details for transfer\n- Payment terms (usually 14-30 days)\n\n**VAT Considerations:**\n- Bulgarian VAT is 20%\n- Check if VarnaAI is VAT registered\n- If not, may need to register if revenue exceeds threshold",
+        "testStrategy": "1. Bank account can receive BGN\n2. Invoice template created\n3. VAT treatment clarified\n4. Test invoice generated\n5. Payment instructions clear in Bulgarian",
+        "status": "pending",
+        "dependencies": [],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": "75",
+        "title": "Free Assessment Delivery Tracking - First 10 Assessments",
+        "description": "Track delivery of 10+ free compliance assessments. Document responses, objections, and conversion potential for Phase 1 validation.",
+        "details": "**Per Expert Audit:**\n> \"5-10 free assessments needed for Phase 1 validation\"\n\n**Tracking Spreadsheet:**\nCreate: D:\\VarnaAI\\Websites\\research\\free-assessments-tracker.xlsx\n\nColumns:\n- Company name\n- Industry\n- Employee count\n- Contact name\n- Assessment date\n- Scan results summary\n- Client reaction\n- Interest level (Hot/Warm/Cold)\n- Objections raised\n- Follow-up actions\n- Pilot potential (Y/N)\n- Notes\n\n**Per Assessment Process:**\n1. Schedule 30-min video call\n2. Run C3 scan live (show them)\n3. Explain findings\n4. Deliver 1-page summary (within 24h)\n5. Follow up in 3 days\n6. Track in spreadsheet\n\n**Success Metrics (Phase 1 Gate):**\n- 10+ assessments completed\n- 3+ say \"we need this\" (genuine interest)\n- 1-2 convert to pilot\n- Common objections documented\n\n**Timeline:** Complete 10 assessments by end of Month 2",
+        "testStrategy": "1. Tracker created\n2. First assessment delivered and tracked\n3. 5+ assessments by Week 6\n4. 10+ assessments by Week 10\n5. Conversion data analyzed",
+        "status": "pending",
+        "dependencies": [
+          "51",
+          "52"
+        ],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": "76",
+        "title": "Long-Term Nurture Campaign - Months 3-12 Touchpoints",
+        "description": "Create long-term nurture process for Bulgarian leads. First sale takes 3-6 months of trust building. Plan monthly touchpoints.",
+        "details": "**Per Expert Audit:**\n> \"Trust takes YEARS of cooperation in Bulgaria\"\n> \"First sale takes 3-6 months of relationship building\"\n\n**Nurture Campaign Structure:**\n\n**Month 1:** Initial contact + free assessment offer\n**Month 2:** Follow-up email + NIS2 news article\n**Month 3:** Coffee meeting invitation (face-to-face)\n**Month 4:** Case study share (when available)\n**Month 5:** Re-engagement + updated scan offer\n**Month 6:** Direct pilot proposal\n**Month 7-12:** Quarterly check-ins + industry news\n\n**Touchpoint Templates:**\nCreate: D:\\VarnaAI\\Websites\\assets\\nurture-templates-bg/\n- Month 2 email\n- Month 3 coffee invitation\n- Month 5 re-engagement\n- Month 6 pilot proposal\n- Quarterly update template\n\n**CRM/Tracking:**\n- Use spreadsheet or simple CRM (HubSpot free?)\n- Track last contact date\n- Set reminders for next touchpoint\n- Note relationship status\n\n**Content to Share:**\n- NIS2 deadline reminders\n- Bulgarian compliance news\n- Case studies (when available)\n- Industry reports",
+        "testStrategy": "1. All email templates created\n2. Touchpoint schedule documented\n3. CRM/tracker set up\n4. First Month 2 emails sent\n5. Coffee meetings scheduled from Month 3 contacts",
+        "status": "pending",
+        "dependencies": [
+          "52"
+        ],
+        "priority": "medium",
+        "subtasks": []
+      },
+      {
+        "id": "77",
+        "title": "First Customer Success Plan",
+        "description": "Define exceptional service delivery for first 1-3 paying customers. Over-deliver to generate referrals and testimonials.",
+        "details": "**Per Expert Audit:**\n> \"First customer is referral machine - 3+ referrals from happy first customer critical\"\n\n**Over-Delivery Strategy:**\nFirst 3 customers get VIP treatment:\n- Weekly check-in calls (not monthly)\n- Direct phone/WhatsApp access to Big Dick\n- Same-day response to questions\n- Extra documentation beyond scope\n- Free additional scans\n\n**Milestones:**\n**Week 1:** Onboarding call, expectations setting\n**Week 2:** Initial scan + results review\n**Week 4:** First check-in, progress review\n**Week 8:** Mid-pilot assessment\n**Week 12:** Pilot completion, testimonial request\n\n**Testimonial Collection:**\n- Request at Week 12 if satisfied\n- Offer: Video testimonial OR written quote OR LinkedIn recommendation\n- Use in marketing materials (with permission)\n- Post on varnaai.com and social media\n\n**Referral Request:**\nScript: \"Радваме се, че сме полезни. Познавате ли други компании, които биха имали нужда от подобна услуга?\"\n(Translation: \"We're glad to be helpful. Do you know other companies that might need similar services?\")\n\n**Target:** 3+ referrals per satisfied customer",
+        "testStrategy": "1. Success plan documented\n2. Check-in schedule created\n3. Testimonial request script ready\n4. Referral request script ready\n5. First customer onboarded with VIP treatment",
+        "status": "pending",
+        "dependencies": [
+          "71"
+        ],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": "78",
+        "title": "Translate varnaai.com Our Mission Page to Bulgarian via WPML",
+        "description": "WPML translation of 'Our Mission - Secure AI Solutions' page to Bulgarian. Establishes company credibility and values.",
+        "details": "**Page:** varnaai.com/our-mission-secure-ai-solutions/\n**Target:** Bulgarian (bg)\n\n**Content Focus:**\n- Company mission and vision\n- Security and AI expertise\n- Team values\n- Bulgarian market commitment\n\n**Translation Notes:**\n- Professional but approachable tone\n- Emphasize Varna/Bulgaria presence\n- Reference VarnaAI",
+        "testStrategy": "1. Bulgarian page loads\n2. All sections translated\n3. Professional tone\n4. No English remnants",
+        "status": "pending",
+        "dependencies": [
+          "54"
+        ],
+        "priority": "medium",
+        "subtasks": []
+      },
+      {
+        "id": "79",
+        "title": "Translate varnaai.com Secure AI Services GDPR Page to Bulgarian via WPML",
+        "description": "WPML translation of 'Secure AI Services GDPR' page. Important for Bulgarian compliance market positioning.",
+        "details": "**Page:** varnaai.com/secure-ai-services-gdpr/\n**Target:** Bulgarian (bg)\n\n**Content Focus:**\n- GDPR compliance services\n- AI security capabilities\n- Data protection approach",
+        "testStrategy": "1. Bulgarian page loads\n2. GDPR terminology correct\n3. All services described",
+        "status": "pending",
+        "dependencies": [
+          "54"
+        ],
+        "priority": "medium",
+        "subtasks": []
+      },
+      {
+        "id": "80",
+        "title": "Translate varnaai.com AI SEO Analytics Platform Page to Bulgarian via WPML",
+        "description": "WPML translation of 'AI SEO Analytics Platform' page to Bulgarian.",
+        "details": "**Page:** varnaai.com/ai-seo-analytics-platform/\n**Target:** Bulgarian (bg)\n\n**Content Focus:**\n- SEO analytics features\n- AI-powered analysis\n- Platform capabilities",
+        "testStrategy": "1. Bulgarian page loads\n2. Technical terms appropriate\n3. Features clear",
+        "status": "pending",
+        "dependencies": [
+          "54"
+        ],
+        "priority": "low",
+        "subtasks": []
+      },
+      {
+        "id": "81",
+        "title": "Translate varnaai.com Reviews Page to Bulgarian via WPML",
+        "description": "WPML translation of 'Varna AI Reviews' page to Bulgarian. Social proof for Bulgarian prospects.",
+        "details": "**Page:** varnaai.com/varna-ai-reviews/\n**Target:** Bulgarian (bg)\n\n**Content Focus:**\n- Customer testimonials\n- Review summaries\n- Trust signals",
+        "testStrategy": "1. Bulgarian page loads\n2. Reviews translated naturally\n3. Trust signals clear",
+        "status": "pending",
+        "dependencies": [
+          "54"
+        ],
+        "priority": "medium",
+        "subtasks": []
+      },
+      {
+        "id": "82",
+        "title": "Translate varnaai.com Enterprise Cybersecurity Solutions Page to Bulgarian via WPML",
+        "description": "WPML translation of 'Enterprise Cybersecurity Solutions' page to Bulgarian.",
+        "details": "**Page:** varnaai.com/enterprise-cybersecurity-solutions/\n**Target:** Bulgarian (bg)\n\n**Content Focus:**\n- Enterprise security services\n- Compliance offerings\n- Technical capabilities",
+        "testStrategy": "1. Bulgarian page loads\n2. Security terminology correct\n3. Enterprise focus clear",
+        "status": "pending",
+        "dependencies": [
+          "54"
+        ],
+        "priority": "medium",
         "subtasks": []
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2025-12-12T05:30:00.000Z",
-      "taskCount": 52,
-      "completedCount": 22,
+      "lastModified": "2025-12-13T01:27:20.042Z",
+      "taskCount": 82,
+      "completedCount": 25,
       "tags": [
         "master"
-      ],
-      "created": "2025-12-12T04:56:35.631Z",
-      "description": "Tasks for master context",
-      "updated": "2025-12-12T04:57:10.427Z"
+      ]
     }
   }
 }
