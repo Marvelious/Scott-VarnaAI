@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FwChange - Enterprise Firewall Change Management Platform. Streamline firewall changes across multi-vendor environments.">
+    <title>FwChange - Enterprise Firewall Change Management (Coming Soon)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-text { background: linear-gradient(135deg, #06b6d4 0%, #14b8a6 50%, #0d9488 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .gradient-bg { background: linear-gradient(135deg, #06b6d4 0%, #0d9488 100%); }
+        .gradient-bg-warm { background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%); }
+        .glass { background: rgba(17, 17, 17, 0.8); backdrop-filter: blur(10px); }
+        .glow { box-shadow: 0 0 60px rgba(6, 182, 212, 0.25); }
+        .glow-sm { box-shadow: 0 0 30px rgba(6, 182, 212, 0.15); }
+        .glow-warm { box-shadow: 0 0 40px rgba(245, 158, 11, 0.2); }
+        @keyframes pulse-glow { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.6; } }
+        .pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        .float-animation { animation: float 4s ease-in-out infinite; }
+        @keyframes blink { 0%, 50%, 100% { opacity: 1; } 25%, 75% { opacity: 0; } }
+        .blink { animation: blink 1s infinite; }
+        @keyframes wave { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(10px); } }
+        .wave-animation { animation: wave 3s ease-in-out infinite; }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(6, 182, 212, 0.15); }
+        .sidebar-item { transition: all 0.2s ease; }
+        .sidebar-item:hover { background: rgba(6, 182, 212, 0.1); }
+        .status-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        /* Water ripple effect for background */
+        .water-bg {
+            background:
+                radial-gradient(ellipse at 20% 80%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(20, 184, 166, 0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(13, 148, 136, 0.08) 0%, transparent 60%);
+        }
+    </style>
+</head>
+<body class="bg-[#0a0a0a] text-gray-300 min-h-screen antialiased overflow-x-hidden">
+    <!-- Caribbean Gradient Background -->
+    <div class="fixed inset-0 z-0 pointer-events-none water-bg">
+        <div class="absolute top-0 left-1/4 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[150px] pulse-glow"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-teal-500/10 rounded-full blur-[150px] pulse-glow" style="animation-delay: 2s;"></div>
+        <div class="absolute top-1/2 right-1/3 w-[400px] h-[400px] bg-amber-500/5 rounded-full blur-[120px] pulse-glow" style="animation-delay: 3s;"></div>
+    </div>
+
+    <!-- Demo Badge -->
+    <div class="fixed top-4 right-4 z-50">
+        <div class="px-4 py-2 rounded-full bg-cyan-500/20 border border-cyan-500/50 text-cyan-300 text-sm font-medium">
+            Portfolio Concept
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="fixed top-0 w-full z-40 glass border-b border-gray-800/50">
+        <nav class="max-w-7xl mx-auto px-6 h-[70px] flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center shadow-lg shadow-cyan-500/20">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/></svg>
+                </div>
+                <span class="text-xl font-bold text-white">FwChange</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#features" class="text-sm font-medium text-gray-400 hover:text-cyan-300 transition">Features</a>
+                <a href="#demo-section" class="text-sm font-medium text-gray-400 hover:text-cyan-300 transition">Demo</a>
+                <a href="#integrations" class="text-sm font-medium text-gray-400 hover:text-cyan-300 transition">Integrations</a>
+            </div>
+            <a href="#demo-section" onclick="document.getElementById('demo-section').scrollIntoView({behavior: 'smooth'}); return false;"
+               class="px-5 py-2.5 rounded-lg gradient-bg text-white font-semibold text-sm hover:opacity-90 transition shadow-lg shadow-cyan-500/20">
+                Try Demo
+            </a>
+        </nav>
+    </header>
+
+    <main class="relative z-10">
+        <!-- Hero Section with Dashboard Preview -->
+        <section class="relative pt-28 pb-16 px-6 min-h-screen">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <!-- Left: Hero Content -->
+                    <div class="relative z-10">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-sm text-cyan-300 mb-6">
+                            <span class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
+                            Coming Soon - In Development
+                        </div>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                            Firewall Changes<br>
+                            <span class="gradient-text">Made Simple</span>
+                        </h1>
+                        <p class="text-lg text-gray-400 mb-8 max-w-lg">
+                            We're building a unified platform to manage firewall changes across multi-vendor environments.
+                            AI-powered conflict detection, automated workflows, and complete audit trails.
+                        </p>
+
+                        <!-- Key Stats -->
+                        <div class="grid grid-cols-3 gap-4 mb-8">
+                            <div class="p-4 rounded-xl bg-gray-900/50 border border-gray-800 hover:border-cyan-500/30 transition">
+                                <div class="text-2xl font-bold text-white">6+</div>
+                                <div class="text-sm text-gray-500">Vendors</div>
+                            </div>
+                            <div class="p-4 rounded-xl bg-gray-900/50 border border-gray-800 hover:border-cyan-500/30 transition">
+                                <div class="text-2xl font-bold text-cyan-400">AI</div>
+                                <div class="text-sm text-gray-500">Powered</div>
+                            </div>
+                            <div class="p-4 rounded-xl bg-gray-900/50 border border-gray-800 hover:border-cyan-500/30 transition">
+                                <div class="text-2xl font-bold text-white">100%</div>
+                                <div class="text-sm text-gray-500">Audit Trail</div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Buttons -->
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#demo-section" onclick="document.getElementById('demo-section').scrollIntoView({behavior: 'smooth'}); return false;"
+                               class="inline-flex items-center gap-2 px-8 py-4 rounded-xl gradient-bg text-white font-semibold transition shadow-lg shadow-cyan-500/25 hover:opacity-90">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                Try Demo
+                            </a>
+                            <a href="mailto:info@varnaai.com?subject=FwChange%20Early%20Access&body=Hi%2C%0A%0AI'm%20interested%20in%20early%20access%20to%20FwChange.%0A%0ACompany%3A%20%0ANumber%20of%20firewalls%3A%20%0ACurrent%20vendors%3A%20%0A%0AThanks!"
+                               class="inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-gray-700 text-white font-semibold hover:bg-gray-800 hover:border-cyan-500/30 transition">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                                Get Early Access
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right: Mini Dashboard Preview -->
+                    <div class="relative float-animation">
+                        <div class="rounded-2xl border border-cyan-500/20 bg-[#111111] overflow-hidden shadow-2xl glow">
+                            <!-- Dashboard Header -->
+                            <div class="p-4 border-b border-gray-800 flex items-center justify-between bg-gradient-to-r from-cyan-900/20 to-teal-900/20">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center">
+                                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/></svg>
+                                    </div>
+                                    <span class="font-semibold text-white text-sm">FwChange Dashboard</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+                                    <span class="text-xs text-gray-500">Live</span>
+                                </div>
+                            </div>
+
+                            <!-- Dashboard Content -->
+                            <div class="p-5 space-y-4">
+                                <!-- Stats Row -->
+                                <div class="grid grid-cols-3 gap-3">
+                                    <div class="p-3 rounded-lg bg-gray-900/80 border border-gray-800">
+                                        <div class="text-xs text-gray-500 mb-1">Pending</div>
+                                        <div class="text-xl font-bold text-amber-400">12</div>
+                                    </div>
+                                    <div class="p-3 rounded-lg bg-gray-900/80 border border-gray-800">
+                                        <div class="text-xs text-gray-500 mb-1">Approved</div>
+                                        <div class="text-xl font-bold text-emerald-400">847</div>
+                                    </div>
+                                    <div class="p-3 rounded-lg bg-gray-900/80 border border-gray-800">
+                                        <div class="text-xs text-gray-500 mb-1">Conflicts</div>
+                                        <div class="text-xl font-bold text-rose-400">3</div>
+                                    </div>
+                                </div>
+
+                                <!-- Recent Changes -->
+                                <div class="p-3 rounded-lg bg-gray-900/80 border border-gray-800">
+                                    <div class="text-xs text-gray-500 mb-3">Recent Changes</div>
+                                    <div class="space-y-2">
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center gap-2">
+                                                <div class="w-6 h-6 rounded bg-cyan-500/20 flex items-center justify-center">
+                                                    <span class="text-xs">🔥</span>
+                                                </div>
+                                                <span class="text-xs text-white">PA-5220</span>
+                                            </div>
+                                            <span class="text-xs px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400">Deployed</span>
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center gap-2">
+                                                <div class="w-6 h-6 rounded bg-teal-500/20 flex items-center justify-center">
+                                                    <span class="text-xs">✓</span>
+                                                </div>
+                                                <span class="text-xs text-white">CP-6800</span>
+                                            </div>
+                                            <span class="text-xs px-2 py-0.5 rounded bg-amber-500/20 text-amber-400">Pending</span>
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center gap-2">
+                                                <div class="w-6 h-6 rounded bg-cyan-500/20 flex items-center justify-center">
+                                                    <span class="text-xs">🔷</span>
+                                                </div>
+                                                <span class="text-xs text-white">ASA-5545</span>
+                                            </div>
+                                            <span class="text-xs px-2 py-0.5 rounded bg-rose-500/20 text-rose-400">Conflict</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- AI Analysis -->
+                                <div class="p-3 rounded-lg bg-gradient-to-r from-cyan-500/10 to-teal-500/10 border border-cyan-500/30">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                                        <span class="text-xs font-medium text-cyan-400">AI Analysis</span>
+                                    </div>
+                                    <p class="text-xs text-gray-400">3 conflicts detected. Auto-resolution available for 2.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What We're Building -->
+        <section class="py-20 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">What We're Building</h2>
+                    <p class="text-lg text-gray-400">A unified platform for enterprise firewall management</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="p-8 rounded-2xl border border-rose-500/30 bg-rose-500/5 card-hover">
+                        <div class="w-12 h-12 rounded-xl bg-rose-500/20 flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">The Problem</h3>
+                        <p class="text-gray-400">
+                            Managing firewall changes across multiple vendors is complex, error-prone, and time-consuming.
+                            Policy conflicts cause outages. Compliance audits take weeks of manual work.
+                        </p>
+                    </div>
+                    <div class="p-8 rounded-2xl border border-cyan-500/30 bg-cyan-500/5 card-hover glow-sm">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Our Solution</h3>
+                        <p class="text-gray-400">
+                            One platform to manage all your firewalls. AI-powered conflict detection.
+                            Automated workflows. Complete audit trails. Built by security engineers, for security engineers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-20 px-6 bg-gradient-to-b from-transparent via-cyan-900/10 to-transparent">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Planned Features</h2>
+                    <p class="text-lg text-gray-400">What we're working on</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="p-6 rounded-2xl border border-gray-800 bg-gray-900/30 card-hover">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-5">
+                            <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Workflow Automation</h3>
+                        <p class="text-sm text-gray-400">Automated approval workflows with role-based access. Track every change from request to implementation.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl border border-gray-800 bg-gray-900/30 card-hover">
+                        <div class="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center mb-5">
+                            <svg class="w-6 h-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">AI Conflict Detection</h3>
+                        <p class="text-sm text-gray-400">AI-powered analysis detects policy conflicts, shadowed rules, and redundancies before deployment.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl border border-gray-800 bg-gray-900/30 card-hover">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-5">
+                            <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Multi-Vendor Support</h3>
+                        <p class="text-sm text-gray-400">Unified interface for Palo Alto, Check Point, Cisco, Fortinet, and cloud firewalls.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl border border-gray-800 bg-gray-900/30 card-hover">
+                        <div class="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center mb-5">
+                            <svg class="w-6 h-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">ITSM Integration</h3>
+                        <p class="text-sm text-gray-400">Seamless integration with Jira and ServiceNow for change requests and approvals.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl border border-gray-800 bg-gray-900/30 card-hover">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-5">
+                            <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Analytics & Reporting</h3>
+                        <p class="text-sm text-gray-400">Real-time dashboards, compliance reports, and optimization recommendations.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl border border-gray-800 bg-gray-900/30 card-hover">
+                        <div class="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center mb-5">
+                            <svg class="w-6 h-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Compliance Ready</h3>
+                        <p class="text-sm text-gray-400">Complete audit trails for ISO 27001, PCI-DSS, and SOX compliance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Full Demo Section -->
+        <section id="demo-section" class="py-20 px-6 bg-gradient-to-b from-transparent via-teal-500/5 to-transparent">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Interactive Demo</h2>
+                    <p class="text-lg text-gray-400">Experience the FwChange dashboard concept</p>
+                </div>
+
+                <!-- Full Dashboard -->
+                <div class="rounded-2xl border border-cyan-500/20 bg-[#0d0d0d] overflow-hidden shadow-2xl glow">
+                    <div class="flex">
+                        <!-- Sidebar -->
+                        <div class="w-64 border-r border-gray-800 bg-[#0a0a0a] hidden lg:block">
+                            <!-- Logo -->
+                            <div class="p-4 border-b border-gray-800">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-9 h-9 rounded-xl gradient-bg flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/></svg>
+                                    </div>
+                                    <span class="font-bold text-white">FwChange</span>
+                                </div>
+                            </div>
+
+                            <!-- Navigation -->
+                            <div class="p-3 space-y-1">
+                                <div class="sidebar-item px-3 py-2.5 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center gap-3">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+                                    <span class="text-sm font-medium">Dashboard</span>
+                                </div>
+                                <div class="sidebar-item px-3 py-2.5 rounded-lg text-gray-400 flex items-center gap-3">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                                    <span class="text-sm">Change Requests</span>
+                                    <span class="ml-auto text-xs px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-400">12</span>
+                                </div>
+                                <div class="sidebar-item px-3 py-2.5 rounded-lg text-gray-400 flex items-center gap-3">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>
+                                    <span class="text-sm">Firewalls</span>
+                                </div>
+                                <div class="sidebar-item px-3 py-2.5 rounded-lg text-gray-400 flex items-center gap-3">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                                    <span class="text-sm">Conflicts</span>
+                                    <span class="ml-auto text-xs px-1.5 py-0.5 rounded bg-rose-500/20 text-rose-400">3</span>
+                                </div>
+                                <div class="sidebar-item px-3 py-2.5 rounded-lg text-gray-400 flex items-center gap-3">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                                    <span class="text-sm">Reports</span>
+                                </div>
+                                <div class="sidebar-item px-3 py-2.5 rounded-lg text-gray-400 flex items-center gap-3">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                    <span class="text-sm">Settings</span>
+                                </div>
+                            </div>
+
+                            <!-- Firewalls List -->
+                            <div class="p-3 mt-4">
+                                <div class="text-xs font-medium text-gray-500 uppercase tracking-wider mb-2 px-3">Connected Firewalls</div>
+                                <div class="space-y-1">
+                                    <div class="px-3 py-2 text-xs text-gray-400 flex items-center gap-2">
+                                        <span class="w-2 h-2 bg-emerald-400 rounded-full"></span>
+                                        PA-5220 (DC-1)
+                                    </div>
+                                    <div class="px-3 py-2 text-xs text-gray-400 flex items-center gap-2">
+                                        <span class="w-2 h-2 bg-emerald-400 rounded-full"></span>
+                                        CP-6800 (DC-2)
+                                    </div>
+                                    <div class="px-3 py-2 text-xs text-gray-400 flex items-center gap-2">
+                                        <span class="w-2 h-2 bg-emerald-400 rounded-full"></span>
+                                        ASA-5545 (HQ)
+                                    </div>
+                                    <div class="px-3 py-2 text-xs text-gray-400 flex items-center gap-2">
+                                        <span class="w-2 h-2 bg-emerald-400 rounded-full"></span>
+                                        FG-100F (Branch)
+                                    </div>
+                                    <div class="px-3 py-2 text-xs text-gray-400 flex items-center gap-2">
+                                        <span class="w-2 h-2 bg-amber-400 rounded-full status-pulse"></span>
+                                        AWS-SG (Cloud)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Main Content -->
+                        <div class="flex-1">
+                            <!-- Top Bar -->
+                            <div class="h-14 border-b border-gray-800 flex items-center justify-between px-6 bg-gradient-to-r from-cyan-900/10 to-teal-900/10">
+                                <div class="flex items-center gap-4">
+                                    <h2 class="font-semibold text-white">Dashboard</h2>
+                                    <span class="text-xs text-gray-500">Last updated: 2 minutes ago</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <button class="px-4 py-2 rounded-lg gradient-bg text-white text-sm font-medium hover:opacity-90 transition">
+                                        + New Request
+                                    </button>
+                                    <div class="w-8 h-8 rounded-full bg-gradient-to-r from-cyan-500 to-teal-500 flex items-center justify-center">
+                                        <span class="text-sm font-medium text-white">JD</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Dashboard Content -->
+                            <div class="p-6">
+                                <!-- Stats Grid -->
+                                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                                    <div class="p-4 rounded-xl bg-gray-900/50 border border-gray-800 hover:border-amber-500/30 transition">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="text-sm text-gray-500">Pending Requests</span>
+                                            <div class="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center">
+                                                <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                            </div>
+                                        </div>
+                                        <div class="text-2xl font-bold text-white">12</div>
+                                        <div class="text-xs text-amber-400">+3 today</div>
+                                    </div>
+                                    <div class="p-4 rounded-xl bg-gray-900/50 border border-gray-800 hover:border-emerald-500/30 transition">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="text-sm text-gray-500">Deployed Today</span>
+                                            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center">
+                                                <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                            </div>
+                                        </div>
+                                        <div class="text-2xl font-bold text-white">28</div>
+                                        <div class="text-xs text-emerald-400">100% success</div>
+                                    </div>
+                                    <div class="p-4 rounded-xl bg-gray-900/50 border border-gray-800 hover:border-rose-500/30 transition">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="text-sm text-gray-500">Active Conflicts</span>
+                                            <div class="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center">
+                                                <svg class="w-4 h-4 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                                            </div>
+                                        </div>
+                                        <div class="text-2xl font-bold text-white">3</div>
+                                        <div class="text-xs text-rose-400">Needs attention</div>
+                                    </div>
+                                    <div class="p-4 rounded-xl bg-gray-900/50 border border-gray-800 hover:border-cyan-500/30 transition">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="text-sm text-gray-500">Total Rules</span>
+                                            <div class="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center">
+                                                <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                            </div>
+                                        </div>
+                                        <div class="text-2xl font-bold text-white">2,847</div>
+                                        <div class="text-xs text-gray-500">Across 5 firewalls</div>
+                                    </div>
+                                </div>
+
+                                <!-- Two Column Layout -->
+                                <div class="grid lg:grid-cols-2 gap-6">
+                                    <!-- Recent Changes Table -->
+                                    <div class="rounded-xl bg-gray-900/50 border border-gray-800 overflow-hidden">
+                                        <div class="p-4 border-b border-gray-800 flex items-center justify-between">
+                                            <h3 class="font-semibold text-white">Recent Change Requests</h3>
+                                            <button class="text-xs text-cyan-400 hover:underline">View all</button>
+                                        </div>
+                                        <div class="divide-y divide-gray-800">
+                                            <div class="p-4 flex items-center justify-between hover:bg-cyan-500/5 transition">
+                                                <div class="flex items-center gap-3">
+                                                    <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center">
+                                                        <span class="text-lg">🔥</span>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-sm font-medium text-white">FW-2847</div>
+                                                        <div class="text-xs text-gray-500">PA-5220 • Allow HTTPS 10.1.0.0/16</div>
+                                                    </div>
+                                                </div>
+                                                <span class="text-xs px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400">Deployed</span>
+                                            </div>
+                                            <div class="p-4 flex items-center justify-between hover:bg-cyan-500/5 transition">
+                                                <div class="flex items-center gap-3">
+                                                    <div class="w-10 h-10 rounded-lg bg-teal-500/10 flex items-center justify-center">
+                                                        <span class="text-lg">✓</span>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-sm font-medium text-white">FW-2846</div>
+                                                        <div class="text-xs text-gray-500">CP-6800 • Block SSH external</div>
+                                                    </div>
+                                                </div>
+                                                <span class="text-xs px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-400">Pending</span>
+                                            </div>
+                                            <div class="p-4 flex items-center justify-between hover:bg-cyan-500/5 transition">
+                                                <div class="flex items-center gap-3">
+                                                    <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center">
+                                                        <span class="text-lg">🔷</span>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-sm font-medium text-white">FW-2845</div>
+                                                        <div class="text-xs text-gray-500">ASA-5545 • NAT rule update</div>
+                                                    </div>
+                                                </div>
+                                                <span class="text-xs px-2.5 py-1 rounded-full bg-rose-500/20 text-rose-400">Conflict</span>
+                                            </div>
+                                            <div class="p-4 flex items-center justify-between hover:bg-cyan-500/5 transition">
+                                                <div class="flex items-center gap-3">
+                                                    <div class="w-10 h-10 rounded-lg bg-teal-500/10 flex items-center justify-center">
+                                                        <span class="text-lg">🛡️</span>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-sm font-medium text-white">FW-2844</div>
+                                                        <div class="text-xs text-gray-500">FG-100F • VPN policy update</div>
+                                                    </div>
+                                                </div>
+                                                <span class="text-xs px-2.5 py-1 rounded-full bg-cyan-500/20 text-cyan-400">In Review</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- AI Analysis Panel -->
+                                    <div class="rounded-xl bg-gray-900/50 border border-gray-800 overflow-hidden">
+                                        <div class="p-4 border-b border-gray-800 flex items-center gap-2">
+                                            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                                            <h3 class="font-semibold text-white">AI Conflict Analysis</h3>
+                                        </div>
+                                        <div class="p-4 space-y-4">
+                                            <!-- Conflict 1 -->
+                                            <div class="p-4 rounded-lg bg-rose-500/10 border border-rose-500/30">
+                                                <div class="flex items-start justify-between mb-2">
+                                                    <div class="flex items-center gap-2">
+                                                        <svg class="w-4 h-4 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                                                        <span class="text-sm font-medium text-rose-400">Rule Overlap Detected</span>
+                                                    </div>
+                                                    <span class="text-xs text-gray-500">FW-2845</span>
+                                                </div>
+                                                <p class="text-xs text-gray-400 mb-3">NAT rule conflicts with existing rule #423. Source subnet 10.0.0.0/8 overlaps with 10.1.0.0/16.</p>
+                                                <div class="flex gap-2">
+                                                    <button class="text-xs px-3 py-1.5 rounded gradient-bg text-white hover:opacity-90 transition">Auto-Resolve</button>
+                                                    <button class="text-xs px-3 py-1.5 rounded bg-gray-800 text-gray-400 hover:bg-gray-700 transition">View Details</button>
+                                                </div>
+                                            </div>
+
+                                            <!-- Conflict 2 -->
+                                            <div class="p-4 rounded-lg bg-amber-500/10 border border-amber-500/30">
+                                                <div class="flex items-start justify-between mb-2">
+                                                    <div class="flex items-center gap-2">
+                                                        <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                                        <span class="text-sm font-medium text-amber-400">Shadowed Rule</span>
+                                                    </div>
+                                                    <span class="text-xs text-gray-500">Rule #847</span>
+                                                </div>
+                                                <p class="text-xs text-gray-400 mb-3">Rule will never match. Broader rule #231 already permits this traffic.</p>
+                                                <div class="flex gap-2">
+                                                    <button class="text-xs px-3 py-1.5 rounded gradient-bg text-white hover:opacity-90 transition">Remove Rule</button>
+                                                    <button class="text-xs px-3 py-1.5 rounded bg-gray-800 text-gray-400 hover:bg-gray-700 transition">Keep Anyway</button>
+                                                </div>
+                                            </div>
+
+                                            <!-- Optimization Suggestion -->
+                                            <div class="p-4 rounded-lg bg-gradient-to-r from-cyan-500/10 to-teal-500/10 border border-cyan-500/30">
+                                                <div class="flex items-center gap-2 mb-2">
+                                                    <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                                                    <span class="text-sm font-medium text-cyan-400">Optimization Opportunity</span>
+                                                </div>
+                                                <p class="text-xs text-gray-400">47 rules can be consolidated into 12 rules. Estimated 60% reduction in policy processing time.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- CLI Terminal -->
+                                <div class="mt-6 rounded-xl border border-gray-800 bg-[#0d0d0d] overflow-hidden">
+                                    <div class="flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-cyan-900/20 to-teal-900/20 border-b border-gray-800">
+                                        <div class="w-3 h-3 rounded-full bg-rose-500/80"></div>
+                                        <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
+                                        <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+                                        <span class="ml-4 text-gray-500 text-sm font-mono">fwchange-cli</span>
+                                    </div>
+                                    <div class="p-5 font-mono text-sm space-y-1.5 overflow-x-auto">
+                                        <p class="text-gray-400">$ <span class="text-white">fwchange analyze --policy FW-2845.json</span></p>
+                                        <p class="text-cyan-400">[AI] Analyzing policy against 2,847 existing rules...</p>
+                                        <p class="text-rose-400">⚠ Conflict detected with rule #423 on ASA-5545</p>
+                                        <p class="text-gray-500 pl-4">Source: 10.0.0.0/8 → Dest: 192.168.1.0/24 (Port 443)</p>
+                                        <p class="text-teal-400">✓ Auto-resolution available: Modify source to 10.1.0.0/16</p>
+                                        <p class="mt-2 text-gray-400">$ <span class="text-white">fwchange deploy --auto-resolve --ticket JIRA-2847</span></p>
+                                        <p class="text-emerald-400">✓ Rule deployed to ASA-5545</p>
+                                        <p class="text-emerald-400">✓ Jira ticket JIRA-2847 updated</p>
+                                        <p class="text-emerald-400">✓ Audit log recorded (ISO 27001 compliant)</p>
+                                        <p class="mt-2 text-gray-400">$ <span class="blink">_</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Integrations -->
+        <section id="integrations" class="py-20 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Planned Integrations</h2>
+                    <p class="text-lg text-gray-400">Built to work with your existing security stack</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                    <div class="p-5 rounded-xl border border-gray-800 bg-gray-900/30 text-center card-hover">
+                        <div class="text-3xl mb-2">🔥</div>
+                        <div class="text-white font-semibold text-sm">Palo Alto</div>
+                        <div class="text-xs text-gray-500">Networks</div>
+                    </div>
+                    <div class="p-5 rounded-xl border border-gray-800 bg-gray-900/30 text-center card-hover">
+                        <div class="text-3xl mb-2">✓</div>
+                        <div class="text-white font-semibold text-sm">Check Point</div>
+                        <div class="text-xs text-gray-500">NGFW</div>
+                    </div>
+                    <div class="p-5 rounded-xl border border-gray-800 bg-gray-900/30 text-center card-hover">
+                        <div class="text-3xl mb-2">🔷</div>
+                        <div class="text-white font-semibold text-sm">Cisco</div>
+                        <div class="text-xs text-gray-500">ASA / FTD</div>
+                    </div>
+                    <div class="p-5 rounded-xl border border-gray-800 bg-gray-900/30 text-center card-hover">
+                        <div class="text-3xl mb-2">🛡️</div>
+                        <div class="text-white font-semibold text-sm">Fortinet</div>
+                        <div class="text-xs text-gray-500">FortiGate</div>
+                    </div>
+                    <div class="p-5 rounded-xl border border-gray-800 bg-gray-900/30 text-center card-hover">
+                        <div class="text-3xl mb-2">☁️</div>
+                        <div class="text-white font-semibold text-sm">AWS</div>
+                        <div class="text-xs text-gray-500">Security Groups</div>
+                    </div>
+                    <div class="p-5 rounded-xl border border-gray-800 bg-gray-900/30 text-center card-hover">
+                        <div class="text-3xl mb-2">🔵</div>
+                        <div class="text-white font-semibold text-sm">Azure</div>
+                        <div class="text-xs text-gray-500">NSG / Firewall</div>
+                    </div>
+                    <div class="p-5 rounded-xl border border-gray-800 bg-gray-900/30 text-center card-hover">
+                        <div class="text-3xl mb-2">📋</div>
+                        <div class="text-white font-semibold text-sm">Jira</div>
+                        <div class="text-xs text-gray-500">Atlassian</div>
+                    </div>
+                    <div class="p-5 rounded-xl border border-gray-800 bg-gray-900/30 text-center card-hover">
+                        <div class="text-3xl mb-2">🎫</div>
+                        <div class="text-white font-semibold text-sm">ServiceNow</div>
+                        <div class="text-xs text-gray-500">ITSM</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="contact" class="py-20 px-6">
+            <div class="max-w-2xl mx-auto text-center">
+                <div class="p-10 rounded-3xl border border-cyan-500/20 bg-gradient-to-b from-cyan-900/10 to-teal-900/10 glow">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Get Early Access</h2>
+                    <p class="text-lg text-gray-400 mb-8">
+                        We're actively developing FwChange. Reach out to discuss your firewall management challenges
+                        and be first in line when we launch.
+                    </p>
+
+                    <a href="mailto:info@varnaai.com?subject=FwChange%20Early%20Access&body=Hi%2C%0A%0AI'm%20interested%20in%20early%20access%20to%20FwChange.%0A%0ACompany%3A%20%0ANumber%20of%20firewalls%3A%20%0ACurrent%20vendors%3A%20%0A%0AThanks!"
+                       class="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-lg gradient-bg text-white hover:opacity-90 transition shadow-lg shadow-cyan-500/20">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        Contact Us
+                    </a>
+
+                    <div class="mt-8 pt-8 border-t border-gray-800">
+                        <p class="text-gray-500 text-sm">
+                            Built by security engineers with 15+ years of enterprise firewall experience
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-gray-800 py-8 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center">
+                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/></svg>
+                </div>
+                <span class="font-bold text-white">FwChange</span>
+            </div>
+            <div class="text-gray-500 text-sm">
+                A <a href="https://varnaai.com" class="text-cyan-400 hover:underline">VarnaAI</a> Project
+            </div>
+            <div class="text-gray-500 text-sm">
+                © 2025 FwChange. Coming Soon.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Smooth scroll -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

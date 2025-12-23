@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="C3 Compliance Command Center - KI-gestützte Compliance-Automatisierung für deutsche Unternehmen.">
+    <title>C3 Compliance Command Center | Coming Soon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-300 min-h-screen">
+    <!-- Portfolio Badge -->
+    <div class="fixed top-4 right-4 z-50">
+        <div class="px-3 py-1.5 rounded-full bg-amber-500/20 border border-amber-500/50 text-amber-400 text-xs font-medium">
+            Portfolio Concept
+        </div>
+    </div>
+
+    <!-- App Shell -->
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-gray-900 border-r border-gray-800 flex flex-col">
+            <!-- Logo -->
+            <div class="p-4 border-b border-gray-800">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-lg bg-emerald-500 flex items-center justify-center font-bold text-gray-900 text-sm">C3</div>
+                    <div>
+                        <div class="font-semibold text-white text-sm">Compliance Command</div>
+                        <div class="text-xs text-gray-500">Center</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nav -->
+            <nav class="flex-1 p-3 space-y-1">
+                <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-emerald-500/10 text-emerald-400 text-sm font-medium">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                    Dashboard
+                </a>
+                <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:bg-gray-800 text-sm">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    Compliance Scans
+                </a>
+                <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:bg-gray-800 text-sm">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    Dokumente
+                </a>
+                <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:bg-gray-800 text-sm">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                    Risiken
+                </a>
+                <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:bg-gray-800 text-sm">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    Einstellungen
+                </a>
+            </nav>
+
+            <!-- User -->
+            <div class="p-3 border-t border-gray-800">
+                <div class="flex items-center gap-3 px-3 py-2">
+                    <div class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center text-xs font-medium text-gray-300">BD</div>
+                    <div class="flex-1 min-w-0">
+                        <div class="text-sm font-medium text-white truncate">Demo User</div>
+                        <div class="text-xs text-gray-500 truncate">demo@beispiel.de</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-auto">
+            <!-- Header -->
+            <header class="bg-gray-900/50 border-b border-gray-800 px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-xl font-semibold text-white">Compliance Dashboard</h1>
+                        <p class="text-sm text-gray-500">Übersicht aller Regularien</p>
+                    </div>
+                    <button class="px-4 py-2 bg-emerald-500 text-gray-900 rounded-lg text-sm font-medium hover:bg-emerald-400 transition flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                        Neuer Scan
+                    </button>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="p-6 space-y-6">
+                <!-- Overall Score -->
+                <div class="bg-gray-900 rounded-xl border border-gray-800 p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-lg font-semibold text-white">Gesamt-Compliance-Score</h2>
+                        <span class="text-xs text-gray-500">Letzter Scan: Heute, 14:32</span>
+                    </div>
+                    <div class="flex items-center gap-8">
+                        <!-- Big Score -->
+                        <div class="relative w-32 h-32">
+                            <svg class="w-32 h-32 -rotate-90">
+                                <circle cx="64" cy="64" r="56" fill="none" stroke="#1f2937" stroke-width="12"/>
+                                <circle cx="64" cy="64" r="56" fill="none" stroke="#10b981" stroke-width="12" stroke-dasharray="352" stroke-dashoffset="70" stroke-linecap="round"/>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <span class="text-3xl font-bold text-white">80%</span>
+                            </div>
+                        </div>
+                        <!-- Score Breakdown -->
+                        <div class="flex-1 grid grid-cols-5 gap-4">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-emerald-400">87%</div>
+                                <div class="text-xs text-gray-500 mt-1">DSGVO</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-amber-400">62%</div>
+                                <div class="text-xs text-gray-500 mt-1">AI Act</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-emerald-400">91%</div>
+                                <div class="text-xs text-gray-500 mt-1">NIS2</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-emerald-400">85%</div>
+                                <div class="text-xs text-gray-500 mt-1">GoBD</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-red-400">45%</div>
+                                <div class="text-xs text-gray-500 mt-1">BSI C5</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Regulation Cards -->
+                <div class="grid grid-cols-2 lg:grid-cols-5 gap-4">
+                    <div class="bg-gray-900 rounded-xl border border-gray-800 p-4">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-lg">🔒</span>
+                            <span class="px-2 py-0.5 bg-emerald-500/20 text-emerald-400 text-xs rounded-full">87%</span>
+                        </div>
+                        <div class="font-medium text-white text-sm">DSGVO</div>
+                        <div class="text-xs text-gray-500">3 offene Punkte</div>
+                    </div>
+                    <div class="bg-gray-900 rounded-xl border border-gray-800 p-4">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-lg">🤖</span>
+                            <span class="px-2 py-0.5 bg-amber-500/20 text-amber-400 text-xs rounded-full">62%</span>
+                        </div>
+                        <div class="font-medium text-white text-sm">AI Act</div>
+                        <div class="text-xs text-gray-500">Klassifizierung fehlt</div>
+                    </div>
+                    <div class="bg-gray-900 rounded-xl border border-gray-800 p-4">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-lg">🛡️</span>
+                            <span class="px-2 py-0.5 bg-emerald-500/20 text-emerald-400 text-xs rounded-full">91%</span>
+                        </div>
+                        <div class="font-medium text-white text-sm">NIS2</div>
+                        <div class="text-xs text-gray-500">1 offener Punkt</div>
+                    </div>
+                    <div class="bg-gray-900 rounded-xl border border-gray-800 p-4">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-lg">📋</span>
+                            <span class="px-2 py-0.5 bg-emerald-500/20 text-emerald-400 text-xs rounded-full">85%</span>
+                        </div>
+                        <div class="font-medium text-white text-sm">GoBD</div>
+                        <div class="text-xs text-gray-500">2 offene Punkte</div>
+                    </div>
+                    <div class="bg-gray-900 rounded-xl border border-gray-800 p-4">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-lg">🔐</span>
+                            <span class="px-2 py-0.5 bg-red-500/20 text-red-400 text-xs rounded-full">45%</span>
+                        </div>
+                        <div class="font-medium text-white text-sm">BSI C5</div>
+                        <div class="text-xs text-gray-500">12 offene Punkte</div>
+                    </div>
+                </div>
+
+                <!-- Two Column Layout -->
+                <div class="grid lg:grid-cols-2 gap-6">
+                    <!-- Recent Activity -->
+                    <div class="bg-gray-900 rounded-xl border border-gray-800 p-6">
+                        <h3 class="font-semibold text-white mb-4">Letzte Aktivitäten</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-sm">
+                                <div class="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-gray-300">DSFA generiert</div>
+                                    <div class="text-xs text-gray-500">vor 2 Stunden</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm">
+                                <div class="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-gray-300">Compliance-Scan durchgeführt</div>
+                                    <div class="text-xs text-gray-500">vor 5 Stunden</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm">
+                                <div class="w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-gray-300">Neue AI Act Anforderung</div>
+                                    <div class="text-xs text-gray-500">gestern</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="bg-gray-900 rounded-xl border border-gray-800 p-6">
+                        <h3 class="font-semibold text-white mb-4">Schnellaktionen</h3>
+                        <div class="grid grid-cols-2 gap-3">
+                            <button class="p-3 bg-gray-800 hover:bg-gray-700 rounded-lg text-left transition">
+                                <svg class="w-5 h-5 text-emerald-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                <div class="text-sm font-medium text-white">DSFA erstellen</div>
+                                <div class="text-xs text-gray-500">Datenschutz-Folgenabschätzung</div>
+                            </button>
+                            <button class="p-3 bg-gray-800 hover:bg-gray-700 rounded-lg text-left transition">
+                                <svg class="w-5 h-5 text-emerald-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                <div class="text-sm font-medium text-white">Report exportieren</div>
+                                <div class="text-xs text-gray-500">PDF oder Excel</div>
+                            </button>
+                            <button class="p-3 bg-gray-800 hover:bg-gray-700 rounded-lg text-left transition">
+                                <svg class="w-5 h-5 text-emerald-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+                                <div class="text-sm font-medium text-white">AI Klassifizierung</div>
+                                <div class="text-xs text-gray-500">Risikoklasse bestimmen</div>
+                            </button>
+                            <button class="p-3 bg-gray-800 hover:bg-gray-700 rounded-lg text-left transition">
+                                <svg class="w-5 h-5 text-emerald-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                <div class="text-sm font-medium text-white">KI-Assistent</div>
+                                <div class="text-xs text-gray-500">Fragen stellen</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coming Soon Overlay -->
+            <div class="fixed inset-0 bg-gray-950/80 flex items-center justify-center z-40 pointer-events-none">
+                <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 max-w-md text-center pointer-events-auto shadow-2xl">
+                    <div class="w-16 h-16 rounded-2xl bg-emerald-500 flex items-center justify-center font-bold text-gray-900 text-2xl mx-auto mb-6">C3</div>
+                    <h2 class="text-2xl font-bold text-white mb-2">Coming Soon</h2>
+                    <p class="text-gray-400 mb-6">
+                        C3 Compliance Command Center befindet sich in aktiver Entwicklung.
+                        Hinterlassen Sie Ihre E-Mail für Updates.
+                    </p>
+                    <a href="mailto:info@varnaai.com?subject=C3%20Frühzugang&body=Ich%20interessiere%20mich%20für%20C3.%0A%0AUnternehmen%3A%0AMitarbeiter%3A%0A"
+                       class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-500 text-gray-900 rounded-lg font-semibold hover:bg-emerald-400 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        Frühzugang anfragen
+                    </a>
+                    <p class="text-xs text-gray-500 mt-4">
+                        Ein <a href="https://varnaai.com" class="text-emerald-400 hover:underline">VarnaAI</a> Projekt
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

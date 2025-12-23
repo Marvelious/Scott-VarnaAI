@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetirementAI - AI-Powered Financial Planning | Coming Soon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        @keyframes pulse-slow { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+        .animate-pulse-slow { animation: pulse-slow 3s ease-in-out infinite; }
+    </style>
+</head>
+<body class="bg-slate-950 text-white min-h-screen">
+    <!-- Portfolio Concept Badge -->
+    <div class="fixed top-4 right-4 z-50">
+        <div class="px-4 py-2 rounded-full bg-amber-500/20 border border-amber-500/50 text-amber-400 text-sm font-medium">
+            Portfolio Concept
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative max-w-6xl mx-auto px-6 py-20">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left: Content -->
+                <div>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm mb-8">
+                        <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+                        Coming Soon
+                    </div>
+
+                    <h1 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Your AI-Powered
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
+                            Retirement Planner
+                        </span>
+                    </h1>
+
+                    <p class="text-xl text-slate-400 mb-8 leading-relaxed">
+                        Monte Carlo simulations, portfolio tracking, and personalized AI advice.
+                        All processing done locally on your device for complete privacy.
+                    </p>
+
+                    <!-- Key Benefits -->
+                    <div class="space-y-4 mb-10">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center shrink-0 mt-1">
+                                <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold mb-1">100% Local Processing</h3>
+                                <p class="text-slate-400 text-sm">Your financial data never leaves your device. AI runs locally via Ollama/LM Studio.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center shrink-0 mt-1">
+                                <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold mb-1">10,000 Monte Carlo Simulations</h3>
+                                <p class="text-slate-400 text-sm">Know your actual probability of reaching retirement goals, not guesswork.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center shrink-0 mt-1">
+                                <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold mb-1">Trading212 Auto-Sync</h3>
+                                <p class="text-slate-400 text-sm">Import your portfolio automatically. No manual data entry needed.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#demo" onclick="document.getElementById('demo-section').scrollIntoView({behavior: 'smooth'}); return false;"
+                           class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-semibold transition shadow-lg shadow-emerald-500/25">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            Try Demo
+                        </a>
+                        <a href="mailto:info@varnaai.com?subject=RetirementAI%20Early%20Access&body=Hi%2C%0A%0AI'm%20interested%20in%20RetirementAI%20early%20access.%0A%0ACountry%3A%0ACurrent%20portfolio%20size%3A%0ARetirement%20timeline%3A%0A%0AThanks!"
+                           class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold transition border border-slate-700">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            Get Early Access
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Dashboard Preview -->
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-3xl blur-xl"></div>
+                    <div class="relative bg-slate-900 rounded-2xl border border-slate-800 p-6 shadow-2xl">
+                        <!-- Mini Dashboard Header -->
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-white">RetirementAI</div>
+                                    <div class="text-xs text-slate-500">Dashboard Preview</div>
+                                </div>
+                            </div>
+                            <span class="px-2 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs">On Track</span>
+                        </div>
+
+                        <!-- Portfolio Value -->
+                        <div class="bg-slate-800/50 rounded-xl p-4 mb-4">
+                            <div class="text-slate-400 text-xs mb-1">Total Portfolio Value</div>
+                            <div class="text-3xl font-bold text-white">€47,280</div>
+                            <div class="flex items-center gap-2 mt-1">
+                                <span class="text-emerald-400 text-sm font-medium">+€4,890</span>
+                                <span class="text-emerald-400 text-xs">(+11.5% YTD)</span>
+                            </div>
+                        </div>
+
+                        <!-- Stats Grid -->
+                        <div class="grid grid-cols-2 gap-3 mb-4">
+                            <div class="bg-slate-800/50 rounded-xl p-3">
+                                <div class="text-slate-400 text-xs mb-1">Success Rate</div>
+                                <div class="text-xl font-bold text-emerald-400">92%</div>
+                                <div class="text-slate-500 text-xs">Monte Carlo</div>
+                            </div>
+                            <div class="bg-slate-800/50 rounded-xl p-3">
+                                <div class="text-slate-400 text-xs mb-1">Goal Progress</div>
+                                <div class="text-xl font-bold text-white">11.8%</div>
+                                <div class="text-slate-500 text-xs">of €400K</div>
+                            </div>
+                        </div>
+
+                        <!-- Retirement Countdown -->
+                        <div class="bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-xl border border-emerald-500/20 p-4">
+                            <div class="text-slate-400 text-xs mb-2">Time Until Retirement</div>
+                            <div class="flex justify-around text-center">
+                                <div>
+                                    <div class="text-2xl font-bold text-white animate-float">33</div>
+                                    <div class="text-xs text-slate-400">Years</div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold text-white animate-float" style="animation-delay: 0.5s">2</div>
+                                    <div class="text-xs text-slate-400">Months</div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold text-white animate-float" style="animation-delay: 1s">15</div>
+                                    <div class="text-xs text-slate-400">Days</div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-3 text-slate-400 text-xs">
+                                Current age: <span class="text-white">32</span> → Target: <span class="text-emerald-400">65</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Dashboard Section -->
+    <section id="demo-section" class="py-24 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm mb-4">
+                    <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+                    Interactive Demo
+                </span>
+                <h2 class="text-3xl font-bold mb-4">See the Dashboard in Action</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">
+                    This is what your retirement planning dashboard will look like.
+                    Sample data for a 32-year-old investor with €47K portfolio.
+                </p>
+            </div>
+
+            <!-- Full Dashboard Preview -->
+            <div class="bg-slate-950 rounded-3xl border border-slate-800 overflow-hidden shadow-2xl">
+                <div class="flex">
+                    <!-- Sidebar -->
+                    <aside class="w-64 bg-slate-900/80 border-r border-slate-800 hidden lg:flex flex-col">
+                        <!-- Logo -->
+                        <div class="p-6 border-b border-slate-800">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-white">RetirementAI</div>
+                                    <div class="text-xs text-slate-500">Smart Planning</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation -->
+                        <nav class="flex-1 p-4 space-y-1">
+                            <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6z"/>
+                                </svg>
+                                Dashboard
+                            </a>
+                            <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800/50 transition">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2z"/>
+                                </svg>
+                                Portfolio
+                            </a>
+                            <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800/50 transition">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707"/>
+                                </svg>
+                                AI Advisor
+                            </a>
+                            <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800/50 transition">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                                Projections
+                            </a>
+                        </nav>
+
+                        <!-- User -->
+                        <div class="p-4 border-t border-slate-800">
+                            <div class="flex items-center gap-3 px-2">
+                                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-sm font-bold">
+                                    DU
+                                </div>
+                                <div>
+                                    <div class="text-sm font-medium">Demo User</div>
+                                    <div class="text-xs text-slate-500">demo@example.com</div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- Main Content -->
+                    <main class="flex-1 p-8">
+                        <!-- Header -->
+                        <div class="flex items-center justify-between mb-8">
+                            <div>
+                                <h3 class="text-2xl font-bold">Portfolio Dashboard</h3>
+                                <p class="text-slate-500 text-sm">Track your path to retirement</p>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-medium">On Track</span>
+                        </div>
+
+                        <!-- Dashboard Grid -->
+                        <div class="grid lg:grid-cols-3 gap-6">
+                            <!-- Portfolio Value -->
+                            <div class="lg:col-span-2 bg-slate-800/50 rounded-2xl p-6 border border-slate-700">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div>
+                                        <div class="text-slate-400 text-sm mb-1">Total Portfolio Value</div>
+                                        <div class="text-4xl font-bold text-white">€47,280</div>
+                                        <div class="flex items-center gap-2 mt-2">
+                                            <span class="text-emerald-400 text-sm font-medium">+€4,890</span>
+                                            <span class="text-emerald-400 text-sm">(+11.5% YTD)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Chart Bars -->
+                                <div class="h-32 flex items-end gap-1 mt-4">
+                                    <div class="flex-1 bg-emerald-500/20 rounded-t" style="height: 45%"></div>
+                                    <div class="flex-1 bg-emerald-500/20 rounded-t" style="height: 52%"></div>
+                                    <div class="flex-1 bg-emerald-500/20 rounded-t" style="height: 48%"></div>
+                                    <div class="flex-1 bg-emerald-500/30 rounded-t" style="height: 62%"></div>
+                                    <div class="flex-1 bg-emerald-500/30 rounded-t" style="height: 68%"></div>
+                                    <div class="flex-1 bg-emerald-500/40 rounded-t" style="height: 75%"></div>
+                                    <div class="flex-1 bg-emerald-500/50 rounded-t" style="height: 82%"></div>
+                                    <div class="flex-1 bg-emerald-500 rounded-t animate-pulse-slow" style="height: 95%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Asset Allocation -->
+                            <div class="bg-slate-800/50 rounded-2xl p-6 border border-slate-700">
+                                <div class="text-slate-400 text-sm mb-4">Asset Allocation</div>
+                                <div class="relative w-32 h-32 mx-auto mb-4">
+                                    <svg class="w-full h-full -rotate-90" viewBox="0 0 100 100">
+                                        <circle cx="50" cy="50" r="40" fill="none" stroke="#1e293b" stroke-width="12"/>
+                                        <circle cx="50" cy="50" r="40" fill="none" stroke="#10b981" stroke-width="12" stroke-dasharray="138 251"/>
+                                        <circle cx="50" cy="50" r="40" fill="none" stroke="#3b82f6" stroke-width="12" stroke-dasharray="63 251" stroke-dashoffset="-138"/>
+                                        <circle cx="50" cy="50" r="40" fill="none" stroke="#8b5cf6" stroke-width="12" stroke-dasharray="38 251" stroke-dashoffset="-201"/>
+                                    </svg>
+                                </div>
+                                <div class="space-y-2 text-sm">
+                                    <div class="flex justify-between"><span class="text-slate-400">Stocks</span><span class="text-white">55%</span></div>
+                                    <div class="flex justify-between"><span class="text-slate-400">Bonds</span><span class="text-white">25%</span></div>
+                                    <div class="flex justify-between"><span class="text-slate-400">ETFs</span><span class="text-white">15%</span></div>
+                                    <div class="flex justify-between"><span class="text-slate-400">Cash</span><span class="text-white">5%</span></div>
+                                </div>
+                            </div>
+
+                            <!-- Retirement Goal -->
+                            <div class="bg-slate-800/50 rounded-2xl p-6 border border-slate-700">
+                                <div class="text-slate-400 text-sm mb-2">Retirement Goal</div>
+                                <div class="text-2xl font-bold text-white mb-1">€400,000</div>
+                                <div class="text-slate-500 text-xs mb-4">Target by age 65</div>
+                                <div class="h-3 bg-slate-700 rounded-full overflow-hidden mb-2">
+                                    <div class="h-full bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full" style="width: 11.8%"></div>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-emerald-400">€47,280</span>
+                                    <span class="text-slate-500">11.8%</span>
+                                </div>
+                            </div>
+
+                            <!-- Monte Carlo -->
+                            <div class="bg-slate-800/50 rounded-2xl p-6 border border-slate-700">
+                                <div class="text-slate-400 text-sm mb-2">Monte Carlo Analysis</div>
+                                <div class="flex items-center gap-4">
+                                    <div class="relative w-20 h-20">
+                                        <svg class="w-full h-full -rotate-90" viewBox="0 0 100 100">
+                                            <circle cx="50" cy="50" r="40" fill="none" stroke="#1e293b" stroke-width="10"/>
+                                            <circle cx="50" cy="50" r="40" fill="none" stroke="#10b981" stroke-width="10" stroke-dasharray="231 251"/>
+                                        </svg>
+                                        <div class="absolute inset-0 flex items-center justify-center">
+                                            <span class="text-xl font-bold text-emerald-400">92%</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="text-white font-medium">Success Rate</div>
+                                        <div class="text-slate-500 text-xs">10,000 simulations</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Countdown -->
+                            <div class="bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-2xl p-6 border border-emerald-500/20">
+                                <div class="text-slate-400 text-sm mb-3">Time Until Retirement</div>
+                                <div class="flex justify-around text-center">
+                                    <div>
+                                        <div class="text-2xl font-bold text-white">33</div>
+                                        <div class="text-xs text-slate-400">Years</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-2xl font-bold text-white">2</div>
+                                        <div class="text-xs text-slate-400">Months</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-2xl font-bold text-white">15</div>
+                                        <div class="text-xs text-slate-400">Days</div>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-3 text-slate-400 text-xs">
+                                    Age 32 → Target 65
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- AI Chat Preview -->
+                        <div class="mt-6 bg-slate-800/50 rounded-2xl p-6 border border-slate-700">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="text-white font-medium">AI Financial Advisor</div>
+                                    <div class="text-xs text-emerald-400">Local Processing - Your data stays private</div>
+                                </div>
+                            </div>
+                            <div class="bg-purple-500/10 border border-purple-500/20 rounded-xl p-4">
+                                <p class="text-slate-300 text-sm mb-2">At 32 with €47K and €500/month contributions, you're in a great position:</p>
+                                <ul class="text-sm text-slate-400 space-y-1 ml-4 list-disc">
+                                    <li>92% probability of reaching €400K goal</li>
+                                    <li>33 years of compound growth ahead</li>
+                                    <li>Your allocation is appropriate for your age</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+
+            <!-- CTA Below Demo -->
+            <div class="text-center mt-12">
+                <p class="text-slate-400 mb-6">Want to track your own portfolio?</p>
+                <a href="mailto:info@varnaai.com?subject=RetirementAI%20Early%20Access&body=Hi%2C%0A%0AI'm%20interested%20in%20RetirementAI%20early%20access.%0A%0ACountry%3A%0ACurrent%20portfolio%20size%3A%0ARetirement%20timeline%3A%0A%0AThanks!"
+                   class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-semibold transition shadow-lg shadow-emerald-500/25">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                    Get Early Access
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-24 bg-slate-950">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">What You'll Get</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">
+                    Built for young investors who want to start early and grow wealth over decades.
+                    Free tier with limited features for everyone.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-slate-800/50 rounded-2xl p-6 border border-slate-700 hover:border-emerald-500/30 transition">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Portfolio Tracking</h3>
+                    <p class="text-slate-400 text-sm">
+                        Track stocks, ETFs, bonds, and cash. Automatic rebalancing alerts when you drift from targets.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-slate-800/50 rounded-2xl p-6 border border-slate-700 hover:border-blue-500/30 transition">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">AI Financial Advisor</h3>
+                    <p class="text-slate-400 text-sm">
+                        Ask questions in plain language. Get personalized advice based on your actual portfolio and goals.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-slate-800/50 rounded-2xl p-6 border border-slate-700 hover:border-purple-500/30 transition">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Retirement Projections</h3>
+                    <p class="text-slate-400 text-sm">
+                        See best and worst case scenarios. Know exactly what monthly contribution keeps you on track.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience -->
+    <section class="py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Built for Young Investors</h2>
+                    <p class="text-slate-400 mb-8 leading-relaxed">
+                        Most retirement tools are designed for people already near retirement.
+                        We're building for 20s and 30s - when compound growth has 30+ years to work its magic.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-slate-300">Free tier with essential features</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-slate-300">No financial advisor needed</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-slate-300">European-focused (EUR, Trading212)</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-slate-300">GDPR-compliant local processing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/50 rounded-2xl border border-slate-800 p-8">
+                    <h3 class="text-xl font-semibold mb-6 text-center">Sample User Profile</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center py-3 border-b border-slate-800">
+                            <span class="text-slate-400">Age</span>
+                            <span class="text-white font-medium">32 years old</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-slate-800">
+                            <span class="text-slate-400">Portfolio Size</span>
+                            <span class="text-white font-medium">€47,280</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-slate-800">
+                            <span class="text-slate-400">Monthly Contribution</span>
+                            <span class="text-white font-medium">€500</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-slate-800">
+                            <span class="text-slate-400">Retirement Goal</span>
+                            <span class="text-white font-medium">€400,000</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-slate-800">
+                            <span class="text-slate-400">Time to Retirement</span>
+                            <span class="text-white font-medium">33 years</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3">
+                            <span class="text-slate-400">Success Probability</span>
+                            <span class="text-emerald-400 font-bold text-lg">92%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gradient-to-b from-slate-900/50 to-slate-950">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Join the Waitlist</h2>
+            <p class="text-slate-400 mb-8">
+                Be among the first to access RetirementAI when we launch.
+                Early users get extended free tier access.
+            </p>
+            <a href="mailto:info@varnaai.com?subject=RetirementAI%20Early%20Access&body=Hi%2C%0A%0AI'm%20interested%20in%20RetirementAI%20early%20access.%0A%0ACountry%3A%0ACurrent%20portfolio%20size%3A%0ARetirement%20timeline%3A%0A%0AThanks!"
+               class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-semibold transition shadow-lg shadow-emerald-500/25">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                Get Early Access
+            </a>
+            <p class="text-xs text-slate-500 mt-6">
+                A <a href="https://varnaai.com" class="text-emerald-400 hover:underline">VarnaAI</a> Project
+            </p>
+        </div>
+    </section>
+</body>
+</html>
