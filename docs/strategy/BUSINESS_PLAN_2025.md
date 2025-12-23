@@ -3,8 +3,33 @@
 **Company**: Classic Security EOOD (VarnaAI Portfolio)
 **Plan Type**: 12-Month Strategic Roadmap
 **Period**: January 2025 - December 2025
-**Version**: 1.0
+**Version**: 1.1
 **Created**: December 2025
+**Updated**: December 19, 2025
+
+---
+
+## ⚠️ STATUS UPDATE (December 2025)
+
+**Strategic Pivot**: Focus shifted from portfolio expansion to Varna return preparation.
+
+| Asset | Status | Action |
+|-------|--------|--------|
+| VarnaAI.com | ✅ Active | Primary focus (WordPress on All-Inkl) |
+| C3 Compliance | ✅ Live demo | https://c3.varnaai.com/ (Hetzner VPS) |
+| AI Marketing BG | ✅ Active | Bulgarian market entry (WordPress) |
+| AI Projektmanager | 🟡 Dormant | WordPress running, no development |
+| Varna Agenten | 🟡 Dormant | WordPress running, no development |
+| Classic Security | ✅ Active | Foundation brand (WordPress) |
+| FwChange | ✅ Live demo | https://demo-fwchange.varnaai.com/ (Hetzner VPS) |
+| RetirementAI | ✅ Live demo | https://demo-retirement.varnaai.com/ (Hetzner VPS) |
+
+**Pending Infrastructure Changes**:
+- ⏳ VPS shutdown PLANNED - will migrate to static landing pages
+- ⏳ All-Inkl deployment ready - landing pages created
+- ✅ German sites: Leave dormant on All-Inkl (no changes)
+
+**Priority**: Prepare for physical return to Varna, Bulgaria. Business plan details TBD.
 
 ---
 
