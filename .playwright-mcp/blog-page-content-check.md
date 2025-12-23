@@ -1,0 +1,284 @@
+### New console messages
+- [WARNING] 'getMedia' is deprecated since version 6.9. Please use the 'postType', 'attachment' entity...
+
+### Page state
+- Page URL: https://varnaai.com/wp-admin/post.php?post=18&action=edit
+- Page Title: Edit Page “Blog” ‹ Varna AI — WordPress
+- Page Snapshot:
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - text:         ↳       D
+    - generic:
+      - text:  D  D
+      - main:
+        - generic:
+          - generic:
+            - heading "Edit Page" [level=1] [ref=e3]
+            - generic [ref=e5]:
+              - generic [ref=e6]:
+                - region "Editor top bar" [ref=e7]:
+                  - generic [ref=e8]:
+                    - generic [ref=e12]:
+                      - link "View Pages" [ref=e13] [cursor=pointer]:
+                        - /url: edit.php?post_type=page
+                        - img "Site Icon" [ref=e17]
+                      - generic:
+                        - img
+                    - toolbar "Document tools" [ref=e19]:
+                      - generic [ref=e20]:
+                        - button "Block Inserter" [ref=e21] [cursor=pointer]:
+                          - img [ref=e22]
+                        - button "Undo" [disabled] [ref=e24]:
+                          - img [ref=e25]
+                        - button "Redo" [disabled] [ref=e27]:
+                          - img [ref=e28]
+                        - button "Document Overview" [ref=e30] [cursor=pointer]:
+                          - img [ref=e31]
+                      - button "Design Library" [ref=e100] [cursor=pointer]:
+                        - img [ref=e101]
+                        - text: Design Library
+                    - button "Blog · Posts Page Ctrl+K" [ref=e105] [cursor=pointer]:
+                      - heading "Blog · Posts Page" [level=1] [ref=e106]:
+                        - generic [ref=e38]: Blog
+                        - generic [ref=e107]: · Posts Page
+                      - generic [ref=e40]: Ctrl+K
+                    - generic [ref=e41]:
+                      - link "View Page" [ref=e42] [cursor=pointer]:
+                        - /url: https://varnaai.com/gdpr-compliance-blog/
+                        - img [ref=e43]
+                      - button "View" [ref=e46] [cursor=pointer]:
+                        - img [ref=e47]
+                      - generic [ref=e108]:
+                        - button "Page Settings" [ref=e109] [cursor=pointer]:
+                          - img [ref=e110]
+                        - button "Kadence Blocks Controls" [ref=e120] [cursor=pointer]:
+                          - img [ref=e121]
+                        - button "Rank Math" [ref=e124] [cursor=pointer]:
+                          - generic [ref=e125]:
+                            - generic [ref=e126]: 
+                            - generic [ref=e128]: 92 / 100
+                        - button "Content AI" [ref=e129] [cursor=pointer]:
+                          - generic [ref=e130]:
+                            - generic [ref=e131]: 
+                            - generic [ref=e132]: 3 / 100
+                        - button "Settings" [expanded] [pressed] [ref=e133] [cursor=pointer]:
+                          - img [ref=e134]
+                      - button "Save" [ref=e49] [cursor=pointer]
+                      - button "Options" [ref=e51] [cursor=pointer]:
+                        - img [ref=e52]
+                - generic [ref=e54]:
+                  - region "Editor content" [ref=e55]:
+                    - generic [ref=e57]:
+                      - generic [ref=e58]: Warning notice
+                      - generic [ref=e59]: You are currently editing the page that shows your latest posts.
+                    - generic [ref=e63]:
+                      - textbox "Add title" [ref=e65]
+                      - generic [ref=e68]:
+                        - button "Add default block" [ref=e69]: Type / to choose a block
+                        - button "Add block" [ref=e71] [cursor=pointer]:
+                          - img
+                    - generic [ref=e76]:
+                      - generic [ref=e77]:
+                        - 'heading "Asset CleanUp: CSS & JavaScript Manager / Page Options" [level=2] [ref=e78]'
+                        - generic [ref=e79]:
+                          - button "Move up" [disabled] [ref=e80]:
+                            - generic [ref=e81]: Move up
+                          - button "Move down" [ref=e83] [cursor=pointer]:
+                            - generic [ref=e84]: Move down
+                          - 'button "Toggle panel: Asset CleanUp: CSS & JavaScript Manager / Page Options" [ref=e86] [cursor=pointer]':
+                            - generic [ref=e87]: "Toggle panel: Asset CleanUp: CSS & JavaScript Manager / Page Options"
+                      - text:  
+                  - region "Editor settings" [ref=e136]:
+                    - generic [ref=e138]:
+                      - generic [ref=e139]:
+                        - tablist [ref=e140]:
+                          - tab "Page" [selected] [ref=e141] [cursor=pointer]:
+                            - generic [ref=e142]: Page
+                          - tab "Block" [ref=e143] [cursor=pointer]:
+                            - generic [ref=e144]: Block
+                        - button "Close Settings" [ref=e145] [cursor=pointer]:
+                          - img [ref=e146]
+                      - tabpanel "Page" [ref=e149]:
+                        - generic [ref=e151]:
+                          - generic [ref=e153]:
+                            - img [ref=e154]
+                            - heading "Blog Posts Page" [level=2] [ref=e157]:
+                              - generic [ref=e158]: Blog
+                              - generic [ref=e161]: Posts Page
+                            - button "Actions" [ref=e162] [cursor=pointer]:
+                              - img [ref=e163]
+                          - generic [ref=e166]:
+                            - button "Edit or replace the featured image" [ref=e167] [cursor=pointer]:
+                              - 'img "Current image: GDPR compliance blog header image for VarnaAI" [ref=e168]'
+                            - generic [ref=e169]:
+                              - button "Replace" [ref=e170] [cursor=pointer]
+                              - button "Remove" [ref=e171] [cursor=pointer]
+                          - generic [ref=e173]: Last edited an hour ago.
+                          - generic [ref=e174]:
+                            - generic [ref=e175]:
+                              - generic [ref=e176]:
+                                - generic [ref=e177]: Status
+                                - 'button "Change status: Published" [ref=e180] [cursor=pointer]':
+                                  - img [ref=e181]
+                                  - text: Published
+                              - generic [ref=e183]:
+                                - generic [ref=e184]: Publish
+                                - 'button "Change date: September 16, 2024 6:21 pm CET" [ref=e187] [cursor=pointer]': September 16, 2024 6:21 pm CET
+                              - generic [ref=e188]:
+                                - generic [ref=e189]: Slug
+                                - 'button "Change link: gdpr-compliance-blog" [ref=e192] [cursor=pointer]': gdpr-compliance-blog
+                              - generic [ref=e193]:
+                                - generic [ref=e194]: Author
+                                - 'button "Change author: Gennadius" [ref=e197] [cursor=pointer]': Gennadius
+                              - generic [ref=e198]:
+                                - generic [ref=e199]: Template
+                                - button "Template options" [ref=e202] [cursor=pointer]: Default template
+                              - generic [ref=e203]:
+                                - generic [ref=e204]: Discussion
+                                - button "Change discussion options" [ref=e207] [cursor=pointer]: Closed
+                              - generic [ref=e208]:
+                                - generic [ref=e209]: Parent
+                                - 'button "Change parent: None" [ref=e212] [cursor=pointer]': None
+                              - generic [ref=e217]:
+                                - checkbox "Lock Modified Date" [ref=e219] [cursor=pointer]
+                                - generic [ref=e222] [cursor=pointer]: Lock Modified Date
+                            - button "Move to trash" [ref=e223] [cursor=pointer]
+                        - generic [ref=e226]:
+                          - generic [ref=e227]:
+                            - generic [ref=e228]:
+                              - heading "Language" [level=2] [ref=e229]
+                              - generic [ref=e230]:
+                                - button "Move up" [ref=e231] [cursor=pointer]:
+                                  - generic [ref=e232]: Move up
+                                - button "Move down" [ref=e234] [cursor=pointer]:
+                                  - generic [ref=e235]: Move down
+                                - 'button "Toggle panel: Language" [expanded] [ref=e237] [cursor=pointer]':
+                                  - generic [ref=e238]: "Toggle panel: Language"
+                            - generic [ref=e240]:
+                              - generic [ref=e241]:
+                                - paragraph [ref=e242]:
+                                  - strong [ref=e244]: Language of this page
+                                - combobox "Language of this page" [ref=e245] [cursor=pointer]:
+                                  - option "Bulgarian"
+                                  - option "English" [selected]
+                                  - option "German"
+                              - generic [ref=e246]:
+                                - paragraph [ref=e247]:
+                                  - strong [ref=e249]: Translation Priority
+                                - combobox [ref=e250] [cursor=pointer]:
+                                  - option "Optional" [selected]
+                                  - option "Required"
+                                  - option "Not needed"
+                                - link "edit terms" [ref=e251] [cursor=pointer]:
+                                  - /url: https://varnaai.com/wp-admin/edit-tags.php?taxonomy=translation_priority
+                              - generic [ref=e252]:
+                                - paragraph [ref=e253]: Translate this Document
+                                - generic [ref=e255]:
+                                  - generic [ref=e256] [cursor=pointer]:
+                                    - radio [ref=e257]
+                                    - img [ref=e259]
+                                  - generic [ref=e264] [cursor=pointer]:
+                                    - radio [checked] [ref=e265]
+                                    - img [ref=e267]
+                                  - generic [ref=e270] [cursor=pointer]:
+                                    - radio [ref=e271]
+                                    - img [ref=e273]
+                                - table [ref=e276]:
+                                  - rowgroup [ref=e277]:
+                                    - row "Translate Duplicate" [ref=e278]:
+                                      - columnheader [ref=e279]
+                                      - columnheader "Translate" [ref=e280]
+                                      - columnheader "Duplicate" [ref=e281]
+                                    - row "Bulgarian k Create duplicate for Bulgarian" [ref=e282]:
+                                      - cell "Bulgarian" [ref=e283]
+                                      - cell "k" [ref=e284]:
+                                        - link "k" [ref=e285] [cursor=pointer]:
+                                          - /url: admin.php?page=tm%2Fmenu%2Ftranslations-queue.php&return_url=https%3A%2F%2Fvarnaai.com%2Fwp-admin%2Fpost.php%3Fpost%3D18%26action%3Dedit%26lang%3Den%26referer%3Date%26wpml_version%3D4.8.6&lang=en&trid=636633&language_code=bg&source_language_code=en
+                                          - generic [ref=e286]: k
+                                      - cell "Create duplicate for Bulgarian" [ref=e287]:
+                                        - checkbox "Create duplicate for Bulgarian" [ref=e288] [cursor=pointer]
+                                    - row "German k Create duplicate for German" [ref=e289]:
+                                      - cell "German" [ref=e290]
+                                      - cell "k" [ref=e291]:
+                                        - link "k" [ref=e292] [cursor=pointer]:
+                                          - /url: admin.php?page=tm%2Fmenu%2Ftranslations-queue.php&return_url=https%3A%2F%2Fvarnaai.com%2Fwp-admin%2Fpost.php%3Fpost%3D18%26action%3Dedit%26lang%3Den%26referer%3Date%26wpml_version%3D4.8.6&lang=en&trid=636633&language_code=de&source_language_code=en
+                                          - generic [ref=e293]: k
+                                      - cell "Create duplicate for German" [ref=e294]:
+                                        - checkbox "Create duplicate for German" [ref=e295] [cursor=pointer]
+                                    - row [ref=e296]:
+                                      - cell [ref=e297]
+                          - generic [ref=e298]:
+                            - generic [ref=e299]:
+                              - heading "WP Rocket Options" [level=2] [ref=e300]
+                              - generic [ref=e301]:
+                                - button "Move up" [ref=e302] [cursor=pointer]:
+                                  - generic [ref=e303]: Move up
+                                - button "Move down" [ref=e305] [cursor=pointer]:
+                                  - generic [ref=e306]: Move down
+                                - 'button "Toggle panel: WP Rocket Options" [expanded] [ref=e308] [cursor=pointer]':
+                                  - generic [ref=e309]: "Toggle panel: WP Rocket Options"
+                            - generic [ref=e311]:
+                              - generic [ref=e312]:
+                                - checkbox "Never cache this page" [ref=e313] [cursor=pointer]
+                                - text: Never cache this page
+                              - generic [ref=e314]:
+                                - paragraph [ref=e315]: "Activate these options on this post:"
+                                - checkbox "Minify CSS" [checked] [ref=e316] [cursor=pointer]
+                                - text: Minify CSS
+                                - checkbox "Remove Unused CSS" [checked] [ref=e317] [cursor=pointer]
+                                - text: Remove Unused CSS
+                                - checkbox "Load CSS asynchronously" [disabled] [ref=e318]
+                                - text: Load CSS asynchronously
+                                - checkbox "Minify/combine JavaScript" [checked] [ref=e319] [cursor=pointer]
+                                - text: Minify/combine JavaScript
+                                - checkbox "Load JavaScript deferred" [checked] [ref=e320] [cursor=pointer]
+                                - text: Load JavaScript deferred
+                                - checkbox "Delay JavaScript execution" [checked] [ref=e321] [cursor=pointer]
+                                - text: Delay JavaScript execution
+                                - checkbox "LazyLoad for images" [checked] [ref=e322] [cursor=pointer]
+                                - text: LazyLoad for images
+                                - checkbox "LazyLoad for iframes/videos" [checked] [ref=e323] [cursor=pointer]
+                                - text: LazyLoad for iframes/videos
+                                - checkbox "LazyLoad CSS backgrounds" [disabled] [ref=e324]
+                                - text: LazyLoad CSS backgrounds
+                                - checkbox "CDN" [disabled] [ref=e325]
+                                - text: CDN
+                                - paragraph [ref=e326]:
+                                  - strong [ref=e327]: "Note:"
+                                  - text: None of these options will be applied if this post has been excluded from cache in the global cache settings.
+                              - generic [ref=e328]:
+                                - heading "Critical Path CSS" [level=3] [ref=e329]
+                                - generic [ref=e330]:
+                                  - paragraph [ref=e331]:
+                                    - text: Generate specific Critical Path CSS for this post.
+                                    - link "More info" [ref=e332] [cursor=pointer]:
+                                      - /url: https://docs.wp-rocket.me/article/1266-optimize-css-delivery/?utm_source=wp_plugin&utm_medium=wp_rocket
+                                  - button "Generate Specific CPCSS" [disabled] [ref=e334]
+                              - paragraph [ref=e337]: Enable Load CSS asynchronously in WP Rocket settings to use this feature.
+                          - generic [ref=e338]:
+                            - generic [ref=e339]:
+                              - heading "Link Suggestions  Click on the button to copy URL or insert link in content. You can also drag and drop links in the post content." [level=2] [ref=e340]:
+                                - text: Link Suggestions
+                                - generic [ref=e341] [cursor=pointer]:
+                                  - emphasis [ref=e342]: 
+                                  - generic: Click on the button to copy URL or insert link in content. You can also drag and drop links in the post content.
+                              - generic [ref=e343]:
+                                - button "Move up" [ref=e344] [cursor=pointer]:
+                                  - generic [ref=e345]: Move up
+                                - button "Move down" [ref=e347] [cursor=pointer]:
+                                  - generic [ref=e348]: Move down
+                                - 'button "Toggle panel: Link Suggestions" [expanded] [ref=e350] [cursor=pointer]':
+                                  - generic [ref=e351]: "Toggle panel: Link Suggestions"
+                            - generic [ref=e353]:
+                              - text: 
+                              - emphasis [ref=e354]: We can't show any link suggestions for this post. Try selecting categories and tags for this post, and mark other posts as Pillar Content to make them show up here.
+                  - region "Editor publish":
+                    - button "Open save panel" [disabled] [ref=e90]
+              - region "Editor footer" [ref=e91]:
+                - list "Block breadcrumb" [ref=e92]:
+                  - listitem [ref=e93]:
+                    - generic [ref=e94]: Page
+  - paragraph [ref=e95]: Notifications
+  - generic [ref=e97]: You are currently editing the page that shows your latest posts.
+```

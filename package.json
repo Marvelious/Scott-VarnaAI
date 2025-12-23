@@ -24,6 +24,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.6.1",
     "express": "^4.18.2",
+    "marked": "^17.0.1",
     "nodemailer": "^7.0.10",
     "ollama": "^0.6.2",
     "openai": "^6.8.1",

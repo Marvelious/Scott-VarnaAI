@@ -24,10 +24,6 @@ node_modules/
 # OS specific
 .DS_Store
 
-# Task files
-# tasks.json
-# tasks/
-
 # Sensitive credentials
 wordpress/credentials.md
 vps/**/.env
@@ -37,3 +33,7 @@ vps/**/.env
 
 # Claude work products (optional - can share)
 # claudedocs/
+
+# Task files
+# tasks.json
+# tasks/ 

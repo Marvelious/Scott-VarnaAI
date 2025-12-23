@@ -1,0 +1,33 @@
+{
+  "site": "aimarketingbg.com",
+  "topic": "AI customer segmentation 2025",
+  "targetWords": 2000,
+  "categories": ["AI Technology", "Marketing Automation"],
+  "primaryCategory": "AI Technology",
+  "tags": [
+    "AI customer segmentation",
+    "customer segmentation 2025",
+    "AI marketing",
+    "customer insights",
+    "predictive analytics",
+    "personalization",
+    "machine learning",
+    "Bulgarian B2B"
+  ],
+  "internalLinks": [
+    "/services",
+    "/case-studies",
+    "/about",
+    "/blog",
+    "/contact",
+    "/portfolio",
+    "/ai-solutions"
+  ],
+  "externalAuthorities": [
+    "https://www.gartner.com/",
+    "https://www.forrester.com/",
+    "https://www.mckinsey.com/",
+    "https://hbr.org/",
+    "https://www.bain.com/"
+  ]
+}

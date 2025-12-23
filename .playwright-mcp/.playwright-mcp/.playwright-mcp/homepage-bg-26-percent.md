@@ -1,0 +1,175 @@
+### Page state
+- Page URL: https://e.ate.wpml.org/dashboard?id=174294462&language=en
+- Page Title: Advanced Translation Editor - WPML
+- Page Snapshot:
+```yaml
+- generic [ref=e3]:
+  - generic [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - button "Back" [ref=e8] [cursor=pointer]:
+          - generic [ref=e9]:
+            - img [ref=e10]
+            - text: Back
+        - generic [ref=e12]:
+          - generic [ref=e13]: Translating
+          - link "Home" [ref=e14] [cursor=pointer]:
+            - /url: https://varnaai.com/
+            - generic [ref=e15]: Home
+            - img [ref=e16]
+        - generic [ref=e23]:
+          - img [ref=e24]
+          - generic [ref=e26]: You don't have enough credits to translate automatically!
+          - button "Get more credits" [ref=e27] [cursor=pointer]:
+            - generic [ref=e29]:
+              - text: Get more credits
+              - img [ref=e30]
+      - generic [ref=e33]:
+        - generic [ref=e36]:
+          - img [ref=e38]
+          - textbox "Search content" [ref=e40]
+        - generic [ref=e41]:
+          - button [ref=e44] [cursor=pointer]:
+            - img [ref=e45]
+          - button [ref=e51] [cursor=pointer]:
+            - img [ref=e52]
+          - button [ref=e54] [cursor=pointer]:
+            - img [ref=e55]
+    - generic [ref=e61]:
+      - generic [ref=e63]:
+        - text: Original
+        - heading "en English" [level=5] [ref=e64]:
+          - img "en" [ref=e65]
+          - text: English
+      - generic [ref=e66]:
+        - generic [ref=e67]:
+          - text: Translation
+          - heading "bg Bulgarian" [level=5] [ref=e68]:
+            - img "bg" [ref=e69]
+            - text: Bulgarian
+        - generic [ref=e71]:
+          - generic [ref=e73]:
+            - generic [ref=e74]: Untranslated
+            - generic [ref=e75]: "51"
+          - generic [ref=e76]:
+            - button [ref=e77] [cursor=pointer]:
+              - img [ref=e78]
+            - button [ref=e80] [cursor=pointer]:
+              - img [ref=e81]
+  - generic [ref=e83]:
+    - generic [ref=e84]:
+      - generic [ref=e85]:
+        - generic [ref=e91]: Main Content
+        - generic [ref=e93]:
+          - generic [ref=e1399]:
+            - generic [ref=e1403]: Kadence Advancedbtn
+            - generic [ref=e1406] [cursor=pointer]:
+              - generic [ref=e1409]:
+                - generic [ref=e1411]: Book Now
+                - generic [ref=e1416]: Kadence/Singlebtn
+              - button [ref=e1419]:
+                - img [ref=e1420]
+          - generic [ref=e1422]:
+            - generic [ref=e1426]: Kadence Advancedbtn
+            - generic [ref=e1429] [cursor=pointer]:
+              - generic [ref=e1432]:
+                - generic [ref=e1434]: Request Audit
+                - generic [ref=e1439]: Kadence/Singlebtn
+              - button [ref=e1442]:
+                - img [ref=e1443]
+          - generic [ref=e1445]:
+            - generic [ref=e1449]: Kadence Advancedbtn
+            - generic [ref=e1452] [cursor=pointer]:
+              - generic [ref=e1455]:
+                - generic [ref=e1457]: Get Started
+                - generic [ref=e1462]: Kadence/Singlebtn
+              - button [ref=e1465]:
+                - img [ref=e1466]
+          - generic [ref=e1245]:
+            - generic [ref=e1249]: Kadence Column
+            - generic [ref=e1252] [cursor=pointer]:
+              - generic [ref=e1255]:
+                - generic [ref=e1257]: Let's Discuss Your AI &amp; Security Challenges
+                - generic [ref=e1262]: Kadence/Advancedheading
+              - generic [ref=e1484]: Нека обсъдим вашите предизвикателства в областта на AI и сигурността
+          - generic [ref=e1271] [cursor=pointer]:
+            - generic [ref=e1274]:
+              - generic [ref=e1276]: Book a free 30-minute discovery call. No sales pressure—just honest assessment of whether I can help solve your specific challenges.
+              - generic [ref=e1281]: Kadence/Advancedheading
+            - application [ref=e1488]:
+              - generic [ref=e1489]:
+                - generic [ref=e1490]:
+                  - group:
+                    - group
+                - iframe [active] [ref=e1493]:
+                  - generic "Rich Text Area. Press ALT-0 for help." [active] [ref=f57e1]:
+                    - paragraph [ref=f57e3]: Запазете безплатен 30-минутен консултативен разговор. Без натиск за продажби—само честна оценка дали мога да помогна за решаване на вашите конкретни предизвикателства.
+          - generic [ref=e1287]:
+            - generic [ref=e1291]: Kadence Form
+            - generic [ref=e1294] [cursor=pointer]:
+              - generic [ref=e1297]:
+                - generic [ref=e1299]: Full Name
+                - generic [ref=e1304]: Kadence/Form
+              - button [ref=e1307]:
+                - img [ref=e1308]
+          - generic [ref=e1313] [cursor=pointer]:
+            - generic [ref=e1316]:
+              - generic [ref=e1318]: Email
+              - generic [ref=e1323]: Kadence/Form
+            - button [ref=e1326]:
+              - img [ref=e1327]
+          - generic [ref=e1332] [cursor=pointer]:
+            - generic [ref=e1335]:
+              - generic [ref=e1337]: Telephone
+              - generic [ref=e1342]: Kadence/Form
+            - button [ref=e1345]:
+              - img [ref=e1346]
+          - generic [ref=e1015] [cursor=pointer]:
+            - generic [ref=e1018]:
+              - generic [ref=e1020]: Subject
+              - generic [ref=e1025]: Kadence/Form
+            - generic [ref=e1364]: Тема
+          - generic [ref=e1034] [cursor=pointer]:
+            - generic [ref=e1037]:
+              - generic [ref=e1039]: Message
+              - generic [ref=e1044]: Kadence/Form
+            - generic [ref=e1376]: Съобщение
+      - generic [ref=e616]:
+        - generic [ref=e617]:
+          - button [ref=e620] [cursor=pointer]:
+            - img [ref=e621]
+          - button [ref=e625] [cursor=pointer]:
+            - img [ref=e626]
+        - generic [ref=e628]:
+          - button [disabled] [ref=e631]:
+            - img [ref=e634]
+          - button [disabled] [ref=e638]:
+            - img [ref=e641]
+        - button [ref=e648] [cursor=pointer]:
+          - img [ref=e649]
+        - button [disabled] [ref=e655]:
+          - img [ref=e656]
+        - generic [ref=e658]:
+          - button [ref=e661] [cursor=pointer]:
+            - img [ref=e662]
+          - button [ref=e669] [cursor=pointer]:
+            - img [ref=e670]
+    - generic [ref=e675] [cursor=pointer]:
+      - img [ref=e676]
+      - generic [ref=e678]:
+        - generic [ref=e679]: Empty segments
+        - generic [ref=e680]: 67 segments are missing translations. Add the missing translations to complete the process.
+      - img [ref=e682]
+  - generic [ref=e243]:
+    - generic [ref=e244]:
+      - button "Save to translation memory" [ref=e761] [cursor=pointer]:
+        - generic [ref=e248]: Save to translation memory
+      - button "Send feedback" [ref=e250] [cursor=pointer]:
+        - generic [ref=e251]: Send feedback
+    - generic [ref=e257] [cursor=pointer]: 26%
+    - button "Save and Complete" [ref=e265] [cursor=pointer]:
+      - generic [ref=e267]:
+        - generic [ref=e268]: Save and Complete
+        - img [ref=e685]
+  - generic [ref=e1494]: Translated manually
+```

@@ -1,0 +1,193 @@
+### New console messages
+- [LOG] [117] ApiEndpoints.eate.spellcheck.success {response: Object} @ https://e.ate.wpml.org/assets/...
+- [LOG] [118] ApiEndpoints.eate.spellcheck.request {endpoint: https://spell.e.ate.wpml.org/webta-spell...
+- [LOG] [119] saveSegmentWhileTyping {segmentId: 7241067191, content: Object} @ https://e.ate.wpml.org...
+- [LOG] [120] saveSegmentWhileTyping.dispatchSaveAction {segment: Object, contentToSave: Object} @ htt...
+- [LOG] [121] watchSegmentSaveQueue.action {action: Object} @ https://e.ate.wpml.org/assets/index.js?v...
+- [LOG] [122] segmentSaveCoordinator.worker.starting {segmentId: 7241067191} @ https://e.ate.wpml.org/...
+- [LOG] [123] segmentSaveCoordinator.worker.started {segmentId: 7241067191} @ https://e.ate.wpml.org/a...
+- [LOG] [124] segmentSaveCoordinator.enqueue {actionType: job/saveSegmentIfChanged, segmentId: 7241067...
+- [LOG] [125] segmentSaveCoordinator.channel.put.call {segmentId: 7241067191} @ https://e.ate.wpml.org...
+- [LOG] [126] segmentSaveCoordinator.worker.dequeue {actionType: job/saveSegmentIfChanged, segmentId: ...
+- [LOG] [127] processSegmentSave.start {actionType: job/saveSegmentIfChanged} @ https://e.ate.wpml.org...
+- [LOG] [128] processSegmentSave.processSegmentIfChanged {segmentId: 7241067191, hasContent: true, pay...
+- [LOG] [129] processSegmentSave.callSaveSegment {segmentId: 7241067191, segment: Object, payload: Obj...
+- [LOG] [130] segmentSaveCoordinator.channel.put.done {segmentId: 7241067191} @ https://e.ate.wpml.org...
+- [LOG] [131] subtractRequiredCredits {requiredCredits: 2236, payload: 76} @ https://e.ate.wpml.org/as...
+- [LOG] [132] saveSegmentSaga.start {segment: Object, finalContentToSave: RetirementAI Portfolio by Va...
+- [LOG] [133] ApiEndpoints.jobs.saveSegment(jobId: 174294462, segmentId: 7241067191).request {endpoint...
+- [LOG] [134] ApiEndpoints.eate.spellcheck.success {response: Object} @ https://e.ate.wpml.org/assets/...
+- [LOG] [135] ApiEndpoints.jobs.saveSegment(jobId: 174294462, segmentId: 7241067191).success {response...
+- [LOG] [136] saveSegmentWhileTyping {segmentId: 7241067191, content: Object} @ https://e.ate.wpml.org...
+- [LOG] [137] saveSegmentWhileTyping.dispatchSaveAction {segment: Object, contentToSave: Object} @ htt...
+- [LOG] [138] watchSegmentSaveQueue.action {action: Object} @ https://e.ate.wpml.org/assets/index.js?v...
+- [LOG] [139] segmentSaveCoordinator.enqueue {actionType: job/saveSegmentIfChanged, segmentId: 7241067...
+- [LOG] [140] segmentSaveCoordinator.channel.put.call {segmentId: 7241067191} @ https://e.ate.wpml.org...
+- [LOG] [141] segmentSaveCoordinator.worker.dequeue {actionType: job/saveSegmentIfChanged, segmentId: ...
+- [LOG] [142] processSegmentSave.start {actionType: job/saveSegmentIfChanged} @ https://e.ate.wpml.org...
+- [LOG] [143] processSegmentSave.processSegmentIfChanged {segmentId: 7241067191, hasContent: true, pay...
+- [LOG] [144] processSegmentSave.callSaveSegment {segmentId: 7241067191, segment: Object, payload: Obj...
+- [LOG] [145] segmentSaveCoordinator.channel.put.done {segmentId: 7241067191} @ https://e.ate.wpml.org...
+- [LOG] [146] saveSegmentSaga.start {segment: Object, finalContentToSave: Портфолио RetirementAI от Va...
+- [LOG] [147] ApiEndpoints.jobs.saveSegment(jobId: 174294462, segmentId: 7241067191).request {endpoint...
+- [LOG] [148] ApiEndpoints.jobs.saveSegment(jobId: 174294462, segmentId: 7241067191).success {response...
+
+### Page state
+- Page URL: https://e.ate.wpml.org/dashboard?id=174294462&language=en
+- Page Title: Advanced Translation Editor - WPML
+- Page Snapshot:
+```yaml
+- generic [ref=e3]:
+  - generic [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - button "Back" [ref=e8] [cursor=pointer]:
+          - generic [ref=e9]:
+            - img [ref=e10]
+            - text: Back
+        - generic [ref=e12]:
+          - generic [ref=e13]: Translating
+          - link "Home" [ref=e14] [cursor=pointer]:
+            - /url: https://varnaai.com/
+            - generic [ref=e15]: Home
+            - img [ref=e16]
+        - generic [ref=e19]:
+          - generic [ref=e23]:
+            - img [ref=e24]
+            - generic [ref=e26]: You don't have enough credits to translate automatically!
+            - button "Get more credits" [ref=e27] [cursor=pointer]:
+              - generic [ref=e29]:
+                - text: Get more credits
+                - img [ref=e30]
+          - generic [ref=e758] [cursor=pointer]:
+            - img [ref=e759]
+            - text: All changes saved
+      - generic [ref=e33]:
+        - generic [ref=e36]:
+          - img [ref=e38]
+          - textbox "Search content" [ref=e40]
+        - generic [ref=e41]:
+          - button [ref=e44] [cursor=pointer]:
+            - img [ref=e45]
+          - button [ref=e51] [cursor=pointer]:
+            - img [ref=e52]
+          - button [ref=e54] [cursor=pointer]:
+            - img [ref=e55]
+    - generic [ref=e61]:
+      - generic [ref=e63]:
+        - text: Original
+        - heading "en English" [level=5] [ref=e64]:
+          - img "en" [ref=e65]
+          - text: English
+      - generic [ref=e66]:
+        - generic [ref=e67]:
+          - text: Translation
+          - heading "bg Bulgarian" [level=5] [ref=e68]:
+            - img "bg" [ref=e69]
+            - text: Bulgarian
+        - generic [ref=e71]:
+          - generic [ref=e73]:
+            - generic [ref=e74]: Untranslated
+            - generic [ref=e75]: "66"
+          - generic [ref=e76]:
+            - button [ref=e77] [cursor=pointer]:
+              - img [ref=e78]
+            - button [ref=e80] [cursor=pointer]:
+              - img [ref=e81]
+  - generic [ref=e83]:
+    - generic [ref=e84]:
+      - generic [ref=e85]:
+        - generic [ref=e91]: Main Content
+        - generic [ref=e93]:
+          - generic [ref=e528]:
+            - generic [ref=e532]: Kadence Iconlist
+            - generic [ref=e535] [cursor=pointer]:
+              - generic [ref=e538]:
+                - generic [ref=e540]: Implementation Begins
+                - generic [ref=e545]: Kadence/Listitem
+              - button [ref=e548]:
+                - img [ref=e549]
+          - generic [ref=e554] [cursor=pointer]:
+            - generic [ref=e557]:
+              - generic [ref=e559]: Ongoing Support
+              - generic [ref=e564]: Kadence/Listitem
+            - button [ref=e567]:
+              - img [ref=e568]
+          - generic [ref=e570]:
+            - generic [ref=e574]: Media
+            - generic [ref=e578]:
+              - generic [ref=e581] [cursor=pointer]:
+                - generic [ref=e584]:
+                  - generic [ref=e586]: retirementai-portfolio-varnaai-cybersecurity-experts-trust
+                  - generic [ref=e591]: Title
+                - button [ref=e594]:
+                  - img [ref=e595]
+              - generic [ref=e599] [cursor=pointer]:
+                - generic [ref=e602]:
+                  - generic [ref=e604]: RetirementAI Portfolio by Varna AI connecting European companies to a secure AI security hub managed by experienced cybersecurity experts.
+                  - generic [ref=e609]: Alt Text
+                - application [ref=e690]:
+                  - generic [ref=e691]:
+                    - generic [ref=e692]:
+                      - group:
+                        - group
+                    - iframe [active] [ref=e695]:
+                      - generic "Rich Text Area. Press ALT-0 for help." [active] [ref=f42e1]:
+                        - paragraph [ref=f42e3]: Портфолио RetirementAI от Varna AI, свързващо европейски компании със сигурен хъб за AI сигурност, управляван от опитни експерти по киберсигурност.
+          - generic [ref=e701]: Custom Fields
+          - generic [ref=e704] [cursor=pointer]:
+            - generic [ref=e707]:
+              - generic [ref=e709]: GDPR Compliance Software for SMEs | VarnaAI
+              - generic [ref=e714]: Rank Math Title
+            - button [ref=e717]:
+              - img [ref=e718]
+          - generic [ref=e722] [cursor=pointer]:
+            - generic [ref=e725]:
+              - generic [ref=e727]: GDPR compliance software for SMEs. 17+ years enterprise security. ISO 27001 implementation, GDPR automation, Azure AI integration. Based in Varna, Bulgaria.
+              - generic [ref=e732]: Rank Math Description
+            - button [ref=e735]:
+              - img [ref=e736]
+          - generic [ref=e740] [cursor=pointer]:
+            - generic [ref=e743]:
+              - generic [ref=e745]: GDPR compliance software for SMEs,GDPR compliance automation,EU AI Act compliance software,NIS2 compliance software,firewall change management software,firewall policy management tool
+              - generic [ref=e750]: Rank Math Focus Keyword
+            - button [ref=e753]:
+              - img [ref=e754]
+      - generic [ref=e616]:
+        - generic [ref=e617]:
+          - button [ref=e620] [cursor=pointer]:
+            - img [ref=e621]
+          - button [ref=e625] [cursor=pointer]:
+            - img [ref=e626]
+        - generic [ref=e628]:
+          - button [disabled] [ref=e631]:
+            - img [ref=e634]
+          - button [disabled] [ref=e638]:
+            - img [ref=e641]
+        - button [ref=e648] [cursor=pointer]:
+          - img [ref=e649]
+        - button [disabled] [ref=e655]:
+          - img [ref=e656]
+        - generic [ref=e658]:
+          - button [ref=e661] [cursor=pointer]:
+            - img [ref=e662]
+          - button [ref=e669] [cursor=pointer]:
+            - img [ref=e670]
+    - generic [ref=e675] [cursor=pointer]:
+      - img [ref=e676]
+      - generic [ref=e678]:
+        - generic [ref=e679]: Empty segments
+        - generic [ref=e680]: 67 segments are missing translations. Add the missing translations to complete the process.
+      - img [ref=e682]
+  - generic [ref=e243]:
+    - generic [ref=e244]:
+      - button "Save to translation memory" [ref=e761] [cursor=pointer]:
+        - generic [ref=e248]: Save to translation memory
+      - button "Send feedback" [ref=e250] [cursor=pointer]:
+        - generic [ref=e251]: Send feedback
+    - generic [ref=e257] [cursor=pointer]: 4%
+    - button "Save and Complete" [ref=e265] [cursor=pointer]:
+      - generic [ref=e267]:
+        - generic [ref=e268]: Save and Complete
+        - img [ref=e685]
+```

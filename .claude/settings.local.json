@@ -32,7 +32,20 @@
       "WebFetch(domain:ngrok.com)",
       "WebFetch(domain:www.statuspage.io)",
       "WebFetch(domain:www.atlassian.com)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(task-master list:*)",
+      "Bash(task-master show:*)",
+      "Bash(task-master set-status:*)",
+      "Bash(task-master update-task:*)",
+      "Bash(task-master add-task:*)",
+      "Bash(task-master next:*)",
+      "Bash(find:*)",
+      "Bash(nslookup:*)",
+      "Bash(host:*)",
+      "Bash(dir /s /b D:VarnaAIWebsitesseo*.md)",
+      "Bash(ping:*)",
+      "Bash(ssh:*)",
+      "Bash(npx task-master:*)"
     ],
     "deny": [],
     "ask": []

@@ -1,0 +1,216 @@
+### New console messages
+- [LOG] [706] saveSegmentWhileTyping {segmentId: 7241067161, content: Object} @ https://e.ate.wpml.org...
+- [LOG] [707] saveSegmentWhileTyping.dispatchSaveAction {segment: Object, contentToSave: Object} @ htt...
+- [LOG] [708] watchSegmentSaveQueue.action {action: Object} @ https://e.ate.wpml.org/assets/index.js?v...
+- [LOG] [709] segmentSaveCoordinator.worker.starting {segmentId: 7241067161} @ https://e.ate.wpml.org/...
+- [LOG] [710] segmentSaveCoordinator.worker.started {segmentId: 7241067161} @ https://e.ate.wpml.org/a...
+- [LOG] [711] segmentSaveCoordinator.enqueue {actionType: job/saveSegmentIfChanged, segmentId: 7241067...
+- [LOG] [712] segmentSaveCoordinator.channel.put.call {segmentId: 7241067161} @ https://e.ate.wpml.org...
+- [LOG] [713] segmentSaveCoordinator.worker.dequeue {actionType: job/saveSegmentIfChanged, segmentId: ...
+- [LOG] [714] processSegmentSave.start {actionType: job/saveSegmentIfChanged} @ https://e.ate.wpml.org...
+- [LOG] [715] processSegmentSave.processSegmentIfChanged {segmentId: 7241067161, hasContent: true, pay...
+- [LOG] [716] processSegmentSave.callSaveSegment {segmentId: 7241067161, segment: Object, payload: Obj...
+- [LOG] [717] segmentSaveCoordinator.channel.put.done {segmentId: 7241067161} @ https://e.ate.wpml.org...
+- [LOG] [718] subtractRequiredCredits {requiredCredits: 2024, payload: 4} @ https://e.ate.wpml.org/ass...
+- [LOG] [719] saveSegmentSaga.start {segment: Object, finalContentToSave: Subject} @ https://e.ate.wpm...
+- [LOG] [720] ApiEndpoints.jobs.saveSegment(jobId: 174294462, segmentId: 7241067161).request {endpoint...
+- [LOG] [721] ApiEndpoints.eate.spellcheck.success {response: Object} @ https://e.ate.wpml.org/assets/...
+- [LOG] [722] ApiEndpoints.jobs.saveSegment(jobId: 174294462, segmentId: 7241067161).success {response...
+- [LOG] [723] saveSegmentWhileTyping {segmentId: 7241067161, content: Object} @ https://e.ate.wpml.org...
+- [LOG] [724] saveSegmentWhileTyping.dispatchSaveAction {segment: Object, contentToSave: Object} @ htt...
+- [LOG] [725] watchSegmentSaveQueue.action {action: Object} @ https://e.ate.wpml.org/assets/index.js?v...
+- [LOG] [726] segmentSaveCoordinator.enqueue {actionType: job/saveSegmentIfChanged, segmentId: 7241067...
+- [LOG] [727] segmentSaveCoordinator.channel.put.call {segmentId: 7241067161} @ https://e.ate.wpml.org...
+- [LOG] [728] segmentSaveCoordinator.worker.dequeue {actionType: job/saveSegmentIfChanged, segmentId: ...
+- [LOG] [729] processSegmentSave.start {actionType: job/saveSegmentIfChanged} @ https://e.ate.wpml.org...
+- [LOG] [730] processSegmentSave.processSegmentIfChanged {segmentId: 7241067161, hasContent: true, pay...
+- [LOG] [731] processSegmentSave.callSaveSegment {segmentId: 7241067161, segment: Object, payload: Obj...
+- [LOG] [732] segmentSaveCoordinator.channel.put.done {segmentId: 7241067161} @ https://e.ate.wpml.org...
+- [LOG] [733] saveSegmentSaga.start {segment: Object, finalContentToSave: Тема} @ https://e.ate.wpml.o...
+- [LOG] [734] ApiEndpoints.jobs.saveSegment(jobId: 174294462, segmentId: 7241067161).request {endpoint...
+- [LOG] [735] ApiEndpoints.jobs.saveSegment(jobId: 174294462, segmentId: 7241067161).success {response...
+
+### Page state
+- Page URL: https://e.ate.wpml.org/dashboard?id=174294462&language=en
+- Page Title: Advanced Translation Editor - WPML
+- Page Snapshot:
+```yaml
+- generic [ref=e3]:
+  - generic [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - button "Back" [ref=e8] [cursor=pointer]:
+          - generic [ref=e9]:
+            - img [ref=e10]
+            - text: Back
+        - generic [ref=e12]:
+          - generic [ref=e13]: Translating
+          - link "Home" [ref=e14] [cursor=pointer]:
+            - /url: https://varnaai.com/
+            - generic [ref=e15]: Home
+            - img [ref=e16]
+        - generic [ref=e19]:
+          - generic [ref=e23]:
+            - img [ref=e24]
+            - generic [ref=e26]: You don't have enough credits to translate automatically!
+            - button "Get more credits" [ref=e27] [cursor=pointer]:
+              - generic [ref=e29]:
+                - text: Get more credits
+                - img [ref=e30]
+          - generic [ref=e1360] [cursor=pointer]:
+            - img [ref=e1361]
+            - text: All changes saved
+      - generic [ref=e33]:
+        - generic [ref=e36]:
+          - img [ref=e38]
+          - textbox "Search content" [ref=e40]
+        - generic [ref=e41]:
+          - button [ref=e44] [cursor=pointer]:
+            - img [ref=e45]
+          - button [ref=e51] [cursor=pointer]:
+            - img [ref=e52]
+          - button [ref=e54] [cursor=pointer]:
+            - img [ref=e55]
+    - generic [ref=e61]:
+      - generic [ref=e63]:
+        - text: Original
+        - heading "en English" [level=5] [ref=e64]:
+          - img "en" [ref=e65]
+          - text: English
+      - generic [ref=e66]:
+        - generic [ref=e67]:
+          - text: Translation
+          - heading "bg Bulgarian" [level=5] [ref=e68]:
+            - img "bg" [ref=e69]
+            - text: Bulgarian
+        - generic [ref=e71]:
+          - generic [ref=e73]:
+            - generic [ref=e74]: Untranslated
+            - generic [ref=e75]: "56"
+          - generic [ref=e76]:
+            - button [ref=e77] [cursor=pointer]:
+              - img [ref=e78]
+            - button [ref=e80] [cursor=pointer]:
+              - img [ref=e81]
+  - generic [ref=e83]:
+    - generic [ref=e84]:
+      - generic [ref=e85]:
+        - generic [ref=e91]: Main Content
+        - generic [ref=e93]:
+          - generic [ref=e1245]:
+            - generic [ref=e1249]: Kadence Column
+            - generic [ref=e1252] [cursor=pointer]:
+              - generic [ref=e1255]:
+                - generic [ref=e1257]: Let's Discuss Your AI &amp; Security Challenges
+                - generic [ref=e1262]: Kadence/Advancedheading
+              - button [ref=e1265]:
+                - img [ref=e1266]
+          - generic [ref=e1271] [cursor=pointer]:
+            - generic [ref=e1274]:
+              - generic [ref=e1276]: Book a free 30-minute discovery call. No sales pressure—just honest assessment of whether I can help solve your specific challenges.
+              - generic [ref=e1281]: Kadence/Advancedheading
+            - button [ref=e1284]:
+              - img [ref=e1285]
+          - generic [ref=e1287]:
+            - generic [ref=e1291]: Kadence Form
+            - generic [ref=e1294] [cursor=pointer]:
+              - generic [ref=e1297]:
+                - generic [ref=e1299]: Full Name
+                - generic [ref=e1304]: Kadence/Form
+              - button [ref=e1307]:
+                - img [ref=e1308]
+          - generic [ref=e1313] [cursor=pointer]:
+            - generic [ref=e1316]:
+              - generic [ref=e1318]: Email
+              - generic [ref=e1323]: Kadence/Form
+            - button [ref=e1326]:
+              - img [ref=e1327]
+          - generic [ref=e1332] [cursor=pointer]:
+            - generic [ref=e1335]:
+              - generic [ref=e1337]: Telephone
+              - generic [ref=e1342]: Kadence/Form
+            - button [ref=e1345]:
+              - img [ref=e1346]
+          - generic [ref=e1015] [cursor=pointer]:
+            - generic [ref=e1018]:
+              - generic [ref=e1020]: Subject
+              - generic [ref=e1025]: Kadence/Form
+            - application [ref=e1351]:
+              - generic [ref=e1352]:
+                - generic [ref=e1353]:
+                  - group:
+                    - group
+                - iframe [active] [ref=e1356]:
+                  - generic "Rich Text Area. Press ALT-0 for help." [active] [ref=f52e1]:
+                    - paragraph [ref=f52e3]: Тема
+          - generic [ref=e1034] [cursor=pointer]:
+            - generic [ref=e1037]:
+              - generic [ref=e1039]: Message
+              - generic [ref=e1044]: Kadence/Form
+            - button [ref=e1047]:
+              - img [ref=e1048]
+          - generic [ref=e1053] [cursor=pointer]:
+            - generic [ref=e1056]:
+              - generic [ref=e1058]: Send Message
+              - generic [ref=e1063]: Kadence/Form
+            - button [ref=e1066]:
+              - img [ref=e1067]
+          - generic [ref=e1069]:
+            - generic [ref=e1073]: Kadence Column
+            - generic [ref=e1076] [cursor=pointer]:
+              - generic [ref=e1079]:
+                - generic [ref=e1081]: How to Get Assistance from Varna AI
+                - generic [ref=e1086]: Kadence/Advancedheading
+              - button [ref=e1089]:
+                - img [ref=e1090]
+          - generic [ref=e798]:
+            - generic [ref=e802]: Kadence Iconlist
+            - generic [ref=e805] [cursor=pointer]:
+              - generic [ref=e808]:
+                - generic [ref=e810]: Book Free Discovery Call
+                - generic [ref=e815]: Kadence/Listitem
+              - generic [ref=e1108]: Запазете безплатен консултативен разговор
+          - generic [ref=e824] [cursor=pointer]:
+            - generic [ref=e827]:
+              - generic [ref=e829]: Discuss Your Requirements
+              - generic [ref=e834]: Kadence/Listitem
+            - generic [ref=e1223]: Обсъдете вашите изисквания
+      - generic [ref=e616]:
+        - generic [ref=e617]:
+          - button [ref=e620] [cursor=pointer]:
+            - img [ref=e621]
+          - button [ref=e625] [cursor=pointer]:
+            - img [ref=e626]
+        - generic [ref=e628]:
+          - button [disabled] [ref=e631]:
+            - img [ref=e634]
+          - button [disabled] [ref=e638]:
+            - img [ref=e641]
+        - button [ref=e648] [cursor=pointer]:
+          - img [ref=e649]
+        - button [disabled] [ref=e655]:
+          - img [ref=e656]
+        - generic [ref=e658]:
+          - button [ref=e661] [cursor=pointer]:
+            - img [ref=e662]
+          - button [ref=e669] [cursor=pointer]:
+            - img [ref=e670]
+    - generic [ref=e675] [cursor=pointer]:
+      - img [ref=e676]
+      - generic [ref=e678]:
+        - generic [ref=e679]: Empty segments
+        - generic [ref=e680]: 67 segments are missing translations. Add the missing translations to complete the process.
+      - img [ref=e682]
+  - generic [ref=e243]:
+    - generic [ref=e244]:
+      - button "Save to translation memory" [ref=e761] [cursor=pointer]:
+        - generic [ref=e248]: Save to translation memory
+      - button "Send feedback" [ref=e250] [cursor=pointer]:
+        - generic [ref=e251]: Send feedback
+    - generic [ref=e257] [cursor=pointer]: 18%
+    - button "Save and Complete" [ref=e265] [cursor=pointer]:
+      - generic [ref=e267]:
+        - generic [ref=e268]: Save and Complete
+        - img [ref=e685]
+  - generic [ref=e1357]: Translated manually
+```

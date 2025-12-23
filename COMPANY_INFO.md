@@ -189,15 +189,14 @@ IT Security • GDPR Compliance • Data Protection • Secure AI Development
 
 ## 💼 Organizational Structure
 
-**CEO / Founder:** Gennadius (operational alias for privacy)
+**CIO:** Марк / Gennadius (operational alias for privacy)
 - Focus: IT Security, AI Development, Strategic Vision
 - Background: ISO 27001 Lead Implementer, CCIE Security
 - Responsibilities: Technical direction, enterprise client relationships, compliance oversight
 
-**Digital Marketing Director:** Vanderbilt (Scott) (operational alias for privacy)
-- Focus: Digital Marketing Strategy, Brand Development, Growth
-- Division: Head of AI Marketing BG operations
-- Responsibilities: Multi-brand marketing coordination, SEO strategy, social media presence
+**Consultant:** Скот / Vanderbilt (operational alias for privacy)
+- Focus: Business Development, Strategy Consulting
+- Responsibilities: Client advisory, market analysis, growth strategy
 
 ### Leadership Roles:
 - **CTO:** Overseeing AI automation systems and product development
