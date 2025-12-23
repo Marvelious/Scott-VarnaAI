@@ -36,12 +36,13 @@
 
 ## 2. Varna AI (varnaai.com) - English
 
-**All Pages (12 total)**:
+**All Pages (13 total)**:
 - `/` - Home
 - `/secure-ai-services-gdpr/` - Secure AI Services
 - `/ai-seo-analytics-platform/` - SEO Analytics Platform
 - `/retirementai-portfolio/` - RetirementAI Portfolio
 - `/enterprise-cybersecurity-solutions/` - Enterprise Cybersecurity
+- `/c3-compliance-platform-nis2-deadline/` - C3 Compliance Platform (NIS2/GDPR)
 - `/our-mission-secure-ai-solutions/` - Our Mission
 - `/about-secure-ai-project-management/` - About
 - `/secure-ai-saas-pricing/` - Pricing
@@ -52,6 +53,7 @@
 
 **Best Link Destinations for Blogs**:
 - `/secure-ai-services-gdpr/` - Services (primary)
+- `/c3-compliance-platform-nis2-deadline/` - C3 Compliance (NIS2/GDPR compliance)
 - `/ai-seo-analytics-platform/` - SEO Agent product
 - `/retirementai-portfolio/` - RetirementAI product
 - `/enterprise-cybersecurity-solutions/` - Enterprise solutions
@@ -160,11 +162,12 @@ For internal blog linking, prioritize these topic matches:
 | Security | `/it-sicherheit-projektmanagement/` | `/enterprise-cybersecurity-solutions/` | `/secure-ai-services/` | `/it-sicherheit-projektmanagement/` |
 | Compliance | `/compliance-management/` | `/secure-ai-services-gdpr/` | `/secure-ai-services/` | `/compliance-management/` |
 | DSGVO/GDPR | `/ai-projektmanager-dsgvo-konform/` | `/secure-ai-services-gdpr/` | `/privacy-policy-ai-marketing-bg/` | `/ai-projektmanager-dsgvo-konform/` |
+| NIS2 | `/compliance-management/` | `/c3-compliance-platform-nis2-deadline/` | `/secure-ai-services/` | `/compliance-management/` |
 | EU AI Act | `/eu-ai-act-projektmanagement/` | `/our-mission-secure-ai-solutions/` | `/secure-ai-services/` | `/eu-ai-act-projektmanagement/` |
 | Case Studies | `/fallstudien/` | `/varna-ai-reviews/` | `/ai-marketing-case-studies/` | `/fallstudien/` |
 | Enterprise | `/enterprise-projektmanagement/` | `/enterprise-cybersecurity-solutions/` | `/complete-digital-infrastructure/` | `/ki-projektmanagement-funktionen/` |
 
 ---
 
-**Last Updated**: 2025-12-02 (sitemap scan)
-**Total Pages**: 54 across 4 websites
+**Last Updated**: 2025-12-13 (C3 page added)
+**Total Pages**: 55 across 4 websites

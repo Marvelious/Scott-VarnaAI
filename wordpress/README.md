@@ -2,6 +2,23 @@
 
 This folder contains WordPress-specific content, code snippets, and workflow documentation for the 5-site portfolio.
 
+## Hosting Infrastructure
+
+**Provider**: [ALL-INKL](https://all-inkl.com/) (German hosting)
+**Server IP**: 85.13.157.12
+**DNS**: Cloudflare (security headers, caching)
+
+| Site | Domain | Status |
+|------|--------|--------|
+| Varna AI | varnaai.com | ✅ Live |
+| AI Projektmanager | ai-projektmanager.de | ✅ Live |
+| Varna Agenten | varna-agenten.de | ✅ Live |
+| AI Marketing BG | aimarketingbg.com | ✅ Live |
+| Classic Security | classicsecurity.net | ✅ Live |
+
+**Management**: ALL-INKL KAS (Kunden-Administrations-System)
+**Login**: https://all-inkl.com/en/login/
+
 ## Structure
 
 ```
