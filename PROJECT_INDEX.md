@@ -25,8 +25,9 @@
 15. [Claude Work Products](#claude-work-products)
 16. [Key Reference Files](#key-reference-files)
 17. [Credentials & Secrets](#credentials--secrets)
-18. [Troubleshooting](#troubleshooting)
-19. [Changelog](#changelog)
+18. [GitHub Repositories](#github-repositories)
+19. [Troubleshooting](#troubleshooting)
+20. [Changelog](#changelog)
 
 ---
 
@@ -40,6 +41,8 @@
 | **Sales Materials** | [Sales & Marketing](#sales--marketing-materials) |
 | **Case Studies** | [Case Studies](#case-studies) |
 | **SaaS Applications** | [Application Portfolio](#application-portfolio) |
+| **GitHub Repos** | [GitHub Repositories](#github-repositories) |
+| **Scott Beta Tester** | [Scott Setup](#scott-beta-tester-setup) |
 | **Infrastructure** | [Infrastructure & Operations](#infrastructure--operations) |
 | **Blog Workflow** | [Blog Content](#blog-content) |
 | **SEO Resources** | [SEO Resources](#seo-resources) |
@@ -714,7 +717,72 @@ cat .mcp.json
 
 ---
 
+## GitHub Repositories
+
+### Repository Structure
+
+| Repo | Visibility | Purpose | URL |
+|------|------------|---------|-----|
+| **VarnaAIMaster** | Private | Master repo with all folders | github.com/Marvelious/VarnaAIMaster |
+| **Scott-VarnaAI** | Public | Synced repo for Scott (beta tester) | github.com/Marvelious/Scott-VarnaAI |
+
+### App Repositories
+
+| App | Repo | Status |
+|-----|------|--------|
+| RetirementAI | `Marvelious/RetirementAI` | ✅ Active |
+| FwChange | `Marvelious/FwChange` | ✅ Active |
+| C3 Compliance | `Marvelious/compliance-command-center` | ✅ Active |
+| SEO Agent | `Marvelious/seoagent` | ✅ Active |
+| VarnaAI Agents | `Marvelious/varnaai-platform` | ✅ Active |
+| Project Manager | `Marvelious/projectmanager` | ✅ Active |
+| Agentic Coder | `Marvelious/agenticcoder` | ✅ Active |
+| Tax App | `Marvelious/taxapp` | ✅ Active |
+| WebScrap | `Marvelious/webscrap` | ✅ Active |
+
+### Scott Beta Tester Setup
+
+**Files for Scott** (in repo root):
+| File | Purpose |
+|------|---------|
+| `SCOTT_SETUP.bat` | One-click Docker launcher (menu-driven) |
+| `SCOTT_STOP.bat` | Stop all Docker containers |
+| `SCOTT_README.md` | Simple setup guide |
+
+**Scott's Workflow**:
+```bash
+# Clone repo
+git clone https://github.com/Marvelious/Scott-VarnaAI.git
+
+# Run setup
+cd Scott-VarnaAI
+# Double-click SCOTT_SETUP.bat → Choose app → Done!
+```
+
+**Sync Commands**:
+```bash
+# Push to both repos
+git push origin master && git push scott master
+
+# Pull Scott's changes
+git pull scott master
+```
+
+### Excluded from Scott-VarnaAI
+- `cv/` - Personal CV files
+- `mcp-bridge/` - MCP bridge internals
+- `ml_models/` - ML models
+- `work/secrets/` - Credentials
+
+---
+
 ## Changelog
+
+### 2025-12-26 (Update 2)
+- **GitHub Setup**: VarnaAIMaster + Scott-VarnaAI repos created
+- **Scott Beta Tester**: SCOTT_SETUP.bat, SCOTT_STOP.bat, SCOTT_README.md added
+- All 10 apps now have GitHub repos with proper remotes
+- Dual-remote sync (origin + scott) configured
 
 ### 2025-12-26
 - **PROJECT_INDEX.md**: Complete rewrite with comprehensive documentation
