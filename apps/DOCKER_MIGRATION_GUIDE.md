@@ -5,15 +5,22 @@
 
 ---
 
-## Port Allocation (VarnaAI 5-App Architecture)
+## Port Allocation (VarnaAI Platform - UPDATED 2025-12-26)
 
-| App | Frontend | Backend | PostgreSQL | Redis | Neo4j | Qdrant | Subnet |
-|-----|----------|---------|------------|-------|-------|--------|--------|
-| **Pension** | 3001 | - | 5433 | 6380 | - | - | 172.20.0.0/16 |
-| **C3** | 3002 | 8001 | 5434 | 6381 | - | - | 172.21.0.0/16 |
-| **FwChange** | 3003 | 8002 | 5435 | 6382 | - | - | 172.22.0.0/16 |
-| **Webscrap** | 3004 | 8003 | 5436 | 6383 | - | - | 172.23.0.0/16 |
-| **VarnaAI** | 3005 | 8004 | 5437 | 6384 | 7475 | 6335 | 172.25.0.0/16 |
+| App | Frontend | Backend | PostgreSQL | Redis | Special | Subnet |
+|-----|----------|---------|------------|-------|---------|--------|
+| **Pension** | 3001 | - | 5433 | 6380 | - | 172.20.0.0/16 |
+| **C3** | 3002 | 8001 | 5434 | 6381 | - | 172.21.0.0/16 |
+| **FwChange** | 3003 | 8002 | 5435 | 6382 | Jira:8080 | 172.22.0.0/16 |
+| **SEOAgent** | 3004 | 4000 | 5436 | 6383 | pgAdmin:5050 | 172.26.0.0/16 |
+| **ProjectManager** | 3005 | - | 5438 | - | - | (dynamic) |
+| **Webscrap** | 3006 | 8003 | 5439 | 6385 | Selenium:4444 | 172.23.0.0/16 |
+| **VarnaAI** | 3007 | 8004 | 5437 | 6384 | Neo4j:7475, Qdrant:6335 | 172.25.0.0/16 |
+| **AgenticCoder** | 3008* | - | (internal) | (internal) | Grafana:3008 | 172.28.0.0/16 |
+
+*AgenticCoder uses Grafana on 3008 as primary UI
+
+**See**: `DOCKER_AUDIT_REPORT_2025-12-26.md` for complete audit and conflict resolution
 
 ---
 
