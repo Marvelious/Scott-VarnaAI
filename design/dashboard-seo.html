@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Agent Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #c9a227;
+            --gold-light: #d4af37;
+            --gold-dark: #a8861d;
+            --cyan: #06b6d4;
+            --cyan-light: #22d3ee;
+            --cyan-dark: #0891b2;
+            --navy-dark: #0a1628;
+            --navy-mid: #0d1e36;
+            --navy-light: #132743;
+            --navy-card: #0f2340;
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border-gold: rgba(201, 162, 39, 0.3);
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, var(--navy-dark) 0%, #0c1929 50%, var(--navy-dark) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: var(--text-primary);
+        }
+
+        .dashboard-container {
+            width: 100%;
+            max-width: 1400px;
+            background: var(--navy-mid);
+            border: 1px solid var(--gold);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow:
+                0 0 40px rgba(201, 162, 39, 0.15),
+                0 0 80px rgba(201, 162, 39, 0.05),
+                0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 32px;
+            border-bottom: 1px solid var(--border-subtle);
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--cyan), var(--cyan-dark));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .brand-icon svg {
+            width: 22px;
+            height: 22px;
+            color: white;
+        }
+
+        .brand-text h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .brand-text h1 span {
+            color: var(--cyan-light);
+        }
+
+        .brand-text p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .user-avatar {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--cyan), var(--cyan-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .user-info {
+            text-align: right;
+        }
+
+        .user-name {
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .user-role {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .dashboard-body {
+            display: flex;
+            min-height: 600px;
+        }
+
+        .sidebar-tabs {
+            width: 200px;
+            background: rgba(0, 0, 0, 0.2);
+            border-right: 1px solid var(--border-subtle);
+            padding: 24px 0;
+        }
+
+        .tab-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 24px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+            border-left: 3px solid transparent;
+        }
+
+        .tab-item:hover {
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-primary);
+        }
+
+        .tab-item.active {
+            background: rgba(201, 162, 39, 0.1);
+            color: var(--gold);
+            border-left-color: var(--gold);
+        }
+
+        .tab-item svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .tab-label {
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 32px;
+            overflow-y: auto;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--navy-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+        }
+
+        .card-action {
+            font-size: 0.75rem;
+            color: var(--gold);
+            cursor: pointer;
+        }
+
+        /* Score Card */
+        .score-card {
+            grid-column: span 2;
+            display: flex;
+            align-items: center;
+            gap: 48px;
+            padding: 32px;
+        }
+
+        .score-ring-container {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            flex-shrink: 0;
+        }
+
+        .score-ring {
+            transform: rotate(-90deg);
+        }
+
+        .score-ring circle {
+            fill: none;
+            stroke-width: 12;
+        }
+
+        .score-ring .bg {
+            stroke: rgba(255, 255, 255, 0.08);
+        }
+
+        .score-ring .progress {
+            stroke: var(--gold);
+            stroke-linecap: round;
+            stroke-dasharray: 502;
+            stroke-dashoffset: 50;
+            transition: stroke-dashoffset 1s ease;
+            filter: drop-shadow(0 0 8px rgba(201, 162, 39, 0.5));
+        }
+
+        .score-value {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .score-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .score-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        .score-details {
+            flex: 1;
+        }
+
+        .score-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .score-badges {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .score-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .badge-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .badge-icon.performance {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--success);
+        }
+
+        .badge-icon.accessibility {
+            background: rgba(124, 58, 237, 0.2);
+            color: #a78bfa;
+        }
+
+        .badge-icon.seo {
+            background: rgba(6, 182, 212, 0.2);
+            color: var(--cyan);
+        }
+
+        .badge-icon.practices {
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--warning);
+        }
+
+        .badge-icon svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .badge-text {
+            font-size: 0.75rem;
+        }
+
+        .badge-name {
+            color: var(--text-muted);
+        }
+
+        .badge-value {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .report-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border: none;
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(201, 162, 39, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Chart Card */
+        .chart-container {
+            height: 200px;
+        }
+
+        /* Progress Items */
+        .progress-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .progress-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .progress-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .progress-value {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--gold);
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            border-radius: 3px;
+            transition: width 0.5s ease;
+        }
+
+        .progress-fill.green {
+            background: linear-gradient(90deg, var(--success), #34d399);
+        }
+
+        .progress-fill.cyan {
+            background: linear-gradient(90deg, var(--cyan), var(--cyan-light));
+        }
+
+        /* Keywords Table */
+        .keywords-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .keywords-table th {
+            text-align: left;
+            padding: 12px 8px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .keywords-table td {
+            padding: 12px 8px;
+            font-size: 0.85rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .keywords-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .keyword-text {
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .position-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .position-badge.top3 {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--success);
+        }
+
+        .position-badge.top10 {
+            background: rgba(6, 182, 212, 0.2);
+            color: var(--cyan);
+        }
+
+        .position-badge.other {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+        }
+
+        .trend-up {
+            color: var(--success);
+            font-size: 0.75rem;
+        }
+
+        .trend-down {
+            color: var(--error);
+            font-size: 0.75rem;
+        }
+
+        .trend-neutral {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+        }
+
+        /* Issues List */
+        .issues-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .issue-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            border-left: 3px solid transparent;
+        }
+
+        .issue-item.critical {
+            border-left-color: var(--error);
+        }
+
+        .issue-item.warning {
+            border-left-color: var(--warning);
+        }
+
+        .issue-item.info {
+            border-left-color: var(--cyan);
+        }
+
+        .issue-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .issue-icon.critical {
+            background: rgba(239, 68, 68, 0.2);
+            color: var(--error);
+        }
+
+        .issue-icon.warning {
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--warning);
+        }
+
+        .issue-icon.info {
+            background: rgba(6, 182, 212, 0.2);
+            color: var(--cyan);
+        }
+
+        .issue-icon svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .issue-content {
+            flex: 1;
+        }
+
+        .issue-title {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .issue-desc {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .issue-count {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        /* Activity Chart */
+        .activity-card {
+            grid-column: span 2;
+        }
+
+        .activity-chart {
+            height: 180px;
+        }
+
+        @media (max-width: 1200px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .score-card,
+            .activity-card {
+                grid-column: span 1;
+            }
+
+            .score-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .score-badges {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .report-buttons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-body {
+                flex-direction: column;
+            }
+
+            .sidebar-tabs {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid var(--border-subtle);
+                padding: 12px 0;
+                display: flex;
+                overflow-x: auto;
+            }
+
+            .tab-item {
+                padding: 10px 16px;
+                border-left: none;
+                border-bottom: 3px solid transparent;
+                white-space: nowrap;
+            }
+
+            .tab-item.active {
+                border-left-color: transparent;
+                border-bottom-color: var(--gold);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <div class="brand">
+                <div class="brand-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="M21 21l-4.35-4.35"/>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <h1>SEO <span>Agent</span></h1>
+                    <p>Search Performance Analyzer</p>
+                </div>
+            </div>
+            <div class="user-profile">
+                <div class="user-info">
+                    <div class="user-name">Alex Kowalski</div>
+                    <div class="user-role">SEO Manager</div>
+                </div>
+                <div class="user-avatar">AK</div>
+            </div>
+        </header>
+
+        <div class="dashboard-body">
+            <nav class="sidebar-tabs">
+                <div class="tab-item active">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <rect x="3" y="3" width="7" height="7"/>
+                        <rect x="14" y="3" width="7" height="7"/>
+                        <rect x="14" y="14" width="7" height="7"/>
+                        <rect x="3" y="14" width="7" height="7"/>
+                    </svg>
+                    <span class="tab-label">Overview</span>
+                </div>
+                <div class="tab-item">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                    </svg>
+                    <span class="tab-label">Keywords</span>
+                </div>
+                <div class="tab-item">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                    </svg>
+                    <span class="tab-label">Backlinks</span>
+                </div>
+                <div class="tab-item">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                    </svg>
+                    <span class="tab-label">Pages</span>
+                </div>
+                <div class="tab-item">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                    <span class="tab-label">Issues</span>
+                </div>
+                <div class="tab-item">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                    </svg>
+                    <span class="tab-label">Core Vitals</span>
+                </div>
+            </nav>
+
+            <main class="main-content">
+                <div class="content-grid">
+                    <!-- Main Score Card -->
+                    <div class="card score-card">
+                        <div class="score-ring-container">
+                            <svg class="score-ring" width="180" height="180" viewBox="0 0 180 180">
+                                <circle class="bg" cx="90" cy="90" r="80"/>
+                                <circle class="progress" cx="90" cy="90" r="80"/>
+                            </svg>
+                            <div class="score-value">
+                                <div class="score-number">84</div>
+                                <div class="score-label">SEO Score</div>
+                            </div>
+                        </div>
+                        <div class="score-details">
+                            <h2 class="score-title">Search Performance Status</h2>
+                            <div class="score-badges">
+                                <div class="score-badge">
+                                    <div class="badge-icon performance">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                                        </svg>
+                                    </div>
+                                    <div class="badge-text">
+                                        <div class="badge-name">Performance</div>
+                                        <div class="badge-value">92/100</div>
+                                    </div>
+                                </div>
+                                <div class="score-badge">
+                                    <div class="badge-icon accessibility">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <circle cx="12" cy="12" r="10"/>
+                                            <circle cx="12" cy="12" r="4"/>
+                                        </svg>
+                                    </div>
+                                    <div class="badge-text">
+                                        <div class="badge-name">Accessibility</div>
+                                        <div class="badge-value">78/100</div>
+                                    </div>
+                                </div>
+                                <div class="score-badge">
+                                    <div class="badge-icon seo">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <circle cx="11" cy="11" r="8"/>
+                                            <path d="M21 21l-4.35-4.35"/>
+                                        </svg>
+                                    </div>
+                                    <div class="badge-text">
+                                        <div class="badge-name">SEO</div>
+                                        <div class="badge-value">84/100</div>
+                                    </div>
+                                </div>
+                                <div class="score-badge">
+                                    <div class="badge-icon practices">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path d="M9 12l2 2 4-4"/>
+                                            <circle cx="12" cy="12" r="10"/>
+                                        </svg>
+                                    </div>
+                                    <div class="badge-text">
+                                        <div class="badge-name">Best Practices</div>
+                                        <div class="badge-value">88/100</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="report-buttons">
+                                <button class="btn btn-primary">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <polyline points="23 4 23 10 17 10"/>
+                                        <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+                                    </svg>
+                                    Run Full Audit
+                                </button>
+                                <button class="btn btn-secondary">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                        <polyline points="7 10 12 15 17 10"/>
+                                        <line x1="12" y1="15" x2="12" y2="3"/>
+                                    </svg>
+                                    Export Report
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Web Vitals -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Core Web Vitals</h3>
+                            <span class="card-action">View Details</span>
+                        </div>
+                        <div class="progress-list">
+                            <div class="progress-item">
+                                <div class="progress-header">
+                                    <span class="progress-label">LCP (Largest Contentful Paint)</span>
+                                    <span class="progress-value">1.8s</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill green" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-header">
+                                    <span class="progress-label">FID (First Input Delay)</span>
+                                    <span class="progress-value">12ms</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill green" style="width: 98%"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-header">
+                                    <span class="progress-label">CLS (Cumulative Layout Shift)</span>
+                                    <span class="progress-value">0.05</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill green" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-header">
+                                    <span class="progress-label">TTFB (Time to First Byte)</span>
+                                    <span class="progress-value">320ms</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill cyan" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SEO Issues -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">SEO Issues</h3>
+                            <span class="card-action">Fix All</span>
+                        </div>
+                        <div class="issues-list">
+                            <div class="issue-item critical">
+                                <div class="issue-icon critical">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <line x1="15" y1="9" x2="9" y2="15"/>
+                                        <line x1="9" y1="9" x2="15" y2="15"/>
+                                    </svg>
+                                </div>
+                                <div class="issue-content">
+                                    <div class="issue-title">Broken Links</div>
+                                    <div class="issue-desc">404 errors affecting crawl</div>
+                                </div>
+                                <div class="issue-count">8</div>
+                            </div>
+                            <div class="issue-item warning">
+                                <div class="issue-icon warning">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                                    </svg>
+                                </div>
+                                <div class="issue-content">
+                                    <div class="issue-title">Missing Meta Descriptions</div>
+                                    <div class="issue-desc">Pages without descriptions</div>
+                                </div>
+                                <div class="issue-count">12</div>
+                            </div>
+                            <div class="issue-item info">
+                                <div class="issue-icon info">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <line x1="12" y1="16" x2="12" y2="12"/>
+                                        <line x1="12" y1="8" x2="12.01" y2="8"/>
+                                    </svg>
+                                </div>
+                                <div class="issue-content">
+                                    <div class="issue-title">Image Alt Text Missing</div>
+                                    <div class="issue-desc">Accessibility improvement</div>
+                                </div>
+                                <div class="issue-count">3</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Top Keywords -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Top Keywords</h3>
+                            <span class="card-action">View All</span>
+                        </div>
+                        <table class="keywords-table">
+                            <thead>
+                                <tr>
+                                    <th>Keyword</th>
+                                    <th>Pos</th>
+                                    <th>Change</th>
+                                    <th>Volume</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="keyword-text">ai project management</span></td>
+                                    <td><span class="position-badge top3">1</span></td>
+                                    <td><span class="trend-up">+2</span></td>
+                                    <td>4,400</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="keyword-text">compliance automation</span></td>
+                                    <td><span class="position-badge top3">3</span></td>
+                                    <td><span class="trend-neutral">--</span></td>
+                                    <td>2,900</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="keyword-text">firewall management</span></td>
+                                    <td><span class="position-badge top10">5</span></td>
+                                    <td><span class="trend-up">+1</span></td>
+                                    <td>1,800</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="keyword-text">retirement planning ai</span></td>
+                                    <td><span class="position-badge top10">8</span></td>
+                                    <td><span class="trend-up">+4</span></td>
+                                    <td>3,200</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="keyword-text">seo automation tool</span></td>
+                                    <td><span class="position-badge other">12</span></td>
+                                    <td><span class="trend-down">-2</span></td>
+                                    <td>1,200</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Traffic Stats -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Traffic Statistics</h3>
+                            <span class="card-action">View Report</span>
+                        </div>
+                        <div class="progress-list">
+                            <div class="progress-item">
+                                <div class="progress-header">
+                                    <span class="progress-label">Organic Traffic</span>
+                                    <span class="progress-value">24.5K</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 78%"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-header">
+                                    <span class="progress-label">Direct Traffic</span>
+                                    <span class="progress-value">8.2K</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill cyan" style="width: 45%"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-header">
+                                    <span class="progress-label">Referral Traffic</span>
+                                    <span class="progress-value">3.1K</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill green" style="width: 28%"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-header">
+                                    <span class="progress-label">Social Traffic</span>
+                                    <span class="progress-value">1.8K</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 15%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Organic Traffic Chart -->
+                    <div class="card activity-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Organic Traffic (Last 30 Days)</h3>
+                            <span class="card-action">View Report</span>
+                        </div>
+                        <div class="activity-chart">
+                            <canvas id="trafficChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Traffic Chart
+        const ctx = document.getElementById('trafficChart').getContext('2d');
+
+        const gradient = ctx.createLinearGradient(0, 0, 0, 180);
+        gradient.addColorStop(0, 'rgba(6, 182, 212, 0.4)');
+        gradient.addColorStop(1, 'rgba(6, 182, 212, 0)');
+
+        const days = ['Dec 1', 'Dec 5', 'Dec 10', 'Dec 15', 'Dec 20', 'Dec 25'];
+        const trafficData = [820, 920, 1050, 1180, 1320, 1450];
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: days,
+                datasets: [{
+                    label: 'Visitors',
+                    data: trafficData,
+                    borderColor: '#06b6d4',
+                    backgroundColor: gradient,
+                    fill: true,
+                    tension: 0.4,
+                    borderWidth: 2,
+                    pointRadius: 4,
+                    pointBackgroundColor: '#06b6d4',
+                    pointBorderColor: '#0a1628',
+                    pointBorderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#64748b' }
+                    },
+                    y: {
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                        ticks: {
+                            color: '#64748b',
+                            callback: function(value) {
+                                return value >= 1000 ? (value/1000) + 'K' : value;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

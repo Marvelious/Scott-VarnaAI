@@ -1,0 +1,23 @@
+# ABOUTME: Docker Compose for the Freelance Job Hunter agent
+# ABOUTME: Runs job hunter with persistent SQLite storage
+
+services:
+  hunter:
+    build: .
+    container_name: job-hunter
+    volumes:
+      # Persist database and config
+      - ./data:/app/data
+      - ./config.yaml:/app/config.yaml:ro
+      # Mount secrets from parent folder
+      - ../secrets:/app/secrets:ro
+    environment:
+      - PYTHONPATH=/app
+      - SECRETS_PATH=/app/secrets
+    networks:
+      - hunter-network
+    # No ports needed - CLI tool, not a server
+
+networks:
+  hunter-network:
+    driver: bridge

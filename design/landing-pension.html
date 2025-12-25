@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RetirementAI - AI Financial Advisor | VarnaAI</title>
+  <link rel="stylesheet" href="landing.css">
+  <style>
+    /* RetirementAI-specific accent overrides */
+    :root {
+      --accent-app: #10b981;
+      --accent-app-dark: #059669;
+      --accent-glow: rgba(16, 185, 129, 0.4);
+    }
+    .hero-badge { background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.3); color: var(--accent-app); }
+    .hero-title .highlight { background: linear-gradient(135deg, #10b981 0%, #059669 100%); -webkit-background-clip: text; background-clip: text; }
+    .section-label { color: var(--accent-app); }
+    .stat-value { color: var(--accent-app); }
+    .forgot-link, .login-footer a { color: var(--accent-app); }
+
+
+    /* ==========================================
+       FLOATING PARTICLES
+       ========================================== */
+    .particles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: var(--accent-app);
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: float 20s infinite ease-in-out;
+    }
+
+    .particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; animation-duration: 25s; }
+    .particle:nth-child(2) { left: 20%; top: 80%; animation-delay: 2s; animation-duration: 20s; }
+    .particle:nth-child(3) { left: 30%; top: 40%; animation-delay: 4s; animation-duration: 28s; }
+    .particle:nth-child(4) { left: 50%; top: 60%; animation-delay: 1s; animation-duration: 22s; }
+    .particle:nth-child(5) { left: 70%; top: 30%; animation-delay: 3s; animation-duration: 26s; }
+    .particle:nth-child(6) { left: 80%; top: 70%; animation-delay: 5s; animation-duration: 24s; }
+    .particle:nth-child(7) { left: 90%; top: 50%; animation-delay: 2.5s; animation-duration: 21s; }
+    .particle:nth-child(8) { left: 15%; top: 90%; animation-delay: 1.5s; animation-duration: 27s; }
+    .particle:nth-child(9) { left: 60%; top: 10%; animation-delay: 3.5s; animation-duration: 23s; }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+      25% { transform: translate(30px, -50px) scale(1.2); opacity: 0.5; }
+      50% { transform: translate(-20px, -100px) scale(0.8); opacity: 0.2; }
+      75% { transform: translate(40px, -30px) scale(1.1); opacity: 0.4; }
+    }
+
+
+    /* ==========================================
+       ENHANCED BUTTONS
+       ========================================== */
+    .btn-primary {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 8px 25px rgba(16, 185, 129, 0.4),
+        0 0 40px rgba(16, 185, 129, 0.2);
+    }
+
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+
+    .btn-secondary {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-app);
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
+    }
+
+
+    /* ==========================================
+       GLASSMORPHISM FEATURE CARDS
+       ========================================== */
+    .feature-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Shimmer effect */
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      transition: left 0.6s ease;
+    }
+
+    /* Glow overlay */
+    .feature-card::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: var(--accent-app);
+      box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 40px rgba(16, 185, 129, 0.15);
+    }
+
+    .feature-card:hover::before {
+      left: 100%;
+    }
+
+    .feature-card:hover::after {
+      opacity: 1;
+    }
+
+    .feature-card:hover .feature-icon {
+      transform: scale(1.15) rotate(5deg);
+      box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+    }
+
+    .feature-icon {
+      background: rgba(16, 185, 129, 0.15);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      z-index: 1;
+    }
+
+    .feature-icon svg {
+      color: var(--accent-app);
+      position: relative;
+      z-index: 1;
+    }
+
+    .feature-title, .feature-description {
+      position: relative;
+      z-index: 1;
+    }
+
+
+    /* ==========================================
+       ENHANCED STATS WITH GRADIENT
+       ========================================== */
+    .hero-stats {
+      position: relative;
+      padding: 24px 32px;
+      background: rgba(16, 185, 129, 0.05);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      border-radius: 16px;
+      margin-top: 32px;
+    }
+
+    .stat-value {
+      font-weight: 800;
+      background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+
+    /* ==========================================
+       PREMIUM CTA BOX
+       ========================================== */
+    .cta-box {
+      border-color: var(--accent-app);
+      box-shadow: 0 0 60px rgba(16, 185, 129, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Rotating glow */
+    .cta-box::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+      animation: rotate 20s linear infinite;
+    }
+
+    /* Pulse glow */
+    .cta-box::after {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.2); opacity: 0.8; }
+    }
+
+    .cta-title, .cta-description, .cta-buttons {
+      position: relative;
+      z-index: 1;
+    }
+
+
+    /* ==========================================
+       BENEFITS SECTION ENHANCEMENTS
+       ========================================== */
+    .benefit-item {
+      transition: all 0.3s ease;
+      padding: 16px;
+      border-radius: 12px;
+      margin: -16px;
+      margin-bottom: 8px;
+    }
+
+    .benefit-item:hover {
+      background: rgba(16, 185, 129, 0.05);
+      transform: translateX(8px);
+    }
+
+    .benefit-icon {
+      transition: all 0.3s ease;
+    }
+
+    .benefit-item:hover .benefit-icon {
+      transform: scale(1.2);
+      background: rgba(16, 185, 129, 0.2);
+    }
+
+    .benefit-icon svg {
+      color: var(--accent-app);
+    }
+
+
+    /* ==========================================
+       HERO IMAGE GLOW
+       ========================================== */
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-visual::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      height: 80%;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%);
+      filter: blur(40px);
+      z-index: -1;
+      animation: pulse 6s ease-in-out infinite;
+    }
+
+
+    /* ==========================================
+       NAV ENHANCEMENTS
+       ========================================== */
+    .nav {
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Particles Background -->
+  <div class="particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="showcase.html" class="logo">
+        <svg class="logo-icon" viewBox="0 0 48 48" fill="none">
+          <path d="M24 4L6 14v20l18 10 18-10V14L24 4z" stroke="#10b981" stroke-width="2" fill="none"/>
+          <path d="M24 14l-9 5v10l9 5 9-5V19l-9-5z" fill="#10b981"/>
+        </svg>
+        <span class="logo-text">Retirement<span style="color:#10b981">AI</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#integrations">Integrations</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="login.html" class="btn btn-secondary">Login</a>
+        <a href="#demo" class="btn btn-primary">Get Started Free</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <span class="hero-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="1" x2="12" y2="23"/>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+          AI Financial Planning
+        </span>
+        <h1 class="hero-title">
+          Your AI <span class="highlight">Retirement Advisor</span>
+        </h1>
+        <p class="hero-description">
+          Monte Carlo simulations, Trading212 portfolio sync, and GPT-4 powered insights.
+          Plan your retirement with data-driven confidence. Free forever.
+        </p>
+        <div class="hero-buttons">
+          <a href="#demo" class="btn btn-primary btn-large">Start Free</a>
+          <a href="#features" class="btn btn-secondary btn-large">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/>
+            </svg>
+            See How It Works
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-value">10K+</span>
+            <span class="stat-label">Simulations Run</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">98%</span>
+            <span class="stat-label">Accuracy</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">Free</span>
+            <span class="stat-label">Forever</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="reference/comprehensive-compliance-reporting-gdpr-pci-dss-iso.png" alt="RetirementAI Dashboard" class="hero-image">
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Features</span>
+        <h2 class="section-title">Data-Driven Retirement Planning</h2>
+        <p class="section-description">
+          Professional-grade tools that were once only available to financial advisors.
+        </p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Monte Carlo Simulations</h3>
+          <p class="feature-description">
+            10,000+ retirement scenarios. Know your success probability before making decisions.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Trading212 Sync</h3>
+          <p class="feature-description">
+            Automatic portfolio import. See your real investments, real-time positions.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              <polyline points="7.5 4.21 12 6.81 16.5 4.21"/>
+              <polyline points="7.5 19.79 7.5 14.6 3 12"/>
+              <polyline points="21 12 16.5 14.6 16.5 19.79"/>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+              <line x1="12" y1="22.08" x2="12" y2="12"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">AI Financial Advisor</h3>
+          <p class="feature-description">
+            GPT-4 powered insights. Ask questions about your portfolio in natural language.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Bank-Level Security</h3>
+          <p class="feature-description">
+            Read-only API access. Your credentials stay with your broker. GDPR compliant.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+              <line x1="1" y1="10" x2="23" y2="10"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Expense Tracking</h3>
+          <p class="feature-description">
+            Track recurring expenses. See how lifestyle changes affect your retirement date.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="20" x2="18" y2="10"/>
+              <line x1="12" y1="20" x2="12" y2="4"/>
+              <line x1="6" y1="20" x2="6" y2="14"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Goal Tracking</h3>
+          <p class="feature-description">
+            Set retirement goals. Track progress with visual dashboards and projections.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section id="integrations" class="benefits">
+    <div class="container benefits-grid">
+      <div class="benefits-content">
+        <span class="section-label">Why RetirementAI</span>
+        <h2 class="section-title">Built for Real Investors</h2>
+        <ul class="benefits-list">
+          <li class="benefit-item">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div class="benefit-text">
+              <h4>Your Data, Your Control</h4>
+              <p>Read-only API access. We never have access to trade on your behalf.</p>
+            </div>
+          </li>
+          <li class="benefit-item">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div class="benefit-text">
+              <h4>EU Data Residency</h4>
+              <p>Your data stays in European servers. Full GDPR and DSGVO compliance.</p>
+            </div>
+          </li>
+          <li class="benefit-item">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div class="benefit-text">
+              <h4>No Financial Advice</h4>
+              <p>Educational tool only. We show you the math, you make the decisions.</p>
+            </div>
+          </li>
+          <li class="benefit-item">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div class="benefit-text">
+              <h4>Free Forever</h4>
+              <p>Core features are free. No credit card required. No hidden fees.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="benefits-visual">
+        <img src="reference/comprehensive-compliance-reporting-gdpr-pci-dss-iso.png" alt="Portfolio Dashboard" class="benefits-image">
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-box">
+        <h2 class="cta-title">Ready to Plan Your Retirement?</h2>
+        <p class="cta-description">
+          Start with your Trading212 portfolio sync. See your first Monte Carlo simulation in minutes.
+          Free forever. No credit card required.
+        </p>
+        <div class="cta-buttons">
+          <a href="#demo" class="btn btn-primary btn-large">Get Started Free</a>
+          <a href="#contact" class="btn btn-secondary btn-large">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="showcase.html" class="logo">
+            <svg class="logo-icon" viewBox="0 0 48 48" fill="none">
+              <path d="M24 4L6 14v20l18 10 18-10V14L24 4z" stroke="#10b981" stroke-width="2" fill="none"/>
+              <path d="M24 14l-9 5v10l9 5 9-5V19l-9-5z" fill="#10b981"/>
+            </svg>
+            <span class="logo-text">Retirement<span style="color:#10b981">AI</span></span>
+          </a>
+          <p>AI-powered retirement planning. Part of the VarnaAI suite.</p>
+        </div>
+        <div class="footer-links-group">
+          <h4 class="footer-title">Product</h4>
+          <ul class="footer-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#demo">Demo</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">API</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4 class="footer-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="#">Retirement Calculator</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4 class="footer-title">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Impressum</a></li>
+            <li><a href="#">GDPR</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 VarnaAI. All rights reserved.</p>
+        <p>Not financial advice. Educational tool only.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

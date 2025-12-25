@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenschutzerkl&auml;rung - VarnaAI | DSGVO-konforme Datenverarbeitung</title>
+  <meta name="description" content="Datenschutzerkl&auml;rung der VarnaAI GmbH. Erfahren Sie, wie wir Ihre personenbezogenen Daten gem&auml;&szlig; DSGVO verarbeiten und sch&uuml;tzen.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://varnaai.com/datenschutz">
+  <link rel="stylesheet" href="landing.css">
+  <style>
+    :root {
+      --accent-primary: #06b6d4;
+      --accent-secondary: #7c3aed;
+      --accent-tertiary: #22d3ee;
+      --bg-primary: #030014;
+      --bg-secondary: #0a0520;
+      --bg-card: #110830;
+      --gradient-hero: linear-gradient(135deg, #06b6d4 0%, #7c3aed 50%, #22d3ee 100%);
+    }
+
+    body {
+      background: var(--bg-primary);
+      background-image:
+        radial-gradient(ellipse at 10% 30%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 70%, rgba(124, 58, 237, 0.1) 0%, transparent 50%);
+    }
+
+    .nav, .footer { background: transparent; }
+
+    .nav {
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(3, 0, 20, 0.8);
+      border-bottom: 1px solid rgba(124, 58, 237, 0.2);
+    }
+
+    .logo-text span { color: var(--accent-secondary) !important; }
+    .nav-links a:hover { color: var(--accent-secondary); }
+
+    .footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid rgba(124, 58, 237, 0.2);
+    }
+
+    /* Legal Content Styling */
+    .legal-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 120px 24px 80px;
+    }
+
+    .legal-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .legal-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(6, 182, 212, 0.2));
+      border: 1px solid rgba(6, 182, 212, 0.5);
+      border-radius: 50px;
+      font-size: 0.875rem;
+      color: var(--accent-secondary);
+      margin-bottom: 24px;
+    }
+
+    .legal-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: var(--gradient-hero);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+    }
+
+    .legal-subtitle {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 1.125rem;
+    }
+
+    .legal-section {
+      background: rgba(17, 8, 48, 0.6);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(124, 58, 237, 0.2);
+      border-radius: 24px;
+      padding: 40px;
+      margin-bottom: 32px;
+    }
+
+    .legal-section h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .legal-section h2::before {
+      content: '';
+      width: 4px;
+      height: 24px;
+      background: var(--gradient-hero);
+      border-radius: 2px;
+    }
+
+    .legal-section h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--accent-primary);
+      margin: 24px 0 12px;
+    }
+
+    .legal-section p, .legal-section li {
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    .legal-section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .legal-section ul li {
+      position: relative;
+      padding-left: 24px;
+    }
+
+    .legal-section ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 8px;
+      height: 8px;
+      background: var(--accent-primary);
+      border-radius: 50%;
+    }
+
+    .legal-section a {
+      color: var(--accent-primary);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s;
+    }
+
+    .legal-section a:hover {
+      border-bottom-color: var(--accent-primary);
+    }
+
+    .legal-toc {
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      border-radius: 16px;
+      padding: 24px 32px;
+      margin-bottom: 40px;
+    }
+
+    .legal-toc h4 {
+      color: var(--accent-primary);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .legal-toc ol {
+      columns: 2;
+      column-gap: 40px;
+      padding-left: 20px;
+    }
+
+    .legal-toc li {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 8px;
+    }
+
+    .legal-toc a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+    }
+
+    .legal-toc a:hover {
+      color: var(--accent-primary);
+    }
+
+    .last-updated {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.875rem;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .legal-title { font-size: 2rem; }
+      .legal-section { padding: 24px; }
+      .legal-toc ol { columns: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="showcase.html" class="logo">
+        <svg class="logo-icon" viewBox="0 0 48 48" fill="none">
+          <path d="M24 4L6 14v20l18 10 18-10V14L24 4z" stroke="#06b6d4" stroke-width="2" fill="none"/>
+          <path d="M24 14l-9 5v10l9 5 9-5V19l-9-5z" fill="#7c3aed"/>
+        </svg>
+        <span class="logo-text">Varna<span>AI</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="showcase.html">Produkte</a></li>
+        <li><a href="legal-terms.html">AGB</a></li>
+        <li><a href="legal-impressum.html">Impressum</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="login.html" class="btn btn-secondary">Anmelden</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Legal Content -->
+  <main class="legal-content">
+    <header class="legal-header">
+      <span class="legal-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        DSGVO-konform
+      </span>
+      <h1 class="legal-title">Datenschutzerkl&auml;rung</h1>
+      <p class="legal-subtitle">Informationen zur Verarbeitung Ihrer personenbezogenen Daten</p>
+    </header>
+
+    <!-- Table of Contents -->
+    <nav class="legal-toc">
+      <h4>Inhaltsverzeichnis</h4>
+      <ol>
+        <li><a href="#verantwortlicher">Verantwortlicher</a></li>
+        <li><a href="#rechtsgrundlagen">Rechtsgrundlagen</a></li>
+        <li><a href="#datenarten">Verarbeitete Datenarten</a></li>
+        <li><a href="#cookies">Cookies &amp; Tracking</a></li>
+        <li><a href="#hosting">Hosting &amp; CDN</a></li>
+        <li><a href="#kontaktaufnahme">Kontaktaufnahme</a></li>
+        <li><a href="#newsletter">Newsletter</a></li>
+        <li><a href="#zahlungsanbieter">Zahlungsanbieter</a></li>
+        <li><a href="#betroffenenrechte">Ihre Rechte</a></li>
+        <li><a href="#aenderungen">&Auml;nderungen</a></li>
+      </ol>
+    </nav>
+
+    <!-- Section 1: Verantwortlicher -->
+    <section id="verantwortlicher" class="legal-section">
+      <h2>1. Verantwortlicher</h2>
+      <p>Verantwortlicher f&uuml;r die Datenverarbeitung auf dieser Website im Sinne der Datenschutz-Grundverordnung (DSGVO):</p>
+      <p>
+        <strong>VarnaAI</strong><br>
+        Gennadius Vanderbilt<br>
+        Varna, Bulgarien<br>
+        E-Mail: privacy@varnaai.com
+      </p>
+      <h3>Datenschutzbeauftragter</h3>
+      <p>Da wir weniger als 20 Personen besch&auml;ftigen, die st&auml;ndig mit der automatisierten Verarbeitung personenbezogener Daten befasst sind, sind wir gem&auml;&szlig; Art. 37 DSGVO nicht zur Bestellung eines Datenschutzbeauftragten verpflichtet.</p>
+    </section>
+
+    <!-- Section 2: Rechtsgrundlagen -->
+    <section id="rechtsgrundlagen" class="legal-section">
+      <h2>2. Rechtsgrundlagen der Verarbeitung</h2>
+      <p>Wir verarbeiten personenbezogene Daten auf Grundlage folgender Rechtsgrundlagen:</p>
+      <ul>
+        <li><strong>Einwilligung (Art. 6 Abs. 1 lit. a DSGVO)</strong> &ndash; Die betroffene Person hat ihre Einwilligung zu der Verarbeitung der sie betreffenden personenbezogenen Daten f&uuml;r einen oder mehrere bestimmte Zwecke gegeben.</li>
+        <li><strong>Vertragserf&uuml;llung (Art. 6 Abs. 1 lit. b DSGVO)</strong> &ndash; Die Verarbeitung ist f&uuml;r die Erf&uuml;llung eines Vertrags erforderlich.</li>
+        <li><strong>Rechtliche Verpflichtung (Art. 6 Abs. 1 lit. c DSGVO)</strong> &ndash; Die Verarbeitung ist zur Erf&uuml;llung einer rechtlichen Verpflichtung erforderlich.</li>
+        <li><strong>Berechtigte Interessen (Art. 6 Abs. 1 lit. f DSGVO)</strong> &ndash; Die Verarbeitung ist zur Wahrung unserer berechtigten Interessen erforderlich.</li>
+      </ul>
+    </section>
+
+    <!-- Section 3: Datenarten -->
+    <section id="datenarten" class="legal-section">
+      <h2>3. Verarbeitete Datenarten</h2>
+      <p>Wir verarbeiten folgende Kategorien personenbezogener Daten:</p>
+      <ul>
+        <li><strong>Bestandsdaten</strong> &ndash; Name, Adresse, E-Mail-Adresse, Telefonnummer</li>
+        <li><strong>Nutzungsdaten</strong> &ndash; Zugriffszeiten, besuchte Seiten, Verweildauer</li>
+        <li><strong>Meta-/Kommunikationsdaten</strong> &ndash; IP-Adressen, Ger&auml;teinformationen, Browser-Typ</li>
+        <li><strong>Vertragsdaten</strong> &ndash; Vertragsgegenstand, Laufzeit, Zahlungsinformationen</li>
+        <li><strong>Zahlungsdaten</strong> &ndash; Bankverbindung, Zahlungshistorie (bei Zahlungsanbietern)</li>
+      </ul>
+    </section>
+
+    <!-- Section 4: Cookies -->
+    <section id="cookies" class="legal-section">
+      <h2>4. Cookies &amp; Tracking-Technologien</h2>
+      <p>Unsere Website verwendet Cookies. Cookies sind kleine Textdateien, die auf Ihrem Endger&auml;t gespeichert werden.</p>
+      <h3>Notwendige Cookies</h3>
+      <p>Diese Cookies sind f&uuml;r den Betrieb der Website erforderlich und k&ouml;nnen nicht deaktiviert werden. Sie speichern keine personenbezogenen Daten.</p>
+      <h3>Analyse-Cookies</h3>
+      <p>Mit Ihrer Einwilligung setzen wir Analyse-Cookies ein, um die Nutzung unserer Website zu verstehen und zu verbessern. Diese Cookies werden nur gesetzt, wenn Sie aktiv zustimmen.</p>
+      <h3>Cookie-Einstellungen</h3>
+      <p>Sie k&ouml;nnen Ihre Cookie-Einstellungen jederzeit &uuml;ber unser Cookie-Banner oder in den Browser-Einstellungen &auml;ndern.</p>
+    </section>
+
+    <!-- Section 5: Hosting -->
+    <section id="hosting" class="legal-section">
+      <h2>5. Hosting &amp; Infrastruktur</h2>
+      <h3>Webhosting</h3>
+      <p>Unsere Website wird bei <strong>All-Inkl.com</strong> (Neue Medien M&uuml;nnich, Inh. Ren&eacute; M&uuml;nnich, Hauptstra&szlig;e 68, 02742 Friedersdorf, Deutschland) gehostet.</p>
+      <p>Die Server befinden sich ausschlie&szlig;lich in Deutschland. Eine &Uuml;bermittlung in Drittl&auml;nder findet nicht statt.</p>
+      <h3>Content Delivery Network (CDN)</h3>
+      <p>Wir nutzen kein CDN f&uuml;r die Auslieferung statischer Inhalte. Alle Inhalte werden direkt von deutschen Servern ausgeliefert.</p>
+    </section>
+
+    <!-- Section 6: Kontaktaufnahme -->
+    <section id="kontaktaufnahme" class="legal-section">
+      <h2>6. Kontaktaufnahme</h2>
+      <p>Wenn Sie uns per E-Mail oder Kontaktformular kontaktieren, werden Ihre Angaben zur Bearbeitung der Anfrage und f&uuml;r den Fall von Anschlussfragen bei uns gespeichert.</p>
+      <ul>
+        <li><strong>Verarbeitete Daten:</strong> Name, E-Mail-Adresse, Nachrichteninhalt</li>
+        <li><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Ma&szlig;nahmen)</li>
+        <li><strong>Speicherdauer:</strong> Bis zur endg&uuml;ltigen Bearbeitung Ihrer Anfrage, maximal 2 Jahre</li>
+      </ul>
+    </section>
+
+    <!-- Section 7: Newsletter -->
+    <section id="newsletter" class="legal-section">
+      <h2>7. Newsletter</h2>
+      <p>Wenn Sie unseren Newsletter abonnieren, verarbeiten wir Ihre E-Mail-Adresse zum Versand des Newsletters.</p>
+      <ul>
+        <li><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)</li>
+        <li><strong>Double-Opt-In:</strong> Wir verwenden das Double-Opt-In-Verfahren zur Best&auml;tigung Ihrer Anmeldung</li>
+        <li><strong>Widerruf:</strong> Sie k&ouml;nnen den Newsletter jederzeit abbestellen</li>
+      </ul>
+    </section>
+
+    <!-- Section 8: Zahlungsanbieter -->
+    <section id="zahlungsanbieter" class="legal-section">
+      <h2>8. Zahlungsanbieter</h2>
+      <h3>Stripe</h3>
+      <p>F&uuml;r Zahlungsabwicklungen nutzen wir Stripe (Stripe Payments Europe, Ltd., 1 Grand Canal Street Lower, Dublin 2, Irland).</p>
+      <ul>
+        <li><strong>Verarbeitete Daten:</strong> Zahlungsdaten, Transaktionsdaten, IP-Adresse</li>
+        <li><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Vertragserf&uuml;llung)</li>
+        <li><strong>Datenschutzerkl&auml;rung:</strong> <a href="https://stripe.com/de/privacy" target="_blank" rel="noopener">stripe.com/de/privacy</a></li>
+      </ul>
+    </section>
+
+    <!-- Section 9: Betroffenenrechte -->
+    <section id="betroffenenrechte" class="legal-section">
+      <h2>9. Ihre Rechte als betroffene Person</h2>
+      <p>Sie haben folgende Rechte gegen&uuml;ber uns:</p>
+      <ul>
+        <li><strong>Auskunftsrecht (Art. 15 DSGVO)</strong> &ndash; Sie k&ouml;nnen Auskunft &uuml;ber Ihre von uns verarbeiteten personenbezogenen Daten verlangen.</li>
+        <li><strong>Berichtigungsrecht (Art. 16 DSGVO)</strong> &ndash; Sie k&ouml;nnen die Berichtigung unrichtiger Daten verlangen.</li>
+        <li><strong>L&ouml;schungsrecht (Art. 17 DSGVO)</strong> &ndash; Sie k&ouml;nnen die L&ouml;schung Ihrer Daten verlangen.</li>
+        <li><strong>Einschr&auml;nkung (Art. 18 DSGVO)</strong> &ndash; Sie k&ouml;nnen die Einschr&auml;nkung der Verarbeitung verlangen.</li>
+        <li><strong>Daten&uuml;bertragbarkeit (Art. 20 DSGVO)</strong> &ndash; Sie k&ouml;nnen Ihre Daten in einem strukturierten Format erhalten.</li>
+        <li><strong>Widerspruchsrecht (Art. 21 DSGVO)</strong> &ndash; Sie k&ouml;nnen der Verarbeitung Ihrer Daten widersprechen.</li>
+        <li><strong>Widerruf (Art. 7 Abs. 3 DSGVO)</strong> &ndash; Sie k&ouml;nnen erteilte Einwilligungen jederzeit widerrufen.</li>
+        <li><strong>Beschwerderecht</strong> &ndash; Sie haben das Recht, sich bei einer Aufsichtsbeh&ouml;rde zu beschweren.</li>
+      </ul>
+      <h3>Zust&auml;ndige Aufsichtsbeh&ouml;rde</h3>
+      <p>Der Bundesbeauftragte f&uuml;r den Datenschutz und die Informationsfreiheit (BfDI)<br>
+      Graurheindorfer Str. 153, 53117 Bonn<br>
+      Website: <a href="https://www.bfdi.bund.de" target="_blank" rel="noopener">www.bfdi.bund.de</a></p>
+    </section>
+
+    <!-- Section 10: &Auml;nderungen -->
+    <section id="aenderungen" class="legal-section">
+      <h2>10. &Auml;nderungen dieser Datenschutzerkl&auml;rung</h2>
+      <p>Wir behalten uns vor, diese Datenschutzerkl&auml;rung anzupassen, um sie stets den aktuellen rechtlichen Anforderungen anzupassen oder &Auml;nderungen unserer Leistungen umzusetzen.</p>
+      <p>Die aktuelle Version finden Sie immer auf dieser Seite.</p>
+    </section>
+
+    <p class="last-updated">Stand: Dezember 2025</p>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="showcase.html" class="logo">
+            <svg class="logo-icon" viewBox="0 0 48 48" fill="none">
+              <path d="M24 4L6 14v20l18 10 18-10V14L24 4z" stroke="#06b6d4" stroke-width="2" fill="none"/>
+              <path d="M24 14l-9 5v10l9 5 9-5V19l-9-5z" fill="#7c3aed"/>
+            </svg>
+            <span class="logo-text">Varna<span style="color:#06b6d4">AI</span></span>
+          </a>
+          <p>KI-gest&uuml;tzte Unternehmensl&ouml;sungen. DSGVO-konform.</p>
+        </div>
+        <div class="footer-links-group">
+          <h4 class="footer-title">Rechtliches</h4>
+          <ul class="footer-links">
+            <li><a href="legal-privacy.html">Datenschutz</a></li>
+            <li><a href="legal-terms.html">AGB</a></li>
+            <li><a href="legal-impressum.html">Impressum</a></li>
+            <li><a href="legal-cookies.html">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 VarnaAI. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

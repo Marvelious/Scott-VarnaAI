@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VarnaAI App Suite - Design Showcase</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root {
+      --bg-primary: #0a1628;
+      --bg-secondary: #0d1e36;
+      --bg-card: #0f2340;
+      --bg-elevated: #132743;
+      --accent-gold: #c9a227;
+      --accent-blue: #3b82f6;
+      --accent-cyan: #06b6d4;
+      --accent-green: #10b981;
+      --accent-orange: #f59e0b;
+      --accent-red: #ef4444;
+      --text-primary: #ffffff;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    /* Showcase Header */
+    .showcase-header {
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--accent-gold);
+      padding: 16px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .showcase-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .showcase-logo svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    .showcase-logo span {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .showcase-logo span em {
+      color: var(--accent-gold);
+      font-style: normal;
+    }
+
+    .app-selector {
+      display: flex;
+      gap: 8px;
+      background: var(--bg-card);
+      padding: 6px;
+      border-radius: 12px;
+    }
+
+    .app-btn {
+      padding: 10px 20px;
+      background: transparent;
+      border: none;
+      border-radius: 8px;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .app-btn:hover {
+      color: var(--text-primary);
+    }
+
+    .app-btn.active {
+      background: var(--accent-gold);
+      color: var(--bg-primary);
+    }
+
+    .app-btn[data-app="c3"].active { background: var(--accent-blue); color: white; }
+    .app-btn[data-app="fwchange"].active { background: var(--accent-orange); color: var(--bg-primary); }
+    .app-btn[data-app="pension"].active { background: var(--accent-green); color: var(--bg-primary); }
+
+    /* Section Styles */
+    .showcase-section {
+      padding: 80px 32px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    /* App Cards */
+    .app-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-bottom: 64px;
+    }
+
+    .app-card {
+      background: var(--bg-card);
+      border: 2px solid transparent;
+      border-radius: 20px;
+      padding: 32px;
+      text-align: center;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .app-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .app-card[data-app="c3"] { border-color: var(--accent-blue); }
+    .app-card[data-app="fwchange"] { border-color: var(--accent-orange); }
+    .app-card[data-app="pension"] { border-color: var(--accent-green); }
+
+    .app-card-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 24px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .app-card[data-app="c3"] .app-card-icon { background: rgba(59, 130, 246, 0.15); }
+    .app-card[data-app="fwchange"] .app-card-icon { background: rgba(245, 158, 11, 0.15); }
+    .app-card[data-app="pension"] .app-card-icon { background: rgba(16, 185, 129, 0.15); }
+
+    .app-card-icon svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    .app-card[data-app="c3"] .app-card-icon svg { color: var(--accent-blue); }
+    .app-card[data-app="fwchange"] .app-card-icon svg { color: var(--accent-orange); }
+    .app-card[data-app="pension"] .app-card-icon svg { color: var(--accent-green); }
+
+    .app-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .app-card-subtitle {
+      font-size: 0.9rem;
+      color: var(--accent-gold);
+      margin-bottom: 16px;
+    }
+
+    .app-card p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .app-card-stats {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .app-stat {
+      text-align: center;
+    }
+
+    .app-stat-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .app-card[data-app="c3"] .app-stat-value { color: var(--accent-blue); }
+    .app-card[data-app="fwchange"] .app-stat-value { color: var(--accent-orange); }
+    .app-card[data-app="pension"] .app-stat-value { color: var(--accent-green); }
+
+    .app-stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Dashboard Preview */
+    .dashboard-preview {
+      background: var(--bg-secondary);
+      border: 1px solid var(--accent-gold);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 0 60px rgba(201, 162, 39, 0.1);
+    }
+
+    .preview-header {
+      background: var(--bg-card);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .preview-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .preview-title h4 {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .preview-badge {
+      background: var(--accent-gold);
+      color: var(--bg-primary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+    .preview-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .preview-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .preview-dot.red { background: #ef4444; }
+    .preview-dot.yellow { background: #f59e0b; }
+    .preview-dot.green { background: #10b981; }
+
+    .preview-content {
+      display: flex;
+      min-height: 500px;
+    }
+
+    /* Sidebar */
+    .preview-sidebar {
+      width: 200px;
+      background: var(--bg-card);
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 16px;
+    }
+
+    .sidebar-tab {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      width: 100%;
+      text-align: left;
+      margin-bottom: 4px;
+    }
+
+    .sidebar-tab:hover {
+      background: var(--bg-elevated);
+      color: var(--text-primary);
+    }
+
+    .sidebar-tab.active {
+      background: rgba(59, 130, 246, 0.15);
+      border-color: var(--accent-blue);
+      color: var(--accent-blue);
+    }
+
+    .sidebar-tab svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Main Content */
+    .preview-main {
+      flex: 1;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .preview-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .preview-card-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+    }
+
+    /* Score Circle */
+    .score-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .score-circle {
+      position: relative;
+      width: 160px;
+      height: 160px;
+    }
+
+    .score-circle svg {
+      transform: rotate(-90deg);
+      width: 100%;
+      height: 100%;
+    }
+
+    .score-bg {
+      fill: none;
+      stroke: rgba(255, 255, 255, 0.1);
+      stroke-width: 10;
+    }
+
+    .score-fill {
+      fill: none;
+      stroke: var(--accent-gold);
+      stroke-width: 10;
+      stroke-linecap: round;
+      stroke-dasharray: 408;
+      stroke-dashoffset: 33;
+      transition: stroke-dashoffset 1s ease;
+    }
+
+    .score-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .score-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .score-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      display: block;
+    }
+
+    /* Compliance Badges */
+    .compliance-badges {
+      display: flex;
+      gap: 16px;
+    }
+
+    .badge-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      padding: 8px;
+    }
+
+    .badge-item svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .badge-item span {
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    .badge-item.compliant { color: var(--accent-green); }
+    .badge-item.warning { color: var(--accent-orange); }
+
+    /* Chart Container */
+    .chart-container {
+      height: 180px;
+    }
+
+    /* Progress List */
+    .progress-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .progress-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+    }
+
+    .progress-header span:first-child {
+      color: var(--text-secondary);
+    }
+
+    .progress-value {
+      color: var(--accent-blue);
+      font-weight: 600;
+    }
+
+    .progress-bar {
+      height: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+      border-radius: 3px;
+    }
+
+    /* Flow Diagram */
+    .flow-section {
+      background: var(--bg-secondary);
+      padding: 80px 32px;
+    }
+
+    .flow-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .flow-step {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      width: 200px;
+      transition: all 0.3s;
+    }
+
+    .flow-step:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-gold);
+    }
+
+    .flow-step-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 16px;
+      background: rgba(201, 162, 39, 0.15);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .flow-step-icon svg {
+      width: 28px;
+      height: 28px;
+      color: var(--accent-gold);
+    }
+
+    .flow-step h4 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .flow-step p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .flow-arrow {
+      color: var(--accent-gold);
+    }
+
+    .flow-arrow svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    /* Tech Stack */
+    .tech-stack {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      margin-top: 48px;
+    }
+
+    .tech-item {
+      text-align: center;
+    }
+
+    .tech-item span {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* Footer */
+    .showcase-footer {
+      background: var(--bg-card);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 32px;
+      text-align: center;
+    }
+
+    .showcase-footer p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .showcase-footer a {
+      color: var(--accent-gold);
+      text-decoration: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .app-cards {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto 64px;
+      }
+
+      .preview-content {
+        flex-direction: column;
+      }
+
+      .preview-sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+      }
+
+      .preview-main {
+        grid-template-columns: 1fr;
+      }
+
+      .flow-container {
+        flex-direction: column;
+      }
+
+      .flow-arrow {
+        transform: rotate(90deg);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .showcase-header {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .app-selector {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .section-title {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="showcase-header">
+    <div class="showcase-logo">
+      <svg viewBox="0 0 48 48" fill="none">
+        <path d="M24 4L6 14v20l18 10 18-10V14L24 4z" stroke="#c9a227" stroke-width="2" fill="none"/>
+        <path d="M24 14l-9 5v10l9 5 9-5V19l-9-5z" fill="#c9a227"/>
+      </svg>
+      <span>Varna<em>AI</em></span>
+    </div>
+    <div class="app-selector">
+      <button class="app-btn active" data-app="c3">C3 Compliance</button>
+      <button class="app-btn" data-app="fwchange">FwChange</button>
+      <button class="app-btn" data-app="pension">RetirementAI</button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="showcase-section">
+    <h1 class="section-title">VarnaAI App Suite</h1>
+    <p class="section-subtitle">Enterprise-grade AI applications for compliance, security, and financial planning</p>
+
+    <div class="app-cards">
+      <!-- C3 Card -->
+      <div class="app-card" data-app="c3">
+        <div class="app-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h3>C3</h3>
+        <p class="app-card-subtitle">Compliance Command Center</p>
+        <p>AI-powered GDPR, ISO 27001, PCI-DSS compliance automation with 60-second scans.</p>
+        <div class="app-card-stats">
+          <div class="app-stat">
+            <span class="app-stat-value">92%</span>
+            <span class="app-stat-label">Compliance</span>
+          </div>
+          <div class="app-stat">
+            <span class="app-stat-value">500+</span>
+            <span class="app-stat-label">Controls</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FwChange Card -->
+      <div class="app-card" data-app="fwchange">
+        <div class="app-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+        <h3>FwChange</h3>
+        <p class="app-card-subtitle">Firewall Change Management</p>
+        <p>Multi-vendor firewall management with JIRA integration and PCI-DSS compliance.</p>
+        <div class="app-card-stats">
+          <div class="app-stat">
+            <span class="app-stat-value">900+</span>
+            <span class="app-stat-label">Firewalls</span>
+          </div>
+          <div class="app-stat">
+            <span class="app-stat-value">24/7</span>
+            <span class="app-stat-label">Monitoring</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pension Card -->
+      <div class="app-card" data-app="pension">
+        <div class="app-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="1" x2="12" y2="23"/>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <h3>RetirementAI</h3>
+        <p class="app-card-subtitle">AI Financial Advisor</p>
+        <p>Monte Carlo simulations, Trading212 integration, personalized retirement planning.</p>
+        <div class="app-card-stats">
+          <div class="app-stat">
+            <span class="app-stat-value">10K+</span>
+            <span class="app-stat-label">Simulations</span>
+          </div>
+          <div class="app-stat">
+            <span class="app-stat-value">98%</span>
+            <span class="app-stat-label">Accuracy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dashboard Preview -->
+  <section class="showcase-section">
+    <h2 class="section-title">Live Dashboard Preview</h2>
+    <p class="section-subtitle">Experience the unified VarnaAI design system across all applications</p>
+
+    <div class="dashboard-preview">
+      <div class="preview-header">
+        <div class="preview-title">
+          <h4>Compliance Command Center</h4>
+          <span class="preview-badge">PRO</span>
+        </div>
+        <div class="preview-actions">
+          <span class="preview-dot red"></span>
+          <span class="preview-dot yellow"></span>
+          <span class="preview-dot green"></span>
+        </div>
+      </div>
+      <div class="preview-content">
+        <div class="preview-sidebar">
+          <button class="sidebar-tab active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+            </svg>
+            <span>Automated Reports</span>
+          </button>
+          <button class="sidebar-tab">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+            <span>Audit Trail</span>
+          </button>
+          <button class="sidebar-tab">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <line x1="3" y1="9" x2="21" y2="9"/>
+            </svg>
+            <span>Executive Summary</span>
+          </button>
+        </div>
+        <div class="preview-main">
+          <!-- Score Card -->
+          <div class="preview-card">
+            <h5 class="preview-card-title">Overall Compliance Score</h5>
+            <div class="score-container">
+              <div class="score-circle">
+                <svg viewBox="0 0 140 140">
+                  <circle class="score-bg" cx="70" cy="70" r="65"/>
+                  <circle class="score-fill" cx="70" cy="70" r="65"/>
+                </svg>
+                <div class="score-text">
+                  <span class="score-label">SCORE</span>
+                  <span class="score-value">92%</span>
+                </div>
+              </div>
+              <div class="compliance-badges">
+                <div class="badge-item compliant">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
+                  <span>GDPR</span>
+                </div>
+                <div class="badge-item compliant">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
+                  <span>ISO</span>
+                </div>
+                <div class="badge-item warning">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
+                  <span>PCI</span>
+                </div>
+                <div class="badge-item compliant">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
+                  <span>NIS2</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- GDPR Chart -->
+          <div class="preview-card">
+            <h5 class="preview-card-title">GDPR Compliance Breakdown</h5>
+            <div class="chart-container">
+              <canvas id="gdprChart"></canvas>
+            </div>
+          </div>
+
+          <!-- ISO Progress -->
+          <div class="preview-card">
+            <h5 class="preview-card-title">ISO 27001 Controls</h5>
+            <div class="progress-list">
+              <div class="progress-item">
+                <div class="progress-header">
+                  <span>A.5 Information Security</span>
+                  <span class="progress-value">94%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 94%"></div>
+                </div>
+              </div>
+              <div class="progress-item">
+                <div class="progress-header">
+                  <span>A.6 Organization</span>
+                  <span class="progress-value">88%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 88%"></div>
+                </div>
+              </div>
+              <div class="progress-item">
+                <div class="progress-header">
+                  <span>A.7 Human Resources</span>
+                  <span class="progress-value">91%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 91%"></div>
+                </div>
+              </div>
+              <div class="progress-item">
+                <div class="progress-header">
+                  <span>A.8 Asset Management</span>
+                  <span class="progress-value">85%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 85%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Activity Chart -->
+          <div class="preview-card">
+            <h5 class="preview-card-title">Audit Trail Activity</h5>
+            <div class="chart-container">
+              <canvas id="activityChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- User Flow -->
+  <section class="flow-section">
+    <div class="showcase-section">
+      <h2 class="section-title">User Flow</h2>
+      <p class="section-subtitle">Seamless experience from landing to dashboard</p>
+
+      <div class="flow-container">
+        <div class="flow-step">
+          <div class="flow-step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <h4>Landing Page</h4>
+          <p>Product showcase & value proposition</p>
+        </div>
+
+        <div class="flow-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+          <h4>Login</h4>
+          <p>Secure authentication & app selection</p>
+        </div>
+
+        <div class="flow-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <line x1="3" y1="9" x2="21" y2="9"/>
+              <line x1="9" y1="21" x2="9" y2="9"/>
+            </svg>
+          </div>
+          <h4>Dashboard</h4>
+          <p>AI-powered insights & analytics</p>
+        </div>
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="tech-stack">
+        <div class="tech-item">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="#3b82f6">
+            <path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z"/>
+          </svg>
+          <span>React 18</span>
+        </div>
+        <div class="tech-item">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="#10b981">
+            <path d="M11.998 0c-.544 0-1.093.075-1.617.221-.87.244-1.68.72-2.37 1.39l-5.66 5.66c-.69.69-1.146 1.5-1.39 2.37C.535 10.916.46 11.48.46 12.009c0 .544.075 1.093.22 1.618.244.87.72 1.68 1.39 2.37l5.66 5.66c.69.69 1.5 1.146 2.37 1.39.524.147 1.073.221 1.617.221.544 0 1.093-.074 1.617-.22.87-.244 1.68-.72 2.37-1.39l5.66-5.66c.69-.69 1.146-1.5 1.39-2.37.147-.524.221-1.073.221-1.617 0-.544-.074-1.093-.22-1.618-.244-.87-.72-1.68-1.39-2.37l-5.66-5.66c-.69-.69-1.5-1.146-2.37-1.39C13.09.075 12.54 0 11.998 0zm0 5.9c3.362 0 6.098 2.735 6.098 6.097 0 3.362-2.736 6.098-6.098 6.098-3.362 0-6.097-2.736-6.097-6.098 0-3.362 2.735-6.097 6.097-6.097z"/>
+          </svg>
+          <span>Node.js</span>
+        </div>
+        <div class="tech-item">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="#3b82f6">
+            <path d="M0 12C0 5.373 5.373 0 12 0c4.873 0 9.067 2.904 10.947 7.077l-15.87 15.87a11.981 11.981 0 0 1-1.935-1.099L14.99 12H12l-8.485 8.485A11.962 11.962 0 0 1 0 12Zm12.004 12L24 12.004C23.998 18.628 18.627 23.998 12.004 24Z"/>
+          </svg>
+          <span>PostgreSQL</span>
+        </div>
+        <div class="tech-item">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="#ef4444">
+            <path d="M11.998 0c-.544 0-1.093.075-1.617.221-.87.244-1.68.72-2.37 1.39L2.35 7.27c-.69.69-1.146 1.5-1.39 2.37-.147.524-.221 1.073-.221 1.617 0 .544.074 1.093.22 1.618.244.87.72 1.68 1.39 2.37l5.66 5.66c.69.69 1.5 1.146 2.37 1.39.524.147 1.073.221 1.617.221.544 0 1.093-.074 1.617-.22.87-.244 1.68-.72 2.37-1.39l5.66-5.66c.69-.69 1.146-1.5 1.39-2.37.147-.524.221-1.073.221-1.617 0-.544-.074-1.093-.22-1.618-.244-.87-.72-1.68-1.39-2.37l-5.66-5.66c-.69-.69-1.5-1.146-2.37-1.39C13.09.075 12.54 0 11.998 0z"/>
+          </svg>
+          <span>Redis</span>
+        </div>
+        <div class="tech-item">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="#2563eb">
+            <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z"/>
+          </svg>
+          <span>Tailwind</span>
+        </div>
+        <div class="tech-item">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="#f59e0b">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-.017 18.743l-5.49-5.49a1.5 1.5 0 0 1 0-2.12l5.49-5.49a1.5 1.5 0 0 1 2.12 0l5.49 5.49a1.5 1.5 0 0 1 0 2.12l-5.49 5.49a1.5 1.5 0 0 1-2.12 0z"/>
+          </svg>
+          <span>OpenAI</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="showcase-footer">
+    <p>VarnaAI App Suite &copy; 2025 | <a href="https://varnaai.com">varnaai.com</a></p>
+  </footer>
+
+  <script>
+    // Chart.js setup
+    const colors = {
+      blue: '#3b82f6',
+      cyan: '#06b6d4',
+      gold: '#c9a227',
+      textSecondary: '#94a3b8',
+      bgCard: '#0f2340',
+    };
+
+    Chart.defaults.color = colors.textSecondary;
+    Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.1)';
+
+    // GDPR Chart
+    new Chart(document.getElementById('gdprChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Data Processing', 'Consent', 'Rights', 'Security', 'Breach'],
+        datasets: [{
+          data: [85, 92, 78, 95, 88],
+          backgroundColor: [colors.blue, colors.blue, colors.cyan, colors.blue, colors.cyan],
+          borderRadius: 4,
+          barThickness: 20,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { grid: { display: false }, ticks: { font: { size: 9 } } },
+          y: {
+            beginAtZero: true,
+            max: 100,
+            grid: { color: 'rgba(255, 255, 255, 0.05)' },
+            ticks: { callback: v => v + '%', font: { size: 9 } }
+          }
+        }
+      }
+    });
+
+    // Activity Chart
+    new Chart(document.getElementById('activityChart'), {
+      type: 'line',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        datasets: [{
+          data: [12, 19, 15, 25, 22, 18, 28],
+          borderColor: colors.cyan,
+          backgroundColor: 'rgba(6, 182, 212, 0.1)',
+          borderWidth: 2,
+          fill: true,
+          tension: 0.4,
+          pointRadius: 0,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { grid: { display: false }, ticks: { font: { size: 9 } } },
+          y: {
+            beginAtZero: true,
+            grid: { color: 'rgba(255, 255, 255, 0.05)' },
+            ticks: { font: { size: 9 } }
+          }
+        }
+      }
+    });
+
+    // App selector
+    document.querySelectorAll('.app-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.app-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+    // Sidebar tabs
+    document.querySelectorAll('.sidebar-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.sidebar-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

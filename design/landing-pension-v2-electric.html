@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RetirementAI - Variation 2: Electric Luxury | VarnaAI</title>
+  <link rel="stylesheet" href="landing.css">
+  <style>
+    /* ===========================================
+       VARIATION 2: ELECTRIC LUXURY
+       Cyan/Purple - Modern Fintech Premium
+       =========================================== */
+    :root {
+      --accent-primary: #06b6d4;
+      --accent-secondary: #7c3aed;
+      --accent-tertiary: #22d3ee;
+      --accent-glow: rgba(6, 182, 212, 0.5);
+      --accent-glow-alt: rgba(124, 58, 237, 0.4);
+      --bg-primary: #030014;
+      --bg-secondary: #0a0520;
+      --bg-card: #110830;
+      --gradient-hero: linear-gradient(135deg, #06b6d4 0%, #7c3aed 50%, #22d3ee 100%);
+      --gradient-button: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+      --gradient-glow: linear-gradient(135deg, rgba(6, 182, 212, 0.3), rgba(124, 58, 237, 0.3), rgba(34, 211, 238, 0.3));
+    }
+
+    body {
+      background: var(--bg-primary);
+      background-image:
+        radial-gradient(ellipse at 10% 30%, rgba(6, 182, 212, 0.2) 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 70%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 90%, rgba(34, 211, 238, 0.1) 0%, transparent 40%);
+    }
+
+    /* Override landing.css backgrounds */
+    .nav, .hero, .features, .benefits, .cta, .footer {
+      background: transparent;
+    }
+
+    .hero-badge {
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(6, 182, 212, 0.2));
+      border: 1px solid rgba(6, 182, 212, 0.5);
+      color: var(--accent-secondary);
+      text-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
+    }
+
+    .hero-title .highlight {
+      background: var(--gradient-hero);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: none;
+      filter: drop-shadow(0 0 40px rgba(124, 58, 237, 0.6));
+    }
+
+    .section-label {
+      color: var(--accent-secondary);
+      text-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
+    }
+
+
+    /* ==========================================
+       ANIMATED MESH GRADIENT BACKGROUND
+       ========================================== */
+    .mesh-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .mesh-gradient {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      mix-blend-mode: screen;
+    }
+
+    .mesh-1 {
+      width: 800px;
+      height: 800px;
+      background: rgba(6, 182, 212, 0.4);
+      top: -300px;
+      left: -200px;
+      animation: meshFloat1 25s ease-in-out infinite;
+    }
+
+    .mesh-2 {
+      width: 600px;
+      height: 600px;
+      background: rgba(124, 58, 237, 0.35);
+      bottom: -200px;
+      right: -150px;
+      animation: meshFloat2 20s ease-in-out infinite;
+    }
+
+    .mesh-3 {
+      width: 500px;
+      height: 500px;
+      background: rgba(34, 211, 238, 0.3);
+      top: 40%;
+      left: 30%;
+      animation: meshFloat3 30s ease-in-out infinite;
+    }
+
+    .mesh-4 {
+      width: 400px;
+      height: 400px;
+      background: rgba(6, 182, 212, 0.25);
+      top: 20%;
+      right: 20%;
+      animation: meshFloat1 22s ease-in-out infinite reverse;
+    }
+
+    @keyframes meshFloat1 {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      33% { transform: translate(100px, 50px) rotate(10deg); }
+      66% { transform: translate(-50px, 100px) rotate(-5deg); }
+    }
+
+    @keyframes meshFloat2 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-80px, -60px) scale(1.1); }
+    }
+
+    @keyframes meshFloat3 {
+      0%, 100% { transform: translate(0, 0); opacity: 0.3; }
+      25% { transform: translate(80px, -40px); opacity: 0.5; }
+      50% { transform: translate(-40px, 80px); opacity: 0.4; }
+      75% { transform: translate(40px, 40px); opacity: 0.35; }
+    }
+
+
+    /* ==========================================
+       FLOATING PARTICLES - NEON STARS
+       ========================================== */
+    .particles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      animation: neonFloat 25s infinite linear;
+    }
+
+    .particle:nth-child(3n+1) {
+      background: #06b6d4;
+      box-shadow: 0 0 15px #06b6d4, 0 0 30px #06b6d4;
+    }
+
+    .particle:nth-child(3n+2) {
+      background: #7c3aed;
+      box-shadow: 0 0 15px #7c3aed, 0 0 30px #7c3aed;
+    }
+
+    .particle:nth-child(3n) {
+      background: #22d3ee;
+      box-shadow: 0 0 15px #22d3ee, 0 0 30px #22d3ee;
+    }
+
+    .particle:nth-child(1) { left: 5%; top: 15%; animation-delay: 0s; animation-duration: 22s; }
+    .particle:nth-child(2) { left: 15%; top: 75%; animation-delay: 3s; animation-duration: 28s; }
+    .particle:nth-child(3) { left: 25%; top: 35%; animation-delay: 6s; animation-duration: 24s; }
+    .particle:nth-child(4) { left: 40%; top: 55%; animation-delay: 2s; animation-duration: 26s; }
+    .particle:nth-child(5) { left: 55%; top: 25%; animation-delay: 4s; animation-duration: 20s; }
+    .particle:nth-child(6) { left: 70%; top: 65%; animation-delay: 7s; animation-duration: 25s; }
+    .particle:nth-child(7) { left: 82%; top: 45%; animation-delay: 1s; animation-duration: 23s; }
+    .particle:nth-child(8) { left: 92%; top: 85%; animation-delay: 5s; animation-duration: 27s; }
+    .particle:nth-child(9) { left: 35%; top: 10%; animation-delay: 8s; animation-duration: 21s; }
+    .particle:nth-child(10) { left: 60%; top: 90%; animation-delay: 2.5s; animation-duration: 29s; }
+    .particle:nth-child(11) { left: 75%; top: 15%; animation-delay: 4.5s; animation-duration: 24s; }
+    .particle:nth-child(12) { left: 10%; top: 50%; animation-delay: 6.5s; animation-duration: 26s; }
+
+    @keyframes neonFloat {
+      0% { transform: translate(0, 0) scale(1); opacity: 0.6; }
+      25% { transform: translate(60px, -80px) scale(1.3); opacity: 1; }
+      50% { transform: translate(-40px, -160px) scale(0.7); opacity: 0.4; }
+      75% { transform: translate(80px, -60px) scale(1.1); opacity: 0.8; }
+      100% { transform: translate(0, 0) scale(1); opacity: 0.6; }
+    }
+
+
+    /* ==========================================
+       ENHANCED BUTTONS - NEON GLOW
+       ========================================== */
+    .btn-primary {
+      background: var(--gradient-button);
+      box-shadow:
+        0 4px 25px rgba(6, 182, 212, 0.5),
+        0 0 50px rgba(6, 182, 212, 0.3);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      background: var(--gradient-hero);
+      border-radius: inherit;
+      z-index: -1;
+      opacity: 0;
+      filter: blur(15px);
+      transition: opacity 0.4s ease;
+    }
+
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow:
+        0 15px 40px rgba(6, 182, 212, 0.6),
+        0 0 80px rgba(6, 182, 212, 0.4),
+        0 0 120px rgba(124, 58, 237, 0.2);
+    }
+
+    .btn-primary:hover::before {
+      opacity: 1;
+    }
+
+    .btn-primary:hover::after {
+      left: 100%;
+    }
+
+    .btn-secondary {
+      border: 2px solid transparent;
+      background: linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
+                  var(--gradient-hero) border-box;
+      color: #fff;
+    }
+
+    .btn-secondary:hover {
+      box-shadow:
+        0 0 30px rgba(6, 182, 212, 0.3),
+        inset 0 0 20px rgba(6, 182, 212, 0.1);
+      transform: translateY(-3px);
+    }
+
+
+    /* ==========================================
+       GLASSMORPHISM FEATURE CARDS - NEON BORDERS
+       ========================================== */
+    .feature-card {
+      background: rgba(17, 8, 48, 0.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid transparent;
+      background-clip: padding-box;
+      border-radius: 24px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Animated border gradient */
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.5), rgba(124, 58, 237, 0.5), rgba(34, 211, 238, 0.5));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0.5;
+      transition: opacity 0.4s ease;
+    }
+
+    /* Glow effect */
+    .feature-card::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        rgba(124, 58, 237, 0.1) 90deg,
+        transparent 180deg,
+        rgba(6, 182, 212, 0.1) 270deg,
+        transparent 360deg
+      );
+      animation: cardGlow 8s linear infinite paused;
+      opacity: 0;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.5),
+        0 0 60px rgba(124, 58, 237, 0.2),
+        0 0 100px rgba(6, 182, 212, 0.15);
+    }
+
+    .feature-card:hover::before {
+      opacity: 1;
+    }
+
+    .feature-card:hover::after {
+      animation-play-state: running;
+      opacity: 1;
+    }
+
+    @keyframes cardGlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .feature-card:hover .feature-icon {
+      transform: scale(1.2) rotate(-5deg);
+      box-shadow:
+        0 0 40px rgba(6, 182, 212, 0.5),
+        0 0 80px rgba(124, 58, 237, 0.3);
+    }
+
+    .feature-icon {
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(6, 182, 212, 0.2));
+      border: 1px solid rgba(6, 182, 212, 0.4);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      z-index: 1;
+    }
+
+    .feature-icon svg {
+      color: var(--accent-secondary);
+      filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.6));
+    }
+
+    .feature-title {
+      color: #fff;
+      position: relative;
+      z-index: 1;
+    }
+
+    .feature-description {
+      color: rgba(255, 255, 255, 0.7);
+      position: relative;
+      z-index: 1;
+    }
+
+
+    /* ==========================================
+       ENHANCED STATS - HOLOGRAPHIC
+       ========================================== */
+    .hero-stats {
+      position: relative;
+      padding: 28px 36px;
+      background: rgba(17, 8, 48, 0.5);
+      border: 1px solid transparent;
+      border-radius: 20px;
+      margin-top: 32px;
+      overflow: hidden;
+    }
+
+    .hero-stats::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      padding: 1px;
+      background: var(--gradient-hero);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+
+    .stat-value {
+      font-weight: 800;
+      font-size: 2rem;
+      background: var(--gradient-hero);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.4));
+    }
+
+    .stat-label {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+
+    /* ==========================================
+       PREMIUM CTA BOX - AURORA GLOW
+       ========================================== */
+    .cta-box {
+      background: var(--bg-card);
+      border: 2px solid transparent;
+      background-clip: padding-box;
+      position: relative;
+      overflow: hidden;
+      border-radius: 32px;
+    }
+
+    /* Animated aurora border */
+    .cta-box::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      background: linear-gradient(
+        45deg,
+        var(--accent-primary),
+        var(--accent-secondary),
+        var(--accent-tertiary),
+        var(--accent-primary)
+      );
+      background-size: 300% 300%;
+      border-radius: 34px;
+      z-index: -1;
+      animation: auroraShift 6s ease infinite;
+    }
+
+    /* Inner glow */
+    .cta-box::after {
+      content: '';
+      position: absolute;
+      inset: 2px;
+      background: var(--bg-card);
+      border-radius: 30px;
+      z-index: -1;
+    }
+
+    @keyframes auroraShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    /* Floating orbs inside CTA */
+    .cta-box .cta-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      z-index: 0;
+    }
+
+    .cta-orb-1 {
+      width: 300px;
+      height: 300px;
+      background: rgba(124, 58, 237, 0.3);
+      top: -100px;
+      left: -100px;
+      animation: orbFloat 10s ease-in-out infinite;
+    }
+
+    .cta-orb-2 {
+      width: 250px;
+      height: 250px;
+      background: rgba(6, 182, 212, 0.25);
+      bottom: -80px;
+      right: -80px;
+      animation: orbFloat 12s ease-in-out infinite reverse;
+    }
+
+    @keyframes orbFloat {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(30px, 20px); }
+    }
+
+    .cta-title, .cta-description, .cta-buttons {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-title {
+      background: var(--gradient-hero);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+
+    /* ==========================================
+       BENEFITS SECTION - NEON ACCENTS
+       ========================================== */
+    .benefit-item {
+      transition: all 0.4s ease;
+      padding: 20px;
+      border-radius: 16px;
+      margin: -20px;
+      margin-bottom: 12px;
+      border: 1px solid transparent;
+    }
+
+    .benefit-item:hover {
+      background: rgba(124, 58, 237, 0.1);
+      border-color: rgba(6, 182, 212, 0.3);
+      transform: translateX(12px);
+      box-shadow: 0 0 30px rgba(124, 58, 237, 0.1);
+    }
+
+    .benefit-icon {
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(6, 182, 212, 0.2));
+      border: 1px solid rgba(6, 182, 212, 0.4);
+      transition: all 0.4s ease;
+    }
+
+    .benefit-item:hover .benefit-icon {
+      transform: scale(1.25);
+      box-shadow:
+        0 0 30px rgba(6, 182, 212, 0.4),
+        0 0 60px rgba(124, 58, 237, 0.2);
+    }
+
+    .benefit-icon svg {
+      color: var(--accent-secondary);
+    }
+
+
+    /* ==========================================
+       NAV & FOOTER ENHANCEMENTS
+       ========================================== */
+    .nav {
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(3, 0, 20, 0.8);
+      border-bottom: 1px solid rgba(124, 58, 237, 0.2);
+    }
+
+    .logo-text span {
+      color: var(--accent-secondary) !important;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-secondary);
+      text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+    }
+
+    .footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid rgba(124, 58, 237, 0.2);
+    }
+
+    .footer a:hover {
+      color: var(--accent-secondary);
+    }
+
+    /* Logo colors */
+    .logo-icon path[stroke] {
+      stroke: var(--accent-secondary);
+    }
+    .logo-icon path[fill] {
+      fill: var(--accent-primary);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Animated Mesh Background -->
+  <div class="mesh-bg">
+    <div class="mesh-gradient mesh-1"></div>
+    <div class="mesh-gradient mesh-2"></div>
+    <div class="mesh-gradient mesh-3"></div>
+    <div class="mesh-gradient mesh-4"></div>
+  </div>
+
+  <!-- Floating Particles -->
+  <div class="particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="showcase.html" class="logo">
+        <svg class="logo-icon" viewBox="0 0 48 48" fill="none">
+          <path d="M24 4L6 14v20l18 10 18-10V14L24 4z" stroke="#06b6d4" stroke-width="2" fill="none"/>
+          <path d="M24 14l-9 5v10l9 5 9-5V19l-9-5z" fill="#7c3aed"/>
+        </svg>
+        <span class="logo-text">Retirement<span>AI</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#integrations">Integrations</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="login.html" class="btn btn-secondary">Login</a>
+        <a href="#demo" class="btn btn-primary">Get Started Free</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <span class="hero-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="1" x2="12" y2="23"/>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+          AI Financial Planning
+        </span>
+        <h1 class="hero-title">
+          Your AI <span class="highlight">Retirement Advisor</span>
+        </h1>
+        <p class="hero-description">
+          Monte Carlo simulations, Trading212 portfolio sync, and GPT-4 powered insights.
+          Plan your retirement with data-driven confidence. Free forever.
+        </p>
+        <div class="hero-buttons">
+          <a href="#demo" class="btn btn-primary btn-large">Start Free</a>
+          <a href="#features" class="btn btn-secondary btn-large">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/>
+            </svg>
+            See How It Works
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-value">10K+</span>
+            <span class="stat-label">Simulations Run</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">98%</span>
+            <span class="stat-label">Accuracy</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">Free</span>
+            <span class="stat-label">Forever</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="reference/comprehensive-compliance-reporting-gdpr-pci-dss-iso.png" alt="RetirementAI Dashboard" class="hero-image">
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Features</span>
+        <h2 class="section-title">Data-Driven Retirement Planning</h2>
+        <p class="section-description">
+          Professional-grade tools that were once only available to financial advisors.
+        </p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Monte Carlo Simulations</h3>
+          <p class="feature-description">
+            10,000+ retirement scenarios. Know your success probability before making decisions.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Trading212 Sync</h3>
+          <p class="feature-description">
+            Automatic portfolio import. See your real investments, real-time positions.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              <polyline points="7.5 4.21 12 6.81 16.5 4.21"/>
+              <polyline points="7.5 19.79 7.5 14.6 3 12"/>
+              <polyline points="21 12 16.5 14.6 16.5 19.79"/>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+              <line x1="12" y1="22.08" x2="12" y2="12"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">AI Financial Advisor</h3>
+          <p class="feature-description">
+            GPT-4 powered insights. Ask questions about your portfolio in natural language.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Bank-Level Security</h3>
+          <p class="feature-description">
+            Read-only API access. Your credentials stay with your broker. GDPR compliant.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+              <line x1="1" y1="10" x2="23" y2="10"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Expense Tracking</h3>
+          <p class="feature-description">
+            Track recurring expenses. See how lifestyle changes affect your retirement date.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="20" x2="18" y2="10"/>
+              <line x1="12" y1="20" x2="12" y2="4"/>
+              <line x1="6" y1="20" x2="6" y2="14"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Goal Tracking</h3>
+          <p class="feature-description">
+            Set retirement goals. Track progress with visual dashboards and projections.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section id="integrations" class="benefits">
+    <div class="container benefits-grid">
+      <div class="benefits-content">
+        <span class="section-label">Why RetirementAI</span>
+        <h2 class="section-title">Built for Real Investors</h2>
+        <ul class="benefits-list">
+          <li class="benefit-item">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div class="benefit-text">
+              <h4>Your Data, Your Control</h4>
+              <p>Read-only API access. We never have access to trade on your behalf.</p>
+            </div>
+          </li>
+          <li class="benefit-item">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div class="benefit-text">
+              <h4>EU Data Residency</h4>
+              <p>Your data stays in European servers. Full GDPR and DSGVO compliance.</p>
+            </div>
+          </li>
+          <li class="benefit-item">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div class="benefit-text">
+              <h4>No Financial Advice</h4>
+              <p>Educational tool only. We show you the math, you make the decisions.</p>
+            </div>
+          </li>
+          <li class="benefit-item">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div class="benefit-text">
+              <h4>Free Forever</h4>
+              <p>Core features are free. No credit card required. No hidden fees.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="benefits-visual">
+        <img src="reference/comprehensive-compliance-reporting-gdpr-pci-dss-iso.png" alt="Portfolio Dashboard" class="benefits-image">
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-box">
+        <div class="cta-orb cta-orb-1"></div>
+        <div class="cta-orb cta-orb-2"></div>
+        <h2 class="cta-title">Ready to Plan Your Retirement?</h2>
+        <p class="cta-description">
+          Start with your Trading212 portfolio sync. See your first Monte Carlo simulation in minutes.
+          Free forever. No credit card required.
+        </p>
+        <div class="cta-buttons">
+          <a href="#demo" class="btn btn-primary btn-large">Get Started Free</a>
+          <a href="#contact" class="btn btn-secondary btn-large">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="showcase.html" class="logo">
+            <svg class="logo-icon" viewBox="0 0 48 48" fill="none">
+              <path d="M24 4L6 14v20l18 10 18-10V14L24 4z" stroke="#06b6d4" stroke-width="2" fill="none"/>
+              <path d="M24 14l-9 5v10l9 5 9-5V19l-9-5z" fill="#7c3aed"/>
+            </svg>
+            <span class="logo-text">Retirement<span style="color:#06b6d4">AI</span></span>
+          </a>
+          <p>AI-powered retirement planning. Part of the VarnaAI suite.</p>
+        </div>
+        <div class="footer-links-group">
+          <h4 class="footer-title">Product</h4>
+          <ul class="footer-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#demo">Demo</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">API</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4 class="footer-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="#">Retirement Calculator</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4 class="footer-title">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Impressum</a></li>
+            <li><a href="#">GDPR</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 VarnaAI. All rights reserved.</p>
+        <p>Not financial advice. Educational tool only.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

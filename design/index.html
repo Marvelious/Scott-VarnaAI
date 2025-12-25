@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VarnaAI Dashboard - Test</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Header -->
+    <header class="dashboard-header">
+      <div class="logo">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <path d="M16 2L4 8v16l12 6 12-6V8L16 2z" stroke="#c9a227" stroke-width="2" fill="none"/>
+          <path d="M16 8l-6 3v6l6 3 6-3v-6l-6-3z" fill="#c9a227"/>
+        </svg>
+        <span class="logo-text">VarnaAI</span>
+      </div>
+      <div class="header-actions">
+        <span class="badge">BETA</span>
+        <div class="user-avatar">GK</div>
+      </div>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="dashboard-layout">
+      <!-- Left Sidebar Tabs -->
+      <nav class="sidebar-tabs">
+        <button class="tab active">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+          </svg>
+          <span>Automated Reports</span>
+        </button>
+        <button class="tab">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/>
+          </svg>
+          <span>Audit Trail</span>
+        </button>
+        <button class="tab">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+          </svg>
+          <span>Executive Summaries</span>
+        </button>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="dashboard-main">
+        <!-- Top Row -->
+        <div class="dashboard-grid">
+          <!-- GDPR Compliance Card -->
+          <div class="card">
+            <h3 class="card-title">GDPR Compliance</h3>
+            <div class="chart-container">
+              <canvas id="gdprChart"></canvas>
+            </div>
+          </div>
+
+          <!-- ISO 27001 Tracking Card -->
+          <div class="card">
+            <h3 class="card-title">ISO 27001 Tracking</h3>
+            <div class="progress-list">
+              <div class="progress-item">
+                <div class="progress-header">
+                  <span>Information Security</span>
+                  <span class="progress-value">32%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 32%"></div>
+                </div>
+              </div>
+              <div class="progress-item">
+                <div class="progress-header">
+                  <span>Access Control</span>
+                  <span class="progress-value">65%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 65%"></div>
+                </div>
+              </div>
+              <div class="progress-item">
+                <div class="progress-header">
+                  <span>Risk Management</span>
+                  <span class="progress-value">78%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 78%"></div>
+                </div>
+              </div>
+              <div class="progress-item">
+                <div class="progress-header">
+                  <span>Business Continuity</span>
+                  <span class="progress-value">45%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 45%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Middle Row -->
+        <div class="dashboard-grid">
+          <!-- Compliance Score Card -->
+          <div class="card score-card">
+            <div class="score-container">
+              <div class="score-circle">
+                <svg viewBox="0 0 100 100">
+                  <circle class="score-bg" cx="50" cy="50" r="45"/>
+                  <circle class="score-fill" cx="50" cy="50" r="45"
+                    stroke-dasharray="283" stroke-dashoffset="23"/>
+                </svg>
+                <div class="score-text">
+                  <span class="score-label">Compliance Score</span>
+                  <span class="score-value">92%</span>
+                </div>
+              </div>
+            </div>
+            <div class="compliance-badges">
+              <div class="badge-item compliant">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                </svg>
+                <span>GDPR</span>
+              </div>
+              <div class="badge-item compliant">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                </svg>
+                <span>ISO</span>
+              </div>
+              <div class="badge-item warning">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 5h2v6h-2V6zm0 8h2v2h-2v-2z"/>
+                </svg>
+                <span>PCI</span>
+              </div>
+              <div class="badge-item compliant">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                </svg>
+                <span>NIS2</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Automated Report Generation -->
+          <div class="card">
+            <h3 class="card-title">Automated Report Generation</h3>
+            <div class="report-stats">
+              <div class="stat-item">
+                <span class="stat-value">24</span>
+                <span class="stat-label">Reports Generated</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">3</span>
+                <span class="stat-label">Pending Review</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">99.2%</span>
+                <span class="stat-label">Accuracy Rate</span>
+              </div>
+            </div>
+            <button class="btn-primary">Generate New Report</button>
+          </div>
+        </div>
+
+        <!-- Bottom Row -->
+        <div class="dashboard-grid">
+          <!-- PCI-DSS Audit Documentation -->
+          <div class="card">
+            <h3 class="card-title">PCI-DSS Audit Documentation</h3>
+            <div class="file-list">
+              <div class="file-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#3b82f6">
+                  <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                </svg>
+                <div class="file-info">
+                  <span class="file-name">Q3 2024 Audit Results.pdf</span>
+                  <span class="file-meta">1,024 psd</span>
+                </div>
+              </div>
+              <div class="file-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#3b82f6">
+                  <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                </svg>
+                <div class="file-info">
+                  <span class="file-name">Q2 2024 Audit Results</span>
+                  <span class="file-meta">-014 psd</span>
+                </div>
+              </div>
+              <div class="file-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#3b82f6">
+                  <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                </svg>
+                <div class="file-info">
+                  <span class="file-name">Penetration Test Results.docx</span>
+                  <span class="file-meta">1,016 psd</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Audit Trail Activity -->
+          <div class="card">
+            <h3 class="card-title">Audit Trail Activity</h3>
+            <div class="chart-container">
+              <canvas id="activityChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

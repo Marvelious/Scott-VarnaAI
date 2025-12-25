@@ -1,0 +1,261 @@
+/* VarnaAI Button & Effects Reference
+   ====================================
+   Based on user feedback:
+   - C3: Good button effects ✅
+   - FwChange: Good block layout ✅
+*/
+
+/* ===================
+   BUTTONS
+   =================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+/* Primary Button - Gold Gradient (Works well!) */
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-gold) 0%, #a67c00 100%);
+  color: var(--bg-primary);
+  box-shadow: 0 4px 12px rgba(201, 162, 39, 0.2);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201, 162, 39, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(201, 162, 39, 0.2);
+}
+
+/* Secondary Button - Outline Style */
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Large Button */
+.btn-large {
+  padding: 16px 32px;
+  font-size: 1rem;
+}
+
+/* App-Specific Primary Colors */
+.app-c3 .btn-primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+.app-c3 .btn-primary:hover {
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+}
+
+.app-fwchange .btn-primary {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+}
+.app-fwchange .btn-primary:hover {
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.3);
+}
+
+.app-pension .btn-primary {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+.app-pension .btn-primary:hover {
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+}
+
+
+/* ===================
+   CARD EFFECTS
+   =================== */
+
+.feature-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 32px;
+  transition: all 0.3s ease;
+}
+
+/* Card Hover - Lift + Gold Border Glow */
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(201, 162, 39, 0.3);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* App-Specific Card Hover Colors */
+.app-c3 .feature-card:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.app-fwchange .feature-card:hover {
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.app-pension .feature-card:hover {
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+
+/* ===================
+   ICON CONTAINERS
+   =================== */
+
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(201, 162, 39, 0.15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.feature-icon svg {
+  width: 24px;
+  height: 24px;
+  color: var(--accent-gold);
+}
+
+/* Icon hover effect */
+.feature-card:hover .feature-icon {
+  transform: scale(1.1);
+}
+
+/* App-Specific Icons */
+.app-c3 .feature-icon {
+  background: rgba(59, 130, 246, 0.15);
+}
+.app-c3 .feature-icon svg {
+  color: #3b82f6;
+}
+
+.app-fwchange .feature-icon {
+  background: rgba(245, 158, 11, 0.15);
+}
+.app-fwchange .feature-icon svg {
+  color: #f59e0b;
+}
+
+.app-pension .feature-icon {
+  background: rgba(16, 185, 129, 0.15);
+}
+.app-pension .feature-icon svg {
+  color: #10b981;
+}
+
+
+/* ===================
+   BADGES
+   =================== */
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(201, 162, 39, 0.15);
+  border: 1px solid rgba(201, 162, 39, 0.3);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-gold);
+  margin-bottom: 24px;
+}
+
+
+/* ===================
+   GRADIENTS
+   =================== */
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent-gold) 0%, #a67c00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.app-c3 .gradient-text {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.app-fwchange .gradient-text {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.app-pension .gradient-text {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+
+/* ===================
+   CTA BOX
+   =================== */
+
+.cta-box {
+  background: var(--bg-card);
+  border: 1px solid var(--accent-gold);
+  border-radius: 24px;
+  padding: 64px;
+  text-align: center;
+  box-shadow: 0 0 60px rgba(201, 162, 39, 0.1);
+}
+
+.app-c3 .cta-box {
+  border-color: #3b82f6;
+  box-shadow: 0 0 60px rgba(59, 130, 246, 0.1);
+}
+
+.app-fwchange .cta-box {
+  border-color: #f59e0b;
+  box-shadow: 0 0 60px rgba(245, 158, 11, 0.1);
+}
+
+.app-pension .cta-box {
+  border-color: #10b981;
+  box-shadow: 0 0 60px rgba(16, 185, 129, 0.1);
+}
+
+
+/* ===================
+   STAT COUNTERS
+   =================== */
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+
+.app-c3 .stat-value { color: #3b82f6; }
+.app-fwchange .stat-value { color: #f59e0b; }
+.app-pension .stat-value { color: #10b981; }

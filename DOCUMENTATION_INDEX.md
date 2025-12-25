@@ -1,38 +1,59 @@
 # VarnaAI Websites - Complete Documentation Index
 
-**Last Updated**: November 23, 2025
+**Last Updated**: 2025-12-26
+**Status**: Consulting pivot - VPS offline, static pages migration
 
 ---
 
-## 🎯 Quick Navigation
+## Table of Contents
+
+1. [Quick Navigation](#quick-navigation)
+2. [Documentation by Category](#documentation-by-category)
+   - [WordPress Content Management](#1-wordpress-content-management)
+   - [SEO Strategy & Analysis](#2-seo-strategy--analysis)
+   - [Application Portfolio](#3-application-portfolio)
+   - [Strategy & Business Planning](#4-strategy--business-planning)
+   - [Sales & Marketing Materials](#5-sales--marketing-materials)
+   - [Case Studies](#6-case-studies)
+   - [Blog Content](#7-blog-content)
+   - [Research Documents](#8-research-documents)
+   - [Infrastructure & Operations](#9-infrastructure--operations)
+   - [PRDs & Deployment](#10-prds--deployment)
+   - [Claude Work Products](#11-claude-work-products)
+   - [Task Management](#12-task-management)
+   - [Credentials & Secrets](#13-credentials--secrets)
+3. [WordPress Sites Reference](#wordpress-sites-reference)
+4. [How to Find What You Need](#how-to-find-what-you-need)
+5. [Project Status Dashboard](#project-status-dashboard)
+6. [Cross-Reference Matrix](#cross-reference-matrix)
+
+---
+
+## Quick Navigation
 
 ### Essential Files (Start Here)
-1. **[README.md](./README.md)** - Project overview and quick start
+1. **[PROJECT_INDEX.md](./PROJECT_INDEX.md)** - Master project navigation
 2. **[CLAUDE.md](./CLAUDE.md)** - WordPress workflow and page creation
-3. **[COMPANY_INFO.md](./COMPANY_INFO.md)** - Company details for all 5 sites
+3. **[INVENTORY_Q1_2026.md](./INVENTORY_Q1_2026.md)** - Complete status report
+4. **[COMPANY_INFO.md](./COMPANY_INFO.md)** - Company details for all 4 sites
 
-### Portfolio Status
-- **[VarnaAI App Portfolio](#varnaai-app-portfolio)** - 4 apps deployed, 1 pending
-- **[Live Demos](#live-demos)** - All demo URLs at Hetzner VPS
+### Current Priority
+- **[.taskmaster/tasks/task_083.md](./.taskmaster/tasks/task_083.md)** - VarnaAI Homepage (Priority)
+- **[.taskmaster/tasks/task_085.md](./.taskmaster/tasks/task_085.md)** - Business Cards (URGENT)
 
 ---
 
-## 📂 Documentation by Category
+## Documentation by Category
 
 ### 1. WordPress Content Management
 
 #### Main Documentation
-- **[CLAUDE.md](./CLAUDE.md)** - Complete WordPress workflow
-  - Page creation process (3-step workflow)
-  - SEO optimization (600+ words, 80+ SEO score)
-  - Rank Math error fixes
-  - 5-site portfolio tracking
-
-#### WordPress Guides
-- **[wordpress/README.md](./wordpress/README.md)** - WordPress content guides
-- **[wordpress/workflow-guide.md](./wordpress/workflow-guide.md)** - Detailed workflow
-- **[wordpress/schema-templates.md](./wordpress/schema-templates.md)** - Schema markup templates
-- **[wordpress/kadence-design-options.txt](./wordpress/kadence-design-options.txt)** - Kadence block settings
+| Document | Purpose |
+|----------|---------|
+| [CLAUDE.md](./CLAUDE.md) | Complete WordPress workflow, SEO rules, credentials |
+| [wordpress/README.md](./wordpress/README.md) | WordPress content guides |
+| [wordpress/schema-templates.md](./wordpress/schema-templates.md) | Schema markup templates |
+| [wordpress/kadence-design-options.txt](./wordpress/kadence-design-options.txt) | Kadence block settings |
 
 #### Content Templates
 - **wordpress/pages/** - Ready-to-paste page content
@@ -43,262 +64,402 @@
 ### 2. SEO Strategy & Analysis
 
 #### Master SEO Documentation
-- **[seo/SEO_Portfolio_Strategy_2025.md](./seo/SEO_Portfolio_Strategy_2025.md)** - Master SEO strategy
-  - Portfolio-wide SEO approach
-  - Keyword strategies for all 5 sites
-  - Technical SEO requirements
-  - Link building strategy
+| Document | Purpose |
+|----------|---------|
+| [seo/SEO_Portfolio_Strategy_2025.md](./seo/SEO_Portfolio_Strategy_2025.md) | Master SEO strategy |
+| [seo/KEYWORD_RESEARCH_2025.md](./seo/KEYWORD_RESEARCH_2025.md) | Keyword research |
+| [seo/BACKLINK_OPPORTUNITIES_2025-12.md](./seo/BACKLINK_OPPORTUNITIES_2025-12.md) | Backlink opportunities |
 
-#### SEO Reports (claudedocs/)
-- **[SEO_AUDIT_COMPREHENSIVE_SUMMARY_2025.md](./claudedocs/SEO_AUDIT_COMPREHENSIVE_SUMMARY_2025.md)** - Comprehensive audit
-- **[PORTFOLIO_SEO_PDF_AUDIT_COMPARISON_NOV_2025.md](./claudedocs/PORTFOLIO_SEO_PDF_AUDIT_COMPARISON_NOV_2025.md)** - Portfolio comparison
-- **[Q1_2025_SEO_ACTION_PLAN.md](./claudedocs/Q1_2025_SEO_ACTION_PLAN.md)** - Q1 2025 action plan
+#### SEO Analysis Reports (claudedocs/)
+| Report | Focus |
+|--------|-------|
+| SEO_AUDIT_COMPREHENSIVE_SUMMARY_2025.md | Full audit summary |
+| AI_MARKETING_BG_SEO_ANALYSIS_2025.md | AIMarketingBG analysis |
+| Q1_2025_SEO_ACTION_PLAN.md | Q1 action plan |
 
-#### SEO Guides
-- **seo/guides/** - Implementation guides
-- **seo/site-audits/** - Individual site audits
-  - varnaai-audit-2025.md
-  - ai-projektmanager-audit-2025.md
-  - aimarketingbg-audit-2025.md
-  - classicsecurity-audit-2025.md
-  - varna-agenten-audit-2025.md
+#### Site-Specific Audits
+- **seo/site-audits/** - Individual site audits for each WordPress site
 
 ---
 
-### 3. VarnaAI App Portfolio
+### 3. Application Portfolio
 
-#### Portfolio Status Summary
-**📊 4 Apps Live** | **🚀 All Deployed to Hetzner VPS** | **📈 SEO 89-90/100**
+#### Portfolio Status (Dec 2025)
 
-#### Live Apps
-1. **RetirementAI** - https://demo-retirement.varnaai.com/
-   - Portfolio: ✅ COMPLETE (Post ID: 317163)
-   - SEO Score: 89/100
-   - Tech: Next.js 14, PostgreSQL 15+, Redis 7+, OpenAI GPT-4, Studio LM
-   - Location: D:\VarnaAI\pension
+| App | Directory | Status | Demo | Tech Stack |
+|-----|-----------|--------|------|------------|
+| RetirementAI | apps/pension | Local Docker | OFFLINE | Next.js 14, PostgreSQL, Redis |
+| C3 Compliance | apps/dashboard | Local Docker | OFFLINE | React 18, Node.js, PostgreSQL |
+| FwChange | apps/fwchange | Local Docker | OFFLINE | React 18, FastAPI, PostgreSQL |
+| SEO Agent | apps/seoagent | Development | - | Vite, React 19, Express |
+| VarnaAI Agents | apps/varnaai | Development | - | Next.js 14, NestJS, Neo4j |
+| WebScrap | apps/webscrap | Development | - | Web scraping platform |
+| Project Manager | apps/projectmanager | Development | - | Node.js project management |
+| Agentic Coder | apps/agenticcoder | Development | - | AI coding assistant |
+| LibreChat | apps/LibreChat | Self-hosted | - | LibreChat (external) |
+| Job Hunter | work/jobs | Development | - | Freelance job automation |
 
-2. **FwChange** - https://demo-fwchange.varnaai.com/
-   - Portfolio: ✅ COMPLETE (Post ID: 317353)
-   - SEO Score: 90/100
-   - Tech: React 18 + TypeScript, FastAPI, PostgreSQL 15+, Redis 7
-   - Location: D:\VarnaAI\fwchange
+**Note**: VPS @ 78.47.125.174 is OFFLINE. All demos migrating to static HTML pages on All-Inkl.
 
-3. **SEO Agent** - https://demo-seoagent.varnaai.com/
-   - Portfolio: ✅ COMPLETE
-   - Tech: Vite, React 19, Express, PostgreSQL, Redis, BullMQ
-   - Location: D:\VarnaAI\seoagent
+#### Docker Port Allocation
+| App | Frontend | Backend | PostgreSQL | Redis |
+|-----|----------|---------|------------|-------|
+| RetirementAI | 3001 | - | 5433 | 6380 |
+| C3 Compliance | 3002 | 8001 | 5434 | 6381 |
+| FwChange | 3003 | 8002 | 5435 | 6382 |
 
-4. **VarnaAI Agents** - https://demo-agents.varnaai.com/
-   - Portfolio: ✅ COMPLETE
-   - Tech: Next.js 14, FastAPI, PostgreSQL, Redis, Llama 3.1
-   - Location: D:\VarnaAI\Webscrap
+#### Static Landing Pages (assets/)
+| File | App |
+|------|-----|
+| c3-landing-honest.html | C3 Compliance |
+| fwchange-landing-honest.html | FwChange |
+| retirementai-landing-honest.html | RetirementAI |
 
-#### Pending Portfolio Pages
-5. **C3 (Compliance Command Center)** - ⏳ PENDING
-   - Tech: React 18 + TypeScript, Node.js, PostgreSQL, Playwright
-   - Location: D:\VarnaAI\dashboard
-
----
-
-### 4. Marketing & Content Strategy
-
-#### Backlink Strategy
-- **[BACKLINK_AUTOMATION_STRATEGY_2025.md](./claudedocs/BACKLINK_AUTOMATION_STRATEGY_2025.md)** - Backlink automation
-- **[BACKLINK_STRATEGY_2025_COMPREHENSIVE.md](./claudedocs/BACKLINK_STRATEGY_2025_COMPREHENSIVE.md)** - Comprehensive strategy
-- **[BACKLINK_ACTIVATION_REPORT.md](./claudedocs/BACKLINK_ACTIVATION_REPORT.md)** - Activation report
-
-#### Directory Submissions
-- **[AI_DIRECTORY_SUBMISSIONS_REPORT_2025.md](./claudedocs/AI_DIRECTORY_SUBMISSIONS_REPORT_2025.md)** - AI directory strategy
-- **[VERIFIED_FREE_DIRECTORIES_2025.md](./claudedocs/VERIFIED_FREE_DIRECTORIES_2025.md)** - Verified directories
-
-#### Content Strategy
-- **[BLOG_CONTENT_AUDIT_REPORT.md](./claudedocs/BLOG_CONTENT_AUDIT_REPORT.md)** - Blog content audit
-- **[PRODUCT_HUNT_LAUNCH_STRATEGY_2025.md](./claudedocs/PRODUCT_HUNT_LAUNCH_STRATEGY_2025.md)** - Product Hunt strategy
-
-#### Blog Content
-- **blogs/blog_posts/** - Blog posts for all sites
-  - ai-projektmanager/
-  - aimarketingbg/
-  - classicsecurity/
-  - varna-agenten/
-  - varnaai/
+#### App Documentation
+Each app has its own CLAUDE.md:
+- apps/pension/CLAUDE.md
+- apps/fwchange/CLAUDE.md
+- apps/dashboard/CLAUDE.md
+- apps/seoagent/CLAUDE.md
+- apps/varnaai/CLAUDE.md
 
 ---
 
-### 5. Research & Market Analysis
+### 4. Strategy & Business Planning
 
-#### Market Research
-- **[research/german-compliance-market-2025.md](./research/german-compliance-market-2025.md)** - German compliance market
-- **[research/ai-coding-market-2025.md](./research/ai-coding-market-2025.md)** - AI coding market
-- **[research/fwchange-strategy.md](./research/fwchange-strategy.md)** - FwChange market strategy
-- **[research/crosspromo-strategy.md](./research/crosspromo-strategy.md)** - Cross-promotion strategy
+#### Master Strategy
+| Document | Purpose |
+|----------|---------|
+| [docs/strategy/BUSINESS_PLAN_2025.md](./docs/strategy/BUSINESS_PLAN_2025.md) | 12-month roadmap |
+| [docs/strategy/APPS-PORTFOLIO.md](./docs/strategy/APPS-PORTFOLIO.md) | SaaS apps overview |
+| [docs/strategy/PILOT-SOWS.md](./docs/strategy/PILOT-SOWS.md) | Pilot statements of work |
+
+#### C3 Strategy (docs/strategy/C3/)
+| Document | Purpose |
+|----------|---------|
+| MARKET_RESEARCH_2025.md | Enterprise market research |
+| SME_MARKET_REALITY_2025.md | Bulgarian SME reality check |
+| SERVICE_DELIVERY_PLAYBOOK.md | Service delivery guide |
+| VCCI_Membership_Action_Plan.md | Chamber of Commerce plan |
+| VARNA_LOCAL_MARKET_RESEARCH_2025.md | Local Varna research |
+
+#### AIMarketingBG Strategy (docs/strategy/AIMarketingBG/)
+| Document | Purpose |
+|----------|---------|
+| BUSINESS_PLAN_2025.md | Business plan |
+| IMMEDIATE_ACTIONS_DEC2025.md | December priorities |
+| PROSPECT_LIST_HOTELS.md | Hotel industry targets |
 
 ---
 
-### 6. Infrastructure & Deployment
+### 5. Sales & Marketing Materials
 
-#### Deployment Info
-- **Server**: Hetzner VPS @ 78.47.125.174
-- **Apps Deployed**: 4 (RetirementAI, FwChange, SEO Agent, VarnaAI Agents)
-- **Reverse Proxy**: Nginx with SSL (Let's Encrypt)
+#### Marketing (docs/marketing/)
+| Document | Purpose |
+|----------|---------|
+| linkedin-profile-optimization.md | LinkedIn profile guide |
+| linkedin-posts-january-2026.md | 12 pre-written posts |
+| security-checklist-bulgarian-smes.md | Lead magnet (25-point checklist) |
+| seo-audit-template-free-offer.md | Free SEO audit offer |
 
-#### Docker Containers Running
+#### Sales (docs/sales/)
+| Document | Purpose |
+|----------|---------|
+| sales-materials-complete-toolkit.md | Complete sales toolkit |
+
+#### Bulgarian Materials (assets/sales-materials-bg/) - 16 Files
+
+**C3-Specific Materials:**
+| Document | Purpose |
+|----------|---------|
+| c3-onepager-content-bg.md | C3 one-pager (Bulgarian) |
+| c3-pilot-contract-bg.md | Pilot contract template |
+| c3-pilot-program-terms.md | Pilot program terms |
+| c3-cold-email-bg.txt | C3 cold email template |
+| c3-followup-email-bg.txt | C3 follow-up email |
+| c3-linkedin-dm-bg.txt | C3 LinkedIn DM script |
+| c3-phone-script-bg.txt | C3 phone script |
+
+**General Sales Materials:**
+| Document | Purpose |
+|----------|---------|
+| cold-email-template.md | Generic cold email |
+| phone-script-bulgarian.md | Phone script (Bulgarian) |
+| invoice-template-bg.md | Invoice template |
+| nurture-templates-bg.md | Lead nurturing templates |
+| payment-setup-bg.md | Payment setup guide |
+| bd-rep-job-posting-bg.md | BD rep job posting |
+| one-pager-structure.md | One-pager structure guide |
+| classic-security-emails.md | Classic Security email templates |
+| vcci-application-letter-template.txt | VCCI membership application |
+
+---
+
+### 6. Case Studies
+
+#### Location: docs/case-studies/
+
+| File | Anonymous Client | Real Source |
+|------|------------------|-------------|
+| 01-industrial-iot-azure-iso27001.md | Industrial Manufacturer | Caterpillar |
+| 02-payment-processing-fwchange-automation.md | Payment Processor | Worldline |
+| 03-automotive-azure-xsoar-migration.md | Automotive Supplier | Mann und Hummel |
+
+Each case study includes:
+- Website version (500 words)
+- LinkedIn version (150 words)
+- Slide deck (3 slides)
+- Verbal story (90 seconds)
+
+---
+
+### 7. Blog Content
+
+#### Blog Workflow
+| File | Purpose |
+|------|---------|
+| blogs/START_HERE.md | Quick start ("go" command) |
+| blogs/URLS.md | 54 real internal URLs |
+| blogs/INSTRUCTIONS.md | SEO rules, WordPress formatting |
+| blogs/LESSONS_LEARNED.md | Error archive |
+| blogs/TOPIC_DIVERSITY_MATRIX.md | 80+ unique topics |
+
+#### Blog Posts Archive (blogs/blog_posts/)
 ```
-retirementai-app        (Port 3000)
-retirementai-postgres   (Port 5432)
-retirementai-redis      (Port 6379)
-
-fwchange-frontend       (Port 5173)
-fwchange-backend        (Port 8000)
-fwchange-postgres
-fwchange-redis
-
-seoagent-backend        (Port 4001)
-seoagent-db
-seoagent-redis
-
-varnaai-app-frontend    (Port 6000)
-varnaai-app-backend
-varnaai-app-postgres    (Port 5434)
-varnaai-app-llm-gateway
+2025-12-02/  - First batch (27 posts)
+2025-12-08/
+2025-12-13/
+2025-12-16/
+2025-12-17-honest-versions/
+2025-12-19/
+2025-12-22/
 ```
 
-#### Operations Documentation
-- **[operations/README.md](./operations/README.md)** - Operations overview
+---
+
+### 8. Research Documents
+
+#### Location: research/
+
+| Document | Focus |
+|----------|-------|
+| german-compliance-market-2025.md | German compliance market |
+| ai-coding-market-2025.md | AI coding market |
+| varna-business-ecosystem-research-2025.md | Varna business ecosystem |
+| varna-networking-event-january-26-2026-research.md | Jan 26 event research |
+| fwchange-strategy.md | FwChange market strategy |
+| crosspromo-strategy.md | Cross-promotion strategy |
 
 ---
 
-### 7. AI Provider Configuration
+### 9. Infrastructure & Operations
 
-#### MCP Configuration
-- **[.mcp.json](./.mcp.json)** - MCP server configuration
-- **[claudedocs/WORDPRESS_MCP_CONFIGURATION.md](./claudedocs/WORDPRESS_MCP_CONFIGURATION.md)** - WordPress MCP setup
-- **[claudedocs/WORDPRESS_MCP_TEST_RESULTS.md](./claudedocs/WORDPRESS_MCP_TEST_RESULTS.md)** - Test results
+#### Operations (operations/)
+| Directory | Purpose |
+|-----------|---------|
+| compose/ | Docker Compose files |
+| hub-worker/ | Cloudflare Worker |
+| scripts/ | Automation scripts |
+| cron/ | Cron job configs |
+| monitoring/ | Monitoring configs |
+| security/ | Security configs |
 
-#### AI Integration
-- **[claudedocs/MCP_SERVERS_INSTALLED.md](./claudedocs/MCP_SERVERS_INSTALLED.md)** - MCP servers list
-- **[AI_PROVIDER_TEST_RESULTS.md](./AI_PROVIDER_TEST_RESULTS.md)** - AI provider tests
+#### VPS Configurations (vps/) - ARCHIVED
+**Note**: Hetzner VPS is OFFLINE. These configs are for reference only.
+- vps/c3/
+- vps/fwchange/
+- vps/retirementai/
+- vps/varnaai/
 
----
-
-### 8. Cloud Hosting & Infrastructure
-
-#### Hosting Analysis
-- **[CLOUD_HOSTING_ALTERNATIVES_2025.md](./claudedocs/CLOUD_HOSTING_ALTERNATIVES_2025.md)** - Cloud hosting options
-
----
-
-### 9. Project Management
-
-#### Task Management
-- **.taskmaster/** - Task Master AI integration
-  - **[.taskmaster/CLAUDE.md](./.taskmaster/CLAUDE.md)** - Task Master guide
-  - **[.taskmaster/tasks/tasks.json](./.taskmaster/tasks/tasks.json)** - Tasks database
-
-#### AI Rules & Config
-- **.clinerules/** - Cline AI rules
-- **.gemini/** - Gemini AI config
-- **[AGENT.md](./AGENT.md)** - Agent instructions
-- **[AGENTS.md](./AGENTS.md)** - Multi-agent setup
+#### Google Sheets Dashboard (docs/operations/)
+| Document | Purpose |
+|----------|---------|
+| google-sheets-dashboard-setup.md | Full setup guide |
+| google-sheets-dashboard-quickstart.md | Quick start |
+| scott-research-guide.md | Research assistant guide |
 
 ---
 
-### 10. Archived Documentation
+### 10. PRDs & Deployment
 
-#### Completed Work
-- **[done/CLEANUP_REPORT_2025-11-23.md](./done/CLEANUP_REPORT_2025-11-23.md)** - Latest cleanup
-- **[done/CLEANUP_REPORT_2025-11-21.md](./done/CLEANUP_REPORT_2025-11-21.md)** - Previous cleanup
-- **done/playwright-screenshots-2025-11/** - Archived screenshots
-- **done/temp-files/** - Obsolete documents
-- **done/wordpress-exports-2025-11-11/** - WordPress backups
+#### Location: docs/prds/
 
----
-
-## 🌐 WordPress Sites Reference
-
-| Site | URL | Username | Language | Focus |
-|------|-----|----------|----------|-------|
-| AI Projektmanager | https://ai-projektmanager.de/wp-admin/ | claude | German | AI Project Management |
-| AI Marketing BG | https://aimarketingbg.com/wp-admin/ | claude | English/Bulgarian | AI Marketing |
-| Classic Security | https://classicsecurity.net/wp-admin/ | claude | English | Security Services |
-| Varna Agenten | https://varna-agenten.de/wp-admin/ | claude | German | AI Agents |
-| Varna AI | https://varnaai.com/wp-admin/ | claude | English | AI Services |
-
-**Full credentials**: See [CLAUDE.md](./CLAUDE.md) WordPress Access Credentials section
+| Document | Status |
+|----------|--------|
+| MASTER-DEPLOYMENT-PRD.md | Master plan |
+| HETZNER-CONSOLIDATION-PRD.md | ARCHIVED (VPS offline) |
+| BETA-DEMO-DEPLOYMENT-PRD.md | Demo deployment |
+| SECURE-PRELAUNCH.md | Security checklist |
+| IMPLEMENTATION-CHECKLIST.md | Implementation tracking |
 
 ---
 
-## 🔍 How to Find What You Need
+### 11. Claude Work Products
+
+#### Location: claudedocs/
+
+**50+ analysis reports** organized by category:
+
+| Category | Examples |
+|----------|----------|
+| SEO Analysis | SEO_AUDIT_COMPREHENSIVE_SUMMARY_2025.md |
+| Backlink Strategy | BACKLINK_STRATEGY_2025_COMPREHENSIVE.md |
+| VPS Audits | VPS_AUDIT_REPORT_2025-12-*.md |
+| Competitor Analysis | COMPETITOR_ANALYSIS_GERMAN_AI_COMPLIANCE_2025.md |
+| Content Audits | BLOG_CONTENT_AUDIT_REPORT.md |
+| Code Analysis | CODE_ANALYSIS_REPORT.md |
+| Market Research | varna-ai-services-market-research-2025-12-18.md |
+| Fake Content Audit | FAKE_CONTENT_AUDIT_2025-12-28.md |
+
+---
+
+### 12. Task Management
+
+#### Task Master (.taskmaster/)
+| File | Purpose |
+|------|---------|
+| .taskmaster/CLAUDE.md | Task Master instructions |
+| .taskmaster/tasks/tasks.json | 11 cleanup tasks (all done) |
+| .taskmaster/tasks/task_083-092.md | Jan 2026 launch tasks |
+
+#### Task Status Summary
+
+| Task | Title | Status |
+|------|-------|--------|
+| 83 | VarnaAI Homepage | IN-PROGRESS |
+| 84 | Simplify Other Sites | PENDING |
+| 85 | Business Cards | URGENT |
+| 86 | Case Studies | DONE |
+| 87 | LinkedIn Profile | DONE |
+| 88 | Sales Materials | DONE |
+| 89 | Google Sheets | PENDING |
+| 90 | LinkedIn Posts | DONE |
+| 91 | Lead Magnets | DONE |
+| 92 | Networking Prep | PENDING |
+
+---
+
+### 13. Credentials & Secrets
+
+#### Location: work/secrets/
+
+```bash
+# Usage
+cd D:\VarnaAI\Websites\work\secrets
+python keymanager.py list                    # List all secrets
+python keymanager.py get wordpress varnaai.com  # Get WordPress creds
+python keymanager.py get api openai          # Get API key
+```
+
+---
+
+## WordPress Sites Reference
+
+| Site | URL | Language | Status |
+|------|-----|----------|--------|
+| VarnaAI | varnaai.com | English | PRIMARY |
+| AI Projektmanager | ai-projektmanager.de | German | Dormant |
+| Varna Agenten | varna-agenten.de | German | Dormant |
+| AI Marketing BG | aimarketingbg.com | English/BG | Active |
+
+**Credentials**: Use keymanager in work/secrets/
+
+---
+
+## How to Find What You Need
 
 ### I want to...
 
-**Create a WordPress page**
-→ Read [CLAUDE.md](./CLAUDE.md) - Page Creation Process section
-
-**Optimize SEO**
-→ Read [seo/SEO_Portfolio_Strategy_2025.md](./seo/SEO_Portfolio_Strategy_2025.md)
-
-**Add Schema markup**
-→ Read [wordpress/schema-templates.md](./wordpress/schema-templates.md)
-→ Read [SCHEMA_ORG_TEMPLATES.md](./SCHEMA_ORG_TEMPLATES.md)
-
-**Deploy an app**
-→ SSH to 78.47.125.174 (see Infrastructure section)
-
-**Research a market**
-→ Read [research/](./research/) directory
-
-**Write blog content**
-→ Check [blogs/blog_posts/](./blogs/blog_posts/) for examples
-
-**Build backlinks**
-→ Read [claudedocs/BACKLINK_AUTOMATION_STRATEGY_2025.md](./claudedocs/BACKLINK_AUTOMATION_STRATEGY_2025.md)
-
-**Submit to directories**
-→ Read [claudedocs/VERIFIED_FREE_DIRECTORIES_2025.md](./claudedocs/VERIFIED_FREE_DIRECTORIES_2025.md)
+| Goal | Go To |
+|------|-------|
+| Create a WordPress page | [CLAUDE.md](./CLAUDE.md) |
+| Optimize SEO | [seo/SEO_Portfolio_Strategy_2025.md](./seo/SEO_Portfolio_Strategy_2025.md) |
+| Add Schema markup | [wordpress/schema-templates.md](./wordpress/schema-templates.md) |
+| Write a blog post | [blogs/START_HERE.md](./blogs/START_HERE.md) |
+| Check current tasks | [.taskmaster/tasks/](./.taskmaster/tasks/) |
+| Access credentials | work/secrets/keymanager.py |
+| View case studies | [docs/case-studies/](./docs/case-studies/) |
+| Prepare sales materials | [docs/sales/](./docs/sales/) |
+| Research market | [research/](./research/) |
 
 ---
 
-## 📊 Project Status Dashboard
+## Project Status Dashboard
 
-### Portfolio Pages
-- ✅ RetirementAI (89/100 SEO)
-- ✅ FwChange (90/100 SEO)
-- ✅ SEO Agent
-- ✅ VarnaAI Agents
-- ⏳ C3 (Compliance Command Center) - PENDING
+### Strategic Pivot (Jan 2026)
+- FROM: SaaS product sales
+- TO: Consulting services (ISO 27001, GDPR, AI implementation)
+- FOCUS: Face-to-face networking in Varna, Bulgaria
 
-### WordPress Sites
-- ✅ ai-projektmanager.de (7 pages complete)
-- 🔄 aimarketingbg.com
-- 🔄 classicsecurity.net
-- 🔄 varna-agenten.de
-- 🔄 varnaai.com
+### Key Dates
+| Date | Milestone |
+|------|-----------|
+| Dec 23 | Order business cards |
+| Jan 5 | Google Sheets dashboard ready |
+| Jan 10 | Business cards delivered |
+| **Jan 26** | **First networking event** |
 
-### Deployment
-- ✅ Hetzner VPS configured (78.47.125.174)
-- ✅ 4 apps deployed with Nginx SSL
-- ✅ All demo URLs live
-- ✅ Docker containers running
-
-### Documentation
-- ✅ Main guides complete
-- ✅ SEO strategy documented
-- ✅ Workflows documented
-- ✅ Infrastructure documented
+### Infrastructure
+- VPS (Hetzner): OFFLINE
+- Demos: Migrating to static HTML on All-Inkl
+- WordPress: All 4 sites on All-Inkl shared hosting
 
 ---
 
-## 🚀 Getting Started
+## Cross-Reference Matrix
 
-1. **Read [README.md](./README.md)** - Project overview
-2. **Read [CLAUDE.md](./CLAUDE.md)** - WordPress workflow
-3. **Check portfolio status** - See VarnaAI App Portfolio section above
-4. **Access WordPress** - Use credentials from CLAUDE.md
-5. **Deploy apps** - SSH to 78.47.125.174
+### Document Relationships
+
+| If you're working on... | Also check... |
+|-------------------------|---------------|
+| WordPress pages | CLAUDE.md → wordpress/schema-templates.md → seo/SEO_Portfolio_Strategy_2025.md |
+| Blog posts | blogs/START_HERE.md → blogs/URLS.md → blogs/INSTRUCTIONS.md |
+| App development | apps/[app]/CLAUDE.md → vps/[app]/ → operations/compose/ |
+| Sales outreach | docs/sales/ → assets/sales-materials-bg/ → docs/case-studies/ |
+| SEO optimization | seo/SEO_Portfolio_Strategy_2025.md → claudedocs/SEO_AUDIT_*.md |
+| Task tracking | .taskmaster/tasks/ → INVENTORY_Q1_2026.md |
+| Credentials | work/secrets/keymanager.py → (never commit secrets.yaml) |
+| Strategy planning | docs/strategy/BUSINESS_PLAN_2025.md → research/*.md |
+
+### Key File Dependencies
+
+```
+PROJECT_INDEX.md (master)
+├── DOCUMENTATION_INDEX.md (this file)
+├── CLAUDE.md (WordPress workflow)
+├── INVENTORY_Q1_2026.md (status report)
+└── .taskmaster/tasks/ (active tasks)
+
+CLAUDE.md (WordPress)
+├── wordpress/schema-templates.md
+├── wordpress/kadence-design-options.txt
+├── work/secrets/keymanager.py
+└── blogs/START_HERE.md
+
+seo/SEO_Portfolio_Strategy_2025.md
+├── seo/KEYWORD_RESEARCH_2025.md
+├── seo/site-audits/*.md
+├── claudedocs/SEO_AUDIT_*.md
+└── blogs/URLS.md
+
+docs/strategy/BUSINESS_PLAN_2025.md
+├── docs/strategy/C3/*.md
+├── docs/strategy/AIMarketingBG/*.md
+├── research/*.md
+└── docs/case-studies/*.md
+```
+
+### Sensitive Files (Never Share/Commit)
+
+| File/Directory | Contains |
+|----------------|----------|
+| work/secrets/secrets.yaml | All API keys and passwords |
+| .env files | Environment variables |
+| vps/*/.env.example | Template only - real .env never committed |
+| credentials.md | WordPress login details |
 
 ---
 
 **Maintained by**: Claude Code
-**Project**: VarnaAI Websites Portfolio
-**Contact**: See COMPANY_INFO.md for business details
+**Primary Reference**: [PROJECT_INDEX.md](./PROJECT_INDEX.md)
+**Last Updated**: 2025-12-26

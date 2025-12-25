@@ -1,0 +1,20 @@
+# ABOUTME: Python dependencies for the Freelance Job Hunter agent
+
+# Browser automation
+playwright>=1.40.0
+
+# Configuration
+pyyaml>=6.0
+
+# HTTP requests (for Telegram API)
+requests>=2.31.0
+
+# CLI interface
+click>=8.1.0
+
+# Date/time handling
+python-dateutil>=2.8.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0

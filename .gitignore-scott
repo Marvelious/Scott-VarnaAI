@@ -1,0 +1,45 @@
+# Scott's .gitignore - excludes private folders
+# Copy this to .gitignore in Scott's clone
+
+# === EXCLUDED FROM SCOTT ===
+cv/
+mcp-bridge/
+ml_models/
+work/secrets/
+wordpress/credentials.md
+
+# === Standard exclusions ===
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependencies
+node_modules/
+
+# Environment
+.env
+**/.env
+
+# Editor
+.idea
+.vscode
+*.suo
+*.sw?
+
+# OS
+.DS_Store
+
+# Credentials
+vps/**/.env
+**/secrets.yaml
+**/.secrets/
+
+# Build artifacts
+.coverage
+coverage.lcov
+htmlcov/
+*.db
+
+# Playwright
+.playwright-mcp/*.png

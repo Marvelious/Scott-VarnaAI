@@ -1,0 +1,80 @@
+# ABOUTME: Configuration for the Freelance Job Hunter agent
+# ABOUTME: Keywords, filters, and site settings for job searches
+
+# Keywords to search for (case-insensitive matching)
+keywords:
+  # Security & Compliance
+  security:
+    - Firewall
+    - Palo Alto
+    - Fortinet
+    - Check Point
+    - CISO
+    - ISO 27001
+    - TISAX
+    - IT-Sicherheit
+    - IT-Security
+    - NIS2
+    - DSGVO
+    - GDPR
+    - Security Architect
+    - Network Security
+    - Penetrationtest
+    - Pentest
+    - SOC
+    - SIEM
+
+  # AI & Digital Transformation
+  ai:
+    - KI
+    - AI
+    - Künstliche Intelligenz
+    - Projektmanagement
+    - Digitalisierung
+    - Cloud
+    - Azure
+    - Machine Learning
+    - Automation
+
+# Filtering criteria
+filters:
+  min_rate: 100          # Minimum €/hour
+  max_rate: 200          # Maximum €/hour (0 = no limit)
+  location_preference:
+    - remote
+    - Remote
+    - Homeoffice
+    - Deutschland
+    - Germany
+  exclude_keywords:       # Skip jobs containing these
+    - Junior
+    - Praktikum
+    - Werkstudent
+    - Internship
+
+# Sites to scrape
+sites:
+  freelance.de:
+    enabled: true
+    search_url: "https://www.freelance.de/projekte"
+    results_per_page: 20
+    max_pages: 3
+
+  freelancermap.de:
+    enabled: true
+    search_url: "https://www.freelancermap.de/projektboerse.html"
+    results_per_page: 20
+    max_pages: 3
+
+# Scoring weights (higher = more important)
+scoring:
+  keyword_match: 10      # Points per keyword found
+  rate_bonus: 5          # Bonus if rate > min_rate + 20
+  remote_bonus: 15       # Bonus for remote work
+  exact_match: 20        # Bonus for exact keyword in title
+
+# Notification settings
+notifications:
+  min_score: 30          # Only notify for jobs scoring >= this
+  batch_size: 10         # Max jobs per notification
+  include_description: false  # Include full description in alert

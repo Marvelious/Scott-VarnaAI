@@ -1,5 +1,7 @@
 # WordPress Multi-Site Content Creation Workflow
 
+**📋 See also**: `PROJECT_INDEX.md` for complete project documentation index
+
 ## 🚨 PRIVACY & SECURITY 🚨
 **CRITICAL**: Never use real names. Owner is "Gennadius" and partner is "Vanderbilt" for safety reasons (crazy ex-wife situation). All case studies and content must be generic/anonymized.
 
@@ -50,6 +52,12 @@ D:\VarnaAI\Websites\
 │   ├── compose/                       # Docker configurations
 │   └── scripts/                       # Automation scripts
 │
+├── work/                              # Active Work & Agents
+│   ├── secrets/                       # Centralized credentials (keymanager)
+│   │   ├── keymanager.py              # get/set/list secrets
+│   │   └── secrets.yaml               # All API keys & passwords (gitignored)
+│   └── jobs/                          # Freelance job hunter agent
+│
 ├── assets/                            # Images, Diagrams, Media
 │   ├── images/
 │   └── diagrams/
@@ -67,7 +75,7 @@ D:\VarnaAI\Websites\
 **Key Locations**:
 - **SEO Strategy**: `/seo/SEO_Portfolio_Strategy_2025.md` (master document)
 - **WordPress Workflow**: This file (CLAUDE.md) + `/wordpress/workflow-guide.md`
-- **Site Credentials**: See "WordPress Access Credentials" section below
+- **Credentials & API Keys**: `/work/secrets/` (keymanager.py - centralized secrets)
 - **Completed Work**: `/done/` (organized by date and type)
 
 ## CV-Based Case Study Reference (Gennadius's Experience)
@@ -136,7 +144,30 @@ Managing content creation for 4 WordPress sites in Big Dick's portfolio:
 
 ## WordPress Access Credentials
 
-**📁 See `wordpress/credentials.md` for login details** (excluded from git for security)
+**All credentials are centralized in the keymanager.**
+
+```bash
+# View all WordPress credentials
+cd D:\VarnaAI\Websites\work\secrets
+python keymanager.py get wordpress varnaai.com
+
+# Or get a specific site
+python keymanager.py get wordpress ai-projektmanager.de password
+```
+
+**Available Sites**: varnaai.com, ai-projektmanager.de, varna-agenten.de, aimarketingbg.com, classicsecurity.net
+
+**In Python code**:
+```python
+import sys
+sys.path.insert(0, "D:/VarnaAI/Websites/work")
+from secrets.keymanager import get_wordpress
+
+creds = get_wordpress("varnaai.com")
+# Returns: {"username": "claude", "password": "...", "login_url": "..."}
+```
+
+**Note**: All sites use WordPress with Kadence theme. Username is `claude` for all sites.
 
 ## Social Media Profiles (Quick Reference)
 
@@ -541,80 +572,177 @@ browser_file_upload({ paths: [] })
 - Batch content creation for similar blocks
 - Use concise but complete content
 
-## VarnaAI App Portfolio (varnaai.com)
+## 🚨 CURRENT STATUS (Updated 2025-12-23) 🚨
 
-**📊 Portfolio Status Summary:**
-- ✅ **VPS ONLINE** - Hetzner VPS @ 78.47.125.174 (updated 2025-12-04)
-- 📝 **All portfolio pages complete**
-- 💡 **Current state**:
-  - RetirementAI running as standalone Next.js (port 3000)
-  - FwChange running in Docker (4 containers)
-  - C3 Compliance running in Docker (4 containers)
-  - nginx reverse proxy with Let's Encrypt SSL + rate limiting
-  - fail2ban active with 4 jails (sshd, nginx-botsearch, nginx-http-auth, nginx-badbots)
-  - Uptime Kuma monitoring installed (needs DNS: status.varnaai.com)
-  - Ollama with 2 models (mistral, local-model)
+### Strategic Pivot: January 2026 Varna Return
 
-**🌐 Live Demos:**
-- RetirementAI: https://demo-retirement.varnaai.com/ ✅ **LIVE**
-- FwChange: https://demo-fwchange.varnaai.com/ ✅ **LIVE**
-- C3 Compliance: https://c3.varnaai.com/ ✅ **LIVE**
-- Uptime Kuma: https://status.varnaai.com/ ⏳ **PENDING DNS**
-- SEO Agent: https://demo-seoagent.varnaai.com/ 🔌 **OFFLINE** (not deployed)
-- VarnaAI Agents: https://demo-agents.varnaai.com/ 🔌 **OFFLINE** (not deployed)
+**Goal**: Simplify operations - "Take websites off the table"
 
-**🔒 Security Features (2025-12-04):**
-- UFW firewall (deny all, allow 22/80/443)
-- fail2ban: 4 jails, 75+ IPs banned for SSH, 58+ for bad bots
-- Rate limiting: API (10r/s), login (1r/s), general (30r/s)
-- All containers bound to 127.0.0.1 (not exposed)
-- SSL certificates valid until Feb 2026
+| Item | Status | Action |
+|------|--------|--------|
+| **Hetzner VPS** | ❌ **OFF** | Shutting down - no longer maintained |
+| **Demo Apps** | 📦 **ARCHIVED** | Moving to static landing pages on All-Inkl |
+| **VarnaAI.com** | 🎯 **PRIMARY** | Business card homepage (Task 83) |
+| **Other 3 Sites** | 🔄 **SIMPLIFY** | Redirect or minimal landing pages |
+
+### Infrastructure Migration
+
+**FROM** (Hetzner VPS @ 78.47.125.174):
+- ~~RetirementAI~~ → Static landing page
+- ~~FwChange~~ → Static landing page
+- ~~C3 Compliance~~ → Static landing page
+- ~~nginx, Docker, fail2ban~~ → Not needed
+
+**TO** (All-Inkl Shared Hosting):
+- Static HTML landing pages for demo showcases
+- WordPress sites already on All-Inkl
+- Minimal maintenance, maximum stability
+
+### Task Status (Jan 2026 Launch)
+
+| Task | Status | Priority |
+|------|--------|----------|
+| 83: VarnaAI Business Card Homepage | PENDING | 🔴 HIGH |
+| 84: Simplify Other 3 Sites | PENDING | After 83 |
+| 85: Business Cards | IN-PROGRESS | Order by Dec 23! |
+| 86: Case Studies (3) | ✅ DONE | - |
+| 87: LinkedIn Profile | ✅ DONE | - |
+| 88: Sales Materials | ✅ DONE | - |
+| 89: Google Sheets Dashboard | PENDING | Jan 5, 2026 |
+| 90: LinkedIn Posts (12) | ✅ DONE | - |
+| 91: Lead Magnets | ✅ DONE | - |
+| 92: Networking Event Prep | PENDING | Jan 26, 2026 |
+
+**Full task details**: `.taskmaster/tasks/task_083.md` through `task_092.md`
 
 ---
 
-### Apps with README Documentation
+## VarnaAI 3-App Docker Architecture (Local Development)
 
-1. **RetirementAI** (D:\VarnaAI\pension) ✅ **LIVE**
+**CRITICAL: All apps run 100% in Docker on local Windows 11 machine. No cloud VPS.**
+
+The VarnaAI development platform runs 3 isolated Docker applications on the same host.
+Each app has its own Docker network with dedicated subnets and port ranges.
+
+### Host Environment
+
+| Component | Specification |
+|-----------|--------------|
+| **OS** | Windows 11 |
+| **RAM** | 64GB |
+| **GPU** | RTX 5070 (8GB VRAM) |
+| **LLM Runtime** | Docker with NVIDIA GPU support (NOT local) |
+| **Ollama** | Runs in Docker container with GPU passthrough |
+| **Master Folder** | `D:\VarnaAI\Websites` (this folder) |
+
+### Port Allocation (VarnaAI Platform)
+
+| App | Frontend | Backend | PostgreSQL | Redis | Subnet |
+|-----|----------|---------|------------|-------|--------|
+| **Pension (RetirementAI)** | 3001 | - | 5433 | 6380 | 172.20.0.0/16 |
+| **C3 (Compliance)** | 3002 | 8001 | 5434 | 6381 | 172.21.0.0/16 |
+| **FwChange** | 3003 | 8002 | 5435 | 6382 | 172.22.0.0/16 |
+
+### Container Prefixes (CRITICAL)
+
+| App | Container Prefix | Example Containers |
+|-----|------------------|-------------------|
+| Pension | `pension-*` | pension-app, pension-postgres, pension-redis |
+| C3 | `c3-*` | c3-frontend, c3-api, c3-postgres, c3-redis |
+| FwChange | `fwchange-*` | fwchange-frontend, fwchange-backend, fwchange-postgres, fwchange-redis |
+
+🚨 **CONTAINER ISOLATION RULE**:
+- Each app manages ONLY its own prefixed containers
+- NEVER touch containers from other apps
+- Always specify container names explicitly in Docker commands
+
+### Quick Start (Local Development)
+
+```bash
+# From D:\VarnaAI\Websites\apps - Start all 3 apps
+cd apps/pension && docker-compose up -d && cd ../..
+cd apps/dashboard && docker-compose up -d && cd ../..
+cd apps/fwchange && docker-compose up -d && cd ../..
+
+# Check all running containers
+docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+```
+
+### Local Access Points
+
+| Service | URL |
+|---------|-----|
+| **Pension** | http://localhost:3001 |
+| **C3 Compliance** | http://localhost:3002 |
+| **FwChange** | http://localhost:3003 |
+| **FwChange API** | http://localhost:8002/docs |
+| **C3 API** | http://localhost:8001 |
+| **Jira (FwChange)** | http://localhost:8080 |
+
+---
+
+## VarnaAI App Portfolio (Production Status)
+
+**📊 Portfolio Status Summary:**
+- ❌ **VPS OFFLINE** - Hetzner VPS @ 78.47.125.174 (shutdown Dec 2025)
+- ✅ **Local Docker** - All 3 apps run locally for development
+- 📦 **Migrating to static landing pages** on All-Inkl for production demos
+- 📝 **All portfolio pages on WordPress complete**
+
+**🌐 Production Demo Status:**
+- RetirementAI: ❌ demo-retirement.varnaai.com → Static page planned
+- FwChange: ❌ demo-fwchange.varnaai.com → Static page planned
+- C3 Compliance: ❌ c3.varnaai.com → Static page planned
+- SEO Agent: ❌ Not deployed
+- VarnaAI Agents: ❌ Not deployed
+
+---
+
+### Apps Reference (For Portfolio Pages)
+
+1. **RetirementAI** (D:\VarnaAI\Websites\apps\pension)
    - **Portfolio Page**: ✅ COMPLETE (Post ID: 317163)
-   - **Live Demo**: https://demo-retirement.varnaai.com/ ✅ **WORKING**
-   - **Deployed**: Hetzner VPS @ 78.47.125.174 (Port 3000, PM2)
-   - **Status**: Running as standalone Next.js with nginx reverse proxy
-   - **SEO Score**: 89/100 (Title sentiment + power words fixed)
-   - **Tech Stack**: Next.js 14, PostgreSQL 15+, Redis 7+, OpenAI GPT-4, Studio LM
-   - **Key Features**: Trading212 API, AI advisor, pgvector search, WCAG 2.1 AA, BullMQ job queue
+   - **Demo**: ❌ OFFLINE (VPS shutdown)
+   - **Tech Stack**: Next.js 14, PostgreSQL, Redis, OpenAI GPT-4
+   - **Key Features**: Trading212 API, AI advisor, portfolio optimization
 
-2. **FwChange** (D:\VarnaAI\fwchange) ✅ **LIVE**
+2. **FwChange** (D:\VarnaAI\Websites\apps\fwchange)
    - **Portfolio Page**: ✅ COMPLETE (Post ID: 317353)
-   - **Live Demo**: https://demo-fwchange.varnaai.com/ ✅ **WORKING**
-   - **Deployed**: Hetzner VPS @ 78.47.125.174 (Docker: 4 containers)
-   - **Status**: Running with rate limiting enabled
-   - **SEO Score**: 90/100
-   - **Tech Stack**: React 18 + TypeScript, FastAPI (Python 3.11+), PostgreSQL 15+, Redis 7
-   - **Key Features**: Multi-vendor firewalls (Palo Alto, Check Point, Cisco, Fortinet), ITSM integration (Jira, ServiceNow), ISO 27001/PCI-DSS/SOX compliance
+   - **Demo**: ❌ OFFLINE (VPS shutdown)
+   - **Tech Stack**: React 18, FastAPI, PostgreSQL, Redis
+   - **Key Features**: Multi-vendor firewalls, JIRA integration, PCI-DSS compliance
 
-3. **SEO Agent** (D:\VarnaAI\seoagent) 🔌 **NOT DEPLOYED**
+3. **C3 Compliance** (D:\VarnaAI\Websites\apps\dashboard)
    - **Portfolio Page**: ✅ COMPLETE
-   - **Live Demo**: Not deployed (SSL cert exists from previous deployment)
-   - **Status**: Available for deployment if needed
-   - **Tech Stack**: Vite, React 19, Express, PostgreSQL, Redis, BullMQ
-   - **Key Features**: SEO audits, AI assistants (OpenAI, Anthropic, Ollama, LM Studio), JWT auth, Socket.IO real-time updates
+   - **Demo**: ❌ OFFLINE (VPS shutdown)
+   - **Tech Stack**: React 18, Node.js, PostgreSQL (pgvector)
+   - **Key Features**: GDPR automation, 60-second scans, German docs
 
-4. **Compliance Command Center (C3)** (D:\VarnaAI\dashboard) ✅ **LIVE**
+4. **SEO Agent** (D:\VarnaAI\Websites\apps\seoagent)
    - **Portfolio Page**: ✅ COMPLETE
-   - **Live Demo**: https://c3.varnaai.com/ ✅ **WORKING**
-   - **Deployed**: Hetzner VPS @ 78.47.125.174 (Docker: 4 containers)
-   - **Status**: Running with rate limiting enabled
-   - **Tech Stack**: React 18 + TypeScript, Node.js, PostgreSQL (pgvector), Playwright
-   - **Key Features**: German compliance automation (DSGVO, KI-Verordnung, NIS2, GoBD, BSI C5), 60-second scans, German document generation
-   - **Target Market**: German SMEs (10-500 employees)
+   - **Demo**: ❌ Never deployed
+   - **Tech Stack**: Vite, React 19, Express, PostgreSQL
 
-5. **VarnaAI Multi-Agent Platform** (D:\VarnaAI\varnaai) 🔌 **NOT DEPLOYED**
-   - **Portfolio Page**: Landing page showcase was deployed
-   - **Live Demo**: Not deployed (SSL cert exists from previous deployment)
-   - **Status**: Available for deployment if needed
-   - **Tech Stack**: Next.js 14, NestJS, PostgreSQL, Redis, MongoDB, Neo4j, Qdrant, Kafka
-   - **Key Features**: 6 autonomous agents, 4-language support (Bulgarian/English/German/Russian), Llama 3.1 (8B/70B), RAG search, DATEV integration
-   - **Target Market**: Bulgarian SME market (€96K pipeline)
+5. **VarnaAI Agents** (D:\VarnaAI\Websites\apps\varnaai)
+   - **Portfolio Page**: ✅ COMPLETE
+   - **Demo**: ❌ Never deployed
+   - **Tech Stack**: Next.js 14, NestJS, PostgreSQL, Neo4j
+
+6. **WebScrap** (D:\VarnaAI\Websites\apps\webscrap)
+   - **Status**: Development
+   - **Tech Stack**: Web scraping platform
+
+7. **Project Manager** (D:\VarnaAI\Websites\apps\projectmanager)
+   - **Status**: Development
+   - **Tech Stack**: Node.js project management
+
+8. **Agentic Coder** (D:\VarnaAI\Websites\apps\agenticcoder)
+   - **Status**: Development
+   - **Tech Stack**: AI coding assistant
+
+9. **LibreChat** (D:\VarnaAI\Websites\apps\LibreChat)
+   - **Status**: Self-hosted chat
+   - **Tech Stack**: LibreChat (external project)
 
 
 ## Questions for Big Dick
@@ -681,71 +809,60 @@ Say **"go"** → I'll ask **"What task?"** → Tell me the website → I execute
 
 ---
 
-## 🇧🇬 C3 Bulgaria Launch Initiative (December 2025)
+## 🇧🇬 January 2026 Bulgaria Launch
 
-**Goal**: Launch C3 Compliance in Bulgarian market targeting SMEs
-**Timeline**: December 2025 - January 2026
-**Status**: Planning & Preparation Phase
+**Goal**: Launch consulting services in Varna, Bulgaria
+**Timeline**: January 2026
+**Status**: Preparation Phase - Focus on networking, not SaaS
 
-### Strategy Documents Created
+### Strategic Pivot
 
-| Document | Location | Purpose |
-|----------|----------|---------|
-| Market Research (Enterprise) | `docs/strategy/C3/MARKET_RESEARCH_2025.md` | Initial research (enterprise-focused, less realistic) |
-| **SME Market Reality** | `docs/strategy/C3/SME_MARKET_REALITY_2025.md` | **Realistic** Bulgarian SME assessment |
-| Action Plan | `docs/strategy/C3/ACTION_PLAN_DECEMBER_2025.md` | December tasks and timeline |
-| FwChange Research | `docs/strategy/FwChange/MARKET_RESEARCH_2025.md` | German firewall market (for later) |
+**FROM**: SaaS product sales (C3, FwChange, etc.)
+**TO**: Consulting services (ISO 27001, GDPR, AI implementation)
 
-### Key Findings (Realistic Assessment)
-
-**Market Reality:**
-- Only **500-1,000** Bulgarian companies actually need NIS2 compliance
-- **50-100** realistic targets in Varna region
+**Rationale**:
 - Bulgarian SMEs want **"someone to do it for them"** (service, not software)
 - First sale takes **3-6 months** of relationship building
 - Face-to-face meetings are **mandatory** in Bulgarian business culture
+- VPS demos are overkill - static portfolio pages sufficient
 
-**Competition:**
-- NOT competing against OneTrust/Vanta (they ignore Bulgarian market)
-- Real competitors: Accountants (70%), Law firms (20%), DIY (10%)
+### Key Strategy Documents
 
-**Realistic Pricing (Bulgarian Market):**
+| Document | Location |
+|----------|----------|
+| **Business Plan 2025** | `docs/strategy/BUSINESS_PLAN_2025.md` |
+| SME Market Reality | `docs/strategy/C3/SME_MARKET_REALITY_2025.md` |
+| Varna Local Research | `docs/strategy/C3/VARNA_LOCAL_MARKET_RESEARCH_2025.md` |
+| VCCI Membership Plan | `docs/strategy/C3/VCCI_Membership_Action_Plan.md` |
+| Service Delivery Playbook | `docs/strategy/C3/SERVICE_DELIVERY_PLAYBOOK.md` |
+
+### Prepared Materials (All Done)
+
+| Material | Location | Status |
+|----------|----------|--------|
+| 3 Case Studies | `docs/case-studies/` | ✅ DONE |
+| LinkedIn Profile Guide | `docs/marketing/linkedin-profile-optimization.md` | ✅ DONE |
+| 12 LinkedIn Posts | `docs/marketing/linkedin-posts-january-2026.md` | ✅ DONE |
+| Sales Toolkit | `docs/sales/sales-materials-complete-toolkit.md` | ✅ DONE |
+| Security Checklist PDF | `docs/marketing/security-checklist-bulgarian-smes.md` | ✅ DONE |
+| Business Card Spec | `assets/business-card-design-spec.md` | ✅ DONE |
+| Bulgarian Sales Materials | `assets/sales-materials-bg/` | ✅ DONE |
+
+### Service Pricing (Bulgarian Market)
+
 | Service | Price |
 |---------|-------|
-| Free compliance scan | Безплатно |
-| Full audit | 980 лв (~€500) |
-| Managed monthly service | 290 лв/месец (~€150/mo) |
+| Free discovery call | Безплатно |
+| GDPR Compliance Audit | 980 лв (~€500) |
+| ISO 27001 Implementation | 9,800 лв (~€5,000) |
+| Monthly Advisory | 290 лв/месец (~€150/mo) |
 
-**Timeline to €50K/year revenue**: 18-24 months
+### Timeline to First Revenue
 
-### Current Approach: WPML Translation
-
-**Status**: Using WPML for Bulgarian translation on varnaai.com WordPress (simpler than app i18n)
-- ✅ C3 page created on varnaai.com (English)
-- 🔄 Bulgarian translation in progress via WPML Advanced Translation Editor
-- Original bg.json approach deferred (app-level translation not priority)
-
-### C3 App Current State
-
-**Live Demo**: https://c3.varnaai.com/ ✅ Running
-
-**What Works:**
-- GDPR Assessment (60-second scan)
-- User authentication (JWT)
-- Dashboard with compliance scores
-- Document generation (AI-powered, German)
-- PDF export
-
-**What's Missing for Bulgaria:**
-- Bulgarian UI translation (bg.json created locally, not deployed)
-- Language switcher in app
-- Bulgarian compliance content/questionnaire
-- BGN pricing display
-
-### WordPress C3 Page Status
-
-**English Page**: ✅ Complete (varnaai.com/c3-compliance-platform/)
-**Bulgarian Translation**: 🔄 In progress via WPML (37% complete, 20 segments remaining)
+- **Jan 26, 2026**: First networking event
+- **Feb-Mar 2026**: Build relationships, book discovery calls
+- **Q2 2026**: First paid projects
+- **18-24 months**: Target €50K/year revenue
 
 ---
 

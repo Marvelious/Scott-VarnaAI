@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum | VarnaAI - KI-Lösungen für Unternehmen</title>
+    <meta name="description" content="Impressum und Anbieterkennzeichnung der VarnaAI. Kontaktdaten, Verantwortlicher und rechtliche Informationen gemäß TMG §5.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://varnaai.com/impressum">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Impressum | VarnaAI">
+    <meta property="og:description" content="Rechtliche Anbieterkennzeichnung der VarnaAI gemäß TMG §5.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://varnaai.com/impressum">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --accent-primary: #06b6d4;
+            --accent-secondary: #7c3aed;
+            --accent-tertiary: #22d3ee;
+            --bg-dark: #0a0a0f;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.5);
+            --border-subtle: rgba(255, 255, 255, 0.1);
+            --gradient-primary: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+            --gradient-button: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+            --shadow-glow: 0 0 40px rgba(6, 182, 212, 0.3);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(34, 211, 238, 0.08) 0%, transparent 40%);
+            animation: bgFloat 20s ease-in-out infinite;
+        }
+
+        @keyframes bgFloat {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(2%, 2%) rotate(1deg); }
+            66% { transform: translate(-1%, 1%) rotate(-1deg); }
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        /* Main Content */
+        .legal-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .legal-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .legal-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .legal-header .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        .legal-header .law-reference {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--accent-primary);
+        }
+
+        /* Info Cards */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .info-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            border-color: var(--accent-primary);
+            box-shadow: var(--shadow-glow);
+            transform: translateY(-2px);
+        }
+
+        .info-card .icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .info-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .info-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .info-card a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .info-card a:hover {
+            color: var(--accent-tertiary);
+        }
+
+        /* Legal Sections */
+        .legal-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .legal-section h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .legal-section h2::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .legal-section h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.5rem 0 1rem;
+            color: var(--text-primary);
+        }
+
+        .legal-section p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .legal-section ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 1rem 0;
+        }
+
+        .legal-section li {
+            color: var(--text-secondary);
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .legal-section li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+        }
+
+        .legal-section a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .legal-section a:hover {
+            color: var(--accent-tertiary);
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box p {
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(10, 10, 15, 0.9);
+            border-top: 1px solid var(--border-subtle);
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        .footer-copy {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .legal-header h1 {
+                font-size: 2rem;
+            }
+
+            .legal-container {
+                padding: 6rem 1rem 2rem;
+            }
+
+            .legal-section {
+                padding: 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="/" class="logo">VarnaAI</a>
+            <nav class="nav-links">
+                <a href="/">Startseite</a>
+                <a href="/produkte">Produkte</a>
+                <a href="/kontakt">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="legal-container">
+        <div class="legal-header">
+            <h1>Impressum</h1>
+            <p class="subtitle">Anbieterkennzeichnung gemäß deutschem Recht</p>
+            <span class="law-reference">TMG §5 | DDG §5 | MStV §18</span>
+        </div>
+
+        <!-- Quick Info Cards -->
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="icon">🏢</div>
+                <h3>Anbieter</h3>
+                <p>
+                    <strong>VarnaAI</strong><br>
+                    Gennadius<br>
+                    [Straße und Hausnummer]<br>
+                    [PLZ] Varna, Bulgarien
+                </p>
+            </div>
+
+            <div class="info-card">
+                <div class="icon">📧</div>
+                <h3>Kontakt</h3>
+                <p>
+                    E-Mail: <a href="mailto:info@varnaai.com">info@varnaai.com</a><br>
+                    Telefon: [Telefonnummer]<br>
+                    Website: <a href="https://varnaai.com">varnaai.com</a>
+                </p>
+            </div>
+
+            <div class="info-card">
+                <div class="icon">⚖️</div>
+                <h3>Rechtliches</h3>
+                <p>
+                    USt-IdNr.: [wenn vorhanden]<br>
+                    Handelsregister: [wenn vorhanden]<br>
+                    Registernummer: [wenn vorhanden]
+                </p>
+            </div>
+        </div>
+
+        <!-- Verantwortlicher -->
+        <section class="legal-section">
+            <h2>Verantwortlicher für den Inhalt</h2>
+            <p>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:</p>
+            <div class="highlight-box">
+                <p>
+                    <strong>Gennadius</strong><br>
+                    [Vollständige Adresse]<br>
+                    E-Mail: <a href="mailto:info@varnaai.com">info@varnaai.com</a>
+                </p>
+            </div>
+            <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.</p>
+        </section>
+
+        <!-- EU-Streitschlichtung -->
+        <section class="legal-section">
+            <h2>EU-Streitschlichtung</h2>
+            <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:</p>
+            <p><a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a></p>
+            <p>Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
+
+            <h3>Verbraucherstreitbeilegung</h3>
+            <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+        </section>
+
+        <!-- Haftung für Inhalte -->
+        <section class="legal-section">
+            <h2>Haftung für Inhalte</h2>
+            <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+            <p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+        </section>
+
+        <!-- Haftung für Links -->
+        <section class="legal-section">
+            <h2>Haftung für Links</h2>
+            <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+            <p>Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+        </section>
+
+        <!-- Urheberrecht -->
+        <section class="legal-section">
+            <h2>Urheberrecht</h2>
+            <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
+            <p>Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
+        </section>
+
+        <!-- Markenrecht -->
+        <section class="legal-section">
+            <h2>Markenrecht</h2>
+            <p>Alle auf dieser Website verwendeten Marken, Produktnamen und Logos sind Eigentum ihrer jeweiligen Inhaber. Die Nennung von Marken, Produktnamen, Handelsnamen und Logos dient lediglich informativen Zwecken und stellt keine Verletzung der Rechte ihrer jeweiligen Eigentümer dar.</p>
+            <p>VarnaAI und das VarnaAI-Logo sind Marken von VarnaAI. Die unbefugte Verwendung unserer Marken ist untersagt.</p>
+        </section>
+
+        <!-- Anwendbares Recht -->
+        <section class="legal-section">
+            <h2>Anwendbares Recht</h2>
+            <p>Für alle Rechtsbeziehungen zwischen uns und unseren Nutzern gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts (CISG). Gegenüber Verbrauchern gilt diese Rechtswahl nur insoweit, als dadurch nicht der durch zwingende Bestimmungen des Rechts des Staates, in dem der Verbraucher seinen gewöhnlichen Aufenthalt hat, gewährte Schutz entzogen wird.</p>
+        </section>
+
+        <!-- Bildnachweise -->
+        <section class="legal-section">
+            <h2>Bildnachweise</h2>
+            <p>Sofern nicht anders angegeben, stammen alle auf dieser Website verwendeten Bilder, Grafiken und Icons aus folgenden Quellen:</p>
+            <ul>
+                <li>Eigene Erstellung durch VarnaAI</li>
+                <li>Lizenzierte Stockfotos (Unsplash, Pexels)</li>
+                <li>Open-Source-Icons (Heroicons, Lucide)</li>
+            </ul>
+            <p>Detaillierte Bildnachweise können auf Anfrage zur Verfügung gestellt werden.</p>
+        </section>
+
+        <!-- Aktualität -->
+        <section class="legal-section">
+            <h2>Aktualität und Änderungen</h2>
+            <p>Dieses Impressum wurde zuletzt am <strong>25. Dezember 2024</strong> aktualisiert.</p>
+            <p>Wir behalten uns vor, dieses Impressum jederzeit zu ändern. Die jeweils aktuelle Version ist auf dieser Seite verfügbar.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/datenschutz">Datenschutz</a>
+                <a href="/agb">AGB</a>
+                <a href="/impressum">Impressum</a>
+                <a href="/cookies">Cookie-Richtlinie</a>
+            </div>
+            <div class="footer-copy">
+                &copy; 2024 VarnaAI. Alle Rechte vorbehalten.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

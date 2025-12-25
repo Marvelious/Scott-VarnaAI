@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><!-- PAGE_TITLE --> - <!-- APP_NAME --></title>
+  <link rel="stylesheet" href="../landing.css">
+  <style>
+    /* Legal page specific styles */
+    .legal-page {
+      padding: 120px 0 80px;
+      min-height: 100vh;
+    }
+
+    .legal-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .legal-header {
+      margin-bottom: 48px;
+    }
+
+    .legal-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .legal-meta {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .legal-content {
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    .legal-content h2 {
+      color: var(--text-primary);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 48px 0 16px;
+    }
+
+    .legal-content h3 {
+      color: var(--text-primary);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 32px 0 12px;
+    }
+
+    .legal-content p {
+      margin-bottom: 16px;
+    }
+
+    .legal-content ul {
+      margin: 16px 0;
+      padding-left: 24px;
+    }
+
+    .legal-content li {
+      margin-bottom: 8px;
+    }
+
+    .legal-content a {
+      color: var(--accent-app, var(--accent-gold));
+      text-decoration: none;
+    }
+
+    .legal-content a:hover {
+      text-decoration: underline;
+    }
+
+    .legal-content .highlight-box {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 24px 0;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-bottom: 32px;
+    }
+
+    .back-link:hover {
+      color: var(--text-primary);
+    }
+  </style>
+</head>
+<body>
+  <!-- Include Header Component -->
+
+  <main class="legal-page">
+    <div class="legal-container">
+      <a href="/" class="back-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Back to Home
+      </a>
+
+      <header class="legal-header">
+        <h1 class="legal-title"><!-- PAGE_TITLE --></h1>
+        <p class="legal-meta">Last updated: <!-- LAST_UPDATED --></p>
+      </header>
+
+      <div class="legal-content">
+        <!-- PAGE_CONTENT -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Include Footer Component -->
+</body>
+</html>
+
+<!--
+==============================================
+LEGAL PAGE TEMPLATES - Copy and customize
+==============================================
+
+Replace these placeholders in each page:
+- <!-- APP_NAME --> : C3 / FwChange / RetirementAI
+- <!-- APP_URL --> : c3.varnaai.com / fwchange.varnaai.com / retirement.varnaai.com
+- <!-- PAGE_TITLE --> : Privacy Policy / Terms of Service / Impressum / GDPR
+- <!-- LAST_UPDATED --> : Current date
+- <!-- PAGE_CONTENT --> : Page-specific content
+
+==============================================
+PRIVACY POLICY CONTENT
+==============================================
+
+<h2>1. Information We Collect</h2>
+<p><!-- APP_NAME --> collects information you provide directly, including:</p>
+<ul>
+  <li>Account information (name, email, company)</li>
+  <li>Usage data and analytics</li>
+  <li>Technical information (IP address, browser type)</li>
+</ul>
+
+<h2>2. How We Use Your Information</h2>
+<p>We use collected information to:</p>
+<ul>
+  <li>Provide and improve <!-- APP_NAME --> services</li>
+  <li>Send important notifications</li>
+  <li>Analyze usage patterns</li>
+  <li>Ensure security and prevent fraud</li>
+</ul>
+
+<h2>3. Data Storage</h2>
+<div class="highlight-box">
+  <strong>European Data Residency</strong><br>
+  All data is stored in European Union data centers. We comply with GDPR requirements.
+</div>
+
+<h2>4. Your Rights</h2>
+<p>Under GDPR, you have the right to:</p>
+<ul>
+  <li>Access your personal data</li>
+  <li>Request data correction</li>
+  <li>Request data deletion</li>
+  <li>Data portability</li>
+  <li>Object to processing</li>
+</ul>
+
+<h2>5. Contact</h2>
+<p>For privacy inquiries: <a href="mailto:privacy@varnaai.com">privacy@varnaai.com</a></p>
+
+==============================================
+TERMS OF SERVICE CONTENT
+==============================================
+
+<h2>1. Acceptance of Terms</h2>
+<p>By accessing <!-- APP_NAME -->, you agree to these Terms of Service.</p>
+
+<h2>2. Service Description</h2>
+<p><!-- APP_NAME --> provides [APP_SPECIFIC_DESCRIPTION].</p>
+
+<h2>3. User Responsibilities</h2>
+<ul>
+  <li>Maintain account security</li>
+  <li>Provide accurate information</li>
+  <li>Comply with applicable laws</li>
+  <li>Not misuse the service</li>
+</ul>
+
+<h2>4. Intellectual Property</h2>
+<p>All content and software is owned by VarnaAI or its licensors.</p>
+
+<h2>5. Limitation of Liability</h2>
+<p>VarnaAI is not liable for indirect, incidental, or consequential damages.</p>
+
+<h2>6. Governing Law</h2>
+<p>These terms are governed by the laws of Bulgaria and the European Union.</p>
+
+==============================================
+IMPRESSUM (German Legal Requirement)
+==============================================
+
+<h2>Angaben gemäß § 5 TMG</h2>
+<p>
+  VarnaAI<br>
+  [Street Address]<br>
+  [City, Postal Code]<br>
+  Bulgaria
+</p>
+
+<h2>Kontakt</h2>
+<p>
+  E-Mail: contact@varnaai.com<br>
+  Website: https://varnaai.com
+</p>
+
+<h2>Umsatzsteuer-ID</h2>
+<p>Umsatzsteuer-Identifikationsnummer gemäß §27a Umsatzsteuergesetz: [VAT_NUMBER]</p>
+
+<h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+<p>[Responsible Person Name and Address]</p>
+
+<h2>Streitschlichtung</h2>
+<p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+<a href="https://ec.europa.eu/consumers/odr">https://ec.europa.eu/consumers/odr</a></p>
+
+==============================================
+GDPR/DSGVO PAGE CONTENT
+==============================================
+
+<h2>DSGVO-Konformität</h2>
+<p><!-- APP_NAME --> ist vollständig DSGVO-konform. Diese Seite erklärt Ihre Rechte.</p>
+
+<h2>Ihre Rechte nach DSGVO</h2>
+<ul>
+  <li><strong>Auskunftsrecht (Art. 15)</strong>: Sie können Auskunft über Ihre gespeicherten Daten verlangen.</li>
+  <li><strong>Berichtigungsrecht (Art. 16)</strong>: Sie können unrichtige Daten korrigieren lassen.</li>
+  <li><strong>Löschungsrecht (Art. 17)</strong>: Sie können die Löschung Ihrer Daten verlangen.</li>
+  <li><strong>Datenübertragbarkeit (Art. 20)</strong>: Sie können Ihre Daten in einem gängigen Format erhalten.</li>
+  <li><strong>Widerspruchsrecht (Art. 21)</strong>: Sie können der Verarbeitung widersprechen.</li>
+</ul>
+
+<h2>Datenschutzbeauftragter</h2>
+<p>Bei Fragen zum Datenschutz: <a href="mailto:dpo@varnaai.com">dpo@varnaai.com</a></p>
+
+<h2>Aufsichtsbehörde</h2>
+<p>Sie haben das Recht, sich bei einer Aufsichtsbehörde zu beschweren.</p>
+
+-->

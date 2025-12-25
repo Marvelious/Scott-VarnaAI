@@ -1,181 +1,429 @@
 {
-  "tasks": [
-    {
-      "id": "1",
-      "title": "Fix VarnaAI Footer Site-Wide",
-      "description": "Remove 'Since 2010' lie from footer. Change to 'European AI Solutions' or remove entirely. This affects ALL pages on varnaai.com. The '5,000+ SMEs' claim was already fixed previously.",
-      "status": "done",
-      "priority": "high",
-      "dependencies": [],
-      "tags": [
-        "varnaai",
-        "footer",
-        "critical"
-      ],
-      "updatedAt": "2025-12-20T10:30:00.000Z",
-      "subtasks": []
-    },
-    {
-      "id": "2",
-      "title": "Fix Pricing Page - Complete",
-      "description": "Finish Pricing page cleanup: 1) Premium Plan features need proper line breaks (currently only has first line), 2) Strengthen weak middle content, 3) Hero placeholder was fixed. Post ID: 27",
-      "status": "done",
-      "priority": "high",
-      "dependencies": [],
-      "tags": [
-        "varnaai",
-        "pricing"
-      ],
-      "subtasks": [],
-      "updatedAt": "2025-12-20T07:16:37.208Z"
-    },
-    {
-      "id": "3",
-      "title": "Clean Reviews Page - Delete 7 Fake Testimonials",
-      "description": "Reviews page (/varna-ai-reviews/) has 7 completely fake testimonials: Silva (Berlin), Anna Petrova (Sofia), Markus Schneider (Berlin), Elena Dimitrova (Varna), Georgi Ivanov (Plovdiv), Katharina Hoffmann (Hamburg), Stefan Kolev (Varna). Plus fake '30% increase in project delivery speed' stat. RECOMMENDATION: Delete entire page or replace with 'Coming Soon' message.",
-      "status": "done",
-      "priority": "high",
-      "dependencies": [],
-      "tags": [
-        "varnaai",
-        "reviews",
-        "testimonials",
-        "critical"
-      ],
-      "subtasks": [],
-      "updatedAt": "2025-12-20T10:30:00.000Z"
-    },
-    {
-      "id": "4",
-      "title": "Clean About Page Fake Content",
-      "description": "About page (/about-secure-ai-project-management/) has: '20+ Years of Security Expertise' (change to 15+), 'Founded over 12 years ago' counter (REMOVE), fake Gartner stats 'reduce project delays by 40%' and 'improve regulatory audit success rates by 65%' (DELETE both).",
-      "status": "done",
-      "priority": "medium",
-      "dependencies": [],
-      "tags": [
-        "varnaai",
-        "about",
-        "stats"
-      ],
-      "subtasks": [],
-      "updatedAt": "2025-12-20T08:30:00.000Z"
-    },
-    {
-      "id": "5",
-      "title": "Clean Mission Page Fake Content",
-      "description": "Mission page (/our-mission-secure-ai-solutions/) has: 'Client Satisfaction Rate' counter (REMOVE), 'Cloud Deployments' counter (REMOVE), '10+ years of industry expertise' (REMOVE), '500+ successful deployments' (REMOVE - zero deployments), 'Varna AI Solutions, Berlin, Germany' fake address (REMOVE).",
-      "status": "done",
-      "priority": "medium",
-      "dependencies": [],
-      "tags": [
-        "varnaai",
-        "mission",
-        "stats",
-        "counters"
-      ],
-      "subtasks": [],
-      "updatedAt": "2025-12-20T08:30:00.000Z"
-    },
-    {
-      "id": "6",
-      "title": "Clean Homepage Fake Testimonials",
-      "description": "Homepage has 3 fake testimonials that need deletion: 'Dr. Markus Schneider - Director, German SME', 'Dimitar Petrov - CEO, Bulgarian Tech Company', 'Anna Novak - EU Head of Compliance'. Also remove 'improved efficiency by 40%' fake stat.",
-      "status": "done",
-      "priority": "high",
-      "dependencies": [],
-      "tags": [
-        "varnaai",
-        "homepage",
-        "testimonials"
-      ],
-      "subtasks": [],
-      "updatedAt": "2025-12-20T07:16:37.210Z"
-    },
-    {
-      "id": "7",
-      "title": "Clean Services Page Remaining Issues",
-      "description": "Services page (/secure-ai-services-gdpr/) - verify Silva testimonial is gone, check for remaining fake stats: '30% increase in project completion rates', '40% increase in conversion rates', '50% reduction in administrative overheads'. Verify trust badges are honest (24/7 Support, Money Back Guarantee, 30 Day Trial were flagged).",
-      "status": "done",
-      "priority": "medium",
-      "dependencies": [],
-      "tags": [
-        "varnaai",
-        "services",
-        "stats"
-      ],
-      "subtasks": [],
-      "updatedAt": "2025-12-20T09:00:00.000Z"
-    },
-    {
-      "id": "8",
-      "title": "Fix C3 Compliance Page Claims",
-      "description": "C3 Compliance page (/c3-compliance-platform-nis2-deadline/) has: 'Join Hundreds of Satisfied Clients!' CTA (change to 'Get Started Today'), 'Dedicated account manager' in Managed tier (REMOVE or clarify limitations).",
-      "status": "done",
-      "priority": "medium",
-      "dependencies": [],
-      "tags": [
-        "varnaai",
-        "c3",
-        "cta"
-      ],
-      "subtasks": [],
-      "updatedAt": "2025-12-20T09:00:00.000Z"
-    },
-    {
-      "id": "9",
-      "title": "Verify Clean Pages - RetirementAI & FwChange",
-      "description": "Verify RetirementAI (/retirementai-portfolio/) and FwChange (/fwchange-portfolio/) portfolio pages are clean. These describe real working apps. Only footer lies should remain (which will be fixed in task 1).",
-      "status": "done",
-      "priority": "low",
-      "dependencies": [
-        "1"
-      ],
-      "tags": [
-        "varnaai",
-        "portfolio",
-        "verification"
-      ],
-      "subtasks": [],
-      "updatedAt": "2025-12-20T09:15:00.000Z"
-    },
-    {
-      "id": "10",
-      "title": "AIMARKETINGBG Homepage Cleanup",
-      "description": "aimarketingbg.com Homepage needs: DELETE 'Anna Müller - Marketing Director, Berlin Startup Hub' testimonial, DELETE 'Ivan Petrov - CEO of Sofia Tech Solutions' testimonial, DELETE fake stats 'cut ad costs by 50% while doubling conversions', '4x ROI, 60% lower ad spend'. Also fix footer lies.",
-      "status": "done",
-      "priority": "medium",
-      "dependencies": [],
-      "tags": [
-        "aimarketingbg",
-        "homepage",
-        "testimonials"
-      ],
-      "subtasks": [],
-      "updatedAt": "2025-12-20T10:30:00.000Z"
-    },
-    {
-      "id": "11",
-      "title": "AIMARKETINGBG Case Studies Page - Delete All",
-      "description": "aimarketingbg.com Case Studies page (/ai-marketing-case-studies/) is entirely fake. DELETE: '247% Revenue Growth Bulgarian fashion retailer', '156% higher conversion rates European digital bank', '58% cost reduction Private healthcare network', '183% increase in property sales Bulgarian real estate'. RECOMMENDATION: Delete entire page.",
-      "status": "done",
-      "priority": "medium",
-      "dependencies": [],
-      "tags": [
-        "aimarketingbg",
-        "case-studies",
-        "critical"
-      ],
-      "subtasks": [],
-      "updatedAt": "2025-12-20T10:30:00.000Z"
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Fix VarnaAI Footer Site-Wide",
+        "description": "Remove 'Since 2010' lie from footer. Change to 'European AI Solutions' or remove entirely. This affects ALL pages on varnaai.com. The '5,000+ SMEs' claim was already fixed previously.",
+        "status": "done",
+        "priority": "high",
+        "dependencies": [],
+        "tags": ["varnaai", "footer", "critical"],
+        "updatedAt": "2025-12-20T10:30:00.000Z",
+        "subtasks": []
+      },
+      {
+        "id": 2,
+        "title": "Fix Pricing Page - Complete",
+        "description": "Finish Pricing page cleanup: 1) Premium Plan features need proper line breaks (currently only has first line), 2) Strengthen weak middle content, 3) Hero placeholder was fixed. Post ID: 27",
+        "status": "done",
+        "priority": "high",
+        "dependencies": [],
+        "tags": ["varnaai", "pricing"],
+        "subtasks": [],
+        "updatedAt": "2025-12-20T07:16:37.208Z"
+      },
+      {
+        "id": 3,
+        "title": "Clean Reviews Page - Delete 7 Fake Testimonials",
+        "description": "Reviews page (/varna-ai-reviews/) has 7 completely fake testimonials. RECOMMENDATION: Delete entire page or replace with 'Coming Soon' message.",
+        "status": "done",
+        "priority": "high",
+        "dependencies": [],
+        "tags": ["varnaai", "reviews", "testimonials", "critical"],
+        "subtasks": [],
+        "updatedAt": "2025-12-20T10:30:00.000Z"
+      },
+      {
+        "id": 4,
+        "title": "Clean About Page Fake Content",
+        "description": "About page cleaned of fake stats and counters.",
+        "status": "done",
+        "priority": "medium",
+        "dependencies": [],
+        "tags": ["varnaai", "about", "stats"],
+        "subtasks": [],
+        "updatedAt": "2025-12-20T08:30:00.000Z"
+      },
+      {
+        "id": 5,
+        "title": "Clean Mission Page Fake Content",
+        "description": "Mission page cleaned of fake counters and Berlin address.",
+        "status": "done",
+        "priority": "medium",
+        "dependencies": [],
+        "tags": ["varnaai", "mission", "stats", "counters"],
+        "subtasks": [],
+        "updatedAt": "2025-12-20T08:30:00.000Z"
+      },
+      {
+        "id": 6,
+        "title": "Clean Homepage Fake Testimonials",
+        "description": "Homepage 3 fake testimonials deleted.",
+        "status": "done",
+        "priority": "high",
+        "dependencies": [],
+        "tags": ["varnaai", "homepage", "testimonials"],
+        "subtasks": [],
+        "updatedAt": "2025-12-20T07:16:37.210Z"
+      },
+      {
+        "id": 7,
+        "title": "Clean Services Page Remaining Issues",
+        "description": "Services page cleaned of fake stats and badges.",
+        "status": "done",
+        "priority": "medium",
+        "dependencies": [],
+        "tags": ["varnaai", "services", "stats"],
+        "subtasks": [],
+        "updatedAt": "2025-12-20T09:00:00.000Z"
+      },
+      {
+        "id": 8,
+        "title": "Fix C3 Compliance Page Claims",
+        "description": "C3 Compliance page CTAs fixed.",
+        "status": "done",
+        "priority": "medium",
+        "dependencies": [],
+        "tags": ["varnaai", "c3", "cta"],
+        "subtasks": [],
+        "updatedAt": "2025-12-20T09:00:00.000Z"
+      },
+      {
+        "id": 9,
+        "title": "Verify Clean Pages - RetirementAI & FwChange",
+        "description": "Portfolio pages verified clean.",
+        "status": "done",
+        "priority": "low",
+        "dependencies": ["1"],
+        "tags": ["varnaai", "portfolio", "verification"],
+        "subtasks": [],
+        "updatedAt": "2025-12-20T09:15:00.000Z"
+      },
+      {
+        "id": 10,
+        "title": "AIMARKETINGBG Homepage Cleanup",
+        "description": "aimarketingbg.com Homepage cleaned of fake testimonials and stats.",
+        "status": "done",
+        "priority": "medium",
+        "dependencies": [],
+        "tags": ["aimarketingbg", "homepage", "testimonials"],
+        "subtasks": [],
+        "updatedAt": "2025-12-20T10:30:00.000Z"
+      },
+      {
+        "id": 11,
+        "title": "AIMARKETINGBG Case Studies Page - Delete All",
+        "description": "Fake case studies page deleted.",
+        "status": "done",
+        "priority": "medium",
+        "dependencies": [],
+        "tags": ["aimarketingbg", "case-studies", "critical"],
+        "subtasks": [],
+        "updatedAt": "2025-12-20T10:30:00.000Z"
+      },
+      {
+        "id": 20,
+        "title": "ORDER BUSINESS CARDS - URGENT",
+        "description": "Design in Canva and order 500 business cards from local Varna printer. Spec in assets/business-card-design-spec.md. Must arrive by Jan 10 for Jan 26 networking event.",
+        "status": "in-progress",
+        "priority": "critical",
+        "dependencies": [],
+        "tags": ["jan2026", "materials", "urgent"],
+        "subtasks": [
+          {"title": "Create design in Canva", "status": "pending"},
+          {"title": "Find local Varna printer", "status": "pending"},
+          {"title": "Place order", "status": "pending"},
+          {"title": "Confirm delivery date", "status": "pending"}
+        ],
+        "createdAt": "2025-12-25T12:00:00.000Z",
+        "dueDate": "2025-12-27"
+      },
+      {
+        "id": 21,
+        "title": "Record C3 Compliance Demo Video",
+        "description": "Start C3 app locally (docker-compose up in D:\\VarnaAI\\dashboard), record 5-10 min screen recording showing key features: GDPR scan, document generation, compliance dashboard. Use OBS or Windows Game Bar.",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [],
+        "tags": ["jan2026", "demo", "video", "c3"],
+        "subtasks": [],
+        "createdAt": "2025-12-25T12:00:00.000Z"
+      },
+      {
+        "id": 22,
+        "title": "Record FwChange Demo Video",
+        "description": "Start FwChange app locally (docker-compose up in D:\\VarnaAI\\fwchange), record 5-10 min screen recording showing: firewall change workflow, JIRA integration, multi-vendor support, compliance validation.",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [],
+        "tags": ["jan2026", "demo", "video", "fwchange"],
+        "subtasks": [],
+        "createdAt": "2025-12-25T12:00:00.000Z"
+      },
+      {
+        "id": 23,
+        "title": "Record RetirementAI Demo Video",
+        "description": "Start RetirementAI app locally (docker-compose up in D:\\VarnaAI\\pension), record 5-10 min screen recording showing: portfolio dashboard, AI advisor chat, Trading212 integration, retirement projections.",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [],
+        "tags": ["jan2026", "demo", "video", "retirementai"],
+        "subtasks": [],
+        "createdAt": "2025-12-25T12:00:00.000Z"
+      },
+      {
+        "id": 24,
+        "title": "Create Demo Landing Pages + Upload to All-Inkl",
+        "description": "Create simple HTML pages with embedded demo videos for each app. Upload to All-Inkl subdomains: c3.varnaai.com, fwchange.varnaai.com, retirement.varnaai.com",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [21, 22, 23],
+        "tags": ["jan2026", "demo", "hosting"],
+        "subtasks": [
+          {"title": "Create HTML template with video embed", "status": "pending"},
+          {"title": "Upload C3 demo page", "status": "pending"},
+          {"title": "Upload FwChange demo page", "status": "pending"},
+          {"title": "Upload RetirementAI demo page", "status": "pending"},
+          {"title": "Configure DNS for subdomains", "status": "pending"}
+        ],
+        "createdAt": "2025-12-25T12:00:00.000Z"
+      },
+      {
+        "id": 25,
+        "title": "Fix VarnaAI.com Dead Demo Links",
+        "description": "Update demo buttons on varnaai.com homepage to point to new video demo subdomains (c3.varnaai.com, fwchange.varnaai.com, retirement.varnaai.com) instead of dead VPS links.",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [24],
+        "tags": ["jan2026", "varnaai", "links"],
+        "subtasks": [],
+        "createdAt": "2025-12-25T12:00:00.000Z"
+      },
+      {
+        "id": 26,
+        "title": "Apply LinkedIn Profile Changes",
+        "description": "Implement LinkedIn profile optimization from docs/marketing/linkedin-profile-optimization.md. Update headline, About section, add Classic Security EOOD experience, reorder skills.",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [],
+        "tags": ["jan2026", "linkedin", "branding"],
+        "subtasks": [],
+        "createdAt": "2025-12-25T12:00:00.000Z"
+      },
+      {
+        "id": 27,
+        "title": "Create Google Sheets CRM Dashboard",
+        "description": "Create Google Sheets with 5 tabs: Leads, Pipeline, Revenue, Activity, Monthly Reviews. Template spec in task_089.md. Use for tracking all January 2026 business development.",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [],
+        "tags": ["jan2026", "operations", "crm"],
+        "subtasks": [],
+        "createdAt": "2025-12-25T12:00:00.000Z",
+        "dueDate": "2026-01-05"
+      },
+      {
+        "id": 28,
+        "title": "Set Up Calendly for Discovery Calls",
+        "description": "Create Calendly account (free tier), configure 30-min discovery call slots, add link to email signature and LinkedIn profile.",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [],
+        "tags": ["jan2026", "operations", "sales"],
+        "subtasks": [],
+        "createdAt": "2025-12-25T12:00:00.000Z"
+      },
+      {
+        "id": 29,
+        "title": "Research 50 Target Companies in Varna",
+        "description": "Build target list of 50 qualified companies in Varna. Sources: VCCI directory, LinkedIn search, Bulgarian business registers. Focus: 10-500 employees, tech/finance/healthcare/manufacturing. Add to Google Sheets.",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [27],
+        "tags": ["jan2026", "networking", "research"],
+        "subtasks": [],
+        "createdAt": "2025-12-25T12:00:00.000Z",
+        "dueDate": "2026-01-10"
+      },
+      {
+        "id": 30,
+        "title": "Find January Networking Events in Varna",
+        "description": "Research and register for 1-2 networking events in Varna for late January. Check: VCCI events, tech meetups, business breakfast clubs. Target first event: Jan 26.",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [],
+        "tags": ["jan2026", "networking", "events"],
+        "subtasks": [],
+        "createdAt": "2025-12-25T12:00:00.000Z",
+        "dueDate": "2026-01-17"
+      },
+      {
+        "id": 31,
+        "title": "VCCI Membership Inquiry",
+        "description": "Contact Varna Chamber of Commerce & Industry about membership options. Benefits: networking events, business directory listing, credibility. See docs/strategy/C3/VCCI_Membership_Action_Plan.md",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [],
+        "tags": ["jan2026", "networking", "vcci"],
+        "subtasks": [],
+        "createdAt": "2025-12-25T12:00:00.000Z"
+      },
+      {
+        "id": 32,
+        "title": "Convert Security Checklist to PDF",
+        "description": "Convert docs/marketing/security-checklist-bulgarian-smes.md to downloadable PDF. Use Google Docs export. Set up email gate on varnaai.com for lead capture.",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [],
+        "tags": ["jan2026", "marketing", "lead-magnet"],
+        "subtasks": [],
+        "createdAt": "2025-12-25T12:00:00.000Z"
+      },
+      {
+        "id": 33,
+        "title": "Schedule 12 LinkedIn Posts for January",
+        "description": "Schedule all 12 LinkedIn posts from docs/marketing/linkedin-posts-january-2026.md. Use LinkedIn native scheduler. Posts go out Mon/Wed/Fri/Sun for 3 weeks.",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [26],
+        "tags": ["jan2026", "linkedin", "content"],
+        "subtasks": [],
+        "createdAt": "2025-12-25T12:00:00.000Z",
+        "dueDate": "2026-01-05"
+      },
+      {
+        "id": 34,
+        "title": "Networking Event Preparation",
+        "description": "Final prep for first networking event (target: Jan 26). Checklist: 50 business cards ready, elevator pitch practiced, case study stories memorized, Calendly on phone, professional attire. See task_092.md for full prep guide.",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [20, 30],
+        "tags": ["jan2026", "networking", "preparation"],
+        "subtasks": [
+          {"title": "Confirm business cards delivered", "status": "pending"},
+          {"title": "Practice 2-min elevator pitch", "status": "pending"},
+          {"title": "Memorize 3 case study stories (90 sec each)", "status": "pending"},
+          {"title": "Test C3 demo on phone", "status": "pending"},
+          {"title": "Prepare professional attire", "status": "pending"}
+        ],
+        "createdAt": "2025-12-25T12:00:00.000Z",
+        "dueDate": "2026-01-25"
+      },
+      {
+        "id": 12,
+        "title": "VarnaAI SEO: Fix Homepage Heading Structure",
+        "description": "DEFERRED - Focus on sales first. Rebuild H2/H3 hierarchy for SEO.",
+        "status": "deferred",
+        "priority": "low",
+        "dependencies": [],
+        "tags": ["varnaai", "seo", "on-page", "deferred"],
+        "subtasks": [],
+        "createdAt": "2025-12-23T10:00:00.000Z"
+      },
+      {
+        "id": 13,
+        "title": "VarnaAI SEO: Update Title Tag",
+        "description": "DEFERRED - Focus on sales first. Current title works fine for now.",
+        "status": "deferred",
+        "priority": "low",
+        "dependencies": [],
+        "tags": ["varnaai", "seo", "on-page", "deferred"],
+        "subtasks": [],
+        "createdAt": "2025-12-23T10:00:00.000Z"
+      },
+      {
+        "id": 14,
+        "title": "VarnaAI SEO: Fix Missing Image Alt Text",
+        "description": "DEFERRED - Focus on sales first.",
+        "status": "deferred",
+        "priority": "low",
+        "dependencies": [],
+        "tags": ["varnaai", "seo", "technical", "deferred"],
+        "subtasks": [],
+        "createdAt": "2025-12-23T10:00:00.000Z"
+      },
+      {
+        "id": 15,
+        "title": "VarnaAI SEO: Implement hreflang Tags",
+        "description": "DEFERRED - Focus on sales first.",
+        "status": "deferred",
+        "priority": "low",
+        "dependencies": [],
+        "tags": ["varnaai", "seo", "technical", "international", "deferred"],
+        "subtasks": [],
+        "createdAt": "2025-12-23T10:00:00.000Z"
+      },
+      {
+        "id": 16,
+        "title": "VarnaAI SEO: Audit Redirect Chain",
+        "description": "DEFERRED - Focus on sales first.",
+        "status": "deferred",
+        "priority": "low",
+        "dependencies": [],
+        "tags": ["varnaai", "seo", "technical", "performance", "deferred"],
+        "subtasks": [],
+        "createdAt": "2025-12-23T10:00:00.000Z"
+      },
+      {
+        "id": 17,
+        "title": "VarnaAI SEO: Reduce Unused CSS",
+        "description": "DEFERRED - Focus on sales first.",
+        "status": "deferred",
+        "priority": "low",
+        "dependencies": [],
+        "tags": ["varnaai", "seo", "performance", "mobile", "deferred"],
+        "subtasks": [],
+        "createdAt": "2025-12-23T10:00:00.000Z"
+      },
+      {
+        "id": 18,
+        "title": "VarnaAI SEO: Create Linkable Assets",
+        "description": "DEFERRED - Focus on sales first.",
+        "status": "deferred",
+        "priority": "low",
+        "dependencies": [],
+        "tags": ["varnaai", "seo", "content", "link-building", "deferred"],
+        "subtasks": [],
+        "createdAt": "2025-12-23T10:00:00.000Z"
+      },
+      {
+        "id": 19,
+        "title": "VarnaAI SEO: Link Building Outreach",
+        "description": "DEFERRED - Focus on sales first.",
+        "status": "deferred",
+        "priority": "low",
+        "dependencies": [18],
+        "tags": ["varnaai", "seo", "link-building", "marketing", "deferred"],
+        "subtasks": [],
+        "createdAt": "2025-12-23T10:00:00.000Z"
+      },
+      {
+        "id": 35,
+        "title": "Redesign C3 Compliance Dashboard",
+        "description": "Complete UI/UX overhaul of the C3 Compliance Command Center dashboard. Modern design refresh using new MCP stack for design-to-code workflow.",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [],
+        "tags": ["c3", "dashboard", "redesign", "ui-ux", "mcp"],
+        "subtasks": [
+          {"title": "Review current C3 dashboard design and identify pain points", "status": "pending"},
+          {"title": "Create new design mockups in Figma", "status": "pending"},
+          {"title": "Plan redesign using Figma MCP for design-to-code workflow", "status": "pending"},
+          {"title": "Implement new design with MCP stack (Playwright testing, Context7 docs)", "status": "pending"},
+          {"title": "Test and validate new dashboard", "status": "pending"}
+        ],
+        "createdAt": "2025-12-25T18:00:00.000Z"
+      }
+    ],
+    "metadata": {
+      "version": "2.0.0",
+      "lastModified": "2025-12-25T18:00:00.000Z",
+      "taskCount": 35,
+      "completedCount": 11,
+      "deferredCount": 8,
+      "pendingCount": 16,
+      "tags": ["master", "jan2026", "deferred-seo"]
     }
-  ],
-  "metadata": {
-    "version": "1.0.0",
-    "lastModified": "2025-12-20T10:30:00.000Z",
-    "taskCount": 11,
-    "completedCount": 11,
-    "tags": [
-      "master"
-    ]
   }
 }

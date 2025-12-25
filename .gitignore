@@ -27,6 +27,13 @@ node_modules/
 # Sensitive credentials
 wordpress/credentials.md
 vps/**/.env
+work/secrets/secrets.yaml
+**/.secrets/
+
+# Private folders (not for Scott)
+cv/
+mcp-bridge/
+ml_models/
 
 # Playwright screenshots (generated)
 .playwright-mcp/*.png

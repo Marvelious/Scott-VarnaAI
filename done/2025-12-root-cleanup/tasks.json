@@ -1,0 +1,889 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": "1",
+        "title": "Set up Supabase Database Schema and Migrations",
+        "description": "Establish the foundation database structure in Supabase with proper schema design and migration scripts for all required data models.",
+        "details": "1. Create a Supabase project and configure connection details\n2. Design and implement the following tables:\n   - users (id, email, password_hash, created_at, updated_at)\n   - websites (id, user_id, name, url, settings JSON, created_at, updated_at)\n   - seo_metrics (id, website_id, metrics_date, keyword_rankings JSON, backlink_data JSON, technical_scores JSON)\n   - content_analyses (id, website_id, page_url, content_text, analysis_results JSON, created_at)\n   - job_queue (id, job_type, status, data JSON, created_at, completed_at, error_message)\n   - ai_provider_configs (id, user_id, provider_name, api_key_encrypted, settings JSON)\n3. Set up Row Level Security (RLS) policies for multi-tenant security\n4. Create database indexes for performance optimization\n5. Implement database migrations using Supabase migrations\n6. Document the schema with entity relationship diagrams",
+        "testStrategy": "1. Write unit tests for database models and relationships\n2. Test RLS policies to ensure proper data isolation\n3. Verify migration scripts work correctly in both directions (up/down)\n4. Load test with sample data to verify query performance\n5. Validate foreign key constraints and cascading operations",
+        "priority": "high",
+        "dependencies": [],
+        "status": "in-progress",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Set up Supabase project and configure connection",
+            "description": "Create a new Supabase project, configure environment variables, and establish connection settings for both development and production environments.",
+            "dependencies": [],
+            "details": "1. Create a new Supabase project through the Supabase dashboard\n2. Record the project URL, API keys (anon and service_role)\n3. Set up environment variables in .env file for local development\n4. Configure connection pooling settings\n5. Set up development and production project links\n6. Test connection from local environment",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 2,
+            "title": "Design and implement core database tables",
+            "description": "Create the database tables with proper relationships, constraints, and data types according to the specified schema.",
+            "dependencies": [],
+            "details": "1. Implement users table with authentication fields\n2. Create websites table with foreign key to users\n3. Set up seo_metrics table with JSON fields for flexible data storage\n4. Implement content_analyses table with text search capabilities\n5. Create job_queue table with status tracking\n6. Set up ai_provider_configs table with encryption for API keys\n7. Establish all foreign key relationships and constraints",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 3,
+            "title": "Implement Row Level Security (RLS) policies",
+            "description": "Create and test Row Level Security policies to ensure multi-tenant data isolation and proper access control.",
+            "dependencies": [],
+            "details": "1. Enable RLS on all tables\n2. Create policies for users table (users can only access their own data)\n3. Implement policies for websites table (users can only see their own websites)\n4. Set up policies for seo_metrics (based on website ownership)\n5. Create policies for content_analyses (based on website ownership)\n6. Implement policies for job_queue (based on user ownership)\n7. Set up policies for ai_provider_configs (users can only access their own configs)\n8. Test all policies with different user contexts",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 4,
+            "title": "Create database indexes for performance optimization",
+            "description": "Design and implement appropriate indexes to optimize query performance for common access patterns.",
+            "dependencies": [],
+            "details": "1. Analyze common query patterns for each table\n2. Create index on users(email) for login lookups\n3. Add index on websites(user_id) for filtering websites by user\n4. Create index on seo_metrics(website_id, metrics_date) for time-series queries\n5. Add index on content_analyses(website_id, page_url) for content lookups\n6. Create index on job_queue(status, job_type) for filtering active jobs\n7. Test query performance with and without indexes\n8. Document index strategy",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 5,
+            "title": "Develop database migration scripts",
+            "description": "Create Supabase migration scripts for version control and deployment of the database schema.",
+            "dependencies": [],
+            "details": "1. Initialize Supabase CLI for local development\n2. Generate migration files for all tables and relationships\n3. Create up and down migration scripts\n4. Test migration process in development environment\n5. Document migration commands and process\n6. Set up migration workflow for CI/CD pipeline\n7. Create seed data scripts for development environment",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 6,
+            "title": "Document schema and create entity relationship diagrams",
+            "description": "Create comprehensive documentation of the database schema including entity relationship diagrams, table descriptions, and usage examples.",
+            "dependencies": [],
+            "details": "1. Create entity relationship diagram (ERD) showing all tables and relationships\n2. Document each table with field descriptions and constraints\n3. Document RLS policies and security model\n4. Create examples of common queries for each entity\n5. Document indexing strategy and performance considerations\n6. Create API documentation for database access\n7. Add schema documentation to project wiki or README",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          }
+        ],
+        "updatedAt": "2025-10-06T13:22:41.585Z"
+      },
+      {
+        "id": "2",
+        "title": "Implement User Authentication System",
+        "description": "Create a complete authentication system using Supabase Auth with session management, protected routes, and user profile functionality.",
+        "details": "1. Integrate Supabase Auth client in the frontend\n2. Create authentication API endpoints in Express backend:\n   - /auth/register\n   - /auth/login\n   - /auth/logout\n   - /auth/refresh-token\n   - /auth/reset-password\n3. Implement protected route middleware for Express\n4. Create React authentication context using Zustand:\n```typescript\ninterface AuthState {\n  user: User | null;\n  session: Session | null;\n  isLoading: boolean;\n  login: (email: string, password: string) => Promise<void>;\n  logout: () => Promise<void>;\n  // Additional methods\n}\n\nexport const useAuthStore = create<AuthState>((set) => ({\n  user: null,\n  session: null,\n  isLoading: true,\n  login: async (email, password) => { /* implementation */ },\n  logout: async () => { /* implementation */ },\n  // Additional methods\n}));\n```\n5. Add protected route components in React\n6. Implement session persistence and token refresh logic\n7. Create user profile management UI",
+        "testStrategy": "1. Unit test authentication endpoints with Jest\n2. Test protected routes with authenticated and unauthenticated requests\n3. Write frontend tests for auth components using Vitest and Testing Library\n4. Test token refresh and session expiration scenarios\n5. Verify error handling for invalid credentials and server errors",
+        "priority": "high",
+        "dependencies": [
+          "1"
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Integrate Supabase Auth Client",
+            "description": "Set up and configure Supabase Auth client in the frontend application for user authentication.",
+            "dependencies": [],
+            "details": "1. Install Supabase client libraries\n2. Configure Supabase client with project credentials\n3. Implement basic auth methods (signUp, signIn, signOut)\n4. Set up auth state listeners\n5. Create utility functions for auth operations\n6. Add TypeScript interfaces for auth types\n7. Implement error handling for auth operations",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 2,
+            "title": "Create Authentication API Endpoints",
+            "description": "Develop Express backend endpoints for user authentication operations including registration, login, logout, token refresh, and password reset.",
+            "dependencies": [],
+            "details": "1. Create route handlers for each endpoint:\n   - /auth/register\n   - /auth/login\n   - /auth/logout\n   - /auth/refresh-token\n   - /auth/reset-password\n2. Implement request validation using a validation library\n3. Add error handling for authentication failures\n4. Set up proper HTTP status codes and response formats\n5. Implement rate limiting for auth endpoints\n6. Add logging for authentication attempts\n7. Create tests for each endpoint",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 3,
+            "title": "Implement Protected Route Middleware",
+            "description": "Create middleware for Express to protect routes that require authentication and handle unauthorized access attempts.",
+            "dependencies": [],
+            "details": "1. Create middleware to verify JWT tokens\n2. Implement role-based access control\n3. Add user context to request objects\n4. Create custom error responses for unauthorized requests\n5. Handle token expiration scenarios\n6. Add bypass options for public routes\n7. Write tests for the middleware with various scenarios",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 4,
+            "title": "Create React Authentication Context with Zustand",
+            "description": "Implement a global authentication state management system using Zustand to handle user sessions across the React application.",
+            "dependencies": [],
+            "details": "1. Set up Zustand store with AuthState interface\n2. Implement core authentication methods:\n   - login\n   - logout\n   - register\n   - resetPassword\n   - refreshToken\n3. Add loading states for auth operations\n4. Implement error handling and messaging\n5. Create hooks for accessing auth state\n6. Add persistence layer for session storage\n7. Write tests for the auth store",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 5,
+            "title": "Implement Protected Routes in React",
+            "description": "Create components to handle protected routes in the React frontend that redirect unauthenticated users and manage access control.",
+            "dependencies": [],
+            "details": "1. Create a ProtectedRoute component wrapper\n2. Implement redirect logic for unauthenticated users\n3. Add role-based route protection\n4. Create loading states during authentication checks\n5. Handle deep linking and return URLs after login\n6. Implement route-level permissions\n7. Write tests for protected routes with various auth states",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 6,
+            "title": "Implement Session Persistence and Token Refresh",
+            "description": "Create a system to persist user sessions across page reloads and automatically refresh authentication tokens before they expire.",
+            "dependencies": [],
+            "details": "1. Implement token storage in secure cookies or localStorage\n2. Create automatic token refresh mechanism\n3. Handle session timeout and expiration\n4. Implement concurrent request handling during token refresh\n5. Add session recovery after connection loss\n6. Create logout mechanisms for all devices\n7. Test token refresh scenarios including expired tokens",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 7,
+            "title": "Create User Profile Management UI",
+            "description": "Develop user interface components for viewing and editing user profile information with proper validation and error handling.",
+            "dependencies": [],
+            "details": "1. Create user profile page component\n2. Implement form for editing profile information\n3. Add avatar upload and management\n4. Create password change functionality\n5. Implement email verification workflow\n6. Add account deletion option\n7. Create responsive design for profile components\n8. Implement form validation and error handling",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "title": "Create Express API Structure with Socket.IO Integration",
+        "description": "Establish the core Express API architecture with proper routing, middleware, error handling, and Socket.IO for real-time updates.",
+        "details": "1. Set up Express server with TypeScript:\n```typescript\nimport express from 'express';\nimport http from 'http';\nimport { Server as SocketIOServer } from 'socket.io';\nimport cors from 'cors';\nimport helmet from 'helmet';\n\nconst app = express();\nconst server = http.createServer(app);\nconst io = new SocketIOServer(server, {\n  cors: {\n    origin: process.env.FRONTEND_URL,\n    methods: ['GET', 'POST'],\n    credentials: true\n  }\n});\n```\n2. Implement middleware for security, logging, and error handling\n3. Create API route structure:\n   - /api/health - Health check endpoint\n   - /api/auth - Authentication routes\n   - /api/websites - Website management\n   - /api/seo - SEO metrics and analysis\n   - /api/content - Content optimization\n   - /api/jobs - Background job management\n4. Set up Socket.IO event handlers for real-time updates:\n```typescript\nio.on('connection', (socket) => {\n  console.log('Client connected:', socket.id);\n  \n  socket.on('join-website-room', (websiteId) => {\n    socket.join(`website-${websiteId}`);\n  });\n  \n  socket.on('disconnect', () => {\n    console.log('Client disconnected:', socket.id);\n  });\n});\n\n// Emit updates to clients\nexport const emitWebsiteUpdate = (websiteId, data) => {\n  io.to(`website-${websiteId}`).emit('website-update', data);\n};\n```\n5. Implement error handling middleware\n6. Create API documentation with Swagger/OpenAPI",
+        "testStrategy": "1. Write unit tests for API endpoints using Jest and Supertest\n2. Test Socket.IO connections and event handling\n3. Verify API error handling and response formats\n4. Test rate limiting and security middleware\n5. Create integration tests for end-to-end API flows",
+        "priority": "high",
+        "dependencies": [
+          "1"
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Configure Express Server with Middleware",
+            "description": "Set up the Express server with TypeScript and configure essential middleware for security, logging, and basic functionality.",
+            "dependencies": [],
+            "details": "1. Initialize Express server with TypeScript\n2. Configure CORS, Helmet, and other security middleware\n3. Set up request logging with Morgan or Winston\n4. Implement body parsing middleware\n5. Configure environment variables and config management\n6. Create server startup and shutdown handlers",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 2,
+            "title": "Implement API Route Structure",
+            "description": "Create the core API route structure with proper organization, controllers, and basic endpoint implementations.",
+            "dependencies": [],
+            "details": "1. Set up route directory structure\n2. Implement health check endpoint at /api/health\n3. Create route files for auth, websites, SEO, content, and jobs\n4. Implement basic controller structure for each route category\n5. Set up request validation using Joi or Zod\n6. Implement route registration in main app file",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 3,
+            "title": "Integrate Socket.IO for Real-time Updates",
+            "description": "Set up Socket.IO server integration with proper event handlers, room management, and client communication patterns.",
+            "dependencies": [],
+            "details": "1. Configure Socket.IO server with CORS settings\n2. Implement connection and disconnection handlers\n3. Create room management for website-specific updates\n4. Develop event emitter utility functions\n5. Implement authentication for socket connections\n6. Set up event documentation and type definitions",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 4,
+            "title": "Develop Error Handling Middleware",
+            "description": "Create comprehensive error handling middleware to manage API errors, validation failures, and unexpected exceptions.",
+            "dependencies": [],
+            "details": "1. Create custom error classes for different error types\n2. Implement global error handling middleware\n3. Set up validation error formatting\n4. Create consistent error response structure\n5. Implement logging for errors\n6. Add request ID tracking for error correlation",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 5,
+            "title": "Create API Documentation with Swagger/OpenAPI",
+            "description": "Implement API documentation using Swagger/OpenAPI specifications with proper endpoint descriptions, request/response examples, and authentication details.",
+            "dependencies": [],
+            "details": "1. Set up Swagger/OpenAPI dependencies\n2. Create base documentation structure\n3. Document all API endpoints with parameters and responses\n4. Add authentication documentation\n5. Implement Swagger UI for interactive documentation\n6. Create documentation generation script for CI/CD",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 6,
+            "title": "Set Up API Testing Framework",
+            "description": "Establish a testing framework for the API with unit tests, integration tests, and Socket.IO testing capabilities.",
+            "dependencies": [],
+            "details": "1. Configure Jest and Supertest for API testing\n2. Create test utilities and helpers\n3. Implement unit tests for controllers and services\n4. Set up Socket.IO client for testing real-time features\n5. Create test database setup and teardown scripts\n6. Implement CI/CD integration for automated testing",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "title": "Set up Frontend Scaffolding with React 19, Vite, and Routing",
+        "description": "Create the frontend application structure using React 19, Vite, TypeScript, and implement routing with proper layouts and navigation.",
+        "details": "1. Initialize a new Vite project with React 19 and TypeScript:\n```bash\nnpm create vite@latest frontend -- --template react-ts\n```\n2. Set up project structure:\n```\nsrc/\n  assets/\n  components/\n    common/\n    dashboard/\n    seo/\n    content/\n  hooks/\n  pages/\n  services/\n  store/\n  types/\n  utils/\n```\n3. Configure Tailwind CSS:\n```bash\nnpm install -D tailwindcss postcss autoprefixer\nnpx tailwindcss init -p\n```\n4. Install and set up React Router:\n```typescript\nimport { createBrowserRouter, RouterProvider } from 'react-router-dom';\n\nconst router = createBrowserRouter([\n  {\n    path: '/',\n    element: <RootLayout />,\n    children: [\n      { index: true, element: <Dashboard /> },\n      { path: 'websites', element: <Websites /> },\n      { path: 'websites/:id', element: <WebsiteDetail /> },\n      { path: 'content-optimization', element: <ContentOptimization /> },\n      { path: 'competitive-analysis', element: <CompetitiveAnalysis /> },\n      { path: 'settings', element: <Settings /> },\n    ],\n  },\n  {\n    path: '/auth',\n    element: <AuthLayout />,\n    children: [\n      { path: 'login', element: <Login /> },\n      { path: 'register', element: <Register /> },\n      { path: 'forgot-password', element: <ForgotPassword /> },\n    ],\n  },\n]);\n```\n5. Set up Zustand for state management:\n```typescript\nimport { create } from 'zustand';\n\ninterface AppState {\n  theme: 'light' | 'dark';\n  toggleTheme: () => void;\n}\n\nexport const useAppStore = create<AppState>((set) => ({\n  theme: 'light',\n  toggleTheme: () => set((state) => ({ theme: state.theme === 'light' ? 'dark' : 'light' })),\n}));\n```\n6. Configure API service with Axios\n7. Set up Socket.IO client for real-time updates",
+        "testStrategy": "1. Test component rendering with Vitest and Testing Library\n2. Verify routing functionality and protected routes\n3. Test Zustand store state management\n4. Validate responsive layouts across device sizes\n5. Test Socket.IO client connection and event handling",
+        "priority": "high",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Initialize Vite Project with React 19 and TypeScript",
+            "description": "Set up the initial project structure using Vite with React 19 and TypeScript configuration.",
+            "dependencies": [],
+            "details": "1. Create a new Vite project with React and TypeScript template\n2. Install essential dependencies\n3. Configure TypeScript settings\n4. Set up ESLint and Prettier\n5. Create initial project structure with folders for assets, components, hooks, etc.\n6. Configure Git repository and .gitignore",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 2,
+            "title": "Configure Tailwind CSS and Base Styling",
+            "description": "Implement and configure Tailwind CSS for styling, including theme setup and responsive design utilities.",
+            "dependencies": [],
+            "details": "1. Install Tailwind CSS, PostCSS, and Autoprefixer\n2. Create and configure tailwind.config.js and postcss.config.js\n3. Set up base CSS file with Tailwind directives\n4. Configure theme variables (colors, fonts, spacing)\n5. Create utility classes for common styling patterns\n6. Set up dark mode configuration",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 3,
+            "title": "Implement React Router with Layout Structure",
+            "description": "Set up routing with React Router, including layout components and navigation structure.",
+            "dependencies": [],
+            "details": "1. Install react-router-dom\n2. Create layout components (RootLayout, AuthLayout)\n3. Implement router configuration with createBrowserRouter\n4. Create placeholder page components for all routes\n5. Set up navigation components (Navbar, Sidebar)\n6. Implement protected routes functionality",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 4,
+            "title": "Set up State Management with Zustand",
+            "description": "Implement global state management using Zustand for theme, user preferences, and application state.",
+            "dependencies": [],
+            "details": "1. Install Zustand\n2. Create store structure with separate stores for different concerns\n3. Implement theme toggle functionality\n4. Set up persistent storage for user preferences\n5. Create custom hooks for accessing store state\n6. Add TypeScript types for all store interfaces",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 5,
+            "title": "Configure API Services and Socket.IO Integration",
+            "description": "Set up API service layer with Axios and implement Socket.IO for real-time updates.",
+            "dependencies": [],
+            "details": "1. Install Axios and Socket.IO client\n2. Create API service with base configuration\n3. Implement API interceptors for authentication and error handling\n4. Set up Socket.IO client connection and event handlers\n5. Create service modules for different API endpoints\n6. Implement real-time data update patterns with Socket.IO",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          }
+        ]
+      },
+      {
+        "id": "5",
+        "title": "Implement SEO Analytics Dashboard with Real-time Updates",
+        "description": "Create the main SEO analytics dashboard with comprehensive metrics display, charts, and real-time updates via WebSockets.",
+        "details": "1. Create backend services for SEO metrics collection and storage:\n```typescript\nexport async function getSEOMetrics(websiteId: string) {\n  const { data, error } = await supabase\n    .from('seo_metrics')\n    .select('*')\n    .eq('website_id', websiteId)\n    .order('metrics_date', { ascending: false })\n    .limit(30);\n    \n  if (error) throw new Error(error.message);\n  return data;\n}\n```\n2. Implement API endpoints for fetching SEO data\n3. Create dashboard UI components:\n   - Overview cards for key metrics\n   - Keyword rankings chart\n   - Backlink analysis section\n   - Technical SEO scores visualization\n   - Traffic trends graph\n4. Implement WebSocket connection for real-time updates:\n```typescript\nimport { useEffect } from 'react';\nimport { socket } from '../services/socket';\nimport { useWebsiteStore } from '../store/websiteStore';\n\nexport function useSEOUpdates(websiteId: string) {\n  const { updateMetrics } = useWebsiteStore();\n  \n  useEffect(() => {\n    socket.emit('join-website-room', websiteId);\n    \n    socket.on('website-update', (data) => {\n      updateMetrics(data);\n    });\n    \n    return () => {\n      socket.off('website-update');\n      socket.emit('leave-website-room', websiteId);\n    };\n  }, [websiteId, updateMetrics]);\n}\n```\n5. Create data visualization components using chart libraries\n6. Implement filtering and date range selection\n7. Add export functionality for reports",
+        "testStrategy": "1. Test API endpoints for SEO metrics retrieval\n2. Verify WebSocket connections and real-time updates\n3. Test dashboard components rendering with various data scenarios\n4. Validate chart and graph visualizations\n5. Test responsiveness across device sizes\n6. Verify data filtering and export functionality",
+        "priority": "high",
+        "dependencies": [
+          "1",
+          "3",
+          "4"
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Implement Backend SEO Metrics Services",
+            "description": "Create and enhance backend services for collecting, processing, and storing SEO metrics data in Supabase.",
+            "dependencies": [],
+            "details": "1. Implement the getSEOMetrics function for retrieving website metrics\n2. Create services for keyword rankings data collection\n3. Develop backlink analysis data processing\n4. Implement technical SEO score calculation services\n5. Create traffic trends data aggregation functions\n6. Set up data normalization utilities for consistent metrics\n7. Implement caching mechanisms for frequently accessed metrics",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 2,
+            "title": "Develop SEO Analytics API Endpoints",
+            "description": "Create RESTful API endpoints for fetching various SEO metrics and analytics data.",
+            "dependencies": [
+              "5.1"
+            ],
+            "details": "1. Create endpoint for retrieving overall SEO metrics summary\n2. Implement keyword rankings data endpoint\n3. Develop backlink analysis data endpoint\n4. Create technical SEO scores endpoint\n5. Implement traffic trends data endpoint\n6. Add historical data comparison endpoints\n7. Create documentation for all API endpoints using Swagger/OpenAPI",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 3,
+            "title": "Build Dashboard UI Core Components",
+            "description": "Develop the main UI components for the SEO analytics dashboard including layout, cards, and containers.",
+            "dependencies": [
+              "5.2"
+            ],
+            "details": "1. Create responsive dashboard layout grid system\n2. Implement overview metric cards with dynamic data display\n3. Build section containers for different metric categories\n4. Develop dashboard header with website selector and date controls\n5. Create loading states and skeleton screens\n6. Implement error handling and empty state displays\n7. Build responsive design for mobile, tablet and desktop views",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 4,
+            "title": "Implement Data Visualization Components",
+            "description": "Create chart and graph components for visualizing SEO metrics using a charting library.",
+            "dependencies": [
+              "5.3"
+            ],
+            "details": "1. Implement keyword rankings line chart component\n2. Create backlink analysis bar/pie charts\n3. Develop technical SEO scores radar/spider chart\n4. Build traffic trends area chart with comparison capability\n5. Implement heatmap for keyword position changes\n6. Create custom tooltips for detailed data inspection\n7. Ensure all charts are responsive and accessible",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 5,
+            "title": "Integrate WebSocket for Real-time Updates",
+            "description": "Implement WebSocket connection and handlers for receiving and processing real-time SEO metric updates.",
+            "dependencies": [
+              "5.1",
+              "5.2"
+            ],
+            "details": "1. Set up WebSocket connection management with reconnection logic\n2. Implement room-based subscription for website-specific updates\n3. Create data handlers for different types of real-time updates\n4. Develop UI indicators for real-time data changes\n5. Implement optimistic UI updates with server confirmation\n6. Add debouncing for high-frequency updates\n7. Create fallback mechanism for when WebSockets are unavailable",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 6,
+            "title": "Implement Filtering and Date Range Selection",
+            "description": "Create filtering capabilities and date range selection for the SEO dashboard to allow users to analyze specific time periods.",
+            "dependencies": [
+              "5.3",
+              "5.4"
+            ],
+            "details": "1. Build date range picker component with preset options\n2. Implement filter controls for metric types and categories\n3. Create query parameter handling for shareable filtered views\n4. Develop filter state management using Zustand\n5. Implement API integration for filtered data requests\n6. Add visual indicators for active filters\n7. Create filter reset and default view functionality",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 7,
+            "title": "Develop Report Export Functionality",
+            "description": "Implement features to export SEO analytics data in various formats (PDF, CSV, Excel) for reporting purposes.",
+            "dependencies": [
+              "5.3",
+              "5.4",
+              "5.6"
+            ],
+            "details": "1. Create PDF report generation service using a PDF library\n2. Implement CSV data export functionality\n3. Develop Excel/XLSX export with formatting\n4. Build export configuration UI for customizing reports\n5. Implement scheduled/automated report generation\n6. Create email delivery option for exported reports\n7. Add branding and customization options for exported reports",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          }
+        ]
+      },
+      {
+        "id": "6",
+        "title": "Build AI-Powered Content Optimization Service",
+        "description": "Implement the AI content optimization service with support for multiple AI providers (OpenAI, Anthropic Claude, and local LLMs) for analyzing and improving content.",
+        "details": "1. Create an AI service factory that supports multiple providers:\n```typescript\ninterface AIProvider {\n  analyzeContent(content: string, keywords: string[]): Promise<ContentAnalysis>;\n  generateSuggestions(content: string, analysis: ContentAnalysis): Promise<ContentSuggestions>;\n}\n\nclass OpenAIProvider implements AIProvider {\n  constructor(private apiKey: string) {}\n  \n  async analyzeContent(content: string, keywords: string[]): Promise<ContentAnalysis> {\n    // Implementation using OpenAI API\n  }\n  \n  async generateSuggestions(content: string, analysis: ContentAnalysis): Promise<ContentSuggestions> {\n    // Implementation using OpenAI API\n  }\n}\n\nclass AnthropicProvider implements AIProvider {\n  // Similar implementation for Claude API\n}\n\nclass OllamaProvider implements AIProvider {\n  // Implementation for local LLM via Ollama\n}\n\nexport function createAIProvider(type: 'openai' | 'anthropic' | 'ollama', config: any): AIProvider {\n  switch (type) {\n    case 'openai': return new OpenAIProvider(config.apiKey);\n    case 'anthropic': return new AnthropicProvider(config.apiKey);\n    case 'ollama': return new OllamaProvider(config.endpoint);\n    default: throw new Error(`Unsupported AI provider: ${type}`);\n  }\n}\n```\n2. Implement content analysis algorithms:\n   - Keyword density analysis\n   - Readability scoring\n   - Semantic relevance checking\n   - Content structure evaluation\n3. Create API endpoints for content optimization\n4. Build UI components for content input and analysis display\n5. Implement provider selection and configuration\n6. Store optimization history in Supabase\n7. Add caching for AI responses to reduce API costs",
+        "testStrategy": "1. Test AI provider integrations with mock responses\n2. Verify content analysis algorithms with various content samples\n3. Test provider switching functionality\n4. Validate error handling for API failures\n5. Test caching mechanisms\n6. Verify optimization history storage and retrieval\n7. Test UI components for content input and results display",
+        "priority": "high",
+        "dependencies": [
+          "1",
+          "3",
+          "4"
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Implement AI Provider Factory Interface",
+            "description": "Create the core AIProvider interface and factory function that will support multiple AI providers.",
+            "dependencies": [],
+            "details": "Implement the AIProvider interface with required methods and the factory function that instantiates the appropriate provider based on configuration. Include proper error handling and type definitions.",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 2,
+            "title": "Develop OpenAI Provider Implementation",
+            "description": "Build the OpenAI provider that implements the AIProvider interface for content analysis and suggestions.",
+            "dependencies": [
+              "6.1"
+            ],
+            "details": "Implement the OpenAIProvider class with API integration for content analysis and suggestion generation. Handle rate limiting, error cases, and proper prompt engineering for optimal results.",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 3,
+            "title": "Develop Anthropic Claude Provider Implementation",
+            "description": "Build the Anthropic Claude provider that implements the AIProvider interface.",
+            "dependencies": [
+              "6.1"
+            ],
+            "details": "Implement the AnthropicProvider class with Claude API integration. Ensure proper handling of Claude's specific requirements and limitations while maintaining consistent output format with other providers.",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 4,
+            "title": "Develop Local LLM Provider via Ollama",
+            "description": "Implement the Ollama-based provider for local LLM integration.",
+            "dependencies": [
+              "6.1"
+            ],
+            "details": "Create the OllamaProvider class that connects to locally hosted models through Ollama. Handle model selection, parameter configuration, and ensure consistent output formatting.",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 5,
+            "title": "Implement Content Analysis Algorithms",
+            "description": "Build the core content analysis algorithms for keyword density, readability, semantic relevance, and structure evaluation.",
+            "dependencies": [
+              "6.1"
+            ],
+            "details": "Develop algorithms for analyzing content quality including keyword density calculation, readability scoring (Flesch-Kincaid, etc.), semantic relevance checking against target keywords, and content structure evaluation.",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 6,
+            "title": "Create API Endpoints for Content Optimization",
+            "description": "Develop the REST API endpoints for content analysis and optimization services.",
+            "dependencies": [
+              "6.1",
+              "6.2",
+              "6.3",
+              "6.4",
+              "6.5"
+            ],
+            "details": "Implement Express routes for content submission, analysis, and optimization suggestions. Include endpoints for provider configuration and selection.",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 7,
+            "title": "Build UI Components for Content Analysis",
+            "description": "Develop the frontend components for content input, analysis display, and provider selection.",
+            "dependencies": [
+              "6.6"
+            ],
+            "details": "Create React components for content submission form, analysis results visualization, optimization suggestions display, and provider configuration interface.",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 8,
+            "title": "Implement Response Caching System",
+            "description": "Build a caching system for AI responses to reduce API costs and improve performance.",
+            "dependencies": [
+              "6.2",
+              "6.3",
+              "6.4",
+              "6.6"
+            ],
+            "details": "Develop a caching mechanism that stores AI analysis results and suggestions based on content fingerprinting. Implement cache invalidation strategies and storage in Supabase.",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          }
+        ]
+      },
+      {
+        "id": "7",
+        "title": "Implement Background Job Processing with BullMQ",
+        "description": "Set up the background job processing system using BullMQ and Redis for handling long-running SEO tasks asynchronously with proper monitoring and error handling.",
+        "details": "1. Set up Redis and BullMQ:\n```typescript\nimport { Queue, Worker, QueueScheduler } from 'bullmq';\n\nconst connection = {\n  host: process.env.REDIS_HOST || 'localhost',\n  port: parseInt(process.env.REDIS_PORT || '6379'),\n};\n\n// Create queues for different job types\nexport const seoAnalysisQueue = new Queue('seo-analysis', { connection });\nexport const contentOptimizationQueue = new Queue('content-optimization', { connection });\nexport const backlinksAnalysisQueue = new Queue('backlinks-analysis', { connection });\n\n// Optional flag to disable Redis in development\nif (process.env.DISABLE_REDIS !== 'true') {\n  // Set up queue scheduler for delayed jobs\n  const seoAnalysisScheduler = new QueueScheduler('seo-analysis', { connection });\n  // Additional schedulers...\n}\n```\n2. Implement job processors:\n```typescript\nconst seoAnalysisWorker = new Worker('seo-analysis', async (job) => {\n  try {\n    const { websiteId } = job.data;\n    \n    // Update job progress\n    await job.updateProgress(10);\n    \n    // Perform SEO analysis\n    const results = await performSEOAnalysis(websiteId);\n    \n    // Store results in database\n    await storeSEOResults(websiteId, results);\n    \n    // Emit real-time update\n    emitWebsiteUpdate(websiteId, { type: 'seo-analysis', data: results });\n    \n    return { success: true, results };\n  } catch (error) {\n    console.error(`Job ${job.id} failed:`, error);\n    throw error; // Rethrow to mark job as failed\n  }\n}, { connection });\n```\n3. Create API endpoints for job management:\n   - POST /api/jobs - Create new job\n   - GET /api/jobs/:id - Get job status\n   - DELETE /api/jobs/:id - Cancel job\n4. Implement job status tracking in database\n5. Create UI for job monitoring and progress display\n6. Add retry logic and error handling\n7. Implement graceful shutdown handling",
+        "testStrategy": "1. Test job queue creation and processing\n2. Verify job progress tracking and status updates\n3. Test error handling and retry mechanisms\n4. Validate job cancellation functionality\n5. Test graceful shutdown handling\n6. Verify database storage of job results\n7. Test UI components for job monitoring",
+        "priority": "medium",
+        "dependencies": [
+          "1",
+          "3"
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Set up Redis and BullMQ Configuration",
+            "description": "Configure Redis connection and set up BullMQ queues for different job types with proper environment variable handling.",
+            "dependencies": [],
+            "details": "1. Install required packages: redis, bullmq\n2. Create a connection configuration file with environment variable support\n3. Implement queue creation for different job types (seo-analysis, content-optimization, backlinks-analysis)\n4. Add configuration for development mode with optional Redis disabling\n5. Set up queue schedulers for delayed jobs\n6. Create a central export file for queue instances",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 2,
+            "title": "Implement Job Processors for SEO Tasks",
+            "description": "Create worker implementations for processing different types of SEO-related background jobs.",
+            "dependencies": [
+              "7.1"
+            ],
+            "details": "1. Create worker implementation for SEO analysis jobs\n2. Implement content optimization job processor\n3. Build backlinks analysis worker\n4. Add progress tracking to all job processors\n5. Implement result storage in database\n6. Add real-time update emission via WebSockets\n7. Create job processor factory for easier testing and maintenance",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 3,
+            "title": "Create API Endpoints for Job Management",
+            "description": "Develop REST API endpoints for creating, monitoring, and managing background jobs.",
+            "dependencies": [
+              "7.1",
+              "7.2"
+            ],
+            "details": "1. Create POST /api/jobs endpoint for job creation\n2. Implement GET /api/jobs/:id for job status retrieval\n3. Add DELETE /api/jobs/:id for job cancellation\n4. Create GET /api/jobs endpoint for listing all jobs with filtering\n5. Implement job prioritization in the API\n6. Add validation middleware for job creation payloads\n7. Create documentation for the job management API",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 4,
+            "title": "Implement Job Status Tracking in Database",
+            "description": "Design and implement the database schema and services for tracking job status, progress, and results.",
+            "dependencies": [
+              "7.1",
+              "7.2"
+            ],
+            "details": "1. Create database schema for job tracking\n2. Implement service for creating job records\n3. Add methods for updating job status and progress\n4. Create functions for storing job results\n5. Implement job history and analytics queries\n6. Add cleanup logic for completed jobs\n7. Create indexes for efficient job querying",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 5,
+            "title": "Develop UI for Job Monitoring and Progress Display",
+            "description": "Create frontend components for displaying job status, progress, and results with real-time updates.",
+            "dependencies": [
+              "7.3",
+              "7.4"
+            ],
+            "details": "1. Create job status indicator component\n2. Implement progress bar with percentage display\n3. Build job details panel showing all job information\n4. Create job listing component with filtering and sorting\n5. Implement real-time updates using WebSockets\n6. Add job action buttons (cancel, retry, etc.)\n7. Create job results visualization components",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 6,
+            "title": "Implement Error Handling and Retry Logic",
+            "description": "Add robust error handling, retry mechanisms, and graceful shutdown handling for the job processing system.",
+            "dependencies": [
+              "7.2"
+            ],
+            "details": "1. Implement configurable retry logic for failed jobs\n2. Create error logging and monitoring system\n3. Add dead-letter queue for persistently failing jobs\n4. Implement graceful shutdown handling for workers\n5. Create error notification system for critical failures\n6. Add job timeout handling\n7. Implement circuit breaker pattern for external service dependencies",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          }
+        ]
+      },
+      {
+        "id": "8",
+        "title": "Develop Multi-Site Management System",
+        "description": "Extend the platform to support managing multiple websites with site grouping, comparison features, and bulk operations across sites.",
+        "details": "1. Enhance database models to support multi-site relationships\n2. Create website management API endpoints:\n   - GET /api/websites - List all websites\n   - POST /api/websites - Add new website\n   - PUT /api/websites/:id - Update website\n   - DELETE /api/websites/:id - Remove website\n   - POST /api/websites/groups - Create site group\n   - POST /api/websites/bulk-operation - Perform bulk action\n3. Implement site grouping functionality:\n```typescript\ninterface WebsiteGroup {\n  id: string;\n  name: string;\n  description?: string;\n  websiteIds: string[];\n  userId: string;\n}\n\nexport async function createWebsiteGroup(group: Omit<WebsiteGroup, 'id'>) {\n  const { data, error } = await supabase\n    .from('website_groups')\n    .insert(group)\n    .select();\n    \n  if (error) throw new Error(error.message);\n  return data[0];\n}\n```\n4. Build UI components for website management:\n   - Website list view\n   - Add/edit website forms\n   - Site grouping interface\n   - Bulk operation controls\n5. Implement site comparison functionality\n6. Create cross-site analytics views\n7. Add bulk operations for common tasks",
+        "testStrategy": "1. Test website CRUD operations\n2. Verify site grouping functionality\n3. Test bulk operations across multiple sites\n4. Validate site comparison features\n5. Test cross-site analytics data aggregation\n6. Verify proper data isolation between users\n7. Test UI components for multi-site management",
+        "priority": "medium",
+        "dependencies": [
+          "1",
+          "2",
+          "5"
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Enhance Database Models for Multi-Site Relationships",
+            "description": "Extend the database schema to support relationships between websites, users, and groups with proper foreign key constraints and indexes.",
+            "dependencies": [],
+            "details": "1. Create new tables for websites and website groups\n2. Add foreign key relationships to user tables\n3. Design schema for site comparison data storage\n4. Implement indexes for optimized query performance\n5. Create migration scripts for database changes\n6. Update Supabase types for TypeScript integration",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 2,
+            "title": "Implement Website Management API Endpoints",
+            "description": "Develop the REST API endpoints for CRUD operations on websites and website groups.",
+            "dependencies": [
+              "8.1"
+            ],
+            "details": "1. Create GET /api/websites endpoint with filtering and pagination\n2. Implement POST /api/websites for adding new websites\n3. Build PUT /api/websites/:id for updating website details\n4. Develop DELETE /api/websites/:id with cascade options\n5. Create POST /api/websites/groups endpoint for site grouping\n6. Implement GET /api/websites/groups for retrieving groups\n7. Add proper validation and error handling for all endpoints",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 3,
+            "title": "Build Site Grouping Functionality",
+            "description": "Implement the core functionality for creating, managing, and utilizing website groups.",
+            "dependencies": [
+              "8.1",
+              "8.2"
+            ],
+            "details": "1. Implement the createWebsiteGroup function as specified\n2. Create functions for updating and deleting website groups\n3. Develop logic for adding/removing websites from groups\n4. Implement permission checks for group operations\n5. Create utility functions for group-based operations\n6. Add data validation for group operations",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 4,
+            "title": "Develop UI Components for Website Management",
+            "description": "Create the frontend components needed for managing multiple websites, including list views, forms, and group management interfaces.",
+            "dependencies": [
+              "8.1",
+              "8.2",
+              "8.3"
+            ],
+            "details": "1. Build website list view component with sorting and filtering\n2. Create add/edit website form components\n3. Implement site grouping interface with drag-and-drop functionality\n4. Develop website detail view component\n5. Create website selection component for bulk operations\n6. Build responsive layouts for all website management components\n7. Implement proper loading and error states",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 5,
+            "title": "Implement Site Comparison Functionality",
+            "description": "Create features that allow users to compare metrics and performance across multiple websites.",
+            "dependencies": [
+              "8.1",
+              "8.2",
+              "8.4"
+            ],
+            "details": "1. Design comparison algorithm for key metrics\n2. Create API endpoint for fetching comparison data\n3. Build UI components for visual comparison (charts, tables)\n4. Implement filters for comparison criteria\n5. Add export functionality for comparison results\n6. Create saved comparison feature for frequent use\n7. Implement real-time comparison updates via WebSockets",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 6,
+            "title": "Develop Bulk Operations Functionality",
+            "description": "Implement the ability to perform actions across multiple websites simultaneously.",
+            "dependencies": [
+              "8.1",
+              "8.2",
+              "8.3",
+              "8.4"
+            ],
+            "details": "1. Create POST /api/websites/bulk-operation endpoint\n2. Implement backend logic for processing bulk operations\n3. Build UI controls for selecting and executing bulk actions\n4. Add progress tracking for long-running bulk operations\n5. Implement rollback functionality for failed operations\n6. Create notification system for bulk operation results\n7. Add logging and audit trail for bulk actions",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          }
+        ]
+      },
+      {
+        "id": "9",
+        "title": "Implement Competitive Analysis Features",
+        "description": "Build the competitive analysis system for tracking competitor rankings, identifying content gaps, and benchmarking performance against competitors.",
+        "details": "1. Create competitor tracking data models:\n```typescript\ninterface Competitor {\n  id: string;\n  websiteId: string;\n  name: string;\n  url: string;\n  notes?: string;\n  created_at: string;\n}\n\ninterface CompetitorMetrics {\n  id: string;\n  competitorId: string;\n  metrics_date: string;\n  keyword_rankings: Record<string, number>;\n  estimated_traffic: number;\n  backlink_count: number;\n  content_count: number;\n}\n```\n2. Implement competitor discovery and analysis services\n3. Create API endpoints for competitor management:\n   - GET /api/websites/:id/competitors - List competitors\n   - POST /api/websites/:id/competitors - Add competitor\n   - GET /api/websites/:id/competitors/:competitorId/metrics - Get metrics\n4. Build UI components for competitor tracking:\n   - Competitor management interface\n   - Ranking comparison charts\n   - Content gap analysis view\n   - Benchmark reports\n5. Implement automated competitor discovery\n6. Create comparative reporting functionality\n7. Add scheduled competitor monitoring jobs",
+        "testStrategy": "1. Test competitor CRUD operations\n2. Verify competitor metrics collection\n3. Test ranking comparison calculations\n4. Validate content gap analysis\n5. Test benchmark reporting\n6. Verify automated competitor discovery\n7. Test UI components for competitive analysis",
+        "priority": "medium",
+        "dependencies": [
+          "1",
+          "5",
+          "7"
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Implement Competitor Data Models and Database Schema",
+            "description": "Create and implement the database schema for competitor tracking including the Competitor and CompetitorMetrics models in Supabase.",
+            "dependencies": [],
+            "details": "1. Implement the Competitor table in Supabase with fields: id, websiteId, name, url, notes, created_at\n2. Create the CompetitorMetrics table with fields: id, competitorId, metrics_date, keyword_rankings, estimated_traffic, backlink_count, content_count\n3. Set up appropriate indexes for performance optimization\n4. Establish foreign key relationships between tables\n5. Configure RLS policies for secure access\n6. Write TypeScript interfaces matching the database schema\n7. Create database migration scripts for version control",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 2,
+            "title": "Build Competitor Discovery and Analysis Services",
+            "description": "Develop backend services for discovering potential competitors and analyzing their SEO metrics.",
+            "dependencies": [
+              "9.1"
+            ],
+            "details": "1. Create a service to discover potential competitors based on keyword overlap\n2. Implement functions to fetch competitor SEO metrics from external APIs\n3. Build analysis algorithms to process and compare competitor data\n4. Create a service to track competitor keyword rankings over time\n5. Implement backlink analysis for competitors\n6. Develop content inventory tracking for competitors\n7. Create utility functions for data normalization and comparison",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 3,
+            "title": "Develop API Endpoints for Competitor Management",
+            "description": "Create RESTful API endpoints for managing competitors and retrieving their metrics.",
+            "dependencies": [
+              "9.1",
+              "9.2"
+            ],
+            "details": "1. Implement GET /api/websites/:id/competitors endpoint to list competitors\n2. Create POST /api/websites/:id/competitors endpoint to add new competitors\n3. Build PUT /api/websites/:id/competitors/:competitorId endpoint for updates\n4. Implement DELETE /api/websites/:id/competitors/:competitorId endpoint\n5. Create GET /api/websites/:id/competitors/:competitorId/metrics endpoint\n6. Add validation middleware for request data\n7. Implement error handling for all endpoints",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 4,
+            "title": "Create UI Components for Competitor Management",
+            "description": "Build React components for the competitor management interface allowing users to add, edit, and view competitors.",
+            "dependencies": [
+              "9.3"
+            ],
+            "details": "1. Create a CompetitorList component to display all tracked competitors\n2. Build AddCompetitor form component with validation\n3. Implement EditCompetitor component for updating competitor information\n4. Create CompetitorDetail view to display individual competitor metrics\n5. Build confirmation dialogs for competitor deletion\n6. Implement search and filtering functionality for the competitor list\n7. Create responsive layouts for all competitor management components",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 5,
+            "title": "Implement Ranking Comparison Features",
+            "description": "Develop the functionality to compare keyword rankings between the user's website and competitors with visualization components.",
+            "dependencies": [
+              "9.2",
+              "9.3"
+            ],
+            "details": "1. Create a service to fetch and compare keyword rankings\n2. Build data transformation utilities for ranking comparison\n3. Implement RankingComparisonChart component using Recharts\n4. Create a RankingTable component for detailed keyword position comparison\n5. Build filters for ranking data by position, change, and importance\n6. Implement historical ranking trend visualization\n7. Create export functionality for ranking comparison data",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 6,
+            "title": "Develop Content Gap Analysis System",
+            "description": "Create the system for identifying content opportunities based on competitor content that ranks for keywords the user's site doesn't.",
+            "dependencies": [
+              "9.2",
+              "9.5"
+            ],
+            "details": "1. Implement algorithm to identify keywords competitors rank for but user doesn't\n2. Create content clustering functionality to group related keyword opportunities\n3. Build difficulty scoring system for content gap opportunities\n4. Implement ContentGapTable component to display opportunities\n5. Create ContentGapDetail view with specific recommendations\n6. Build filters for content gap opportunities by volume, difficulty, and relevance\n7. Implement export functionality for content gap data",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 7,
+            "title": "Create Benchmark Reporting System",
+            "description": "Develop the benchmark reporting system to compare overall SEO performance against competitors with scheduled monitoring.",
+            "dependencies": [
+              "9.1",
+              "9.2",
+              "9.3",
+              "9.5",
+              "9.6"
+            ],
+            "details": "1. Create a service to generate comprehensive benchmark reports\n2. Implement metrics aggregation for overall performance comparison\n3. Build BenchmarkDashboard component with summary metrics\n4. Create detailed benchmark report views with drill-down capabilities\n5. Implement scheduled jobs for regular competitor monitoring using BullMQ\n6. Build email notification system for benchmark changes\n7. Create PDF export functionality for benchmark reports",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          }
+        ]
+      },
+      {
+        "id": "10",
+        "title": "Configure Docker Compose for Development and Production",
+        "description": "Set up Docker Compose configuration for both development and production environments with proper service definitions, networking, and volume management.",
+        "details": "1. Create Docker Compose configuration for development:\n```yaml\nversion: '3.8'\n\nservices:\n  frontend:\n    build:\n      context: ./frontend\n      dockerfile: Dockerfile.dev\n    ports:\n      - \"3000:3000\"\n    volumes:\n      - ./frontend:/app\n      - /app/node_modules\n    environment:\n      - VITE_API_URL=http://localhost:4000\n      - VITE_SUPABASE_URL=${SUPABASE_URL}\n      - VITE_SUPABASE_ANON_KEY=${SUPABASE_ANON_KEY}\n    depends_on:\n      - backend\n\n  backend:\n    build:\n      context: ./backend\n      dockerfile: Dockerfile.dev\n    ports:\n      - \"4000:4000\"\n    volumes:\n      - ./backend:/app\n      - /app/node_modules\n    environment:\n      - PORT=4000\n      - NODE_ENV=development\n      - FRONTEND_URL=http://localhost:3000\n      - SUPABASE_URL=${SUPABASE_URL}\n      - SUPABASE_SERVICE_KEY=${SUPABASE_SERVICE_KEY}\n      - OPENAI_API_KEY=${OPENAI_API_KEY}\n      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}\n      - REDIS_HOST=redis\n      - REDIS_PORT=6379\n      - DISABLE_REDIS=${DISABLE_REDIS:-false}\n    depends_on:\n      - redis\n\n  redis:\n    image: redis:alpine\n    ports:\n      - \"6379:6379\"\n    volumes:\n      - redis-data:/data\n    command: redis-server --appendonly yes\n\nvolumes:\n  redis-data:\n```\n2. Create production Docker Compose configuration with optimizations\n3. Implement Dockerfiles for frontend and backend:\n```dockerfile\n# Dockerfile.dev for backend\nFROM node:18-alpine\n\nWORKDIR /app\n\nCOPY package*.json ./\nRUN npm install\n\nCOPY . .\n\nCMD [\"npm\", \"run\", \"dev\"]\n```\n4. Set up environment variable management\n5. Configure health checks for services\n6. Implement volume management for persistent data\n7. Create deployment scripts for production",
+        "testStrategy": "1. Test Docker Compose setup in development environment\n2. Verify service connectivity and networking\n3. Test environment variable configuration\n4. Validate health check functionality\n5. Test production build and deployment\n6. Verify volume persistence across container restarts\n7. Test scaling and load balancing in production configuration",
+        "priority": "medium",
+        "dependencies": [
+          "1",
+          "3",
+          "4"
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create Docker Compose Configuration for Development Environment",
+            "description": "Implement and test the Docker Compose configuration for the development environment with proper service definitions for frontend, backend, and Redis.",
+            "dependencies": [],
+            "details": "1. Create docker-compose.dev.yml with service definitions for frontend, backend, and Redis\n2. Configure volume mappings for hot-reloading in development\n3. Set up environment variables and service dependencies\n4. Implement proper networking between services\n5. Test the configuration to ensure all services start correctly and can communicate",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 2,
+            "title": "Implement Production Docker Compose Configuration",
+            "description": "Create an optimized Docker Compose configuration for production with appropriate security settings, resource constraints, and deployment considerations.",
+            "dependencies": [
+              "10.1"
+            ],
+            "details": "1. Create docker-compose.prod.yml with production-optimized service definitions\n2. Configure proper resource limits and restart policies\n3. Implement production-specific networking and security settings\n4. Set up volume management for persistent data in production\n5. Configure proper logging and monitoring settings\n6. Remove development-specific settings like source code mounting",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 3,
+            "title": "Create Dockerfiles for Frontend and Backend Services",
+            "description": "Develop separate Dockerfiles for development and production environments for both frontend and backend services.",
+            "dependencies": [],
+            "details": "1. Create Dockerfile.dev and Dockerfile.prod for frontend service\n2. Create Dockerfile.dev and Dockerfile.prod for backend service\n3. Implement multi-stage builds for production Dockerfiles to optimize image size\n4. Configure proper base images, dependencies, and build steps\n5. Set up appropriate security measures like non-root users\n6. Test building images with each Dockerfile",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 4,
+            "title": "Implement Environment Variable Management",
+            "description": "Set up a system for managing environment variables across different environments, including local development, CI/CD, and production.",
+            "dependencies": [
+              "10.1",
+              "10.2"
+            ],
+            "details": "1. Create .env.example files with documentation for required variables\n2. Implement .env file loading in Docker Compose configurations\n3. Set up environment-specific variable overrides\n4. Configure secrets management for sensitive variables\n5. Document the environment variable requirements\n6. Test variable substitution in different environments",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          },
+          {
+            "id": 5,
+            "title": "Create Deployment Scripts and Health Checks",
+            "description": "Develop scripts for deploying the application to production and implement health checks to ensure service reliability.",
+            "dependencies": [
+              "10.2",
+              "10.3",
+              "10.4"
+            ],
+            "details": "1. Implement health check configurations for all services\n2. Create deployment shell scripts for production environment\n3. Set up container orchestration and scaling configurations\n4. Implement backup and restore procedures for volumes\n5. Configure monitoring and alerting integration\n6. Document the deployment process and requirements",
+            "status": "pending",
+            "testStrategy": "",
+            "parentId": "undefined"
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "version": "1.0.0",
+      "lastModified": "2025-10-06T13:22:41.586Z",
+      "taskCount": 10,
+      "completedCount": 0,
+      "tags": [
+        "master"
+      ]
+    }
+  }
+}

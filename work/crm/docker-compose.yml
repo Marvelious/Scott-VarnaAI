@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  twenty:
+    image: twentycrm/twenty:latest
+    container_name: twenty-crm
+    ports:
+      - "3000:3000"
+    environment:
+      - SERVER_URL=http://localhost:3000
+      - FRONT_BASE_URL=http://localhost:3000
+      - ENABLE_DB_MIGRATIONS=true
+      - SIGN_IN_PREFILLED=false
+      - IS_BILLING_ENABLED=false
+      - PG_DATABASE_URL=postgresql://twenty:twenty@postgres:5432/twenty
+      - REDIS_URL=redis://redis:6379
+      - APP_SECRET=xK7mP9sL2vN8qR4wE6yT1aB3cD5fG0hJ
+    volumes:
+      - twenty_data:/app/.twenty
+    networks:
+      - crm_net
+    depends_on:
+      - postgres
+      - redis
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:15
+    container_name: twenty-postgres
+    environment:
+      - POSTGRES_USER=twenty
+      - POSTGRES_PASSWORD=twenty
+      - POSTGRES_DB=twenty
+    volumes:
+      - twenty_pg:/var/lib/postgresql/data
+    networks:
+      - crm_net
+    restart: unless-stopped
+
+  redis:
+    image: redis:7
+    container_name: twenty-redis
+    networks:
+      - crm_net
+    restart: unless-stopped
+
+networks:
+  crm_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.24.0.0/16
+
+volumes:
+  twenty_data:
+  twenty_pg:
