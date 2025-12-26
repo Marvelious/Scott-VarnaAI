@@ -1,0 +1,159 @@
+# Super AI Lab - VarnaAI Training Infrastructure
+# docker-compose for LLM training, fine-tuning, and model serving
+# UPDATED: 2025-12-26 - Ollama moved to shared-ollama.yml (operations/compose/)
+# Start Ollama first: docker compose -f ../../operations/compose/shared-ollama.yml up -d
+
+services:
+  # =========================================
+  # NOTE: Ollama is now SHARED across all apps
+  # See: operations/compose/shared-ollama.yml
+  # Container: ailab-ollama (port 11435)
+  # Network: ailab-network (external)
+  # =========================================
+
+  # =========================================
+  # LlamaFactory - GUI for LLM Fine-Tuning
+  # =========================================
+  llamafactory:
+    image: hiyouga/llamafactory:latest
+    container_name: ailab-llamafactory
+    ports:
+      - "7860:7860"  # Web UI
+    volumes:
+      - ./data:/app/data                    # Training datasets
+      - ./saves:/app/saves                  # Trained model checkpoints
+      - ./exports:/app/exports              # Exported models
+      - D:/VarnaAI/Websites:/workspace:ro   # Read-only access to project files
+    environment:
+      - CUDA_VISIBLE_DEVICES=0
+      - TRANSFORMERS_CACHE=/app/cache
+    command: llamafactory-cli webui        # Start the WebUI
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    restart: unless-stopped
+    networks:
+      - ailab-network
+
+  # =========================================
+  # Text Generation WebUI (Alternative)
+  # =========================================
+  textgen:
+    image: atinoda/text-generation-webui:default-nvidia
+    container_name: ailab-textgen
+    profiles: ["textgen"]  # Optional - start with --profile textgen
+    ports:
+      - "7861:7860"  # Web UI
+      - "5000:5000"  # API
+    volumes:
+      - ./textgen/characters:/app/characters
+      - ./textgen/loras:/app/loras
+      - ./textgen/models:/app/models
+      - ./textgen/presets:/app/presets
+      - ./textgen/prompts:/app/prompts
+      - ./textgen/training:/app/training
+    environment:
+      - EXTRA_LAUNCH_ARGS=--listen --api
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    restart: unless-stopped
+    networks:
+      - ailab-network
+
+  # =========================================
+  # Jupyter Lab for Custom Training Scripts
+  # =========================================
+  jupyter:
+    image: quay.io/jupyter/pytorch-notebook:cuda12-python-3.11
+    container_name: ailab-jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/home/jovyan/work
+      - ./data:/home/jovyan/data
+      - D:/VarnaAI/Websites:/home/jovyan/varnaai:ro
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - GRANT_SUDO=yes
+    user: root
+    command: start-notebook.py --NotebookApp.token='varnaai123' --NotebookApp.allow_origin='*'
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    restart: unless-stopped
+    networks:
+      - ailab-network
+
+  # =========================================
+  # MLflow - Experiment Tracking
+  # =========================================
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v2.18.0
+    container_name: ailab-mlflow
+    ports:
+      - "5001:5000"
+    volumes:
+      - ./mlflow:/mlflow
+    environment:
+      - MLFLOW_TRACKING_URI=sqlite:///mlflow/mlflow.db
+      - MLFLOW_DEFAULT_ARTIFACT_ROOT=/mlflow/artifacts
+    command: mlflow server --host 0.0.0.0 --port 5000 --backend-store-uri sqlite:///mlflow/mlflow.db --default-artifact-root /mlflow/artifacts
+    restart: unless-stopped
+    networks:
+      - ailab-network
+
+  # =========================================
+  # Label Studio - Data Labeling
+  # =========================================
+  labelstudio:
+    image: heartexlabs/label-studio:latest
+    container_name: ailab-labelstudio
+    profiles: ["labeling"]  # Optional - start with --profile labeling
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./labelstudio:/label-studio/data
+    environment:
+      - LABEL_STUDIO_LOCAL_FILES_SERVING_ENABLED=true
+      - LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT=/label-studio/files
+    restart: unless-stopped
+    networks:
+      - ailab-network
+
+  # =========================================
+  # OpenWebUI - Alternative Chat Interface
+  # =========================================
+  openwebui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: ailab-openwebui
+    profiles: ["openwebui"]  # Optional
+    ports:
+      - "3081:8080"
+    volumes:
+      - ./openwebui:/app/backend/data
+    environment:
+      - OLLAMA_BASE_URL=http://ailab-ollama:11434  # Connect to containerized Ollama
+      - WEBUI_AUTH=false
+    depends_on:
+      - ollama
+    restart: unless-stopped
+    networks:
+      - ailab-network
+
+networks:
+  ailab-network:
+    external: true
+    name: ailab-network

@@ -1,0 +1,46 @@
+# ABOUTME: Shared Ollama configuration for all VarnaAI apps
+# ABOUTME: One LLM instance accessible by all applications via ailab-network
+# UPDATED: 2025-12-26 - Added health checks, memory limits, improved networking
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ailab-ollama
+    restart: unless-stopped
+    ports:
+      - "11435:11434"  # Host port 11435 -> Container port 11434
+    volumes:
+      - ollama-data:/root/.ollama
+    environment:
+      - OLLAMA_HOST=0.0.0.0
+      - OLLAMA_ORIGINS=*
+      - OLLAMA_KEEP_ALIVE=24h
+      - OLLAMA_NUM_PARALLEL=4        # Allow 4 parallel requests
+      - OLLAMA_MAX_LOADED_MODELS=3   # Keep 3 models in VRAM
+    networks:
+      - ailab-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          memory: 12G              # Limit RAM usage (GPU VRAM managed by Ollama)
+        reservations:
+          memory: 4G
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+networks:
+  ailab-network:
+    name: ailab-network
+    driver: bridge
+
+volumes:
+  ollama-data:
+    name: shared-ollama-data

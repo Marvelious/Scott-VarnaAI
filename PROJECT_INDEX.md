@@ -1,76 +1,780 @@
 # VarnaAI Websites - Project Index
 
-**Generated**: 2025-12-26
-**Purpose**: Complete portfolio management for 4 WordPress sites + SaaS applications
-**Maintainer**: Claude Code
+**Last Updated**: 2025-12-26
+**Repository**: `D:\VarnaAI\Websites`
+**Branch**: master
 
 ---
 
 ## Table of Contents
 
-1. [Quick Navigation](#quick-navigation)
-2. [Current Status Summary](#current-status-summary)
-3. [Directory Structure](#directory-structure)
-4. [WordPress Portfolio Sites](#wordpress-portfolio-sites)
-5. [Application Portfolio](#application-portfolio)
-6. [Task Master Tasks](#task-master-tasks-jan-2026-launch)
-7. [Strategy Documents](#strategy-documents)
-8. [Case Studies](#case-studies)
-9. [Sales & Marketing Materials](#sales--marketing-materials)
-10. [PRDs & Deployment](#prds--deployment)
-11. [Blog Content](#blog-content)
-12. [Infrastructure & Operations](#infrastructure--operations)
-13. [SEO Resources](#seo-resources)
-14. [Research Documents](#research-documents)
-15. [Claude Work Products](#claude-work-products)
-16. [Key Reference Files](#key-reference-files)
-17. [Credentials & Secrets](#credentials--secrets)
-18. [GitHub Repositories](#github-repositories)
-19. [Troubleshooting](#troubleshooting)
-20. [Changelog](#changelog)
+1. [Repository Overview](#repository-overview)
+2. [Directory Structure](#directory-structure)
+3. [Applications Inventory](#applications-inventory)
+4. [Port Allocation Matrix](#port-allocation-matrix)
+5. [Docker Networks](#docker-networks)
+6. [WordPress Portfolio Sites](#wordpress-portfolio-sites)
+7. [Key Documentation Files](#key-documentation-files)
+8. [Infrastructure & Operations](#infrastructure--operations)
+9. [Quick Reference](#quick-reference)
+10. [Related Audit Reports](#related-audit-reports)
 
 ---
 
-## Quick Navigation
+## Repository Overview
 
-| Need | Go To |
-|------|-------|
-| **Current Tasks** | [Task Master Tasks](#task-master-tasks-jan-2026-launch) |
-| **Business Strategy** | [Strategy Documents](#strategy-documents) |
-| **WordPress Workflow** | [CLAUDE.md](./CLAUDE.md) |
-| **Sales Materials** | [Sales & Marketing](#sales--marketing-materials) |
-| **Case Studies** | [Case Studies](#case-studies) |
-| **SaaS Applications** | [Application Portfolio](#application-portfolio) |
-| **GitHub Repos** | [GitHub Repositories](#github-repositories) |
-| **Scott Beta Tester** | [Scott Setup](#scott-beta-tester-setup) |
-| **Infrastructure** | [Infrastructure & Operations](#infrastructure--operations) |
-| **Blog Workflow** | [Blog Content](#blog-content) |
-| **SEO Resources** | [SEO Resources](#seo-resources) |
-| **Troubleshooting** | [Troubleshooting](#troubleshooting) |
+### Purpose
 
----
+The VarnaAI Websites repository is a comprehensive monorepo that serves as the central hub for:
 
-## Current Status Summary
+1. **WordPress Portfolio Management** - 4 WordPress sites for AI services marketing
+2. **SaaS Application Development** - 10+ Docker-based applications for various AI/business solutions
+3. **SEO & Content Strategy** - Automated SEO tools, blog generation, and content optimization
+4. **Business Operations** - Bulgarian market launch preparation, sales materials, and strategy documents
 
-### Strategic Pivot (Dec 2025 → Jan 2026)
+### Architecture
 
-**Goal**: Simplify operations for January 2026 Varna return - consulting focus
+```
++---------------------------+
+|    VarnaAI Websites       |
+|    (Master Monorepo)      |
++---------------------------+
+            |
+    +-------+-------+
+    |               |
++-------+     +------------+
+| apps/ |     | wordpress/ |
+| (11)  |     | (4 sites)  |
++-------+     +------------+
+    |
++---+---+---+---+---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |   |   |   |   |
+pension c3 fwchange seo pm agenticcoder tax webscrap master outreach LibreChat
+```
+
+### Current Status (December 2025)
+
+| Component | Status | Notes |
+|-----------|--------|-------|
+| Local Docker Development | Active | 33 containers running |
+| Hetzner VPS | OFFLINE | Shutdown December 2025 |
+| WordPress Sites | Active | All-Inkl shared hosting |
+| Production Demos | Migrating | Moving to static landing pages |
+
+### Strategic Pivot: Consulting-First (January 2026)
+
+**Business Model**: Consulting services first, SaaS demos revived Q3 2026+
 
 | Item | Status | Action |
 |------|--------|--------|
-| VPS (Hetzner) | OFF | Shutdown complete - migrating to static pages |
+| Business Mode | CONSULTING | Face-to-face Bulgarian SME clients |
+| VPS (Hetzner) | OFFLINE | Shutdown complete - demos archived |
+| SaaS Demos | ARCHIVED | Static landing pages on All-Inkl |
 | VarnaAI.com | PRIMARY | Business card homepage (Task 83) |
-| Other 3 sites | SIMPLIFY | Redirect or minimal landing pages |
-| Demo apps | ARCHIVE | Static HTML versions on All-Inkl |
+| Other 3 sites | DORMANT | WordPress running, no development |
 
-### Task Completion Status
+**Consulting Services**:
+| Service | Price (EUR) |
+|---------|-------------|
+| GDPR Compliance Audit | ~€500 |
+| ISO 27001 Implementation | ~€5,000 |
+| NIS2 Readiness Assessment | ~€1,000 |
+| Monthly Advisory Retainer | ~€150/month |
 
-**Task Master (JSON)**: 11 cleanup tasks - ALL DONE
-- Fake testimonials removed
-- Fake stats deleted
-- Footer lies fixed
+**2026 Targets**: €2,000/mo consulting revenue, 10 clients by Q4 2026
+**SaaS Revival Decision**: Q3 2026 (when consulting stable)
 
-**Task Markdown Files (10 Jan 2026 tasks)**: 6/10 DONE
+---
+
+## Directory Structure
+
+```
+D:\VarnaAI\Websites\
+|
++-- ROOT DOCUMENTS
+|   +-- CLAUDE.md              <- Primary workflow reference
+|   +-- README.md              <- Project overview
+|   +-- PROJECT_INDEX.md       <- This file
+|   +-- COMPANY_INFO.md        <- Company details (4 sites)
+|   +-- SCHEMA_ORG_TEMPLATES.md <- Schema markup reference
+|   +-- AGENT.md / AGENTS.md   <- Agent configurations
+|
++-- .taskmaster/               <- Task Master AI
+|   +-- tasks/
+|   |   +-- tasks.json         <- Task definitions
+|   |   +-- task_083-092.md    <- Jan 2026 launch tasks
+|   +-- config.json
+|   +-- templates/
+|
++-- apps/                      <- SaaS Applications (11 apps)
+|   +-- varnaai-pension/       <- RetirementAI (Next.js)
+|   +-- varnaai-c3/            <- C3 Compliance (React + Node)
+|   +-- varnaai-fwchange/      <- FwChange (React + FastAPI)
+|   +-- varnaai-seo/           <- SEO Agent (Vite + Express)
+|   +-- varnaai-pm/            <- Project Manager
+|   +-- varnaai-agenticcoder/  <- Agentic Coder
+|   +-- varnaai-tax/           <- Tax App (Bulgarian)
+|   +-- varnaai-webscrap/      <- Web Scraper (skipped)
+|   +-- varnaai-master/        <- VarnaAI Master (skipped)
+|   +-- varnaai-outreach/      <- Outreach Platform
+|   +-- ai-lab/                <- AI Lab experiments
+|   +-- LibreChat/             <- Self-hosted chat (external)
+|   +-- COMPLETE_INVENTORY_2025-12-26.md
+|   +-- DOCKER_AUDIT_REPORT_2025-12-26.md
+|
++-- assets/                    <- Images, diagrams, media
+|   +-- images/
+|   +-- diagrams/
+|   +-- sales-materials-bg/    <- Bulgarian sales materials
+|
++-- blogs/                     <- Blog generation system
+|   +-- blog_posts/            <- Generated blog posts archive
+|   +-- docs/                  <- Blog workflow documentation
+|   +-- INSTRUCTIONS.md        <- SEO rules, WordPress formatting
+|   +-- URLS.md                <- 54 real internal URLs for linking
+|   +-- START_HERE.md          <- Quick start guide
+|   +-- TOPIC_DIVERSITY_MATRIX.md <- 80+ unique topics
+|
++-- claudedocs/                <- Claude AI work products
+|
++-- config/                    <- Configuration files
+|
++-- cv/                        <- CV/Resume materials
+|
++-- design/                    <- Design mockups and specs
+|   +-- dashboard-fwchange.html
+|   +-- login-fwchange.html
+|   +-- REACT_IMPLEMENTATION_GUIDE.md
+|
++-- docs/                      <- Strategic documentation
+|   +-- analysis/              <- Project analysis
+|   +-- case-studies/          <- 3 case studies (DONE)
+|   +-- implementation/        <- Implementation tracking
+|   +-- marketing/             <- LinkedIn posts, profiles
+|   +-- operations/            <- Operational docs
+|   +-- planning/              <- Execution planning
+|   +-- prds/                  <- Product requirement documents
+|   +-- reference/             <- Reference documentation
+|   +-- sales/                 <- Sales toolkit
+|   +-- strategy/              <- Strategic planning
+|       +-- BUSINESS_PLAN_2025.md   <- Master business plan
+|       +-- C3/                <- C3-specific strategy
+|       +-- FwChange/          <- FwChange-specific strategy
+|       +-- AIMarketingBG/     <- Bulgaria marketing strategy
+|
++-- done/                      <- Completed & archived work
+|   +-- 2025-12-cleanup/       <- Cleanup archive
+|
++-- marketing-machine/         <- Marketing automation
+|
++-- mcp-bridge/                <- MCP server bridge
+|
++-- ml_models/                 <- Machine learning models
+|
++-- online-demos/              <- Demo landing pages
+|
++-- operations/                <- Infrastructure & automation
+|   +-- compose/               <- Docker configurations
+|   +-- cron/                  <- Scheduled tasks
+|   +-- env/                   <- Environment files
+|   +-- hub-worker/            <- Cloudflare Worker
+|   +-- monitoring/            <- Monitoring setup
+|   +-- scripts/               <- Automation scripts
+|   +-- security/              <- Security configurations
+|   +-- snippets/              <- Code snippets
+|
++-- outreach/                  <- Outreach campaigns
+|
++-- public/                    <- Public assets
+|
++-- research/                  <- Market research & analysis
+|   +-- german-compliance-market-2025.md
+|   +-- ai-coding-market-2025.md
+|   +-- fwchange-strategy.md
+|
++-- scripts/                   <- Utility scripts
+|
++-- seo/                       <- SEO strategy & tools
+|   +-- audits-raw/            <- Raw PDF audits
+|   +-- backlink-campaign/     <- Backlink strategies
+|   +-- guest-posts/           <- Guest posting
+|   +-- guides/                <- SEO implementation guides
+|   +-- nap-data/              <- NAP consistency data
+|   +-- outreach/              <- SEO outreach
+|   +-- site-audits/           <- Site-specific audits
+|   +-- tools/                 <- SEO automation scripts
+|   +-- SEO_Portfolio_Strategy_2025.md  <- Master SEO strategy
+|
++-- vps/                       <- VPS configurations (deprecated)
+|
++-- wordpress/                 <- WordPress content & snippets
+|   +-- pages/                 <- Ready-to-paste page content
+|   +-- snippets/              <- Reusable code snippets
+|   +-- kadence-design-options.txt <- Kadence block configuration
+|   +-- schema-templates.md    <- Schema markup templates
+|
++-- work/                      <- Active work & agents
+|   +-- secrets/               <- Centralized credentials (keymanager)
+|   |   +-- keymanager.py      <- get/set/list secrets
+|   |   +-- secrets.yaml       <- All credentials (gitignored)
+|   +-- jobs/                  <- Freelance job hunter
+|   +-- accountant/            <- Accountant tools
+|   +-- crm/                   <- CRM tools
+|   +-- gastro/                <- Gastro industry tools
+|   +-- IOT/                   <- IoT projects
+|   +-- realestate/            <- Real estate tools
+```
+
+---
+
+## Applications Inventory
+
+### Summary
+
+| Total Apps | Running | Skipped | External |
+|------------|---------|---------|----------|
+| 11 | 7 | 2 | 1 |
+
+### Detailed Application List
+
+#### 1. Pension (RetirementAI)
+
+| Attribute | Value |
+|-----------|-------|
+| **Folder** | `apps/varnaai-pension` |
+| **Purpose** | AI-powered retirement planning and portfolio management |
+| **Tech Stack** | Next.js 16, React 19, PostgreSQL, Redis |
+| **Frontend Port** | 3001 |
+| **PostgreSQL Port** | 5433 |
+| **Redis Port** | 6380 |
+| **Docker Network** | 172.20.0.0/16 |
+| **Container Prefix** | `pension-*` |
+| **Status** | Production-Ready (Grade A) |
+| **Key Features** | Trading212 API, AI advisor, portfolio optimization |
+| **CLAUDE.md** | `apps/varnaai-pension/CLAUDE.md` |
+
+---
+
+#### 2. C3 Compliance
+
+| Attribute | Value |
+|-----------|-------|
+| **Folder** | `apps/varnaai-c3` |
+| **Purpose** | GDPR/ISO 27001 compliance automation platform |
+| **Tech Stack** | Express 4.18, React 18, PostgreSQL (pgvector), Redis |
+| **Frontend Port** | 3002 |
+| **Backend Port** | 8001 |
+| **PostgreSQL Port** | 5434 |
+| **Redis Port** | 6381 |
+| **Docker Network** | 172.21.0.0/16 |
+| **Container Prefix** | `c3-*` |
+| **Status** | Production-Ready (Grade A) |
+| **Key Features** | GDPR automation, 60-second scans, German documentation |
+| **CLAUDE.md** | `apps/varnaai-c3/CLAUDE.md` |
+
+---
+
+#### 3. FwChange
+
+| Attribute | Value |
+|-----------|-------|
+| **Folder** | `apps/varnaai-fwchange` |
+| **Purpose** | Enterprise firewall change management system |
+| **Tech Stack** | FastAPI 0.121, React 18, Vite 7, PostgreSQL, Redis |
+| **Frontend Port** | 3003 |
+| **Backend Port** | 8002 |
+| **PostgreSQL Port** | 5435 |
+| **Redis Port** | 6382 |
+| **Docker Network** | 172.22.0.0/16 |
+| **Container Prefix** | `fwchange-*` |
+| **Additional Services** | Jira (8080) |
+| **Status** | Production-Ready (Grade A-) |
+| **Key Features** | Multi-vendor firewalls, JIRA integration, PCI-DSS compliance |
+| **CLAUDE.md** | `apps/varnaai-fwchange/CLAUDE.md` |
+
+---
+
+#### 4. SEO Agent
+
+| Attribute | Value |
+|-----------|-------|
+| **Folder** | `apps/varnaai-seo` |
+| **Purpose** | AI-powered SEO analysis and optimization |
+| **Tech Stack** | Vite 7, React 18, Express 4.19, PostgreSQL, Redis |
+| **Frontend Port** | 3004 |
+| **Backend Port** | 4000 |
+| **PostgreSQL Port** | 5436 |
+| **Redis Port** | 6383 |
+| **Docker Network** | 172.26.0.0/16 |
+| **Container Prefix** | `seoagent-*` |
+| **Additional Services** | pgAdmin (5050), Ollama (11435) |
+| **Status** | Production-Ready (Grade A) |
+| **CLAUDE.md** | `apps/varnaai-seo/CLAUDE.md` |
+
+---
+
+#### 5. Project Manager
+
+| Attribute | Value |
+|-----------|-------|
+| **Folder** | `apps/varnaai-pm` |
+| **Purpose** | AI-assisted project management tool |
+| **Tech Stack** | Vite 7, React 19, Express 4.18, Sequelize, PostgreSQL |
+| **Frontend Port** | 5173 |
+| **Backend Port** | 3005 |
+| **PostgreSQL Port** | 5438 |
+| **Docker Network** | 172.27.0.0/16 |
+| **Container Prefix** | `projectmanager-*` |
+| **Status** | Development (Grade C+) |
+| **CLAUDE.md** | `apps/varnaai-pm/CLAUDE.md` |
+
+---
+
+#### 6. Agentic Coder
+
+| Attribute | Value |
+|-----------|-------|
+| **Folder** | `apps/varnaai-agenticcoder/agenticcoder` |
+| **Purpose** | AI coding assistant with monitoring infrastructure |
+| **Tech Stack** | Vite 5.4, React 18, FastAPI 0.109, PostgreSQL |
+| **Grafana Port** | 3008 |
+| **Docker Network** | 172.28.0.0/16 |
+| **Container Prefix** | `agenticcoder-*` |
+| **Additional Services** | Prometheus (9090), Adminer (8082), Redis Commander (8081), Jaeger (16686) |
+| **Status** | Development/Monitoring (Grade B) |
+| **CLAUDE.md** | `apps/varnaai-agenticcoder/CLAUDE.md` |
+
+---
+
+#### 7. Tax App
+
+| Attribute | Value |
+|-----------|-------|
+| **Folder** | `apps/varnaai-tax` |
+| **Purpose** | Bulgarian tax management and calculation |
+| **Tech Stack** | React 18, Vite, FastAPI, Python 3.11, PostgreSQL, Redis |
+| **Frontend Port** | 3009 |
+| **Backend Port** | 8005 |
+| **PostgreSQL Port** | 5440 |
+| **Redis Port** | 6386 |
+| **Docker Networks** | 172.29.0.0/16 (taxapp-network), ailab-network |
+| **Ollama** | Uses shared `ailab-ollama` via ailab-network |
+| **Status** | Development (Grade D - security issues) |
+
+---
+
+#### 8. Web Scraper (Skipped)
+
+| Attribute | Value |
+|-----------|-------|
+| **Folder** | `apps/varnaai-webscrap` |
+| **Purpose** | Web scraping and data extraction platform |
+| **Tech Stack** | Next.js 15, React 19, Prisma 5.22, PostgreSQL, Redis |
+| **Frontend Port** | 3006 |
+| **Backend Port** | 8003 |
+| **Docker Network** | 172.23.0.0/16 |
+| **Status** | Skipped (missing external path `D:/VarnaAI/Webscrap`) |
+
+---
+
+#### 9. VarnaAI Master (Skipped)
+
+| Attribute | Value |
+|-----------|-------|
+| **Folder** | `apps/varnaai-master` |
+| **Purpose** | Multi-agent AI platform with orchestration |
+| **Tech Stack** | NestJS 10.3, Next.js 16, React 19, TypeORM, PostgreSQL, Redis, Neo4j |
+| **Frontend Port** | 3007 |
+| **Backend Port** | 8004 |
+| **Docker Network** | 172.25.0.0/16 |
+| **Additional Services** | Neo4j (7475/7688), Qdrant (6335/6336) |
+| **Status** | Skipped (missing external path `D:/VarnaAI/varnaai/varnaai-app/`) |
+
+---
+
+#### 10. Outreach Platform
+
+| Attribute | Value |
+|-----------|-------|
+| **Folder** | `apps/varnaai-outreach` |
+| **Purpose** | Lead generation and outreach automation |
+| **Tech Stack** | Next.js, FastAPI, PostgreSQL, Prisma |
+| **CLAUDE.md** | `apps/varnaai-outreach/CLAUDE.md` |
+| **Status** | Development |
+
+---
+
+#### 11. LibreChat (External)
+
+| Attribute | Value |
+|-----------|-------|
+| **Folder** | `apps/LibreChat` |
+| **Purpose** | Self-hosted AI chat interface |
+| **Tech Stack** | Express 5.1, React 18, Vite 6, MongoDB, Redis, Meilisearch |
+| **Frontend Port** | 3080 |
+| **Docker Network** | 172.18.0.0/16 |
+| **Status** | External project - follow upstream |
+
+---
+
+## Port Allocation Matrix
+
+### Frontend Ports (3000-3100)
+
+| Port | Application | Service |
+|------|-------------|---------|
+| 3001 | Pension | Next.js Frontend |
+| 3002 | C3 Compliance | React Frontend |
+| 3003 | FwChange | React Frontend |
+| 3004 | SEO Agent | React Frontend |
+| 3005 | Project Manager | Backend API |
+| 3006 | Web Scraper | Next.js Frontend |
+| 3007 | VarnaAI Master | Next.js Frontend |
+| 3008 | Agentic Coder | Grafana Dashboard |
+| 3009 | Tax App | React Frontend |
+| 3080 | LibreChat | Frontend |
+
+### Backend Ports (4000-8100)
+
+| Port | Application | Service |
+|------|-------------|---------|
+| 4000 | SEO Agent | Express Backend |
+| 5173 | Project Manager | Vite Dev Server |
+| 8001 | C3 Compliance | Express Backend |
+| 8002 | FwChange | FastAPI Backend |
+| 8003 | Web Scraper | Backend |
+| 8004 | VarnaAI Master | NestJS Backend |
+| 8005 | Tax App | FastAPI Backend |
+| 8080 | FwChange | Jira |
+| 8082 | Agentic Coder | Adminer |
+
+### Database Ports (5432-5450)
+
+| Port | Application | Database |
+|------|-------------|----------|
+| 5433 | Pension | PostgreSQL |
+| 5434 | C3 Compliance | PostgreSQL |
+| 5435 | FwChange | PostgreSQL |
+| 5436 | SEO Agent | PostgreSQL |
+| 5437 | VarnaAI Master | PostgreSQL |
+| 5438 | Project Manager | PostgreSQL |
+| 5439 | Web Scraper | PostgreSQL |
+| 5440 | Tax App | PostgreSQL |
+
+### Redis Ports (6379-6390)
+
+| Port | Application |
+|------|-------------|
+| 6380 | Pension |
+| 6381 | C3 Compliance |
+| 6382 | FwChange |
+| 6383 | SEO Agent |
+| 6384 | VarnaAI Master |
+| 6385 | Web Scraper |
+| 6386 | Tax App |
+
+### Monitoring & Tools
+
+| Port | Application | Service |
+|------|-------------|---------|
+| 5050 | SEO Agent | pgAdmin |
+| 9090 | Agentic Coder | Prometheus |
+| 16686 | Agentic Coder | Jaeger |
+| 11435 | Shared (ailab-ollama) | Ollama (GPU) |
+
+---
+
+## Docker Networks
+
+### Network Allocation
+
+| Subnet | Application | Status |
+|--------|-------------|--------|
+| 172.18.0.0/16 | LibreChat | Active |
+| 172.20.0.0/16 | Pension | Active |
+| 172.21.0.0/16 | C3 Compliance | Active |
+| 172.22.0.0/16 | FwChange | Active |
+| 172.23.0.0/16 | Web Scraper | Reserved |
+| 172.25.0.0/16 | VarnaAI Master | Reserved |
+| 172.26.0.0/16 | SEO Agent | Active |
+| 172.27.0.0/16 | Project Manager | Active |
+| 172.28.0.0/16 | Agentic Coder | Active |
+| 172.29.0.0/16 | Tax App | Active |
+
+### Container Naming Convention
+
+All containers follow the pattern: `{app-prefix}-{service}`
+
+| App | Prefix | Example Containers |
+|-----|--------|-------------------|
+| Pension | `pension-` | pension-app, pension-postgres, pension-redis |
+| C3 | `c3-` | c3-frontend, c3-api, c3-postgres, c3-redis |
+| FwChange | `fwchange-` | fwchange-frontend, fwchange-backend, fwchange-postgres |
+| SEO Agent | `seoagent-` | seoagent-frontend, seoagent-backend, seoagent-postgres |
+| Project Manager | `projectmanager-` | projectmanager-app, projectmanager-postgres |
+| Agentic Coder | `agenticcoder-` | agenticcoder-postgres, agenticcoder-grafana |
+| Tax App | `taxapp-` | taxapp-frontend, taxapp-backend, taxapp-postgres |
+
+---
+
+## WordPress Portfolio Sites
+
+### Site Overview
+
+| Site | URL | Language | Focus | Theme |
+|------|-----|----------|-------|-------|
+| AI Projektmanager | https://ai-projektmanager.de | German | AI Project Management | Kadence |
+| AI Marketing BG | https://aimarketingbg.com | English/Bulgarian | AI Marketing | Kadence |
+| Varna Agenten | https://varna-agenten.de | German | AI Agents | Kadence |
+| Varna AI | https://varnaai.com | English | AI Services | Kadence |
+
+### WordPress Access
+
+Credentials are centralized in the keymanager:
+
+```bash
+cd D:\VarnaAI\Websites\work\secrets
+python keymanager.py get wordpress varnaai.com
+```
+
+All sites use:
+- **Username**: `claude`
+- **Theme**: Kadence
+- **SEO Plugin**: Rank Math
+
+### Social Media Profiles
+
+| Brand | Facebook | Instagram | LinkedIn | X/Twitter |
+|-------|----------|-----------|----------|-----------|
+| Varna AI | [varnaai](https://facebook.com/varnaai/) | [varnaaicom](https://instagram.com/varnaaicom) | [varnaai](https://linkedin.com/company/varnaai/) | [Varna_Ai](https://x.com/Varna_Ai) |
+| AI Projektmanager | [AIProjektmanager](https://facebook.com/AIProjektmanager/) | [aiprojectmanger](https://instagram.com/aiprojectmanger) | [ai-projektmanager](https://linkedin.com/company/ai-projektmanager/) | [AiProjekt](https://x.com/AiProjekt) |
+| Varna Agenten | [VarnaAgenten](https://facebook.com/VarnaAgenten/) | [varnaagents](https://instagram.com/varnaagents) | [varna-agenten](https://linkedin.com/company/varna-agenten/) | [VarnaAgenten](https://x.com/VarnaAgenten) |
+| AI Marketing BG | [aimarketingbg](https://facebook.com/aimarketingbg/) | [aimarketingbg](https://instagram.com/aimarketingbg/) | [ai-marketing-bg](https://linkedin.com/company/ai-marketing-bg/) | [aimarketingbg](https://x.com/aimarketingbg) |
+
+---
+
+## Key Documentation Files
+
+### Root Level
+
+| File | Purpose |
+|------|---------|
+| `CLAUDE.md` | Main AI instructions, WordPress workflow, Docker architecture |
+| `README.md` | Project overview, quick start, automation hub |
+| `PROJECT_INDEX.md` | This comprehensive index (you are here) |
+| `COMPANY_INFO.md` | Company details for all 4 sites |
+| `SCHEMA_ORG_TEMPLATES.md` | Schema markup reference |
+
+### Strategy Documents
+
+| Document | Location | Purpose |
+|----------|----------|---------|
+| Business Plan 2025 | `docs/strategy/BUSINESS_PLAN_2025.md` | Master business strategy |
+| SEO Portfolio Strategy | `seo/SEO_Portfolio_Strategy_2025.md` | SEO master plan |
+| SME Market Reality | `docs/strategy/C3/SME_MARKET_REALITY_2025.md` | Bulgarian SME analysis |
+| Varna Local Research | `docs/strategy/C3/VARNA_LOCAL_MARKET_RESEARCH_2025.md` | Local market research |
+| Service Delivery Playbook | `docs/strategy/C3/SERVICE_DELIVERY_PLAYBOOK.md` | Service delivery guide |
+
+### Application CLAUDE.md Files
+
+Each application has its own instruction file:
+
+| Application | CLAUDE.md Location |
+|-------------|-------------------|
+| Pension | `apps/varnaai-pension/CLAUDE.md` |
+| C3 Compliance | `apps/varnaai-c3/CLAUDE.md` |
+| FwChange | `apps/varnaai-fwchange/CLAUDE.md` |
+| SEO Agent | `apps/varnaai-seo/CLAUDE.md` |
+| Project Manager | `apps/varnaai-pm/CLAUDE.md` |
+| Agentic Coder | `apps/varnaai-agenticcoder/CLAUDE.md` |
+| VarnaAI Master | `apps/varnaai-master/CLAUDE.md` |
+| Outreach | `apps/varnaai-outreach/CLAUDE.md` |
+
+### Audit Reports (2025-12-26)
+
+| Report | Location |
+|--------|----------|
+| Complete Inventory | `apps/COMPLETE_INVENTORY_2025-12-26.md` |
+| Docker Audit | `apps/DOCKER_AUDIT_REPORT_2025-12-26.md` |
+| Frontend Audit | `apps/FRONTEND_AUDIT_REPORT_2025-12-26.md` |
+| Backend Audit | `apps/BACKEND_AUDIT_REPORT_2025-12-26.md` |
+| Apps Inventory | `apps/APPS_INVENTORY_2025-12-26.md` |
+
+---
+
+## Infrastructure & Operations
+
+### Host Environment
+
+| Component | Specification |
+|-----------|---------------|
+| OS | Windows 11 |
+| RAM | 64GB |
+| GPU | RTX 5070 (8GB VRAM) |
+| Docker | Docker Desktop with WSL2 |
+| Ollama | Docker container with GPU passthrough |
+| Master Folder | `D:\VarnaAI\Websites` |
+
+### Shared Services
+
+#### Ollama (GPU-enabled) - UNIFIED ARCHITECTURE
+
+**Single Shared Instance**: All apps now use ONE Ollama container for GPU efficiency.
+
+| Component | Value |
+|-----------|-------|
+| **Container Name** | `ailab-ollama` |
+| **Host Port** | 11435 |
+| **Container Port** | 11434 |
+| **Network** | `ailab-network` (external) |
+| **GPU** | NVIDIA RTX 5070 (all VRAM) |
+| **Memory Limit** | 12GB RAM |
+| **Health Check** | Every 30s via `/api/tags` |
+
+**Apps Connected to ailab-network**:
+| App | Container | Ollama URL |
+|-----|-----------|------------|
+| LibreChat | librechat-api, librechat-rag-api | http://ailab-ollama:11434 |
+| AI Lab | ailab-llamafactory, ailab-jupyter, ailab-mlflow | http://ailab-ollama:11434 |
+| Tax App | taxapp-backend | http://ailab-ollama:11434 |
+
+**Startup Order**:
+```bash
+# 1. Start shared Ollama FIRST (creates ailab-network)
+docker compose -f D:/VarnaAI/Websites/operations/compose/shared-ollama.yml up -d
+
+# 2. Start other apps (connect to existing network)
+cd D:/VarnaAI/Websites/apps/LibreChat && docker compose up -d
+cd D:/VarnaAI/Websites/apps/ai-lab && docker compose up -d
+```
+
+**Configuration File**: `operations/compose/shared-ollama.yml`
+
+### Operations Folder Structure
+
+```
+operations/
++-- compose/          # Docker Compose templates
++-- cron/             # Scheduled task definitions
++-- env/              # Environment file templates
++-- hub-worker/       # Cloudflare Worker scripts
++-- monitoring/       # Prometheus/Grafana configs
++-- scripts/          # Automation scripts
++-- security/         # Security configurations
++-- snippets/         # Reusable code snippets
++-- OLLAMA_SHARED_SETUP.md
++-- README.md
+```
+
+### Secrets Management
+
+All credentials are centralized:
+
+```
+work/secrets/
++-- keymanager.py     # get/set/list secrets
++-- secrets.yaml      # All API keys & passwords (gitignored)
+```
+
+Usage:
+```bash
+# Get WordPress credentials
+python keymanager.py get wordpress varnaai.com
+
+# List all secrets
+python keymanager.py list
+```
+
+---
+
+## Quick Reference
+
+### Start All Apps (Development)
+
+```bash
+# From apps/ folder - Start individual apps
+cd D:\VarnaAI\Websites\apps\varnaai-pension && docker-compose up -d
+cd D:\VarnaAI\Websites\apps\varnaai-c3 && docker-compose up -d
+cd D:\VarnaAI\Websites\apps\varnaai-fwchange && docker-compose up -d
+cd D:\VarnaAI\Websites\apps\varnaai-seo && docker-compose up -d
+cd D:\VarnaAI\Websites\apps\varnaai-pm && docker-compose up -d
+cd D:\VarnaAI\Websites\apps\varnaai-agenticcoder\agenticcoder && docker-compose up -d
+cd D:\VarnaAI\Websites\apps\varnaai-tax && docker-compose up -d
+```
+
+### Check Running Containers
+
+```bash
+docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+```
+
+### Check Resource Usage
+
+```bash
+docker stats --no-stream
+```
+
+### Local Access Points
+
+| Service | URL |
+|---------|-----|
+| Pension | http://localhost:3001 |
+| C3 Compliance | http://localhost:3002 |
+| FwChange | http://localhost:3003 |
+| SEO Agent | http://localhost:3004 |
+| FwChange API | http://localhost:8002/docs |
+| C3 API | http://localhost:8001 |
+| Jira (FwChange) | http://localhost:8080 |
+| pgAdmin (SEO) | http://localhost:5050 |
+| Grafana (Agentic) | http://localhost:3008 |
+
+### Blog Generation
+
+```bash
+# Quick start for blog generation
+cd D:\VarnaAI\Websites\blogs
+# See START_HERE.md for the "go" command workflow
+```
+
+### Task Master
+
+```bash
+# View tasks
+cd D:\VarnaAI\Websites
+# Tasks are in .taskmaster/tasks/
+```
+
+---
+
+## Related Audit Reports
+
+### Latest Audits (2025-12-26)
+
+1. **COMPLETE_INVENTORY_2025-12-26.md**
+   - Total apps: 10 (7 running, 2 skipped, 1 external)
+   - All port conflicts resolved
+   - Folder naming convention: `varnaai-*`
+
+2. **DOCKER_AUDIT_REPORT_2025-12-26.md**
+   - 33 containers running
+   - Grades: A (3 apps), A- (1), B+ (2), B (1), C+ (1), C (1), D (1)
+   - Critical issues: taxapp security, projectmanager credentials
+
+3. **FRONTEND_AUDIT_REPORT_2025-12-26.md**
+   - React versions: 18-19
+   - Build tools: Vite 5-7, Next.js 14-16
+   - CRA migration complete (agenticcoder)
+
+4. **BACKEND_AUDIT_REPORT_2025-12-26.md**
+   - Frameworks: Express, FastAPI, NestJS
+   - ORMs: Prisma, Sequelize, TypeORM
+   - All services with health checks
+
+---
+
+## January 2026 Bulgaria Launch
+
+### Task Status
 
 | Task | Title | Status | Due |
 |------|-------|--------|-----|
@@ -85,490 +789,42 @@
 | 91 | Lead Magnets Preparation | DONE | - |
 | 92 | Networking Event Prep | PENDING | Jan 26, 2026 |
 
----
+### Prepared Materials
 
-## Directory Structure
+| Material | Status | Location |
+|----------|--------|----------|
+| 3 Case Studies | DONE | `docs/case-studies/` |
+| LinkedIn Profile | DONE | `docs/marketing/` |
+| 12 LinkedIn Posts | DONE | `docs/marketing/` |
+| Sales Toolkit | DONE | `docs/sales/` |
+| Business Cards | In Progress | `assets/` |
 
-```
-D:\VarnaAI\Websites\
-│
-├── ROOT DOCUMENTS
-│   ├── CLAUDE.md              ← Primary workflow reference
-│   ├── README.md              ← Project overview
-│   ├── PROJECT_INDEX.md       ← This file
-│   ├── INVENTORY_Q1_2026.md   ← Complete status report
-│   ├── COMPANY_INFO.md        ← Company details (4 sites)
-│   ├── SCHEMA_ORG_TEMPLATES.md ← Schema markup reference
-│   ├── AGENT.md / AGENTS.md   ← Agent configurations
-│   └── FEATURES.md            ← Feature documentation
-│
-├── .taskmaster/               ← Task Master AI
-│   ├── tasks/
-│   │   ├── tasks.json         ← 11 cleanup tasks (done)
-│   │   └── task_083-092.md    ← Jan 2026 launch tasks
-│   ├── config.json
-│   └── CLAUDE.md              ← Task Master instructions
-│
-├── apps/                      ← SaaS Applications (10 apps)
-│   ├── pension/               ← RetirementAI (Next.js)
-│   ├── fwchange/              ← FwChange (React + FastAPI)
-│   ├── dashboard/             ← C3 Compliance (React + Node)
-│   ├── seoagent/              ← SEO Agent (Vite + Express)
-│   ├── varnaai/               ← VarnaAI Agents (Next.js + NestJS)
-│   ├── agenticcoder/          ← Agentic Coder
-│   ├── projectmanager/        ← Project Manager
-│   ├── webscrap/              ← Web Scraper
-│   ├── LibreChat/             ← Self-hosted chat
-│   └── taxapp/                ← Tax Application
-│
-├── docs/                      ← Core Documentation
-│   ├── strategy/              ← Business plans, market research
-│   │   ├── C3/                ← C3 Compliance strategy
-│   │   ├── AIMarketingBG/     ← AIMarketingBG strategy
-│   │   └── FwChange/          ← FwChange strategy
-│   ├── prds/                  ← Product requirement documents
-│   ├── case-studies/          ← 3 anonymized case studies
-│   ├── marketing/             ← LinkedIn, lead magnets
-│   ├── sales/                 ← Sales toolkit
-│   ├── operations/            ← Google Sheets, guides
-│   ├── planning/              ← Execution plans
-│   ├── analysis/              ← Audits, analysis
-│   ├── implementation/        ← Deployment guides
-│   └── reference/             ← Technical references
-│
-├── assets/                    ← Media & Materials
-│   ├── images/                ← Site images
-│   ├── sales-materials-bg/    ← Bulgarian sales materials
-│   ├── business-card-design-spec.md
-│   ├── c3-landing-honest.html
-│   ├── fwchange-landing-honest.html
-│   └── retirementai-landing-honest.html
-│
-├── blogs/                     ← Blog Content
-│   ├── blog_posts/            ← Published posts by date
-│   │   ├── 2025-12-02/        ← First batch
-│   │   ├── 2025-12-08/
-│   │   ├── 2025-12-13/
-│   │   ├── 2025-12-16/
-│   │   ├── 2025-12-17-honest-versions/
-│   │   ├── 2025-12-19/
-│   │   └── 2025-12-22/
-│   ├── archive/               ← Archived posts
-│   ├── docs/                  ← Blog workflow docs
-│   ├── START_HERE.md          ← Quick start guide
-│   ├── URLS.md                ← 54 real internal URLs
-│   ├── SAAS_APPS.md           ← Apps to promote
-│   ├── INSTRUCTIONS.md        ← SEO rules
-│   └── LESSONS_LEARNED.md     ← Error archive
-│
-├── claudedocs/                ← Claude Work Products
-│   ├── debug/                 ← Debug reports
-│   ├── proposals/             ← Proposals
-│   └── [50+ analysis reports]
-│
-├── operations/                ← Infrastructure
-│   ├── compose/               ← Docker configs
-│   ├── hub-worker/            ← Cloudflare Worker
-│   ├── scripts/               ← Automation scripts
-│   ├── cron/                  ← Cron jobs
-│   ├── monitoring/            ← Monitoring configs
-│   ├── security/              ← Security configs
-│   └── snippets/              ← Code snippets
-│
-├── vps/                       ← VPS Configurations (ARCHIVED)
-│   ├── c3/                    ← C3 VPS config
-│   ├── fwchange/              ← FwChange VPS config
-│   ├── retirementai/          ← RetirementAI VPS config
-│   ├── varnaai/               ← VarnaAI VPS config
-│   └── webscrap/              ← WebScrap VPS config
-│
-├── seo/                       ← SEO Strategy
-│   ├── SEO_Portfolio_Strategy_2025.md
-│   ├── audits-raw/            ← PDF audits
-│   ├── site-audits/           ← Per-site analysis
-│   ├── backlink-campaign/     ← Backlink outreach
-│   ├── guest-posts/           ← Guest post content
-│   ├── outreach/              ← Outreach templates
-│   └── tools/                 ← SEO scripts
-│
-├── wordpress/                 ← WordPress Content
-│   ├── pages/                 ← Ready-to-paste content
-│   ├── snippets/              ← Reusable code
-│   ├── kadence-design-options.txt
-│   ├── schema-templates.md
-│   └── README.md
-│
-├── research/                  ← Market Research
-│   ├── german-compliance-market-2025.md
-│   ├── ai-coding-market-2025.md
-│   ├── varna-business-ecosystem-research-2025.md
-│   ├── varna-networking-event-january-26-2026-research.md
-│   └── [additional research files]
-│
-├── work/                      ← Active Work
-│   ├── secrets/               ← Centralized credentials
-│   │   ├── keymanager.py      ← get/set/list secrets
-│   │   └── secrets.yaml       ← All credentials (gitignored)
-│   ├── jobs/                  ← Freelance job hunter
-│   ├── crm/                   ← CRM tools
-│   └── accountant/            ← Accounting tools
-│
-├── done/                      ← Completed Work Archive
-│   ├── 2025-01-implementation/
-│   ├── 2025-12-root-cleanup/
-│   ├── old-audits/
-│   ├── playwright-screenshots-archive/
-│   └── [archived exports and reports]
-│
-└── config/                    ← Configuration Files
-    └── [various configs]
-```
+### Service Pricing (Bulgarian Market)
+
+| Service | Price |
+|---------|-------|
+| Free discovery call | Bezplatno |
+| GDPR Compliance Audit | 980 lv (~EUR 500) |
+| ISO 27001 Implementation | 9,800 lv (~EUR 5,000) |
+| Monthly Advisory | 290 lv/month (~EUR 150/mo) |
 
 ---
 
-## WordPress Portfolio Sites
+## GitHub Repositories
 
-| Site | URL | Language | Status | Focus |
-|------|-----|----------|--------|-------|
-| **VarnaAI** | varnaai.com | English | PRIMARY | Enterprise AI services |
-| **AI Projektmanager** | ai-projektmanager.de | German | Dormant | AI project management |
-| **Varna Agenten** | varna-agenten.de | German | Dormant | AI agents |
-| **AI Marketing BG** | aimarketingbg.com | English/BG | Active | AI marketing |
+### Repository Structure
 
-**Credentials**: Use keymanager in `work/secrets/`
-```bash
-cd D:\VarnaAI\Websites\work\secrets
-python keymanager.py get wordpress varnaai.com
-```
+| Repo | Visibility | Purpose | URL |
+|------|------------|---------|-----|
+| VarnaAIMaster | Private | Master repo with all folders | github.com/Marvelious/VarnaAIMaster |
+| Scott-VarnaAI | Public | Synced repo for Scott (beta tester) | github.com/Marvelious/Scott-VarnaAI |
 
----
+### Scott Beta Tester Setup
 
-## Application Portfolio
-
-### Production-Ready Apps (Local Docker)
-
-| App | Directory | Frontend Port | Backend Port | Tech Stack |
-|-----|-----------|---------------|--------------|------------|
-| **RetirementAI** | `apps/pension` | 3001 | - | Next.js 14, PostgreSQL, Redis, OpenAI |
-| **C3 Compliance** | `apps/dashboard` | 3002 | 8001 | React 18, Node.js, PostgreSQL (pgvector) |
-| **FwChange** | `apps/fwchange` | 3003 | 8002 | React 18, FastAPI, PostgreSQL, Redis |
-
-### Development Apps
-
-| App | Directory | Status | Tech Stack |
-|-----|-----------|--------|------------|
-| **SEO Agent** | `apps/seoagent` | Development | Vite, React 19, Express |
-| **VarnaAI Agents** | `apps/varnaai` | Development | Next.js 14, NestJS, Neo4j |
-| **Agentic Coder** | `apps/agenticcoder` | Development | AI coding assistant |
-| **Project Manager** | `apps/projectmanager` | Development | Node.js |
-| **WebScrap** | `apps/webscrap` | Development | Web scraping platform |
-| **Tax App** | `apps/taxapp` | Development | Tax application |
-| **LibreChat** | `apps/LibreChat` | Self-hosted | External project |
-
-### App Documentation
-
-Each app has its own `CLAUDE.md` with specific instructions:
-- `apps/pension/CLAUDE.md` - RetirementAI workflow
-- `apps/fwchange/CLAUDE.md` - FwChange workflow
-- `apps/dashboard/CLAUDE.md` - C3 workflow
-- `apps/seoagent/CLAUDE.md` - SEO Agent workflow
-- `apps/varnaai/CLAUDE.md` - VarnaAI workflow
-
----
-
-## Task Master Tasks (Jan 2026 Launch)
-
-### Location: `.taskmaster/tasks/`
-
-| File | Title | Status | Priority |
-|------|-------|--------|----------|
-| `task_083.md` | VarnaAI Business Card Homepage | IN-PROGRESS | HIGH |
-| `task_084.md` | Simplify Other 3 Sites | PENDING | After 83 |
-| `task_085.md` | Business Cards Design & Order | URGENT | Order NOW |
-| `task_086.md` | 3 Anonymized Case Studies | DONE | - |
-| `task_087.md` | LinkedIn Profile Optimization | DONE | - |
-| `task_088.md` | Sales Materials Templates | DONE | - |
-| `task_089.md` | Google Sheets Dashboard | PENDING | Jan 5 |
-| `task_090.md` | January LinkedIn Posts (12) | DONE | - |
-| `task_091.md` | Lead Magnets Preparation | DONE | - |
-| `task_092.md` | Networking Event Prep (Jan 26) | PENDING | Jan 17-25 |
-
----
-
-## Strategy Documents
-
-### Location: `docs/strategy/`
-
-| Document | Purpose |
-|----------|---------|
-| `BUSINESS_PLAN_2025.md` | **Master strategic plan** - 12-month roadmap |
-| `PORTFOLIO-SEO-STRATEGY.md` | SEO strategy for all sites |
-| `APPS-PORTFOLIO.md` | SaaS apps overview |
-| `PILOT-SOWS.md` | Pilot project statements of work |
-| `BACKLINK_AUTOMATION_PLAN.md` | Backlink building strategy |
-| `THREE_FLOW_DEVELOPMENT_STRATEGY.md` | Development workflow |
-
-### C3 Strategy (`docs/strategy/C3/`)
-
-| Document | Purpose |
-|----------|---------|
-| `MARKET_RESEARCH_2025.md` | Enterprise market research |
-| `SME_MARKET_REALITY_2025.md` | Realistic Bulgarian SME assessment |
-| `ACTION_PLAN_DECEMBER_2025.md` | December tasks |
-| `SERVICE_DELIVERY_PLAYBOOK.md` | How to deliver C3 services |
-| `VCCI_Membership_Action_Plan.md` | Chamber of Commerce plan |
-| `VARNA_LOCAL_MARKET_RESEARCH_2025.md` | Local Varna research |
-| `DIGITAL_MARKETING_CAMPAIGN_2025.md` | Marketing campaign |
-
-### AIMarketingBG Strategy (`docs/strategy/AIMarketingBG/`)
-
-| Document | Purpose |
-|----------|---------|
-| `BUSINESS_PLAN_2025.md` | AIMarketingBG business plan |
-| `IMMEDIATE_ACTIONS_DEC2025.md` | December priorities |
-| `BD_JOB_DESCRIPTION.md` | Business development role |
-| `PROSPECT_LIST_HOTELS.md` | Hotel industry targets |
-
-### FwChange Strategy (`docs/strategy/FwChange/`)
-
-| Document | Purpose |
-|----------|---------|
-| `MARKET_RESEARCH_2025.md` | German firewall market |
-
----
-
-## Case Studies
-
-### Location: `docs/case-studies/`
-
-| File | Anonymous Client | Real Source |
-|------|------------------|-------------|
-| `01-industrial-iot-azure-iso27001.md` | Global Industrial Equipment Manufacturer | Caterpillar |
-| `02-payment-processing-fwchange-automation.md` | European Payment Processor | Worldline |
-| `03-automotive-azure-xsoar-migration.md` | Global Automotive Supplier | Mann und Hummel |
-
-**Output Formats in Each File**:
-- Website version (500 words)
-- LinkedIn version (150 words)
-- Slide deck (3 slides)
-- Verbal story (90 seconds)
-
----
-
-## Sales & Marketing Materials
-
-### Marketing (`docs/marketing/`)
-
-| Document | Purpose |
-|----------|---------|
-| `linkedin-profile-optimization.md` | LinkedIn profile guide |
-| `linkedin-posts-january-2026.md` | 12 pre-written posts |
-| `security-checklist-bulgarian-smes.md` | 25-point checklist (lead magnet) |
-| `seo-audit-template-free-offer.md` | Free SEO audit offer |
-
-### Sales (`docs/sales/`)
-
-| Document | Purpose |
-|----------|---------|
-| `sales-materials-complete-toolkit.md` | **Complete sales toolkit** |
-
-**Toolkit Contents**:
-- Discovery call script
-- 3 proposal templates (Entry/Project/Retainer)
-- 6 email templates
-- NDA template
-- Client onboarding checklist
-
-### Bulgarian Sales Materials (`assets/sales-materials-bg/`)
-
-**16 templates** for Bulgarian market outreach:
-
-| Document | Purpose |
-|----------|---------|
-| `c3-onepager-content-bg.md` | C3 one-pager in Bulgarian |
-| `c3-pilot-contract-bg.md` | Pilot contract template |
-| `c3-pilot-program-terms.md` | Pilot program terms |
-| `c3-cold-email-bg.txt` | Cold email template |
-| `c3-followup-email-bg.txt` | Follow-up email template |
-| `c3-linkedin-dm-bg.txt` | LinkedIn DM template |
-| `c3-phone-script-bg.txt` | Phone script (C3 focused) |
-| `cold-email-template.md` | General cold email |
-| `phone-script-bulgarian.md` | General phone script |
-| `invoice-template-bg.md` | Invoice template |
-| `nurture-templates-bg.md` | Nurture email sequence |
-| `payment-setup-bg.md` | Payment setup guide |
-| `bd-rep-job-posting-bg.md` | BD rep job posting |
-| `one-pager-structure.md` | One-pager template |
-| `classic-security-emails.md` | Classic Security emails |
-| `vcci-application-letter-template.txt` | VCCI membership letter |
-
----
-
-## PRDs & Deployment
-
-### Location: `docs/prds/`
-
-| Document | Purpose |
-|----------|---------|
-| `MASTER-DEPLOYMENT-PRD.md` | Master deployment plan |
-| `HETZNER-CONSOLIDATION-PRD.md` | VPS consolidation (archived) |
-| `BETA-DEMO-DEPLOYMENT-PRD.md` | Demo deployment |
-| `BETA-DEMO-DEPLOYMENT-ADDENDUM.md` | Demo addendum |
-| `LOCAL-DEV-HETZNER-DEMO-PRD.md` | Local to VPS guide |
-| `SECURE-PRELAUNCH.md` | Security checklist |
-| `IMPLEMENTATION-CHECKLIST.md` | Implementation tracking |
-
----
-
-## Blog Content
-
-### Location: `blogs/`
-
-**Key Files**:
-| File | Purpose |
-|------|---------|
-| `START_HERE.md` | Quick start guide ("go" command) |
-| `URLS.md` | 54 real internal URLs for 4 websites |
-| `SAAS_APPS.md` | Portfolio apps to promote |
-| `INSTRUCTIONS.md` | SEO rules, WordPress formatting |
-| `LESSONS_LEARNED.md` | Error archive (56K tokens saved) |
-| `TOPIC_DIVERSITY_MATRIX.md` | 80+ unique topics |
-| `GAP_ANALYSIS_2025.md` | Content gaps and priorities |
-
-**Blog Posts Archive** (`blogs/blog_posts/`):
-
-| Date | ai-projektmanager | aimarketingbg | varna-agenten | varnaai | Total |
-|------|-------------------|---------------|---------------|---------|-------|
-| 2025-12-02 | 10 posts | - | - | 8 posts | 18 |
-| 2025-12-08 | + | + | + | + | - |
-| 2025-12-13 | + | + | + | + | - |
-| 2025-12-16 | + | + | + | + | - |
-| 2025-12-17 | Honest rewrites | - | - | - | - |
-| 2025-12-19 | + | + | + | + | - |
-| 2025-12-22 | + | + | + | + | - |
-
-**Total Blog Posts**: 50+ across all dates and sites
-
----
-
-## Infrastructure & Operations
-
-### Location: `operations/`
-
-| Directory | Purpose |
-|-----------|---------|
-| `compose/` | Docker Compose configurations |
-| `hub-worker/` | Cloudflare Worker |
-| `scripts/` | Automation scripts |
-| `cron/` | Cron job configurations |
-| `monitoring/` | Monitoring configurations |
-| `security/` | Security configurations |
-| `snippets/` | Reusable code snippets |
-
-### Google Sheets Dashboard (`docs/operations/`)
-
-| Document | Purpose |
-|----------|---------|
-| `google-sheets-dashboard-setup.md` | Full setup guide |
-| `google-sheets-dashboard-quickstart.md` | Quick start |
-| `scott-research-guide.md` | Research assistant guide |
-| `scott-lead-research-template.csv` | Lead research template |
-
----
-
-## SEO Resources
-
-### Location: `seo/`
-
-| Path | Content |
-|------|---------|
-| `SEO_Portfolio_Strategy_2025.md` | Master SEO strategy |
-| `KEYWORD_RESEARCH_2025.md` | Keyword research |
-| `SEO_KEYWORD_CHANGES_Q1_2025.md` | Q1 2025 changes |
-| `BACKLINK_OPPORTUNITIES_2025-12.md` | December backlink opportunities |
-| `audits-raw/` | Raw PDF audits from tools |
-| `site-audits/` | Per-site analysis |
-| `backlink-campaign/` | Backlink outreach campaign |
-| `guest-posts/` | Guest post content |
-| `outreach/` | Outreach templates |
-| `tools/` | SEO automation scripts |
-
----
-
-## Research Documents
-
-### Location: `research/`
-
-| Document | Purpose |
-|----------|---------|
-| `german-compliance-market-2025.md` | German compliance market analysis |
-| `ai-coding-market-2025.md` | AI coding market research |
-| `varna-business-ecosystem-research-2025.md` | Varna business ecosystem |
-| `varna-networking-event-january-26-2026-research.md` | Jan 26 event research |
-| `fwchange-strategy.md` | FwChange strategy |
-| `fwchange-linkedin-outreach.md` | FwChange LinkedIn outreach |
-| `crosspromo-strategy.md` | Cross-promotion strategy |
-| `varna-business-landscape-2024-2025.md` | Varna business landscape |
-
----
-
-## Claude Work Products
-
-### Location: `claudedocs/`
-
-**50+ analysis reports** including:
-
-| Category | Examples |
-|----------|----------|
-| **SEO Analysis** | AI_MARKETING_BG_SEO_ANALYSIS_2025.md, SEO_AUDIT_COMPREHENSIVE_SUMMARY_2025.md |
-| **Backlink Strategy** | BACKLINK_STRATEGY_2025_COMPREHENSIVE.md, BACKLINK_OUTREACH_STRATEGY_2025.md |
-| **VPS Audits** | VPS_AUDIT_REPORT_2025-12-*.md (multiple dates) |
-| **Competitor Analysis** | COMPETITOR_ANALYSIS_GERMAN_AI_COMPLIANCE_2025.md |
-| **Content Audits** | BLOG_CONTENT_AUDIT_REPORT.md, VARNAAI_CONTENT_AUDIT_2025-12-21.md |
-| **Code Analysis** | CODE_ANALYSIS_REPORT.md, CLEANUP_ANALYSIS_REPORT.md |
-| **Market Research** | varna-ai-services-market-research-2025-12-18.md |
-
----
-
-## Key Reference Files
-
-| File | Purpose | Location |
-|------|---------|----------|
-| `CLAUDE.md` | WordPress workflow, credentials, SEO rules | Root |
-| `COMPANY_INFO.md` | Company details for all sites | Root |
-| `SCHEMA_ORG_TEMPLATES.md` | Schema markup reference | Root |
-| `INVENTORY_Q1_2026.md` | Complete status report | Root |
-| `wordpress/README.md` | WordPress reference | wordpress/ |
-| `blogs/START_HERE.md` | Blog generation workflow | blogs/ |
-| `blogs/URLS.md` | 54 real internal URLs | blogs/ |
-| `apps/DOCKER_MIGRATION_GUIDE.md` | Docker setup guide | apps/ |
-
----
-
-## Credentials & Secrets
-
-### Location: `work/secrets/`
-
-**Keymanager Usage**:
-```bash
-# List all available secrets
-python keymanager.py list
-
-# Get WordPress credentials
-python keymanager.py get wordpress varnaai.com
-
-# Get API key
-python keymanager.py get api openai
-```
-
-**In Python**:
-```python
-import sys
-sys.path.insert(0, "D:/VarnaAI/Websites/work")
-from secrets.keymanager import get_wordpress
-
-creds = get_wordpress("varnaai.com")
-```
+Files for Scott (in repo root):
+- `SCOTT_SETUP.bat` - One-click Docker launcher (menu-driven)
+- `SCOTT_STOP.bat` - Stop all Docker containers
+- `SCOTT_README.md` - Simple setup guide
 
 ---
 
@@ -581,238 +837,35 @@ creds = get_wordpress("varnaai.com")
 
 ---
 
-## Timeline (Jan 2026 Launch)
-
-| Date | Milestone |
-|------|-----------|
-| Dec 23 | Order business cards |
-| Dec 28 - Jan 10 | Target company research |
-| Jan 5 | Google Sheets dashboard ready |
-| Jan 10 | Business cards delivered |
-| Jan 10-17 | Find networking events |
-| Jan 17-25 | Event preparation |
-| **Jan 26** | **First networking event** |
-
----
-
-## Quick Actions
-
-### Start Working on VarnaAI Homepage
-```
-1. Read CLAUDE.md for workflow
-2. Check .taskmaster/tasks/task_083.md for homepage spec
-3. Create blank page in WordPress
-4. Wait for Big Dick to add Kadence blocks
-5. Fill content per spec
-```
-
-### Check Current Tasks
-```bash
-# View all tasks
-cat .taskmaster/tasks/tasks.json | jq '.tasks[] | {id, title, status}'
-
-# Or use Task Master MCP
-mcp__task-master__get_tasks --projectRoot "D:\VarnaAI\Websites"
-```
-
-### Access Credentials
-```bash
-cd work/secrets
-python keymanager.py get wordpress varnaai.com
-```
-
-### Start Local Docker Apps
-```bash
-# Start all 3 apps
-cd apps/pension && docker-compose up -d
-cd ../dashboard && docker-compose up -d
-cd ../fwchange && docker-compose up -d
-
-# Check status
-docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
-```
-
-### Generate Blog Post
-```
-1. Read blogs/START_HERE.md
-2. Say "go" → Choose website → Execute 3-phase workflow
-```
-
----
-
-## Social Media Profiles
-
-| Brand | Facebook | Instagram | LinkedIn | X/Twitter |
-|-------|----------|-----------|----------|-----------|
-| **Varna AI** | [varnaai](https://facebook.com/varnaai/) | [varnaaicom](https://instagram.com/varnaaicom) | [varnaai](https://linkedin.com/company/varnaai/) | [Varna_Ai](https://x.com/Varna_Ai) |
-| **AI Projektmanager** | [AIProjektmanager](https://facebook.com/AIProjektmanager/) | [aiprojectmanger](https://instagram.com/aiprojectmanger) | [ai-projektmanager](https://linkedin.com/company/ai-projektmanager/) | [AiProjekt](https://x.com/AiProjekt) |
-| **Varna Agenten** | [VarnaAgenten](https://facebook.com/VarnaAgenten/) | [varnaagents](https://instagram.com/varnaagents) | [varna-agenten](https://linkedin.com/company/varna-agenten/) | [VarnaAgenten](https://x.com/VarnaAgenten) |
-| **AI Marketing BG** | [aimarketingbg](https://facebook.com/aimarketingbg/) | [aimarketingbg](https://instagram.com/aimarketingbg/) | [ai-marketing-bg](https://linkedin.com/company/ai-marketing-bg/) | [aimarketingbg](https://x.com/aimarketingbg) |
-
----
-
-## Troubleshooting
-
-### Common Issues
-
-#### WordPress Access Issues
-```bash
-# Verify credentials
-cd D:\VarnaAI\Websites\work\secrets
-python keymanager.py get wordpress varnaai.com
-
-# Test login URL
-# https://varnaai.com/wp-admin/
-# Username: claude
-```
-
-#### Docker Apps Not Starting
-```bash
-# Check if containers exist
-docker ps -a
-
-# View logs
-docker logs pension-app
-docker logs c3-frontend
-docker logs fwchange-frontend
-
-# Restart specific app
-cd apps/pension && docker-compose down && docker-compose up -d
-```
-
-#### Dead Demo Links on VarnaAI.com
-**Status**: VPS is OFFLINE. Demo links point to dead subdomains.
-**Solution**: Update to static HTML pages on All-Inkl or remove buttons
-**Files affected**: Portfolio pages on varnaai.com
-
-#### Task Master Not Finding Tasks
-```bash
-# Verify project root
-cd D:\VarnaAI\Websites
-
-# Check tasks file exists
-cat .taskmaster/tasks/tasks.json | jq '.tasks | length'
-
-# View task details
-cat .taskmaster/tasks/task_083.md
-```
-
-#### MCP Server Not Connected
-```bash
-# Check MCP configuration
-cat .mcp.json
-
-# Verify server is running (example for playwright)
-# MCP servers are configured in Claude Code settings, not project files
-```
-
-### File Not Found Errors
-
-| Error | Solution |
-|-------|----------|
-| `keymanager.py not found` | Navigate to `work/secrets/` first |
-| `secrets.yaml missing` | File is gitignored - create from template |
-| `CLAUDE.md not loading` | Ensure correct project root in Claude Code |
-| `tasks.json invalid` | Validate JSON syntax with `jq .` |
-
----
-
-## GitHub Repositories
-
-### Repository Structure
-
-| Repo | Visibility | Purpose | URL |
-|------|------------|---------|-----|
-| **VarnaAIMaster** | Private | Master repo with all folders | github.com/Marvelious/VarnaAIMaster |
-| **Scott-VarnaAI** | Public | Synced repo for Scott (beta tester) | github.com/Marvelious/Scott-VarnaAI |
-
-### App Repositories
-
-| App | Repo | Status |
-|-----|------|--------|
-| RetirementAI | `Marvelious/RetirementAI` | ✅ Active |
-| FwChange | `Marvelious/FwChange` | ✅ Active |
-| C3 Compliance | `Marvelious/compliance-command-center` | ✅ Active |
-| SEO Agent | `Marvelious/seoagent` | ✅ Active |
-| VarnaAI Agents | `Marvelious/varnaai-platform` | ✅ Active |
-| Project Manager | `Marvelious/projectmanager` | ✅ Active |
-| Agentic Coder | `Marvelious/agenticcoder` | ✅ Active |
-| Tax App | `Marvelious/taxapp` | ✅ Active |
-| WebScrap | `Marvelious/webscrap` | ✅ Active |
-
-### Scott Beta Tester Setup
-
-**Files for Scott** (in repo root):
-| File | Purpose |
-|------|---------|
-| `SCOTT_SETUP.bat` | One-click Docker launcher (menu-driven) |
-| `SCOTT_STOP.bat` | Stop all Docker containers |
-| `SCOTT_README.md` | Simple setup guide |
-
-**Scott's Workflow**:
-```bash
-# Clone repo
-git clone https://github.com/Marvelious/Scott-VarnaAI.git
-
-# Run setup
-cd Scott-VarnaAI
-# Double-click SCOTT_SETUP.bat → Choose app → Done!
-```
-
-**Sync Commands**:
-```bash
-# Push to both repos
-git push origin master && git push scott master
-
-# Pull Scott's changes
-git pull scott master
-```
-
-### Excluded from Scott-VarnaAI
-- `cv/` - Personal CV files
-- `mcp-bridge/` - MCP bridge internals
-- `ml_models/` - ML models
-- `work/secrets/` - Credentials
-
----
-
 ## Changelog
+
+### 2025-12-26 (Update 4)
+- **Shared Ollama Architecture**: Unified all apps to use single `ailab-ollama` container
+- Removed duplicate Ollama instances (taxapp-ollama eliminated)
+- LibreChat, AI Lab, and Tax App now share GPU resources via `ailab-network`
+- Added health checks and memory limits to Ollama configuration
+- Updated `operations/OLLAMA_SHARED_SETUP.md` with complete documentation
+
+### 2025-12-26 (Update 3)
+- **PROJECT_INDEX.md**: Complete rewrite with comprehensive documentation
+- Added complete apps inventory with 11 applications
+- Added port allocation matrix (3000-8100 range)
+- Added Docker networks table
+- Added infrastructure and operations section
+- Added January 2026 Bulgaria launch section
+- Added GitHub repositories section
 
 ### 2025-12-26 (Update 2)
 - **GitHub Setup**: VarnaAIMaster + Scott-VarnaAI repos created
 - **Scott Beta Tester**: SCOTT_SETUP.bat, SCOTT_STOP.bat, SCOTT_README.md added
-- All 10 apps now have GitHub repos with proper remotes
-- Dual-remote sync (origin + scott) configured
+- All apps now have GitHub repos with proper remotes
 
-### 2025-12-26
-- **PROJECT_INDEX.md**: Complete rewrite with comprehensive documentation
-- **DOCUMENTATION_INDEX.md**: Updated to reflect current project state
-- Added Table of Contents for easier navigation
-- Added Troubleshooting section
-- Fixed Bulgarian sales materials list (16 files, was 5)
-- Updated blog post counts and archive structure
-- Added changelog section
-
-### 2025-12-25
-- **INVENTORY_Q1_2026.md**: Created Q1 2026 action plan
-- Task Master cleanup tasks completed (11/11)
-- Documentation CLAUDE.md files updated across apps
-
-### 2025-12-23
-- Strategic pivot decision: VPS shutdown, consulting focus
-- Business card spec finalized
-- Case studies completed (3/3)
-
-### 2025-12-21
-- Fake content audit completed
-- VarnaAI.com cleanup finished
-- AIMarketingBG cleanup finished
-
-### Earlier Updates
-- See `done/` directory for archived cleanup reports
-- See `claudedocs/` for historical analysis reports
+### 2025-12-26 (Update 1)
+- Docker infrastructure audit completed
+- All port conflicts resolved
+- Folder naming convention standardized to `varnaai-*`
 
 ---
 
-**Last Updated**: 2025-12-26
-**Maintained By**: Claude Code
+*Generated by Claude Code on 2025-12-26*
+*Next update recommended: After significant infrastructure changes*
