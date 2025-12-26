@@ -10,16 +10,18 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --gold: #c9a227;
-            --gold-light: #d4b844;
-            --gold-dark: #a88a1e;
-            --navy-dark: #0a1628;
-            --navy-mid: #0d1e36;
-            --navy-light: #132743;
-            --card-bg: #0f2340;
+            /* Electric Luxury Theme - Cyan/Purple */
+            --accent-primary: #06b6d4;
+            --accent-secondary: #7c3aed;
+            --accent-tertiary: #22d3ee;
+            --accent-glow: rgba(6, 182, 212, 0.5);
+            --navy-dark: #030014;
+            --navy-mid: #0a0520;
+            --navy-light: #110830;
+            --card-bg: #110830;
             --accent-blue: #3b82f6;
             --accent-cyan: #06b6d4;
-            --accent-orange: #f59e0b;
+            --accent-purple: #7c3aed;
             --text-primary: #ffffff;
             --text-secondary: #94a3b8;
             --text-muted: #64748b;
@@ -30,7 +32,10 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, var(--navy-dark) 0%, #0d1a2d 50%, var(--navy-dark) 100%);
+            background: var(--navy-dark);
+            background-image:
+                radial-gradient(ellipse at 10% 30%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 90% 70%, rgba(124, 58, 237, 0.1) 0%, transparent 50%);
             color: var(--text-primary);
             min-height: 100vh;
             display: flex;
@@ -43,9 +48,9 @@
             width: 100%;
             max-width: 1200px;
             background: linear-gradient(145deg, rgba(15, 35, 64, 0.95) 0%, rgba(10, 22, 40, 0.98) 100%);
-            border: 1px solid var(--gold);
+            border: 1px solid var(--accent-primary);
             border-radius: 20px;
-            box-shadow: 0 0 60px rgba(201, 162, 39, 0.15), 0 0 100px rgba(201, 162, 39, 0.05), 0 25px 80px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 60px rgba(6, 182, 212, 0.15), 0 0 100px rgba(124, 58, 237, 0.1), 0 25px 80px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
             overflow: hidden;
             display: flex;
             min-height: 750px;
@@ -57,7 +62,7 @@
             position: absolute;
             top: 0; left: 0; right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+            background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
             opacity: 0.5;
         }
 
@@ -74,16 +79,16 @@
         .brand-logo { display: flex; align-items: center; gap: 12px; }
         .brand-icon {
             width: 40px; height: 40px;
-            background: linear-gradient(135deg, var(--accent-orange), #d97706);
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
             border-radius: 10px;
             display: flex; align-items: center; justify-content: center;
             font-weight: 700; font-size: 12px;
             color: var(--navy-dark);
-            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+            box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
         }
         .brand-text { display: flex; flex-direction: column; }
         .brand-name { font-size: 16px; font-weight: 700; color: var(--text-primary); }
-        .brand-name span { color: var(--accent-orange); }
+        .brand-name span { color: var(--accent-primary); }
         .brand-subtitle { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
 
         .tabs-section { flex: 1; padding: 0 12px; }
@@ -95,10 +100,10 @@
             cursor: pointer; transition: all 0.2s ease;
             border-radius: 10px; margin-bottom: 4px; font-size: 14px;
         }
-        .tab:hover { background: rgba(201, 162, 39, 0.1); color: var(--text-primary); }
+        .tab:hover { background: rgba(6, 182, 212, 0.1); color: var(--text-primary); }
         .tab.active {
-            background: linear-gradient(90deg, rgba(201, 162, 39, 0.2) 0%, rgba(201, 162, 39, 0.05) 100%);
-            color: var(--gold); box-shadow: inset 3px 0 0 var(--gold);
+            background: linear-gradient(90deg, rgba(6, 182, 212, 0.2) 0%, rgba(6, 182, 212, 0.05) 100%);
+            color: var(--accent-primary); box-shadow: inset 3px 0 0 var(--accent-primary);
         }
         .tab svg { width: 18px; height: 18px; flex-shrink: 0; }
 
@@ -106,7 +111,7 @@
         .user-info { display: flex; align-items: center; gap: 12px; }
         .user-avatar {
             width: 36px; height: 36px;
-            background: linear-gradient(135deg, var(--accent-orange), #d97706);
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
             border-radius: 8px; display: flex; align-items: center; justify-content: center;
             font-size: 12px; font-weight: 600;
         }
@@ -128,24 +133,24 @@
         }
         .card:hover {
             background: rgba(255, 255, 255, 0.04);
-            border-color: rgba(201, 162, 39, 0.2);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border-color: rgba(6, 182, 212, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), 0 0 30px rgba(6, 182, 212, 0.1);
         }
 
         .card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
         .card-title { font-size: 13px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; }
-        .card-action { font-size: 12px; color: var(--gold); cursor: pointer; transition: opacity 0.2s; }
+        .card-action { font-size: 12px; color: var(--accent-primary); cursor: pointer; transition: opacity 0.2s; }
         .card-action:hover { opacity: 0.8; }
 
         .score-card {
             grid-row: span 2;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
-            background: linear-gradient(145deg, rgba(201, 162, 39, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-            border-color: rgba(201, 162, 39, 0.15);
+            background: linear-gradient(145deg, rgba(6, 182, 212, 0.05) 0%, rgba(124, 58, 237, 0.03) 100%);
+            border-color: rgba(6, 182, 212, 0.2);
         }
 
         .score-ring { position: relative; width: 200px; height: 200px; }
-        .score-ring svg { transform: rotate(-90deg); filter: drop-shadow(0 0 20px rgba(201, 162, 39, 0.3)); }
+        .score-ring svg { transform: rotate(-90deg); filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.4)); }
         .score-ring-bg { fill: none; stroke: rgba(255, 255, 255, 0.08); stroke-width: 14; }
         .score-ring-progress {
             fill: none; stroke: url(#goldGradient); stroke-width: 14;
@@ -155,7 +160,7 @@
         @keyframes scoreAnimation { from { stroke-dashoffset: 565; } to { stroke-dashoffset: 56; } }
 
         .score-value { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; }
-        .score-number { font-size: 52px; font-weight: 700; color: var(--gold); text-shadow: 0 0 30px rgba(201, 162, 39, 0.4); }
+        .score-number { font-size: 52px; font-weight: 700; color: var(--accent-primary); text-shadow: 0 0 30px rgba(6, 182, 212, 0.5); }
         .score-label { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
 
         .chart-card { min-height: 200px; }
@@ -165,30 +170,30 @@
         .progress-item:last-child { margin-bottom: 0; }
         .progress-header { display: flex; justify-content: space-between; margin-bottom: 8px; }
         .progress-label { font-size: 13px; color: var(--text-secondary); }
-        .progress-value { font-size: 13px; color: var(--gold); font-weight: 600; }
+        .progress-value { font-size: 13px; color: var(--accent-primary); font-weight: 600; }
         .progress-bar { height: 8px; background: rgba(255, 255, 255, 0.08); border-radius: 4px; overflow: hidden; }
-        .progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent-orange), #fbbf24); border-radius: 4px; transition: width 1s ease-out; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary)); border-radius: 4px; transition: width 1s ease-out; }
 
         .badges-grid { display: flex; gap: 10px; flex-wrap: wrap; }
         .badge {
             display: flex; align-items: center; gap: 8px;
-            padding: 10px 14px; background: rgba(201, 162, 39, 0.08);
-            border: 1px solid rgba(201, 162, 39, 0.25);
+            padding: 10px 14px; background: rgba(6, 182, 212, 0.08);
+            border: 1px solid rgba(6, 182, 212, 0.3);
             border-radius: 10px; cursor: pointer; transition: all 0.2s ease;
         }
-        .badge:hover { background: rgba(201, 162, 39, 0.15); border-color: var(--gold); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(201, 162, 39, 0.2); }
-        .badge svg { width: 18px; height: 18px; color: var(--gold); }
+        .badge:hover { background: rgba(6, 182, 212, 0.15); border-color: var(--accent-primary); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3); }
+        .badge svg { width: 18px; height: 18px; color: var(--accent-primary); }
         .badge-text { font-size: 12px; font-weight: 600; color: var(--text-primary); }
 
         .report-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
         .report-btn {
             display: flex; align-items: center; justify-content: center; gap: 8px;
-            padding: 12px 16px; background: rgba(201, 162, 39, 0.1);
-            border: 1px solid rgba(201, 162, 39, 0.2);
+            padding: 12px 16px; background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.25);
             border-radius: 10px; cursor: pointer; transition: all 0.2s ease;
         }
-        .report-btn:hover { background: rgba(201, 162, 39, 0.2); border-color: var(--gold); }
-        .report-btn svg { width: 16px; height: 16px; color: var(--gold); }
+        .report-btn:hover { background: rgba(6, 182, 212, 0.2); border-color: var(--accent-primary); }
+        .report-btn svg { width: 16px; height: 16px; color: var(--accent-primary); }
         .report-btn span { font-size: 12px; font-weight: 600; color: var(--text-primary); }
 
         .file-list { display: flex; flex-direction: column; gap: 8px; }
@@ -198,13 +203,13 @@
             border: 1px solid rgba(255, 255, 255, 0.04);
             border-radius: 10px; cursor: pointer; transition: all 0.2s ease;
         }
-        .file-item:hover { background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3); }
+        .file-item:hover { background: rgba(6, 182, 212, 0.1); border-color: rgba(6, 182, 212, 0.3); }
         .file-icon {
             width: 36px; height: 36px;
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(251, 191, 36, 0.2));
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(124, 58, 237, 0.2));
             border-radius: 8px; display: flex; align-items: center; justify-content: center;
         }
-        .file-icon svg { width: 18px; height: 18px; color: var(--accent-orange); }
+        .file-icon svg { width: 18px; height: 18px; color: var(--accent-primary); }
         .file-info { flex: 1; }
         .file-name { font-size: 13px; color: var(--text-primary); font-weight: 500; }
         .file-size { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
@@ -302,7 +307,7 @@
             </div>
 
             <div class="card score-card">
-                <svg width="0" height="0"><defs><linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#d4b844"/><stop offset="100%" style="stop-color:#c9a227"/></linearGradient></defs></svg>
+                <svg width="0" height="0"><defs><linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#22d3ee"/><stop offset="100%" style="stop-color:#06b6d4"/></linearGradient></defs></svg>
                 <div class="score-ring">
                     <svg width="200" height="200" viewBox="0 0 200 200">
                         <circle class="score-ring-bg" cx="100" cy="100" r="90"/>
@@ -364,14 +369,14 @@
             type: 'bar',
             data: {
                 labels: ['Pending', 'Review', 'Approved', 'Deployed', 'Rejected', 'Rollback'],
-                datasets: [{ data: [12, 8, 45, 38, 3, 2], backgroundColor: ['rgba(245, 158, 11, 0.85)', 'rgba(59, 130, 246, 0.85)', 'rgba(16, 185, 129, 0.85)', 'rgba(201, 162, 39, 0.85)', 'rgba(239, 68, 68, 0.85)', 'rgba(148, 163, 184, 0.85)'], borderRadius: 6, borderSkipped: false }]
+                datasets: [{ data: [12, 8, 45, 38, 3, 2], backgroundColor: ['rgba(6, 182, 212, 0.85)', 'rgba(124, 58, 237, 0.85)', 'rgba(16, 185, 129, 0.85)', 'rgba(34, 211, 238, 0.85)', 'rgba(239, 68, 68, 0.85)', 'rgba(148, 163, 184, 0.85)'], borderRadius: 6, borderSkipped: false }]
             },
             options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#64748b', font: { size: 11 } } }, x: { grid: { display: false }, ticks: { color: '#64748b', font: { size: 11 } } } } }
         });
 
         new Chart(document.getElementById('activityChart').getContext('2d'), {
             type: 'line',
-            data: { labels: ['Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'], datasets: [{ data: [28, 35, 42, 38, 52, 48], borderColor: '#f59e0b', backgroundColor: 'rgba(245, 158, 11, 0.1)', fill: true, tension: 0.4, pointRadius: 4, pointBackgroundColor: '#f59e0b', pointBorderColor: '#0f2340', pointBorderWidth: 2, borderWidth: 3 }] },
+            data: { labels: ['Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'], datasets: [{ data: [28, 35, 42, 38, 52, 48], borderColor: '#06b6d4', backgroundColor: 'rgba(6, 182, 212, 0.1)', fill: true, tension: 0.4, pointRadius: 4, pointBackgroundColor: '#06b6d4', pointBorderColor: '#110830', pointBorderWidth: 2, borderWidth: 3 }] },
             options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#64748b', font: { size: 11 } } }, x: { grid: { display: false }, ticks: { color: '#64748b', font: { size: 11 } } } } }
         });
     </script>

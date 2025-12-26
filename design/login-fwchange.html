@@ -15,15 +15,17 @@
         }
 
         :root {
-            --accent: #f59e0b;
-            --accent-light: #fbbf24;
-            --accent-dark: #d97706;
-            --bg-primary: #0a0f1a;
-            --bg-secondary: #111827;
-            --bg-card: rgba(17, 24, 39, 0.8);
+            /* Electric Luxury Theme - Cyan/Purple */
+            --accent: #06b6d4;
+            --accent-light: #22d3ee;
+            --accent-dark: #0891b2;
+            --accent-secondary: #7c3aed;
+            --bg-primary: #030014;
+            --bg-secondary: #0a0520;
+            --bg-card: rgba(17, 8, 48, 0.8);
             --text-primary: #ffffff;
             --text-secondary: #94a3b8;
-            --border-color: rgba(245, 158, 11, 0.2);
+            --border-color: rgba(6, 182, 212, 0.3);
         }
 
         body {
@@ -44,9 +46,9 @@
             right: 0;
             bottom: 0;
             background:
-                radial-gradient(ellipse at 20% 20%, rgba(245, 158, 11, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 80%, rgba(217, 119, 6, 0.1) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, rgba(251, 191, 36, 0.05) 0%, transparent 70%);
+                radial-gradient(ellipse at 20% 20%, rgba(6, 182, 212, 0.2) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(34, 211, 238, 0.08) 0%, transparent 70%);
             z-index: 0;
         }
 
@@ -162,8 +164,8 @@
         .form-input:focus {
             outline: none;
             border-color: var(--accent);
-            background: rgba(245, 158, 11, 0.05);
-            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+            background: rgba(6, 182, 212, 0.05);
+            box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
         }
 
         .password-wrapper {
@@ -242,12 +244,12 @@
             font-family: inherit;
             cursor: pointer;
             transition: all 0.2s;
-            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+            box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
         }
 
         .submit-btn:hover {
             transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+            box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4);
         }
 
         .divider {
@@ -342,7 +344,7 @@
     <div class="bg-gradient"></div>
 
     <div class="login-container">
-        <a href="landing-fwchange-electric.html" class="back-link">
+        <a href="/" class="back-link">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
             </svg>
@@ -386,7 +388,7 @@
                     <a href="#" class="forgot-link">Forgot password?</a>
                 </div>
 
-                <button type="submit" class="submit-btn" onclick="event.preventDefault(); window.location.href='dashboard-fwchange.html';">
+                <button type="submit" class="submit-btn" onclick="event.preventDefault(); window.location.href='/app';">
                     Sign in
                 </button>
             </form>

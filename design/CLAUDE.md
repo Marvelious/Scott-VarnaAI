@@ -79,9 +79,36 @@ All landing pages use a unified "Electric Luxury" aesthetic with app-specific ac
 | App | Primary | Secondary | Tertiary |
 |-----|---------|-----------|----------|
 | **C3 Compliance** | Cyan `#06b6d4` | Purple `#7c3aed` | Violet `#a78bfa` |
-| **FwChange** | Blue `#3b82f6` | Violet `#8b5cf6` | Light Blue `#60a5fa` |
+| **FwChange** | Cyan `#06b6d4` | Purple `#7c3aed` | Light Cyan `#22d3ee` |
 | **RetirementAI** | Green `#10b981` | Purple `#7c3aed` | Emerald `#34d399` |
 | **SEO Agent** | Cyan `#06b6d4` | Purple `#7c3aed` | Violet `#a78bfa` |
+
+---
+
+## 🚨 CRITICAL WORKFLOW RULE 🚨
+
+**THE DESIGN FOLDER IS THE SOURCE OF TRUTH FOR ALL APPS.**
+
+When updating themes/styles:
+1. **UPDATE HERE FIRST** - Make all changes in `D:\VarnaAI\Websites\design\`
+2. **THEN DEPLOY** - Copy updated templates to individual apps
+3. **THEN REBUILD** - Rebuild the app's Docker container
+
+### Deployment Paths
+
+| Template | Target App Location |
+|----------|---------------------|
+| `landing-fwchange-electric.html` | `apps/fwchange/landing/index.html` |
+| `dashboard-fwchange.html` | `apps/fwchange/src/` (React components) |
+| `login-fwchange.html` | `apps/fwchange/src/` (React components) |
+| `landing-c3-electric.html` | `apps/dashboard/landing/index.html` |
+| `landing-pension-v2-electric.html` | `apps/pension/landing/index.html` |
+
+### Why This Matters
+- **Consistency**: All apps share the same design language
+- **Single Source**: Changes in one place propagate to all apps
+- **Version Control**: Design system is versioned with the repo
+- **Efficiency**: No hunting for styles across multiple codebases
 
 ---
 

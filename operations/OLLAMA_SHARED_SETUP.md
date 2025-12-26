@@ -9,9 +9,17 @@ One Ollama instance serving ALL apps - shared learning, shared models, single GP
 - **Container**: `ailab-ollama`
 - **Port**: `11435` (host) → `11434` (container)
 - **Network**: `ailab-network` (external, created by shared-ollama.yml)
-- **GPU**: NVIDIA RTX 5070 (Windows 11 + WSL2 + Docker Desktop)
 - **Health Check**: `curl http://localhost:11434/api/tags` every 30s
-- **Memory Limit**: 12GB RAM (GPU VRAM managed by Ollama)
+- **Memory Limit**: 8GB RAM (container limit)
+
+## Host Hardware (Lenovo Legion 5 15IAX10)
+| Component | Specification |
+|-----------|---------------|
+| **Laptop** | Lenovo Legion 5 15IAX10 |
+| **OS** | Windows 11 + WSL2 + Docker Desktop |
+| **RAM** | 64GB DDR5 |
+| **GPU** | NVIDIA RTX 5070 |
+| **VRAM** | 8GB GDDR7 |
 
 ## Access from Apps
 

@@ -1,363 +1,589 @@
 # VarnaAI Docker Infrastructure Audit Report
 
 **Date**: 2025-12-26
-**Auditor**: Claude AI
-**Scope**: All Docker applications in `D:\VarnaAI\Websites\apps\`
+**Auditor**: Claude (DevOps Engineer)
+**Scope**: All 10 applications in D:\VarnaAI\Websites\apps\
+**Last Updated**: 2025-12-26 (Post-Rebuild)
+
+---
+
+## 🎉 Rebuild Completion Status
+
+**Full Docker purge and rebuild completed successfully!**
+
+| Status | Count | Apps |
+|--------|-------|------|
+| ✅ **Running** | 7 apps | pension, c3, fwchange, seo, pm, agenticcoder, tax |
+| ⏭️ **Skipped** | 2 apps | webscrap, varnaai-master (missing external paths) |
+| 🚫 **External** | 1 app | LibreChat (external project, not rebuilt) |
+
+### Current Container Count: 33
+
+| App | Containers | Status |
+|-----|------------|--------|
+| pension | 3 | ✅ All healthy |
+| c3 | 4 | ✅ All healthy |
+| fwchange | 4 | ✅ All healthy |
+| seoagent | 6 | ✅ All healthy |
+| projectmanager | 2 | ✅ Running |
+| agenticcoder | 9 | ✅ Infrastructure ready |
+| taxapp | 5 | ✅ Running (GPU-enabled) |
+
+### Dependency Fix Applied
+- **taxapp**: Fixed httpx version conflict with ollama
+- Changed `httpx==0.26.0` → `httpx>=0.25.2,<0.26.0` in requirements.txt
 
 ---
 
 ## Executive Summary
 
-**Total Apps**: 11 applications + 2 standalone services
-**Running Containers**: 14 containers active
-**Critical Issues**: ~~2~~ → **0 RESOLVED** ✅
-**Warnings**: ~~5~~ → **3 remaining** (documentation updated)
+| App | Grade | Status | Critical Issues |
+|-----|-------|--------|-----------------|
+| **pension** | A | Production-Ready | None |
+| **dashboard (C3)** | A | Production-Ready | None |
+| **fwchange** | A- | Production-Ready | Minor Jira memory allocation |
+| **seoagent** | A | Production-Ready | None |
+| **varnaai** | B+ | Near Production | Missing app healthchecks |
+| **webscrap** | B+ | Near Production | Missing app healthchecks |
+| **projectmanager** | C+ | Development | Hardcoded credentials, no limits |
+| **agenticcoder** | B | Development/Monitoring | No app containers, infra only |
+| **taxapp** | D | Development Only | Multiple security issues |
+| **LibreChat** | C | External Project | Missing security hardening |
 
 ---
 
-## Container Status (Current)
+## Port Allocation Matrix
 
-### Running Containers
-| Container | Status | Ports |
-|-----------|--------|-------|
-| agenticcoder-grafana | Up | 3008→3000 |
-| agenticcoder-adminer | Up | 8082→8080 |
-| agenticcoder-redis-commander | Up | 8081→8081 |
-| agenticcoder-jaeger | Up | 14268, 16686 |
-| agenticcoder-qdrant | Up | 6333-6334 (internal) |
-| seoagent-frontend | Up (healthy) | 3004→80 |
-| seoagent-pgadmin | Up | 5050→80 |
-| seoagent-backend | Up (healthy) | 4000→4000 |
-| seoagent-redis | Up (healthy) | 6383→6379 |
-| seoagent-postgres | Up (healthy) | 5436→5432 |
+### Summary - NO CONFLICTS DETECTED
 
-### Exited Containers (Healthy - Manual Start)
-| Container | Exit Reason |
-|-----------|-------------|
-| pension-app, pension-postgres, pension-redis | Manual start only |
-| c3-frontend, c3-api, c3-postgres, c3-redis | Manual start only |
-| fwchange-frontend, fwchange-backend, fwchange-postgres, fwchange-redis | Manual start only |
-| varnaai-postgres, varnaai-redis, varnaai-qdrant, varnaai-neo4j | Manual start only |
-| webscrap-postgres, webscrap-redis, webscrap-selenium-* | Manual start only |
-| librechat-api, librechat-mongodb, librechat-meilisearch | Manual start only |
-| projectmanager-app, projectmanager-postgres | Manual start only |
-| twenty-crm, twenty-redis, twenty-postgres | Manual start only |
-| ollama | Manual start only |
+| App | Frontend | Backend | PostgreSQL | Redis | Additional | Subnet |
+|-----|----------|---------|------------|-------|------------|--------|
+| pension | 3001 | - | 5433 | 6380 | - | 172.20.0.0/16 |
+| dashboard (C3) | 3002 | 8001 | 5434 | 6381 | - | 172.21.0.0/16 |
+| fwchange | 3003 | 8002 | 5435 | 6382 | Jira:8080 | 172.22.0.0/16 |
+| seoagent | 3004 | 4000 | 5436 | 6383 | pgAdmin:5050, Ollama:11435 | 172.26.0.0/16 |
+| projectmanager | - | 3005 | 5438 | - | - | bridge (no IPAM) |
+| webscrap | 3006 | 8003 | 5439 | 6385 | Selenium:4444 | 172.23.0.0/16 |
+| varnaai | 3007 | 8004 | 5437 | 6384 | Neo4j:7475/7688, Qdrant:6335/6336 | 172.25.0.0/16 |
+| agenticcoder | 3008 (Grafana) | - | internal | internal | Prometheus:9090, Adminer:8082, Jaeger:16686 | 172.28.0.0/16 |
+| taxapp | 3009 | 8005 | 5440 | 6386 | Ollama:11436 | 172.29.0.0/16 |
+| LibreChat | ${PORT} | - | - | - | MeiliSearch:7700, vectordb | bridge (no IPAM) |
 
-### Failed Containers
-| Container | Issue |
-|-----------|-------|
-| agenticcoder-postgres | Exited (1) - Check environment variables |
-| agenticcoder-prometheus | Exited (2) - Missing prometheus.yml |
-| agenticcoder-redis | Exited (1) - Check REDIS_PASSWORD env |
-| agenticcoder-mongodb | Exited (1) - Check MONGODB_PASSWORD env |
-| seoagent-worker | Exited (255) - Worker dependency issue |
-| varnaai-neo4j | Exited (1) - Check NEO4J_PASSWORD env |
+**Verdict**: Port allocation is well-organized. Each app uses unique port ranges with no overlaps.
 
 ---
 
-## Port Allocation Map (Corrected)
+## Detailed App Analysis
 
-### Definitive Port Assignments
+### 1. pension (RetirementAI)
 
-| App | Frontend | Backend | PostgreSQL | Redis | Special | Subnet |
-|-----|----------|---------|------------|-------|---------|--------|
-| **Pension** | 3001 | - | 5433 | 6380 | - | 172.20.0.0/16 |
-| **C3** | 3002 | 8001 | 5434 | 6381 | - | 172.21.0.0/16 |
-| **FwChange** | 3003 | 8002 | 5435 | 6382 | Jira:8080 | 172.22.0.0/16 |
-| **SEOAgent** | 3004 | 4000 | 5436 | 6383 | pgAdmin:5050 | 172.26.0.0/16 |
-| **Webscrap** | 3006 | 8003 | 5439 | 6385 | Selenium:4444 | 172.23.0.0/16 |
-| **VarnaAI** | 3007 | 8004 | 5437 | 6384 | Neo4j:7475, Qdrant:6335 | 172.25.0.0/16 |
-| **ProjectManager** | 3005 | - | 5438 | - | - | (dynamic) |
-| **AgenticCoder** | 3008* | - | (internal) | (internal) | Grafana:3008 | 172.28.0.0/16 |
-| **TaxApp** | 3009 | 8005 | 5440 | 6386 | Ollama:11436 | 172.29.0.0/16 ✅ |
-| **LibreChat** | ${PORT} | - | - | - | MongoDB, Meili | (dynamic) |
-| **Twenty CRM** | - | - | - | - | External | (external) |
+**docker-compose.yml**: `apps/pension/docker-compose.yml`
+**Grade**: A
 
-*AgenticCoder uses Grafana on 3008 as primary UI
+#### Strengths
+- Excellent documentation with isolation rules clearly stated
+- Fixed IP addresses for all containers (172.20.0.x)
+- Named volumes with `pension_` prefix for isolation
+- Proper health checks on all services
+- Environment variables use defaults with `${VAR:-default}` pattern
+- Service dependencies with `condition: service_healthy`
+- Dedicated subnet (172.20.0.0/16)
 
----
+#### Dockerfile Quality
+- Multi-stage build (4 stages: base, deps, builder, runner)
+- Non-root user (nextjs:nodejs with UID 1001)
+- Standalone Next.js output for minimal image size
+- Health check included
+- Security-conscious design
 
-## Critical Issues
+#### Areas for Improvement
+- No resource limits defined in docker-compose.yml
+- `restart: "no"` is intentional for test lab but would need changing for production
 
-### ✅ Issue #1: TaxApp Port Conflicts - **RESOLVED**
-
-**Severity**: ~~CRITICAL~~ → RESOLVED (2025-12-26)
-**Impact**: ~~Cannot run TaxApp and SEOAgent/Webscrap simultaneously~~ → Fixed
-
-**Resolution Applied**:
-- Updated `apps/taxapp/docker-compose.yml` with new ports:
-  - Frontend: 3004 → **3009**
-  - Backend: 8003 → **8005**
-  - PostgreSQL: 5436 → **5440**
-  - Redis: 6383 → **6386**
-  - Subnet: 172.23.0.0/16 → **172.29.0.0/16**
-- Added fixed IP addresses for all containers
-- Added Ollama on port **11436**
-
-### ✅ Issue #2: Port 8080 Conflict - **RESOLVED**
-
-**Severity**: ~~HIGH~~ → RESOLVED (2025-12-26)
-**Impact**: ~~Cannot run FwChange Jira and AgenticCoder Adminer simultaneously~~ → Fixed
-
-**Resolution Applied**:
-- Changed AgenticCoder Adminer from port 8080 to **8082**
-- Updated `apps/agenticcoder/agenticcoder/docker-compose.yml`
+#### Security Assessment
+- Environment variables properly externalized
+- No hardcoded secrets
+- Non-root user in container
+- Health checks prevent unhealthy container serving traffic
 
 ---
 
-## Warnings
+### 2. dashboard (C3 Compliance)
 
-### 🟡 Warning #1: LibreChat Naming Convention
+**docker-compose.yml**: `apps/dashboard/docker-compose.yml`
+**Grade**: A
 
-**Issue**: Uses `LibreChat`, `chat-mongodb`, `chat-meilisearch` instead of `librechat-*`
-**Impact**: Inconsistent with VarnaAI container naming pattern
-**Recommendation**: Accept as-is (external project)
+#### Strengths
+- **Resource limits defined** for all services (memory + CPU)
+- Required environment variables with `${VAR:?error}` pattern (fails if missing)
+- Comprehensive health checks with start_period
+- Fixed IP addresses (172.21.0.x)
+- Separate volumes for logs and uploads
+- Multi-stage Dockerfiles for backend and frontend
 
-### ✅ Warning #2: Documentation Inconsistencies - **RESOLVED**
-
-**Issue**: ~~DOCKER_MIGRATION_GUIDE.md shows outdated ports~~ → Fixed
-**Files Updated** (2025-12-26):
-- ✅ `DOCKER_MIGRATION_GUIDE.md`: Updated port allocation table with correct values
-- ✅ `seoagent/CLAUDE.md`: Fixed subnet from 172.23.0.0/16 → 172.26.0.0/16
-
-### 🟡 Warning #3: Missing .env Files
-
-**Issue**: Several apps have failing containers due to missing environment variables
-**Affected**: AgenticCoder (postgres, redis, mongodb), SEOAgent (worker), VarnaAI (neo4j)
-**Recommendation**: Create `.env` files from `.env.example` templates
-
-### 🟡 Warning #4: ProjectManager No Fixed Subnet
-
-**Issue**: ProjectManager uses dynamic networking
-**Impact**: Could conflict with other apps if Docker assigns overlapping subnet
-**Recommendation**: Add fixed subnet 172.27.0.0/16
-
-### 🟡 Warning #5: Inconsistent Restart Policies
-
-**Issue**: Some apps use `restart: "no"`, others use `restart: always`
-**Pattern**:
-- Test lab apps: `restart: "no"` (correct for dev)
-- LibreChat: `restart: always` (production-oriented)
-**Recommendation**: Standardize based on environment
-
----
-
-## Network Topology
-
-```
-VarnaAI Docker Networks
-========================
-
-172.20.0.0/16 - pension-network
-├── 172.20.0.10  pension-postgres
-├── 172.20.0.11  pension-redis
-└── 172.20.0.12  pension-app
-
-172.21.0.0/16 - c3-network
-├── 172.21.0.10  c3-postgres
-├── 172.21.0.11  c3-redis
-├── 172.21.0.12  c3-api
-└── 172.21.0.13  c3-frontend
-
-172.22.0.0/16 - fwchange-network
-├── 172.22.0.10  fwchange-postgres
-├── 172.22.0.11  fwchange-redis
-├── 172.22.0.12  fwchange-backend
-├── 172.22.0.13  fwchange-frontend
-├── 172.22.0.20  fwchange-jira-postgres
-└── 172.22.0.21  fwchange-jira
-
-172.23.0.0/16 - webscrap-network
-├── 172.23.0.10  webscrap-postgres
-├── 172.23.0.11  webscrap-redis
-├── 172.23.0.12  webscrap-backend
-├── 172.23.0.13  webscrap-frontend
-├── 172.23.0.20  webscrap-selenium-hub
-└── 172.23.0.21  webscrap-selenium-chrome
-
-172.25.0.0/16 - varnaai-network
-├── 172.25.0.10  varnaai-postgres
-├── 172.25.0.11  varnaai-redis
-├── 172.25.0.12  varnaai-neo4j
-├── 172.25.0.13  varnaai-qdrant
-├── 172.25.0.20  varnaai-backend
-├── 172.25.0.21  varnaai-frontend
-├── 172.25.0.30  varnaai-orchestrator
-├── 172.25.0.31  varnaai-llm-gateway
-├── 172.25.0.32  varnaai-rag
-└── 172.25.0.33  varnaai-memory
-
-172.26.0.0/16 - seoagent-network
-├── 172.26.0.10  seoagent-postgres
-├── 172.26.0.11  seoagent-redis
-├── 172.26.0.12  seoagent-backend
-├── 172.26.0.13  seoagent-frontend
-├── 172.26.0.14  seoagent-worker
-├── 172.26.0.15  seoagent-pgadmin
-└── 172.26.0.20  seoagent-ollama (GPU profile)
-
-172.28.0.0/16 - agenticcoder-network
-├── agenticcoder-qdrant
-├── agenticcoder-mongodb
-├── agenticcoder-redis
-├── agenticcoder-postgres
-├── agenticcoder-adminer (8082)
-├── agenticcoder-redis-commander
-├── agenticcoder-prometheus
-├── agenticcoder-grafana
-└── agenticcoder-jaeger
-
-172.29.0.0/16 - taxapp-network ✅ NEW
-├── 172.29.0.10  taxapp-postgres
-├── 172.29.0.11  taxapp-redis
-├── 172.29.0.12  taxapp-backend
-├── 172.29.0.13  taxapp-frontend
-└── 172.29.0.20  taxapp-ollama
-
-(dynamic) - projectmanager_default
-├── projectmanager-postgres
-└── projectmanager-app
-
-(dynamic) - librechat_default
-├── LibreChat (api)
-├── chat-mongodb
-├── chat-meilisearch
-├── vectordb
-└── rag_api
-
-(external) - crm_crm_net
-├── twenty-crm
-├── twenty-redis
-└── twenty-postgres
+#### Resource Limits
+```yaml
+postgres: 1G memory, 1 CPU
+redis: 256M memory, 0.5 CPU
+api: 1G memory, 2 CPUs
+frontend: 256M memory, 0.5 CPU
 ```
 
----
+#### Dockerfile Quality
+- Backend: Multi-stage, non-root user, Puppeteer support, German locale
+- Frontend: Multi-stage, nginx:alpine, proper permissions
 
-## Reserved Port Ranges
-
-| Range | Purpose | Assigned To |
-|-------|---------|-------------|
-| 3001-3009 | Frontend Apps | Pension, C3, FwChange, SEOAgent, ProjectManager, Webscrap, VarnaAI, AgenticCoder, **TaxApp (3009)** |
-| 4000-4999 | Node.js APIs | SEOAgent (4000) |
-| 5050 | pgAdmin | SEOAgent |
-| 5433-5440 | PostgreSQL | All apps including **TaxApp (5440)** |
-| 6333-6336 | Qdrant | VarnaAI, AgenticCoder |
-| 6379-6386 | Redis | All apps including **TaxApp (6386)** |
-| 7474-7688 | Neo4j | VarnaAI |
-| 8001-8005 | Python APIs | C3, FwChange, Webscrap, VarnaAI, **TaxApp (8005)** |
-| 8080-8082 | Admin UIs | Jira (8080), Adminer **(8082)** |
-| 9090 | Prometheus | AgenticCoder |
-| 11434-11436 | Ollama | Global, SEOAgent, **TaxApp (11436)** |
-| 14268, 16686 | Jaeger | AgenticCoder |
+#### Security Assessment
+- Best security practices among all apps
+- Required secrets enforced (JWT_SECRET, ENCRYPTION_MASTER_KEY, etc.)
+- Redis password required
+- No default passwords for security-critical items
 
 ---
 
-## Recommended Actions
+### 3. fwchange
 
-### Immediate (Priority 1) - ✅ COMPLETED
-1. ✅ Fix TaxApp port conflicts → **DONE** (2025-12-26)
-2. ✅ Change AgenticCoder Adminer to port 8082 → **DONE** (2025-12-26)
+**docker-compose.yml**: `apps/fwchange/docker-compose.yml`
+**Grade**: A-
 
-### Short-term (Priority 2) - PARTIAL
-3. ☐ Create `.env` files for apps with missing environment variables
-4. ✅ Update DOCKER_MIGRATION_GUIDE.md with correct ports → **DONE** (2025-12-26)
-5. ✅ Fix seoagent/CLAUDE.md subnet reference (172.23 → 172.26) → **DONE** (2025-12-26)
+#### Strengths
+- Resource limits on all services
+- Fixed IP addresses (172.22.0.x)
+- Service name prefixes (fwchange-*)
+- Proper health checks
+- Includes Jira integration with dedicated PostgreSQL
 
-### Long-term (Priority 3)
-6. ☐ Add fixed subnet to ProjectManager (172.27.0.0/16)
-7. ☐ Standardize restart policies across all apps
-8. ☐ Consider consolidating LibreChat into VarnaAI naming convention
+#### Resource Limits
+```yaml
+postgres: 1G memory, 1 CPU
+redis: 256M memory, 0.5 CPU
+backend: 1G memory, 2 CPUs
+frontend: 256M memory, 0.5 CPU
+jira-postgres: 512M memory, 0.5 CPU
+jira: 3G memory, 2 CPUs (2G reserved)
+```
 
----
+#### Dockerfile Quality
+- Backend: Single-stage Python slim, non-root user, health check
+- Frontend: Multi-stage with nginx
 
-## App-by-App Configuration Summary
-
-### 1. Pension (RetirementAI)
-- **Status**: ✅ Properly configured
-- **Compose**: `apps/pension/docker-compose.yml`
-- **Services**: app, postgres, redis
-- **Notes**: Uses pgvector for embeddings
-
-### 2. C3 (Compliance Command Center)
-- **Status**: ✅ Properly configured
-- **Compose**: `apps/dashboard/docker-compose.yml`
-- **Services**: frontend, api, postgres, redis
-- **Notes**: Uses pgvector for embeddings, resource limits defined
-
-### 3. FwChange
-- **Status**: ✅ Properly configured
-- **Compose**: `apps/fwchange/docker-compose.yml`
-- **Services**: frontend, backend, postgres, redis, jira, jira-postgres
-- **Notes**: Includes Jira integration for ticketing
-
-### 4. SEOAgent
-- **Status**: ✅ Properly configured
-- **Compose**: `apps/seoagent/docker-compose.yml`
-- **Services**: frontend, backend, worker, postgres, redis, pgadmin, ollama (GPU)
-- **Notes**: Worker service currently failing, optional Ollama with GPU
-
-### 5. Webscrap
-- **Status**: ✅ Properly configured
-- **Compose**: `apps/webscrap/docker-compose.yml`
-- **Services**: frontend, backend, postgres, redis, selenium-hub, selenium-chrome
-- **Notes**: Selenium grid for browser automation
-
-### 6. VarnaAI
-- **Status**: ⚠️ Neo4j failing (missing password)
-- **Compose**: `apps/varnaai/docker-compose.yml`
-- **Services**: frontend, backend, postgres, redis, neo4j, qdrant, + 4 microservices
-- **Notes**: Most complex setup with microservices architecture
-
-### 7. ProjectManager
-- **Status**: ⚠️ No fixed subnet
-- **Compose**: `apps/projectmanager/docker-compose.yml`
-- **Services**: app, postgres
-- **Notes**: Simpler compose, missing IPAM config
-
-### 8. TaxApp
-- **Status**: ✅ Properly configured (fixed 2025-12-26)
-- **Compose**: `apps/taxapp/docker-compose.yml`
-- **Services**: frontend (3009), backend (8005), postgres (5440), redis (6386), ollama (11436)
-- **Subnet**: 172.29.0.0/16
-- **Notes**: Port conflicts resolved, fixed IP addresses assigned
-
-### 9. LibreChat
-- **Status**: ⚠️ Non-standard naming
-- **Compose**: `apps/LibreChat/docker-compose.yml`
-- **Services**: api, mongodb, meilisearch, vectordb, rag_api
-- **Notes**: External project, accept naming convention
-
-### 10. AgenticCoder
-- **Status**: ⚠️ Missing env vars (port conflict fixed 2025-12-26)
-- **Compose**: `apps/agenticcoder/agenticcoder/docker-compose.yml`
-- **Services**: qdrant, mongodb, redis, postgres, adminer (8082), redis-commander (8081), prometheus, grafana (3008), jaeger
-- **Notes**: Full monitoring stack, infrastructure-only (no app containers), Adminer moved to 8082
+#### Issues Found
+- Jira container has high memory requirements (3G limit, 2G reservation)
+- Some environment variables rely on external `.env` file without defaults
 
 ---
 
-## Appendix: Quick Commands
+### 4. seoagent
 
+**docker-compose.yml**: `apps/seoagent/docker-compose.yml`
+**Grade**: A
+
+#### Strengths
+- Required environment variables with `${VAR:?error}` pattern
+- Resource limits on all services
+- Fixed IP addresses (172.26.0.x)
+- Background worker service for BullMQ jobs
+- Optional GPU profile for Ollama
+- pgAdmin included for database management
+
+#### Resource Limits
+```yaml
+postgres: 1G memory, 1 CPU
+redis: 256M memory, 0.5 CPU
+backend: 1G memory, 2 CPUs
+worker: 512M memory, 1 CPU
+frontend: 256M memory, 0.5 CPU
+pgadmin: 512M memory, 0.5 CPU
+ollama: 8G memory (GPU profile)
+```
+
+#### Dockerfile Quality
+- Backend: Multi-stage, non-root user, Puppeteer support, health check
+- Frontend: Multi-stage with nginx, proper permissions
+
+#### Advanced Features
+- GPU reservation for Ollama with NVIDIA capabilities
+- Rate limiting environment variables
+- CORS origin configuration
+- Sentry integration support
+
+---
+
+### 5. varnaai
+
+**docker-compose.yml**: `apps/varnaai/docker-compose.yml`
+**Grade**: B+
+
+#### Strengths
+- Comprehensive microservices architecture
+- Resource limits on all services
+- Fixed IP addresses (172.25.0.x)
+- Multiple specialized databases (PostgreSQL, Neo4j, Qdrant)
+- Service-oriented architecture with orchestrator, LLM gateway, RAG, memory services
+
+#### Resource Limits
+```yaml
+postgres: 2G memory, 2 CPUs
+redis: 512M memory, 0.5 CPU
+neo4j: 2G memory, 1 CPU
+qdrant: 1G memory, 1 CPU
+backend: 2G memory, 2 CPUs
+frontend: 512M memory, 1 CPU
+microservices: 1G memory, 1 CPU each
+```
+
+#### Issues Found
+- **Missing health checks** on orchestrator, LLM gateway, RAG, and memory services
+- External Dockerfile paths use `${VARNAAI_SOURCE_PATH}` which may not resolve
+- Some services depend on containers without health condition
+
+#### Dockerfile Quality
+- Multiple Dockerfiles exist but not directly referenced
+- Build contexts point to external paths
+
+---
+
+### 6. webscrap
+
+**docker-compose.yml**: `apps/webscrap/docker-compose.yml`
+**Grade**: B+
+
+#### Strengths
+- Resource limits on all services
+- Fixed IP addresses (172.23.0.x)
+- Selenium Grid included for browser automation
+- Health checks on database services
+
+#### Resource Limits
+```yaml
+postgres: 1G memory, 1 CPU
+redis: 256M memory, 0.5 CPU
+backend: 2G memory, 2 CPUs
+frontend: 512M memory, 1 CPU
+selenium-hub: 512M memory, 0.5 CPU
+selenium-chrome: 2G memory, 2 CPUs (with shm_size: 2gb)
+```
+
+#### Issues Found
+- **Missing health checks** on backend and frontend services
+- External build context paths (`${WEBSCRAP_SOURCE_PATH}`)
+
+#### Dockerfile Quality
+- Not reviewed (external path)
+
+---
+
+### 7. projectmanager
+
+**docker-compose.yml**: `apps/projectmanager/docker-compose.yml`
+**Grade**: C+
+
+#### Issues Found
+- **CRITICAL: Hardcoded credentials**
+  ```yaml
+  POSTGRES_PASSWORD: changeme
+  DB_PASSWORD: changeme
+  JWT_SECRET: your-jwt-secret-change-in-production
+  ```
+- No resource limits defined
+- No custom network IPAM (uses default bridge)
+- Minimal documentation
+- No volume naming prefix
+- `restart: unless-stopped` differs from other apps' manual start policy
+
+#### Strengths
+- Health check on PostgreSQL
+- Service dependency defined
+- Multi-stage Dockerfile with non-root user
+
+#### Dockerfile Quality
+- Multi-stage build (frontend-builder, production)
+- Production dependencies only in final stage
+- Health check using Node.js HTTP client
+
+---
+
+### 8. agenticcoder
+
+**docker-compose.yml**: `apps/agenticcoder/agenticcoder/docker-compose.yml`
+**Grade**: B
+
+#### Note
+This is an **infrastructure-only** compose file for monitoring and supporting services. No application containers are defined.
+
+#### Strengths
+- **Security-conscious**: Database ports only exposed internally (`expose` vs `ports`)
+- Comprehensive monitoring stack (Prometheus, Grafana, Jaeger)
+- Health checks on all services
+- Fixed subnet (172.28.0.0/16)
+- Redis password required
+
+#### Services Included
+- Qdrant (vector database)
+- MongoDB
+- Redis
+- PostgreSQL
+- Adminer (DB UI)
+- Redis Commander
+- Prometheus
+- Grafana
+- Jaeger (tracing)
+
+#### Issues Found
+- No resource limits defined
+- Container name prefix not consistently used (e.g., `agenticcoder-*`)
+- No application Dockerfiles analyzed (infra-only compose)
+
+---
+
+### 9. taxapp
+
+**docker-compose.yml**: `apps/taxapp/docker-compose.yml`
+**Grade**: D
+
+#### Critical Issues
+1. **Hardcoded credentials in plaintext**
+   ```yaml
+   POSTGRES_PASSWORD=taxapp123
+   DATABASE_URL=postgresql://taxapp:taxapp123@postgres:5432/taxapp
+   ```
+
+2. **Host filesystem mounted**
+   ```yaml
+   - "D:/Pdrive/My files/1Private:/documents:ro"
+   ```
+   This exposes host filesystem into container (even if read-only)
+
+3. **No health checks** on any service
+
+4. **No resource limits** defined
+
+5. **Development mode in containers**
+   - Backend uses `--reload` flag
+   - Frontend runs dev server (`npm run dev`)
+
+6. **No security configuration** for Redis (no password)
+
+#### Strengths
+- Proper subnet allocation (172.29.0.0/16)
+- Fixed IP addresses
+- GPU support for Ollama
+
+#### Dockerfile Quality
+- Backend: Single-stage, no multi-stage, no non-root user, development CMD
+- Frontend: Single-stage, development CMD, no production build
+
+---
+
+### 10. LibreChat
+
+**docker-compose.yml**: `apps/LibreChat/docker-compose.yml`
+**Grade**: C
+
+#### Note
+This is an **external project** (from GitHub) with custom VarnaAI modifications.
+
+#### Issues Found
+1. **MongoDB running without authentication**
+   ```yaml
+   command: mongod --noauth
+   ```
+
+2. **Hardcoded database credentials**
+   ```yaml
+   POSTGRES_USER: myuser
+   POSTGRES_PASSWORD: mypassword
+   ```
+
+3. **No resource limits** defined
+
+4. **No health checks** on any service
+
+5. **Host-path volumes** for data (security risk)
+   ```yaml
+   - ./data-node:/data/db
+   ```
+
+6. **No custom network IPAM** (uses default bridge)
+
+#### Strengths
+- Uses official LibreChat images from GHCR
+- Bind mounts for configuration
+- RAG API integration with vector database
+
+---
+
+## Common Issues Across Applications
+
+### 1. Resource Limits
+| App | Memory Limits | CPU Limits |
+|-----|--------------|------------|
+| pension | No | No |
+| dashboard | Yes | Yes |
+| fwchange | Yes | Yes |
+| seoagent | Yes | Yes |
+| varnaai | Yes | Yes |
+| webscrap | Yes | Yes |
+| projectmanager | No | No |
+| agenticcoder | No | No |
+| taxapp | No | No |
+| LibreChat | No | No |
+
+**Recommendation**: Add resource limits to all applications to prevent resource exhaustion.
+
+### 2. Health Checks
+| App | All Services Have Health Checks |
+|-----|--------------------------------|
+| pension | Yes |
+| dashboard | Yes |
+| fwchange | Yes |
+| seoagent | Yes |
+| varnaai | No (microservices missing) |
+| webscrap | No (app services missing) |
+| projectmanager | Partial |
+| agenticcoder | Yes (infra only) |
+| taxapp | No |
+| LibreChat | No |
+
+### 3. Security Hardening
+| App | Non-Root User | No Hardcoded Secrets | Network Isolation |
+|-----|--------------|---------------------|-------------------|
+| pension | Yes | Yes | Yes |
+| dashboard | Yes | Yes | Yes |
+| fwchange | Yes | Yes | Yes |
+| seoagent | Yes | Yes | Yes |
+| varnaai | Partial | Yes | Yes |
+| webscrap | Unknown | Yes | Yes |
+| projectmanager | Yes | **NO** | Partial |
+| agenticcoder | N/A | Partial | Yes |
+| taxapp | **NO** | **NO** | Yes |
+| LibreChat | Yes | **NO** | No |
+
+---
+
+## Recommendations by Priority
+
+### Critical (Fix Immediately)
+
+1. **taxapp**: Remove hardcoded credentials, add health checks, switch to production builds
+2. **projectmanager**: Replace hardcoded `changeme` and JWT secret with environment variables
+3. **LibreChat**: Enable MongoDB authentication, replace default PostgreSQL credentials
+
+### High Priority
+
+4. **varnaai**: Add health checks to microservices
+5. **webscrap**: Add health checks to backend and frontend
+6. **All apps without limits**: Add memory/CPU resource limits
+
+### Medium Priority
+
+7. **pension**: Add resource limits
+8. **agenticcoder**: Add resource limits
+9. **taxapp**: Remove host filesystem mount, add non-root users
+
+### Low Priority (Best Practices)
+
+10. **LibreChat**: Add custom network with IPAM
+11. **projectmanager**: Add custom network with IPAM
+12. **All apps**: Standardize restart policies (all use `no` or `unless-stopped` consistently)
+
+---
+
+## Network Isolation Summary
+
+The VarnaAI platform has **excellent network isolation** with dedicated subnets:
+
+| Subnet | App | Status |
+|--------|-----|--------|
+| 172.18.0.0/16 | LibreChat (docs reference) | OK |
+| 172.20.0.0/16 | pension | OK |
+| 172.21.0.0/16 | dashboard | OK |
+| 172.22.0.0/16 | fwchange | OK |
+| 172.23.0.0/16 | webscrap | OK |
+| 172.25.0.0/16 | varnaai | OK |
+| 172.26.0.0/16 | seoagent | OK |
+| 172.28.0.0/16 | agenticcoder | OK |
+| 172.29.0.0/16 | taxapp | OK |
+
+**Note**: projectmanager and LibreChat use default bridge networking without IPAM.
+
+---
+
+## Docker Compose Version and Syntax
+
+| App | Compose Version | Syntax Quality |
+|-----|-----------------|----------------|
+| pension | 3.8 | Excellent |
+| dashboard | Not specified (modern) | Excellent |
+| fwchange | Not specified (modern) | Excellent |
+| seoagent | Not specified (modern) | Excellent |
+| varnaai | Not specified (modern) | Good |
+| webscrap | Not specified (modern) | Good |
+| projectmanager | Not specified (modern) | Basic |
+| agenticcoder | Not specified (modern) | Good |
+| taxapp | Not specified (modern) | Basic |
+| LibreChat | Not specified (modern) | Basic |
+
+**Note**: Modern Docker Compose no longer requires version specification (since Compose V2).
+
+---
+
+## Final Grades Explanation
+
+| Grade | Meaning | Apps |
+|-------|---------|------|
+| A | Production-ready, follows all best practices | pension, dashboard, seoagent |
+| A- | Production-ready with minor improvements possible | fwchange |
+| B+ | Near production, missing non-critical features | varnaai, webscrap |
+| B | Good foundation, needs some work | agenticcoder |
+| C+ | Development quality, needs security improvements | projectmanager |
+| C | Functional but needs significant improvements | LibreChat |
+| D | Development only, critical security issues | taxapp |
+
+---
+
+## Appendix: Quick Reference Commands
+
+### Folder Naming Convention (2025-12-26)
+
+| Old Name | New Name | Status |
+|----------|----------|--------|
+| pension | varnaai-pension | ✅ Active |
+| dashboard | varnaai-c3 | ✅ Active |
+| fwchange | varnaai-fwchange | ✅ Active |
+| seoagent | varnaai-seo | ✅ Active |
+| projectmanager | varnaai-pm | ✅ Active |
+| agenticcoder | varnaai-agenticcoder | ✅ Active |
+| taxapp | varnaai-tax | ✅ Active |
+| webscrap | varnaai-webscrap | ⏭️ Skipped |
+| varnaai | varnaai-master | ⏭️ Skipped |
+| LibreChat | LibreChat | 🚫 External |
+
+### Start All Apps (Development)
 ```bash
-# Check all VarnaAI containers
+cd D:\VarnaAI\Websites\apps\varnaai-pension && docker-compose up -d
+cd D:\VarnaAI\Websites\apps\varnaai-c3 && docker-compose up -d
+cd D:\VarnaAI\Websites\apps\varnaai-fwchange && docker-compose up -d
+cd D:\VarnaAI\Websites\apps\varnaai-seo && docker-compose up -d
+cd D:\VarnaAI\Websites\apps\varnaai-pm && docker-compose up -d
+cd D:\VarnaAI\Websites\apps\varnaai-agenticcoder\agenticcoder && docker-compose up -d
+cd D:\VarnaAI\Websites\apps\varnaai-tax && docker-compose up -d
+# Skip: varnaai-webscrap (missing D:/VarnaAI/Webscrap)
+# Skip: varnaai-master (missing D:/VarnaAI/varnaai/varnaai-app/)
+# Skip: LibreChat (external project)
+```
+
+### Check All Running Containers
+```bash
 docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+```
 
-# Start specific app
-cd D:\VarnaAI\Websites\apps\<app-name>
-docker-compose up -d
-
-# View logs
-docker-compose logs -f <service-name>
-
-# Check network conflicts
-docker network ls
-docker network inspect <network-name>
-
-# Find port usage
-netstat -ano | findstr ":<port>"
+### Check Resource Usage
+```bash
+docker stats --no-stream
 ```
 
 ---
 
-**Report Generated**: 2025-12-26T11:30:00Z
-**Next Audit Due**: 2026-01-26
+**Report Generated**: 2025-12-26
+**Next Audit Recommended**: 2026-03-26 (Quarterly)

@@ -8,7 +8,11 @@
         "status": "done",
         "priority": "high",
         "dependencies": [],
-        "tags": ["varnaai", "footer", "critical"],
+        "tags": [
+          "varnaai",
+          "footer",
+          "critical"
+        ],
         "updatedAt": "2025-12-20T10:30:00.000Z",
         "subtasks": []
       },
@@ -19,7 +23,10 @@
         "status": "done",
         "priority": "high",
         "dependencies": [],
-        "tags": ["varnaai", "pricing"],
+        "tags": [
+          "varnaai",
+          "pricing"
+        ],
         "subtasks": [],
         "updatedAt": "2025-12-20T07:16:37.208Z"
       },
@@ -30,7 +37,12 @@
         "status": "done",
         "priority": "high",
         "dependencies": [],
-        "tags": ["varnaai", "reviews", "testimonials", "critical"],
+        "tags": [
+          "varnaai",
+          "reviews",
+          "testimonials",
+          "critical"
+        ],
         "subtasks": [],
         "updatedAt": "2025-12-20T10:30:00.000Z"
       },
@@ -41,7 +53,11 @@
         "status": "done",
         "priority": "medium",
         "dependencies": [],
-        "tags": ["varnaai", "about", "stats"],
+        "tags": [
+          "varnaai",
+          "about",
+          "stats"
+        ],
         "subtasks": [],
         "updatedAt": "2025-12-20T08:30:00.000Z"
       },
@@ -52,7 +68,12 @@
         "status": "done",
         "priority": "medium",
         "dependencies": [],
-        "tags": ["varnaai", "mission", "stats", "counters"],
+        "tags": [
+          "varnaai",
+          "mission",
+          "stats",
+          "counters"
+        ],
         "subtasks": [],
         "updatedAt": "2025-12-20T08:30:00.000Z"
       },
@@ -63,7 +84,11 @@
         "status": "done",
         "priority": "high",
         "dependencies": [],
-        "tags": ["varnaai", "homepage", "testimonials"],
+        "tags": [
+          "varnaai",
+          "homepage",
+          "testimonials"
+        ],
         "subtasks": [],
         "updatedAt": "2025-12-20T07:16:37.210Z"
       },
@@ -74,7 +99,11 @@
         "status": "done",
         "priority": "medium",
         "dependencies": [],
-        "tags": ["varnaai", "services", "stats"],
+        "tags": [
+          "varnaai",
+          "services",
+          "stats"
+        ],
         "subtasks": [],
         "updatedAt": "2025-12-20T09:00:00.000Z"
       },
@@ -85,7 +114,11 @@
         "status": "done",
         "priority": "medium",
         "dependencies": [],
-        "tags": ["varnaai", "c3", "cta"],
+        "tags": [
+          "varnaai",
+          "c3",
+          "cta"
+        ],
         "subtasks": [],
         "updatedAt": "2025-12-20T09:00:00.000Z"
       },
@@ -95,8 +128,14 @@
         "description": "Portfolio pages verified clean.",
         "status": "done",
         "priority": "low",
-        "dependencies": ["1"],
-        "tags": ["varnaai", "portfolio", "verification"],
+        "dependencies": [
+          "1"
+        ],
+        "tags": [
+          "varnaai",
+          "portfolio",
+          "verification"
+        ],
         "subtasks": [],
         "updatedAt": "2025-12-20T09:15:00.000Z"
       },
@@ -107,7 +146,11 @@
         "status": "done",
         "priority": "medium",
         "dependencies": [],
-        "tags": ["aimarketingbg", "homepage", "testimonials"],
+        "tags": [
+          "aimarketingbg",
+          "homepage",
+          "testimonials"
+        ],
         "subtasks": [],
         "updatedAt": "2025-12-20T10:30:00.000Z"
       },
@@ -118,7 +161,11 @@
         "status": "done",
         "priority": "medium",
         "dependencies": [],
-        "tags": ["aimarketingbg", "case-studies", "critical"],
+        "tags": [
+          "aimarketingbg",
+          "case-studies",
+          "critical"
+        ],
         "subtasks": [],
         "updatedAt": "2025-12-20T10:30:00.000Z"
       },
@@ -129,12 +176,36 @@
         "status": "in-progress",
         "priority": "critical",
         "dependencies": [],
-        "tags": ["jan2026", "materials", "urgent"],
+        "tags": [
+          "jan2026",
+          "materials",
+          "urgent"
+        ],
         "subtasks": [
-          {"title": "Create design in Canva", "status": "pending"},
-          {"title": "Find local Varna printer", "status": "pending"},
-          {"title": "Place order", "status": "pending"},
-          {"title": "Confirm delivery date", "status": "pending"}
+          {
+            "title": "Create design in Canva",
+            "status": "pending",
+            "id": 0,
+            "parentId": "undefined"
+          },
+          {
+            "title": "Find local Varna printer",
+            "status": "pending",
+            "id": 0,
+            "parentId": "undefined"
+          },
+          {
+            "title": "Place order",
+            "status": "pending",
+            "id": 0,
+            "parentId": "undefined"
+          },
+          {
+            "title": "Confirm delivery date",
+            "status": "pending",
+            "id": 0,
+            "parentId": "undefined"
+          }
         ],
         "createdAt": "2025-12-25T12:00:00.000Z",
         "dueDate": "2025-12-27"
@@ -143,61 +214,123 @@
         "id": 21,
         "title": "Record C3 Compliance Demo Video",
         "description": "Start C3 app locally (docker-compose up in D:\\VarnaAI\\dashboard), record 5-10 min screen recording showing key features: GDPR scan, document generation, compliance dashboard. Use OBS or Windows Game Bar.",
-        "status": "pending",
+        "status": "cancelled",
         "priority": "high",
         "dependencies": [],
-        "tags": ["jan2026", "demo", "video", "c3"],
+        "tags": [
+          "jan2026",
+          "demo",
+          "video",
+          "c3"
+        ],
         "subtasks": [],
-        "createdAt": "2025-12-25T12:00:00.000Z"
+        "createdAt": "2025-12-25T12:00:00.000Z",
+        "updatedAt": "2025-12-26T03:16:27.860Z"
       },
       {
         "id": 22,
         "title": "Record FwChange Demo Video",
         "description": "Start FwChange app locally (docker-compose up in D:\\VarnaAI\\fwchange), record 5-10 min screen recording showing: firewall change workflow, JIRA integration, multi-vendor support, compliance validation.",
-        "status": "pending",
+        "status": "cancelled",
         "priority": "high",
         "dependencies": [],
-        "tags": ["jan2026", "demo", "video", "fwchange"],
+        "tags": [
+          "jan2026",
+          "demo",
+          "video",
+          "fwchange"
+        ],
         "subtasks": [],
-        "createdAt": "2025-12-25T12:00:00.000Z"
+        "createdAt": "2025-12-25T12:00:00.000Z",
+        "updatedAt": "2025-12-26T03:16:27.865Z"
       },
       {
         "id": 23,
         "title": "Record RetirementAI Demo Video",
         "description": "Start RetirementAI app locally (docker-compose up in D:\\VarnaAI\\pension), record 5-10 min screen recording showing: portfolio dashboard, AI advisor chat, Trading212 integration, retirement projections.",
-        "status": "pending",
+        "status": "cancelled",
         "priority": "high",
         "dependencies": [],
-        "tags": ["jan2026", "demo", "video", "retirementai"],
+        "tags": [
+          "jan2026",
+          "demo",
+          "video",
+          "retirementai"
+        ],
         "subtasks": [],
-        "createdAt": "2025-12-25T12:00:00.000Z"
+        "createdAt": "2025-12-25T12:00:00.000Z",
+        "updatedAt": "2025-12-26T03:16:27.869Z"
       },
       {
         "id": 24,
         "title": "Create Demo Landing Pages + Upload to All-Inkl",
         "description": "Create simple HTML pages with embedded demo videos for each app. Upload to All-Inkl subdomains: c3.varnaai.com, fwchange.varnaai.com, retirement.varnaai.com",
-        "status": "pending",
+        "status": "cancelled",
         "priority": "high",
-        "dependencies": [21, 22, 23],
-        "tags": ["jan2026", "demo", "hosting"],
-        "subtasks": [
-          {"title": "Create HTML template with video embed", "status": "pending"},
-          {"title": "Upload C3 demo page", "status": "pending"},
-          {"title": "Upload FwChange demo page", "status": "pending"},
-          {"title": "Upload RetirementAI demo page", "status": "pending"},
-          {"title": "Configure DNS for subdomains", "status": "pending"}
+        "dependencies": [
+          "21",
+          "22",
+          "23"
         ],
-        "createdAt": "2025-12-25T12:00:00.000Z"
+        "tags": [
+          "jan2026",
+          "demo",
+          "hosting"
+        ],
+        "subtasks": [],
+        "createdAt": "2025-12-25T12:00:00.000Z",
+        "updatedAt": "2025-12-26T03:16:27.872Z"
       },
       {
         "id": 25,
         "title": "Fix VarnaAI.com Dead Demo Links",
-        "description": "Update demo buttons on varnaai.com homepage to point to new video demo subdomains (c3.varnaai.com, fwchange.varnaai.com, retirement.varnaai.com) instead of dead VPS links.",
+        "description": "Update demo buttons on varnaai.com EN+BG to point to new static demo subdomains after user uploads them to All-Inkl.",
         "status": "pending",
         "priority": "high",
-        "dependencies": [24],
-        "tags": ["jan2026", "varnaai", "links"],
-        "subtasks": [],
+        "dependencies": [],
+        "tags": [
+          "jan2026",
+          "varnaai",
+          "links"
+        ],
+        "subtasks": [
+          {
+            "title": "C3 demo → c3.varnaai.com",
+            "status": "pending",
+            "id": null,
+            "parentId": "undefined"
+          },
+          {
+            "title": "FwChange demo → fwchange.varnaai.com",
+            "status": "pending",
+            "id": null,
+            "parentId": "undefined"
+          },
+          {
+            "title": "RetirementAI demo → retirement.varnaai.com",
+            "status": "pending",
+            "id": null,
+            "parentId": "undefined"
+          },
+          {
+            "title": "ProjectManager demo → pm.varnaai.com",
+            "status": "pending",
+            "id": null,
+            "parentId": "undefined"
+          },
+          {
+            "title": "Lead demo → lead.varnaai.com",
+            "status": "pending",
+            "id": null,
+            "parentId": "undefined"
+          },
+          {
+            "title": "SEOAgent demo → seo.aimarketingbg.com",
+            "status": "pending",
+            "id": null,
+            "parentId": "undefined"
+          }
+        ],
         "createdAt": "2025-12-25T12:00:00.000Z"
       },
       {
@@ -207,7 +340,11 @@
         "status": "pending",
         "priority": "high",
         "dependencies": [],
-        "tags": ["jan2026", "linkedin", "branding"],
+        "tags": [
+          "jan2026",
+          "linkedin",
+          "branding"
+        ],
         "subtasks": [],
         "createdAt": "2025-12-25T12:00:00.000Z"
       },
@@ -218,7 +355,11 @@
         "status": "pending",
         "priority": "medium",
         "dependencies": [],
-        "tags": ["jan2026", "operations", "crm"],
+        "tags": [
+          "jan2026",
+          "operations",
+          "crm"
+        ],
         "subtasks": [],
         "createdAt": "2025-12-25T12:00:00.000Z",
         "dueDate": "2026-01-05"
@@ -230,7 +371,11 @@
         "status": "pending",
         "priority": "medium",
         "dependencies": [],
-        "tags": ["jan2026", "operations", "sales"],
+        "tags": [
+          "jan2026",
+          "operations",
+          "sales"
+        ],
         "subtasks": [],
         "createdAt": "2025-12-25T12:00:00.000Z"
       },
@@ -240,8 +385,14 @@
         "description": "Build target list of 50 qualified companies in Varna. Sources: VCCI directory, LinkedIn search, Bulgarian business registers. Focus: 10-500 employees, tech/finance/healthcare/manufacturing. Add to Google Sheets.",
         "status": "pending",
         "priority": "high",
-        "dependencies": [27],
-        "tags": ["jan2026", "networking", "research"],
+        "dependencies": [
+          "27"
+        ],
+        "tags": [
+          "jan2026",
+          "networking",
+          "research"
+        ],
         "subtasks": [],
         "createdAt": "2025-12-25T12:00:00.000Z",
         "dueDate": "2026-01-10"
@@ -253,7 +404,11 @@
         "status": "pending",
         "priority": "high",
         "dependencies": [],
-        "tags": ["jan2026", "networking", "events"],
+        "tags": [
+          "jan2026",
+          "networking",
+          "events"
+        ],
         "subtasks": [],
         "createdAt": "2025-12-25T12:00:00.000Z",
         "dueDate": "2026-01-17"
@@ -265,7 +420,11 @@
         "status": "pending",
         "priority": "medium",
         "dependencies": [],
-        "tags": ["jan2026", "networking", "vcci"],
+        "tags": [
+          "jan2026",
+          "networking",
+          "vcci"
+        ],
         "subtasks": [],
         "createdAt": "2025-12-25T12:00:00.000Z"
       },
@@ -276,7 +435,11 @@
         "status": "pending",
         "priority": "medium",
         "dependencies": [],
-        "tags": ["jan2026", "marketing", "lead-magnet"],
+        "tags": [
+          "jan2026",
+          "marketing",
+          "lead-magnet"
+        ],
         "subtasks": [],
         "createdAt": "2025-12-25T12:00:00.000Z"
       },
@@ -286,8 +449,14 @@
         "description": "Schedule all 12 LinkedIn posts from docs/marketing/linkedin-posts-january-2026.md. Use LinkedIn native scheduler. Posts go out Mon/Wed/Fri/Sun for 3 weeks.",
         "status": "pending",
         "priority": "medium",
-        "dependencies": [26],
-        "tags": ["jan2026", "linkedin", "content"],
+        "dependencies": [
+          "26"
+        ],
+        "tags": [
+          "jan2026",
+          "linkedin",
+          "content"
+        ],
         "subtasks": [],
         "createdAt": "2025-12-25T12:00:00.000Z",
         "dueDate": "2026-01-05"
@@ -298,14 +467,46 @@
         "description": "Final prep for first networking event (target: Jan 26). Checklist: 50 business cards ready, elevator pitch practiced, case study stories memorized, Calendly on phone, professional attire. See task_092.md for full prep guide.",
         "status": "pending",
         "priority": "high",
-        "dependencies": [20, 30],
-        "tags": ["jan2026", "networking", "preparation"],
+        "dependencies": [
+          "20",
+          "30"
+        ],
+        "tags": [
+          "jan2026",
+          "networking",
+          "preparation"
+        ],
         "subtasks": [
-          {"title": "Confirm business cards delivered", "status": "pending"},
-          {"title": "Practice 2-min elevator pitch", "status": "pending"},
-          {"title": "Memorize 3 case study stories (90 sec each)", "status": "pending"},
-          {"title": "Test C3 demo on phone", "status": "pending"},
-          {"title": "Prepare professional attire", "status": "pending"}
+          {
+            "title": "Confirm business cards delivered",
+            "status": "pending",
+            "id": 0,
+            "parentId": "undefined"
+          },
+          {
+            "title": "Practice 2-min elevator pitch",
+            "status": "pending",
+            "id": 0,
+            "parentId": "undefined"
+          },
+          {
+            "title": "Memorize 3 case study stories (90 sec each)",
+            "status": "pending",
+            "id": 0,
+            "parentId": "undefined"
+          },
+          {
+            "title": "Test C3 demo on phone",
+            "status": "pending",
+            "id": 0,
+            "parentId": "undefined"
+          },
+          {
+            "title": "Prepare professional attire",
+            "status": "pending",
+            "id": 0,
+            "parentId": "undefined"
+          }
         ],
         "createdAt": "2025-12-25T12:00:00.000Z",
         "dueDate": "2026-01-25"
@@ -317,7 +518,12 @@
         "status": "deferred",
         "priority": "low",
         "dependencies": [],
-        "tags": ["varnaai", "seo", "on-page", "deferred"],
+        "tags": [
+          "varnaai",
+          "seo",
+          "on-page",
+          "deferred"
+        ],
         "subtasks": [],
         "createdAt": "2025-12-23T10:00:00.000Z"
       },
@@ -328,7 +534,12 @@
         "status": "deferred",
         "priority": "low",
         "dependencies": [],
-        "tags": ["varnaai", "seo", "on-page", "deferred"],
+        "tags": [
+          "varnaai",
+          "seo",
+          "on-page",
+          "deferred"
+        ],
         "subtasks": [],
         "createdAt": "2025-12-23T10:00:00.000Z"
       },
@@ -339,7 +550,12 @@
         "status": "deferred",
         "priority": "low",
         "dependencies": [],
-        "tags": ["varnaai", "seo", "technical", "deferred"],
+        "tags": [
+          "varnaai",
+          "seo",
+          "technical",
+          "deferred"
+        ],
         "subtasks": [],
         "createdAt": "2025-12-23T10:00:00.000Z"
       },
@@ -350,7 +566,13 @@
         "status": "deferred",
         "priority": "low",
         "dependencies": [],
-        "tags": ["varnaai", "seo", "technical", "international", "deferred"],
+        "tags": [
+          "varnaai",
+          "seo",
+          "technical",
+          "international",
+          "deferred"
+        ],
         "subtasks": [],
         "createdAt": "2025-12-23T10:00:00.000Z"
       },
@@ -361,7 +583,13 @@
         "status": "deferred",
         "priority": "low",
         "dependencies": [],
-        "tags": ["varnaai", "seo", "technical", "performance", "deferred"],
+        "tags": [
+          "varnaai",
+          "seo",
+          "technical",
+          "performance",
+          "deferred"
+        ],
         "subtasks": [],
         "createdAt": "2025-12-23T10:00:00.000Z"
       },
@@ -372,7 +600,13 @@
         "status": "deferred",
         "priority": "low",
         "dependencies": [],
-        "tags": ["varnaai", "seo", "performance", "mobile", "deferred"],
+        "tags": [
+          "varnaai",
+          "seo",
+          "performance",
+          "mobile",
+          "deferred"
+        ],
         "subtasks": [],
         "createdAt": "2025-12-23T10:00:00.000Z"
       },
@@ -383,7 +617,13 @@
         "status": "deferred",
         "priority": "low",
         "dependencies": [],
-        "tags": ["varnaai", "seo", "content", "link-building", "deferred"],
+        "tags": [
+          "varnaai",
+          "seo",
+          "content",
+          "link-building",
+          "deferred"
+        ],
         "subtasks": [],
         "createdAt": "2025-12-23T10:00:00.000Z"
       },
@@ -393,8 +633,16 @@
         "description": "DEFERRED - Focus on sales first.",
         "status": "deferred",
         "priority": "low",
-        "dependencies": [18],
-        "tags": ["varnaai", "seo", "link-building", "marketing", "deferred"],
+        "dependencies": [
+          "18"
+        ],
+        "tags": [
+          "varnaai",
+          "seo",
+          "link-building",
+          "marketing",
+          "deferred"
+        ],
         "subtasks": [],
         "createdAt": "2025-12-23T10:00:00.000Z"
       },
@@ -405,25 +653,435 @@
         "status": "pending",
         "priority": "high",
         "dependencies": [],
-        "tags": ["c3", "dashboard", "redesign", "ui-ux", "mcp"],
+        "tags": [
+          "c3",
+          "dashboard",
+          "redesign",
+          "ui-ux",
+          "mcp"
+        ],
         "subtasks": [
-          {"title": "Review current C3 dashboard design and identify pain points", "status": "pending"},
-          {"title": "Create new design mockups in Figma", "status": "pending"},
-          {"title": "Plan redesign using Figma MCP for design-to-code workflow", "status": "pending"},
-          {"title": "Implement new design with MCP stack (Playwright testing, Context7 docs)", "status": "pending"},
-          {"title": "Test and validate new dashboard", "status": "pending"}
+          {
+            "title": "Review current C3 dashboard design and identify pain points",
+            "status": "pending",
+            "id": 0,
+            "parentId": "undefined"
+          },
+          {
+            "title": "Create new design mockups in Figma",
+            "status": "pending",
+            "id": 0,
+            "parentId": "undefined"
+          },
+          {
+            "title": "Plan redesign using Figma MCP for design-to-code workflow",
+            "status": "pending",
+            "id": 0,
+            "parentId": "undefined"
+          },
+          {
+            "title": "Implement new design with MCP stack (Playwright testing, Context7 docs)",
+            "status": "pending",
+            "id": 0,
+            "parentId": "undefined"
+          },
+          {
+            "title": "Test and validate new dashboard",
+            "status": "pending",
+            "id": 0,
+            "parentId": "undefined"
+          }
         ],
         "createdAt": "2025-12-25T18:00:00.000Z"
+      },
+      {
+        "id": 36,
+        "title": "Fix VarnaAI Bulgarian Translation Issues",
+        "description": "Fix 4 translation issues on varnaai.com/bg/ homepage: Contact button, All Services link, View Demo button, ISO 27001 package text.",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [],
+        "tags": [
+          "varnaai",
+          "translation",
+          "bg"
+        ],
+        "subtasks": [
+          {
+            "title": "Fix header Contact button: English → Контакт, link to /bg/свържете-се-с-varna-ai/",
+            "status": "pending",
+            "id": 0,
+            "parentId": "undefined"
+          },
+          {
+            "title": "Fix All Services link: /services/ → /bg/услуги/",
+            "status": "pending",
+            "id": 0,
+            "parentId": "undefined"
+          },
+          {
+            "title": "Fix FwChange View Demo button: English → Виж Демо",
+            "status": "pending",
+            "id": 0,
+            "parentId": "undefined"
+          },
+          {
+            "title": "Fix ISO 27001 package: translate title and description to Bulgarian",
+            "status": "pending",
+            "id": 0,
+            "parentId": "undefined"
+          }
+        ],
+        "createdAt": "2025-12-26T03:30:00.000Z"
+      },
+      {
+        "id": 37,
+        "title": "Create Static Demo Pages for All-Inkl",
+        "description": "Upload existing HTML designs from /design/ folder to All-Inkl subdomains. 5 demos for varnaai.com, 1 for aimarketingbg.com. Designs ready: C3, FwChange, Pension, SEO. Missing: ProjectManager, WebScrap.",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [],
+        "tags": [
+          "varnaai",
+          "aimarketingbg",
+          "demo",
+          "hosting"
+        ],
+        "subtasks": [
+          {
+            "title": "Upload C3 demo (design ready) → c3.varnaai.com",
+            "status": "pending",
+            "id": 0,
+            "parentId": "undefined"
+          },
+          {
+            "title": "Upload FwChange demo (design ready) → fwchange.varnaai.com",
+            "status": "pending",
+            "id": 0,
+            "parentId": "undefined"
+          },
+          {
+            "title": "Upload RetirementAI demo (design ready) → retirement.varnaai.com",
+            "status": "pending",
+            "id": 0,
+            "parentId": "undefined"
+          },
+          {
+            "title": "Create ProjectManager landing page (MISSING) → pm.varnaai.com",
+            "status": "pending",
+            "id": 0,
+            "parentId": "undefined"
+          },
+          {
+            "title": "Create Lead (lead generation) landing page (MISSING) → lead.varnaai.com",
+            "status": "pending",
+            "id": 0,
+            "parentId": "undefined"
+          },
+          {
+            "title": "Upload SEOAgent demo (design ready) → seo.aimarketingbg.com",
+            "status": "pending",
+            "id": 0,
+            "parentId": "undefined"
+          },
+          {
+            "title": "Configure DNS for all 6 subdomains in All-Inkl",
+            "status": "pending",
+            "id": 0,
+            "parentId": "undefined"
+          }
+        ],
+        "createdAt": "2025-12-26T03:30:00.000Z",
+        "updatedAt": "2025-12-26T03:17:23.506Z"
+      },
+      {
+        "id": 38,
+        "title": "VarnaAI SEO: SEOptimer Fixes",
+        "description": "Fix issues from SEOptimer audit dated 2025-12-26. Overall grade B+, critical issue: Links F (Domain Strength 6).",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [
+          "36"
+        ],
+        "tags": [
+          "varnaai",
+          "seo",
+          "seoptimer"
+        ],
+        "subtasks": [
+          {
+            "title": "Extend Title Tag from 47 chars to 50-60 chars",
+            "status": "pending",
+            "id": 0,
+            "parentId": "undefined"
+          },
+          {
+            "title": "Add H3-H6 header tags (currently only H2s)",
+            "status": "pending",
+            "id": 0,
+            "parentId": "undefined"
+          },
+          {
+            "title": "Execute link building strategy (Domain Strength 6 → 20+)",
+            "status": "pending",
+            "id": 0,
+            "parentId": "undefined"
+          }
+        ],
+        "createdAt": "2025-12-26T03:30:00.000Z"
+      },
+      {
+        "id": 39,
+        "title": "Copy 8 marketing agents from varnaai-master",
+        "description": "Implement the 8 marketing agents from varnaai-master using existing TypeScript implementations.",
+        "details": "Use the existing `marketing-strategist.ts`, `content-creator.ts`, `seo-specialist.ts` and other agent implementations to create a new project with these agents.",
+        "testStrategy": "Unit testing of each agent using Jest, integration testing with `varnaai-master` APIs",
+        "priority": "high",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 40,
+        "title": "Add Prisma models to schema.prisma",
+        "description": "Create new Prisma models for Campaign, SocialPost, ContentCalendar and other required entities.",
+        "details": "Implement the `Campaign`, `SocialPost`, `ContentCalendar` and other models as described in the PRD.",
+        "testStrategy": "End-to-end testing of database integration using Postman",
+        "priority": "high",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 41,
+        "title": "Run database migration",
+        "description": "Apply the new Prisma models to the existing database schema.",
+        "details": "Use `prisma migrate` command to create the new tables in the database.",
+        "testStrategy": "Verify that all data is correctly migrated using Postman",
+        "priority": "high",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 42,
+        "title": "Create base API routes structure",
+        "description": "Set up the basic API endpoints for the application.",
+        "details": "Implement the `GET /api/marketing`, `POST /api/social` and other required endpoints using Next.js API routes.",
+        "testStrategy": "Integration testing of each endpoint using Postman",
+        "priority": "high",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 43,
+        "title": "Implement MailChimp connector",
+        "description": "Integrate the MailChimp API with the application.",
+        "details": "Use the `mailchimp` package to send campaigns and track engagement using the `MAILCHIMP_API_KEY` from the secrets file.",
+        "testStrategy": "Integration testing of each endpoint using Postman",
+        "priority": "high",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 44,
+        "title": "Implement Buffer connector",
+        "description": "Integrate the Buffer API with the application.",
+        "details": "Use the `buffer` package to schedule social media posts and track engagement using the `BUFFER_ACCESS_TOKEN` from the secrets file.",
+        "testStrategy": "Integration testing of each endpoint using Postman",
+        "priority": "high",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 45,
+        "title": "Implement GA4 connector",
+        "description": "Integrate the Google Analytics 4 API with the application.",
+        "details": "Use the `ga4` package to track conversions and events using the `GA4_PROPERTY_ID` and `GA4_CREDENTIALS` from the secrets file.",
+        "testStrategy": "Integration testing of each endpoint using Postman",
+        "priority": "high",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 46,
+        "title": "Implement WordPress connector",
+        "description": "Integrate the WordPress API with the application.",
+        "details": "Use the `wordpress` package to publish blog posts and track engagement using the `WP_URL`, `WP_USERNAME`, and `WP_APP_PASSWORD` from the secrets file.",
+        "testStrategy": "Integration testing of each endpoint using Postman",
+        "priority": "high",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 47,
+        "title": "Implement Meta connector",
+        "description": "Integrate the Meta API with the application.",
+        "details": "Use the `meta` package to track engagement and publish social media posts using the `META_ACCESS_TOKEN` from the secrets file.",
+        "testStrategy": "Integration testing of each endpoint using Postman",
+        "priority": "high",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 48,
+        "title": "Implement LinkedIn connector",
+        "description": "Integrate the LinkedIn API with the application.",
+        "details": "Use the `linkedin` package to track engagement and publish professional posts using the `LINKEDIN_ACCESS_TOKEN` from the secrets file.",
+        "testStrategy": "Integration testing of each endpoint using Postman",
+        "priority": "high",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 49,
+        "title": "Implement Agent Orchestration",
+        "description": "Create a workflow engine to control the execution of marketing agents.",
+        "details": "Use a task queue (e.g. RabbitMQ) and inter-agent communication to implement the agent orchestration system.",
+        "testStrategy": "End-to-end testing of the entire system using Postman",
+        "priority": "high",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 50,
+        "title": "Implement Campaign Management",
+        "description": "Create a campaign management interface for users to manage their campaigns.",
+        "details": "Implement the `GET /campaigns`, `POST /campaigns` and other required endpoints using React",
+        "testStrategy": "Integration testing of each endpoint using Postman",
+        "priority": "high",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 51,
+        "title": "Implement Content Calendar",
+        "description": "Create a content calendar interface for users to plan and schedule their content.",
+        "details": "Implement the `GET /content`, `POST /content` and other required endpoints using React",
+        "testStrategy": "Integration testing of each endpoint using Postman",
+        "priority": "high",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 52,
+        "title": "Implement Social Media Scheduling",
+        "description": "Create a social media scheduling interface for users to schedule their posts.",
+        "details": "Implement the `GET /social`, `POST /social` and other required endpoints using React",
+        "testStrategy": "Integration testing of each endpoint using Postman",
+        "priority": "high",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 53,
+        "title": "Implement Email Campaigns",
+        "description": "Create an email campaign interface for users to create and manage their campaigns.",
+        "details": "Implement the `GET /email`, `POST /email` and other required endpoints using React",
+        "testStrategy": "Integration testing of each endpoint using Postman",
+        "priority": "high",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 54,
+        "title": "Implement Analytics Dashboard",
+        "description": "Create an analytics dashboard for users to track their performance.",
+        "details": "Implement the `GET /analytics` endpoint using React",
+        "testStrategy": "Integration testing of each endpoint using Postman",
+        "priority": "high",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 55,
+        "title": "Implement Error Handling and Loading States",
+        "description": "Add error handling and loading states to the application.",
+        "details": "Use try-catch blocks and async/await to implement error handling, and add loading states using React Hooks.",
+        "testStrategy": "End-to-end testing of each endpoint using Postman",
+        "priority": "medium",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 56,
+        "title": "Implement Polish and Documentation",
+        "description": "Add polish and documentation to the application.",
+        "details": "Use i18n to implement polish, and add documentation using JSDoc.",
+        "testStrategy": "End-to-end testing of each endpoint using Postman",
+        "priority": "medium",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 57,
+        "title": "Implement End-to-End Testing",
+        "description": "Create end-to-end tests for the application.",
+        "details": "Use Postman to create test cases for each endpoint, and use Cypress to implement end-to-end testing.",
+        "testStrategy": "Integration testing of each endpoint using Postman",
+        "priority": "medium",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 58,
+        "title": "Implement Campaign Auto-Pilot Mode",
+        "description": "Create a campaign auto-pilot mode for users to automate their campaigns.",
+        "details": "Use a task queue (e.g. RabbitMQ) and inter-agent communication to implement the campaign auto-pilot mode.",
+        "testStrategy": "End-to-end testing of the entire system using Postman",
+        "priority": "medium",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 59,
+        "title": "Create VarnaAI Portfolio Page (EN & BG)",
+        "description": "Create a single page showcasing all 8 apps, with design blocks added first by user and content filled in by Claude",
+        "details": "This task involves creating the portfolio page layout using existing FwChange/C3 page patterns. The design will be added first by the user, followed by filling in content by Claude. The website URL for English portfolio is /portfolio/ and for Bulgarian portfolio is /bg/portfolio/. Ensure that all necessary dependencies from the base API routes structure (Task 42) are integrated into this task.",
+        "testStrategy": "Verify correct implementation of the portfolio page, including integration with base API routes, functionality for user interaction, and proper display of content. Perform cross-browser testing to ensure compatibility with various devices and browsers.",
+        "status": "pending",
+        "dependencies": [
+          42
+        ],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": 60,
+        "title": "Complete 8 Static Demo Subdomains on varnaai.com",
+        "description": "Upload HTML files from D:/VarnaAI/Websites/online-demos/ via FTP after creating all static demo subdomains on varnaai.com",
+        "details": "This task will be completed after Task #37: Create Static Demo Pages for All-Inkl and its prerequisites are finished. Ensure that the necessary subdomains (varnaai.com) have been created and are live, as stated in Task #37. Additionally, delete demo-c3.varnaai.com as mentioned in Task #6 (though this task does not have an ID provided). After verifying all 8 static demo subdomains are complete, use FTP to upload HTML files from D:/VarnaAI/Websites/online-demos/. The uploaded files should be used on the live subdomains.",
+        "testStrategy": "Verify that all 8 static demo subdomains (varnaai.com) are accessible and rendering correctly. Use cURL or a similar tool to test each file's upload via FTP, ensuring it can be accessed from the web server without issues.",
+        "status": "pending",
+        "dependencies": [
+          37,
+          6
+        ],
+        "priority": "high",
+        "subtasks": []
       }
     ],
     "metadata": {
-      "version": "2.0.0",
-      "lastModified": "2025-12-25T18:00:00.000Z",
-      "taskCount": 35,
-      "completedCount": 11,
-      "deferredCount": 8,
-      "pendingCount": 16,
-      "tags": ["master", "jan2026", "deferred-seo"]
+      "created": "2025-12-26T05:14:58.353Z",
+      "updated": "2025-12-26T05:40:10.171Z",
+      "description": "Tasks for master context"
     }
   }
 }

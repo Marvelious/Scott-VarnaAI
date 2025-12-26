@@ -572,31 +572,40 @@ browser_file_upload({ paths: [] })
 - Batch content creation for similar blocks
 - Use concise but complete content
 
-## 🚨 CURRENT STATUS (Updated 2025-12-23) 🚨
+## 🚨 CURRENT STATUS (Updated 2025-12-26) 🚨
 
-### Strategic Pivot: January 2026 Varna Return
+### Strategic Pivot: Consulting-First (SaaS Later)
 
-**Goal**: Simplify operations - "Take websites off the table"
+**Business Model**: Consulting services first, SaaS demos revived Q3 2026+
 
 | Item | Status | Action |
 |------|--------|--------|
-| **Hetzner VPS** | ❌ **OFF** | Shutting down - no longer maintained |
-| **Demo Apps** | 📦 **ARCHIVED** | Moving to static landing pages on All-Inkl |
+| **Business Mode** | 🎯 **CONSULTING** | Face-to-face Bulgarian SME clients |
+| **Hetzner VPS** | ❌ **OFFLINE** | Shutdown complete - demos archived |
+| **SaaS Demos** | 📦 **ARCHIVED** | Static landing pages on All-Inkl |
 | **VarnaAI.com** | 🎯 **PRIMARY** | Business card homepage (Task 83) |
-| **Other 3 Sites** | 🔄 **SIMPLIFY** | Redirect or minimal landing pages |
+| **Other 3 Sites** | 🟡 **DORMANT** | WordPress running, no development |
 
-### Infrastructure Migration
+### Consulting Service Offerings
 
-**FROM** (Hetzner VPS @ 78.47.125.174):
-- ~~RetirementAI~~ → Static landing page
-- ~~FwChange~~ → Static landing page
-- ~~C3 Compliance~~ → Static landing page
-- ~~nginx, Docker, fail2ban~~ → Not needed
+| Service | Price (BGN) | Price (EUR) |
+|---------|-------------|-------------|
+| Free Discovery Call | Безплатно | Free |
+| GDPR Compliance Audit | 980 лв | ~€500 |
+| ISO 27001 Implementation | 9,800 лв | ~€5,000 |
+| NIS2 Readiness Assessment | 1,960 лв | ~€1,000 |
+| Monthly Advisory Retainer | 290 лв/месец | ~€150/month |
 
-**TO** (All-Inkl Shared Hosting):
-- Static HTML landing pages for demo showcases
-- WordPress sites already on All-Inkl
-- Minimal maintenance, maximum stability
+### 2026 Revenue Targets (Consulting)
+
+| Quarter | Target | Cumulative Clients |
+|---------|--------|-------------------|
+| Q1 2026 | €1,000/mo | 2 clients |
+| Q2 2026 | €1,500/mo | 5 clients |
+| Q3 2026 | €2,000/mo | 8 clients |
+| Q4 2026 | €2,500/mo | 10 clients |
+
+**SaaS Revival Decision**: Q3 2026 (when consulting revenue stable at €2,000+/mo)
 
 ### Task Status (Jan 2026 Launch)
 
@@ -604,7 +613,7 @@ browser_file_upload({ paths: [] })
 |------|--------|----------|
 | 83: VarnaAI Business Card Homepage | PENDING | 🔴 HIGH |
 | 84: Simplify Other 3 Sites | PENDING | After 83 |
-| 85: Business Cards | IN-PROGRESS | Order by Dec 23! |
+| 85: Business Cards | ✅ DONE | Ordered Dec 23 |
 | 86: Case Studies (3) | ✅ DONE | - |
 | 87: LinkedIn Profile | ✅ DONE | - |
 | 88: Sales Materials | ✅ DONE | - |
@@ -614,6 +623,7 @@ browser_file_upload({ paths: [] })
 | 92: Networking Event Prep | PENDING | Jan 26, 2026 |
 
 **Full task details**: `.taskmaster/tasks/task_083.md` through `task_092.md`
+**Business Plan**: `docs/strategy/BUSINESS_PLAN_2025.md` (Version 2.0 - Consulting Focus)
 
 ---
 
@@ -624,24 +634,32 @@ browser_file_upload({ paths: [] })
 The VarnaAI development platform runs 3 isolated Docker applications on the same host.
 Each app has its own Docker network with dedicated subnets and port ranges.
 
-### Host Environment
+### Host Environment (Lenovo Legion 5 15IAX10)
 
 | Component | Specification |
 |-----------|--------------|
+| **Laptop** | Lenovo Legion 5 15IAX10 |
 | **OS** | Windows 11 |
-| **RAM** | 64GB |
-| **GPU** | RTX 5070 (8GB VRAM) |
-| **LLM Runtime** | Docker with NVIDIA GPU support (NOT local) |
-| **Ollama** | Runs in Docker container with GPU passthrough |
+| **RAM** | 64GB DDR5 |
+| **GPU** | NVIDIA RTX 5070 (8GB VRAM) |
+| **LLM Runtime** | Docker with NVIDIA GPU support (WSL2) |
+| **Ollama** | Shared container `ailab-ollama` with GPU passthrough |
 | **Master Folder** | `D:\VarnaAI\Websites` (this folder) |
 
-### Port Allocation (VarnaAI Platform)
+### Port Allocation (VarnaAI 9-App Architecture - Updated 2025-12-25)
 
 | App | Frontend | Backend | PostgreSQL | Redis | Subnet |
 |-----|----------|---------|------------|-------|--------|
 | **Pension (RetirementAI)** | 3001 | - | 5433 | 6380 | 172.20.0.0/16 |
 | **C3 (Compliance)** | 3002 | 8001 | 5434 | 6381 | 172.21.0.0/16 |
 | **FwChange** | 3003 | 8002 | 5435 | 6382 | 172.22.0.0/16 |
+| **SEOAgent** | 3004 | 4000 | 5436 | 6383 | - |
+| **ProjectManager** | 5173 | 3005 | 5438 | - | - |
+| **Webscrap** | 3006 | 8003 | 5439 | 6385 | 172.23.0.0/16 |
+| **VarnaAI** | 3007 | 8004 | 5437 | 6384 | 172.25.0.0/16 |
+| **AgenticCoder** | 3008 (Grafana) | - | internal | internal | 172.28.0.0/16 |
+
+**Additional AgenticCoder Ports**: Prometheus 9090, Adminer 8080, Redis Commander 8081, Jaeger 16686
 
 ### Container Prefixes (CRITICAL)
 
@@ -650,6 +668,11 @@ Each app has its own Docker network with dedicated subnets and port ranges.
 | Pension | `pension-*` | pension-app, pension-postgres, pension-redis |
 | C3 | `c3-*` | c3-frontend, c3-api, c3-postgres, c3-redis |
 | FwChange | `fwchange-*` | fwchange-frontend, fwchange-backend, fwchange-postgres, fwchange-redis |
+| SEOAgent | `seoagent-*` | seoagent-app, seoagent-postgres, seoagent-redis |
+| ProjectManager | `projectmanager-*` | projectmanager-app, projectmanager-postgres |
+| Webscrap | `webscrap-*` | webscrap-frontend, webscrap-backend, webscrap-postgres, webscrap-redis |
+| VarnaAI | `varnaai-*` | varnaai-frontend, varnaai-backend, varnaai-postgres, varnaai-redis |
+| AgenticCoder | `agenticcoder-*` | agenticcoder-postgres, agenticcoder-redis, agenticcoder-grafana |
 
 🚨 **CONTAINER ISOLATION RULE**:
 - Each app manages ONLY its own prefixed containers

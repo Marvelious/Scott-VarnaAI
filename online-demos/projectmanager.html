@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProjectManager - AI Task Orchestration | VarnaAI</title>
+  <link rel="stylesheet" href="landing.css">
+  <style>
+    :root {
+      --accent-primary: #22c55e;
+      --accent-secondary: #7c3aed;
+      --accent-tertiary: #4ade80;
+      --bg-primary: #030014;
+      --bg-secondary: #0a0520;
+      --bg-card: #110830;
+      --gradient-hero: linear-gradient(135deg, #22c55e 0%, #7c3aed 50%, #4ade80 100%);
+      --gradient-button: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    }
+    body { background: var(--bg-primary); background-image: radial-gradient(ellipse at 10% 30%, rgba(34, 197, 94, 0.2) 0%, transparent 50%), radial-gradient(ellipse at 90% 70%, rgba(124, 58, 237, 0.15) 0%, transparent 50%); }
+    .nav, .hero, .features, .cta, .footer { background: transparent; }
+    .hero-badge { background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(34, 197, 94, 0.2)); border: 1px solid rgba(34, 197, 94, 0.5); color: var(--accent-primary); }
+    .hero-title .highlight { background: var(--gradient-hero); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .section-label { color: var(--accent-primary); }
+    .mesh-bg { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+    .mesh-gradient { position: absolute; border-radius: 50%; filter: blur(100px); mix-blend-mode: screen; }
+    .mesh-1 { width: 800px; height: 800px; background: rgba(34, 197, 94, 0.4); top: -300px; left: -200px; animation: meshFloat1 25s ease-in-out infinite; }
+    .mesh-2 { width: 600px; height: 600px; background: rgba(124, 58, 237, 0.35); bottom: -200px; right: -150px; animation: meshFloat2 20s ease-in-out infinite; }
+    @keyframes meshFloat1 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(100px, 50px); } }
+    @keyframes meshFloat2 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-80px, -60px); } }
+    .btn-primary { background: var(--gradient-button); box-shadow: 0 4px 25px rgba(34, 197, 94, 0.5); border: 1px solid rgba(255, 255, 255, 0.2); }
+    .btn-primary:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(34, 197, 94, 0.6); }
+    .btn-secondary { border: 2px solid transparent; background: linear-gradient(var(--bg-card), var(--bg-card)) padding-box, var(--gradient-hero) border-box; color: #fff; }
+    .feature-card { background: rgba(17, 8, 48, 0.6); backdrop-filter: blur(20px); border: 1px solid rgba(34, 197, 94, 0.2); border-radius: 24px; transition: all 0.5s; }
+    .feature-card:hover { transform: translateY(-12px); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 60px rgba(34, 197, 94, 0.2); }
+    .feature-icon { background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(34, 197, 94, 0.2)); border: 1px solid rgba(34, 197, 94, 0.4); }
+    .feature-icon svg { color: var(--accent-primary); }
+    .hero-stats { background: rgba(17, 8, 48, 0.5); border: 1px solid rgba(34, 197, 94, 0.3); border-radius: 20px; margin-top: 32px; padding: 28px 36px; }
+    .stat-value { font-weight: 800; font-size: 2rem; background: var(--gradient-hero); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .stat-label { color: rgba(255, 255, 255, 0.6); }
+    .cta-box { background: var(--bg-card); border: 2px solid rgba(34, 197, 94, 0.3); border-radius: 32px; }
+    .cta-title { background: var(--gradient-hero); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav { backdrop-filter: blur(20px); background: rgba(3, 0, 20, 0.8); border-bottom: 1px solid rgba(34, 197, 94, 0.2); }
+    .logo-text span { color: var(--accent-primary) !important; }
+    .footer { background: var(--bg-secondary); border-top: 1px solid rgba(34, 197, 94, 0.2); }
+  </style>
+</head>
+<body>
+  <div class="mesh-bg"><div class="mesh-gradient mesh-1"></div><div class="mesh-gradient mesh-2"></div></div>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo"><span class="logo-text">Project<span>Manager</span></span></a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="https://varnaai.com/contact/" class="btn btn-primary">Request Demo</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <span class="hero-badge">AI Task Orchestration</span>
+        <h1 class="hero-title">Smart <span class="highlight">Project Manager</span></h1>
+        <p class="hero-description">AI-powered project management that automates task allocation, progress tracking, and deadline optimization. Let AI handle the coordination.</p>
+        <div class="hero-buttons">
+          <a href="https://varnaai.com/portfolio/" class="btn btn-primary btn-large">View Portfolio</a>
+          <a href="https://varnaai.com/contact/" class="btn btn-secondary btn-large">Contact Us</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-value">500+</span><span class="stat-label">Projects</span></div>
+          <div class="stat"><span class="stat-value">40%</span><span class="stat-label">Time Saved</span></div>
+          <div class="stat"><span class="stat-value">AI</span><span class="stat-label">Powered</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Capabilities</span>
+        <h2 class="section-title">AI Project Orchestration</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+          <h3 class="feature-title">Smart Task Allocation</h3>
+          <p class="feature-description">AI assigns tasks based on skills, workload, and availability. Optimized team efficiency.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <h3 class="feature-title">Deadline Prediction</h3>
+          <p class="feature-description">Machine learning predicts realistic deadlines based on historical data and current velocity.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3 class="feature-title">Resource Planning</h3>
+          <p class="feature-description">Automated capacity planning and resource allocation across multiple projects.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <h3 class="feature-title">Progress Analytics</h3>
+          <p class="feature-description">Real-time dashboards with burndown charts, velocity tracking, and risk indicators.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <div class="cta-box" style="padding: 60px; text-align: center;">
+        <h2 class="cta-title">Automate Project Management</h2>
+        <p class="cta-description" style="color: rgba(255,255,255,0.7); margin: 20px 0 30px;">AI-driven task orchestration for agile teams and enterprise projects.</p>
+        <div class="cta-buttons">
+          <a href="https://varnaai.com/portfolio/" class="btn btn-primary btn-large">View Portfolio</a>
+          <a href="https://varnaai.com/contact/" class="btn btn-secondary btn-large">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" style="padding: 40px 0; text-align: center;">
+    <p style="color: rgba(255,255,255,0.6);">&copy; 2025 VarnaAI. All rights reserved. <a href="https://varnaai.com" style="color: #22c55e;">varnaai.com</a></p>
+  </footer>
+</body>
+</html>

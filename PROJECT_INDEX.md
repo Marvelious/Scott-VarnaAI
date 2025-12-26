@@ -604,15 +604,17 @@ Each application has its own instruction file:
 
 ## Infrastructure & Operations
 
-### Host Environment
+### Host Environment (Lenovo Legion 5 15IAX10)
 
 | Component | Specification |
 |-----------|---------------|
+| Laptop | Lenovo Legion 5 15IAX10 |
 | OS | Windows 11 |
-| RAM | 64GB |
-| GPU | RTX 5070 (8GB VRAM) |
+| RAM | 64GB DDR5 |
+| GPU | NVIDIA RTX 5070 |
+| VRAM | 8GB GDDR7 |
 | Docker | Docker Desktop with WSL2 |
-| Ollama | Docker container with GPU passthrough |
+| Ollama | Shared container with GPU passthrough |
 | Master Folder | `D:\VarnaAI\Websites` |
 
 ### Shared Services
@@ -627,8 +629,8 @@ Each application has its own instruction file:
 | **Host Port** | 11435 |
 | **Container Port** | 11434 |
 | **Network** | `ailab-network` (external) |
-| **GPU** | NVIDIA RTX 5070 (all VRAM) |
-| **Memory Limit** | 12GB RAM |
+| **GPU** | NVIDIA RTX 5070 (8GB VRAM) |
+| **Memory Limit** | 8GB RAM (container) |
 | **Health Check** | Every 30s via `/api/tags` |
 
 **Apps Connected to ailab-network**:

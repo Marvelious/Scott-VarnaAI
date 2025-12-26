@@ -1,6 +1,7 @@
 # ABOUTME: Shared Ollama configuration for all VarnaAI apps
 # ABOUTME: One LLM instance accessible by all applications via ailab-network
 # UPDATED: 2025-12-26 - Added health checks, memory limits, improved networking
+# HOST: Lenovo Legion 5 15IAX10 - 64GB RAM, RTX 5070 (8GB VRAM)
 
 services:
   ollama:
@@ -16,7 +17,7 @@ services:
       - OLLAMA_ORIGINS=*
       - OLLAMA_KEEP_ALIVE=24h
       - OLLAMA_NUM_PARALLEL=4        # Allow 4 parallel requests
-      - OLLAMA_MAX_LOADED_MODELS=3   # Keep 3 models in VRAM
+      - OLLAMA_MAX_LOADED_MODELS=2   # Keep 2 models in 8GB VRAM
     networks:
       - ailab-network
     healthcheck:
@@ -28,12 +29,12 @@ services:
     deploy:
       resources:
         limits:
-          memory: 12G              # Limit RAM usage (GPU VRAM managed by Ollama)
+          memory: 8G               # Container RAM limit
         reservations:
-          memory: 4G
+          memory: 2G
           devices:
             - driver: nvidia
-              count: all
+              count: all           # RTX 5070 (8GB VRAM)
               capabilities: [gpu]
 
 networks:

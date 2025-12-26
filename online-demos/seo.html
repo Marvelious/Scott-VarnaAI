@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEO Agent - AI-Powered Search Optimization | VarnaAI</title>
+  <link rel="stylesheet" href="landing.css">
+  <style>
+    /* ===========================================
+       SEO AGENT - ELECTRIC LUXURY THEME
+       Cyan/Purple - Modern Fintech Premium
+       =========================================== */
+    :root {
+      --accent-primary: #06b6d4;
+      --accent-secondary: #7c3aed;
+      --accent-tertiary: #22d3ee;
+      --accent-glow: rgba(6, 182, 212, 0.5);
+      --accent-glow-alt: rgba(124, 58, 237, 0.4);
+      --bg-primary: #030014;
+      --bg-secondary: #0a0520;
+      --bg-card: #110830;
+      --gradient-hero: linear-gradient(135deg, #06b6d4 0%, #7c3aed 50%, #22d3ee 100%);
+      --gradient-button: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+      --gradient-glow: linear-gradient(135deg, rgba(6, 182, 212, 0.3), rgba(124, 58, 237, 0.3), rgba(34, 211, 238, 0.3));
+    }
+
+    body {
+      background: var(--bg-primary);
+      background-image:
+        radial-gradient(ellipse at 10% 30%, rgba(6, 182, 212, 0.2) 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 70%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 90%, rgba(34, 211, 238, 0.1) 0%, transparent 40%);
+    }
+
+    .nav, .hero, .features, .benefits, .cta, .footer { background: transparent; }
+
+    .hero-badge {
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(6, 182, 212, 0.2));
+      border: 1px solid rgba(6, 182, 212, 0.5);
+      color: var(--accent-secondary);
+      text-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
+    }
+
+    .hero-title .highlight {
+      background: var(--gradient-hero);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: none;
+      filter: drop-shadow(0 0 40px rgba(124, 58, 237, 0.6));
+    }
+
+    .section-label {
+      color: var(--accent-secondary);
+      text-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
+    }
+
+    /* Animated Mesh Background */
+    .mesh-bg { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+    .mesh-gradient { position: absolute; border-radius: 50%; filter: blur(100px); mix-blend-mode: screen; }
+    .mesh-1 { width: 800px; height: 800px; background: rgba(6, 182, 212, 0.4); top: -300px; left: -200px; animation: meshFloat1 25s ease-in-out infinite; }
+    .mesh-2 { width: 600px; height: 600px; background: rgba(124, 58, 237, 0.35); bottom: -200px; right: -150px; animation: meshFloat2 20s ease-in-out infinite; }
+    .mesh-3 { width: 500px; height: 500px; background: rgba(34, 211, 238, 0.3); top: 40%; left: 30%; animation: meshFloat3 30s ease-in-out infinite; }
+    .mesh-4 { width: 400px; height: 400px; background: rgba(6, 182, 212, 0.25); top: 20%; right: 20%; animation: meshFloat1 22s ease-in-out infinite reverse; }
+
+    @keyframes meshFloat1 { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 33% { transform: translate(100px, 50px) rotate(10deg); } 66% { transform: translate(-50px, 100px) rotate(-5deg); } }
+    @keyframes meshFloat2 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(-80px, -60px) scale(1.1); } }
+    @keyframes meshFloat3 { 0%, 100% { transform: translate(0, 0); opacity: 0.3; } 25% { transform: translate(80px, -40px); opacity: 0.5; } 50% { transform: translate(-40px, 80px); opacity: 0.4; } 75% { transform: translate(40px, 40px); opacity: 0.35; } }
+
+    /* Floating Particles */
+    .particles { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 1; }
+    .particle { position: absolute; width: 4px; height: 4px; border-radius: 50%; animation: neonFloat 25s infinite linear; }
+    .particle:nth-child(3n+1) { background: #06b6d4; box-shadow: 0 0 15px #06b6d4, 0 0 30px #06b6d4; }
+    .particle:nth-child(3n+2) { background: #7c3aed; box-shadow: 0 0 15px #7c3aed, 0 0 30px #7c3aed; }
+    .particle:nth-child(3n) { background: #22d3ee; box-shadow: 0 0 15px #22d3ee, 0 0 30px #22d3ee; }
+    .particle:nth-child(1) { left: 5%; top: 15%; animation-delay: 0s; animation-duration: 22s; }
+    .particle:nth-child(2) { left: 15%; top: 75%; animation-delay: 3s; animation-duration: 28s; }
+    .particle:nth-child(3) { left: 25%; top: 35%; animation-delay: 6s; animation-duration: 24s; }
+    .particle:nth-child(4) { left: 40%; top: 55%; animation-delay: 2s; animation-duration: 26s; }
+    .particle:nth-child(5) { left: 55%; top: 25%; animation-delay: 4s; animation-duration: 20s; }
+    .particle:nth-child(6) { left: 70%; top: 65%; animation-delay: 7s; animation-duration: 25s; }
+    .particle:nth-child(7) { left: 82%; top: 45%; animation-delay: 1s; animation-duration: 23s; }
+    .particle:nth-child(8) { left: 92%; top: 85%; animation-delay: 5s; animation-duration: 27s; }
+    .particle:nth-child(9) { left: 35%; top: 10%; animation-delay: 8s; animation-duration: 21s; }
+    .particle:nth-child(10) { left: 60%; top: 90%; animation-delay: 2.5s; animation-duration: 29s; }
+    .particle:nth-child(11) { left: 75%; top: 15%; animation-delay: 4.5s; animation-duration: 24s; }
+    .particle:nth-child(12) { left: 10%; top: 50%; animation-delay: 6.5s; animation-duration: 26s; }
+    @keyframes neonFloat { 0% { transform: translate(0, 0) scale(1); opacity: 0.6; } 25% { transform: translate(60px, -80px) scale(1.3); opacity: 1; } 50% { transform: translate(-40px, -160px) scale(0.7); opacity: 0.4; } 75% { transform: translate(80px, -60px) scale(1.1); opacity: 0.8; } 100% { transform: translate(0, 0) scale(1); opacity: 0.6; } }
+
+    /* Buttons */
+    .btn-primary { background: var(--gradient-button); box-shadow: 0 4px 25px rgba(6, 182, 212, 0.5), 0 0 50px rgba(6, 182, 212, 0.3); position: relative; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2); }
+    .btn-primary::before { content: ''; position: absolute; inset: -2px; background: var(--gradient-hero); border-radius: inherit; z-index: -1; opacity: 0; filter: blur(15px); transition: opacity 0.4s ease; }
+    .btn-primary::after { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); transition: left 0.6s ease; }
+    .btn-primary:hover { transform: translateY(-5px) scale(1.03); box-shadow: 0 15px 40px rgba(6, 182, 212, 0.6), 0 0 80px rgba(6, 182, 212, 0.4), 0 0 120px rgba(124, 58, 237, 0.2); }
+    .btn-primary:hover::before { opacity: 1; }
+    .btn-primary:hover::after { left: 100%; }
+    .btn-secondary { border: 2px solid transparent; background: linear-gradient(var(--bg-card), var(--bg-card)) padding-box, var(--gradient-hero) border-box; color: #fff; }
+    .btn-secondary:hover { box-shadow: 0 0 30px rgba(6, 182, 212, 0.3), inset 0 0 20px rgba(6, 182, 212, 0.1); transform: translateY(-3px); }
+
+    /* Feature Cards */
+    .feature-card { background: rgba(17, 8, 48, 0.6); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid transparent; background-clip: padding-box; border-radius: 24px; position: relative; overflow: hidden; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+    .feature-card::before { content: ''; position: absolute; inset: 0; border-radius: 24px; padding: 1px; background: linear-gradient(135deg, rgba(6, 182, 212, 0.5), rgba(124, 58, 237, 0.5), rgba(34, 211, 238, 0.5)); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0.5; transition: opacity 0.4s ease; }
+    .feature-card:hover { transform: translateY(-12px) scale(1.02); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 60px rgba(124, 58, 237, 0.2), 0 0 100px rgba(6, 182, 212, 0.15); }
+    .feature-card:hover::before { opacity: 1; }
+    .feature-icon { background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(6, 182, 212, 0.2)); border: 1px solid rgba(6, 182, 212, 0.4); transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); position: relative; z-index: 1; }
+    .feature-card:hover .feature-icon { transform: scale(1.2) rotate(-5deg); box-shadow: 0 0 40px rgba(6, 182, 212, 0.5), 0 0 80px rgba(124, 58, 237, 0.3); }
+    .feature-icon svg { color: var(--accent-secondary); filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.6)); }
+    .feature-title { color: #fff; position: relative; z-index: 1; }
+    .feature-description { color: rgba(255, 255, 255, 0.7); position: relative; z-index: 1; }
+
+    /* Stats */
+    .hero-stats { position: relative; padding: 28px 36px; background: rgba(17, 8, 48, 0.5); border: 1px solid transparent; border-radius: 20px; margin-top: 32px; overflow: hidden; }
+    .hero-stats::before { content: ''; position: absolute; inset: 0; border-radius: 20px; padding: 1px; background: var(--gradient-hero); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+    .stat-value { font-weight: 800; font-size: 2rem; background: var(--gradient-hero); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.4)); }
+    .stat-label { color: rgba(255, 255, 255, 0.6); }
+
+    /* CTA Box */
+    .cta-box { background: var(--bg-card); border: 2px solid transparent; background-clip: padding-box; position: relative; overflow: hidden; border-radius: 32px; }
+    .cta-box::before { content: ''; position: absolute; inset: -2px; background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary), var(--accent-primary)); background-size: 300% 300%; border-radius: 34px; z-index: -1; animation: auroraShift 6s ease infinite; }
+    .cta-box::after { content: ''; position: absolute; inset: 2px; background: var(--bg-card); border-radius: 30px; z-index: -1; }
+    @keyframes auroraShift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+    .cta-box .cta-orb { position: absolute; border-radius: 50%; filter: blur(60px); z-index: 0; }
+    .cta-orb-1 { width: 300px; height: 300px; background: rgba(124, 58, 237, 0.3); top: -100px; left: -100px; animation: orbFloat 10s ease-in-out infinite; }
+    .cta-orb-2 { width: 250px; height: 250px; background: rgba(6, 182, 212, 0.25); bottom: -80px; right: -80px; animation: orbFloat 12s ease-in-out infinite reverse; }
+    @keyframes orbFloat { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(30px, 20px); } }
+    .cta-title, .cta-description, .cta-buttons { position: relative; z-index: 1; }
+    .cta-title { background: var(--gradient-hero); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+    /* Benefits */
+    .benefit-item { transition: all 0.4s ease; padding: 20px; border-radius: 16px; margin: -20px; margin-bottom: 12px; border: 1px solid transparent; }
+    .benefit-item:hover { background: rgba(124, 58, 237, 0.1); border-color: rgba(6, 182, 212, 0.3); transform: translateX(12px); box-shadow: 0 0 30px rgba(124, 58, 237, 0.1); }
+    .benefit-icon { background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(6, 182, 212, 0.2)); border: 1px solid rgba(6, 182, 212, 0.4); transition: all 0.4s ease; }
+    .benefit-item:hover .benefit-icon { transform: scale(1.25); box-shadow: 0 0 30px rgba(6, 182, 212, 0.4), 0 0 60px rgba(124, 58, 237, 0.2); }
+    .benefit-icon svg { color: var(--accent-secondary); }
+
+    /* Nav & Footer */
+    .nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); background: rgba(3, 0, 20, 0.8); border-bottom: 1px solid rgba(124, 58, 237, 0.2); }
+    .logo-text span { color: var(--accent-primary) !important; }
+    .nav-links a:hover { color: var(--accent-primary); text-shadow: 0 0 10px rgba(6, 182, 212, 0.5); }
+    .footer { background: var(--bg-secondary); border-top: 1px solid rgba(124, 58, 237, 0.2); }
+    .footer a:hover { color: var(--accent-primary); }
+  </style>
+</head>
+<body>
+
+  <!-- Animated Mesh Background -->
+  <div class="mesh-bg">
+    <div class="mesh-gradient mesh-1"></div>
+    <div class="mesh-gradient mesh-2"></div>
+    <div class="mesh-gradient mesh-3"></div>
+    <div class="mesh-gradient mesh-4"></div>
+  </div>
+
+  <!-- Floating Particles -->
+  <div class="particles">
+    <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+    <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+    <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+    <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="showcase.html" class="logo">
+        <svg class="logo-icon" viewBox="0 0 48 48" fill="none">
+          <circle cx="24" cy="24" r="20" stroke="#06b6d4" stroke-width="2" fill="none"/>
+          <circle cx="24" cy="24" r="10" fill="#7c3aed" opacity="0.5"/>
+          <path d="M24 14v20M14 24h20" stroke="#06b6d4" stroke-width="2"/>
+        </svg>
+        <span class="logo-text">SEO<span>Agent</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#integrations">Integrations</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="login-seo.html" class="btn btn-secondary">Login</a>
+        <a href="#demo" class="btn btn-primary">Start Free Trial</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <span class="hero-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          AI Search Optimization
+        </span>
+        <h1 class="hero-title">
+          Your AI <span class="highlight">SEO Agent</span>
+        </h1>
+        <p class="hero-description">
+          Automated keyword research, content optimization, and rank tracking powered by GPT-4.
+          Dominate search results with data-driven insights. Start free today.
+        </p>
+        <div class="hero-buttons">
+          <a href="#demo" class="btn btn-primary btn-large">Start Free Trial</a>
+          <a href="#features" class="btn btn-secondary btn-large">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/>
+            </svg>
+            See How It Works
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-value">500K+</span>
+            <span class="stat-label">Keywords Tracked</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">95%</span>
+            <span class="stat-label">Rank Improvement</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">24/7</span>
+            <span class="stat-label">Monitoring</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="reference/comprehensive-compliance-reporting-gdpr-pci-dss-iso.png" alt="SEO Agent Dashboard" class="hero-image">
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Features</span>
+        <h2 class="section-title">AI-Powered SEO Automation</h2>
+        <p class="section-description">
+          Enterprise-grade SEO tools that work while you sleep.
+        </p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Keyword Research</h3>
+          <p class="feature-description">
+            AI discovers high-value keywords your competitors miss. Search volume, difficulty, and intent analysis.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Content Optimizer</h3>
+          <p class="feature-description">
+            Real-time content scoring. GPT-4 suggests improvements for better rankings and readability.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Rank Tracking</h3>
+          <p class="feature-description">
+            Daily position updates. Track unlimited keywords across Google, Bing, and local search.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Backlink Analysis</h3>
+          <p class="feature-description">
+            Monitor your link profile. AI identifies toxic links and high-value opportunities.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <line x1="3" y1="9" x2="21" y2="9"/>
+              <line x1="9" y1="21" x2="9" y2="9"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Technical SEO Audit</h3>
+          <p class="feature-description">
+            Crawl your site like Google. Fix broken links, duplicate content, and Core Web Vitals issues.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="17 8 12 3 7 8"/>
+              <line x1="12" y1="3" x2="12" y2="15"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Automated Reports</h3>
+          <p class="feature-description">
+            White-label PDF reports for clients. Scheduled weekly or monthly delivery.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section id="integrations" class="benefits">
+    <div class="container benefits-grid">
+      <div class="benefits-content">
+        <span class="section-label">Why SEO Agent</span>
+        <h2 class="section-title">Built for Growth Teams</h2>
+        <ul class="benefits-list">
+          <li class="benefit-item">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div class="benefit-text">
+              <h4>GPT-4 Powered Analysis</h4>
+              <p>AI that understands search intent, not just keywords. Better recommendations.</p>
+            </div>
+          </li>
+          <li class="benefit-item">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div class="benefit-text">
+              <h4>Real-Time SERP Data</h4>
+              <p>Live rank tracking with hourly updates. Know when competitors make moves.</p>
+            </div>
+          </li>
+          <li class="benefit-item">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div class="benefit-text">
+              <h4>Agency White-Label</h4>
+              <p>Your branding on reports. Client dashboards with custom domains.</p>
+            </div>
+          </li>
+          <li class="benefit-item">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div class="benefit-text">
+              <h4>API Access</h4>
+              <p>Full REST API for custom integrations. Webhooks for real-time alerts.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="benefits-visual">
+        <img src="reference/comprehensive-compliance-reporting-gdpr-pci-dss-iso.png" alt="SEO Dashboard" class="benefits-image">
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-box">
+        <div class="cta-orb cta-orb-1"></div>
+        <div class="cta-orb cta-orb-2"></div>
+        <h2 class="cta-title">Ready to Dominate Search Results?</h2>
+        <p class="cta-description">
+          Start tracking keywords and optimizing content in minutes.
+          14-day free trial. No credit card required.
+        </p>
+        <div class="cta-buttons">
+          <a href="#demo" class="btn btn-primary btn-large">Start Free Trial</a>
+          <a href="#contact" class="btn btn-secondary btn-large">Schedule Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="showcase.html" class="logo">
+            <svg class="logo-icon" viewBox="0 0 48 48" fill="none">
+              <circle cx="24" cy="24" r="20" stroke="#06b6d4" stroke-width="2" fill="none"/>
+              <circle cx="24" cy="24" r="10" fill="#7c3aed" opacity="0.5"/>
+              <path d="M24 14v20M14 24h20" stroke="#06b6d4" stroke-width="2"/>
+            </svg>
+            <span class="logo-text">SEO<span style="color:#06b6d4">Agent</span></span>
+          </a>
+          <p>AI-powered SEO automation. Part of the VarnaAI suite.</p>
+        </div>
+        <div class="footer-links-group">
+          <h4 class="footer-title">Product</h4>
+          <ul class="footer-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#demo">Demo</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">API</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4 class="footer-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="#">SEO Guide</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Webinars</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4 class="footer-title">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Impressum</a></li>
+            <li><a href="#">GDPR</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 VarnaAI. All rights reserved.</p>
+        <p>AI-powered search optimization.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
